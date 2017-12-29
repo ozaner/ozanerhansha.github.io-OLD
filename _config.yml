@@ -6,7 +6,8 @@ highlighter:      rouge
 permalink:        pretty
 
 # Setup
-title:            Oz∀n∈ℝ
+# title:            Oz∀n∈ℝ
+title: Test
 tagline:          'My Projects'
 description:      'A compilation of all my published notes,
                   projects, and articles.'
