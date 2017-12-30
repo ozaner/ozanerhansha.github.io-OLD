@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>
+    
+      Breast Cancer Classification &middot; Oz∀n∈ℝ
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- Adds MathJax -->
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+  <!-- Adds Awesome Icons-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Collects tags of all posts-->
+  
+    
+
+
+
+
+
+
+  
+
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          $$\large{\text {Oz}}\overbrace{\large {\text {∀n∈ℝ}}}^{\tiny {\text {For all real n...}}}$$
+        </a>
+      </h1>
+      <p class="lead">A compilation of all my published notes, projects, and articles.</p>
+    </div>
+
+    <nav class="sidebar-nav">
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/articles/">Articles</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/notes/">Notes</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+
+      <a href="https://github.com/ozanerhansha/ozanerhansha.github.io">This Website's Code</a><br/>
+
+      <!--- Icon Links -->
+      <b>Links: </b>
+      <a href="https://github.com/ozanerhansha"><i class='fa fa-github'></i></a>
+      <a href="https://www.quora.com/profile/Ozaner-Hansha/questions"><i class='fa fa-quora'></i></a>
+      <a href="https://medium.com/@ozanerhansha"><i class='fa fa-medium'></i></a>
+    </nav>
+    <p>2017 Ozaner Hansha</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Breast Cancer Classification</h1>
+  <span class="post-date">15 Jun 2017</span>
+  <span>[
+  
+    
+    <a href="/tag/computer-science"><code class="highligher-rouge"><nobr>computer-science</nobr></code>&nbsp;</a>
+  
+    
+    <a href="/tag/neural-networks"><code class="highligher-rouge"><nobr>neural-networks</nobr></code>&nbsp;</a>
+  
+]</span>
+  <p>A single-layer perceptron network, coded with Google’s <a href="https://www.tensorflow.org/"><em>TensorFlow</em></a> library.
+It was trained on the <a href="https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(original)">Wisconsin Breast Cancer Data Set</a>, hosted by UC Irvine.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">'''
+Created on Jun 6, 2017
+@author: Ozaner Hansha
+'''</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c">#Get dataset file path</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
+<span class="n">file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s">'wdbc.data'</span><span class="p">)</span>
+<span class="n">file_object</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span>
+
+<span class="c">#Split dataset into separate points (as strings)</span>
+<span class="n">string_points</span> <span class="o">=</span> <span class="n">file_object</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="n">string_points</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">string_points</span><span class="p">)</span> <span class="c">#Randomize (avoid bias)</span>
+
+<span class="n">num_input_features</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="c">#Initialize dataset class arrays</span>
+<span class="n">point_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="n">num_input_features</span><span class="p">))</span>
+<span class="n">y_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="c">#Trim data points</span>
+<span class="c">#Format as np.arrays</span>
+<span class="c">#Add to class arrays (Benign or Malignant)</span>
+<span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">string_points</span><span class="p">:</span>
+    <span class="n">point</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">','</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s">'M'</span> <span class="ow">in</span> <span class="n">point</span><span class="p">:</span> <span class="c">#if malignant</span>
+        <span class="n">y_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y_labels</span><span class="p">,</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span> <span class="c">#if benign (can only be labeled 'B' or 'M')</span>
+        <span class="n">y_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y_labels</span><span class="p">,</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">point</span> <span class="o">=</span> <span class="n">point</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="c">#trim for only the 10 important features</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">point</span><span class="p">)</span> <span class="c">#convert to numpy array</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span> <span class="c">#cast as float array</span>
+    <span class="n">point_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">point_array</span><span class="p">,</span> <span class="p">[</span><span class="n">temp</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c">#Split training and testing data</span>
+<span class="n">experience_matrix</span> <span class="o">=</span> <span class="n">point_array</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">400</span><span class="p">]</span>
+<span class="n">experience_matrix_y</span> <span class="o">=</span> <span class="n">y_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">400</span><span class="p">]</span>
+<span class="n">test_matrix</span> <span class="o">=</span> <span class="n">point_array</span><span class="p">[</span><span class="mi">400</span><span class="p">:]</span>
+<span class="n">test_matrix_y</span> <span class="o">=</span> <span class="n">y_labels</span><span class="p">[</span><span class="mi">400</span><span class="p">:]</span>
+
+<span class="c"># End of data import/cleanup. Begin construction of neural network</span>
+<span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">name_scope</span><span class="p">(</span><span class="s">'Hidden_Layer'</span><span class="p">):</span>
+  <span class="c">#nx10 Matrix (Input)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="n">num_input_features</span><span class="p">])</span>
+  <span class="c">#10x1 Matrix (Weights)</span>
+    <span class="n">W</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">num_input_features</span><span class="p">,</span><span class="mi">2</span><span class="p">]))</span>
+  <span class="c">#1x2 vector (Bias)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">2</span><span class="p">]))</span>
+  <span class="c">#A scalar (x*W + b)</span>
+    <span class="n">y_noSoftmax</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">W</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="c">#Apply softmax (scales y_noSoftmax to be between 0 &amp; 1)</span>
+<span class="n">y_hat</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">y_noSoftmax</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'y_Hat'</span><span class="p">)</span>
+
+<span class="c">#Session</span>
+<span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">InteractiveSession</span><span class="p">()</span> <span class="c">#Create Session</span>
+<span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">global_variables_initializer</span><span class="p">())</span> <span class="c">#Init Variables</span>
+
+<span class="c">#Training Model</span>
+<span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">name_scope</span><span class="p">(</span><span class="s">'Training'</span><span class="p">):</span>
+  <span class="c">#nx2 Matrix (One-Hot Vector, Label Data)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span><span class="n">name</span><span class="o">=</span><span class="s">'y_Labeled'</span><span class="p">)</span>
+  <span class="c">#Loss Function (cross entropy between y and y_hat)</span>
+    <span class="n">cross_entropy</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">reduce_mean</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax_cross_entropy_with_logits</span>
+    <span class="p">(</span><span class="n">logits</span> <span class="o">=</span> <span class="n">y_noSoftmax</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">y</span><span class="p">),</span><span class="n">name</span><span class="o">=</span><span class="s">'Loss_Function'</span><span class="p">)</span>
+  <span class="c">#Performs Gradient Descent on loss function</span>
+    <span class="n">train_step</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">GradientDescentOptimizer</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span>
+        <span class="n">cross_entropy</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s">'Train_Step'</span><span class="p">)</span>
+
+<span class="c">#Run train step repeatedly</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+  <span class="c">#Run training step on that batch</span>
+    <span class="n">train_step</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">experience_matrix</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">experience_matrix_y</span><span class="p">})</span>
+
+<span class="c">#Evaluation</span>
+<span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">name_scope</span><span class="p">(</span><span class="s">'Validation'</span><span class="p">):</span>
+  <span class="c">#Returns whether model made correct prediction (List of booleans)</span>
+    <span class="n">correct_prediction</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">equal</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">y_hat</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+        <span class="n">tf</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s">'isCorrect'</span><span class="p">)</span>
+  <span class="c">#Average of correct prediction (%Accuracy)</span>
+    <span class="n">accuracy</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">reduce_mean</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">cast</span>
+        <span class="p">(</span><span class="n">correct_prediction</span><span class="p">,</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span><span class="n">name</span><span class="o">=</span><span class="s">'Accuracy'</span><span class="p">)</span>
+
+<span class="c">#Print Accuracy</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Accuracy:"</span><span class="p">,</span> <span class="s">'{0:.2</span><span class="si">%</span><span class="s">}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy</span><span class="o">.</span><span class="nb">eval</span>
+  <span class="p">(</span><span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">test_matrix</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">test_matrix_y</span><span class="p">})))</span>
+</code></pre></div></div>
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2017/09/17/differentiation/">
+            Differentiation
+            <small>17 Sep 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  </body>
+</html>
