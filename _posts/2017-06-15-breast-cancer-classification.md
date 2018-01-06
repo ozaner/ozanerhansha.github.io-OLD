@@ -3,8 +3,12 @@ layout: post
 title: Breast Cancer Classification
 tags: computer-science neural-networks
 ---
+An artificial neural network trained on the [Wisconsin Breast Cancer Dataset](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(original)). It can classify breast cancer cells as benign or malignant based on 10 pieces of data regarding its size, shape and other variables. The network has around a 91% accuracy on random samples.
+
 A single-layer perceptron network, coded with Google's [*TensorFlow*](https://www.tensorflow.org/) library.
 It was trained on the [Wisconsin Breast Cancer Data Set](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(original)), hosted by UC Irvine.
+
+<!--more-->
 
 ~~~ python
 '''

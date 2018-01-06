@@ -63,3 +63,24 @@
 .css .o,
 .css .o + .nt,
 .css .nt + .nt { color: #999; }
+
+
+/* Make code block scroll horizontally*/
+.highlight pre {
+  overflow-x: auto;
+}
+
+.highlight pre code {
+  white-space: pre;       // forces <code> to respect <pre> formatting
+}
+
+/* Make code block overflow horizontally*/
+/* .highlight pre {
+  display: inline-block;
+} */
+
+/* Make code block scroll vertically*/
+pre.highlight {
+  max-height: 600px; /* Change to your desired max height */
+  overflow-y: scroll;
+}

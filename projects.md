@@ -6,7 +6,6 @@ title: Projects
 * [Breast Cancer Classification](#breast-cancer-classification)
 * [Handwritten Digit Classifier](#handwritten-digit-classifier)
 * [FileToPNG](#filetopng)
-* [Neurosky EEG Viewer](#neurosky-eeg-viewer)
 
 ## Breast Cancer Classification
 An artificial neural network trained on the [Wisconsin Breast Cancer Dataset](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(original)). It can classify breast cancer cells as benign or malignant based on 10 pieces of data regarding its size, shape and other variables. The network has around a 91% accuracy on random samples.
@@ -25,8 +24,6 @@ The model was then exported and, via TensorFlow's java API, implemented into an 
 ![Two & Six Example](/assets/test_digit-classifier.png)
 
 [Click here for the full write-up of the app](/2016/04/15/digit-classifier-app)
-
-## Neurosky EEG Viewer
 
 ## FileToPNG
 A program written in Java that converts any file into an encoded PNG file that can then be sent to a recipient (via a text message for example), received, and decoded back into the original file.
