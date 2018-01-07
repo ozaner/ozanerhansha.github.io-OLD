@@ -22,9 +22,9 @@ settings.
 
 So what causes this disparity?
 
-The difference between a kB (kilobyte) and a kiB (kibibyte).
+The difference between a GB (gigabyte) and a GiB (gibibyte).
 
-Historically when a computer scientist wrote kB, for example, they didn't mean 1000 bytes. They meant 1024 bytes. This is because computers operate in binary which is based of powers of 2. In the kilobyte's case, 2<sup>10</sup> = 1024 which is close to 1000 and so close enough for programmer.
+Historically when a computer scientist wrote kB, for example, they didn’t mean 1000 bytes. They meant 1024 bytes. This is because computers operate in binary which is based of powers of two. In the kilobyte’s case, 210 = 1024 which is almost 1000. This makes it a close enough approximation for the computer scientist that can only deal in powers of two.
 
 This changed around 1998 when the International Electrotechnical Commission (IEC) and other regulatory organizations created a new set of prefixes to be used as binary prefixes. The US National Institute of Standards and Technology (NIST) followed suit and required that the SI prefixes only be used in the decimal sense. Below is a table of the metric prefixes vs the binary ones.
 

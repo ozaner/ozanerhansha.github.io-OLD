@@ -4,6 +4,7 @@ title: Projects
 ---
 # Some of My Projects
 * [Breast Cancer Classification](#breast-cancer-classification)
+* [Quantum Computing]()
 * [Handwritten Digit Classifier](#handwritten-digit-classifier)
 * [FileToPNG](#filetopng)
 
@@ -21,7 +22,7 @@ A model for classifying handwritten digits (0-9) using a convolutional neural ne
 #### Android App
 The model was then exported and, via TensorFlow's java API, implemented into an Android App with a canvas and percentages of confidence.
 
-![Two & Six Example](/assets/test_digit-classifier.png)
+![Two & Six Example](/assets/2016/12/digit-classifier-app/test_screenshots.png)
 
 [Click here for the full write-up of the app](/2016/04/15/digit-classifier-app)
 
@@ -30,7 +31,7 @@ A program written in Java that converts any file into an encoded PNG file that c
 
 An interesting consequence of how the image is directly encoded from the bits of the file is that similar types of files share similar structures. Here's an example:
 
-![Text in FileToPNG](/assets/text_filetopng.png){:width="600px"}
+![Text in FileToPNG](/assets/2016/09/filetopng/text_diagram.png){:width="600px"}
 
 <!-- ##### What a random file looks like for comparison:
 ![Random Noise](/assets/random_filetopng.png){:width="500px"} -->
