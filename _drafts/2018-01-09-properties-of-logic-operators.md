@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Algebraic Properties of Logic Gates
-tags: math abstract-algebra
+title: Algebraic Properties of Logic Operators
+tags: math abstract-algebra computer-science
 ---
 ### Background
 In this post I will attempt to detail the algebraic properties of the 5 most common logic gates.
@@ -11,7 +11,7 @@ In this post I will attempt to detail the algebraic properties of the 5 most com
 * [`NAND`](#nand-gate)
 * [`XOR`](#xor-gate)
 
-*As it turns*
+*As it turns out, all of these examples can be considered groups*
 
 ### NOT Gate
 
