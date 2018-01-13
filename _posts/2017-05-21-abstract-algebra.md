@@ -19,7 +19,14 @@ Just like how geometry studies shapes and forms or arithmetic studies numbers an
 
 An algebraic structure is a combination of a **set** and one or more **operations** that can be applied to the elements of that set.
 
-Click here to see my posts on three of the most important algebraic structures:
+Some examples of Algebraic structures:
+* Group
+* Rings
+* Field
+* Vector Space
+* Boolean Algebra
+
+<!-- Click here to see my posts on three of the most important algebraic structures:
 * [Groups](/2017/05/23/groups)
 * [Rings](/2017/05/24/rings)
-* [Fields](/2017/05/24/fields)
+* [Fields](/2017/05/24/fields) -->
