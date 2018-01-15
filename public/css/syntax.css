@@ -72,8 +72,6 @@
 
 pre.highlight {
   max-height: 600px; /* Change to your desired max height */
-  overflow-y: auto; /* Make code block scroll vertically*/
-  overflow-x: auto; /* Make code block scroll horizontally*/
-  /* Make code block overflow horizontally*/
+  overflow: auto; /* Make code block scroll if needed*/
   /* display: inline-block; */
 }
