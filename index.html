@@ -5,6 +5,7 @@ title: Home
 <font size="7">Recent Posts</font>
 <div class="posts">
   {% for post in paginator.posts %}
+
   <div class="post">
     <h1 class="post-title">
       <a href="{{ post.url }}">{{ post.title }}</a>
@@ -15,8 +16,8 @@ title: Home
     <!--Adds Read more-->
     <a href="{{ post.url }}">Read more</a>
     <p></p>
-  {% endfor %}
   </div>
+  {% endfor %}
 </div>
 
 <div class="pagination">
