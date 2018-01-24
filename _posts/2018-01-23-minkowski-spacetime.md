@@ -16,7 +16,7 @@ If we stack these slices of time in a third (temporal) dimension, it would look 
 
 <!-- *It looks similar to euler's formula, $$e^{i\theta}=\cos \theta + i\sin\theta$$, with space being the complex plane and time being the angle $$\theta$$. The imaginary part will come in handy later.* -->
 
-This is an example of a 3D spacetime. It has 2 dimensions of space and 1 of time. Our universe has 3 space and 1 time dimensions making our spacetime, referred to as *Minkowski Spacetime*, 4 dimensional.
+This is an example of a 3D spacetime. It has 2 dimensions of space and 1 of time. Our universe has 3 space and 1 time dimension, making our spacetime ( referred to as *Minkowski Spacetime*) 4 dimensional.
 
 <!--more-->
 
@@ -114,11 +114,11 @@ $$\begin{align*}
   &= 1.799i\times 10^9 \text { meters} \\
 \end{align*}$$
 
-While we did accept imaginary time, we cannot accept an imaginary proper distance. So where did we go wrong? Well as it turns out spacetime is a bit more complicated than I first led on (how surprising).
+While we did accept the idea of imaginary time earlier, we cannot accept an imaginary proper distance. I mean the whole point was to get rid of the imaginary part right? So where did we go wrong? Well as it turns out, spacetime is a bit more complicated than I first led on (how surprising).
 
-Two events in spacetime have the property of being either spacelike seperated or timelike seperated. The difference between them is essentially whether the two events could be causally connected (they are close enough to be affected by a particle traveling at the speed of light). See [here](https://en.wikipedia.org/wiki/Light_cone) for more.
+Two events in spacetime have the property of being either spacelike seperated or timelike seperated. The difference between them is essentially whether the two events could be causally connected (they are close enough to be affected by a particle traveling at the speed of light). See [light cones](https://en.wikipedia.org/wiki/Light_cone) for more.
 
-The proper distance is the formula used for *spacelike* separated events. Another quantity, known as proper time, is used to measure the length between two *timelike* events in spacetime.
+The proper distance is the formula used for *spacelike* separated events. Another quantity, known as [proper time](https://en.wikipedia.org/wiki/Proper_time), is used to measure the length between two *timelike* events in spacetime.
 
 ## Asides
 What I've described in this post is a very basic notion of spacetime and how one may codify events in it. There are many more aspects of spacetime and events in it like 4-velocities (the spacetime equivalent to velocity), 4-accelerations, proper time, Lorentz transformations, etc.
