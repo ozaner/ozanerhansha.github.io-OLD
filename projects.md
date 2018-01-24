@@ -4,18 +4,17 @@ title: Projects
 ---
 # Some of My Projects
 * [Breast Cancer Classification](#breast-cancer-classification)
-<!-- * [Quantum Computing]() -->
 * [FileToPNG](#filetopng)
 * [Handwritten Digit Classifier](#handwritten-digit-classifier)
-<!-- * [Neurosky EEG App]() -->
 * For my other projects see [my Github](https://github.com/ozanerhansha)
-
+<!-- * [Quantum Computing]() -->
+<!-- * [Neurosky EEG App]() -->
 <br>
 
 ## Breast Cancer Classification
 An artificial neural network trained on the [Wisconsin Breast Cancer Dataset](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(original)). It can classify breast cancer cells as benign or malignant based on 10 pieces of data regarding its size, shape and other variables. The network has around a 90% accuracy on random samples.
 
-[Click here for the full write-up with code.](/2017/06/15/breast-cancer-classification)
+[Read more...](/2017/06/15/breast-cancer-classification)
 
 <br>
 
@@ -26,7 +25,7 @@ An interesting consequence of how the image is directly encoded from the bits of
 
 ![Text in FileToPNG](/assets/2016/09/filetopng/text_diagram.png){:width="500px"}
 
-[Click here for the full write-up of the program](/2016/09/12/filetopng)
+[Read more...](/2016/09/12/filetopng)
 
 <br>
 
