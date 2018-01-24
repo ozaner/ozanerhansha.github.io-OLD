@@ -14,6 +14,8 @@ title: Projects
 ## Breast Cancer Classification
 An artificial neural network trained on the [Wisconsin Breast Cancer Dataset](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(original)). It can classify breast cancer cells as benign or malignant based on 10 pieces of data regarding its size, shape and other variables. The network has around a 90% accuracy on random samples.
 
+![bc](/assets/2017/06/breast-cancer-classification/breastcancer.png)
+
 [Read more...](/2017/06/15/breast-cancer-classification)
 
 <br>
@@ -40,7 +42,7 @@ Click [here](https://github.com/ozanerhansha/NeuralNetworks/blob/master/src/MNIS
 #### Android App
 The model was then exported and, via TensorFlow's Inference API in Java, implemented into an Android App. It includes a canvas for drawing the digits and percentages of confidence in its guess.
 
-![Two & Six Example](/assets/2016/12/digit-classifier-app/test_screenshots.png)
+![Two & Six Example](/assets/2016/12/digit-classifier-app/test_screenshots.png){:width="500px"}
 
 You can download the app [here](https://github.com/ozanerhansha/DigitClassifier/releases).
 

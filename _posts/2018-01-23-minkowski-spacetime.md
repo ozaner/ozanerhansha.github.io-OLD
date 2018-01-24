@@ -16,7 +16,7 @@ If we stack these slices of time in a third (temporal) dimension, it would look 
 
 <!-- *It looks similar to euler's formula, $$e^{i\theta}=\cos \theta + i\sin\theta$$, with space being the complex plane and time being the angle $$\theta$$. The imaginary part will come in handy later.* -->
 
-This is an example of a 3D spacetime. It has 2 dimensions of space and 1 of time. Our universe has 3 space and 1 time dimension, making our spacetime ( referred to as *Minkowski Spacetime*) 4 dimensional.
+This is an example of a 3D spacetime. It has 2 dimensions of space and 1 of time. Our universe has 3 space and 1 time dimension, making our spacetime (referred to as *Minkowski Spacetime*) 4 dimensional.
 
 <!--more-->
 
@@ -55,7 +55,7 @@ $$\begin{align*}
   &= (2,3,1,1.80i\times 10^9) \tag{Simplify 6c} \\
 \end{align*}$$
 
-Note that the time coordinate is much bigger in magnitude due to how big the speed of light is.
+Note that the time coordinate is much bigger in magnitude due to how large the speed of light is.
 
 In this framework you can, loosely, consider 1 second to be equivalent to 299,792,458 imaginary meters.
 
