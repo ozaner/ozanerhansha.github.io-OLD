@@ -49,7 +49,7 @@ Setting the event of you leaving your house as the origin the coordinates of the
 * t = 6s (had passed since you left the house)
 
 Thus that event in spacetime is represented by the ordered quadruplet:
-$$
+
 $$\begin{align*}
   s &= (2,3,1,6\text{c}i) \\
   &= (2,3,1,1.80i\times 10^9) \tag{Simplify 6c} \\
