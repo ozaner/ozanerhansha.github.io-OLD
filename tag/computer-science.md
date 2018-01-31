@@ -1,5 +1,5 @@
 ---
 layout: tagpage
-title: "Tag: computer-science"
+title: Computer Science Posts
 tag: computer-science
 ---

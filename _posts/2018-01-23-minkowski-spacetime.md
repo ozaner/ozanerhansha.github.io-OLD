@@ -1,18 +1,18 @@
 ---
 layout: post
 title: Minkowski Spacetime
-tags: physics special-relativity abstract-algebra
+tags: physics abstract-algebra
 ---
 ## What is Spacetime?
 Before we talk about Minkowski Spacetime, we need to address what it means to combine space and time.
 
 Imagine the Earth orbiting the sun. At every point in time it will be in a different point in its orbit:
 
-![orbit2D](https://www.pitt.edu/~jdnorton/teaching/HPS_0410/chapters/spacetime/planet3d.gif)
+![orbit2D](https://www.pitt.edu/~jdnorton/teaching/HPS_0410/chapters/spacetime/planet3d.gif?style=centerme)
 
 If we stack these slices of time in a third (temporal) dimension, it would look like this:
 
-![orbit3D](https://www.pitt.edu/~jdnorton/teaching/HPS_0410/chapters/spacetime/planet4d.gif)
+![orbit3D](https://www.pitt.edu/~jdnorton/teaching/HPS_0410/chapters/spacetime/planet4d.gif?style=centerme)
 
 <!-- *It looks similar to euler's formula, $$e^{i\theta}=\cos \theta + i\sin\theta$$, with space being the complex plane and time being the angle $$\theta$$. The imaginary part will come in handy later.* -->
 
@@ -42,7 +42,7 @@ $$c$$ represents the speed of light (299,792,458 m/s) and when multiplied by a t
 #### An Example
 Say you walk 2m forward out of your house, walk 3 meters to the right, and jump (an impressive) 1 meter into the air. Let's also say that at the moment you were 1 meter in the air, 6 seconds had passed.
 
-Setting the event of you leaving your house as the origin the coordinates of the event of you jumping in the air are:
+Setting the event of you leaving your house as the origin, the coordinates of the event of you jumping in the air are:
 * x = 2m (forward)
 * y = 3m (to the right)
 * z = 1m (in the air)
@@ -52,7 +52,7 @@ Thus that event in spacetime is represented by the ordered quadruplet:
 
 $$\begin{align*}
   s &= (2,3,1,6\text{c}i) \\
-  &= (2,3,1,1.80i\times 10^9) \tag{Simplify 6c} \\
+  &= (2,3,1,1.80i\times 10^9) \\
 \end{align*}$$
 
 Note that the time coordinate is much bigger in magnitude due to how large the speed of light is.
@@ -130,7 +130,7 @@ You may have felt a little uneasy when I introduced time as being an "imaginary 
 
 This has its benefits but, for our purposes, Minkowski spacetime is easier to understand if we consider time to be an imaginary dimension. It melds well with the definition of proper length.
 
-Moreover, I think considering time as an imaginary dimension provides a useful analogy for its ephemeral nature. We can't *move* through time like we can through space. This analogous to us not being able to directly measure imaginary quantities like we can with real ones.
+Moreover, I think considering time as an imaginary dimension provides a useful analogy for its ephemeral nature. We can't *move* through time like we can through space. This is analogous to us not being able to directly measure imaginary quantities like we can with real ones.
 
-#### Regarding Vector Spaces
-Also while Minkowski Spacetime is generally considered a vector space, if the set of values that the coordinates come from aren't frost he same Field of numbers (the space coordinates come from the real numbers and the time coordinate comes from the imaginary numbers) then it technically can't be considered a vector space. This is another blow to the imaginary time version of spacetime.
+<!-- #### Regarding Vector Spaces
+Also while Minkowski Spacetime is generally considered a vector space, if the set of values that the coordinates come from aren't frost he same Field of numbers (the space coordinates come from the real numbers and the time coordinate comes from the imaginary numbers) then it technically can't be considered a vector space. This is another blow to the imaginary time version of spacetime. -->

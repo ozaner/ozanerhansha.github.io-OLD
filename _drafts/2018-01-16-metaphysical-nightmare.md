@@ -29,16 +29,18 @@ Take the Cesium atom again. We know an atom is a collection of protons, neutrons
 
 A Cesium atom is thus completely mathematically defined. Everything about it is encapsulated in the equations, no need to look at the natural world to understand it.
 
-This applies to all atoms, and thus all molecules, and further anything in the universe made of matter, like humans. This shouldn't come as a surprise. After we know that math is the bedrock of science and thus of formal knowledge.
+This applies to all atoms, and thus all molecules, and further anything in the universe made of matter, like humans. This shouldn't come as a surprise. After all, we know that math is the bedrock of science and thus of formal knowledge overall.
 
-Take psychology. It is really just applied biology, which is just applied chemistry, which is just applied physics, which is just applied mathematics.
+<!-- ADD FIGURE OF CHAIN OF ABSTRACTION -->
+
+Take psychology. It is really just applied biology, which is just applied chemistry, which is just applied physics, which is just (as we've seen) applied mathematics.
 
 This *chain of abstraction* applies to all fields of human knowledge, but its relation to psychology and the human mind will be particularly useful to us...
 
 
 ## Bridging the Gap
-This relation between the most fundamental (and very well defined) concepts in our universe, elementary particles, to the most hazy and abstract ones, like emotions, is what will allow us the bridge the between poorly defined and well defined.
+This relation between the most fundamental (and very well defined) concepts in our universe, like elementary particles, to the most hazy and abstract ones, like emotions, is what will allow us the bridge the between poorly defined and well defined.
 
-
+Consider the human brain. It is simply a collection of particles, no? We can represent that collection of particles as a mathematical set. That set will contain a bunch (trillions) of ordered quadruplets (a,b,c,d) where a represents the particle in question
 
 particles sets, collections possible states, humans consider cat jelousy

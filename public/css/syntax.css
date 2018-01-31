@@ -64,7 +64,10 @@
 .css .o + .nt,
 .css .nt + .nt { color: #999; }
 
-
+img[src$="centerme"] {
+  display:block;
+  margin: 0 auto;
+}
 
 .highlight pre code {
   white-space: pre;       // forces <code> to respect <pre> formatting

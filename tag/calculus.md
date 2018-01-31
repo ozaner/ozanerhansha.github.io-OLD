@@ -1,5 +1,5 @@
 ---
 layout: tagpage
-title: "Tag: calculus"
+title: Calculus Posts
 tag: calculus
 ---

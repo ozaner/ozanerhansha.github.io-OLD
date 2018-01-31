@@ -1,5 +1,5 @@
 ---
 layout: tagpage
-title: "Tag: philosophy"
-tag: philosophy
+title: Abstract Algebra Posts
+tag: abstract-algebra
 ---

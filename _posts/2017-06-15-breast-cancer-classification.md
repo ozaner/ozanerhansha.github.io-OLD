@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Breast Cancer Classification
-tags: computer-science neural-networks
+tags: computer-science machine-learning
 ---
 ## Background
 I made this model to test how easily I could use external datasets to create and train a neural network with Google's [*TensorFlow*](https://www.tensorflow.org/) library. In this post I'll attempt to explain the code, its results, and its accuracy. The [entire program](https://github.com/ozanerhansha/NeuralNetworks/blob/master/src/test/bcDiagnosis.py) is in my [NeuralNetwork](https://github.com/ozanerhansha/NeuralNetworks) repository on Github as well as at the end of this post.
