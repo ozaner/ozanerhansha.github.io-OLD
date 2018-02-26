@@ -23,9 +23,9 @@ A compendium of links, articles, books and other references I have read and/or h
 
 ## Computer Science
 * [Quipqiup](https://quipqiup.com) --- An automated cryptogram solver written by Professor Edwin Olsen of the University of Michigan.
-* [Loop Waveform Generator](https://airtightinteractive.com/demos/js/reactive/) --- A JavaScript app that allows you to see a live 3D waveform of an mp3 file.
 * [SWISH Prolog](https://swish.swi-prolog.org) --- An online prolog environment. Prolog is a logic programming language used to encode rule based knowledge.
-* [Google Ngram Viewer](https://books.google.com/ngrams) --- A tool that allows you to plot the useage of a certain word or phrase in a particular corpus (i.e British English, French, American Fiction, etc.)
+* [Image Colors](https://franciscouzo.github.io/image_colors/) --- Creates a 3d graph of the pixels of an image based on their colors.
+* [Loop Waveform Generator](https://airtightinteractive.com/demos/js/reactive/) --- A JavaScript app that allows you to see a live 3D waveform of an mp3 file.
 
 #### Machine Learning
 * [Colah's Blog](https://colah.github.io) --- A blog with well written and useful posts on machine learning, neural networks, and related topics. It's written by Christopher Olah, a researcher at google. He also writes here on a more collaborative site: [Distill](https://distill.pub).
@@ -53,13 +53,15 @@ A compendium of links, articles, books and other references I have read and/or h
   * [The Evolution of Trust](http://ncase.me/trust/) ---  A look at the progression of trust to mistrust and the [social trap](https://en.wikipedia.org/wiki/Social_trap), in game form!
 * [*The Unreasonable Effectiveness of Mathematics*](http://www.maths.ed.ac.uk/~aar/papers/wigner.pdf) by Eugene Wigner --- A 1960 article published by physicist Eugene Wigner. In it he describes the oddity that is the furthering of the empirical sciences via pure math. [Is the physical world truly mathematical?](https://en.wikipedia.org/wiki/Mathematical_universe_hypothesis)
 * [*The Communist Manifesto*](https://www.marxists.org/archive/marx/works/download/pdf/Manifesto.pdf) by Karl Marx and Friedrich Engels --- One of the most (probably *the* most) influential political/philosophical works in human history. As an enumeration of the grievances of the industrial worker, it prophesized and helped incite the inevitable rise of communism in the late 19th century.
-* [*The Republic of Plato*](http://www.inp.uw.edu.pl/mdsie/Political_Thought/Plato-Republic.pdf) translated by Allan Bloom --- The first, and one of the most important works of political philosophy in western cannon. It discusses the very meaning of the state and what it should aim to be. Particularly, Bloom's translation seeks to avoid reducing Plato's work to a pile of trite platitudes and instead aims to make sense of the literal language that was used in original.
+* [*The Republic of Plato*](http://www.inp.uw.edu.pl/mdsie/Political_Thought/Plato-Republic.pdf) translated by Allan Bloom --- The first, and one of the most important works of political philosophy in western cannon. It discusses the very meaning of the state and what it should aim to be. Particularly, Bloom's translation seeks to avoid reducing Plato's work to a pile of trite platitudes and instead aims to make sense of the literal language that was used in the original.
 * [On Liberty](https://www.utilitarianism.com/ol/one.html) by John Stuart Mill --- Mill's application of his utilitarian philosophy to politics and society. He introduces some key concepts in the book like the 'tyranny of the majority' and the notion of limited government interference with public life.
 
 ## Science & Non-Fiction
 * [*Psychology In Modules*](https://www.macmillanlearning.com/Catalog/product/psychologyinmodules-twelfthedition-myers#tab) by David G. Myers --- An introductory psychology text. It relates different perspectives and concepts in psychology and uses them to understand various cognitive and behavioral phenomena.
 * [*Sapiens: A Brief History of Humankind*](http://www.ynharari.com/book/sapiens/) by Yuval Harari --- A piece of nonfiction that aims to recount all of human history all while explaining how and why our species took the route it did.
 * [*It's Even Worse Than It Looks*](https://www.brookings.edu/books/its-even-worse-than-it-looks-how-the-american-constitutional-system-collided-with-the-new-politics-of-extremism/) by Norman Ornstein and Thomas E. Mann --- A political commentary on the extreme polarization of US politics and how it got to this point, as well as the media's 'false equivalence' in comparing the extreme actions of the republican party to the democratic one.
+* [Fermilab Videos](https://www.youtube.com/playlist?list=PLr4c_1szMTz9YypnHayf4JXqWBa2PwPdw) --- A series of videos covering topics related to particle physics. They are presented by Dr. Don Lincoln of the Department of Energy's high energy particle physics lab: Fermilab.
+* [Google Ngram Viewer](https://books.google.com/ngrams) --- A tool that allows you to plot the usage of a certain word or phrase in a particular corpus (i.e. British English, French, American Fiction, etc.)
 
 ## Interesting Topics
 * [Bogobogosort](http://www.dangermouse.net/esoteric/bogobogosort.html) --- A sorting algorithm that will take longer than the [heat death of the universe](https://en.wikipedia.org/wiki/Heat_death_of_the_universe) to complete on any sizable list.

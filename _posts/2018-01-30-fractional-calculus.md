@@ -150,10 +150,10 @@ If we pause this animation at the semiderivative, $$2\sqrt{\frac{x}{\pi}}$$, we 
 *In blue is the function $$x$$, in red it's first derivative, $$1$$, and in purple it's semiderivative.*
 
 #### A More **Complex** Example
-Let's take a more complex example, the $$(i+1)$$th derivative of $$3x^4$$:
+Let's take a more complex example, the $$(1+i)$$th derivative of $$3x^4$$:
 
 $$\begin{align*}
-D^{1+i}3x^4&=\frac{\Gamma(4+1)}{\Gamma(3-(i+1)+1)}3x^{4-(i+1)}\\
+D^{1+i}3x^4&=\frac{\Gamma(4+1)}{\Gamma(3-(1+i)+1)}3x^{4-(1+i)}\\
 &=\frac{\Gamma(5)}{\Gamma(3-i)}3x^{3-i}\\
 &=\frac{24}{0.96+1.34i}3x^{3-i}\\
 &=(25.48+35.44i)x^{3-i}

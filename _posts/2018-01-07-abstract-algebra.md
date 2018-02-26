@@ -6,7 +6,7 @@ tags: math abstract-algebra
 ## History of Algebra
 The earliest forms of Algebra have been around since [Diophantus](https://en.wikipedia.org/wiki/Diophantus) (3rd century Greek mathematician), who wrote on how to solve equations using geometry (the Greeks had a thing for geometry).
 
-Algebra as we know it wouldn't appear until medieval Islamic mathematician Al-Khwārizmī had written his famous [*Compendious Book on Calculation by Completion and Balancing*](http://www.wilbourhall.org/pdfs/MBP/robertofchesters00khuw.pdf). Its Arabic name is equally as large and so is shortened to *Al-Jabr* which translates to "the reunion of broken parts". In fact the word algebra itself comes from this book (Al-Jabr --> Algebra). Indeed it was this book that introduced the same notions of canceling and balancing equations to solve for *x* that we use today.
+Algebra as we know it wouldn't appear until Al-Khwārizmī, a medieval Islamic mathematician, wrote his famous [*Compendious Book on Calculation by Completion and Balancing*](http://www.wilbourhall.org/pdfs/MBP/robertofchesters00khuw.pdf). Its Arabic name is equally as large and so is shortened to *Al-Jabr* which translates to "the reunion of broken parts". In fact the word algebra itself comes from this book (Al-Jabr --> Algebra). Indeed it was this book that introduced the same notions of canceling and balancing equations to solve for *x* that we use today.
 
 <!--more-->
 
