@@ -30,7 +30,7 @@ $$\frac{\mathrm{d} }{\mathrm{d} x}f(x)=D[f(x)]=Df\\
 
 *This is called the [differential operator](https://en.wikipedia.org/wiki/Differential_operator) its used in other fields of calculus. Since all our functions are of one variable ($$x$$) there is no ambiguity in using it. Also note that the operators are not being raised to a power, it's just notation*
 
-Also note that the differential operator also includes antidifferentiation, or integration. The integral of a function $$f$$ is just:
+Also note that the differential operator also includes antidifferentiation, or integration. The indefinite integral of a function $$f$$ is just:
 
 $$\int{f(x)}\,\mathrm{d}x=D^{-1}[f(x)]=D^{-1}f$$
 

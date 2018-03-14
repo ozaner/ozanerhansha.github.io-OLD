@@ -61,6 +61,7 @@ A compendium of links, articles, books and other references I have read and/or h
 * [*Sapiens: A Brief History of Humankind*](http://www.ynharari.com/book/sapiens/) by Yuval Harari --- A piece of nonfiction that aims to recount all of human history all while explaining how and why our species took the route it did.
 * [*It's Even Worse Than It Looks*](https://www.brookings.edu/books/its-even-worse-than-it-looks-how-the-american-constitutional-system-collided-with-the-new-politics-of-extremism/) by Norman Ornstein and Thomas E. Mann --- A political commentary on the extreme polarization of US politics and how it got to this point, as well as the media's 'false equivalence' in comparing the extreme actions of the republican party to the democratic one.
 * [Fermilab Videos](https://www.youtube.com/playlist?list=PLr4c_1szMTz9YypnHayf4JXqWBa2PwPdw) --- A series of videos covering topics related to particle physics. They are presented by Dr. Don Lincoln of the Department of Energy's high energy particle physics lab: Fermilab.
+* [The Feynman Lectures](http://www.feynmanlectures.caltech.edu/I_toc.html) --- A compilation of the lectures of the legendary physicist Richard Feynman. His lectures are known to be the most concise and intuitive summary of all of physics.
 * [Google Ngram Viewer](https://books.google.com/ngrams) --- A tool that allows you to plot the usage of a certain word or phrase in a particular corpus (i.e. British English, French, American Fiction, etc.)
 
 ## Interesting Topics
@@ -69,3 +70,4 @@ A compendium of links, articles, books and other references I have read and/or h
 * [8values](https://8values.github.io) --- An online quiz that aims to  classify your economic, diplomatic, civil, and societal beliefs.
 * [xkcd](https://xkcd.com) --- You've probably seen one (if not more) of them before. "A webcomic of romance, sarcasm, math, and language."
 * [Google Recursion](https://www.google.com/search?q=recursion) --- Try googling "recursion"
+<!-- * [pannenkoek2012](https://www.youtube.com/user/pannenkoek2012) --- A YouTube channel devoted to breaking down the mechanics and exploitation of those mechanics in Super Mario 64. The level of detail Pannenkoek provides is astounding and how someone could turn a particular Nintendo 64 game into a well documented science is beyond me. (he has a secondary channel [here](https://www.youtube.com/user/pannenkeok2012)). -->

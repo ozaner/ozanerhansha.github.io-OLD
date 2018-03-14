@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Minkowski Spacetime
-tags: physics abstract-algebra
+tags: physics
 ---
 ## What is Spacetime?
 Before we talk about Minkowski Spacetime, we need to address what it means to combine space and time.
