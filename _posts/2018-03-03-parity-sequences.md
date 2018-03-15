@@ -9,6 +9,7 @@ A parity sequence is a sequence of numbers that follow a set pattern of even and
 
 ## Examples
 All examples start indexing at 0 (the most rational way to index lists).
+
 $$\begin{align*}
 S_n=\frac{n(n-1)}{2}&=\{0,0,1,3,6,10,15,21,\cdots\}\\
 &\rightarrow\{+,+,-,-,+,+,-,-,\cdots\}\\
@@ -25,7 +26,7 @@ Notice that when we raise $$-1$$ to the power of one of these sequences, it will
 
 *This property is where the $$+$$ $$-$$ notation comes from.*
 
-When constructing things like Taylor Series', this is a useful property to have. Terms that alternate from negative to positives can be dealt with by appending a factor of $$(-1)^{A_n}$$ to the series.
+When constructing things like Taylor Series', this is a useful property to have. Terms that alternate from negative to positives can be dealt with by appending a factor of $$(-1)^{S_n}$$ to the series.
 
 ## Equivalence
 When the corresponding elements of two sequences have the same parity, we can call those two sequences **parity equivalent**.

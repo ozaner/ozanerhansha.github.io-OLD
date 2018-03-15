@@ -1,13 +1,20 @@
 ---
 layout: post
-title: Legislative Branch
+title: The Legislative Branch (Congress)
 tags: us-government
 ---
-# Congress
+## Congress
 The United States Congress was established in 1789 by the US Constitution and is the federal legislature of the US.
 It is bicameral, the lower house being the House of Representatives and the upper house being the Senate.
 
 Congress serves as the legislative branch of the United States and comprises of members that are all directly elected by the citizens of the state they represent. There are 435 Representatives and 50 Senators.
+
+<!--more-->
+### Table of Contents
+- [Elections](#elections)
+- [Committees](#committees)
+- [Caucuses](#caucuses)
+- [Amendments](#amendments)
 
 ## Elections
 Every two years a new congress comes into session (as of this post we're up to 115). This new congress comprises of a newly elected House of Representatives (usually the same incumbents), 1/3 of a newly elected Senate (again, usually the same people), and the other 2/3 of the previous senate.
