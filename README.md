@@ -1,4 +1,4 @@
-# ozanerhansha.github.io
+# [ozanerhansha.github.io](https://ozanerhansha.github.io)
 A compilation of my notes, articles, and projects.
 
 ## Built With...
