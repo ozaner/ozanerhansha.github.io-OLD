@@ -16,7 +16,7 @@ It's second derivative is denoted:
 
 $$\frac{\mathrm{d} }{\mathrm{d} x}\left(\frac{\mathrm{d} }{\mathrm{d} x}x^3\right)=\frac{\mathrm{d^2} }{\mathrm{d} x^2}x^3=6x$$
 
-We can extend this idea (and it's notation) to any integer $$n$$ forming the nth derivative of a function $$f(x)$$:
+We can extend this idea (and its notation) to any integer $$n$$ forming the nth derivative of a function $$f(x)$$:
 
 $$\frac{\mathrm{d^n} }{\mathrm{d} x^n}f(x)$$
 
