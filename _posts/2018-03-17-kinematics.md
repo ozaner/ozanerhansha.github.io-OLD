@@ -36,7 +36,7 @@ When acceleration is assumed to be constant, as is the case for many physical sy
 <!-- #### Position Independent Equation
 $$\begin{align}
 \vec{v}&=\int\vec{a} \,dt+\vec{v}_0 \tag{integral def. of \(\vec{v}\)}\\
-&=\vec{a}\int t \,dt+\vec{v}_0 \tag{\(\vec{a}\) is constant}\\
+&=\vec{a}\int dt+\vec{v}_0 \tag{\(\vec{a}\) is constant}\\
 &=\vec{a}t+\vec{v}_0
 \end{align}$$ -->
 
@@ -44,7 +44,7 @@ $$\begin{align}
 <summary><strong>Velocity Independent Equation</strong></summary>
 <p>$$\begin{align}
 \vec{v}&=\int\vec{a} \,dt+\vec{v}_0 \tag{integral def. of \(\vec{v}\)}\\
-&=\vec{a}\int t \,dt+\vec{v}_0 \tag{\(\vec{a}\) is constant}\\
+&=\vec{a}\int dt+\vec{v}_0 \tag{\(\vec{a}\) is constant}\\
 &=\vec{a}t+\vec{v}_0
 \end{align}$$</p>
 <p>$$\boxed{\vec{v}=\vec{v}_0+\vec{a}t}$$</p>
@@ -56,7 +56,7 @@ $$\begin{align}
 \vec{x}&=\int\vec{v} \,dt+\vec{x}_0 \tag{integral def. of \(\vec{x}\)}\\
 &=\int(\vec{a}t+\vec{v}_0) \,dt+\vec{x}_0 \\
 &=\int\vec{a}t\,dt + \int\vec{v}_0 \,dt+\vec{x}_0 \\
-&=\vec{a}\int\,dt + \vec{v}_0t+\vec{x}_0 \tag{\(\vec{a}\) is constant}\\
+&=\vec{a}\int t \,dt + \vec{v}_0t+\vec{x}_0 \tag{\(\vec{a}\) is constant}\\
 &=\frac{\vec{a}t^2}{2}+\vec{v}_0t+\vec{x}_0
 \end{align}$$
 
@@ -69,7 +69,7 @@ $$\boxed{\vec{x}=\frac{\vec{a}t^2}{2}+\vec{v}_0t+\vec{x}_0}$$ -->
 \vec{x}&=\int\vec{v} \,dt+\vec{x}_0 \tag{integral def. of \(\vec{x}\)}\\
 &=\int(\vec{a}t+\vec{v}_0) \,dt+\vec{x}_0 \\
 &=\int\vec{a}t\,dt + \int\vec{v}_0 \,dt+\vec{x}_0 \\
-&=\vec{a}\int\,dt + \vec{v}_0t+\vec{x}_0 \tag{\(\vec{a}\) is constant}\\
+&=\vec{a}\int t \,dt + \vec{v}_0t+\vec{x}_0 \tag{\(\vec{a}\) is constant}\\
 &=\frac{\vec{a}t^2}{2}+\vec{v}_0t+\vec{x}_0
 \end{align}$$</p>
 <p>$$\boxed{\vec{x}=\vec{x}_0+\vec{v}_0t+\frac{\vec{a}t^2}{2}}$$</p>
