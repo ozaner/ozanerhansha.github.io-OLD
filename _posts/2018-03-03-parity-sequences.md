@@ -10,14 +10,14 @@ A parity sequence is a sequence of numbers that follow a set pattern of even and
 ## Examples
 All examples start indexing at 0 (the most rational way to index lists).
 
-$$\begin{align*}
-S_n=\frac{n(n-1)}{2}&=\{0,0,1,3,6,10,15,21,\cdots\}\\
-&\rightarrow\{+,+,-,-,+,+,-,-,\cdots\}\\
-S_n=\frac{n^2(n-1)}{2}&=\{0,0,2,9,24,50,90,630,\cdots\}\\
-&\rightarrow\{+,+,+,-,+,+,+,-,\cdots\}\\
-S_n=\cos \frac{n\pi}{2}&=\{1,0,-1,0,1,0,-1,0,\cdots\}\\
-&\rightarrow\{-,+,-,+,-,+,-,+,\cdots\}
-\end{align*}$$
+$$\begin{alignat*}{2}
+  S_n=\frac{n(n-1)}{2}& &&= \{0,0,1,3,6,10,15,21,\cdots\} && \\
+  & &&\rightarrow\{+,+,-,-,+,+,-,-,\cdots\} && \\
+  S_n=\frac{n^2(n-1)}{2}& &&= \{0,0,2,9,24,50,90,630,\cdots\} &&\\
+  & &&\rightarrow\{+,+,+,-,+,+,+,-,\cdots\}&&\\
+  S_n=\cos \frac{n\pi}{2}& &&= \{1,0,-1,0,1,0,-1,0,\cdots\} &&\\
+  & &&\rightarrow\{-,+,-,+,-,+,-,+,\cdots\}&&
+\end{alignat*}$$
 
 <!--more-->
 
@@ -40,8 +40,9 @@ i.e for all Natural Numbers $$n$$, if $$-1$$ to the $$A_n$$ equals $$-1$$ to the
 ## Parity Swap
 A useful property to take note of when constructing these sequences is that adding $$1$$ to the sequence flips the parity of each element in the sequence:
 
-$$S_n=\frac{n(n-1)}{2}=\{0,0,1,3,6,10,\cdots\}=\{+,+,-,-,+,+,\cdots\}\\
-\Downarrow\\
-S'_n=S_n+1\\
-\Downarrow\\
-S'_n=\frac{n(n-1)}{2}+1=\{1,1,2,4,7,11,\cdots\}=\{-,-,+,+,-,-,\cdots\}$$
+$$\begin{align}
+S_n=\frac{n(n-1)}{2}&=\{0,0,1,3,6,10,\cdots\}\\
+&\rightarrow\{+,+,-,-,+,+,\cdots\}\\
+S'_n=\frac{n(n-1)}{2}+1&=\{1,1,2,4,7,11,\cdots\}\\
+&\rightarrow\{-,-,+,+,-,-,\cdots\}
+\end{align}$$
