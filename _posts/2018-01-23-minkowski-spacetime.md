@@ -78,7 +78,7 @@ $$\begin{align*}
 (x)^2&=x^2 \\
 (y)^2&=y^2 \\
 (z)^2&=z^2 \\
-(i\text{c}t)^2&=i^2\text{c}^2t^2=-\text{c}^2 t^2 \tag{Because i² = -1}
+(i\text{c}t)^2&=i^2\text{c}^2t^2=-\text{c}^2 t^2
 \end{align*}$$
 
 #### An Example
