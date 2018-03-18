@@ -36,7 +36,7 @@ When acceleration is assumed to be constant, as is the case for many physical sy
 <!-- #### Position Independent Equation
 $$\begin{align}
 \vec{v}&=\int\vec{a} \,dt+\vec{v}_0 \tag{integral def. of \(\vec{v}\)}\\
-&=\vec{a}\int dt+\vec{v}_0 \tag{\(\vec{a}\) is constant}\\
+&=\vec{a}\int t \,dt+\vec{v}_0 \tag{\(\vec{a}\) is constant}\\
 &=\vec{a}t+\vec{v}_0
 \end{align}$$ -->
 
@@ -44,7 +44,7 @@ $$\begin{align}
 <summary><strong>Velocity Independent Equation</strong></summary>
 <p>$$\begin{align}
 \vec{v}&=\int\vec{a} \,dt+\vec{v}_0 \tag{integral def. of \(\vec{v}\)}\\
-&=\vec{a}\int dt+\vec{v}_0 \tag{\(\vec{a}\) is constant}\\
+&=\vec{a}\int t \,dt+\vec{v}_0 \tag{\(\vec{a}\) is constant}\\
 &=\vec{a}t+\vec{v}_0
 \end{align}$$</p>
 <p>$$\boxed{\vec{v}=\vec{v}_0+\vec{a}t}$$</p>
@@ -168,7 +168,7 @@ The dot product of a vector with itself is that vector's **squared norm** and is
 $$\vec{v}\cdot\vec{v}=\left \| \vec{v} \right \|^2=v^2$$
 
 #### The Kinematic Equations
-Using displacement instead of position, average velocity, and the simpler dot product notation we can rewrite the kinematic equations for constant acceleration as:
+Taking into account average velocity, the simpler dot product notation and using displacement instead of position, we can rewrite the kinematic equations for constant acceleration as:
 
 $$\begin{gather}
 &\vec{v}=\vec{v}_0+\vec{a}t \tag{\(\vec{x}\) independent}\\
