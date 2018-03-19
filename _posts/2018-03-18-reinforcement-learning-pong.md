@@ -8,6 +8,8 @@ In 2013 the relatively new AI startup DeepMind released their paper [*Playing At
 
 If this wasn't enough, in 2015 they blew the machine learning community, and everyone else considering the news coverage, away with their paper [*Human-level control through deep reinforcement learning*](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf) in which they construct what they call a **Deep Q Network** (DQN) to play *42* different Atari games, all of varying complexity, with performance that exceeded a professional human player.[<sup>1</sup>](https://deepmind.com/research/dqn/)
 
+<!--more-->
+
 ## Q-Learning
 The researchers at Google's DeepMind achieved this stunning success with a type of machine learning called **reinforcement learning** and more specifically **Q-learning**. In essence, the goal of Q-learning is to approximate some ideal function $$Q(s,a)$$ that outputs a reward (how good we are doing at the task), where $$s$$ is a possible state of the environment/game/etc. and $$a$$ is a possible action to take in that state. If we had such a function, or even a good approximation, we could simply plug in our current state and choose whatever action will maximize $$Q$$ which would then maximize how well we perform the task. To approzmiate this function, the researches used a convolutional neural network (CNN) and trained it using Q-learning, thus creating a Deep Q Network. You can read more about Q-learning and DQNs [here](https://ai.intel.com/demystifying-deep-reinforcement-learning/).
 

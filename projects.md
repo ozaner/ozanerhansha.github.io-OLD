@@ -31,7 +31,7 @@ When IBM made their 5 qubit quantum computer available to the public (or more sp
 
 It wasn't until 2017 that IBM released a python API, [QISkit](https://github.com/QISKit/qiskit-sdk-py), to interact with their quantum computer rather than the web-based GUI that was available before. There wasn't much bombast regarding it's release but, critically, it allowed for the creation of quantum circuits programmatically and thus the implementation of general purpose quantum algorithms.
 
-And so, using QISkit, I implemented Shor's algorithm in it's entirety (classical and quantum parts). You can find the code [here]().
+And so, using QISkit, I implemented Shor's algorithm in it's entirety (classical and quantum parts). You can find the code [here](https://github.com/ozanerhansha/QuantumComputing/blob/master/shorsalgo.py).
 
 [Write-up and explanation of Code coming soon...]
 
@@ -60,4 +60,3 @@ The model was then exported and, via TensorFlow's Inference API in Java, impleme
 You can download the app [here](https://github.com/ozanerhansha/DigitClassifier/releases).
 
 <!-- [Click here for the full write-up of the app](/2016/04/15/digit-classifier-app) -->
-
