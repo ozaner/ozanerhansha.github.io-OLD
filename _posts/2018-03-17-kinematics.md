@@ -130,6 +130,8 @@ $$\begin{align}
 &=\vec{v} \cdot \vec{v} - \vec{v}_0 \cdot \vec{v}_0\\
 &=\left \| \vec{v} \right \|^2-\left \| \vec{v}_0 \right \|^2\\
 \end{align}$$</p>
+
+<p>$$\boxed{\left \| \vec{v} \right \|^2 = 2\vec{a}\cdot(\vec{x}-\vec{x}_0)+\left \| \vec{v}_0 \right \|^2}$$</p>
 </details>
 
 ### Book Keeping
