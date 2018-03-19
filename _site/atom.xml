@@ -1,0 +1,1349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="https://www.w3.org/2005/Atom">
+
+ <title>Oz∀n∈ℝ</title>
+ <link href="http://localhost:4000/atom.xml" rel="self"/>
+ <link href="http://localhost:4000/"/>
+ <updated>2018-03-19T19:42:21-04:00</updated>
+ <id>http://localhost:4000</id>
+ <author>
+   <name>Ozaner Hansha</name>
+   <email></email>
+ </author>
+
+ 
+ <entry>
+   <title>Playing Atari Pong with Reinforcement Learning</title>
+   <link href="http://localhost:4000/2018/03/18/reinforcement-learning-pong/"/>
+   <updated>2018-03-18T00:00:00-04:00</updated>
+   <id>http://localhost:4000/2018/03/18/reinforcement-learning-pong</id>
+   <content type="html">&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
+&lt;p&gt;In 2013 the relatively new AI startup DeepMind released their paper &lt;a href=&quot;https://arxiv.org/pdf/1312.5602.pdf&quot;&gt;&lt;em&gt;Playing Atari with Deep Reinforcement Learning&lt;/em&gt;&lt;/a&gt; detailing an artificial neural network that was able to play, not 1, but 7 Atari games with human and even super-human level proficiency. What made this paper so astounding was the fact that it was a single, general purpose neural network (a &lt;strong&gt;general artificial intelligence&lt;/strong&gt; if you will) that played all these games rather than 7 separate ones.&lt;/p&gt;
+
+&lt;p&gt;If this wasn’t enough, in 2015 they blew the machine learning community, and everyone else considering the news coverage, away with their paper &lt;a href=&quot;https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf&quot;&gt;&lt;em&gt;Human-level control through deep reinforcement learning&lt;/em&gt;&lt;/a&gt; in which they construct what they call a &lt;strong&gt;Deep Q Network&lt;/strong&gt; (DQN) to play &lt;em&gt;42&lt;/em&gt; different Atari games, all of varying complexity, with performance that exceeded a professional human player.&lt;a href=&quot;https://deepmind.com/research/dqn/&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;q-learning&quot;&gt;Q-Learning&lt;/h2&gt;
+&lt;p&gt;The researchers at Google’s DeepMind achieved this stunning success with a type of machine learning called &lt;strong&gt;reinforcement learning&lt;/strong&gt; and more specifically &lt;strong&gt;Q-learning&lt;/strong&gt;. In essence, the goal of Q-learning is to approximate some ideal function &lt;script type=&quot;math/tex&quot;&gt;Q(s,a)&lt;/script&gt; that outputs a reward (how good we are doing at the task), where &lt;script type=&quot;math/tex&quot;&gt;s&lt;/script&gt; is a possible state of the environment/game/etc. and &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt; is a possible action to take in that state. If we had such a function, or even a good approximation, we could simply plug in our current state and choose whatever action will maximize &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt; which would then maximize how well we perform the task. To approximate this function, the researches used a convolutional neural network (CNN) and trained it using Q-learning, thus creating a Deep Q Network. You can read more about Q-learning and DQNs &lt;a href=&quot;https://ai.intel.com/demystifying-deep-reinforcement-learning/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;By implementing Q-learning in a convolutional neural network (CNN) they create a DQN capable of predicting what actions to take based on the current state of the game.&lt;/p&gt;
+
+&lt;h2 id=&quot;policy-gradients&quot;&gt;Policy Gradients&lt;/h2&gt;
+&lt;p&gt;That said, Q-learning isn’t the only way to achieve these results. Another popular type of reinforcement learning is what known as &lt;strong&gt;policy gradients&lt;/strong&gt;. This method is more direct and conceptually simpler than Q-learning. Essentially, you input the current state, action taken, and reward given at every step and optimize the network accordingly.&lt;/p&gt;
+
+&lt;p&gt;And make no mistake, while simpler, policy networks can be just as good as DQNs. In fact, when tuned correctly, they perform even better than DQNs. Don’t believe me? Just ask the authors of the original papers themselves:
+&lt;a href=&quot;https://arxiv.org/pdf/1602.01783.pdf&quot;&gt;Asynchronous Methods for Deep Reinforcement Learning&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;my-attempt&quot;&gt;My Attempt&lt;/h2&gt;
+&lt;!-- Encouraged by the aforementioned research, I thought I would attempt to create an ANN capable of playing pong using reinforcement learning. Using OpenAI's [Gym](https://gym.openai.com) package to model [Pong](https://gym.openai.com/envs/Pong-v0/), and Google's [*TensorFlow*](https://www.tensorflow.org/) library to construct the network, I'll attempt to explain the code, its results, and its accuracy. --&gt;
+&lt;p&gt;Encouraged by the aforementioned research, I thought I would attempt to create an ANN capable of playing pong using reinforcement learning. To do this I used OpenAI’s &lt;a href=&quot;https://gym.openai.com&quot;&gt;Gym&lt;/a&gt; package to model &lt;a href=&quot;https://gym.openai.com/envs/Pong-v0/&quot;&gt;Pong&lt;/a&gt;, and Google’s &lt;a href=&quot;https://www.tensorflow.org/&quot;&gt;&lt;em&gt;TensorFlow&lt;/em&gt;&lt;/a&gt; library to construct the network.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://github.com/ozanerhansha/NeuralNetworks/tree/master/src/pongRL&quot;&gt;code&lt;/a&gt; for this network, dubbed PongNet, is in my &lt;a href=&quot;https://github.com/ozanerhansha/NeuralNetworks&quot;&gt;NeuralNetwork&lt;/a&gt; repository on GitHub.&lt;/p&gt;
+
+&lt;h2 id=&quot;results&quot;&gt;Results&lt;/h2&gt;
+&lt;p&gt;Learning starts to appear after 1500 games (a game goes on until one player reaches 20 points) and it reaches a 50% win-rate at around 8000 games. More testing needs to be done to see the maximum accuracy of this particular network.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/projects/pongdata.png?style=centerme&quot; alt=&quot;pongdata&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Below is the network (on a good day) playing against the same bot it trained with for 10,000 games.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/projects/pongai.gif?style=centerme&quot; alt=&quot;bc&quot; /&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Kinematics</title>
+   <link href="http://localhost:4000/2018/03/17/kinematics/"/>
+   <updated>2018-03-17T00:00:00-04:00</updated>
+   <id>http://localhost:4000/2018/03/17/kinematics</id>
+   <content type="html">&lt;!-- Make vectors bold rather than arrow headed --&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\renewcommand{\vec}[1]{\mathbf{#1}}&lt;/script&gt;
+Kinematics describes the motion of objects through space over time. Using an object’s &lt;a href=&quot;/2018/03/15/position&quot;&gt;position&lt;/a&gt;, velocity and acceleration vectors, it is possible to predict where it will be in the future and where it was in the past.&lt;/p&gt;
+
+&lt;h3 id=&quot;variable-acceleration&quot;&gt;Variable Acceleration&lt;/h3&gt;
+&lt;p&gt;To calculate the kinematics of an object with continuous acceleration, simply refer to the definitions of velocity and acceleration:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align}
+\vec{v}=\frac{d\vec{x}}{dt}\\
+\vec{a}=\frac{d\vec{v}}{dt}
+\end{align}&lt;/script&gt;
+
+&lt;p&gt;Integrating these equations we get:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align}
+\vec{x}=\int\vec{v} \,dt+\vec{x}_0\\
+\vec{v}=\int\vec{a} \,dt+\vec{v}_0
+\end{align}&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{x}&lt;/script&gt; is the object’s position as a function of time&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{x}_0&lt;/script&gt; is the initial position, at &lt;script type=&quot;math/tex&quot;&gt;t=0&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{v}&lt;/script&gt; is the object’s velocity as a function of time&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{v}_0&lt;/script&gt; is the initial velocity, at &lt;script type=&quot;math/tex&quot;&gt;t=0&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{a}&lt;/script&gt; is the object’s acceleration as a function of time&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt; is time&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--more--&gt;
+
+&lt;h3 id=&quot;constant-acceleration&quot;&gt;Constant Acceleration&lt;/h3&gt;
+&lt;p&gt;When acceleration is assumed to be constant, as is the case for many physical systems, the following kinematic equations can be derived:&lt;/p&gt;
+
+&lt;!-- #### Position Independent Equation
+$$\begin{align}
+\vec{v}&amp;=\int\vec{a} \,dt+\vec{v}_0 \tag{integral def. of \(\vec{v}\)}\\
+&amp;=\vec{a}\int dt+\vec{v}_0 \tag{\(\vec{a}\) is constant}\\
+&amp;=\vec{a}t+\vec{v}_0
+\end{align}$$ --&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Velocity Independent Equation&lt;/strong&gt;&lt;/summary&gt;
+&lt;p&gt;$$\begin{align}
+\vec{v}&amp;amp;=\int\vec{a} \,dt+\vec{v}_0 \tag{integral def. of \(\vec{v}\)}\\
+&amp;amp;=\vec{a}\int dt+\vec{v}_0 \tag{\(\vec{a}\) is constant}\\
+&amp;amp;=\vec{a}t+\vec{v}_0
+\end{align}$$&lt;/p&gt;
+&lt;p&gt;$$\boxed{\vec{v}=\vec{v}_0+\vec{a}t}$$&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;!-- #### Velocity Independent Equation
+$$\begin{align}
+\vec{v}&amp;=\vec{a}t+\vec{v}_0 \tag{\(\vec{x}\) independent Eq.}\\
+\vec{x}&amp;=\int\vec{v} \,dt+\vec{x}_0 \tag{integral def. of \(\vec{x}\)}\\
+&amp;=\int(\vec{a}t+\vec{v}_0) \,dt+\vec{x}_0 \\
+&amp;=\int\vec{a}t\,dt + \int\vec{v}_0 \,dt+\vec{x}_0 \\
+&amp;=\vec{a}\int t \,dt + \vec{v}_0t+\vec{x}_0 \tag{\(\vec{a}\) is constant}\\
+&amp;=\frac{\vec{a}t^2}{2}+\vec{v}_0t+\vec{x}_0
+\end{align}$$
+
+$$\boxed{\vec{x}=\frac{\vec{a}t^2}{2}+\vec{v}_0t+\vec{x}_0}$$ --&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Position Independent Equation&lt;/strong&gt;&lt;/summary&gt;
+&lt;p&gt;$$\begin{align}
+\vec{v}&amp;amp;=\vec{a}t+\vec{v}_0 \tag{\(\vec{x}\) independent Eq.}\\
+\vec{x}&amp;amp;=\int\vec{v} \,dt+\vec{x}_0 \tag{integral def. of \(\vec{x}\)}\\
+&amp;amp;=\int(\vec{a}t+\vec{v}_0) \,dt+\vec{x}_0 \\
+&amp;amp;=\int\vec{a}t\,dt + \int\vec{v}_0 \,dt+\vec{x}_0 \\
+&amp;amp;=\vec{a}\int t \,dt + \vec{v}_0t+\vec{x}_0 \tag{\(\vec{a}\) is constant}\\
+&amp;amp;=\frac{\vec{a}t^2}{2}+\vec{v}_0t+\vec{x}_0
+\end{align}$$&lt;/p&gt;
+&lt;p&gt;$$\boxed{\vec{x}=\vec{x}_0+\vec{v}_0t+\frac{\vec{a}t^2}{2}}$$&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;!-- #### Acceleration Independent Equation
+$$\begin{align}
+\vec{v}&amp;=\vec{a}t+\vec{v}_0 \tag{\(\vec{x}\) independent Eq.}\\
+\vec{a}&amp;=\frac{\vec{v}-\vec{v_0}}{t}\\
+\vec{x}&amp;=\frac{\vec{a}t^2}{2}+\vec{v}_0t+\vec{x}_0 \tag{\(\vec{v}\) independent Eq.}\\
+&amp;=\frac{\frac{\vec{v}-\vec{v_0}}{t}t^2}{2}+\vec{v}_0t+\vec{x}_0\\
+&amp;=\frac{\vec{v_0}+\vec{v}}{2}t+\vec{x}_0\\
+\end{align}$$
+
+$$\boxed{\vec{x}=\frac{\vec{v_0}+\vec{v}}{2}t+\vec{x}_0}$$ --&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Acceleration Independent Equation&lt;/strong&gt;&lt;/summary&gt;
+&lt;p&gt;$$\begin{align}
+\vec{v}&amp;amp;=\vec{a}t+\vec{v}_0 \tag{\(\vec{x}\) independent Eq.}\\
+\vec{a}&amp;amp;=\frac{\vec{v}-\vec{v_0}}{t}\\
+\vec{x}&amp;amp;=\frac{\vec{a}t^2}{2}+\vec{v}_0t+\vec{x}_0 \tag{\(\vec{v}\) independent Eq.}\\
+&amp;amp;=\frac{\frac{\vec{v}-\vec{v_0}}{t}t^2}{2}+\vec{v}_0t+\vec{x}_0\\
+&amp;amp;=\frac{\vec{v_0}+\vec{v}}{2}t+\vec{x}_0\\
+\end{align}$$&lt;/p&gt;
+&lt;p&gt;$$\boxed{\vec{x}=\vec{x}_0+\frac{\vec{v_0}+\vec{v}}{2}t}$$&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;!-- #### Time Independent Equation
+$$\begin{align}
+&amp;\vec{v}=\vec{a}t+\vec{v}_0 \tag{\(\vec{x}\) independent Eq.}\\
+&amp;{\vec{a}}t=\vec{v}-\vec{v}_0\\
+&amp;\vec{x}=\frac{\vec{v_0}+\vec{v}}{2}t+\vec{x}_0 \tag{\(\vec{a}\) independent Eq.}\\
+&amp;2(\vec{x}-\vec{x}_0)=(\vec{v}+\vec{v}_0)t\\
+\end{align}$$
+
+$$\begin{align}
+2\vec{a}\cdot(\vec{x}-\vec{x}_0)&amp;=(\vec{v}+\vec{v}_0)\cdot\vec{a}t\\
+&amp;=(\vec{v}+\vec{v}_0)\cdot(\vec{v}-\vec{v}_0) \tag{foil dot product}\\
+&amp;=\vec{v} \cdot \vec{v} - \vec{v}_0 \cdot \vec{v}_0\\
+&amp;=\left \| \vec{v} \right \|^2-\left \| \vec{v}_0 \right \|^2\\
+\end{align}$$
+
+$$\boxed{\left \| \vec{v} \right \|^2 = 2\vec{a}\cdot(\vec{x}-\vec{x}_0)+\left \| \vec{v}_0 \right \|^2}$$ --&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Time Independent Equation&lt;/strong&gt;&lt;/summary&gt;
+&lt;p&gt;$$\begin{align}
+&amp;amp;\vec{v}=\vec{a}t+\vec{v}_0 \tag{\(\vec{x}\) independent Eq.}\\
+&amp;amp;{\vec{a}}t=\vec{v}-\vec{v}_0\\
+&amp;amp;\vec{x}=\frac{\vec{v_0}+\vec{v}}{2}t+\vec{x}_0 \tag{\(\vec{a}\) independent Eq.}\\
+&amp;amp;2(\vec{x}-\vec{x}_0)=(\vec{v}+\vec{v}_0)t\\
+\end{align}$$
+
+$$\begin{align}
+2\vec{a}\cdot(\vec{x}-\vec{x}_0)&amp;amp;=(\vec{v}+\vec{v}_0)\cdot\vec{a}t\\
+&amp;amp;=(\vec{v}+\vec{v}_0)\cdot(\vec{v}-\vec{v}_0) \tag{foil dot product}\\
+&amp;amp;=\vec{v} \cdot \vec{v} - \vec{v}_0 \cdot \vec{v}_0\\
+&amp;amp;=\left \| \vec{v} \right \|^2-\left \| \vec{v}_0 \right \|^2\\
+\end{align}$$&lt;/p&gt;
+
+&lt;p&gt;$$\boxed{\left \| \vec{v} \right \|^2 = 2\vec{a}\cdot(\vec{x}-\vec{x}_0)+\left \| \vec{v}_0 \right \|^2}$$&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;h3 id=&quot;book-keeping&quot;&gt;Book Keeping&lt;/h3&gt;
+&lt;p&gt;There are a couple of things we can do to clean up this set of 4 equations before we display them all together.&lt;/p&gt;
+
+&lt;h4 id=&quot;displacement-vs-position&quot;&gt;Displacement vs. Position&lt;/h4&gt;
+&lt;p&gt;While these equations describe the movement of an object in terms of its initial and current position, &lt;script type=&quot;math/tex&quot;&gt;\vec{x}_0&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\vec{x}&lt;/script&gt; respectively, it is common to think about kinematics in terms of &lt;strong&gt;displacement&lt;/strong&gt; or change in distance instead. The change in distance &lt;script type=&quot;math/tex&quot;&gt;\Delta\vec{x}&lt;/script&gt; is denoted:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\Delta\vec{x}=\vec{x}-\vec{x}_0&lt;/script&gt;
+
+&lt;h4 id=&quot;average-velocity&quot;&gt;Average Velocity&lt;/h4&gt;
+&lt;p&gt;If we look at the acceleration independent equation, we can see it contains the expression &lt;script type=&quot;math/tex&quot;&gt;\frac{\vec{v_0}+\vec{v}}{2}&lt;/script&gt;. As it turns out, when acceleration is constant, this expression is actually equivalent to the object’s &lt;strong&gt;average velocity&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\overline{\vec{v}}&lt;/script&gt;:&lt;/p&gt;
+
+&lt;details&gt;
+&lt;summary&gt;Derivation&lt;/summary&gt;
+&lt;p&gt;$$\begin{align}
+&amp;amp;\overline{\vec{v}}=\frac{\vec{x}-\vec{x}_0}{t} \tag{def. of \(\overline{\vec{v}}\)}\\
+&amp;amp;\overline{\vec{v}}t=\vec{x}-\vec{x}_0\\
+&amp;amp;\vec{x}-\vec{x}_0=\frac{\vec{a}t^2}{2}+\vec{v}_0t \tag{\(\vec{v}\) independent Eq.}\\
+&amp;amp;\overline{\vec{v}}t=\frac{\vec{a}t^2}{2}+\vec{v}_0t\\
+&amp;amp;\overline{\vec{v}}=\frac{\vec{a}t}{2}+\vec{v}_0\\
+&amp;amp;\vec{v}=\vec{a}t+\vec{v}_0 \tag{\(\vec{x}\) independent Eq.}\\
+&amp;amp;\vec{a}t=\vec{v}-\vec{v}_0\\
+&amp;amp;\overline{\vec{v}}=\frac{\vec{v}-\vec{v}_0}{2}+\vec{v}_0=\frac{\vec{v_0}+\vec{v}}{2}
+\end{align}$$&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\boxed{\overline{\vec{v}}=\frac{\vec{v_0}+\vec{v}}{2}}&lt;/script&gt;
+
+&lt;h4 id=&quot;dot-product&quot;&gt;Dot Product&lt;/h4&gt;
+&lt;p&gt;When deriving the time independent kinematic equation, we used the dot product when manipulating the expressions &lt;script type=&quot;math/tex&quot;&gt;(\vec{v}+\vec{v}_0)\cdot \vec{a}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(\vec{v}+\vec{v}_0)\cdot(\vec{v}-\vec{v}_0)&lt;/script&gt;. We were justified in doing so because the dot product is both commutative and distributive.&lt;/p&gt;
+
+&lt;p&gt;The dot product of a vector with itself is that vector’s &lt;strong&gt;squared norm&lt;/strong&gt; and is often denoted as such:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\vec{v}\cdot\vec{v}=\left \| \vec{v} \right \|^2=v^2&lt;/script&gt;
+
+&lt;h4 id=&quot;the-kinematic-equations&quot;&gt;The Kinematic Equations&lt;/h4&gt;
+&lt;p&gt;Taking into account average velocity, the simpler dot product notation and using displacement instead of position, we can rewrite the kinematic equations for constant acceleration as:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{gather}
+&amp;\vec{v}=\vec{v}_0+\vec{a}t \tag{\(\vec{x}\) independent}\\
+&amp;\Delta\vec{x}=\vec{v}_0t+\frac{\vec{a}t^2}{2} \tag{\(\vec{v}\) independent}\\
+&amp;\Delta\vec{x}=\overline{\vec{v}}t=\frac{\vec{v_0}+\vec{v}}{2}t \tag{\(\vec{a}\) independent}\\
+&amp;v^2 = v_0^2+2\vec{a}\cdot\Delta\vec{x} \tag{t independent}
+\end{gather} %]]&gt;&lt;/script&gt;
+
+&lt;h3 id=&quot;graphing&quot;&gt;Graphing&lt;/h3&gt;
+&lt;p&gt;When the position, velocity and acceleration functions are graphed with respect to time, their graphs are related by the kinematic equations.&lt;/p&gt;
+
+&lt;h4 id=&quot;general-info&quot;&gt;General Info&lt;/h4&gt;
+&lt;p&gt;For any graph of &lt;script type=&quot;math/tex&quot;&gt;\vec{x}(t)&lt;/script&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Slope of the secant line created by two points is the average velocity during that time interval.&lt;/li&gt;
+  &lt;li&gt;Slope of line tangent to curve at time &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt; is the object’s instantaneous velocity at &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For any graph of &lt;script type=&quot;math/tex&quot;&gt;\vec{v}(t)&lt;/script&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Slope of the secant line created by two points is the average acceleration during that time interval.&lt;/li&gt;
+  &lt;li&gt;Slope of line tangent to curve at time &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt; is the object’s instantaneous acceleration at &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;Area under a region of the curve from &lt;script type=&quot;math/tex&quot;&gt;[a,b]&lt;/script&gt; is the object’s displacement during &lt;script type=&quot;math/tex&quot;&gt;[a,b]&lt;/script&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For any graph of &lt;script type=&quot;math/tex&quot;&gt;\vec{a}(t)&lt;/script&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Area under a region of the curve from &lt;script type=&quot;math/tex&quot;&gt;[a,b]&lt;/script&gt; is the object’s change in velocity during &lt;script type=&quot;math/tex&quot;&gt;[a,b]&lt;/script&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;an-object-at-rest&quot;&gt;An Object at Rest&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/physics/kinematics_at_rest.png?style=centerme&quot; alt=&quot;graphs&quot; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{x}(t) = c&lt;/script&gt;, where c is a constant.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{v}(t)=&lt;/script&gt; 0&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{a}(t)=&lt;/script&gt; 0&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;an-object-with-constant-velocity&quot;&gt;An Object with Constant Velocity&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/physics/kinematics_const_vel.png?style=centerme&quot; alt=&quot;graphs&quot; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{x}(t)&lt;/script&gt; is linear.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{v}(t) = c&lt;/script&gt;, where c is a constant.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{a}(t)=&lt;/script&gt; 0&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;an-object-with-constant-acceleraion&quot;&gt;An Object with Constant Acceleraion&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/physics/kinematics_const_accel.png?style=centerme&quot; alt=&quot;graphs&quot; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{x}(t)&lt;/script&gt; is quadratic.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{v}(t)&lt;/script&gt; is linear.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{a}(t) = c&lt;/script&gt;, where c is a constant.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Position</title>
+   <link href="http://localhost:4000/2018/03/15/position/"/>
+   <updated>2018-03-15T00:00:00-04:00</updated>
+   <id>http://localhost:4000/2018/03/15/position</id>
+   <content type="html">&lt;p&gt;The position of a particle or object in &lt;strong&gt;space&lt;/strong&gt; is defined as a point on an n-dimensional &lt;strong&gt;Cartesian coordinate system&lt;/strong&gt;. This point can equivalently be thought of as a vector.&lt;/p&gt;
+
+&lt;h3 id=&quot;classical-physics&quot;&gt;Classical Physics&lt;/h3&gt;
+&lt;p&gt;In classical physics, a position or displacement &lt;script type=&quot;math/tex&quot;&gt;\vec{x}&lt;/script&gt; is a 3-dimensional vector with components &lt;script type=&quot;math/tex&quot;&gt;\left(x,y,z\right)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Position is used to refer to a specific point in a coordinate space while displacement refers to the distance traveled from an initial point (usually this point is the origin making position and displacement equivalent)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The magnitude of displacement, or net &lt;strong&gt;distance&lt;/strong&gt;, is calculated the same as any other vector:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\left|\vec{x}\right|=\sqrt{x^2+y^2+z^2}&lt;/script&gt;
+
+&lt;h4 id=&quot;displacement-function&quot;&gt;Displacement Function&lt;/h4&gt;
+&lt;p&gt;An object’s position can be described as a function in time, &lt;script type=&quot;math/tex&quot;&gt;\vec{x}(t)&lt;/script&gt;. This position function would then map from time to 3D-space:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\vec{x}:\mathbb{R}\rightarrow \mathbb{R}^3&lt;/script&gt;
+
+&lt;p&gt;Taking the derivative of an object’s displacement function with respect to &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt; provides the object’s &lt;a href=&quot;&quot;&gt;velocity&lt;/a&gt; function, &lt;script type=&quot;math/tex&quot;&gt;\vec{v}(t)&lt;/script&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\mathrm{d}}{\mathrm{d}t}\vec{x}(t)=\vec{v}(t)&lt;/script&gt;
+
+&lt;!--more--&gt;
+
+&lt;!-- Click [here]() for a list of the repeated time derivatives of displacement. --&gt;
+
+&lt;h3 id=&quot;relativity&quot;&gt;Relativity&lt;/h3&gt;
+&lt;p&gt;In relativity, position is only invariant in a particular non-inertial reference frame. This necessitates a notion of position that is invariant with respect to space-time. This 4-dimensional position (3 spatial dimensions and 1 time) is called 4-position, or more commonly as an &lt;strong&gt;event&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;An event is defined as a 4-dimensional vector with components &lt;script type=&quot;math/tex&quot;&gt;\left(t,x,y,z\right)&lt;/script&gt;. Relativity shows that events that occur at the same time in one reference frame, don’t necessarily happen at the same time in another. This is known as &lt;strong&gt;relativity of simultaneity&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;In special relativity the distance between two positions is not invariant in different reference frames. This brings us to the &lt;strong&gt;spacetime interval&lt;/strong&gt;. The spacetime interval, &lt;script type=&quot;math/tex&quot;&gt;(\Delta s)^2&lt;/script&gt; between two events stays constant in all reference frames:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;(\Delta s)^2=(c\Delta t)^2-(\Delta x)^2-(\Delta y)^2-(\Delta z)^2&lt;/script&gt;
+
+&lt;h3 id=&quot;quantum-mechanics&quot;&gt;Quantum Mechanics&lt;/h3&gt;
+&lt;p&gt;In quantum mechanics, the state of a particle is given, and completely described, by its &lt;strong&gt;wavefunction&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\psi(\mathbf{x}, t)&lt;/script&gt;. With &lt;script type=&quot;math/tex&quot;&gt;\mathbf{x}&lt;/script&gt; being a point in 3-space and &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt; being a point in time. &lt;script type=&quot;math/tex&quot;&gt;\psi&lt;/script&gt; returns a complex valued probability amplitude.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\psi:\mathbb{R^4}\rightarrow \mathbb{C}&lt;/script&gt;
+
+&lt;p&gt;The probability of observing a particle, in the one dimensional case, at position &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; at time &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt; is given by &lt;script type=&quot;math/tex&quot;&gt;\left \vert \psi \right \vert^2&lt;/script&gt;. This implies that for a given time &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\int_{-\infty}^{\infty}\left | \psi(x) \right |^2 dx=1&lt;/script&gt;
+
+&lt;p&gt;Because the particle has to be somewhere in space, so the probabilities must sum to 1. We integrate from &lt;script type=&quot;math/tex&quot;&gt;-\infty&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;\infty&lt;/script&gt; since the particle is a wave spread out over all of space. With some vector calculus, this can extended to the 3D case we see in the real world.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Physics</title>
+   <link href="http://localhost:4000/2018/03/14/physics/"/>
+   <updated>2018-03-14T00:00:00-04:00</updated>
+   <id>http://localhost:4000/2018/03/14/physics</id>
+   <content type="html">&lt;p&gt;Physics is the branch of science that studies the properties and mechanics of matter, energy and spacetime.&lt;/p&gt;
+
+&lt;p&gt;There are 3 main divisions of physics:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#classical-physics&quot;&gt;Classical Physics&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#special--general-relativity&quot;&gt;Special &amp;amp; General Relativity&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#quantum-mechanics-qm&quot;&gt;Quantum Mechanics&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/5/56/Modernphysicsfields.svg?style=centerme&quot; alt=&quot;physics&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;classical-physics&quot;&gt;Classical Physics&lt;/h3&gt;
+&lt;p&gt;Classical physics is a catch all for the theories of physics that predated the relativistic and quantum theories of physics we have today. They very adequately describe the interactions and mechanics of everyday objects, fluids, gasses, electricity, magnetism, and even celestial bodies.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h3 id=&quot;special--general-relativity&quot;&gt;Special &amp;amp; General Relativity&lt;/h3&gt;
+&lt;h4 id=&quot;special-relativity-sr&quot;&gt;Special Relativity (SR)&lt;/h4&gt;
+&lt;p&gt;When the speeds of the objects being studied approach the speed of light, classical physics no longer suffices to accurately describe physical phenomena. In this case it’s necessary to use Einstein’s theory of special relativity, which is wholly derived from two postulates:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The laws of physics are the same for all non-accelerating frames of reference.&lt;/li&gt;
+  &lt;li&gt;The speed of light is constant in all reference frames.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The theory models the 3 dimensions of space and 1 dimension of time as a singular 4D spacetime. It explains various high speed phenomena as well the inconsistencies between classical mechanics and the classical theory of electromagnetism.&lt;/p&gt;
+
+&lt;p&gt;SR has been widely successful and has even been incorporated with quantum mechanics to form quantum field theory. That said, special relativity doesn’t explain or deal with the force of gravity, keeping spacetime flat rather than curved.&lt;/p&gt;
+
+&lt;h4 id=&quot;general-relativity-gr&quot;&gt;General Relativity (GR)&lt;/h4&gt;
+&lt;p&gt;This shortcoming led to the theory of general relativity. It generalizes special relativity and Newton’s law of gravitation into a coherent theory where the curvature of spacetime itself becomes responsible for the force of gravity. Unfortunately, unlike special relativity, there has been no successful marriage of general relativity and quantum mechanics. A quantum theory of gravity remains a major goal of modern physics.&lt;/p&gt;
+
+&lt;h3 id=&quot;quantum-mechanics-qm&quot;&gt;Quantum Mechanics (QM)&lt;/h3&gt;
+&lt;p&gt;When considering matter and energy on very small scales, both classical and relativistic physics break down. This led to the creation of quantum mechanics, which mathematically grounds the mechanics and temporal evolution of subatomic particles. Quantum mechanics itself is not a theory of a particular type of particle like bosons or photons. Think of it as an analogue to classical mechanics which cover the motion and forces that act upon an object.&lt;/p&gt;
+
+&lt;h4 id=&quot;quantum-field-theory&quot;&gt;Quantum Field Theory&lt;/h4&gt;
+&lt;p&gt;By combining quantum mechanics and special relativity, we are left with a framework for creating quantum theories of subatomic particles. QFTs like quantum electrodynamics and chromodynamics both describe the interactions of a particular type of fundamental force (electromagnetism and the strong nuclear force respectively). These theories, via QM, model particles as perturbations (waves) on an underlying field that permeates all of space.&lt;/p&gt;
+
+&lt;!-- &lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Quantum Field Theory&lt;/strong&gt;&lt;/summary&gt;
+&lt;p&gt;By combining quantum mechanics and special relativity, we are left with a framework for creating quantum theories of subatomic particles. QFTs like quantum electrodynamics and chromodynamics both describe the interactions of a particular type of fundamental force (electromagnetism and the strong nuclear force respectively). These theories, via QM, model particles as perturbations (waves) on an underlying field that permeates all of space.&lt;/p&gt;
+&lt;/details&gt; --&gt;
+
+&lt;!-- #### Quantum Electrodynamics (QED)
+Quantum electrodynamics is the QFT of the electromagnetic force. It is the quantum analogue to classical electrodynamics and completely describes the interactions between matter and the electromagnetic force (which is mediated by photons). --&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Quantum Electrodynamics (QED)&lt;/strong&gt;&lt;/summary&gt;
+&lt;p&gt;Quantum electrodynamics is the QFT of the electromagnetic force. It is the quantum analogue to classical electrodynamics and completely describes the interactions between matter and the electromagnetic force (which is mediated by photons).&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;!-- #### Electroweak Theory (EWT)
+Electroweak theory is a QFT that provides a unified description of both the electromagnetic and weak nuclear force (The weak force being responsible for the radioactive decay of atoms).
+
+EWT is thus a generalization of QED that adds on the weak force. Right after the big bang, the universe was hot enough that these two forces were one indistinguishable force. The theory describes the electroweak force before that time and the separate electromagnetic and weak forces after that time. --&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Electroweak Theory (EWT)&lt;/strong&gt;&lt;/summary&gt;
+&lt;p&gt;Electroweak theory is a QFT that provides a unified description of both the electromagnetic and weak nuclear force (The weak force being responsible for the radioactive decay of atoms).&lt;/p&gt;
+
+&lt;p&gt;EWT is thus a generalization of QED that adds on the weak force. Right after the big bang, the universe was hot enough that these two forces were one indistinguishable force. The theory describes the electroweak force before that time and the separate electromagnetic and weak forces after that time.&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;!-- #### Quantum Chromodynamics (QCD)
+Quantum chromodynamics is the QFT of the strong nuclear force. This theory describes the interactions between quarks and gluons. The strong nuclear force is the force that keeps the hadrons (which are made up of quarks and gluons) in atomic nuclei bonded together. --&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Quantum Chromodynamics (QCD)&lt;/strong&gt;&lt;/summary&gt;
+&lt;p&gt;Quantum chromodynamics is the QFT of the strong nuclear force. This theory describes the interactions between quarks and gluons. The strong nuclear force is the force that keeps the hadrons (which are made up of quarks and gluons) in atomic nuclei bonded together.&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;h4 id=&quot;standard-model-of-physics&quot;&gt;Standard Model of Physics&lt;/h4&gt;
+&lt;p&gt;The Standard Model is the combination of QED, EQT, and QCD into one unified theory of electromagnetism, the weak nuclear force, and the strong nuclear force. It is humanity’s ultimate theory of the universe. That said, it still lacks a description of gravity. Such a theory of quantum gravity would allow for the creation of a “Theory of Everything” (TOE) that describes all four fundamental forces in tandem.
+&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/0/00/Standard_Model_of_Elementary_Particles.svg?style=centerme&quot; alt=&quot;standardmodel&quot; /&gt;&lt;/p&gt;
+
+&lt;!-- &lt;details open&gt;
+&lt;summary&gt;&lt;strong&gt;Standard Model of Physics&lt;/strong&gt;&lt;/summary&gt;
+&lt;p&gt;The Standard Model is the combination of all the QFT into one unified theory of electromagnetism, the weak nuclear force, and the strong nuclear force. It is humanity's ultimate theory of the universe. That said, it still lacks a description of gravity. Such a theory of quantum gravity would allow for the creation of a &quot;Theory of Everything&quot; (TOE) that describes all four fundamental forces in tandem.&lt;/p&gt;
+&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/0/00/Standard_Model_of_Elementary_Particles.svg?style=centerme&quot; alt=&quot;standard model pic&quot;&gt;&lt;/img&gt;
+&lt;/details&gt; --&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Parity Sequences</title>
+   <link href="http://localhost:4000/2018/03/03/parity-sequences/"/>
+   <updated>2018-03-03T00:00:00-05:00</updated>
+   <id>http://localhost:4000/2018/03/03/parity-sequences</id>
+   <content type="html">&lt;!-- Thought about this when we had to find Taylor series' for certain sinusoidal functions and the terms had hard to capture patterns of negative/even terms. It is possible to capture this via more sinusoidal functions but I wanted a polynomial answer. I don't think there is a polynomial answer for the general case, and the 2 examples below are the extent of my findings. --&gt;
+
+&lt;p&gt;A parity sequence is a sequence of numbers that follow a set pattern of even and odd. The notation we will use is “&lt;script type=&quot;math/tex&quot;&gt;+&lt;/script&gt;” for even and “&lt;script type=&quot;math/tex&quot;&gt;-&lt;/script&gt;” for odd.&lt;/p&gt;
+
+&lt;h2 id=&quot;examples&quot;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;All examples start indexing at 0 (the most rational way to index lists).&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{alignat*}{2}
+  S_n=\frac{n(n-1)}{2}&amp; &amp;&amp;= \{0,0,1,3,6,10,15,21,\cdots\} &amp;&amp; \\
+  &amp; &amp;&amp;\rightarrow\{+,+,-,-,+,+,-,-,\cdots\} &amp;&amp; \\
+  S_n=\frac{n^2(n-1)}{2}&amp; &amp;&amp;= \{0,0,2,9,24,50,90,630,\cdots\} &amp;&amp;\\
+  &amp; &amp;&amp;\rightarrow\{+,+,+,-,+,+,+,-,\cdots\}&amp;&amp;\\
+  S_n=\cos \frac{n\pi}{2}&amp; &amp;&amp;= \{1,0,-1,0,1,0,-1,0,\cdots\} &amp;&amp;\\
+  &amp; &amp;&amp;\rightarrow\{-,+,-,+,-,+,-,+,\cdots\}&amp;&amp;
+\end{alignat*} %]]&gt;&lt;/script&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;use&quot;&gt;Use&lt;/h2&gt;
+&lt;p&gt;Notice that when we raise &lt;script type=&quot;math/tex&quot;&gt;-1&lt;/script&gt; to the power of one of these sequences, it will evaluate to &lt;script type=&quot;math/tex&quot;&gt;+1&lt;/script&gt; for even values and &lt;script type=&quot;math/tex&quot;&gt;-1&lt;/script&gt; for odd values.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This property is where the &lt;script type=&quot;math/tex&quot;&gt;+&lt;/script&gt; &lt;script type=&quot;math/tex&quot;&gt;-&lt;/script&gt; notation comes from.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;When constructing things like Taylor Series’, this is a useful property to have. Terms that alternate from negative to positives can be dealt with by appending a factor of &lt;script type=&quot;math/tex&quot;&gt;(-1)^{S_n}&lt;/script&gt; to the series.&lt;/p&gt;
+
+&lt;h2 id=&quot;equivalence&quot;&gt;Equivalence&lt;/h2&gt;
+&lt;p&gt;When the corresponding elements of two sequences have the same parity, we can call those two sequences &lt;strong&gt;parity equivalent&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;This can be formally stated as:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\forall n\in\mathbb{N},\text{ }(-1)^{A_n}=(-1)^{B_n}&lt;/script&gt;
+
+&lt;p&gt;i.e for all Natural Numbers &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt;, if &lt;script type=&quot;math/tex&quot;&gt;-1&lt;/script&gt; to the &lt;script type=&quot;math/tex&quot;&gt;A_n&lt;/script&gt; equals &lt;script type=&quot;math/tex&quot;&gt;-1&lt;/script&gt; to the &lt;script type=&quot;math/tex&quot;&gt;B_n&lt;/script&gt;, then the sequences &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; are parity equivalent.&lt;/p&gt;
+
+&lt;h2 id=&quot;parity-swap&quot;&gt;Parity Swap&lt;/h2&gt;
+&lt;p&gt;A useful property to take note of when constructing these sequences is that adding &lt;script type=&quot;math/tex&quot;&gt;1&lt;/script&gt; to the sequence flips the parity of each element in the sequence:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+S_n=\frac{n(n-1)}{2}&amp;=\{0,0,1,3,6,10,\cdots\}\\
+&amp;\rightarrow\{+,+,-,-,+,+,\cdots\}\\
+S'_n=\frac{n(n-1)}{2}+1&amp;=\{1,1,2,4,7,11,\cdots\}\\
+&amp;\rightarrow\{-,-,+,+,-,-,\cdots\}
+\end{align} %]]&gt;&lt;/script&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Fractional Calculus</title>
+   <link href="http://localhost:4000/2018/01/30/fractional-calculus/"/>
+   <updated>2018-01-30T00:00:00-05:00</updated>
+   <id>http://localhost:4000/2018/01/30/fractional-calculus</id>
+   <content type="html">&lt;h2 id=&quot;basic-differentiation&quot;&gt;Basic Differentiation&lt;/h2&gt;
+&lt;p&gt;In general terms, derivatives are a measure of how a function changes with respect to another variable. Not all functions have derivatives, but those that do are called &lt;strong&gt;differentiable&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;The derivative of a function is itself a function and thus can be further differentiated. This means we can define things like the &lt;strong&gt;second derivative&lt;/strong&gt; which is obtained by successively taking the derivative of a function twice.&lt;/p&gt;
+
+&lt;p&gt;Take the function &lt;script type=&quot;math/tex&quot;&gt;x^3&lt;/script&gt;. It’s first derivative is usually denoted:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\mathrm{d} }{\mathrm{d} x}x^3=3x^2&lt;/script&gt;
+
+&lt;p&gt;It’s second derivative is denoted:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\mathrm{d} }{\mathrm{d} x}\left(\frac{\mathrm{d} }{\mathrm{d} x}x^3\right)=\frac{\mathrm{d^2} }{\mathrm{d} x^2}x^3=6x&lt;/script&gt;
+
+&lt;p&gt;We can extend this idea (and its notation) to any integer &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; forming the nth derivative of a function &lt;script type=&quot;math/tex&quot;&gt;f(x)&lt;/script&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\mathrm{d^n} }{\mathrm{d} x^n}f(x)&lt;/script&gt;
+
+&lt;!--more--&gt;
+
+&lt;h4 id=&quot;differential-operator&quot;&gt;Differential operator&lt;/h4&gt;
+&lt;p&gt;Before we go any further, let’s introduce a less cumbersome notation for differentiation:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\mathrm{d} }{\mathrm{d} x}f(x)=D[f(x)]=Df\\
+\frac{\mathrm{d^n} }{\mathrm{d} x^n}f(x)=D^n[f(x)]=D^nf&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;This is called the &lt;a href=&quot;https://en.wikipedia.org/wiki/Differential_operator&quot;&gt;differential operator&lt;/a&gt; its used in other fields of calculus. Since all our functions are of one variable (&lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;) there is no ambiguity in using it. Also note that the operators are not being raised to a power, it’s just notation&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Also note that the differential operator also includes antidifferentiation, or integration. The indefinite integral of a function &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is just:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\int{f(x)}\,\mathrm{d}x=D^{-1}[f(x)]=D^{-1}f&lt;/script&gt;
+
+&lt;p&gt;And further integrals can be defined as you’d expect:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\iint{f(x)}\,\mathrm{d}x=D^{-2}[f(x)]=D^{-2}f\\
+\iiint{f(x)}\,\mathrm{d}x=D^{-3}[f(x)]=D^{-3}f&lt;/script&gt;
+
+&lt;!-- ## Halving Operators
+Before we get to fractional derivatives, we need to understand what it means to extend an operator to non-integer forms.
+
+#### Exponentiation
+Take exponentiation. It is naively defined as repeated multiplication:
+
+$$x^n=\underbrace{x\times x\times x\cdots}_{n\text{ times}}$$
+
+So a number, say 5, to the power of 3 is simply:
+
+$$5^3=5\times 5\times 5=125$$
+
+But what if I plugged in $\frac{1}{2}$ for n? What does it mean to multiply $x$ by itself half a time?
+
+#### Adding Exponents
+Let's take a step back to regular exponentiation, the kind with integer exponents. One of the properties of exponentiation is that multiplying two numbers of the same base is the same as adding their exponents together:
+
+$$x^n\times x^m=x^{n+m}$$
+
+This should be clear with an example:
+
+$$x^3\times x^2=(x\times x\times x)\times(x\times x)=x^5$$
+
+So what? Well, if our notion of 'fractional' exponents is to hold we, it should satisfy this property (i.e $x^{1/2}\times x^{1/2}=x^{1/2+1/2}=x$).
+
+This is what we call the **square root** of a number $x$. --&gt;
+
+&lt;h2 id=&quot;fractional-differentiation&quot;&gt;Fractional Differentiation&lt;/h2&gt;
+&lt;p&gt;Naturally, one might ask the question “What about derivatives of a non-integer order?” What might such a nonstandard derivative look like? Well, too help us out, let’s take a look at a property of derivatives.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;D^n(D^mf)=D^{n+m}f&lt;/script&gt;
+
+&lt;p&gt;That is, the &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt;th derivative of the &lt;script type=&quot;math/tex&quot;&gt;m&lt;/script&gt;th derivative of a function is equivalent to the &lt;script type=&quot;math/tex&quot;&gt;(n+m)&lt;/script&gt;th derivative of the function. This should come as no surprise as the definition of the second, third, etc. derivatives are just repeated use of the differential operator:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align*}
+D(Df)=D^2f \tag{Because 1+1=2}\\
+D(D^2f)=D^3f \tag{Because 1+2=3}\\
+D(D^3f)=D^4f \tag{Because 1+3=4}\\
+\end{align*}&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;This should remind you of exponents and their properties. As well as the fact that it is not immediately clear what &lt;script type=&quot;math/tex&quot;&gt;x^{1/2}&lt;/script&gt; means.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;It should follow that there exists half derivatives, or &lt;strong&gt;semiderivatives&lt;/strong&gt;, of functions. This semiderivative has to satisfy the following:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;D^{1/2}D^{1/2}f=Df \tag{Because 1/2+1/2=1}&lt;/script&gt;
+
+&lt;h4 id=&quot;power-rule&quot;&gt;Power Rule&lt;/h4&gt;
+&lt;p&gt;But how do we calculate &lt;script type=&quot;math/tex&quot;&gt;D^{1/2}f&lt;/script&gt;? Let’s assume &lt;script type=&quot;math/tex&quot;&gt;f(x)&lt;/script&gt; is some polynomial function. If that’s the case we can apply the power rule to find the first and second derivatives:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;Dx^n=nx^{n-1}\\
+D^2x^n=n(n-1)x^{n-2}&lt;/script&gt;
+
+&lt;p&gt;As we find higher and higher derivatives a pattern emerges:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;D^kx^n=\frac{n!}{(n-k)!}x^{n-k}&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;If that wasn’t clear, realize that as we successively apply the power rule we multiply the expression by its power then subtract its power by 1 and so on forming a partial factorial. To deal with the fact that these terms don’t form a full factorial, we divide by the missing terms which are encapsulated by &lt;script type=&quot;math/tex&quot;&gt;(n-k)!&lt;/script&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;the-gamma-function&quot;&gt;The Gamma Function&lt;/h4&gt;
+&lt;p&gt;This formula works for any integer order derivative but if we attempt to plug, say 1/2, into the expression we’re left with:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;D^{1/2}x^n=\frac{n!}{(n-\frac{1}{2})!}x^{n-\frac{1}{2}}&lt;/script&gt;
+
+&lt;p&gt;When &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is an integer, &lt;script type=&quot;math/tex&quot;&gt;n-\frac{1}{2}&lt;/script&gt;, will always be a rational number. This means we cannot evaluate the denominator because the factorial function &lt;script type=&quot;math/tex&quot;&gt;x!&lt;/script&gt; is only defined for integer &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;But luckily there is a way to amend the factorial function such that it accepts any real (and even complex) numbers. This done by a process known as &lt;a href=&quot;https://en.wikipedia.org/wiki/Analytic_continuation&quot;&gt;&lt;strong&gt;analytical continuation&lt;/strong&gt;&lt;/a&gt;, resulting in a &lt;em&gt;unique&lt;/em&gt; generalized function.&lt;/p&gt;
+
+&lt;p&gt;The generalized factorial function is called the &lt;a href=&quot;https://en.wikipedia.org/wiki/Gamma_function&quot;&gt;&lt;strong&gt;gamma function&lt;/strong&gt;&lt;/a&gt; and is denoted: &lt;script type=&quot;math/tex&quot;&gt;\Gamma(x)&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2018/01/fractional-calculus/gamma_function.png?style=centerme&quot; alt=&quot;gamma graph&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In the graph above you’ll see that the gamma function returns the same result as factorial for integer values, but is shifted over by 1:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\Gamma(x+1)=x!\tag{for all integer x}&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;Why is the gamma function shifted over by 1? Well no particular reason, it’s just an unfortunate turn of mathematical history&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;There is so much interesting math that makes use of the Gamma Function that I couldn’t even hope to touch on it here. For the rest of this article I’ll assume you know how to google a &lt;a href=&quot;https://www.wolframalpha.com/input/?i=gamma+(x)&quot;&gt;‘gamma function calculator’&lt;/a&gt; for evaluating it.&lt;/p&gt;
+
+&lt;h4 id=&quot;fractional-power-rule&quot;&gt;Fractional Power Rule&lt;/h4&gt;
+&lt;p&gt;We now have all the necessary machinery to derive an expression for fractional (and indeed complex) order derivatives of polynomial functions. It’s as simple as replacing the factorial function in our original definition of the power rule with the continuous gamma function:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;D^kx^n=\frac{n!}{(n-k)!}x^{n-k} \rightarrow \frac{\Gamma(n+1)}{\Gamma(n-k+1)}x^{n-k}&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;Remember, we added 1 to each of the function’s arguments because the gamma function is shifted from factorial.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;And so now we have a general formula for the fractional derivative (or integral if &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt; is negative) of any polynomial.&lt;/p&gt;
+
+&lt;h4 id=&quot;an-example&quot;&gt;An Example&lt;/h4&gt;
+&lt;p&gt;Now we can finally take the semiderivative of a function. Let’s start off with a simple one: &lt;script type=&quot;math/tex&quot;&gt;f(x)=x&lt;/script&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align*}
+D^{1/2}x&amp;=\frac{\Gamma(1+1)}{\Gamma(1-1/2+1)}x^{1-1/2}\\
+&amp;=\frac{\Gamma(2)}{\Gamma(3/2)}\sqrt x \\
+&amp;=\frac{1}{\frac{\sqrt{\pi}}{2}}\sqrt x \\
+&amp;=2\sqrt{\frac{x}{\pi}}
+\end{align*} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Below, we can see the derivative of &lt;script type=&quot;math/tex&quot;&gt;y=x&lt;/script&gt; changing between it’s first derivative which is just the constant function &lt;script type=&quot;math/tex&quot;&gt;y=1&lt;/script&gt; and it’s first integral (i.e &lt;script type=&quot;math/tex&quot;&gt;D^{-1}x&lt;/script&gt;) which is &lt;script type=&quot;math/tex&quot;&gt;y=\frac{x^2}{2}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/a/ac/Fractional_Derivative_of_Basic_Power_Function_%282014%29.gif?style=centerme&quot; alt=&quot;continuous fractional derivative&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If we pause this animation at the semiderivative, &lt;script type=&quot;math/tex&quot;&gt;2\sqrt{\frac{x}{\pi}}&lt;/script&gt;, we get:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Half-derivative.svg/434px-Half-derivative.svg.png?style=centerme&quot; alt=&quot;graph of semiderivative of x&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;In blue is the function &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;, in red it’s first derivative, &lt;script type=&quot;math/tex&quot;&gt;1&lt;/script&gt;, and in purple it’s semiderivative.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;a-more-complex-example&quot;&gt;A More &lt;strong&gt;Complex&lt;/strong&gt; Example&lt;/h4&gt;
+&lt;p&gt;Let’s take a more complex example, the &lt;script type=&quot;math/tex&quot;&gt;(1+i)&lt;/script&gt;th derivative of &lt;script type=&quot;math/tex&quot;&gt;3x^4&lt;/script&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align*}
+D^{1+i}3x^4&amp;=\frac{\Gamma(4+1)}{\Gamma(3-(1+i)+1)}3x^{4-(1+i)}\\
+&amp;=\frac{\Gamma(5)}{\Gamma(3-i)}3x^{3-i}\\
+&amp;=\frac{24}{0.96+1.34i}3x^{3-i}\\
+&amp;=(25.48+35.44i)x^{3-i}
+\end{align*} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Unfortunately, the gamma function of complex numbers aren’t usually nice looking. As such, we have to use an approximate value for &lt;script type=&quot;math/tex&quot;&gt;\Gamma{(3-i)}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;If you’re wondering how to raise a number to a complex power, I’ve written about it and other consequences of Euler’s formula &lt;a href=&quot;https://medium.com/@ozanerhansha/applications-of-eulers-formula-857bf60ba32d&quot;&gt;here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;fractional-derivatives-of-other-common-functions&quot;&gt;Fractional Derivatives of other Common Functions&lt;/h2&gt;
+&lt;p&gt;You may have noticed that the above &lt;strong&gt;fractional power rule&lt;/strong&gt; for finding the fractional derivatives of polynomials isn’t very general. What about terms with negative exponents (i.e &lt;script type=&quot;math/tex&quot;&gt;x^{-5}&lt;/script&gt;)? The power rule above doesn’t work for them because the gamma function isn’t defined for negative integers (it is defined for all other negative real and complex numbers):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/5/52/Gamma_plot.svg?style=centerme&quot; alt=&quot;full real gamma function&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And we haven’t even mentioned the fractional derivatives of &lt;script type=&quot;math/tex&quot;&gt;e^{x}&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;\sin x&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;\cos x&lt;/script&gt;…&lt;/p&gt;
+
+&lt;p&gt;Deriving the fractional derivatives of these expressions is a lot to cram into one post, so I’ll shelve them for now.&lt;/p&gt;
+
+&lt;!-- ## Fractional Derivatives of General Functions
+What if you wanted to find the fractional/complex derivative of $$\sin x$$? $$e^x$$?, $$\Gamma(x)$$ itself? Well it certainly is possible, and the general formula is as follows:
+
+$$D^{n}f(x)={\frac {1}{\Gamma (1-n)}} \left( \frac{\mathrm{d} }{\mathrm{d} x}\int_{0}^{x}{\frac {f(t)}{(x-t)^{n}}}\,\mathrm{d}t \right)$$
+
+The problem is that the integral part:
+
+$$\int_{0}^{x}{\frac {f(t)}{(x-t)^{n}}}\,\mathrm{d}t$$
+
+Can be quite tricky to evaluate without very advanced techniques. Say we wanted to find the semiderivative of $$\sin x$$:
+
+$$
+\begin{align*}
+D^{1/2}f(x)&amp;=\frac {1}{\Gamma (1-1/2)} \left(\frac{\mathrm{d}}{\mathrm{d} x}\int_{0}^{x}{\frac {\sin(t)}{(x-t)^{1/2}}}\,\mathrm{d}t \right)
+\\
+&amp;=\frac {1}{\sqrt\pi} \left(\frac{\mathrm{d}}{\mathrm{d} x}\int_{0}^{x}{\frac{\sin(t)}{\sqrt{x-t}}}\,\mathrm{d}t \right)
+\end{align*}
+$$
+
+After simplifying the coefficient, we're left with the problem of integrating this expression:
+
+$$\int_{0}^{x}{\frac{\sin(t)}{\sqrt{x-t}}}\,\mathrm{d}t$$
+
+Which I personally cannot do. But that's ok, because others more skilled than I have already solved it for us. Click here for a table of [common fractional derivatives](https://link.springer.com/content/pdf/bbm%3A978-3-642-30898-7%2F1.pdf). --&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Minkowski Spacetime</title>
+   <link href="http://localhost:4000/2018/01/23/minkowski-spacetime/"/>
+   <updated>2018-01-23T00:00:00-05:00</updated>
+   <id>http://localhost:4000/2018/01/23/minkowski-spacetime</id>
+   <content type="html">&lt;h2 id=&quot;what-is-spacetime&quot;&gt;What is Spacetime?&lt;/h2&gt;
+&lt;p&gt;Before we talk about Minkowski Spacetime, we need to address what it means to combine space and time.&lt;/p&gt;
+
+&lt;p&gt;Imagine the Earth orbiting the sun. At every point in time it will be in a different point in its orbit:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.pitt.edu/~jdnorton/teaching/HPS_0410/chapters/spacetime/planet3d.gif?style=centerme&quot; alt=&quot;orbit2D&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If we stack these slices of time in a third (temporal) dimension, it would look like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.pitt.edu/~jdnorton/teaching/HPS_0410/chapters/spacetime/planet4d.gif?style=centerme&quot; alt=&quot;orbit3D&quot; /&gt;&lt;/p&gt;
+
+&lt;!-- *It looks similar to euler's formula, $$e^{i\theta}=\cos \theta + i\sin\theta$$, with space being the complex plane and time being the angle $$\theta$$. The imaginary part will come in handy later.* --&gt;
+
+&lt;p&gt;This is an example of a 3D spacetime. It has 2 dimensions of space and 1 of time. Our universe has 3 space and 1 time dimension, making our spacetime (referred to as &lt;em&gt;Minkowski Spacetime&lt;/em&gt;) 4 dimensional.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h4 id=&quot;why-do-this&quot;&gt;Why do this?&lt;/h4&gt;
+&lt;p&gt;Spacetime serves as a useful mathematical and intuitive model of the universe that we can use to reason about physics, particularly Einstein’s special relativity. Indeed, it was Einstein’s former teacher &lt;a href=&quot;https://en.wikipedia.org/wiki/Hermann_Minkowski&quot;&gt;Hermann Minkowski&lt;/a&gt; that came up with spacetime as a tool to understand his pupil’s breakthrough theory.&lt;/p&gt;
+
+&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
+&lt;p&gt;Formally speaking, Minkowski spacetime (which I’ll simply refer to as &lt;em&gt;spacetime&lt;/em&gt;) is an &lt;a href=&quot;\2017\05\21\abstract-algebra&quot;&gt;algebraic structure&lt;/a&gt; that represents space purely in mathematical terms. In particular it is a 4D &lt;a href=&quot;https://en.wikipedia.org/wiki/Vector_space&quot;&gt;vector space&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Points in this space are represented by vectors and are referred to as &lt;strong&gt;events&lt;/strong&gt;. The naming stems from the fact that these points represents both moments in time as well as locations in space.&lt;/p&gt;
+
+&lt;!-- Remove link to vector space wikipedia --&gt;
+&lt;!-- *If you don't know what a vector space is, I've written a post about it [here](\2018\01\20\vector-spaces).* --&gt;
+
+&lt;p&gt;An event, usually denoted &lt;script type=&quot;math/tex&quot;&gt;s&lt;/script&gt;, is represented by a 4D vector where &lt;script type=&quot;math/tex&quot;&gt;x,y,z,t&lt;/script&gt; are real numbers:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;s=(x,y,z,ict)&lt;/script&gt;
+
+&lt;p&gt;You may have noticed that the last coordinate, which corresponds to time, is multiplied by a factor of &lt;script type=&quot;math/tex&quot;&gt;ic&lt;/script&gt;. &lt;script type=&quot;math/tex&quot;&gt;i&lt;/script&gt;, as we know, is the imaginary unit and multiplying it by time makes the fourth coordinate an imaginary number. The fourth coordinate always being an imaginary number means that spacetime consists of 3 real spatial dimensions and one imaginary temporal dimension.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;c&lt;/script&gt; represents the speed of light (299,792,458 m/s) and when multiplied by a time value (like seconds) it gives the distance a photon would travel in that time. This is necessary to convert from time units to length units. It wouldn’t really make sense to have a position vector with different units for dimensions, as we’ll see…&lt;/p&gt;
+
+&lt;h4 id=&quot;an-example&quot;&gt;An Example&lt;/h4&gt;
+&lt;p&gt;Say you walk 2m forward out of your house, walk 3 meters to the right, and jump (an impressive) 1 meter into the air. Let’s also say that at the moment you were 1 meter in the air, 6 seconds had passed.&lt;/p&gt;
+
+&lt;p&gt;Setting the event of you leaving your house as the origin, the coordinates of the event of you jumping in the air are:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;x = 2m (forward)&lt;/li&gt;
+  &lt;li&gt;y = 3m (to the right)&lt;/li&gt;
+  &lt;li&gt;z = 1m (in the air)&lt;/li&gt;
+  &lt;li&gt;t = 6s (had passed since you left the house)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus that event in spacetime is represented by the ordered quadruplet:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align*}
+  s &amp;= (2,3,1,6\text{c}i) \\
+  &amp;= (2,3,1,1.80i\times 10^9) \\
+\end{align*} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Note that the time coordinate is much bigger in magnitude due to how large the speed of light is.&lt;/p&gt;
+
+&lt;p&gt;In this framework you can, loosely, consider 1 second to be equivalent to 299,792,458 imaginary meters.&lt;/p&gt;
+
+&lt;h2 id=&quot;proper-distance&quot;&gt;Proper Distance&lt;/h2&gt;
+&lt;p&gt;The distance between two points in space is given as such:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\Delta d=\sqrt{(\Delta x)^2+(\Delta y)^2+(\Delta z)^2}&lt;/script&gt;
+
+&lt;p&gt;Where &lt;script type=&quot;math/tex&quot;&gt;\Delta x,\Delta y,\Delta z&lt;/script&gt; represent the distance between the two &lt;script type=&quot;math/tex&quot;&gt;x/y/z&lt;/script&gt; coordinates of the two points. (i.e &lt;script type=&quot;math/tex&quot;&gt;\Delta x = x_2 - x_1&lt;/script&gt;)&lt;/p&gt;
+
+&lt;p&gt;But special relativity tells us that space and time are relative and so it might be useful to have a notion of ‘distance’ for events in space&lt;em&gt;time&lt;/em&gt; and not just space.&lt;/p&gt;
+
+&lt;p&gt;This analogue is called &lt;strong&gt;proper distance&lt;/strong&gt; (denoted &lt;script type=&quot;math/tex&quot;&gt;\Delta s&lt;/script&gt;) and we obtain it just like we did the one above. Square each coordinate, add them together, and take that sum’s square root:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\Delta s=\sqrt{(\Delta x)^2+(\Delta y)^2+(\Delta z)^2-\text{c}^2(\Delta t)^2}&lt;/script&gt;
+
+&lt;p&gt;This measure of ‘distance’ is similar to the standard spatial one, barring the strange looking last term &lt;script type=&quot;math/tex&quot;&gt;-\text{c}^2(\Delta t)^2&lt;/script&gt;. Upon further consideration, however, this term makes just as much sense as the others:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align*}
+(x)^2&amp;=x^2 \\
+(y)^2&amp;=y^2 \\
+(z)^2&amp;=z^2 \\
+(i\text{c}t)^2&amp;=i^2\text{c}^2t^2=-\text{c}^2 t^2
+\end{align*} %]]&gt;&lt;/script&gt;
+
+&lt;h4 id=&quot;an-example-1&quot;&gt;An Example&lt;/h4&gt;
+&lt;p&gt;Say you fly a spaceship 3000km into space from earth (the origin), let’s call that the y-axis, in the span of 1ms (this is a very fast spaceship).&lt;/p&gt;
+
+&lt;p&gt;So since earth is the origin these are the change in coordinates:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Δx = 0m&lt;/li&gt;
+  &lt;li&gt;Δy = 4000km = 4000000m&lt;/li&gt;
+  &lt;li&gt;Δz = 0m&lt;/li&gt;
+  &lt;li&gt;Δt = 1ms = .01s&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus the proper distance between the origin and that event in spacetime is:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align*}
+  \Delta s &amp;= \sqrt{0^2+(3.0\times 10^6)^2+0^2+((.01)\text{c}i)^2} \text{ meters} \\
+  &amp;= \sqrt{(4.0\times 10^6)^2+(2.997i\times 10^6)^2} \text { meters} \\
+  &amp;= \sqrt{(4.0\times 10^6)^2-(2.997\times 10^6)^2} \text { meters} \\
+  &amp;= 2.65\times 10^6 \text { meters} \\
+\end{align*} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Remember this distance isn’t through space but spacetime, so it doesn’t have quite the same meaning as you may first think.&lt;/p&gt;
+
+&lt;h4 id=&quot;proper-time&quot;&gt;Proper Time&lt;/h4&gt;
+&lt;p&gt;If you take a good look at the formula for proper distance you’ll notice a problem: What if radicand is negative?&lt;/p&gt;
+
+&lt;p&gt;Take the example of jumping in the air form earlier. If we use the proper distance formula with it we get:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align*}
+  \Delta s &amp;= \sqrt{2^2+3^2+1^2+(6\text{c}i)^2} \text{ meters} \\
+  &amp;= \sqrt{4+9+1+(1.799i\times 10^9)^2} \text { meters} \\
+  &amp;= \sqrt{4+9+1-(1.799\times 10^9)^2} \text { meters} \\
+  &amp;= \sqrt{-3.236\times 10^{18}} \text { meters} \\
+  &amp;= 1.799i\times 10^9 \text { meters} \\
+\end{align*} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;While we did accept the idea of imaginary time earlier, we cannot accept an imaginary proper distance. I mean the whole point was to get rid of the imaginary part right? So where did we go wrong? Well as it turns out, spacetime is a bit more complicated than I first led on (how surprising).&lt;/p&gt;
+
+&lt;p&gt;Two events in spacetime have the property of being either spacelike seperated or timelike seperated. The difference between them is essentially whether the two events could be causally connected (they are close enough to be affected by a particle traveling at the speed of light). See &lt;a href=&quot;https://en.wikipedia.org/wiki/Light_cone&quot;&gt;light cones&lt;/a&gt; for more.&lt;/p&gt;
+
+&lt;p&gt;The proper distance is the formula used for &lt;em&gt;spacelike&lt;/em&gt; separated events. Another quantity, known as &lt;a href=&quot;https://en.wikipedia.org/wiki/Proper_time&quot;&gt;proper time&lt;/a&gt;, is used to measure the length between two &lt;em&gt;timelike&lt;/em&gt; events in spacetime.&lt;/p&gt;
+
+&lt;h2 id=&quot;asides&quot;&gt;Asides&lt;/h2&gt;
+&lt;p&gt;What I’ve described in this post is a very basic notion of spacetime and how one may codify events in it. There are many more aspects of spacetime and events in it like 4-velocities (the spacetime equivalent to velocity), 4-accelerations, proper time, Lorentz transformations, etc.&lt;/p&gt;
+
+&lt;p&gt;Also note that our normal notion of distance and time still apply to spacetime. All that’s different is the fact that space and time are not invariant. That is to say, the regular old spatial &lt;em&gt;distance&lt;/em&gt; between two events can change depending on your reference frame, but the &lt;em&gt;proper distance&lt;/em&gt; between them is constant in all reference frames.&lt;/p&gt;
+
+&lt;h4 id=&quot;regarding-imaginary-time&quot;&gt;Regarding Imaginary Time&lt;/h4&gt;
+&lt;p&gt;You may have felt a little uneasy when I introduced time as being an “imaginary 4th dimension” of spacetime or a second being equivalent to 299,792,458 imaginary meters. If so, you aren’t alone. Physicists aren’t so fond of concepts like imaginary time and so they’ve devised ways of getting around that, namely with something called a &lt;a href=&quot;https://en.wikipedia.org/wiki/Metric_signature&quot;&gt;metric signature&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This has its benefits but, for our purposes, Minkowski spacetime is easier to understand if we consider time to be an imaginary dimension. It melds well with the definition of proper length.&lt;/p&gt;
+
+&lt;p&gt;Moreover, I think considering time as an imaginary dimension provides a useful analogy for its ephemeral nature. We can’t &lt;em&gt;move&lt;/em&gt; through time like we can through space. This is analogous to us not being able to directly measure imaginary quantities like we can with real ones.&lt;/p&gt;
+
+&lt;!-- #### Regarding Vector Spaces
+Also while Minkowski Spacetime is generally considered a vector space, if the set of values that the coordinates come from aren't frost he same Field of numbers (the space coordinates come from the real numbers and the time coordinate comes from the imaginary numbers) then it technically can't be considered a vector space. This is another blow to the imaginary time version of spacetime. --&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>FileToPNG</title>
+   <link href="http://localhost:4000/2018/01/16/filetopng/"/>
+   <updated>2018-01-16T00:00:00-05:00</updated>
+   <id>http://localhost:4000/2018/01/16/filetopng</id>
+   <content type="html">&lt;h2 id=&quot;what-is-filetopng&quot;&gt;What is FileToPNG?&lt;/h2&gt;
+&lt;p&gt;FileToPNG is a tool written in Java that converts the raw bit representation of any file into a corresponding PNG representation. The PNG (being a lossless file type) can be sent (via text, email, etc) and finally reconstructed back into a file. The GithHub repository for this project can be found &lt;a href=&quot;https://github.com/ozanerhansha/FileToPNG&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;That said, while the main purpose of FileToPNG was to make a tool for sending files over image only communication channels, I’ve found that the PNG representation of the files have interesting properties based on what kind of files are put in.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;the-main-algorithm&quot;&gt;The Main Algorithm&lt;/h2&gt;
+&lt;p&gt;While I have programmed a primitive UI (the code for which can be found &lt;a href=&quot;https://github.com/ozanerhansha/FileToPNG/blob/master/src/Main.java&quot;&gt;here&lt;/a&gt;) to make using the tool easier, it’s not the main focus of FileToPNG and is really just boilerplate Java.&lt;/p&gt;
+
+&lt;p&gt;The real meat of the program is the conversion functions for PNG to File and vice versa. The code for this can be found &lt;a href=&quot;https://github.com/ozanerhansha/FileToPNG/blob/master/src/GFile.java&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The algorithm goes something like this:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Convert the file into a string of bytes (8 bits = 1 byte).&lt;/li&gt;
+  &lt;li&gt;Read through this list and make a pixel out of every 3 bytes. This can be done because a pixel is comprised of 3 colors (red, green, and blue) each with a value from 0-255. These 256 values can be represented in 8 bits (because 2&lt;sup&gt;8&lt;/sup&gt;=256).&lt;/li&gt;
+  &lt;li&gt;Once a list of pixels (which should be about a 1/3 of the size of the byte list) has been made, create a square image (in .png format) out of these pixels.&lt;/li&gt;
+  &lt;li&gt;Account for files whose bytes aren’t a multiple of 3. (I used special ‘2 byte’ and ‘1 byte’ pixels that have different alpha values to demarcate them)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Reconstructing the images into files is as simple as reversing this process.&lt;/p&gt;
+
+&lt;h2 id=&quot;properties-of-png-representations&quot;&gt;Properties of PNG Representations&lt;/h2&gt;
+&lt;p&gt;The main algorithm doesn’t do any encrypting (as of yet) or rearranging of the file’s bits. As such, the PNG representation of the file can give us an, obfuscated to be sure, look at its structure.&lt;/p&gt;
+
+&lt;h3 id=&quot;text-files&quot;&gt;Text Files&lt;/h3&gt;
+&lt;p&gt;Take text files for example. Their content, of course, varies widely depending on the length and topic of discussion. But, even if they don’t use the same language, they all still use the same Unicode characters which all have the same configuration of bits. Meaning they share some similarities:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2018/01/filetopng/text_diagram.png?style=centerme&quot; alt=&quot;Text in FileToPNG&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1mb-file-of-random-noise-for-comparison&quot;&gt;1MB file of random noise for comparison:&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/2018/01/filetopng/random_data.png?style=centerme&quot; alt=&quot;Random Noise&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;music-files&quot;&gt;Music Files&lt;/h3&gt;
+&lt;p&gt;This one was kind of surprising. When I took an .mp3 file of a song and put it through the program, the resulting image looked almost random:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2018/01/filetopng/song_mp3.png?style=centerme&quot; alt=&quot;mp3&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I was disappointed at first, but then I realized that randomness is fundamentally information packed. What I mean is that if the PNG representation had some sort of overarching structure, then that would imply that there is still some redundancy in the file that could be compressed, thereby making the file smaller and more random looking.&lt;/p&gt;
+
+&lt;p&gt;This lines up with the fact that mp3 files are &lt;strong&gt;lossy&lt;/strong&gt; (i.e they sacrifice perfect quality for a smaller size).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2018/01/filetopng/song_wav.png?style=centerme&quot; alt=&quot;wav&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The natural step forward at that point was to get a .wav version of the song (which is &lt;strong&gt;lossless&lt;/strong&gt;) and see if it had any structure. And as expected, it did. It was also much bigger in size due to being lossless (the size difference isn’t reflected here because it would extend out of the webpage).&lt;/p&gt;
+
+&lt;h3 id=&quot;nintendo-64-roms&quot;&gt;Nintendo 64 ROMs&lt;/h3&gt;
+&lt;p&gt;As a test I thought I would try converting a couple of Nintendo 64 games (in file form) that were on my desktop to PNGs and, unsurprisingly, they share many similarities:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2018/01/filetopng/n64_diagram.png?style=centerme&quot; alt=&quot;N64 Roms in FileToPNG&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Interested, I did some research into N64 cartridges and found out that all ‘ROM dumps’ (files that were created by copying a physical N64 cartridge onto a computer) have what’s called a &lt;em&gt;header&lt;/em&gt;. This header includes custodial information like the game’s version, internal name, and other bits of information that would be interesting to a game historian. This header is the black box at the top &lt;em&gt;Super Mario 64&lt;/em&gt; and &lt;em&gt;Mario Kart 64&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;You may also notice that Super Mario 64 is smaller than Mario Kart 64, implying that it has a smaller file size. Apparently, N64 games came on a variety of hardware with different storage capacities and capabilities. This may seem normal nowadays but in an era where all games had to work on the same piece of limited hardware, this variability is pretty amazing.&lt;/p&gt;
+
+&lt;p&gt;Anyway this is also reflected at the bottom of the PNG representations. After the last black bar, both the ROMs are just filled with ‘garbage data’ meant to fill the ROM up. You can tell because this section looks more like the random sample then the rest of the picture.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Breast Cancer Classification</title>
+   <link href="http://localhost:4000/2018/01/15/breast-cancer-classification/"/>
+   <updated>2018-01-15T00:00:00-05:00</updated>
+   <id>http://localhost:4000/2018/01/15/breast-cancer-classification</id>
+   <content type="html">&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
+&lt;p&gt;I made this model to test how easily I could use external datasets to create and train a neural network with Google’s &lt;a href=&quot;https://www.tensorflow.org/&quot;&gt;&lt;em&gt;TensorFlow&lt;/em&gt;&lt;/a&gt; library. In this post I’ll attempt to explain the code, its results, and its accuracy. The &lt;a href=&quot;https://github.com/ozanerhansha/NeuralNetworks/blob/master/src/test/bcDiagnosis.py&quot;&gt;entire program&lt;/a&gt; is in my &lt;a href=&quot;https://github.com/ozanerhansha/NeuralNetworks&quot;&gt;NeuralNetwork&lt;/a&gt; repository on Github as well as at the end of this post.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-training-data&quot;&gt;The Training Data&lt;/h2&gt;
+&lt;p&gt;All the training data comes from the &lt;a href=&quot;http://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+%28diagnostic%29&quot;&gt;Wisconsin Breast Cancer Data Set&lt;/a&gt;, hosted by the University of California’s &lt;a href=&quot;http://archive.ics.uci.edu/ml/index.php&quot;&gt;Machine Learning Repository&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The training data consists of 569 subjects each with 3 values (mean, worst value, and standard error) for each of 10 categories:&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Radius (mean of distances from center to points on the perimeter)&lt;/li&gt;
+  &lt;li&gt;Texture (standard deviation of gray-scale values)&lt;/li&gt;
+  &lt;li&gt;Perimeter&lt;/li&gt;
+  &lt;li&gt;Area&lt;/li&gt;
+  &lt;li&gt;Smoothness (local variation in radius lengths)&lt;/li&gt;
+  &lt;li&gt;Compactness &lt;script type=&quot;math/tex&quot;&gt;(\frac{perimeter^2}{area} - 1)&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;Concavity (severity of concave portions of the contour)&lt;/li&gt;
+  &lt;li&gt;Concave points (number of concave portions of the contour)&lt;/li&gt;
+  &lt;li&gt;Symmetry&lt;/li&gt;
+  &lt;li&gt;Fractal dimension (measure of edge complexity)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;All the training examples are stored on a CSV (Comma Separated Value) file called &lt;code class=&quot;highlighter-rouge&quot;&gt;wdbc.data&lt;/code&gt;, so our first job is to import the file into our program:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Used for finding file path&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Get dataset file path&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dirname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__file__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;file_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'wdbc.data'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;file_object&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;file_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'r'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;cleaning-the-data&quot;&gt;Cleaning the Data&lt;/h2&gt;
+&lt;p&gt;Now that it’s imported, we can start ‘cleaning’ the data (that is turning this large string of numbers into a list of training examples labeled  &lt;strong&gt;benign&lt;/strong&gt; or &lt;strong&gt;malignant&lt;/strong&gt;).&lt;/p&gt;
+
+&lt;p&gt;First off we have to split up the dataset (which is currently just one massive string) into a bunch of strings, one for each subject (patient):&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#Split dataset into separate points (as strings)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;string_points&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;file_object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;string_points&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you take a look at the actual &lt;a href=&quot;https://github.com/ozanerhansha/NeuralNetworks/blob/master/src/test/wdbc.data&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;wdbc.data&lt;/code&gt;&lt;/a&gt; file, you’ll see that some of the subjects are grouped together benign and malignant. If we trained the network with the subjects in this order it bias the network’s guesses. So we shuffle the subjects to avoid this:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shuffle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string_points&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Randomize (avoid bias)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Next we create a list of feature vectors (a list of all the statistical data for each subject) and y labels (whether the subject is benign or malignant).&lt;/p&gt;
+
+&lt;p&gt;We’ll be using the &lt;a href=&quot;http://www.numpy.org&quot;&gt;numpy&lt;/a&gt; library here, so let’s import it as well:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;num_input_features&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#30 data points per subject&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Initialize dataset class arrays&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;point_array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num_input_features&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;y_labels&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Trim data points&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#Format as np.arrays&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#Add to class arrays (Benign or Malignant)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;point&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string_points&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;point&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;point&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;','&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'M'&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;point&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#if malignant&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;y_labels&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y_labels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#if benign (can only be labeled 'B' or 'M')&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;y_labels&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y_labels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;point&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;point&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:]&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#trim for only the 10 important features&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;point&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#convert to numpy array&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;astype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#cast as float array&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;point_array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;point_array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;All that is left is to split up the subjects into training and testing sets. Testing using the same data as the network was trained on encourages the network to memorize the data rather than generalize the dataset make meaningful predictions.&lt;/p&gt;
+
+&lt;p&gt;Of the 569 subjects, the first 400 will be used to train the network while the remaining 169 will be used to test the network’s accuracy:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#Split training and testing data&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;experience_matrix&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;point_array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;experience_matrix_y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y_labels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;test_matrix&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;point_array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;test_matrix_y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y_labels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;constructing-the-network&quot;&gt;Constructing the Network&lt;/h2&gt;
+&lt;p&gt;A single layer perceptron network seems to do well enough in fitting the test data, so we’ll build one here. The standard model fo such a network in matrix notation is:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\hat{y}=\text{softmax}(Wx+b)&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is the input (a 30 dimensional vector of all the cancer cell’s statistical values)&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\hat{y}&lt;/script&gt; is the network’s  approximation of &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt;, the right answer (&lt;script type=&quot;math/tex&quot;&gt;\hat{y}&lt;/script&gt; is a 2D vector with the first/second value corresponding to its confidence that the cell is benign/malignant)&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;W&lt;/script&gt; is a matrix of weights (the matrix is 30x2 so that it turns 30 dimensional vectors into 2D vectors)&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;b&lt;/script&gt; is a vector of ‘bias’ values (a 2D vector that allows the network more freedom when training)&lt;/li&gt;
+  &lt;li&gt;The &lt;script type=&quot;math/tex&quot;&gt;\text{softmax}&lt;/script&gt; function is the network’s &lt;a href=&quot;https://en.wikipedia.org/wiki/Activation_function&quot;&gt;activation function&lt;/a&gt;, which introduces a nonlinearity to the network. This is integral for any neural network to learn from the data it’s provided. The function also equalizes the network’s confidence predictions so that they add up to 100%. The mathematical description of softmax is:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Mplwp_logistic_function.svg/1280px-Mplwp_logistic_function.svg.png&quot; alt=&quot;softmax graph&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here’s what it looks like in python with &lt;a href=&quot;https://www.tensorflow.org/&quot;&gt;TensorFlow&lt;/a&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;tensorflow&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#nx10 Matrix (Input)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;placeholder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;float32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_input_features&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#10x1 Matrix (Weights)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;W&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Variable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num_input_features&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#1x2 vector (Bias)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Variable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#A scalar (x*W + b)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;y_noSoftmax&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matmul&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;W&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Apply softmax (scales y_noSoftmax to be between 0 &amp;amp; 1)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;y_hat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;softmax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y_noSoftmax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'y_Hat'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;training-the-network&quot;&gt;Training the Network&lt;/h2&gt;
+&lt;p&gt;Now that we’ve assembled the network, we need to train it using the training data, or &lt;code class=&quot;highlighter-rouge&quot;&gt;experience_matrix&lt;/code&gt;, and the associated training labels we made earlier.&lt;/p&gt;
+
+&lt;p&gt;TensorFlow works by creating what is called a computational graph from which it can calculate and find derivatives of every value in the program, thereby allowing it to optimize (i.e teach) the neural network &lt;a href=&quot;http://colah.github.io/posts/2015-08-Backprop/&quot;&gt;(Christopher Olah’s blog has a great post on this)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;And so, the network won’t start until we create a new graph (session) on which all the training calculations can run:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#Session&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sess&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;InteractiveSession&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Create Session&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;global_variables_initializer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Init Variables&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Next we create the actual training model. First we create a placeholder for the labels of the training data, &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#nx2 Matrix (One-Hot Vector, Label Data)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;placeholder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;float32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'y_Labeled'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then we create a loss function. A loss function is basically a measure of how off the network is in its guesses. This means the smaller the output of this function, the more accurate our network becomes. So, naturally, if we minimize this function using calculus we will have effectively &lt;em&gt;trained&lt;/em&gt; the network. This is deep learning in a nutshell. Here, we use &lt;a href=&quot;https://en.wikipedia.org/wiki/Cross_entropy&quot;&gt;Cross Entropy&lt;/a&gt; as it works nicely with the softmax layer we have at the end.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#Loss Function (cross entropy between y and y_hat)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;cross_entropy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reduce_mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;softmax_cross_entropy_with_logits&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logits&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y_noSoftmax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;labels&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Loss_Function'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Finally we create the training step. This is where we choose what optimizationethod to use. In this case we’ll use the tried and true &lt;a href=&quot;https://en.wikipedia.org/wiki/Gradient_descent&quot;&gt;Gradient Descent&lt;/a&gt;. I reccommend you look into it yourself, but the gist is that we take partial derivatives of the cost function with respect to every weight variable in the network then slightly adjust them towards 0.&lt;/p&gt;
+
+&lt;p&gt;Here’s a visualization:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://alykhantejani.github.io/images/gradient_descent_line_graph.gif&quot; alt=&quot;SGD&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And here it is in tensorflow:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#Performs Gradient Descent on loss function&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;train_step&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GradientDescentOptimizer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;minimize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;cross_entropy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Train_Step'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now that we have a training step (a single iteration of gradient descent) we can just run that operation, say, 1000 times for each of the 400 training examples.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#Run train step repeatedly&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#Run training step on the entire batch&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;train_step&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;feed_dict&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;experience_matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;experience_matrix_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Also note that in the code above, this is where we finally plug our training data (&lt;code class=&quot;highlighter-rouge&quot;&gt;experience_matrix&lt;/code&gt;) and labels (&lt;code class=&quot;highlighter-rouge&quot;&gt;experience_matrix_y&lt;/code&gt;) into the network. That means that everything we’ve done (in terms of constructing/training the model) can be generalized to many other machine learning problems.&lt;/p&gt;
+
+&lt;h2 id=&quot;assessing-the-network&quot;&gt;Assessing the Network&lt;/h2&gt;
+&lt;p&gt;To assess how accurate our network is, we simply have to plug in our testing data (&lt;code class=&quot;highlighter-rouge&quot;&gt;test_matrix&lt;/code&gt;) and labels (&lt;code class=&quot;highlighter-rouge&quot;&gt;test_matrix_y&lt;/code&gt;) into the network and pick the catagory, benign or malignant, that it is most confident in.&lt;/p&gt;
+
+&lt;p&gt;First we’ll make a list of Booleans which represent whether the network got the right answer or not:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#Returns whether model made correct prediction (List of booleans)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;correct_prediction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;equal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argmax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y_hat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argmax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'isCorrect'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then we average all the results together to arrive at an percent accuracy:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#Average of correct prediction (%Accuracy)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;accuracy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reduce_mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cast&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;correct_prediction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;float32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Accuracy'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Finally, we just plug in our testing data and labels and print the accuracy (with a bit of pretty formatting) to the console.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#Print Accuracy&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Accuracy:&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'{0:.2&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;}'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;accuracy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;feed_dict&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_matrix_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;When we finally run the code our output should look something like this:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Accuracy: 90.53%&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Accuracy: 91.12%&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Accuracy: 88.17%&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Because we randomized our sample at the start, the accuracy of the network varies slightly each run.&lt;/p&gt;
+
+&lt;p&gt;That said the slight increase/decrease in accuracy are just products of how the weights work out with the examples. As such any perceived improvement is probably coincidental and don’t reflect how accurate the network will be in the face of new samples. To get an accurate view of the network’s ability, running it multiple times and taking the average of its accuracy is probably your best bet.&lt;/p&gt;
+
+&lt;p&gt;Doing this for our network yields about a &lt;strong&gt;90% accuracy&lt;/strong&gt;. Not bad. For reference, a monkey (that is a random process) would classify the cells correctly 50% of the time (only two categories). That’s a 40% increase over randomly guessing!&lt;/p&gt;
+
+&lt;h2 id=&quot;the-full-code&quot;&gt;The Full Code&lt;/h2&gt;
+&lt;p&gt;This is all the code put together and is how it appears on my &lt;a href=&quot;https://github.com/ozanerhansha/NeuralNetworks&quot;&gt;NeuralNetwork&lt;/a&gt; repository. All the imports have been moved to the top of the program:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;'''
+Created on Jun 6, 2017
+@author: Ozaner Hansha
+'''&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;tensorflow&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;random&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Get dataset file path&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dirname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__file__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;file_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'wdbc.data'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;file_object&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;file_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'r'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Split dataset into separate points (as strings)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;string_points&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;file_object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;string_points&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shuffle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string_points&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Randomize (avoid bias)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;num_input_features&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Initialize dataset class arrays&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;point_array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num_input_features&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;y_labels&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Trim data points&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#Format as np.arrays&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#Add to class arrays (Benign or Malignant)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;point&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string_points&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;point&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;point&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;','&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'M'&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;point&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#if malignant&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;y_labels&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y_labels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#if benign (can only be labeled 'B' or 'M')&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;y_labels&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y_labels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;point&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;point&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:]&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#trim for only the 10 important features&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;point&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#convert to numpy array&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;astype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#cast as float array&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;point_array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;point_array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Split training and testing data&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;experience_matrix&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;point_array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;experience_matrix_y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y_labels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;test_matrix&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;point_array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;test_matrix_y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y_labels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:]&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# End of data import/cleanup. Begin construction of neural network&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name_scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Hidden_Layer'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#nx10 Matrix (Input)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;placeholder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;float32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_input_features&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#10x1 Matrix (Weights)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;W&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Variable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num_input_features&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#1x2 vector (Bias)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Variable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#A scalar (x*W + b)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;y_noSoftmax&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matmul&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;W&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Apply softmax (scales y_noSoftmax to be between 0 &amp;amp; 1)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;y_hat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;softmax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y_noSoftmax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'y_Hat'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Session&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sess&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;InteractiveSession&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Create Session&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;global_variables_initializer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Init Variables&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Training Model&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name_scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Training'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#nx2 Matrix (One-Hot Vector, Label Data)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;placeholder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;float32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'y_Labeled'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#Loss Function (cross entropy between y and y_hat)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;cross_entropy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reduce_mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;softmax_cross_entropy_with_logits&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logits&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y_noSoftmax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;labels&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Loss_Function'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#Performs Gradient Descent on loss function&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;train_step&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GradientDescentOptimizer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;minimize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cross_entropy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Train_Step'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Run train step repeatedly&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#Run training step on that batch&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;train_step&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;feed_dict&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;experience_matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;experience_matrix_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Evaluation&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name_scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Validation'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#Returns whether model made correct prediction (List of booleans)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;correct_prediction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;equal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argmax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y_hat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argmax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'isCorrect'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#Average of correct prediction (%Accuracy)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;accuracy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reduce_mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cast&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;correct_prediction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;float32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Accuracy'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Print Accuracy&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Accuracy:&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'{0:.2&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;}'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;accuracy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;feed_dict&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_matrix_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Abstract Algebra and Algebraic Structures</title>
+   <link href="http://localhost:4000/2018/01/07/abstract-algebra/"/>
+   <updated>2018-01-07T00:00:00-05:00</updated>
+   <id>http://localhost:4000/2018/01/07/abstract-algebra</id>
+   <content type="html">&lt;h2 id=&quot;history-of-algebra&quot;&gt;History of Algebra&lt;/h2&gt;
+&lt;p&gt;The earliest forms of Algebra have been around since &lt;a href=&quot;https://en.wikipedia.org/wiki/Diophantus&quot;&gt;Diophantus&lt;/a&gt; (3rd century Greek mathematician), who wrote on how to solve equations using geometry (the Greeks had a thing for geometry).&lt;/p&gt;
+
+&lt;p&gt;Algebra as we know it wouldn’t appear until Al-Khwārizmī, a medieval Islamic mathematician, wrote his famous &lt;a href=&quot;http://www.wilbourhall.org/pdfs/MBP/robertofchesters00khuw.pdf&quot;&gt;&lt;em&gt;Compendious Book on Calculation by Completion and Balancing&lt;/em&gt;&lt;/a&gt;. Its Arabic name is equally as large and so is shortened to &lt;em&gt;Al-Jabr&lt;/em&gt; which translates to “the reunion of broken parts”. In fact the word algebra itself comes from this book (Al-Jabr –&amp;gt; Algebra). Indeed it was this book that introduced the same notions of canceling and balancing equations to solve for &lt;em&gt;x&lt;/em&gt; that we use today.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;What was so vital about this work was that it was the first to &lt;strong&gt;abstract&lt;/strong&gt; away algebra from geometry and arithmetic, establishing it as an independent field of mathematics.&lt;/p&gt;
+
+&lt;p&gt;This kind of jump wasn’t done again until the 19th century, when mathematician realized that algebra could be considered not just for numbers but for any set of objects, and that there could be many different types of algebra rather than just the one we learn in school. This was the birth of &lt;strong&gt;Abstract Algebra&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;algebraic-structures&quot;&gt;Algebraic Structures&lt;/h2&gt;
+&lt;p&gt;Just like how geometry studies shapes and forms or arithmetic studies numbers and doing operations on them, abstract algebra studies algebraic structures and their construction. These structures have important applications both in pure math as well as sciences like physics and chemistry.&lt;/p&gt;
+
+&lt;p&gt;An algebraic structure is a combination of a &lt;strong&gt;set&lt;/strong&gt; and one or more &lt;strong&gt;operations&lt;/strong&gt; that can be applied to the elements of that set.&lt;/p&gt;
+
+&lt;p&gt;Some examples of Algebraic structures:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Group&lt;/li&gt;
+  &lt;li&gt;Rings&lt;/li&gt;
+  &lt;li&gt;Field&lt;/li&gt;
+  &lt;li&gt;Vector Space&lt;/li&gt;
+  &lt;li&gt;Boolean Algebra&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Click here to see my posts on three of the most important algebraic structures:
+* [Groups](/2017/05/23/groups)
+* [Rings](/2017/05/24/rings)
+* [Fields](/2017/05/24/fields) --&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Binary Prefixes</title>
+   <link href="http://localhost:4000/2018/01/05/binary-prefixes/"/>
+   <updated>2018-01-05T00:00:00-05:00</updated>
+   <id>http://localhost:4000/2018/01/05/binary-prefixes</id>
+   <content type="html">&lt;h2 id=&quot;decimal-prefixes&quot;&gt;Decimal Prefixes&lt;/h2&gt;
+&lt;p&gt;When dealing with very large or very small amounts it is common to
+append one of the SI (metric system) prefixes to whatever unit is being
+used. For example, the average human weighs 62000g but because that
+number is so big we usually append &lt;em&gt;kilo&lt;/em&gt; (the SI prefix meaning a
+thousand) to the gram unit and say 62kg instead. This system works
+just fine for all sorts of units but when it’s applied to units of
+information, like bits and bytes, a problem arises…&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;binary-prefixes&quot;&gt;Binary Prefixes&lt;/h2&gt;
+&lt;p&gt;You may have bought a hard drive or even a new phone and found that
+there is a discrepancy between the amount of storage shown on the
+package and the maximum amount displayed when you look in the
+settings.&lt;/p&gt;
+
+&lt;p&gt;So what causes this disparity?&lt;/p&gt;
+
+&lt;p&gt;The difference between a GB (gigabyte) and a GiB (gibibyte).&lt;/p&gt;
+
+&lt;p&gt;Historically when a computer scientist wrote kB, for example, they didn’t mean 1000 bytes. They meant 1024 bytes. This is because computers operate in binary which is based of powers of two. In the kilobyte’s case, 2&lt;sup&gt;10&lt;/sup&gt; = 1024 which is almost 1000. This makes it a close enough approximation for the computer scientist that can only deal in powers of two.&lt;/p&gt;
+
+&lt;p&gt;This changed around 1998 when the International Electrotechnical Commission (IEC) and other regulatory organizations created a new set of prefixes to be used as binary prefixes. The US National Institute of Standards and Technology (NIST) followed suit and required that the SI prefixes only be used in the decimal sense. Below is a table of the metric prefixes vs the binary ones.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Decimal Prefix (SI)&lt;/th&gt;
+      &lt;th&gt;Value&lt;/th&gt;
+      &lt;th&gt;Value (1000)&lt;/th&gt;
+      &lt;th&gt;Binary Prefix (IEC)&lt;/th&gt;
+      &lt;th&gt;Value&lt;/th&gt;
+      &lt;th&gt;Value (1024)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;kilo (k)&lt;/td&gt;
+      &lt;td&gt;10&lt;sup&gt;3&lt;/sup&gt;&lt;/td&gt;
+      &lt;td&gt;1000&lt;/td&gt;
+      &lt;td&gt;kibi (ki)&lt;/td&gt;
+      &lt;td&gt;2&lt;sup&gt;10&lt;/sup&gt;&lt;/td&gt;
+      &lt;td&gt;1024&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;mega (M)&lt;/td&gt;
+      &lt;td&gt;10&lt;sup&gt;6&lt;/sup&gt;&lt;/td&gt;
+      &lt;td&gt;1000&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;
+      &lt;td&gt;mebi (Mi)&lt;/td&gt;
+      &lt;td&gt;2&lt;sup&gt;20&lt;/sup&gt;&lt;/td&gt;
+      &lt;td&gt;1024&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;giga (G)&lt;/td&gt;
+      &lt;td&gt;10&lt;sup&gt;9&lt;/sup&gt;&lt;/td&gt;
+      &lt;td&gt;1000&lt;sup&gt;3&lt;/sup&gt;&lt;/td&gt;
+      &lt;td&gt;gibi (Gi)&lt;/td&gt;
+      &lt;td&gt;2&lt;sup&gt;30&lt;/sup&gt;&lt;/td&gt;
+      &lt;td&gt;1024&lt;sup&gt;3&lt;/sup&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;tera (T)&lt;/td&gt;
+      &lt;td&gt;10&lt;sup&gt;12&lt;/sup&gt;&lt;/td&gt;
+      &lt;td&gt;1000&lt;sup&gt;4&lt;/sup&gt;&lt;/td&gt;
+      &lt;td&gt;tebi (Ti)&lt;/td&gt;
+      &lt;td&gt;2&lt;sup&gt;40&lt;/sup&gt;&lt;/td&gt;
+      &lt;td&gt;1024&lt;sup&gt;4&lt;/sup&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;peta (P)&lt;/td&gt;
+      &lt;td&gt;10&lt;sup&gt;15&lt;/sup&gt;&lt;/td&gt;
+      &lt;td&gt;1000&lt;sup&gt;5&lt;/sup&gt;&lt;/td&gt;
+      &lt;td&gt;pebi (Pi)&lt;/td&gt;
+      &lt;td&gt;2&lt;sup&gt;50&lt;/sup&gt;&lt;/td&gt;
+      &lt;td&gt;1024&lt;sup&gt;5&lt;/sup&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;exa (E)&lt;/td&gt;
+      &lt;td&gt;10&lt;sup&gt;18&lt;/sup&gt;&lt;/td&gt;
+      &lt;td&gt;1000&lt;sup&gt;6&lt;/sup&gt;&lt;/td&gt;
+      &lt;td&gt;exbi (Ei)&lt;/td&gt;
+      &lt;td&gt;2&lt;sup&gt;60&lt;/sup&gt;&lt;/td&gt;
+      &lt;td&gt;1024&lt;sup&gt;6&lt;/sup&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;zetta (Z)&lt;/td&gt;
+      &lt;td&gt;10&lt;sup&gt;21&lt;/sup&gt;&lt;/td&gt;
+      &lt;td&gt;1000&lt;sup&gt;7&lt;/sup&gt;&lt;/td&gt;
+      &lt;td&gt;zebi (Zi)&lt;/td&gt;
+      &lt;td&gt;2&lt;sup&gt;70&lt;/sup&gt;&lt;/td&gt;
+      &lt;td&gt;1024&lt;sup&gt;7&lt;/sup&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;yotta (Y)&lt;/td&gt;
+      &lt;td&gt;10&lt;sup&gt;24&lt;/sup&gt;&lt;/td&gt;
+      &lt;td&gt;1000&lt;sup&gt;8&lt;/sup&gt;&lt;/td&gt;
+      &lt;td&gt;yobi (Yi)&lt;/td&gt;
+      &lt;td&gt;2&lt;sup&gt;80&lt;/sup&gt;&lt;/td&gt;
+      &lt;td&gt;1024&lt;sup&gt;8&lt;/sup&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;So problem solved, right? Well no. Most people have never heard of a kibibyte (kiB), mebibyte (MiB), or gibibyte (Gib) and probably never will. Hardware manufacturers know this and, rather than deal with the consumer’s perception of information storage, opt to just use the closest decimal prefix.&lt;/p&gt;
+
+&lt;p&gt;That said, there are a growing number of software and hardware applications that make use of binary prefixes.&lt;/p&gt;
+</content>
+ </entry>
+ 
+
+</feed>

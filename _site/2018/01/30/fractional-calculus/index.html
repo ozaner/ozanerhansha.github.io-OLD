@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>
+    
+      Fractional Calculus &middot; Oz∀n∈ℝ
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- Load JQuery (JavaScript)-->
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- Adds MathJax -->
+  <!-- <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      jax: ["input/TeX","output/HTML-CSS"],
+      displayAlign: "left !important",
+      displayIndent: "0em"
+    });
+    MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  <!-- Adds MathJax -->
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <!-- Adds Awesome Icons-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Collects tags of all posts-->
+  
+    
+
+
+
+
+
+  
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111962015-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111962015-1');
+  </script>
+</head>
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          $$\large{\text {Oz}}\tiny{\underbrace{\large {\text {∀n∈ℝ}}}_{\tiny {\text {For all real n...}}}}$$
+        </a>
+      </h1>
+      <p class="lead">A compilation of my notes, projects, and articles.</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="https://medium.com/@ozanerhansha" target="_blank">Articles</a><br/>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/posts/">Notes</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/references/">Interesting References</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <a href="https://github.com/ozanerhansha/ozanerhansha.github.io">This Website's Code</a><br/>
+
+      <!--- Icon Links -->
+      <b>Links: </b>
+      <a href="https://github.com/ozanerhansha"><i class='fa fa-github'></i></a>
+      <!-- <a href="https://www.quora.com/profile/Ozaner-Hansha/questions"><i class='fa fa-quora'></i></a> -->
+      <a href="https://medium.com/@ozanerhansha"><i class='fa fa-medium'></i></a>
+      <!-- <a href="https://math.stackexchange.com/users/490433/ozaner-hansha?tab=questions"><i class='fa fa-stack-exchange'></i></a> -->
+    </nav>
+    <p>2018 Ozaner Hansha</p>
+  </div>
+</div>
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Fractional Calculus</h1>
+  <span class="post-date">30 Jan 2018</span>
+  <span>[
+  
+    
+    <a href="/tag/math"><code class="highligher-rouge"><nobr>math</nobr></code>&nbsp;</a>
+  
+    
+    <a href="/tag/calculus"><code class="highligher-rouge"><nobr>calculus</nobr></code>&nbsp;</a>
+  
+]</span>
+  <h2 id="basic-differentiation">Basic Differentiation</h2>
+<p>In general terms, derivatives are a measure of how a function changes with respect to another variable. Not all functions have derivatives, but those that do are called <strong>differentiable</strong>.</p>
+
+<p>The derivative of a function is itself a function and thus can be further differentiated. This means we can define things like the <strong>second derivative</strong> which is obtained by successively taking the derivative of a function twice.</p>
+
+<p>Take the function <script type="math/tex">x^3</script>. It’s first derivative is usually denoted:</p>
+
+<script type="math/tex; mode=display">\frac{\mathrm{d} }{\mathrm{d} x}x^3=3x^2</script>
+
+<p>It’s second derivative is denoted:</p>
+
+<script type="math/tex; mode=display">\frac{\mathrm{d} }{\mathrm{d} x}\left(\frac{\mathrm{d} }{\mathrm{d} x}x^3\right)=\frac{\mathrm{d^2} }{\mathrm{d} x^2}x^3=6x</script>
+
+<p>We can extend this idea (and its notation) to any integer <script type="math/tex">n</script> forming the nth derivative of a function <script type="math/tex">f(x)</script>:</p>
+
+<script type="math/tex; mode=display">\frac{\mathrm{d^n} }{\mathrm{d} x^n}f(x)</script>
+
+<!--more-->
+
+<h4 id="differential-operator">Differential operator</h4>
+<p>Before we go any further, let’s introduce a less cumbersome notation for differentiation:</p>
+
+<script type="math/tex; mode=display">\frac{\mathrm{d} }{\mathrm{d} x}f(x)=D[f(x)]=Df\\
+\frac{\mathrm{d^n} }{\mathrm{d} x^n}f(x)=D^n[f(x)]=D^nf</script>
+
+<p><em>This is called the <a href="https://en.wikipedia.org/wiki/Differential_operator">differential operator</a> its used in other fields of calculus. Since all our functions are of one variable (<script type="math/tex">x</script>) there is no ambiguity in using it. Also note that the operators are not being raised to a power, it’s just notation</em></p>
+
+<p>Also note that the differential operator also includes antidifferentiation, or integration. The indefinite integral of a function <script type="math/tex">f</script> is just:</p>
+
+<script type="math/tex; mode=display">\int{f(x)}\,\mathrm{d}x=D^{-1}[f(x)]=D^{-1}f</script>
+
+<p>And further integrals can be defined as you’d expect:</p>
+
+<script type="math/tex; mode=display">\iint{f(x)}\,\mathrm{d}x=D^{-2}[f(x)]=D^{-2}f\\
+\iiint{f(x)}\,\mathrm{d}x=D^{-3}[f(x)]=D^{-3}f</script>
+
+<!-- ## Halving Operators
+Before we get to fractional derivatives, we need to understand what it means to extend an operator to non-integer forms.
+
+#### Exponentiation
+Take exponentiation. It is naively defined as repeated multiplication:
+
+$$x^n=\underbrace{x\times x\times x\cdots}_{n\text{ times}}$$
+
+So a number, say 5, to the power of 3 is simply:
+
+$$5^3=5\times 5\times 5=125$$
+
+But what if I plugged in $\frac{1}{2}$ for n? What does it mean to multiply $x$ by itself half a time?
+
+#### Adding Exponents
+Let's take a step back to regular exponentiation, the kind with integer exponents. One of the properties of exponentiation is that multiplying two numbers of the same base is the same as adding their exponents together:
+
+$$x^n\times x^m=x^{n+m}$$
+
+This should be clear with an example:
+
+$$x^3\times x^2=(x\times x\times x)\times(x\times x)=x^5$$
+
+So what? Well, if our notion of 'fractional' exponents is to hold we, it should satisfy this property (i.e $x^{1/2}\times x^{1/2}=x^{1/2+1/2}=x$).
+
+This is what we call the **square root** of a number $x$. -->
+
+<h2 id="fractional-differentiation">Fractional Differentiation</h2>
+<p>Naturally, one might ask the question “What about derivatives of a non-integer order?” What might such a nonstandard derivative look like? Well, too help us out, let’s take a look at a property of derivatives.</p>
+
+<script type="math/tex; mode=display">D^n(D^mf)=D^{n+m}f</script>
+
+<p>That is, the <script type="math/tex">n</script>th derivative of the <script type="math/tex">m</script>th derivative of a function is equivalent to the <script type="math/tex">(n+m)</script>th derivative of the function. This should come as no surprise as the definition of the second, third, etc. derivatives are just repeated use of the differential operator:</p>
+
+<script type="math/tex; mode=display">\begin{align*}
+D(Df)=D^2f \tag{Because 1+1=2}\\
+D(D^2f)=D^3f \tag{Because 1+2=3}\\
+D(D^3f)=D^4f \tag{Because 1+3=4}\\
+\end{align*}</script>
+
+<p><em>This should remind you of exponents and their properties. As well as the fact that it is not immediately clear what <script type="math/tex">x^{1/2}</script> means.</em></p>
+
+<p>It should follow that there exists half derivatives, or <strong>semiderivatives</strong>, of functions. This semiderivative has to satisfy the following:</p>
+
+<script type="math/tex; mode=display">D^{1/2}D^{1/2}f=Df \tag{Because 1/2+1/2=1}</script>
+
+<h4 id="power-rule">Power Rule</h4>
+<p>But how do we calculate <script type="math/tex">D^{1/2}f</script>? Let’s assume <script type="math/tex">f(x)</script> is some polynomial function. If that’s the case we can apply the power rule to find the first and second derivatives:</p>
+
+<script type="math/tex; mode=display">Dx^n=nx^{n-1}\\
+D^2x^n=n(n-1)x^{n-2}</script>
+
+<p>As we find higher and higher derivatives a pattern emerges:</p>
+
+<script type="math/tex; mode=display">D^kx^n=\frac{n!}{(n-k)!}x^{n-k}</script>
+
+<p><em>If that wasn’t clear, realize that as we successively apply the power rule we multiply the expression by its power then subtract its power by 1 and so on forming a partial factorial. To deal with the fact that these terms don’t form a full factorial, we divide by the missing terms which are encapsulated by <script type="math/tex">(n-k)!</script></em></p>
+
+<h4 id="the-gamma-function">The Gamma Function</h4>
+<p>This formula works for any integer order derivative but if we attempt to plug, say 1/2, into the expression we’re left with:</p>
+
+<script type="math/tex; mode=display">D^{1/2}x^n=\frac{n!}{(n-\frac{1}{2})!}x^{n-\frac{1}{2}}</script>
+
+<p>When <script type="math/tex">n</script> is an integer, <script type="math/tex">n-\frac{1}{2}</script>, will always be a rational number. This means we cannot evaluate the denominator because the factorial function <script type="math/tex">x!</script> is only defined for integer <script type="math/tex">x</script>.</p>
+
+<p>But luckily there is a way to amend the factorial function such that it accepts any real (and even complex) numbers. This done by a process known as <a href="https://en.wikipedia.org/wiki/Analytic_continuation"><strong>analytical continuation</strong></a>, resulting in a <em>unique</em> generalized function.</p>
+
+<p>The generalized factorial function is called the <a href="https://en.wikipedia.org/wiki/Gamma_function"><strong>gamma function</strong></a> and is denoted: <script type="math/tex">\Gamma(x)</script></p>
+
+<p><img src="/assets/2018/01/fractional-calculus/gamma_function.png?style=centerme" alt="gamma graph" /></p>
+
+<p>In the graph above you’ll see that the gamma function returns the same result as factorial for integer values, but is shifted over by 1:</p>
+
+<script type="math/tex; mode=display">\Gamma(x+1)=x!\tag{for all integer x}</script>
+
+<p><em>Why is the gamma function shifted over by 1? Well no particular reason, it’s just an unfortunate turn of mathematical history</em></p>
+
+<p>There is so much interesting math that makes use of the Gamma Function that I couldn’t even hope to touch on it here. For the rest of this article I’ll assume you know how to google a <a href="https://www.wolframalpha.com/input/?i=gamma+(x)">‘gamma function calculator’</a> for evaluating it.</p>
+
+<h4 id="fractional-power-rule">Fractional Power Rule</h4>
+<p>We now have all the necessary machinery to derive an expression for fractional (and indeed complex) order derivatives of polynomial functions. It’s as simple as replacing the factorial function in our original definition of the power rule with the continuous gamma function:</p>
+
+<script type="math/tex; mode=display">D^kx^n=\frac{n!}{(n-k)!}x^{n-k} \rightarrow \frac{\Gamma(n+1)}{\Gamma(n-k+1)}x^{n-k}</script>
+
+<p><em>Remember, we added 1 to each of the function’s arguments because the gamma function is shifted from factorial.</em></p>
+
+<p>And so now we have a general formula for the fractional derivative (or integral if <script type="math/tex">k</script> is negative) of any polynomial.</p>
+
+<h4 id="an-example">An Example</h4>
+<p>Now we can finally take the semiderivative of a function. Let’s start off with a simple one: <script type="math/tex">f(x)=x</script></p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+D^{1/2}x&=\frac{\Gamma(1+1)}{\Gamma(1-1/2+1)}x^{1-1/2}\\
+&=\frac{\Gamma(2)}{\Gamma(3/2)}\sqrt x \\
+&=\frac{1}{\frac{\sqrt{\pi}}{2}}\sqrt x \\
+&=2\sqrt{\frac{x}{\pi}}
+\end{align*} %]]></script>
+
+<p>Below, we can see the derivative of <script type="math/tex">y=x</script> changing between it’s first derivative which is just the constant function <script type="math/tex">y=1</script> and it’s first integral (i.e <script type="math/tex">D^{-1}x</script>) which is <script type="math/tex">y=\frac{x^2}{2}</script></p>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Fractional_Derivative_of_Basic_Power_Function_%282014%29.gif?style=centerme" alt="continuous fractional derivative" /></p>
+
+<p>If we pause this animation at the semiderivative, <script type="math/tex">2\sqrt{\frac{x}{\pi}}</script>, we get:</p>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Half-derivative.svg/434px-Half-derivative.svg.png?style=centerme" alt="graph of semiderivative of x" /></p>
+
+<p><em>In blue is the function <script type="math/tex">x</script>, in red it’s first derivative, <script type="math/tex">1</script>, and in purple it’s semiderivative.</em></p>
+
+<h4 id="a-more-complex-example">A More <strong>Complex</strong> Example</h4>
+<p>Let’s take a more complex example, the <script type="math/tex">(1+i)</script>th derivative of <script type="math/tex">3x^4</script>:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+D^{1+i}3x^4&=\frac{\Gamma(4+1)}{\Gamma(3-(1+i)+1)}3x^{4-(1+i)}\\
+&=\frac{\Gamma(5)}{\Gamma(3-i)}3x^{3-i}\\
+&=\frac{24}{0.96+1.34i}3x^{3-i}\\
+&=(25.48+35.44i)x^{3-i}
+\end{align*} %]]></script>
+
+<p>Unfortunately, the gamma function of complex numbers aren’t usually nice looking. As such, we have to use an approximate value for <script type="math/tex">\Gamma{(3-i)}</script>.</p>
+
+<p><em>If you’re wondering how to raise a number to a complex power, I’ve written about it and other consequences of Euler’s formula <a href="https://medium.com/@ozanerhansha/applications-of-eulers-formula-857bf60ba32d">here</a></em></p>
+
+<h2 id="fractional-derivatives-of-other-common-functions">Fractional Derivatives of other Common Functions</h2>
+<p>You may have noticed that the above <strong>fractional power rule</strong> for finding the fractional derivatives of polynomials isn’t very general. What about terms with negative exponents (i.e <script type="math/tex">x^{-5}</script>)? The power rule above doesn’t work for them because the gamma function isn’t defined for negative integers (it is defined for all other negative real and complex numbers):</p>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Gamma_plot.svg?style=centerme" alt="full real gamma function" /></p>
+
+<p>And we haven’t even mentioned the fractional derivatives of <script type="math/tex">e^{x}</script>, <script type="math/tex">\sin x</script>, and <script type="math/tex">\cos x</script>…</p>
+
+<p>Deriving the fractional derivatives of these expressions is a lot to cram into one post, so I’ll shelve them for now.</p>
+
+<!-- ## Fractional Derivatives of General Functions
+What if you wanted to find the fractional/complex derivative of $$\sin x$$? $$e^x$$?, $$\Gamma(x)$$ itself? Well it certainly is possible, and the general formula is as follows:
+
+$$D^{n}f(x)={\frac {1}{\Gamma (1-n)}} \left( \frac{\mathrm{d} }{\mathrm{d} x}\int_{0}^{x}{\frac {f(t)}{(x-t)^{n}}}\,\mathrm{d}t \right)$$
+
+The problem is that the integral part:
+
+$$\int_{0}^{x}{\frac {f(t)}{(x-t)^{n}}}\,\mathrm{d}t$$
+
+Can be quite tricky to evaluate without very advanced techniques. Say we wanted to find the semiderivative of $$\sin x$$:
+
+$$
+\begin{align*}
+D^{1/2}f(x)&=\frac {1}{\Gamma (1-1/2)} \left(\frac{\mathrm{d}}{\mathrm{d} x}\int_{0}^{x}{\frac {\sin(t)}{(x-t)^{1/2}}}\,\mathrm{d}t \right)
+\\
+&=\frac {1}{\sqrt\pi} \left(\frac{\mathrm{d}}{\mathrm{d} x}\int_{0}^{x}{\frac{\sin(t)}{\sqrt{x-t}}}\,\mathrm{d}t \right)
+\end{align*}
+$$
+
+After simplifying the coefficient, we're left with the problem of integrating this expression:
+
+$$\int_{0}^{x}{\frac{\sin(t)}{\sqrt{x-t}}}\,\mathrm{d}t$$
+
+Which I personally cannot do. But that's ok, because others more skilled than I have already solved it for us. Click here for a table of [common fractional derivatives](https://link.springer.com/content/pdf/bbm%3A978-3-642-30898-7%2F1.pdf). -->
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2018/03/18/reinforcement-learning-pong/">
+            Playing Atari Pong with Reinforcement Learning
+            <small>18 Mar 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2018/03/17/kinematics/">
+            Kinematics
+            <small>17 Mar 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2018/03/15/position/">
+            Position
+            <small>15 Mar 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+    </div>
+  </body>
+</html>

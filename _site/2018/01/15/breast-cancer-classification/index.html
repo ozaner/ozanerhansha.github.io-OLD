@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>
+    
+      Breast Cancer Classification &middot; Oz∀n∈ℝ
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- Load JQuery (JavaScript)-->
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- Adds MathJax -->
+  <!-- <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      jax: ["input/TeX","output/HTML-CSS"],
+      displayAlign: "left !important",
+      displayIndent: "0em"
+    });
+    MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  <!-- Adds MathJax -->
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <!-- Adds Awesome Icons-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Collects tags of all posts-->
+  
+    
+
+
+
+
+
+  
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111962015-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111962015-1');
+  </script>
+</head>
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          $$\large{\text {Oz}}\tiny{\underbrace{\large {\text {∀n∈ℝ}}}_{\tiny {\text {For all real n...}}}}$$
+        </a>
+      </h1>
+      <p class="lead">A compilation of my notes, projects, and articles.</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="https://medium.com/@ozanerhansha" target="_blank">Articles</a><br/>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/posts/">Notes</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/references/">Interesting References</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <a href="https://github.com/ozanerhansha/ozanerhansha.github.io">This Website's Code</a><br/>
+
+      <!--- Icon Links -->
+      <b>Links: </b>
+      <a href="https://github.com/ozanerhansha"><i class='fa fa-github'></i></a>
+      <!-- <a href="https://www.quora.com/profile/Ozaner-Hansha/questions"><i class='fa fa-quora'></i></a> -->
+      <a href="https://medium.com/@ozanerhansha"><i class='fa fa-medium'></i></a>
+      <!-- <a href="https://math.stackexchange.com/users/490433/ozaner-hansha?tab=questions"><i class='fa fa-stack-exchange'></i></a> -->
+    </nav>
+    <p>2018 Ozaner Hansha</p>
+  </div>
+</div>
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Breast Cancer Classification</h1>
+  <span class="post-date">15 Jan 2018</span>
+  <span>[
+  
+    
+    <a href="/tag/computer-science"><code class="highligher-rouge"><nobr>computer-science</nobr></code>&nbsp;</a>
+  
+    
+    <a href="/tag/machine-learning"><code class="highligher-rouge"><nobr>machine-learning</nobr></code>&nbsp;</a>
+  
+]</span>
+  <h2 id="background">Background</h2>
+<p>I made this model to test how easily I could use external datasets to create and train a neural network with Google’s <a href="https://www.tensorflow.org/"><em>TensorFlow</em></a> library. In this post I’ll attempt to explain the code, its results, and its accuracy. The <a href="https://github.com/ozanerhansha/NeuralNetworks/blob/master/src/test/bcDiagnosis.py">entire program</a> is in my <a href="https://github.com/ozanerhansha/NeuralNetworks">NeuralNetwork</a> repository on Github as well as at the end of this post.</p>
+
+<h2 id="the-training-data">The Training Data</h2>
+<p>All the training data comes from the <a href="http://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+%28diagnostic%29">Wisconsin Breast Cancer Data Set</a>, hosted by the University of California’s <a href="http://archive.ics.uci.edu/ml/index.php">Machine Learning Repository</a>.</p>
+
+<p>The training data consists of 569 subjects each with 3 values (mean, worst value, and standard error) for each of 10 categories:</p>
+
+<!--more-->
+
+<ul>
+  <li>Radius (mean of distances from center to points on the perimeter)</li>
+  <li>Texture (standard deviation of gray-scale values)</li>
+  <li>Perimeter</li>
+  <li>Area</li>
+  <li>Smoothness (local variation in radius lengths)</li>
+  <li>Compactness <script type="math/tex">(\frac{perimeter^2}{area} - 1)</script></li>
+  <li>Concavity (severity of concave portions of the contour)</li>
+  <li>Concave points (number of concave portions of the contour)</li>
+  <li>Symmetry</li>
+  <li>Fractal dimension (measure of edge complexity)</li>
+</ul>
+
+<p>All the training examples are stored on a CSV (Comma Separated Value) file called <code class="highlighter-rouge">wdbc.data</code>, so our first job is to import the file into our program:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span> <span class="c">#Used for finding file path</span>
+
+<span class="c">#Get dataset file path</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
+<span class="n">file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s">'wdbc.data'</span><span class="p">)</span>
+<span class="n">file_object</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="cleaning-the-data">Cleaning the Data</h2>
+<p>Now that it’s imported, we can start ‘cleaning’ the data (that is turning this large string of numbers into a list of training examples labeled  <strong>benign</strong> or <strong>malignant</strong>).</p>
+
+<p>First off we have to split up the dataset (which is currently just one massive string) into a bunch of strings, one for each subject (patient):</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Split dataset into separate points (as strings)</span>
+<span class="n">string_points</span> <span class="o">=</span> <span class="n">file_object</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="n">string_points</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>If you take a look at the actual <a href="https://github.com/ozanerhansha/NeuralNetworks/blob/master/src/test/wdbc.data"><code class="highlighter-rouge">wdbc.data</code></a> file, you’ll see that some of the subjects are grouped together benign and malignant. If we trained the network with the subjects in this order it bias the network’s guesses. So we shuffle the subjects to avoid this:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">string_points</span><span class="p">)</span> <span class="c">#Randomize (avoid bias)</span>
+</code></pre></div></div>
+
+<p>Next we create a list of feature vectors (a list of all the statistical data for each subject) and y labels (whether the subject is benign or malignant).</p>
+
+<p>We’ll be using the <a href="http://www.numpy.org">numpy</a> library here, so let’s import it as well:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">num_input_features</span> <span class="o">=</span> <span class="mi">30</span> <span class="c">#30 data points per subject</span>
+
+<span class="c">#Initialize dataset class arrays</span>
+<span class="n">point_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="n">num_input_features</span><span class="p">))</span>
+<span class="n">y_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="c">#Trim data points</span>
+<span class="c">#Format as np.arrays</span>
+<span class="c">#Add to class arrays (Benign or Malignant)</span>
+<span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">string_points</span><span class="p">:</span>
+    <span class="n">point</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">','</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s">'M'</span> <span class="ow">in</span> <span class="n">point</span><span class="p">:</span> <span class="c">#if malignant</span>
+        <span class="n">y_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y_labels</span><span class="p">,</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span> <span class="c">#if benign (can only be labeled 'B' or 'M')</span>
+        <span class="n">y_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y_labels</span><span class="p">,</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">point</span> <span class="o">=</span> <span class="n">point</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="c">#trim for only the 10 important features</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">point</span><span class="p">)</span> <span class="c">#convert to numpy array</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span> <span class="c">#cast as float array</span>
+    <span class="n">point_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">point_array</span><span class="p">,</span> <span class="p">[</span><span class="n">temp</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>All that is left is to split up the subjects into training and testing sets. Testing using the same data as the network was trained on encourages the network to memorize the data rather than generalize the dataset make meaningful predictions.</p>
+
+<p>Of the 569 subjects, the first 400 will be used to train the network while the remaining 169 will be used to test the network’s accuracy:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Split training and testing data</span>
+<span class="n">experience_matrix</span> <span class="o">=</span> <span class="n">point_array</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">400</span><span class="p">]</span>
+<span class="n">experience_matrix_y</span> <span class="o">=</span> <span class="n">y_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">400</span><span class="p">]</span>
+<span class="n">test_matrix</span> <span class="o">=</span> <span class="n">point_array</span><span class="p">[</span><span class="mi">400</span><span class="p">:]</span>
+<span class="n">test_matrix_y</span> <span class="o">=</span> <span class="n">y_labels</span><span class="p">[</span><span class="mi">400</span><span class="p">:]</span>
+</code></pre></div></div>
+
+<h2 id="constructing-the-network">Constructing the Network</h2>
+<p>A single layer perceptron network seems to do well enough in fitting the test data, so we’ll build one here. The standard model fo such a network in matrix notation is:</p>
+
+<script type="math/tex; mode=display">\hat{y}=\text{softmax}(Wx+b)</script>
+
+<ul>
+  <li><script type="math/tex">x</script> is the input (a 30 dimensional vector of all the cancer cell’s statistical values)</li>
+  <li><script type="math/tex">\hat{y}</script> is the network’s  approximation of <script type="math/tex">y</script>, the right answer (<script type="math/tex">\hat{y}</script> is a 2D vector with the first/second value corresponding to its confidence that the cell is benign/malignant)</li>
+  <li><script type="math/tex">W</script> is a matrix of weights (the matrix is 30x2 so that it turns 30 dimensional vectors into 2D vectors)</li>
+  <li><script type="math/tex">b</script> is a vector of ‘bias’ values (a 2D vector that allows the network more freedom when training)</li>
+  <li>The <script type="math/tex">\text{softmax}</script> function is the network’s <a href="https://en.wikipedia.org/wiki/Activation_function">activation function</a>, which introduces a nonlinearity to the network. This is integral for any neural network to learn from the data it’s provided. The function also equalizes the network’s confidence predictions so that they add up to 100%. The mathematical description of softmax is:</li>
+</ul>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Mplwp_logistic_function.svg/1280px-Mplwp_logistic_function.svg.png" alt="softmax graph" /></p>
+
+<p>Here’s what it looks like in python with <a href="https://www.tensorflow.org/">TensorFlow</a>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+
+<span class="c">#nx10 Matrix (Input)</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="n">num_input_features</span><span class="p">])</span>
+<span class="c">#10x1 Matrix (Weights)</span>
+  <span class="n">W</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">num_input_features</span><span class="p">,</span><span class="mi">2</span><span class="p">]))</span>
+<span class="c">#1x2 vector (Bias)</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">2</span><span class="p">]))</span>
+<span class="c">#A scalar (x*W + b)</span>
+  <span class="n">y_noSoftmax</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">W</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="c">#Apply softmax (scales y_noSoftmax to be between 0 &amp; 1)</span>
+<span class="n">y_hat</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">y_noSoftmax</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'y_Hat'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="training-the-network">Training the Network</h2>
+<p>Now that we’ve assembled the network, we need to train it using the training data, or <code class="highlighter-rouge">experience_matrix</code>, and the associated training labels we made earlier.</p>
+
+<p>TensorFlow works by creating what is called a computational graph from which it can calculate and find derivatives of every value in the program, thereby allowing it to optimize (i.e teach) the neural network <a href="http://colah.github.io/posts/2015-08-Backprop/">(Christopher Olah’s blog has a great post on this)</a>.</p>
+
+<p>And so, the network won’t start until we create a new graph (session) on which all the training calculations can run:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Session</span>
+<span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">InteractiveSession</span><span class="p">()</span> <span class="c">#Create Session</span>
+<span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">global_variables_initializer</span><span class="p">())</span> <span class="c">#Init Variables</span>
+</code></pre></div></div>
+
+<p>Next we create the actual training model. First we create a placeholder for the labels of the training data, <script type="math/tex">y</script>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#nx2 Matrix (One-Hot Vector, Label Data)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span><span class="n">name</span><span class="o">=</span><span class="s">'y_Labeled'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Then we create a loss function. A loss function is basically a measure of how off the network is in its guesses. This means the smaller the output of this function, the more accurate our network becomes. So, naturally, if we minimize this function using calculus we will have effectively <em>trained</em> the network. This is deep learning in a nutshell. Here, we use <a href="https://en.wikipedia.org/wiki/Cross_entropy">Cross Entropy</a> as it works nicely with the softmax layer we have at the end.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Loss Function (cross entropy between y and y_hat)</span>
+<span class="n">cross_entropy</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">reduce_mean</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax_cross_entropy_with_logits</span>
+  <span class="p">(</span><span class="n">logits</span> <span class="o">=</span> <span class="n">y_noSoftmax</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">y</span><span class="p">),</span><span class="n">name</span><span class="o">=</span><span class="s">'Loss_Function'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Finally we create the training step. This is where we choose what optimizationethod to use. In this case we’ll use the tried and true <a href="https://en.wikipedia.org/wiki/Gradient_descent">Gradient Descent</a>. I reccommend you look into it yourself, but the gist is that we take partial derivatives of the cost function with respect to every weight variable in the network then slightly adjust them towards 0.</p>
+
+<p>Here’s a visualization:</p>
+
+<p><img src="https://alykhantejani.github.io/images/gradient_descent_line_graph.gif" alt="SGD" /></p>
+
+<p>And here it is in tensorflow:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Performs Gradient Descent on loss function</span>
+<span class="n">train_step</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">GradientDescentOptimizer</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span>
+    <span class="n">cross_entropy</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s">'Train_Step'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Now that we have a training step (a single iteration of gradient descent) we can just run that operation, say, 1000 times for each of the 400 training examples.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Run train step repeatedly</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+  <span class="c">#Run training step on the entire batch</span>
+    <span class="n">train_step</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">experience_matrix</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">experience_matrix_y</span><span class="p">})</span>
+</code></pre></div></div>
+
+<p>Also note that in the code above, this is where we finally plug our training data (<code class="highlighter-rouge">experience_matrix</code>) and labels (<code class="highlighter-rouge">experience_matrix_y</code>) into the network. That means that everything we’ve done (in terms of constructing/training the model) can be generalized to many other machine learning problems.</p>
+
+<h2 id="assessing-the-network">Assessing the Network</h2>
+<p>To assess how accurate our network is, we simply have to plug in our testing data (<code class="highlighter-rouge">test_matrix</code>) and labels (<code class="highlighter-rouge">test_matrix_y</code>) into the network and pick the catagory, benign or malignant, that it is most confident in.</p>
+
+<p>First we’ll make a list of Booleans which represent whether the network got the right answer or not:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Returns whether model made correct prediction (List of booleans)</span>
+<span class="n">correct_prediction</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">equal</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">y_hat</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+    <span class="n">tf</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s">'isCorrect'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Then we average all the results together to arrive at an percent accuracy:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Average of correct prediction (%Accuracy)</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">reduce_mean</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">cast</span>
+    <span class="p">(</span><span class="n">correct_prediction</span><span class="p">,</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span><span class="n">name</span><span class="o">=</span><span class="s">'Accuracy'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Finally, we just plug in our testing data and labels and print the accuracy (with a bit of pretty formatting) to the console.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Print Accuracy</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Accuracy:"</span><span class="p">,</span> <span class="s">'{0:.2</span><span class="si">%</span><span class="s">}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy</span><span class="o">.</span><span class="nb">eval</span>
+  <span class="p">(</span><span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">test_matrix</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">test_matrix_y</span><span class="p">})))</span>
+</code></pre></div></div>
+
+<p>When we finally run the code our output should look something like this:</p>
+<ul>
+  <li><code class="highlighter-rouge">Accuracy: 90.53%</code></li>
+  <li><code class="highlighter-rouge">Accuracy: 91.12%</code></li>
+  <li><code class="highlighter-rouge">Accuracy: 88.17%</code></li>
+</ul>
+
+<p>Because we randomized our sample at the start, the accuracy of the network varies slightly each run.</p>
+
+<p>That said the slight increase/decrease in accuracy are just products of how the weights work out with the examples. As such any perceived improvement is probably coincidental and don’t reflect how accurate the network will be in the face of new samples. To get an accurate view of the network’s ability, running it multiple times and taking the average of its accuracy is probably your best bet.</p>
+
+<p>Doing this for our network yields about a <strong>90% accuracy</strong>. Not bad. For reference, a monkey (that is a random process) would classify the cells correctly 50% of the time (only two categories). That’s a 40% increase over randomly guessing!</p>
+
+<h2 id="the-full-code">The Full Code</h2>
+<p>This is all the code put together and is how it appears on my <a href="https://github.com/ozanerhansha/NeuralNetworks">NeuralNetwork</a> repository. All the imports have been moved to the top of the program:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">'''
+Created on Jun 6, 2017
+@author: Ozaner Hansha
+'''</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c">#Get dataset file path</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
+<span class="n">file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s">'wdbc.data'</span><span class="p">)</span>
+<span class="n">file_object</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span>
+
+<span class="c">#Split dataset into separate points (as strings)</span>
+<span class="n">string_points</span> <span class="o">=</span> <span class="n">file_object</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="n">string_points</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">string_points</span><span class="p">)</span> <span class="c">#Randomize (avoid bias)</span>
+
+<span class="n">num_input_features</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="c">#Initialize dataset class arrays</span>
+<span class="n">point_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="n">num_input_features</span><span class="p">))</span>
+<span class="n">y_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="c">#Trim data points</span>
+<span class="c">#Format as np.arrays</span>
+<span class="c">#Add to class arrays (Benign or Malignant)</span>
+<span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">string_points</span><span class="p">:</span>
+    <span class="n">point</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">','</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s">'M'</span> <span class="ow">in</span> <span class="n">point</span><span class="p">:</span> <span class="c">#if malignant</span>
+        <span class="n">y_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y_labels</span><span class="p">,</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span> <span class="c">#if benign (can only be labeled 'B' or 'M')</span>
+        <span class="n">y_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y_labels</span><span class="p">,</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">point</span> <span class="o">=</span> <span class="n">point</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="c">#trim for only the 10 important features</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">point</span><span class="p">)</span> <span class="c">#convert to numpy array</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span> <span class="c">#cast as float array</span>
+    <span class="n">point_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">point_array</span><span class="p">,</span> <span class="p">[</span><span class="n">temp</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c">#Split training and testing data</span>
+<span class="n">experience_matrix</span> <span class="o">=</span> <span class="n">point_array</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">400</span><span class="p">]</span>
+<span class="n">experience_matrix_y</span> <span class="o">=</span> <span class="n">y_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">400</span><span class="p">]</span>
+<span class="n">test_matrix</span> <span class="o">=</span> <span class="n">point_array</span><span class="p">[</span><span class="mi">400</span><span class="p">:]</span>
+<span class="n">test_matrix_y</span> <span class="o">=</span> <span class="n">y_labels</span><span class="p">[</span><span class="mi">400</span><span class="p">:]</span>
+
+<span class="c"># End of data import/cleanup. Begin construction of neural network</span>
+<span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">name_scope</span><span class="p">(</span><span class="s">'Hidden_Layer'</span><span class="p">):</span>
+  <span class="c">#nx10 Matrix (Input)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="n">num_input_features</span><span class="p">])</span>
+  <span class="c">#10x1 Matrix (Weights)</span>
+    <span class="n">W</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">num_input_features</span><span class="p">,</span><span class="mi">2</span><span class="p">]))</span>
+  <span class="c">#1x2 vector (Bias)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">2</span><span class="p">]))</span>
+  <span class="c">#A scalar (x*W + b)</span>
+    <span class="n">y_noSoftmax</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">W</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="c">#Apply softmax (scales y_noSoftmax to be between 0 &amp; 1)</span>
+<span class="n">y_hat</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">y_noSoftmax</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'y_Hat'</span><span class="p">)</span>
+
+<span class="c">#Session</span>
+<span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">InteractiveSession</span><span class="p">()</span> <span class="c">#Create Session</span>
+<span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">global_variables_initializer</span><span class="p">())</span> <span class="c">#Init Variables</span>
+
+<span class="c">#Training Model</span>
+<span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">name_scope</span><span class="p">(</span><span class="s">'Training'</span><span class="p">):</span>
+  <span class="c">#nx2 Matrix (One-Hot Vector, Label Data)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span><span class="n">name</span><span class="o">=</span><span class="s">'y_Labeled'</span><span class="p">)</span>
+  <span class="c">#Loss Function (cross entropy between y and y_hat)</span>
+    <span class="n">cross_entropy</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">reduce_mean</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax_cross_entropy_with_logits</span>
+    <span class="p">(</span><span class="n">logits</span> <span class="o">=</span> <span class="n">y_noSoftmax</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">y</span><span class="p">),</span><span class="n">name</span><span class="o">=</span><span class="s">'Loss_Function'</span><span class="p">)</span>
+  <span class="c">#Performs Gradient Descent on loss function</span>
+    <span class="n">train_step</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">GradientDescentOptimizer</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span>
+        <span class="n">cross_entropy</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s">'Train_Step'</span><span class="p">)</span>
+
+<span class="c">#Run train step repeatedly</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+  <span class="c">#Run training step on that batch</span>
+    <span class="n">train_step</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">experience_matrix</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">experience_matrix_y</span><span class="p">})</span>
+
+<span class="c">#Evaluation</span>
+<span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">name_scope</span><span class="p">(</span><span class="s">'Validation'</span><span class="p">):</span>
+  <span class="c">#Returns whether model made correct prediction (List of booleans)</span>
+    <span class="n">correct_prediction</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">equal</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">y_hat</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+        <span class="n">tf</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s">'isCorrect'</span><span class="p">)</span>
+  <span class="c">#Average of correct prediction (%Accuracy)</span>
+    <span class="n">accuracy</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">reduce_mean</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">cast</span>
+        <span class="p">(</span><span class="n">correct_prediction</span><span class="p">,</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span><span class="n">name</span><span class="o">=</span><span class="s">'Accuracy'</span><span class="p">)</span>
+
+<span class="c">#Print Accuracy</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Accuracy:"</span><span class="p">,</span> <span class="s">'{0:.2</span><span class="si">%</span><span class="s">}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy</span><span class="o">.</span><span class="nb">eval</span>
+  <span class="p">(</span><span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">test_matrix</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">test_matrix_y</span><span class="p">})))</span>
+</code></pre></div></div>
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2018/03/18/reinforcement-learning-pong/">
+            Playing Atari Pong with Reinforcement Learning
+            <small>18 Mar 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2018/03/17/kinematics/">
+            Kinematics
+            <small>17 Mar 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2018/03/15/position/">
+            Position
+            <small>15 Mar 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>
+    
+      Oz∀n∈ℝ &middot; My Projects
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- Load JQuery (JavaScript)-->
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- Adds MathJax -->
+  <!-- <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      jax: ["input/TeX","output/HTML-CSS"],
+      displayAlign: "left !important",
+      displayIndent: "0em"
+    });
+    MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  <!-- Adds MathJax -->
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <!-- Adds Awesome Icons-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Collects tags of all posts-->
+  
+    
+
+
+
+
+
+  
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111962015-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111962015-1');
+  </script>
+</head>
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          $$\large{\text {Oz}}\tiny{\underbrace{\large {\text {∀n∈ℝ}}}_{\tiny {\text {For all real n...}}}}$$
+        </a>
+      </h1>
+      <p class="lead">A compilation of my notes, projects, and articles.</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="https://medium.com/@ozanerhansha" target="_blank">Articles</a><br/>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/posts/">Notes</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/references/">Interesting References</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <a href="https://github.com/ozanerhansha/ozanerhansha.github.io">This Website's Code</a><br/>
+
+      <!--- Icon Links -->
+      <b>Links: </b>
+      <a href="https://github.com/ozanerhansha"><i class='fa fa-github'></i></a>
+      <!-- <a href="https://www.quora.com/profile/Ozaner-Hansha/questions"><i class='fa fa-quora'></i></a> -->
+      <a href="https://medium.com/@ozanerhansha"><i class='fa fa-medium'></i></a>
+      <!-- <a href="https://math.stackexchange.com/users/490433/ozaner-hansha?tab=questions"><i class='fa fa-stack-exchange'></i></a> -->
+    </nav>
+    <p>2018 Ozaner Hansha</p>
+  </div>
+</div>
+
+    <div class="content container">
+      <font size="7">Recent Posts</font>
+<br></br>
+<div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2018/03/18/reinforcement-learning-pong/">Playing Atari Pong with Reinforcement Learning</a>
+    </h1>
+    <span class="post-date">18 Mar 2018</span>
+    <h2 id="background">Background</h2>
+<p>In 2013 the relatively new AI startup DeepMind released their paper <a href="https://arxiv.org/pdf/1312.5602.pdf"><em>Playing Atari with Deep Reinforcement Learning</em></a> detailing an artificial neural network that was able to play, not 1, but 7 Atari games with human and even super-human level proficiency. What made this paper so astounding was the fact that it was a single, general purpose neural network (a <strong>general artificial intelligence</strong> if you will) that played all these games rather than 7 separate ones.</p>
+
+<p>If this wasn’t enough, in 2015 they blew the machine learning community, and everyone else considering the news coverage, away with their paper <a href="https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf"><em>Human-level control through deep reinforcement learning</em></a> in which they construct what they call a <strong>Deep Q Network</strong> (DQN) to play <em>42</em> different Atari games, all of varying complexity, with performance that exceeded a professional human player.<a href="https://deepmind.com/research/dqn/"><sup>1</sup></a></p>
+
+
+    <!--Adds Read more-->
+    <a href="/2018/03/18/reinforcement-learning-pong/">Read more</a>
+    <hr>
+    
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2018/03/17/kinematics/">Kinematics</a>
+    </h1>
+    <span class="post-date">17 Mar 2018</span>
+    <!-- Make vectors bold rather than arrow headed -->
+<p><script type="math/tex">\renewcommand{\vec}[1]{\mathbf{#1}}</script>
+Kinematics describes the motion of objects through space over time. Using an object’s <a href="/2018/03/15/position">position</a>, velocity and acceleration vectors, it is possible to predict where it will be in the future and where it was in the past.</p>
+
+<h3 id="variable-acceleration">Variable Acceleration</h3>
+<p>To calculate the kinematics of an object with continuous acceleration, simply refer to the definitions of velocity and acceleration:</p>
+
+<script type="math/tex; mode=display">\begin{align}
+\vec{v}=\frac{d\vec{x}}{dt}\\
+\vec{a}=\frac{d\vec{v}}{dt}
+\end{align}</script>
+
+<p>Integrating these equations we get:</p>
+
+<script type="math/tex; mode=display">\begin{align}
+\vec{x}=\int\vec{v} \,dt+\vec{x}_0\\
+\vec{v}=\int\vec{a} \,dt+\vec{v}_0
+\end{align}</script>
+
+<ul>
+  <li><script type="math/tex">\vec{x}</script> is the object’s position as a function of time</li>
+  <li><script type="math/tex">\vec{x}_0</script> is the initial position, at <script type="math/tex">t=0</script></li>
+  <li><script type="math/tex">\vec{v}</script> is the object’s velocity as a function of time</li>
+  <li><script type="math/tex">\vec{v}_0</script> is the initial velocity, at <script type="math/tex">t=0</script></li>
+  <li><script type="math/tex">\vec{a}</script> is the object’s acceleration as a function of time</li>
+  <li><script type="math/tex">t</script> is time</li>
+</ul>
+
+
+    <!--Adds Read more-->
+    <a href="/2018/03/17/kinematics/">Read more</a>
+    <hr>
+    
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2018/03/15/position/">Position</a>
+    </h1>
+    <span class="post-date">15 Mar 2018</span>
+    <p>The position of a particle or object in <strong>space</strong> is defined as a point on an n-dimensional <strong>Cartesian coordinate system</strong>. This point can equivalently be thought of as a vector.</p>
+
+<h3 id="classical-physics">Classical Physics</h3>
+<p>In classical physics, a position or displacement <script type="math/tex">\vec{x}</script> is a 3-dimensional vector with components <script type="math/tex">\left(x,y,z\right)</script>.</p>
+
+<p><em>Position is used to refer to a specific point in a coordinate space while displacement refers to the distance traveled from an initial point (usually this point is the origin making position and displacement equivalent)</em></p>
+
+<p>The magnitude of displacement, or net <strong>distance</strong>, is calculated the same as any other vector:</p>
+
+<script type="math/tex; mode=display">\left|\vec{x}\right|=\sqrt{x^2+y^2+z^2}</script>
+
+<h4 id="displacement-function">Displacement Function</h4>
+<p>An object’s position can be described as a function in time, <script type="math/tex">\vec{x}(t)</script>. This position function would then map from time to 3D-space:</p>
+
+<script type="math/tex; mode=display">\vec{x}:\mathbb{R}\rightarrow \mathbb{R}^3</script>
+
+<p>Taking the derivative of an object’s displacement function with respect to <script type="math/tex">t</script> provides the object’s <a href="">velocity</a> function, <script type="math/tex">\vec{v}(t)</script>:</p>
+
+<script type="math/tex; mode=display">\frac{\mathrm{d}}{\mathrm{d}t}\vec{x}(t)=\vec{v}(t)</script>
+
+
+    <!--Adds Read more-->
+    <a href="/2018/03/15/position/">Read more</a>
+    <hr>
+    
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2018/03/14/physics/">Physics</a>
+    </h1>
+    <span class="post-date">14 Mar 2018</span>
+    <p>Physics is the branch of science that studies the properties and mechanics of matter, energy and spacetime.</p>
+
+<p>There are 3 main divisions of physics:</p>
+<ul>
+  <li><a href="#classical-physics">Classical Physics</a></li>
+  <li><a href="#special--general-relativity">Special &amp; General Relativity</a></li>
+  <li><a href="#quantum-mechanics-qm">Quantum Mechanics</a></li>
+</ul>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Modernphysicsfields.svg?style=centerme" alt="physics" /></p>
+
+<h3 id="classical-physics">Classical Physics</h3>
+<p>Classical physics is a catch all for the theories of physics that predated the relativistic and quantum theories of physics we have today. They very adequately describe the interactions and mechanics of everyday objects, fluids, gasses, electricity, magnetism, and even celestial bodies.</p>
+
+
+    <!--Adds Read more-->
+    <a href="/2018/03/14/physics/">Read more</a>
+    <hr>
+    
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2018/03/03/parity-sequences/">Parity Sequences</a>
+    </h1>
+    <span class="post-date">03 Mar 2018</span>
+    <!-- Thought about this when we had to find Taylor series' for certain sinusoidal functions and the terms had hard to capture patterns of negative/even terms. It is possible to capture this via more sinusoidal functions but I wanted a polynomial answer. I don't think there is a polynomial answer for the general case, and the 2 examples below are the extent of my findings. -->
+
+<p>A parity sequence is a sequence of numbers that follow a set pattern of even and odd. The notation we will use is “<script type="math/tex">+</script>” for even and “<script type="math/tex">-</script>” for odd.</p>
+
+<h2 id="examples">Examples</h2>
+<p>All examples start indexing at 0 (the most rational way to index lists).</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{alignat*}{2}
+  S_n=\frac{n(n-1)}{2}& &&= \{0,0,1,3,6,10,15,21,\cdots\} && \\
+  & &&\rightarrow\{+,+,-,-,+,+,-,-,\cdots\} && \\
+  S_n=\frac{n^2(n-1)}{2}& &&= \{0,0,2,9,24,50,90,630,\cdots\} &&\\
+  & &&\rightarrow\{+,+,+,-,+,+,+,-,\cdots\}&&\\
+  S_n=\cos \frac{n\pi}{2}& &&= \{1,0,-1,0,1,0,-1,0,\cdots\} &&\\
+  & &&\rightarrow\{-,+,-,+,-,+,-,+,\cdots\}&&
+\end{alignat*} %]]></script>
+
+
+    <!--Adds Read more-->
+    <a href="/2018/03/03/parity-sequences/">Read more</a>
+    <hr>
+    
+  </div>
+</div>
+
+<div class="pagination">
+  
+    <a class="pagination-item older" href="/page2">Older</a>
+  
+  
+    <span class="pagination-item newer">Newer</span>
+  
+</div>
+
+    </div>
+  </body>
+</html>

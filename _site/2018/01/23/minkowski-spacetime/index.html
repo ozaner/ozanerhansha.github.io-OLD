@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>
+    
+      Minkowski Spacetime &middot; Oz∀n∈ℝ
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- Load JQuery (JavaScript)-->
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- Adds MathJax -->
+  <!-- <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      jax: ["input/TeX","output/HTML-CSS"],
+      displayAlign: "left !important",
+      displayIndent: "0em"
+    });
+    MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  <!-- Adds MathJax -->
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <!-- Adds Awesome Icons-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Collects tags of all posts-->
+  
+    
+
+
+
+
+
+  
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111962015-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111962015-1');
+  </script>
+</head>
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          $$\large{\text {Oz}}\tiny{\underbrace{\large {\text {∀n∈ℝ}}}_{\tiny {\text {For all real n...}}}}$$
+        </a>
+      </h1>
+      <p class="lead">A compilation of my notes, projects, and articles.</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="https://medium.com/@ozanerhansha" target="_blank">Articles</a><br/>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/posts/">Notes</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/references/">Interesting References</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <a href="https://github.com/ozanerhansha/ozanerhansha.github.io">This Website's Code</a><br/>
+
+      <!--- Icon Links -->
+      <b>Links: </b>
+      <a href="https://github.com/ozanerhansha"><i class='fa fa-github'></i></a>
+      <!-- <a href="https://www.quora.com/profile/Ozaner-Hansha/questions"><i class='fa fa-quora'></i></a> -->
+      <a href="https://medium.com/@ozanerhansha"><i class='fa fa-medium'></i></a>
+      <!-- <a href="https://math.stackexchange.com/users/490433/ozaner-hansha?tab=questions"><i class='fa fa-stack-exchange'></i></a> -->
+    </nav>
+    <p>2018 Ozaner Hansha</p>
+  </div>
+</div>
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Minkowski Spacetime</h1>
+  <span class="post-date">23 Jan 2018</span>
+  <span>[
+  
+    
+    <a href="/tag/physics"><code class="highligher-rouge"><nobr>physics</nobr></code>&nbsp;</a>
+  
+]</span>
+  <h2 id="what-is-spacetime">What is Spacetime?</h2>
+<p>Before we talk about Minkowski Spacetime, we need to address what it means to combine space and time.</p>
+
+<p>Imagine the Earth orbiting the sun. At every point in time it will be in a different point in its orbit:</p>
+
+<p><img src="https://www.pitt.edu/~jdnorton/teaching/HPS_0410/chapters/spacetime/planet3d.gif?style=centerme" alt="orbit2D" /></p>
+
+<p>If we stack these slices of time in a third (temporal) dimension, it would look like this:</p>
+
+<p><img src="https://www.pitt.edu/~jdnorton/teaching/HPS_0410/chapters/spacetime/planet4d.gif?style=centerme" alt="orbit3D" /></p>
+
+<!-- *It looks similar to euler's formula, $$e^{i\theta}=\cos \theta + i\sin\theta$$, with space being the complex plane and time being the angle $$\theta$$. The imaginary part will come in handy later.* -->
+
+<p>This is an example of a 3D spacetime. It has 2 dimensions of space and 1 of time. Our universe has 3 space and 1 time dimension, making our spacetime (referred to as <em>Minkowski Spacetime</em>) 4 dimensional.</p>
+
+<!--more-->
+
+<h4 id="why-do-this">Why do this?</h4>
+<p>Spacetime serves as a useful mathematical and intuitive model of the universe that we can use to reason about physics, particularly Einstein’s special relativity. Indeed, it was Einstein’s former teacher <a href="https://en.wikipedia.org/wiki/Hermann_Minkowski">Hermann Minkowski</a> that came up with spacetime as a tool to understand his pupil’s breakthrough theory.</p>
+
+<h2 id="definition">Definition</h2>
+<p>Formally speaking, Minkowski spacetime (which I’ll simply refer to as <em>spacetime</em>) is an <a href="\2017\05\21\abstract-algebra">algebraic structure</a> that represents space purely in mathematical terms. In particular it is a 4D <a href="https://en.wikipedia.org/wiki/Vector_space">vector space</a>.</p>
+
+<p>Points in this space are represented by vectors and are referred to as <strong>events</strong>. The naming stems from the fact that these points represents both moments in time as well as locations in space.</p>
+
+<!-- Remove link to vector space wikipedia -->
+<!-- *If you don't know what a vector space is, I've written a post about it [here](\2018\01\20\vector-spaces).* -->
+
+<p>An event, usually denoted <script type="math/tex">s</script>, is represented by a 4D vector where <script type="math/tex">x,y,z,t</script> are real numbers:</p>
+
+<script type="math/tex; mode=display">s=(x,y,z,ict)</script>
+
+<p>You may have noticed that the last coordinate, which corresponds to time, is multiplied by a factor of <script type="math/tex">ic</script>. <script type="math/tex">i</script>, as we know, is the imaginary unit and multiplying it by time makes the fourth coordinate an imaginary number. The fourth coordinate always being an imaginary number means that spacetime consists of 3 real spatial dimensions and one imaginary temporal dimension.</p>
+
+<p><script type="math/tex">c</script> represents the speed of light (299,792,458 m/s) and when multiplied by a time value (like seconds) it gives the distance a photon would travel in that time. This is necessary to convert from time units to length units. It wouldn’t really make sense to have a position vector with different units for dimensions, as we’ll see…</p>
+
+<h4 id="an-example">An Example</h4>
+<p>Say you walk 2m forward out of your house, walk 3 meters to the right, and jump (an impressive) 1 meter into the air. Let’s also say that at the moment you were 1 meter in the air, 6 seconds had passed.</p>
+
+<p>Setting the event of you leaving your house as the origin, the coordinates of the event of you jumping in the air are:</p>
+<ul>
+  <li>x = 2m (forward)</li>
+  <li>y = 3m (to the right)</li>
+  <li>z = 1m (in the air)</li>
+  <li>t = 6s (had passed since you left the house)</li>
+</ul>
+
+<p>Thus that event in spacetime is represented by the ordered quadruplet:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+  s &= (2,3,1,6\text{c}i) \\
+  &= (2,3,1,1.80i\times 10^9) \\
+\end{align*} %]]></script>
+
+<p>Note that the time coordinate is much bigger in magnitude due to how large the speed of light is.</p>
+
+<p>In this framework you can, loosely, consider 1 second to be equivalent to 299,792,458 imaginary meters.</p>
+
+<h2 id="proper-distance">Proper Distance</h2>
+<p>The distance between two points in space is given as such:</p>
+
+<script type="math/tex; mode=display">\Delta d=\sqrt{(\Delta x)^2+(\Delta y)^2+(\Delta z)^2}</script>
+
+<p>Where <script type="math/tex">\Delta x,\Delta y,\Delta z</script> represent the distance between the two <script type="math/tex">x/y/z</script> coordinates of the two points. (i.e <script type="math/tex">\Delta x = x_2 - x_1</script>)</p>
+
+<p>But special relativity tells us that space and time are relative and so it might be useful to have a notion of ‘distance’ for events in space<em>time</em> and not just space.</p>
+
+<p>This analogue is called <strong>proper distance</strong> (denoted <script type="math/tex">\Delta s</script>) and we obtain it just like we did the one above. Square each coordinate, add them together, and take that sum’s square root:</p>
+
+<script type="math/tex; mode=display">\Delta s=\sqrt{(\Delta x)^2+(\Delta y)^2+(\Delta z)^2-\text{c}^2(\Delta t)^2}</script>
+
+<p>This measure of ‘distance’ is similar to the standard spatial one, barring the strange looking last term <script type="math/tex">-\text{c}^2(\Delta t)^2</script>. Upon further consideration, however, this term makes just as much sense as the others:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+(x)^2&=x^2 \\
+(y)^2&=y^2 \\
+(z)^2&=z^2 \\
+(i\text{c}t)^2&=i^2\text{c}^2t^2=-\text{c}^2 t^2
+\end{align*} %]]></script>
+
+<h4 id="an-example-1">An Example</h4>
+<p>Say you fly a spaceship 3000km into space from earth (the origin), let’s call that the y-axis, in the span of 1ms (this is a very fast spaceship).</p>
+
+<p>So since earth is the origin these are the change in coordinates:</p>
+<ul>
+  <li>Δx = 0m</li>
+  <li>Δy = 4000km = 4000000m</li>
+  <li>Δz = 0m</li>
+  <li>Δt = 1ms = .01s</li>
+</ul>
+
+<p>Thus the proper distance between the origin and that event in spacetime is:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+  \Delta s &= \sqrt{0^2+(3.0\times 10^6)^2+0^2+((.01)\text{c}i)^2} \text{ meters} \\
+  &= \sqrt{(4.0\times 10^6)^2+(2.997i\times 10^6)^2} \text { meters} \\
+  &= \sqrt{(4.0\times 10^6)^2-(2.997\times 10^6)^2} \text { meters} \\
+  &= 2.65\times 10^6 \text { meters} \\
+\end{align*} %]]></script>
+
+<p>Remember this distance isn’t through space but spacetime, so it doesn’t have quite the same meaning as you may first think.</p>
+
+<h4 id="proper-time">Proper Time</h4>
+<p>If you take a good look at the formula for proper distance you’ll notice a problem: What if radicand is negative?</p>
+
+<p>Take the example of jumping in the air form earlier. If we use the proper distance formula with it we get:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+  \Delta s &= \sqrt{2^2+3^2+1^2+(6\text{c}i)^2} \text{ meters} \\
+  &= \sqrt{4+9+1+(1.799i\times 10^9)^2} \text { meters} \\
+  &= \sqrt{4+9+1-(1.799\times 10^9)^2} \text { meters} \\
+  &= \sqrt{-3.236\times 10^{18}} \text { meters} \\
+  &= 1.799i\times 10^9 \text { meters} \\
+\end{align*} %]]></script>
+
+<p>While we did accept the idea of imaginary time earlier, we cannot accept an imaginary proper distance. I mean the whole point was to get rid of the imaginary part right? So where did we go wrong? Well as it turns out, spacetime is a bit more complicated than I first led on (how surprising).</p>
+
+<p>Two events in spacetime have the property of being either spacelike seperated or timelike seperated. The difference between them is essentially whether the two events could be causally connected (they are close enough to be affected by a particle traveling at the speed of light). See <a href="https://en.wikipedia.org/wiki/Light_cone">light cones</a> for more.</p>
+
+<p>The proper distance is the formula used for <em>spacelike</em> separated events. Another quantity, known as <a href="https://en.wikipedia.org/wiki/Proper_time">proper time</a>, is used to measure the length between two <em>timelike</em> events in spacetime.</p>
+
+<h2 id="asides">Asides</h2>
+<p>What I’ve described in this post is a very basic notion of spacetime and how one may codify events in it. There are many more aspects of spacetime and events in it like 4-velocities (the spacetime equivalent to velocity), 4-accelerations, proper time, Lorentz transformations, etc.</p>
+
+<p>Also note that our normal notion of distance and time still apply to spacetime. All that’s different is the fact that space and time are not invariant. That is to say, the regular old spatial <em>distance</em> between two events can change depending on your reference frame, but the <em>proper distance</em> between them is constant in all reference frames.</p>
+
+<h4 id="regarding-imaginary-time">Regarding Imaginary Time</h4>
+<p>You may have felt a little uneasy when I introduced time as being an “imaginary 4th dimension” of spacetime or a second being equivalent to 299,792,458 imaginary meters. If so, you aren’t alone. Physicists aren’t so fond of concepts like imaginary time and so they’ve devised ways of getting around that, namely with something called a <a href="https://en.wikipedia.org/wiki/Metric_signature">metric signature</a>.</p>
+
+<p>This has its benefits but, for our purposes, Minkowski spacetime is easier to understand if we consider time to be an imaginary dimension. It melds well with the definition of proper length.</p>
+
+<p>Moreover, I think considering time as an imaginary dimension provides a useful analogy for its ephemeral nature. We can’t <em>move</em> through time like we can through space. This is analogous to us not being able to directly measure imaginary quantities like we can with real ones.</p>
+
+<!-- #### Regarding Vector Spaces
+Also while Minkowski Spacetime is generally considered a vector space, if the set of values that the coordinates come from aren't frost he same Field of numbers (the space coordinates come from the real numbers and the time coordinate comes from the imaginary numbers) then it technically can't be considered a vector space. This is another blow to the imaginary time version of spacetime. -->
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2018/03/18/reinforcement-learning-pong/">
+            Playing Atari Pong with Reinforcement Learning
+            <small>18 Mar 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2018/03/17/kinematics/">
+            Kinematics
+            <small>17 Mar 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2018/03/15/position/">
+            Position
+            <small>15 Mar 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+    </div>
+  </body>
+</html>
