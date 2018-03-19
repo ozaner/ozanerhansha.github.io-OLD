@@ -33,15 +33,17 @@ title: Table of Contents
   - Conservation of Energy
   - Frame of Reference
 - ### [Classical Physics](/2018/03/14/physics#classical-physics)
-  - #### [Mechanics]()
+  - #### Mechanics
     - [Kinematics](/2018/03/04/kinematics)
       - Rotational Kinematics
     - [Dynamics]()
       - Momentum
-      - (Mechanical) Work
+      - Rotational Dynamics
       - Potential Energy
       - Rotational Dynamics
       - Simple Harmonic Motion
+    - Work
+      - Rotational Work
   - #### [Electromagnetism]()
     - Electrostatics
       - Electric Fields

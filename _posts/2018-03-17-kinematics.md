@@ -107,13 +107,13 @@ $$\begin{align}
 \end{align}$$
 
 $$\begin{align}
-2\vec{a}(\vec{x}-\vec{x}_0)&=(\vec{v}+\vec{v}_0)\vec{a}t\\
-&=(\vec{v}+\vec{v}_0)(\vec{v}-\vec{v}_0) \tag{foil dot product}\\
+2\vec{a}\cdot(\vec{x}-\vec{x}_0)&=(\vec{v}+\vec{v}_0)\cdot\vec{a}t\\
+&=(\vec{v}+\vec{v}_0)\cdot(\vec{v}-\vec{v}_0) \tag{foil dot product}\\
 &=\vec{v} \cdot \vec{v} - \vec{v}_0 \cdot \vec{v}_0\\
 &=\left \| \vec{v} \right \|^2-\left \| \vec{v}_0 \right \|^2\\
 \end{align}$$
 
-$$\boxed{\left \| \vec{v} \right \|^2 = 2\vec{a}(\vec{x}-\vec{x}_0)+\left \| \vec{v}_0 \right \|^2}$$ -->
+$$\boxed{\left \| \vec{v} \right \|^2 = 2\vec{a}\cdot(\vec{x}-\vec{x}_0)+\left \| \vec{v}_0 \right \|^2}$$ -->
 
 <details>
 <summary><strong>Time Independent Equation</strong></summary>
@@ -125,12 +125,11 @@ $$\boxed{\left \| \vec{v} \right \|^2 = 2\vec{a}(\vec{x}-\vec{x}_0)+\left \| \ve
 \end{align}$$
 
 $$\begin{align}
-2\vec{a}(\vec{x}-\vec{x}_0)&=(\vec{v}+\vec{v}_0)\vec{a}t\\
-&=(\vec{v}+\vec{v}_0)(\vec{v}-\vec{v}_0) \tag{foil dot product}\\
+2\vec{a}\cdot(\vec{x}-\vec{x}_0)&=(\vec{v}+\vec{v}_0)\cdot\vec{a}t\\
+&=(\vec{v}+\vec{v}_0)\cdot(\vec{v}-\vec{v}_0) \tag{foil dot product}\\
 &=\vec{v} \cdot \vec{v} - \vec{v}_0 \cdot \vec{v}_0\\
 &=\left \| \vec{v} \right \|^2-\left \| \vec{v}_0 \right \|^2\\
 \end{align}$$</p>
-<p>$$\boxed{\left \| \vec{v}_0 \right \|^2=\left \| \vec{v} \right \|^2 + 2\vec{a}(\vec{x}-\vec{x}_0)}$$</p>
 </details>
 
 ### Book Keeping
@@ -161,7 +160,7 @@ If we look at the acceleration independent equation, we can see it contains the 
 $$\boxed{\overline{\vec{v}}=\frac{\vec{v_0}+\vec{v}}{2}}$$
 
 #### Dot Product
-When deriving the time independent kinematic equation, we ran into the problem of multiplying two vectors together $$(\vec{v}+\vec{v}_0)(\vec{v}-\vec{v}_0)$$. Unlike scalars, there are multiple definitions of "product" when it comes to vectors. The one we used here was the dot product.
+When deriving the time independent kinematic equation, we used the dot product when manipulating the expressions $$(\vec{v}+\vec{v}_0)\cdot \vec{a}$$ and $$(\vec{v}+\vec{v}_0)\cdot(\vec{v}-\vec{v}_0)$$. We were justified in doing so because the dot product is both commutative and distributive.
 
 The dot product of a vector with itself is that vector's **squared norm** and is often denoted as such:
 
@@ -174,21 +173,20 @@ $$\begin{gather}
 &\vec{v}=\vec{v}_0+\vec{a}t \tag{\(\vec{x}\) independent}\\
 &\Delta\vec{x}=\vec{v}_0t+\frac{\vec{a}t^2}{2} \tag{\(\vec{v}\) independent}\\
 &\Delta\vec{x}=\overline{\vec{v}}t=\frac{\vec{v_0}+\vec{v}}{2}t \tag{\(\vec{a}\) independent}\\
-&v^2 = v_0^2+2\vec{a}\Delta\vec{x} \tag{t independent}
+&v^2 = v_0^2+2\vec{a}\cdot\Delta\vec{x} \tag{t independent}
 \end{gather}$$
 
 ### Graphing
-When the position, velocity and acceleration functions are graphed with respect to time, they're graphs are related by the kinematic equations.
+When the position, velocity and acceleration functions are graphed with respect to time, their graphs are related by the kinematic equations.
 
 #### General Info
 For any graph of $$\vec{x}(t)$$
 -  Slope of the secant line created by two points is the average velocity during that time interval.
-- Slope of line tangent to curve at time $$t$$ is the object's instantaneous velocity.
-- Area under a region of the curve is the object's absement.
+- Slope of line tangent to curve at time $$t$$ is the object's instantaneous velocity at $$t$$.
 
 For any graph of $$\vec{v}(t)$$
 -  Slope of the secant line created by two points is the average acceleration during that time interval.
-- Slope of line tangent to curve at time $$t$$ is the object's instantaneous acceleration.
+- Slope of line tangent to curve at time $$t$$ is the object's instantaneous acceleration at $$t$$.
 - Area under a region of the curve from $$[a,b]$$ is the object's displacement during $$[a,b]$$.
 
 For any graph of $$\vec{a}(t)$$
