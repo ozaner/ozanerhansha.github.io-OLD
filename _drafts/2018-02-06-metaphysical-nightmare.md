@@ -35,7 +35,7 @@ A Cesium atom, for example, is thus completely mathematically defined. Everythin
 
 This applies to all atoms, and thus all molecules, and further anything in the universe made of matter, like humans. This shouldn't come as a surprise. After all, we know that math is the bedrock of science and thus of formal knowledge as a whole.
 
-![chain of abstraction](/assets/2018/02/metaphysical-nightmare/chain_of_abstraction.png?style=centerme)
+![chain of abstraction](/assets/philosophy/metaphysical-nightmare/chain_of_abstraction.png?style=centerme)
 
 Take psychology. It is really just applied biology, which is just applied chemistry, which is just applied physics, which is just (as we've seen) applied mathematics.
 

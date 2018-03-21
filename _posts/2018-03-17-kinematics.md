@@ -195,19 +195,19 @@ For any graph of $$\vec{a}(t)$$
 - Area under a region of the curve from $$[a,b]$$ is the object's change in velocity during $$[a,b]$$.
 
 #### An Object at Rest
-![graphs](/assets/physics/kinematics_at_rest.png?style=centerme)
+![graphs](/assets/physics/kinematics/kinematics_at_rest.png?style=centerme)
 - $$\vec{x}(t) = c$$, where c is a constant.
 - $$\vec{v}(t)=$$ 0
 - $$\vec{a}(t)=$$ 0
 
 #### An Object with Constant Velocity
-![graphs](/assets/physics/kinematics_const_vel.png?style=centerme)
+![graphs](/assets/physics/kinematics/kinematics_const_vel.png?style=centerme)
 - $$\vec{x}(t)$$ is linear.
 - $$\vec{v}(t) = c$$, where c is a constant.
 - $$\vec{a}(t)=$$ 0
 
 #### An Object with Constant Acceleraion
-![graphs](/assets/physics/kinematics_const_accel.png?style=centerme)
+![graphs](/assets/physics/kinematics/kinematics_const_accel.png?style=centerme)
 - $$\vec{x}(t)$$ is quadratic.
 - $$\vec{v}(t)$$ is linear.
 - $$\vec{a}(t) = c$$, where c is a constant.

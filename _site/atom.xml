@@ -4,7 +4,7 @@
  <title>Oz∀n∈ℝ</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-03-19T19:42:21-04:00</updated>
+ <updated>2018-03-21T11:59:09-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -18,7 +18,7 @@
    <updated>2018-03-18T00:00:00-04:00</updated>
    <id>http://localhost:4000/2018/03/18/reinforcement-learning-pong</id>
    <content type="html">&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
-&lt;p&gt;In 2013 the relatively new AI startup DeepMind released their paper &lt;a href=&quot;https://arxiv.org/pdf/1312.5602.pdf&quot;&gt;&lt;em&gt;Playing Atari with Deep Reinforcement Learning&lt;/em&gt;&lt;/a&gt; detailing an artificial neural network that was able to play, not 1, but 7 Atari games with human and even super-human level proficiency. What made this paper so astounding was the fact that it was a single, general purpose neural network (a &lt;strong&gt;general artificial intelligence&lt;/strong&gt; if you will) that played all these games rather than 7 separate ones.&lt;/p&gt;
+&lt;p&gt;In 2013 the relatively new AI startup DeepMind released their paper &lt;a href=&quot;https://arxiv.org/pdf/1312.5602.pdf&quot;&gt;&lt;em&gt;Playing Atari with Deep Reinforcement Learning&lt;/em&gt;&lt;/a&gt; detailing an artificial neural network that was able to play, not 1, but 7 Atari games with human and even super-human level proficiency. What made this paper so astounding was the fact that it was a single, general purpose neural network (a &lt;strong&gt;general artificial intelligence&lt;/strong&gt; if you will) that could be trained to play all these games rather than 7 separate ones.&lt;/p&gt;
 
 &lt;p&gt;If this wasn’t enough, in 2015 they blew the machine learning community, and everyone else considering the news coverage, away with their paper &lt;a href=&quot;https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf&quot;&gt;&lt;em&gt;Human-level control through deep reinforcement learning&lt;/em&gt;&lt;/a&gt; in which they construct what they call a &lt;strong&gt;Deep Q Network&lt;/strong&gt; (DQN) to play &lt;em&gt;42&lt;/em&gt; different Atari games, all of varying complexity, with performance that exceeded a professional human player.&lt;a href=&quot;https://deepmind.com/research/dqn/&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -259,7 +259,7 @@ $$\begin{align}
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;an-object-at-rest&quot;&gt;An Object at Rest&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/physics/kinematics_at_rest.png?style=centerme&quot; alt=&quot;graphs&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/physics/kinematics/kinematics_at_rest.png?style=centerme&quot; alt=&quot;graphs&quot; /&gt;&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{x}(t) = c&lt;/script&gt;, where c is a constant.&lt;/li&gt;
   &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{v}(t)=&lt;/script&gt; 0&lt;/li&gt;
@@ -267,7 +267,7 @@ $$\begin{align}
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;an-object-with-constant-velocity&quot;&gt;An Object with Constant Velocity&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/physics/kinematics_const_vel.png?style=centerme&quot; alt=&quot;graphs&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/physics/kinematics/kinematics_const_vel.png?style=centerme&quot; alt=&quot;graphs&quot; /&gt;&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{x}(t)&lt;/script&gt; is linear.&lt;/li&gt;
   &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{v}(t) = c&lt;/script&gt;, where c is a constant.&lt;/li&gt;
@@ -275,7 +275,7 @@ $$\begin{align}
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;an-object-with-constant-acceleraion&quot;&gt;An Object with Constant Acceleraion&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/physics/kinematics_const_accel.png?style=centerme&quot; alt=&quot;graphs&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/physics/kinematics/kinematics_const_accel.png?style=centerme&quot; alt=&quot;graphs&quot; /&gt;&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{x}(t)&lt;/script&gt; is quadratic.&lt;/li&gt;
   &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{v}(t)&lt;/script&gt; is linear.&lt;/li&gt;
@@ -331,7 +331,7 @@ $$\begin{align}
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\int_{-\infty}^{\infty}\left | \psi(x) \right |^2 dx=1&lt;/script&gt;
 
-&lt;p&gt;Because the particle has to be somewhere in space, so the probabilities must sum to 1. We integrate from &lt;script type=&quot;math/tex&quot;&gt;-\infty&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;\infty&lt;/script&gt; since the particle is a wave spread out over all of space. With some vector calculus, this can extended to the 3D case we see in the real world.&lt;/p&gt;
+&lt;p&gt;Because the particle has to be somewhere in space, the probabilities must sum to 1. We integrate from &lt;script type=&quot;math/tex&quot;&gt;-\infty&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;\infty&lt;/script&gt; since the particle is a wave spread out over all of space. With some vector calculus, this can extended to the 3D case we see in the real world.&lt;/p&gt;
 </content>
  </entry>
  

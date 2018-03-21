@@ -110,7 +110,7 @@ But luckily there is a way to amend the factorial function such that it accepts 
 
 The generalized factorial function is called the [**gamma function**](https://en.wikipedia.org/wiki/Gamma_function) and is denoted: $$\Gamma(x)$$
 
-![gamma graph](/assets/2018/01/fractional-calculus/gamma_function.png?style=centerme)
+![gamma graph](/assets/math/fractional-calculus/gamma_function.png?style=centerme)
 
 In the graph above you'll see that the gamma function returns the same result as factorial for integer values, but is shifted over by 1:
 

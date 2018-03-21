@@ -155,7 +155,7 @@ Finally we create the training step. This is where we choose what optimizationet
 
 Here's a visualization:
 
-![SGD](https://alykhantejani.github.io/images/gradient_descent_line_graph.gif)
+![SGD](/assets/breast-cancer/gradient_descent_3D.gif?style=centerme)
 
 And here it is in tensorflow:
 ~~~ python

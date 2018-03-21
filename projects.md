@@ -22,7 +22,7 @@ This is an artificial neural network trained to play pong against a competent bo
 ## Breast Cancer Classification
 An artificial neural network trained on the [Wisconsin Breast Cancer Dataset](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(original)). It can classify breast cancer cells as benign or malignant based on 10 pieces of data regarding its size, shape and other variables. The network has around a 90% accuracy on random samples.
 
-![bc](/assets/2018/01/breast-cancer-classification/breastcancer.png?style=centerme)
+![bc](/assets/breast-cancer/breastcancer.png?style=centerme)
 
 [Read more...](/2018/01/15/breast-cancer-classification)
 
@@ -40,7 +40,7 @@ A program written in Java that converts any file into an encoded PNG file that c
 
 An interesting consequence of how the image is directly encoded from the bits of the file is that similar types of files share similar structures. Here's an example:
 
-![Text in FileToPNG](/assets/2018/01/filetopng/text_diagram.png?style=centerme){:width="500px"}
+![Text in FileToPNG](/assets/projects/filetopng/text_diagram.png?style=centerme){:width="500px"}
 
 [Read more...](/2018/01/16/filetopng)
 
@@ -55,7 +55,7 @@ Click [here](https://github.com/ozanerhansha/NeuralNetworks/blob/master/src/MNIS
 #### Android App
 The model was then exported and, via TensorFlow's Inference API in Java, implemented into an Android App. It includes a canvas for drawing the digits and percentages of confidence in its guess.
 
-![Two & Six Example](/assets/2018/01/digit-classifier-app/test_screenshots.png?style=centerme){:width="500px"}
+![Two & Six Example](/assets/projects/digit-classifier/test_screenshots.png?style=centerme){:width="500px"}
 
 You can download the app [here](https://github.com/ozanerhansha/DigitClassifier/releases).
 

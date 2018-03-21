@@ -2,9 +2,83 @@
 layout: page
 title: Notes
 ---
+<h1>Table of Contents</h1>
+
+<!--Math-->
+<details>
+  <summary><strong><big><big>
+    Math
+  </big></big></strong></summary>
+  <ul>
+    <li><a href="/2018/01/30/fractional-calculus">Fractional Calculus</a></li>
+    <li><a href="/2018/01/07/abstract-algebra">Abstract Algebra</a></li>
+  </ul>
+</details>
+
+<!--Physics-->
+<details>
+  <summary><strong><big><big>
+    <a href="/2018/03/14/physics">Physics</a>
+  </big></big></strong></summary>
+  <ul>
+    <li> <!--Fundamentals-->
+      <strong><big>
+        Fundamentals
+      </big></strong>
+      <ul>
+        <li><a href="/2018/03/15/position">Position</a></li>
+      </ul>
+    </li>
+    <li> <!--Classical Physics-->
+      <strong><big>
+        <a href="/2018/03/14/physics#classical-physics">Classical Physics</a>
+      </big></strong>
+      <ul>
+        <li><a href="/2018/03/04/kinematics">Kinematics</a></li>
+      </ul>
+    </li>
+    <li> <!--Relativity-->
+      <strong><big>
+        <a href="/2018/03/14/physics#special--general-relativity">Relativity</a>
+      </big></strong>
+      <ul>
+        <li><a href="/2018/01/23/minkowski-spacetime">Minkowski Spacetime</a></li>
+      </ul>
+    </li>
+  </ul>
+</details>
+
+<!--Computer Science-->
+<details>
+  <summary><strong><big><big>
+    Computer Science
+  </big></big></strong></summary>
+  <ul>
+    <li> <!--General-->
+      <strong><big>
+        General
+      </big></strong>
+      <ul>
+        <li><a href="/2018/01/05/binary-prefixes">Binary Prefixes</a></li>
+      </ul>
+    </li>
+    <li> <!--Projects-->
+      <strong><big>
+        <a href="/projects">Projects</a>
+      </big></strong>
+      <ul>
+        <li><a href="/2018/03/18/reinforcement-learning-pong">Reinforcement Learning Pong AI</a></li>
+        <li><a href="/2018/01/15/breast-cancer-classification">Breast Cancer Classification</a></li>
+        <li><a href="/2018/01/16/filetopng">FileToPNG</a></li>
+      </ul>
+    </li>
+  </ul>
+</details>
+
+<hr></hr>
+
 <div>{% include tag-cloud.html %}</div>
-<hr>
-<h1>All Posts</h1>
+<h2>All Posts</h2>
 <ul>
   {% for post in site.posts %}
     <li><a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date_to_string }})<br>
