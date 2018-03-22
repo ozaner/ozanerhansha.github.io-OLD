@@ -30,8 +30,8 @@ The [code](https://github.com/ozanerhansha/NeuralNetworks/tree/master/src/pongRL
 ## Results
 Learning starts to appear after 1500 games (a game goes on until one player reaches 20 points) and it reaches a 50% win-rate at around 8000 games. More testing needs to be done to see the maximum accuracy of this particular network.
 
-![pongdata](/assets/projects/pongdata.png?style=centerme)
+![pongdata](/assets/projects/pongAI/pongdata.png?style=centerme)
 
 Below is the network (on a good day) playing against the same bot it trained with for 10,000 games.
 
-![bc](/assets/projects/pongai.gif?style=centerme)
+![bc](/assets/projects/pongAI/pongai.gif?style=centerme)
