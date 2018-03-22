@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Kinematics
-tags: physics classical-physics
+tags: physics classical-mechanics
 ---
 <!-- Make vectors bold rather than arrow headed --> $$\renewcommand{\vec}[1]{\mathbf{#1}}$$
 Kinematics describes the motion of objects through space over time. Using an object's [position](/2018/03/15/position), velocity and acceleration vectors, it is possible to predict where it will be in the future and where it was in the past.

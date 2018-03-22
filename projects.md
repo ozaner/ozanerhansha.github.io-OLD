@@ -15,14 +15,14 @@ title: Projects
 ## Reinforcement Learning Pong AI
 This is an artificial neural network trained to play pong against a competent bot. Learning starts to appear after 500 games (a game goes on until one player reaches 20 points) and it reaches a 50% win-rate at 8000 games. The network seems to asymptote at a 90% win-rate but more testing needs to be done.
 
-![bc](/assets/projects/pongai.gif?style=centerme)
+![bc](/assets/projects/pongAI/pongai.gif?style=centerme)
 
 [Read more...](/2018/03/18/reinforcement-learning-pong)
 
 ## Breast Cancer Classification
 An artificial neural network trained on the [Wisconsin Breast Cancer Dataset](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(original)). It can classify breast cancer cells as benign or malignant based on 10 pieces of data regarding its size, shape and other variables. The network has around a 90% accuracy on random samples.
 
-![bc](/assets/breast-cancer/breastcancer.png?style=centerme)
+![bc](/assets/projects/breast-cancer/breastcancer.png?style=centerme)
 
 [Read more...](/2018/01/15/breast-cancer-classification)
 
