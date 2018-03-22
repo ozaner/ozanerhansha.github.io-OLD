@@ -14,7 +14,7 @@ If we stack these slices of time in a third (temporal) dimension, it would look 
 
 ![orbit3D](https://www.pitt.edu/~jdnorton/teaching/HPS_0410/chapters/spacetime/planet4d.gif?style=centerme)
 
-<!-- *It looks similar to euler's formula, $$e^{i\theta}=\cos \theta + i\sin\theta$$, with space being the complex plane and time being the angle $$\theta$$. The imaginary part will come in handy later.* -->
+<!-- *It looks similar to euler's formula, $e^{i\theta}=\cos \theta + i\sin\theta$, with space being the complex plane and time being the angle $\theta$. The imaginary part will come in handy later.* -->
 
 This is an example of a 3D spacetime. It has 2 dimensions of space and 1 of time. Our universe has 3 space and 1 time dimension, making our spacetime (referred to as *Minkowski Spacetime*) 4 dimensional.
 
@@ -31,13 +31,13 @@ Points in this space are represented by vectors and are referred to as **events*
 <!-- Remove link to vector space wikipedia -->
 <!-- *If you don't know what a vector space is, I've written a post about it [here](\2018\01\20\vector-spaces).* -->
 
-An event, usually denoted $$s$$, is represented by a 4D vector where $$x,y,z,t$$ are real numbers:
+An event, usually denoted $s$, is represented by a 4D vector where $x,y,z,t$ are real numbers:
 
 $$s=(x,y,z,ict)$$
 
-You may have noticed that the last coordinate, which corresponds to time, is multiplied by a factor of $$ic$$. $$i$$, as we know, is the imaginary unit and multiplying it by time makes the fourth coordinate an imaginary number. The fourth coordinate always being an imaginary number means that spacetime consists of 3 real spatial dimensions and one imaginary temporal dimension.
+You may have noticed that the last coordinate, which corresponds to time, is multiplied by a factor of $ic$. $i$, as we know, is the imaginary unit and multiplying it by time makes the fourth coordinate an imaginary number. The fourth coordinate always being an imaginary number means that spacetime consists of 3 real spatial dimensions and one imaginary temporal dimension.
 
-$$c$$ represents the speed of light (299,792,458 m/s) and when multiplied by a time value (like seconds) it gives the distance a photon would travel in that time. This is necessary to convert from time units to length units. It wouldn't really make sense to have a position vector with different units for dimensions, as we'll see...
+$c$ represents the speed of light (299,792,458 m/s) and when multiplied by a time value (like seconds) it gives the distance a photon would travel in that time. This is necessary to convert from time units to length units. It wouldn't really make sense to have a position vector with different units for dimensions, as we'll see...
 
 #### An Example
 Say you walk 2m forward out of your house, walk 3 meters to the right, and jump (an impressive) 1 meter into the air. Let's also say that at the moment you were 1 meter in the air, 6 seconds had passed.
@@ -64,15 +64,15 @@ The distance between two points in space is given as such:
 
 $$\Delta d=\sqrt{(\Delta x)^2+(\Delta y)^2+(\Delta z)^2}$$
 
-Where $$\Delta x,\Delta y,\Delta z$$ represent the distance between the two $$x/y/z$$ coordinates of the two points. (i.e $$\Delta x = x_2 - x_1$$)
+Where $\Delta x,\Delta y,\Delta z$ represent the distance between the two $x/y/z$ coordinates of the two points. (i.e $\Delta x = x_2 - x_1$)
 
 But special relativity tells us that space and time are relative and so it might be useful to have a notion of 'distance' for events in space*time* and not just space.
 
-This analogue is called **proper distance** (denoted $$\Delta s$$) and we obtain it just like we did the one above. Square each coordinate, add them together, and take that sum's square root:
+This analogue is called **proper distance** (denoted $\Delta s$) and we obtain it just like we did the one above. Square each coordinate, add them together, and take that sum's square root:
 
 $$\Delta s=\sqrt{(\Delta x)^2+(\Delta y)^2+(\Delta z)^2-\text{c}^2(\Delta t)^2}$$
 
-This measure of 'distance' is similar to the standard spatial one, barring the strange looking last term $$-\text{c}^2(\Delta t)^2$$. Upon further consideration, however, this term makes just as much sense as the others:
+This measure of 'distance' is similar to the standard spatial one, barring the strange looking last term $-\text{c}^2(\Delta t)^2$. Upon further consideration, however, this term makes just as much sense as the others:
 
 $$\begin{align*}
 (x)^2&=x^2 \\
@@ -85,10 +85,10 @@ $$\begin{align*}
 Say you fly a spaceship 3000km into space from earth (the origin), let's call that the y-axis, in the span of 1ms (this is a very fast spaceship).
 
 So since earth is the origin these are the change in coordinates:
-* Δx = 0m
-* Δy = 4000km = 4000000m
-* Δz = 0m
-* Δt = 1ms = .01s
+* $\Delta x = 0m$
+* $\Delta y = 4000km = 4000000m$
+* $\Delta z = 0m$
+* $\Delta t = 1ms = .01s$
 
 Thus the proper distance between the origin and that event in spacetime is:
 

@@ -18,7 +18,7 @@ The training data consists of 569 subjects each with 3 values (mean, worst value
 * Perimeter
 * Area
 * Smoothness (local variation in radius lengths)
-* Compactness $$(\frac{perimeter^2}{area} - 1)$$
+* Compactness $(\frac{perimeter^2}{area} - 1)$
 * Concavity (severity of concave portions of the contour)
 * Concave points (number of concave portions of the contour)
 * Symmetry
@@ -97,11 +97,11 @@ A single layer perceptron network seems to do well enough in fitting the test da
 
 $$\hat{y}=\text{softmax}(Wx+b)$$
 
-* $$x$$ is the input (a 30 dimensional vector of all the cancer cell's statistical values)
-* $$\hat{y}$$ is the network's  approximation of $$y$$, the right answer ($$\hat{y}$$ is a 2D vector with the first/second value corresponding to its confidence that the cell is benign/malignant)
-* $$W$$ is a matrix of weights (the matrix is 30x2 so that it turns 30 dimensional vectors into 2D vectors)
-* $$b$$ is a vector of 'bias' values (a 2D vector that allows the network more freedom when training)
-* The $$\text{softmax}$$ function is the network's [activation function](https://en.wikipedia.org/wiki/Activation_function), which introduces a nonlinearity to the network. This is integral for any neural network to learn from the data it's provided. The function also equalizes the network's confidence predictions so that they add up to 100%. The mathematical description of softmax is:
+* $x$ is the input (a 30 dimensional vector of all the cancer cell's statistical values)
+* $\hat{y}$ is the network's  approximation of $y$, the right answer ($\hat{y}$ is a 2D vector with the first/second value corresponding to its confidence that the cell is benign/malignant)
+* $W$ is a matrix of weights (the matrix is 30x2 so that it turns 30 dimensional vectors into 2D vectors)
+* $b$ is a vector of 'bias' values (a 2D vector that allows the network more freedom when training)
+* The $\text{softmax}$ function is the network's [activation function](https://en.wikipedia.org/wiki/Activation_function), which introduces a nonlinearity to the network. This is integral for any neural network to learn from the data it's provided. The function also equalizes the network's confidence predictions so that they add up to 100%. The mathematical description of softmax is:
 
 ![softmax graph](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Mplwp_logistic_function.svg/1280px-Mplwp_logistic_function.svg.png)
 
@@ -136,7 +136,7 @@ sess = tf.InteractiveSession() #Create Session
 sess.run(tf.global_variables_initializer()) #Init Variables
 ~~~
 
-Next we create the actual training model. First we create a placeholder for the labels of the training data, $$y$$.
+Next we create the actual training model. First we create a placeholder for the labels of the training data, $y$.
 
 ~~~ python
 #nx2 Matrix (One-Hot Vector, Label Data)

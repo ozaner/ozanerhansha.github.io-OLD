@@ -29,14 +29,12 @@
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
-  <!-- Adds MathJax -->
-  <!-- <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  </script> -->
-
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       tex2jax: {
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
       },
       jax: ["input/TeX","output/HTML-CSS"],
       displayAlign: "left !important",

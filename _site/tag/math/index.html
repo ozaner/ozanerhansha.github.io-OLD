@@ -29,14 +29,12 @@
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
-  <!-- Adds MathJax -->
-  <!-- <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  </script> -->
-
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       tex2jax: {
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
       },
       jax: ["input/TeX","output/HTML-CSS"],
       displayAlign: "left !important",
@@ -80,6 +78,7 @@
     gtag('config', 'UA-111962015-1');
   </script>
 </head>
+
   <body>
 
     <div class="sidebar">
@@ -234,10 +233,6 @@
   
   
   <a href="/tag/classical-mechanics"><code class="highligher-rouge"><nobr>classical-mechanics</nobr></code></a>
-
-  
-  
-  <a href="/tag/classical-physics"><code class="highligher-rouge"><nobr>classical-physics</nobr></code></a>
 
   
   

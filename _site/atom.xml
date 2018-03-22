@@ -4,7 +4,7 @@
  <title>Oz∀n∈ℝ</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-03-22T15:13:29-04:00</updated>
+ <updated>2018-03-22T17:18:50-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -25,7 +25,7 @@
 &lt;!--more--&gt;
 
 &lt;h2 id=&quot;q-learning&quot;&gt;Q-Learning&lt;/h2&gt;
-&lt;p&gt;The researchers at Google’s DeepMind achieved this stunning success with a type of machine learning called &lt;strong&gt;reinforcement learning&lt;/strong&gt; and more specifically &lt;strong&gt;Q-learning&lt;/strong&gt;. In essence, the goal of Q-learning is to approximate some ideal function &lt;script type=&quot;math/tex&quot;&gt;Q(s,a)&lt;/script&gt; that outputs a reward (how good we are doing at the task), where &lt;script type=&quot;math/tex&quot;&gt;s&lt;/script&gt; is a possible state of the environment/game/etc. and &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt; is a possible action to take in that state. If we had such a function, or even a good approximation, we could simply plug in our current state and choose whatever action will maximize &lt;script type=&quot;math/tex&quot;&gt;Q&lt;/script&gt; which would then maximize how well we perform the task. To approximate this function, the researches used a convolutional neural network (CNN) and trained it using Q-learning, thus creating a Deep Q Network. You can read more about Q-learning and DQNs &lt;a href=&quot;https://ai.intel.com/demystifying-deep-reinforcement-learning/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The researchers at Google’s DeepMind achieved this stunning success with a type of machine learning called &lt;strong&gt;reinforcement learning&lt;/strong&gt; and more specifically &lt;strong&gt;Q-learning&lt;/strong&gt;. In essence, the goal of Q-learning is to approximate some ideal function $Q(s,a)$ that outputs a reward (how good we are doing at the task), where $s$ is a possible state of the environment/game/etc. and $a$ is a possible action to take in that state. If we had such a function, or even a good approximation, we could simply plug in our current state and choose whatever action will maximize $Q$ which would then maximize how well we perform the task. To approximate this function, the researches used a convolutional neural network (CNN) and trained it using Q-learning, thus creating a Deep Q Network. You can read more about Q-learning and DQNs &lt;a href=&quot;https://ai.intel.com/demystifying-deep-reinforcement-learning/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;By implementing Q-learning in a convolutional neural network (CNN) they create a DQN capable of predicting what actions to take based on the current state of the game.&lt;/p&gt;
 
@@ -58,7 +58,7 @@
    <updated>2018-03-17T00:00:00-04:00</updated>
    <id>http://localhost:4000/2018/03/17/kinematics</id>
    <content type="html">&lt;!-- Make vectors bold rather than arrow headed --&gt;
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\renewcommand{\vec}[1]{\mathbf{#1}}&lt;/script&gt;
+&lt;p&gt;$\renewcommand{\vec}[1]{\mathbf{#1}}$
 Kinematics describes the motion of objects through space over time. Using an object’s &lt;a href=&quot;/2018/03/15/position&quot;&gt;position&lt;/a&gt;, velocity and acceleration vectors, it is possible to predict where it will be in the future and where it was in the past.&lt;/p&gt;
 
 &lt;h3 id=&quot;variable-acceleration&quot;&gt;Variable Acceleration&lt;/h3&gt;
@@ -77,12 +77,12 @@ Kinematics describes the motion of objects through space over time. Using an obj
 \end{align}&lt;/script&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{x}&lt;/script&gt; is the object’s position as a function of time&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{x}_0&lt;/script&gt; is the initial position, at &lt;script type=&quot;math/tex&quot;&gt;t=0&lt;/script&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{v}&lt;/script&gt; is the object’s velocity as a function of time&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{v}_0&lt;/script&gt; is the initial velocity, at &lt;script type=&quot;math/tex&quot;&gt;t=0&lt;/script&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{a}&lt;/script&gt; is the object’s acceleration as a function of time&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt; is time&lt;/li&gt;
+  &lt;li&gt;$\vec{x}$ is the object’s position as a function of time&lt;/li&gt;
+  &lt;li&gt;$\vec{x}_0$ is the initial position, at &lt;script type=&quot;math/tex&quot;&gt;t=0&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;$\vec{v}$ is the object’s velocity as a function of time&lt;/li&gt;
+  &lt;li&gt;$\vec{v}_0$ is the initial velocity, at &lt;script type=&quot;math/tex&quot;&gt;t=0&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;$\vec{a}$ is the object’s acceleration as a function of time&lt;/li&gt;
+  &lt;li&gt;$t$ is time&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;!--more--&gt;
@@ -98,7 +98,7 @@ $$\begin{align}
 \end{align}$$ --&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Velocity Independent Equation&lt;/strong&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;Position Independent Equation&lt;/strong&gt;&lt;/summary&gt;
 &lt;p&gt;$$\begin{align}
 \vec{v}&amp;amp;=\int\vec{a} \,dt+\vec{v}_0 \tag{integral def. of \(\vec{v}\)}\\
 &amp;amp;=\vec{a}\int dt+\vec{v}_0 \tag{\(\vec{a}\) is constant}\\
@@ -120,7 +120,7 @@ $$\begin{align}
 $$\boxed{\vec{x}=\frac{\vec{a}t^2}{2}+\vec{v}_0t+\vec{x}_0}$$ --&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Position Independent Equation&lt;/strong&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;Velocity Independent Equation&lt;/strong&gt;&lt;/summary&gt;
 &lt;p&gt;$$\begin{align}
 \vec{v}&amp;amp;=\vec{a}t+\vec{v}_0 \tag{\(\vec{x}\) independent Eq.}\\
 \vec{x}&amp;amp;=\int\vec{v} \,dt+\vec{x}_0 \tag{integral def. of \(\vec{x}\)}\\
@@ -195,12 +195,12 @@ $$\begin{align}
 &lt;p&gt;There are a couple of things we can do to clean up this set of 4 equations before we display them all together.&lt;/p&gt;
 
 &lt;h4 id=&quot;displacement-vs-position&quot;&gt;Displacement vs. Position&lt;/h4&gt;
-&lt;p&gt;While these equations describe the movement of an object in terms of its initial and current position, &lt;script type=&quot;math/tex&quot;&gt;\vec{x}_0&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\vec{x}&lt;/script&gt; respectively, it is common to think about kinematics in terms of &lt;strong&gt;displacement&lt;/strong&gt; or change in distance instead. The change in distance &lt;script type=&quot;math/tex&quot;&gt;\Delta\vec{x}&lt;/script&gt; is denoted:&lt;/p&gt;
+&lt;p&gt;While these equations describe the movement of an object in terms of its initial and current position, $\vec{x}_0$ and $\vec{x}$ respectively, it is common to think about kinematics in terms of &lt;strong&gt;displacement&lt;/strong&gt; or change in distance instead. The change in distance $\Delta\vec{x}$ is denoted:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\Delta\vec{x}=\vec{x}-\vec{x}_0&lt;/script&gt;
 
 &lt;h4 id=&quot;average-velocity&quot;&gt;Average Velocity&lt;/h4&gt;
-&lt;p&gt;If we look at the acceleration independent equation, we can see it contains the expression &lt;script type=&quot;math/tex&quot;&gt;\frac{\vec{v_0}+\vec{v}}{2}&lt;/script&gt;. As it turns out, when acceleration is constant, this expression is actually equivalent to the object’s &lt;strong&gt;average velocity&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\overline{\vec{v}}&lt;/script&gt;:&lt;/p&gt;
+&lt;p&gt;If we look at the acceleration independent equation, we can see it contains the expression $\frac{\vec{v_0}+\vec{v}}{2}$. As it turns out, when acceleration is constant, this expression is actually equivalent to the object’s &lt;strong&gt;average velocity&lt;/strong&gt; $\overline{\vec{v}}$:&lt;/p&gt;
 
 &lt;details&gt;
 &lt;summary&gt;Derivation&lt;/summary&gt;
@@ -219,7 +219,7 @@ $$\begin{align}
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\boxed{\overline{\vec{v}}=\frac{\vec{v_0}+\vec{v}}{2}}&lt;/script&gt;
 
 &lt;h4 id=&quot;dot-product&quot;&gt;Dot Product&lt;/h4&gt;
-&lt;p&gt;When deriving the time independent kinematic equation, we used the dot product when manipulating the expressions &lt;script type=&quot;math/tex&quot;&gt;(\vec{v}+\vec{v}_0)\cdot \vec{a}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;(\vec{v}+\vec{v}_0)\cdot(\vec{v}-\vec{v}_0)&lt;/script&gt;. We were justified in doing so because the dot product is both commutative and distributive.&lt;/p&gt;
+&lt;p&gt;When deriving the time independent kinematic equation, we used the dot product when manipulating the expressions $(\vec{v}+\vec{v}_0)\cdot \vec{a}$ and $(\vec{v}+\vec{v}_0)\cdot(\vec{v}-\vec{v}_0)$. We were justified in doing so because the dot product is both commutative and distributive.&lt;/p&gt;
 
 &lt;p&gt;The dot product of a vector with itself is that vector’s &lt;strong&gt;squared norm&lt;/strong&gt; and is often denoted as such:&lt;/p&gt;
 
@@ -240,46 +240,46 @@ $$\begin{align}
 &lt;p&gt;When the position, velocity and acceleration functions are graphed with respect to time, their graphs are related by the kinematic equations.&lt;/p&gt;
 
 &lt;h4 id=&quot;general-info&quot;&gt;General Info&lt;/h4&gt;
-&lt;p&gt;For any graph of &lt;script type=&quot;math/tex&quot;&gt;\vec{x}(t)&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;For any graph of $\vec{x}(t)$&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Slope of the secant line created by two points is the average velocity during that time interval.&lt;/li&gt;
-  &lt;li&gt;Slope of line tangent to curve at time &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt; is the object’s instantaneous velocity at &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;Slope of line tangent to curve at time &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt; is the object’s instantaneous velocity at $t$.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;For any graph of &lt;script type=&quot;math/tex&quot;&gt;\vec{v}(t)&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;For any graph of $\vec{v}(t)$&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Slope of the secant line created by two points is the average acceleration during that time interval.&lt;/li&gt;
   &lt;li&gt;Slope of line tangent to curve at time &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt; is the object’s instantaneous acceleration at &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt;.&lt;/li&gt;
-  &lt;li&gt;Area under a region of the curve from &lt;script type=&quot;math/tex&quot;&gt;[a,b]&lt;/script&gt; is the object’s displacement during &lt;script type=&quot;math/tex&quot;&gt;[a,b]&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;Area under a region of the curve from $[a,b]$ is the object’s displacement during $[a,b]$.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;For any graph of &lt;script type=&quot;math/tex&quot;&gt;\vec{a}(t)&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;For any graph of $\vec{a}(t)$&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Area under a region of the curve from &lt;script type=&quot;math/tex&quot;&gt;[a,b]&lt;/script&gt; is the object’s change in velocity during &lt;script type=&quot;math/tex&quot;&gt;[a,b]&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;Area under a region of the curve from $[a,b]$ is the object’s change in velocity during $[a,b]$.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;an-object-at-rest&quot;&gt;An Object at Rest&lt;/h4&gt;
 &lt;p&gt;&lt;img src=&quot;/assets/physics/kinematics/kinematics_at_rest.png?style=centerme&quot; alt=&quot;graphs&quot; /&gt;&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{x}(t) = c&lt;/script&gt;, where c is a constant.&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{v}(t)=&lt;/script&gt; 0&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{a}(t)=&lt;/script&gt; 0&lt;/li&gt;
+  &lt;li&gt;$\vec{x}(t) = c$, where c is a constant.&lt;/li&gt;
+  &lt;li&gt;$\vec{v}(t)=0$&lt;/li&gt;
+  &lt;li&gt;$\vec{a}(t)=0$&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;an-object-with-constant-velocity&quot;&gt;An Object with Constant Velocity&lt;/h4&gt;
 &lt;p&gt;&lt;img src=&quot;/assets/physics/kinematics/kinematics_const_vel.png?style=centerme&quot; alt=&quot;graphs&quot; /&gt;&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{x}(t)&lt;/script&gt; is linear.&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{v}(t) = c&lt;/script&gt;, where c is a constant.&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{a}(t)=&lt;/script&gt; 0&lt;/li&gt;
+  &lt;li&gt;$\vec{x}(t)$ is linear.&lt;/li&gt;
+  &lt;li&gt;$\vec{v}(t) = c$, where c is a constant.&lt;/li&gt;
+  &lt;li&gt;$\vec{a}(t)=0$&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;an-object-with-constant-acceleraion&quot;&gt;An Object with Constant Acceleraion&lt;/h4&gt;
 &lt;p&gt;&lt;img src=&quot;/assets/physics/kinematics/kinematics_const_accel.png?style=centerme&quot; alt=&quot;graphs&quot; /&gt;&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{x}(t)&lt;/script&gt; is quadratic.&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{v}(t)&lt;/script&gt; is linear.&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\vec{a}(t) = c&lt;/script&gt;, where c is a constant.&lt;/li&gt;
+  &lt;li&gt;$\vec{x}(t)$ is quadratic.&lt;/li&gt;
+  &lt;li&gt;$\vec{v}(t)$ is linear.&lt;/li&gt;
+  &lt;li&gt;$\vec{a}(t) = c$, where c is a constant.&lt;/li&gt;
 &lt;/ul&gt;
 </content>
  </entry>
@@ -292,7 +292,7 @@ $$\begin{align}
    <content type="html">&lt;p&gt;The position of a particle or object in &lt;strong&gt;space&lt;/strong&gt; is defined as a point on an n-dimensional &lt;strong&gt;Cartesian coordinate system&lt;/strong&gt;. This point can equivalently be thought of as a vector.&lt;/p&gt;
 
 &lt;h3 id=&quot;classical-physics&quot;&gt;Classical Physics&lt;/h3&gt;
-&lt;p&gt;In classical physics, a position or displacement &lt;script type=&quot;math/tex&quot;&gt;\vec{x}&lt;/script&gt; is a 3-dimensional vector with components &lt;script type=&quot;math/tex&quot;&gt;\left(x,y,z\right)&lt;/script&gt;.&lt;/p&gt;
+&lt;p&gt;In classical physics, a position or displacement $\vec{x}$ is a 3-dimensional vector with components $\left(x,y,z\right)$.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Position is used to refer to a specific point in a coordinate space while displacement refers to the distance traveled from an initial point (usually this point is the origin making position and displacement equivalent)&lt;/em&gt;&lt;/p&gt;
 
@@ -301,11 +301,11 @@ $$\begin{align}
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\left|\vec{x}\right|=\sqrt{x^2+y^2+z^2}&lt;/script&gt;
 
 &lt;h4 id=&quot;displacement-function&quot;&gt;Displacement Function&lt;/h4&gt;
-&lt;p&gt;An object’s position can be described as a function in time, &lt;script type=&quot;math/tex&quot;&gt;\vec{x}(t)&lt;/script&gt;. This position function would then map from time to 3D-space:&lt;/p&gt;
+&lt;p&gt;An object’s position can be described as a function in time, $\vec{x}(t)$. This position function would then map from time to 3D-space:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\vec{x}:\mathbb{R}\rightarrow \mathbb{R}^3&lt;/script&gt;
 
-&lt;p&gt;Taking the derivative of an object’s displacement function with respect to &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt; provides the object’s &lt;a href=&quot;&quot;&gt;velocity&lt;/a&gt; function, &lt;script type=&quot;math/tex&quot;&gt;\vec{v}(t)&lt;/script&gt;:&lt;/p&gt;
+&lt;p&gt;Taking the derivative of an object’s displacement function with respect to $t$ provides the object’s &lt;a href=&quot;&quot;&gt;velocity&lt;/a&gt; function, $\vec{v}(t)$:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\mathrm{d}}{\mathrm{d}t}\vec{x}(t)=\vec{v}(t)&lt;/script&gt;
 
@@ -316,22 +316,22 @@ $$\begin{align}
 &lt;h3 id=&quot;relativity&quot;&gt;Relativity&lt;/h3&gt;
 &lt;p&gt;In relativity, position is only invariant in a particular non-inertial reference frame. This necessitates a notion of position that is invariant with respect to space-time. This 4-dimensional position (3 spatial dimensions and 1 time) is called 4-position, or more commonly as an &lt;strong&gt;event&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;An event is defined as a 4-dimensional vector with components &lt;script type=&quot;math/tex&quot;&gt;\left(t,x,y,z\right)&lt;/script&gt;. Relativity shows that events that occur at the same time in one reference frame, don’t necessarily happen at the same time in another. This is known as &lt;strong&gt;relativity of simultaneity&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;An event is defined as a 4-dimensional vector with components $\left(t,x,y,z\right)$. Relativity shows that events that occur at the same time in one reference frame, don’t necessarily happen at the same time in another. This is known as &lt;strong&gt;relativity of simultaneity&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;In special relativity the distance between two positions is not invariant in different reference frames. This brings us to the &lt;strong&gt;spacetime interval&lt;/strong&gt;. The spacetime interval, &lt;script type=&quot;math/tex&quot;&gt;(\Delta s)^2&lt;/script&gt; between two events stays constant in all reference frames:&lt;/p&gt;
+&lt;p&gt;In special relativity the distance between two positions is not invariant in different reference frames. This brings us to the &lt;strong&gt;spacetime interval&lt;/strong&gt;. The spacetime interval, $(\Delta s)^2$ between two events stays constant in all reference frames:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;(\Delta s)^2=(c\Delta t)^2-(\Delta x)^2-(\Delta y)^2-(\Delta z)^2&lt;/script&gt;
 
 &lt;h3 id=&quot;quantum-mechanics&quot;&gt;Quantum Mechanics&lt;/h3&gt;
-&lt;p&gt;In quantum mechanics, the state of a particle is given, and completely described, by its &lt;strong&gt;wavefunction&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\psi(\mathbf{x}, t)&lt;/script&gt;. With &lt;script type=&quot;math/tex&quot;&gt;\mathbf{x}&lt;/script&gt; being a point in 3-space and &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt; being a point in time. &lt;script type=&quot;math/tex&quot;&gt;\psi&lt;/script&gt; returns a complex valued probability amplitude.&lt;/p&gt;
+&lt;p&gt;In quantum mechanics, the state of a particle is given, and completely described, by its &lt;strong&gt;wavefunction&lt;/strong&gt; $\psi(\mathbf{x}, t)$. With $\mathbf{x}$ being a point in 3-space and $t$ being a point in time. $\psi$ returns a complex valued probability amplitude.&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\psi:\mathbb{R^4}\rightarrow \mathbb{C}&lt;/script&gt;
 
-&lt;p&gt;The probability of observing a particle, in the one dimensional case, at position &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; at time &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt; is given by &lt;script type=&quot;math/tex&quot;&gt;\left \vert \psi \right \vert^2&lt;/script&gt;. This implies that for a given time &lt;script type=&quot;math/tex&quot;&gt;t&lt;/script&gt;:&lt;/p&gt;
+&lt;p&gt;The probability of observing a particle, in the one dimensional case, at position $x$ at time $t$ is given by $\left \vert \psi \right \vert^2$. This implies that for a given time $t$:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\int_{-\infty}^{\infty}\left | \psi(x) \right |^2 dx=1&lt;/script&gt;
 
-&lt;p&gt;Because the particle has to be somewhere in space, the probabilities must sum to 1. We integrate from &lt;script type=&quot;math/tex&quot;&gt;-\infty&lt;/script&gt; to &lt;script type=&quot;math/tex&quot;&gt;\infty&lt;/script&gt; since the particle is a wave spread out over all of space. With some vector calculus, this can extended to the 3D case we see in the real world.&lt;/p&gt;
+&lt;p&gt;Because the particle has to be somewhere in space, the probabilities must sum to 1. We integrate from $-\infty$ to $\infty$ since the particle is a wave spread out over all of space. With some vector calculus, this can extended to the 3D case we see in the real world.&lt;/p&gt;
 </content>
  </entry>
  
@@ -437,7 +437,7 @@ Quantum chromodynamics is the QFT of the strong nuclear force. This theory descr
    <id>http://localhost:4000/2018/03/03/parity-sequences</id>
    <content type="html">&lt;!-- Thought about this when we had to find Taylor series' for certain sinusoidal functions and the terms had hard to capture patterns of negative/even terms. It is possible to capture this via more sinusoidal functions but I wanted a polynomial answer. I don't think there is a polynomial answer for the general case, and the 2 examples below are the extent of my findings. --&gt;
 
-&lt;p&gt;A parity sequence is a sequence of numbers that follow a set pattern of even and odd. The notation we will use is “&lt;script type=&quot;math/tex&quot;&gt;+&lt;/script&gt;” for even and “&lt;script type=&quot;math/tex&quot;&gt;-&lt;/script&gt;” for odd.&lt;/p&gt;
+&lt;p&gt;A parity sequence is a sequence of numbers that follow a set pattern of even and odd. The notation we will use is “$+$” for even and “$-$” for odd.&lt;/p&gt;
 
 &lt;h2 id=&quot;examples&quot;&gt;Examples&lt;/h2&gt;
 &lt;p&gt;All examples start indexing at 0 (the most rational way to index lists).&lt;/p&gt;
@@ -455,11 +455,11 @@ Quantum chromodynamics is the QFT of the strong nuclear force. This theory descr
 &lt;!--more--&gt;
 
 &lt;h2 id=&quot;use&quot;&gt;Use&lt;/h2&gt;
-&lt;p&gt;Notice that when we raise &lt;script type=&quot;math/tex&quot;&gt;-1&lt;/script&gt; to the power of one of these sequences, it will evaluate to &lt;script type=&quot;math/tex&quot;&gt;+1&lt;/script&gt; for even values and &lt;script type=&quot;math/tex&quot;&gt;-1&lt;/script&gt; for odd values.&lt;/p&gt;
+&lt;p&gt;Notice that when we raise $-1$ to the power of one of these sequences, it will evaluate to $+1$ for even values and $-1$ for odd values.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;This property is where the &lt;script type=&quot;math/tex&quot;&gt;+&lt;/script&gt; &lt;script type=&quot;math/tex&quot;&gt;-&lt;/script&gt; notation comes from.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This property is where the $+$ $-$ notation comes from.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;When constructing things like Taylor Series’, this is a useful property to have. Terms that alternate from negative to positives can be dealt with by appending a factor of &lt;script type=&quot;math/tex&quot;&gt;(-1)^{S_n}&lt;/script&gt; to the series.&lt;/p&gt;
+&lt;p&gt;When constructing things like Taylor Series’, this is a useful property to have. Terms that alternate from negative to positives can be dealt with by appending a factor of $(-1)^{S_n}$ to the series.&lt;/p&gt;
 
 &lt;h2 id=&quot;equivalence&quot;&gt;Equivalence&lt;/h2&gt;
 &lt;p&gt;When the corresponding elements of two sequences have the same parity, we can call those two sequences &lt;strong&gt;parity equivalent&lt;/strong&gt;.&lt;/p&gt;
@@ -468,10 +468,10 @@ Quantum chromodynamics is the QFT of the strong nuclear force. This theory descr
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\forall n\in\mathbb{N},\text{ }(-1)^{A_n}=(-1)^{B_n}&lt;/script&gt;
 
-&lt;p&gt;i.e for all Natural Numbers &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt;, if &lt;script type=&quot;math/tex&quot;&gt;-1&lt;/script&gt; to the &lt;script type=&quot;math/tex&quot;&gt;A_n&lt;/script&gt; equals &lt;script type=&quot;math/tex&quot;&gt;-1&lt;/script&gt; to the &lt;script type=&quot;math/tex&quot;&gt;B_n&lt;/script&gt;, then the sequences &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; are parity equivalent.&lt;/p&gt;
+&lt;p&gt;i.e for all Natural Numbers $n$, if $-1$ to the $A_n$ equals $-1$ to the $B_n$, then the sequences $A$ and $B$ are parity equivalent.&lt;/p&gt;
 
 &lt;h2 id=&quot;parity-swap&quot;&gt;Parity Swap&lt;/h2&gt;
-&lt;p&gt;A useful property to take note of when constructing these sequences is that adding &lt;script type=&quot;math/tex&quot;&gt;1&lt;/script&gt; to the sequence flips the parity of each element in the sequence:&lt;/p&gt;
+&lt;p&gt;A useful property to take note of when constructing these sequences is that adding $1$ to the sequence flips the parity of each element in the sequence:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{align}
@@ -493,7 +493,7 @@ S'_n=\frac{n(n-1)}{2}+1&amp;=\{1,1,2,4,7,11,\cdots\}\\
 
 &lt;p&gt;The derivative of a function is itself a function and thus can be further differentiated. This means we can define things like the &lt;strong&gt;second derivative&lt;/strong&gt; which is obtained by successively taking the derivative of a function twice.&lt;/p&gt;
 
-&lt;p&gt;Take the function &lt;script type=&quot;math/tex&quot;&gt;x^3&lt;/script&gt;. It’s first derivative is usually denoted:&lt;/p&gt;
+&lt;p&gt;Take the function $x^3$. It’s first derivative is usually denoted:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\mathrm{d} }{\mathrm{d} x}x^3=3x^2&lt;/script&gt;
 
@@ -501,7 +501,7 @@ S'_n=\frac{n(n-1)}{2}+1&amp;=\{1,1,2,4,7,11,\cdots\}\\
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\mathrm{d} }{\mathrm{d} x}\left(\frac{\mathrm{d} }{\mathrm{d} x}x^3\right)=\frac{\mathrm{d^2} }{\mathrm{d} x^2}x^3=6x&lt;/script&gt;
 
-&lt;p&gt;We can extend this idea (and its notation) to any integer &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; forming the nth derivative of a function &lt;script type=&quot;math/tex&quot;&gt;f(x)&lt;/script&gt;:&lt;/p&gt;
+&lt;p&gt;We can extend this idea (and its notation) to any integer $n$ forming the nth derivative of a function $f(x)$:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\mathrm{d^n} }{\mathrm{d} x^n}f(x)&lt;/script&gt;
 
@@ -510,19 +510,21 @@ S'_n=\frac{n(n-1)}{2}+1&amp;=\{1,1,2,4,7,11,\cdots\}\\
 &lt;h4 id=&quot;differential-operator&quot;&gt;Differential operator&lt;/h4&gt;
 &lt;p&gt;Before we go any further, let’s introduce a less cumbersome notation for differentiation:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\mathrm{d} }{\mathrm{d} x}f(x)=D[f(x)]=Df\\
-\frac{\mathrm{d^n} }{\mathrm{d} x^n}f(x)=D^n[f(x)]=D^nf&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\mathrm{d} }{\mathrm{d} x}f(x)=D[f(x)]=Df&lt;/script&gt;
 
-&lt;p&gt;&lt;em&gt;This is called the &lt;a href=&quot;https://en.wikipedia.org/wiki/Differential_operator&quot;&gt;differential operator&lt;/a&gt; its used in other fields of calculus. Since all our functions are of one variable (&lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;) there is no ambiguity in using it. Also note that the operators are not being raised to a power, it’s just notation&lt;/em&gt;&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\mathrm{d^n} }{\mathrm{d} x^n}f(x)=D^n[f(x)]=D^nf&lt;/script&gt;
 
-&lt;p&gt;Also note that the differential operator also includes antidifferentiation, or integration. The indefinite integral of a function &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is just:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This is called the &lt;a href=&quot;https://en.wikipedia.org/wiki/Differential_operator&quot;&gt;differential operator&lt;/a&gt; its used in other fields of calculus. Since all our functions are of one variable ($x$) there is no ambiguity in using it. Also note that the operators are not being raised to a power, it’s just notation&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Also note that the differential operator also includes antidifferentiation, or integration. The indefinite integral of a function $f$ is just:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\int{f(x)}\,\mathrm{d}x=D^{-1}[f(x)]=D^{-1}f&lt;/script&gt;
 
 &lt;p&gt;And further integrals can be defined as you’d expect:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\iint{f(x)}\,\mathrm{d}x=D^{-2}[f(x)]=D^{-2}f\\
-\iiint{f(x)}\,\mathrm{d}x=D^{-3}[f(x)]=D^{-3}f&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\iint{f(x)}\,\mathrm{d}x=D^{-2}[f(x)]=D^{-2}f&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\iiint{f(x)}\,\mathrm{d}x=D^{-3}[f(x)]=D^{-3}f&lt;/script&gt;
 
 &lt;!-- ## Halving Operators
 Before we get to fractional derivatives, we need to understand what it means to extend an operator to non-integer forms.
@@ -552,11 +554,11 @@ So what? Well, if our notion of 'fractional' exponents is to hold we, it should 
 This is what we call the **square root** of a number $x$. --&gt;
 
 &lt;h2 id=&quot;fractional-differentiation&quot;&gt;Fractional Differentiation&lt;/h2&gt;
-&lt;p&gt;Naturally, one might ask the question “What about derivatives of a non-integer order?” What might such a nonstandard derivative look like? Well, too help us out, let’s take a look at a property of derivatives.&lt;/p&gt;
+&lt;p&gt;Naturally, one might ask the question “What about derivatives of a non-integer order?” What might such a nonstandard derivative look like? Well, to help us out, let’s take a look at a property of derivatives.&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;D^n(D^mf)=D^{n+m}f&lt;/script&gt;
 
-&lt;p&gt;That is, the &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt;th derivative of the &lt;script type=&quot;math/tex&quot;&gt;m&lt;/script&gt;th derivative of a function is equivalent to the &lt;script type=&quot;math/tex&quot;&gt;(n+m)&lt;/script&gt;th derivative of the function. This should come as no surprise as the definition of the second, third, etc. derivatives are just repeated use of the differential operator:&lt;/p&gt;
+&lt;p&gt;That is, the $n$th derivative of the $m$th derivative of a function is equivalent to the $(n+m)$th derivative of the function. This should come as no surprise as the definition of the second, third, etc. derivatives are just repeated use of the differential operator:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align*}
 D(Df)=D^2f \tag{Because 1+1=2}\\
@@ -564,34 +566,35 @@ D(D^2f)=D^3f \tag{Because 1+2=3}\\
 D(D^3f)=D^4f \tag{Because 1+3=4}\\
 \end{align*}&lt;/script&gt;
 
-&lt;p&gt;&lt;em&gt;This should remind you of exponents and their properties. As well as the fact that it is not immediately clear what &lt;script type=&quot;math/tex&quot;&gt;x^{1/2}&lt;/script&gt; means.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This should remind you of exponents and their properties. As well as the fact that it is not immediately clear what $x^{1/2}$ means.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;It should follow that there exists half derivatives, or &lt;strong&gt;semiderivatives&lt;/strong&gt;, of functions. This semiderivative has to satisfy the following:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;D^{1/2}D^{1/2}f=Df \tag{Because 1/2+1/2=1}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;D^{1/2}D^{1/2}f=Df \tag{Because \(\frac{1}{2}+\frac{1}{2}=1\)}&lt;/script&gt;
 
 &lt;h4 id=&quot;power-rule&quot;&gt;Power Rule&lt;/h4&gt;
-&lt;p&gt;But how do we calculate &lt;script type=&quot;math/tex&quot;&gt;D^{1/2}f&lt;/script&gt;? Let’s assume &lt;script type=&quot;math/tex&quot;&gt;f(x)&lt;/script&gt; is some polynomial function. If that’s the case we can apply the power rule to find the first and second derivatives:&lt;/p&gt;
+&lt;p&gt;But how do we calculate $D^{1/2}f$? Let’s assume $f(x)$ is some polynomial function. If that’s the case we can apply the power rule to find the first and second derivatives:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;Dx^n=nx^{n-1}\\
-D^2x^n=n(n-1)x^{n-2}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;Dx^n=nx^{n-1}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;D^2x^n=n(n-1)x^{n-2}&lt;/script&gt;
 
 &lt;p&gt;As we find higher and higher derivatives a pattern emerges:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;D^kx^n=\frac{n!}{(n-k)!}x^{n-k}&lt;/script&gt;
 
-&lt;p&gt;&lt;em&gt;If that wasn’t clear, realize that as we successively apply the power rule we multiply the expression by its power then subtract its power by 1 and so on forming a partial factorial. To deal with the fact that these terms don’t form a full factorial, we divide by the missing terms which are encapsulated by &lt;script type=&quot;math/tex&quot;&gt;(n-k)!&lt;/script&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;If that wasn’t clear, realize that as we successively apply the power rule we multiply the expression by its power then subtract its power by 1 and so on forming a partial factorial. To deal with the fact that these terms don’t form a full factorial, we divide by the missing terms which are encapsulated by $(n-k)!$&lt;/em&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;the-gamma-function&quot;&gt;The Gamma Function&lt;/h4&gt;
-&lt;p&gt;This formula works for any integer order derivative but if we attempt to plug, say 1/2, into the expression we’re left with:&lt;/p&gt;
+&lt;p&gt;This formula works for any integer order derivative but if we attempt to plug, say $\frac{1}{2}$, into the expression we’re left with:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;D^{1/2}x^n=\frac{n!}{(n-\frac{1}{2})!}x^{n-\frac{1}{2}}&lt;/script&gt;
 
-&lt;p&gt;When &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is an integer, &lt;script type=&quot;math/tex&quot;&gt;n-\frac{1}{2}&lt;/script&gt;, will always be a rational number. This means we cannot evaluate the denominator because the factorial function &lt;script type=&quot;math/tex&quot;&gt;x!&lt;/script&gt; is only defined for integer &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;.&lt;/p&gt;
+&lt;p&gt;When $n$ is an integer, $n-\frac{1}{2}$, will always be a rational number. This means we cannot evaluate the denominator because the factorial function $x!$ is only defined for integer $x$.&lt;/p&gt;
 
 &lt;p&gt;But luckily there is a way to amend the factorial function such that it accepts any real (and even complex) numbers. This done by a process known as &lt;a href=&quot;https://en.wikipedia.org/wiki/Analytic_continuation&quot;&gt;&lt;strong&gt;analytical continuation&lt;/strong&gt;&lt;/a&gt;, resulting in a &lt;em&gt;unique&lt;/em&gt; generalized function.&lt;/p&gt;
 
-&lt;p&gt;The generalized factorial function is called the &lt;a href=&quot;https://en.wikipedia.org/wiki/Gamma_function&quot;&gt;&lt;strong&gt;gamma function&lt;/strong&gt;&lt;/a&gt; and is denoted: &lt;script type=&quot;math/tex&quot;&gt;\Gamma(x)&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;The generalized factorial function is called the &lt;a href=&quot;https://en.wikipedia.org/wiki/Gamma_function&quot;&gt;&lt;strong&gt;gamma function&lt;/strong&gt;&lt;/a&gt; and is denoted: $\Gamma(x)$&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/math/fractional-calculus/gamma_function.png?style=centerme&quot; alt=&quot;gamma graph&quot; /&gt;&lt;/p&gt;
 
@@ -610,10 +613,10 @@ D^2x^n=n(n-1)x^{n-2}&lt;/script&gt;
 
 &lt;p&gt;&lt;em&gt;Remember, we added 1 to each of the function’s arguments because the gamma function is shifted from factorial.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;And so now we have a general formula for the fractional derivative (or integral if &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt; is negative) of any polynomial.&lt;/p&gt;
+&lt;p&gt;And so now we have a general formula for the fractional derivative (or integral if $k$ is negative) of any polynomial.&lt;/p&gt;
 
 &lt;h4 id=&quot;an-example&quot;&gt;An Example&lt;/h4&gt;
-&lt;p&gt;Now we can finally take the semiderivative of a function. Let’s start off with a simple one: &lt;script type=&quot;math/tex&quot;&gt;f(x)=x&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;Now we can finally take the semiderivative of a function. Let’s start off with a simple one: $f(x)=x$&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{align*}
@@ -623,18 +626,18 @@ D^{1/2}x&amp;=\frac{\Gamma(1+1)}{\Gamma(1-1/2+1)}x^{1-1/2}\\
 &amp;=2\sqrt{\frac{x}{\pi}}
 \end{align*} %]]&gt;&lt;/script&gt;
 
-&lt;p&gt;Below, we can see the derivative of &lt;script type=&quot;math/tex&quot;&gt;y=x&lt;/script&gt; changing between it’s first derivative which is just the constant function &lt;script type=&quot;math/tex&quot;&gt;y=1&lt;/script&gt; and it’s first integral (i.e &lt;script type=&quot;math/tex&quot;&gt;D^{-1}x&lt;/script&gt;) which is &lt;script type=&quot;math/tex&quot;&gt;y=\frac{x^2}{2}&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;Below, we can see the derivative of $y=x$ changing between it’s first derivative which is just the constant function $y=1$ and it’s first integral (i.e $D^{-1}x$) which is $y=\frac{x^2}{2}$&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/a/ac/Fractional_Derivative_of_Basic_Power_Function_%282014%29.gif?style=centerme&quot; alt=&quot;continuous fractional derivative&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;If we pause this animation at the semiderivative, &lt;script type=&quot;math/tex&quot;&gt;2\sqrt{\frac{x}{\pi}}&lt;/script&gt;, we get:&lt;/p&gt;
+&lt;p&gt;If we pause this animation at the semiderivative, $2\sqrt{\frac{x}{\pi}}$, we get:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Half-derivative.svg/434px-Half-derivative.svg.png?style=centerme&quot; alt=&quot;graph of semiderivative of x&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;In blue is the function &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;, in red it’s first derivative, &lt;script type=&quot;math/tex&quot;&gt;1&lt;/script&gt;, and in purple it’s semiderivative.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;In blue is the function $x$, in red it’s first derivative, $1$, and in purple it’s semiderivative.&lt;/em&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;a-more-complex-example&quot;&gt;A More &lt;strong&gt;Complex&lt;/strong&gt; Example&lt;/h4&gt;
-&lt;p&gt;Let’s take a more complex example, the &lt;script type=&quot;math/tex&quot;&gt;(1+i)&lt;/script&gt;th derivative of &lt;script type=&quot;math/tex&quot;&gt;3x^4&lt;/script&gt;:&lt;/p&gt;
+&lt;p&gt;Let’s take a more complex example, the $(1+i)$th derivative of $3x^4$:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{align*}
@@ -649,16 +652,16 @@ D^{1+i}3x^4&amp;=\frac{\Gamma(4+1)}{\Gamma(3-(1+i)+1)}3x^{4-(1+i)}\\
 &lt;p&gt;&lt;em&gt;If you’re wondering how to raise a number to a complex power, I’ve written about it and other consequences of Euler’s formula &lt;a href=&quot;https://medium.com/@ozanerhansha/applications-of-eulers-formula-857bf60ba32d&quot;&gt;here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;fractional-derivatives-of-other-common-functions&quot;&gt;Fractional Derivatives of other Common Functions&lt;/h2&gt;
-&lt;p&gt;You may have noticed that the above &lt;strong&gt;fractional power rule&lt;/strong&gt; for finding the fractional derivatives of polynomials isn’t very general. What about terms with negative exponents (i.e &lt;script type=&quot;math/tex&quot;&gt;x^{-5}&lt;/script&gt;)? The power rule above doesn’t work for them because the gamma function isn’t defined for negative integers (it is defined for all other negative real and complex numbers):&lt;/p&gt;
+&lt;p&gt;You may have noticed that the above &lt;strong&gt;fractional power rule&lt;/strong&gt; for finding the fractional derivatives of polynomials isn’t very general. What about terms with negative exponents (i.e $x^{-5}$)? The power rule above doesn’t work for them because the gamma function isn’t defined for negative integers (it is defined for all other negative real and complex numbers):&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/5/52/Gamma_plot.svg?style=centerme&quot; alt=&quot;full real gamma function&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;And we haven’t even mentioned the fractional derivatives of &lt;script type=&quot;math/tex&quot;&gt;e^{x}&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;\sin x&lt;/script&gt;, and &lt;script type=&quot;math/tex&quot;&gt;\cos x&lt;/script&gt;…&lt;/p&gt;
+&lt;p&gt;And we haven’t even mentioned the fractional derivatives of $e^{x}$, $\sin x$, and $\cos x$…&lt;/p&gt;
 
 &lt;p&gt;Deriving the fractional derivatives of these expressions is a lot to cram into one post, so I’ll shelve them for now.&lt;/p&gt;
 
 &lt;!-- ## Fractional Derivatives of General Functions
-What if you wanted to find the fractional/complex derivative of $$\sin x$$? $$e^x$$?, $$\Gamma(x)$$ itself? Well it certainly is possible, and the general formula is as follows:
+What if you wanted to find the fractional/complex derivative of $\sin x$? $e^x$?, $\Gamma(x)$ itself? Well it certainly is possible, and the general formula is as follows:
 
 $$D^{n}f(x)={\frac {1}{\Gamma (1-n)}} \left( \frac{\mathrm{d} }{\mathrm{d} x}\int_{0}^{x}{\frac {f(t)}{(x-t)^{n}}}\,\mathrm{d}t \right)$$
 
@@ -666,7 +669,7 @@ The problem is that the integral part:
 
 $$\int_{0}^{x}{\frac {f(t)}{(x-t)^{n}}}\,\mathrm{d}t$$
 
-Can be quite tricky to evaluate without very advanced techniques. Say we wanted to find the semiderivative of $$\sin x$$:
+Can be quite tricky to evaluate without very advanced techniques. Say we wanted to find the semiderivative of $\sin x$:
 
 $$
 \begin{align*}
@@ -700,7 +703,7 @@ Which I personally cannot do. But that's ok, because others more skilled than I 
 
 &lt;p&gt;&lt;img src=&quot;https://www.pitt.edu/~jdnorton/teaching/HPS_0410/chapters/spacetime/planet4d.gif?style=centerme&quot; alt=&quot;orbit3D&quot; /&gt;&lt;/p&gt;
 
-&lt;!-- *It looks similar to euler's formula, $$e^{i\theta}=\cos \theta + i\sin\theta$$, with space being the complex plane and time being the angle $$\theta$$. The imaginary part will come in handy later.* --&gt;
+&lt;!-- *It looks similar to euler's formula, $e^{i\theta}=\cos \theta + i\sin\theta$, with space being the complex plane and time being the angle $\theta$. The imaginary part will come in handy later.* --&gt;
 
 &lt;p&gt;This is an example of a 3D spacetime. It has 2 dimensions of space and 1 of time. Our universe has 3 space and 1 time dimension, making our spacetime (referred to as &lt;em&gt;Minkowski Spacetime&lt;/em&gt;) 4 dimensional.&lt;/p&gt;
 
@@ -717,13 +720,13 @@ Which I personally cannot do. But that's ok, because others more skilled than I 
 &lt;!-- Remove link to vector space wikipedia --&gt;
 &lt;!-- *If you don't know what a vector space is, I've written a post about it [here](\2018\01\20\vector-spaces).* --&gt;
 
-&lt;p&gt;An event, usually denoted &lt;script type=&quot;math/tex&quot;&gt;s&lt;/script&gt;, is represented by a 4D vector where &lt;script type=&quot;math/tex&quot;&gt;x,y,z,t&lt;/script&gt; are real numbers:&lt;/p&gt;
+&lt;p&gt;An event, usually denoted $s$, is represented by a 4D vector where $x,y,z,t$ are real numbers:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;s=(x,y,z,ict)&lt;/script&gt;
 
-&lt;p&gt;You may have noticed that the last coordinate, which corresponds to time, is multiplied by a factor of &lt;script type=&quot;math/tex&quot;&gt;ic&lt;/script&gt;. &lt;script type=&quot;math/tex&quot;&gt;i&lt;/script&gt;, as we know, is the imaginary unit and multiplying it by time makes the fourth coordinate an imaginary number. The fourth coordinate always being an imaginary number means that spacetime consists of 3 real spatial dimensions and one imaginary temporal dimension.&lt;/p&gt;
+&lt;p&gt;You may have noticed that the last coordinate, which corresponds to time, is multiplied by a factor of $ic$. $i$, as we know, is the imaginary unit and multiplying it by time makes the fourth coordinate an imaginary number. The fourth coordinate always being an imaginary number means that spacetime consists of 3 real spatial dimensions and one imaginary temporal dimension.&lt;/p&gt;
 
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;c&lt;/script&gt; represents the speed of light (299,792,458 m/s) and when multiplied by a time value (like seconds) it gives the distance a photon would travel in that time. This is necessary to convert from time units to length units. It wouldn’t really make sense to have a position vector with different units for dimensions, as we’ll see…&lt;/p&gt;
+&lt;p&gt;$c$ represents the speed of light (299,792,458 m/s) and when multiplied by a time value (like seconds) it gives the distance a photon would travel in that time. This is necessary to convert from time units to length units. It wouldn’t really make sense to have a position vector with different units for dimensions, as we’ll see…&lt;/p&gt;
 
 &lt;h4 id=&quot;an-example&quot;&gt;An Example&lt;/h4&gt;
 &lt;p&gt;Say you walk 2m forward out of your house, walk 3 meters to the right, and jump (an impressive) 1 meter into the air. Let’s also say that at the moment you were 1 meter in the air, 6 seconds had passed.&lt;/p&gt;
@@ -753,15 +756,15 @@ Which I personally cannot do. But that's ok, because others more skilled than I 
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\Delta d=\sqrt{(\Delta x)^2+(\Delta y)^2+(\Delta z)^2}&lt;/script&gt;
 
-&lt;p&gt;Where &lt;script type=&quot;math/tex&quot;&gt;\Delta x,\Delta y,\Delta z&lt;/script&gt; represent the distance between the two &lt;script type=&quot;math/tex&quot;&gt;x/y/z&lt;/script&gt; coordinates of the two points. (i.e &lt;script type=&quot;math/tex&quot;&gt;\Delta x = x_2 - x_1&lt;/script&gt;)&lt;/p&gt;
+&lt;p&gt;Where $\Delta x,\Delta y,\Delta z$ represent the distance between the two $x/y/z$ coordinates of the two points. (i.e $\Delta x = x_2 - x_1$)&lt;/p&gt;
 
 &lt;p&gt;But special relativity tells us that space and time are relative and so it might be useful to have a notion of ‘distance’ for events in space&lt;em&gt;time&lt;/em&gt; and not just space.&lt;/p&gt;
 
-&lt;p&gt;This analogue is called &lt;strong&gt;proper distance&lt;/strong&gt; (denoted &lt;script type=&quot;math/tex&quot;&gt;\Delta s&lt;/script&gt;) and we obtain it just like we did the one above. Square each coordinate, add them together, and take that sum’s square root:&lt;/p&gt;
+&lt;p&gt;This analogue is called &lt;strong&gt;proper distance&lt;/strong&gt; (denoted $\Delta s$) and we obtain it just like we did the one above. Square each coordinate, add them together, and take that sum’s square root:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\Delta s=\sqrt{(\Delta x)^2+(\Delta y)^2+(\Delta z)^2-\text{c}^2(\Delta t)^2}&lt;/script&gt;
 
-&lt;p&gt;This measure of ‘distance’ is similar to the standard spatial one, barring the strange looking last term &lt;script type=&quot;math/tex&quot;&gt;-\text{c}^2(\Delta t)^2&lt;/script&gt;. Upon further consideration, however, this term makes just as much sense as the others:&lt;/p&gt;
+&lt;p&gt;This measure of ‘distance’ is similar to the standard spatial one, barring the strange looking last term $-\text{c}^2(\Delta t)^2$. Upon further consideration, however, this term makes just as much sense as the others:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{align*}
@@ -776,10 +779,10 @@ Which I personally cannot do. But that's ok, because others more skilled than I 
 
 &lt;p&gt;So since earth is the origin these are the change in coordinates:&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Δx = 0m&lt;/li&gt;
-  &lt;li&gt;Δy = 4000km = 4000000m&lt;/li&gt;
-  &lt;li&gt;Δz = 0m&lt;/li&gt;
-  &lt;li&gt;Δt = 1ms = .01s&lt;/li&gt;
+  &lt;li&gt;$\Delta x = 0m$&lt;/li&gt;
+  &lt;li&gt;$\Delta y = 4000km = 4000000m$&lt;/li&gt;
+  &lt;li&gt;$\Delta z = 0m$&lt;/li&gt;
+  &lt;li&gt;$\Delta t = 1ms = .01s$&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Thus the proper distance between the origin and that event in spacetime is:&lt;/p&gt;
@@ -916,7 +919,7 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
   &lt;li&gt;Perimeter&lt;/li&gt;
   &lt;li&gt;Area&lt;/li&gt;
   &lt;li&gt;Smoothness (local variation in radius lengths)&lt;/li&gt;
-  &lt;li&gt;Compactness &lt;script type=&quot;math/tex&quot;&gt;(\frac{perimeter^2}{area} - 1)&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;Compactness $(\frac{perimeter^2}{area} - 1)$&lt;/li&gt;
   &lt;li&gt;Concavity (severity of concave portions of the contour)&lt;/li&gt;
   &lt;li&gt;Concave points (number of concave portions of the contour)&lt;/li&gt;
   &lt;li&gt;Symmetry&lt;/li&gt;
@@ -992,11 +995,11 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\hat{y}=\text{softmax}(Wx+b)&lt;/script&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is the input (a 30 dimensional vector of all the cancer cell’s statistical values)&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\hat{y}&lt;/script&gt; is the network’s  approximation of &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt;, the right answer (&lt;script type=&quot;math/tex&quot;&gt;\hat{y}&lt;/script&gt; is a 2D vector with the first/second value corresponding to its confidence that the cell is benign/malignant)&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;W&lt;/script&gt; is a matrix of weights (the matrix is 30x2 so that it turns 30 dimensional vectors into 2D vectors)&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;b&lt;/script&gt; is a vector of ‘bias’ values (a 2D vector that allows the network more freedom when training)&lt;/li&gt;
-  &lt;li&gt;The &lt;script type=&quot;math/tex&quot;&gt;\text{softmax}&lt;/script&gt; function is the network’s &lt;a href=&quot;https://en.wikipedia.org/wiki/Activation_function&quot;&gt;activation function&lt;/a&gt;, which introduces a nonlinearity to the network. This is integral for any neural network to learn from the data it’s provided. The function also equalizes the network’s confidence predictions so that they add up to 100%. The mathematical description of softmax is:&lt;/li&gt;
+  &lt;li&gt;$x$ is the input (a 30 dimensional vector of all the cancer cell’s statistical values)&lt;/li&gt;
+  &lt;li&gt;$\hat{y}$ is the network’s  approximation of $y$, the right answer ($\hat{y}$ is a 2D vector with the first/second value corresponding to its confidence that the cell is benign/malignant)&lt;/li&gt;
+  &lt;li&gt;$W$ is a matrix of weights (the matrix is 30x2 so that it turns 30 dimensional vectors into 2D vectors)&lt;/li&gt;
+  &lt;li&gt;$b$ is a vector of ‘bias’ values (a 2D vector that allows the network more freedom when training)&lt;/li&gt;
+  &lt;li&gt;The $\text{softmax}$ function is the network’s &lt;a href=&quot;https://en.wikipedia.org/wiki/Activation_function&quot;&gt;activation function&lt;/a&gt;, which introduces a nonlinearity to the network. This is integral for any neural network to learn from the data it’s provided. The function also equalizes the network’s confidence predictions so that they add up to 100%. The mathematical description of softmax is:&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Mplwp_logistic_function.svg/1280px-Mplwp_logistic_function.svg.png&quot; alt=&quot;softmax graph&quot; /&gt;&lt;/p&gt;
@@ -1030,7 +1033,7 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
 &lt;span class=&quot;n&quot;&gt;sess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;global_variables_initializer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Init Variables&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Next we create the actual training model. First we create a placeholder for the labels of the training data, &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt;.&lt;/p&gt;
+&lt;p&gt;Next we create the actual training model. First we create a placeholder for the labels of the training data, $y$.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#nx2 Matrix (One-Hot Vector, Label Data)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;placeholder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;float32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'y_Labeled'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -1207,7 +1210,7 @@ Created on Jun 6, 2017
    <content type="html">&lt;h2 id=&quot;history-of-algebra&quot;&gt;History of Algebra&lt;/h2&gt;
 &lt;p&gt;The earliest forms of Algebra have been around since &lt;a href=&quot;https://en.wikipedia.org/wiki/Diophantus&quot;&gt;Diophantus&lt;/a&gt; (3rd century Greek mathematician), who wrote on how to solve equations using geometry (the Greeks had a thing for geometry).&lt;/p&gt;
 
-&lt;p&gt;Algebra as we know it wouldn’t appear until Al-Khwārizmī, a medieval Islamic mathematician, wrote his famous &lt;a href=&quot;http://www.wilbourhall.org/pdfs/MBP/robertofchesters00khuw.pdf&quot;&gt;&lt;em&gt;Compendious Book on Calculation by Completion and Balancing&lt;/em&gt;&lt;/a&gt;. Its Arabic name is equally as large and so is shortened to &lt;em&gt;Al-Jabr&lt;/em&gt; which translates to “the reunion of broken parts”. In fact the word algebra itself comes from this book (Al-Jabr –&amp;gt; Algebra). Indeed it was this book that introduced the same notions of canceling and balancing equations to solve for &lt;em&gt;x&lt;/em&gt; that we use today.&lt;/p&gt;
+&lt;p&gt;Algebra as we know it wouldn’t appear until Al-Khwārizmī, a medieval Islamic mathematician, wrote his famous &lt;a href=&quot;http://www.wilbourhall.org/pdfs/MBP/robertofchesters00khuw.pdf&quot;&gt;&lt;em&gt;Compendious Book on Calculation by Completion and Balancing&lt;/em&gt;&lt;/a&gt;. Its Arabic name is equally as large and so is shortened to &lt;em&gt;Al-Jabr&lt;/em&gt; which translates to “the reunion of broken parts”. In fact the word algebra itself comes from this book (Al-Jabr –&amp;gt; Algebra). Indeed it was this book that introduced the same notions of canceling and balancing equations to solve for $x$ that we use today.&lt;/p&gt;
 
 &lt;!--more--&gt;
 

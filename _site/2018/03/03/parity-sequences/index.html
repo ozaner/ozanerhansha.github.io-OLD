@@ -29,14 +29,12 @@
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
-  <!-- Adds MathJax -->
-  <!-- <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  </script> -->
-
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       tex2jax: {
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
       },
       jax: ["input/TeX","output/HTML-CSS"],
       displayAlign: "left !important",
@@ -80,6 +78,7 @@
     gtag('config', 'UA-111962015-1');
   </script>
 </head>
+
   <body>
 
     <div class="sidebar">
@@ -202,7 +201,7 @@
 ]</span>
   <!-- Thought about this when we had to find Taylor series' for certain sinusoidal functions and the terms had hard to capture patterns of negative/even terms. It is possible to capture this via more sinusoidal functions but I wanted a polynomial answer. I don't think there is a polynomial answer for the general case, and the 2 examples below are the extent of my findings. -->
 
-<p>A parity sequence is a sequence of numbers that follow a set pattern of even and odd. The notation we will use is “<script type="math/tex">+</script>” for even and “<script type="math/tex">-</script>” for odd.</p>
+<p>A parity sequence is a sequence of numbers that follow a set pattern of even and odd. The notation we will use is “$+$” for even and “$-$” for odd.</p>
 
 <h2 id="examples">Examples</h2>
 <p>All examples start indexing at 0 (the most rational way to index lists).</p>
@@ -220,11 +219,11 @@
 <!--more-->
 
 <h2 id="use">Use</h2>
-<p>Notice that when we raise <script type="math/tex">-1</script> to the power of one of these sequences, it will evaluate to <script type="math/tex">+1</script> for even values and <script type="math/tex">-1</script> for odd values.</p>
+<p>Notice that when we raise $-1$ to the power of one of these sequences, it will evaluate to $+1$ for even values and $-1$ for odd values.</p>
 
-<p><em>This property is where the <script type="math/tex">+</script> <script type="math/tex">-</script> notation comes from.</em></p>
+<p><em>This property is where the $+$ $-$ notation comes from.</em></p>
 
-<p>When constructing things like Taylor Series’, this is a useful property to have. Terms that alternate from negative to positives can be dealt with by appending a factor of <script type="math/tex">(-1)^{S_n}</script> to the series.</p>
+<p>When constructing things like Taylor Series’, this is a useful property to have. Terms that alternate from negative to positives can be dealt with by appending a factor of $(-1)^{S_n}$ to the series.</p>
 
 <h2 id="equivalence">Equivalence</h2>
 <p>When the corresponding elements of two sequences have the same parity, we can call those two sequences <strong>parity equivalent</strong>.</p>
@@ -233,10 +232,10 @@
 
 <script type="math/tex; mode=display">\forall n\in\mathbb{N},\text{ }(-1)^{A_n}=(-1)^{B_n}</script>
 
-<p>i.e for all Natural Numbers <script type="math/tex">n</script>, if <script type="math/tex">-1</script> to the <script type="math/tex">A_n</script> equals <script type="math/tex">-1</script> to the <script type="math/tex">B_n</script>, then the sequences <script type="math/tex">A</script> and <script type="math/tex">B</script> are parity equivalent.</p>
+<p>i.e for all Natural Numbers $n$, if $-1$ to the $A_n$ equals $-1$ to the $B_n$, then the sequences $A$ and $B$ are parity equivalent.</p>
 
 <h2 id="parity-swap">Parity Swap</h2>
-<p>A useful property to take note of when constructing these sequences is that adding <script type="math/tex">1</script> to the sequence flips the parity of each element in the sequence:</p>
+<p>A useful property to take note of when constructing these sequences is that adding $1$ to the sequence flips the parity of each element in the sequence:</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}

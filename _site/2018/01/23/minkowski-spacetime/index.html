@@ -29,14 +29,12 @@
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
-  <!-- Adds MathJax -->
-  <!-- <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  </script> -->
-
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       tex2jax: {
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
       },
       jax: ["input/TeX","output/HTML-CSS"],
       displayAlign: "left !important",
@@ -80,6 +78,7 @@
     gtag('config', 'UA-111962015-1');
   </script>
 </head>
+
   <body>
 
     <div class="sidebar">
@@ -211,7 +210,7 @@
 
 <p><img src="https://www.pitt.edu/~jdnorton/teaching/HPS_0410/chapters/spacetime/planet4d.gif?style=centerme" alt="orbit3D" /></p>
 
-<!-- *It looks similar to euler's formula, $$e^{i\theta}=\cos \theta + i\sin\theta$$, with space being the complex plane and time being the angle $$\theta$$. The imaginary part will come in handy later.* -->
+<!-- *It looks similar to euler's formula, $e^{i\theta}=\cos \theta + i\sin\theta$, with space being the complex plane and time being the angle $\theta$. The imaginary part will come in handy later.* -->
 
 <p>This is an example of a 3D spacetime. It has 2 dimensions of space and 1 of time. Our universe has 3 space and 1 time dimension, making our spacetime (referred to as <em>Minkowski Spacetime</em>) 4 dimensional.</p>
 
@@ -228,13 +227,13 @@
 <!-- Remove link to vector space wikipedia -->
 <!-- *If you don't know what a vector space is, I've written a post about it [here](\2018\01\20\vector-spaces).* -->
 
-<p>An event, usually denoted <script type="math/tex">s</script>, is represented by a 4D vector where <script type="math/tex">x,y,z,t</script> are real numbers:</p>
+<p>An event, usually denoted $s$, is represented by a 4D vector where $x,y,z,t$ are real numbers:</p>
 
 <script type="math/tex; mode=display">s=(x,y,z,ict)</script>
 
-<p>You may have noticed that the last coordinate, which corresponds to time, is multiplied by a factor of <script type="math/tex">ic</script>. <script type="math/tex">i</script>, as we know, is the imaginary unit and multiplying it by time makes the fourth coordinate an imaginary number. The fourth coordinate always being an imaginary number means that spacetime consists of 3 real spatial dimensions and one imaginary temporal dimension.</p>
+<p>You may have noticed that the last coordinate, which corresponds to time, is multiplied by a factor of $ic$. $i$, as we know, is the imaginary unit and multiplying it by time makes the fourth coordinate an imaginary number. The fourth coordinate always being an imaginary number means that spacetime consists of 3 real spatial dimensions and one imaginary temporal dimension.</p>
 
-<p><script type="math/tex">c</script> represents the speed of light (299,792,458 m/s) and when multiplied by a time value (like seconds) it gives the distance a photon would travel in that time. This is necessary to convert from time units to length units. It wouldn’t really make sense to have a position vector with different units for dimensions, as we’ll see…</p>
+<p>$c$ represents the speed of light (299,792,458 m/s) and when multiplied by a time value (like seconds) it gives the distance a photon would travel in that time. This is necessary to convert from time units to length units. It wouldn’t really make sense to have a position vector with different units for dimensions, as we’ll see…</p>
 
 <h4 id="an-example">An Example</h4>
 <p>Say you walk 2m forward out of your house, walk 3 meters to the right, and jump (an impressive) 1 meter into the air. Let’s also say that at the moment you were 1 meter in the air, 6 seconds had passed.</p>
@@ -264,15 +263,15 @@
 
 <script type="math/tex; mode=display">\Delta d=\sqrt{(\Delta x)^2+(\Delta y)^2+(\Delta z)^2}</script>
 
-<p>Where <script type="math/tex">\Delta x,\Delta y,\Delta z</script> represent the distance between the two <script type="math/tex">x/y/z</script> coordinates of the two points. (i.e <script type="math/tex">\Delta x = x_2 - x_1</script>)</p>
+<p>Where $\Delta x,\Delta y,\Delta z$ represent the distance between the two $x/y/z$ coordinates of the two points. (i.e $\Delta x = x_2 - x_1$)</p>
 
 <p>But special relativity tells us that space and time are relative and so it might be useful to have a notion of ‘distance’ for events in space<em>time</em> and not just space.</p>
 
-<p>This analogue is called <strong>proper distance</strong> (denoted <script type="math/tex">\Delta s</script>) and we obtain it just like we did the one above. Square each coordinate, add them together, and take that sum’s square root:</p>
+<p>This analogue is called <strong>proper distance</strong> (denoted $\Delta s$) and we obtain it just like we did the one above. Square each coordinate, add them together, and take that sum’s square root:</p>
 
 <script type="math/tex; mode=display">\Delta s=\sqrt{(\Delta x)^2+(\Delta y)^2+(\Delta z)^2-\text{c}^2(\Delta t)^2}</script>
 
-<p>This measure of ‘distance’ is similar to the standard spatial one, barring the strange looking last term <script type="math/tex">-\text{c}^2(\Delta t)^2</script>. Upon further consideration, however, this term makes just as much sense as the others:</p>
+<p>This measure of ‘distance’ is similar to the standard spatial one, barring the strange looking last term $-\text{c}^2(\Delta t)^2$. Upon further consideration, however, this term makes just as much sense as the others:</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align*}
@@ -287,10 +286,10 @@
 
 <p>So since earth is the origin these are the change in coordinates:</p>
 <ul>
-  <li>Δx = 0m</li>
-  <li>Δy = 4000km = 4000000m</li>
-  <li>Δz = 0m</li>
-  <li>Δt = 1ms = .01s</li>
+  <li>$\Delta x = 0m$</li>
+  <li>$\Delta y = 4000km = 4000000m$</li>
+  <li>$\Delta z = 0m$</li>
+  <li>$\Delta t = 1ms = .01s$</li>
 </ul>
 
 <p>Thus the proper distance between the origin and that event in spacetime is:</p>

@@ -29,14 +29,12 @@
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
-  <!-- Adds MathJax -->
-  <!-- <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  </script> -->
-
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       tex2jax: {
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
       },
       jax: ["input/TeX","output/HTML-CSS"],
       displayAlign: "left !important",
@@ -80,6 +78,7 @@
     gtag('config', 'UA-111962015-1');
   </script>
 </head>
+
   <body>
 
     <div class="sidebar">
@@ -216,7 +215,7 @@
     </h1>
     <span class="post-date">17 Mar 2018</span>
     <!-- Make vectors bold rather than arrow headed -->
-<p><script type="math/tex">\renewcommand{\vec}[1]{\mathbf{#1}}</script>
+<p>$\renewcommand{\vec}[1]{\mathbf{#1}}$
 Kinematics describes the motion of objects through space over time. Using an object’s <a href="/2018/03/15/position">position</a>, velocity and acceleration vectors, it is possible to predict where it will be in the future and where it was in the past.</p>
 
 <h3 id="variable-acceleration">Variable Acceleration</h3>
@@ -235,12 +234,12 @@ Kinematics describes the motion of objects through space over time. Using an obj
 \end{align}</script>
 
 <ul>
-  <li><script type="math/tex">\vec{x}</script> is the object’s position as a function of time</li>
-  <li><script type="math/tex">\vec{x}_0</script> is the initial position, at <script type="math/tex">t=0</script></li>
-  <li><script type="math/tex">\vec{v}</script> is the object’s velocity as a function of time</li>
-  <li><script type="math/tex">\vec{v}_0</script> is the initial velocity, at <script type="math/tex">t=0</script></li>
-  <li><script type="math/tex">\vec{a}</script> is the object’s acceleration as a function of time</li>
-  <li><script type="math/tex">t</script> is time</li>
+  <li>$\vec{x}$ is the object’s position as a function of time</li>
+  <li>$\vec{x}_0$ is the initial position, at <script type="math/tex">t=0</script></li>
+  <li>$\vec{v}$ is the object’s velocity as a function of time</li>
+  <li>$\vec{v}_0$ is the initial velocity, at <script type="math/tex">t=0</script></li>
+  <li>$\vec{a}$ is the object’s acceleration as a function of time</li>
+  <li>$t$ is time</li>
 </ul>
 
 
@@ -256,7 +255,7 @@ Kinematics describes the motion of objects through space over time. Using an obj
     <p>The position of a particle or object in <strong>space</strong> is defined as a point on an n-dimensional <strong>Cartesian coordinate system</strong>. This point can equivalently be thought of as a vector.</p>
 
 <h3 id="classical-physics">Classical Physics</h3>
-<p>In classical physics, a position or displacement <script type="math/tex">\vec{x}</script> is a 3-dimensional vector with components <script type="math/tex">\left(x,y,z\right)</script>.</p>
+<p>In classical physics, a position or displacement $\vec{x}$ is a 3-dimensional vector with components $\left(x,y,z\right)$.</p>
 
 <p><em>Position is used to refer to a specific point in a coordinate space while displacement refers to the distance traveled from an initial point (usually this point is the origin making position and displacement equivalent)</em></p>
 
@@ -265,11 +264,11 @@ Kinematics describes the motion of objects through space over time. Using an obj
 <script type="math/tex; mode=display">\left|\vec{x}\right|=\sqrt{x^2+y^2+z^2}</script>
 
 <h4 id="displacement-function">Displacement Function</h4>
-<p>An object’s position can be described as a function in time, <script type="math/tex">\vec{x}(t)</script>. This position function would then map from time to 3D-space:</p>
+<p>An object’s position can be described as a function in time, $\vec{x}(t)$. This position function would then map from time to 3D-space:</p>
 
 <script type="math/tex; mode=display">\vec{x}:\mathbb{R}\rightarrow \mathbb{R}^3</script>
 
-<p>Taking the derivative of an object’s displacement function with respect to <script type="math/tex">t</script> provides the object’s <a href="">velocity</a> function, <script type="math/tex">\vec{v}(t)</script>:</p>
+<p>Taking the derivative of an object’s displacement function with respect to $t$ provides the object’s <a href="">velocity</a> function, $\vec{v}(t)$:</p>
 
 <script type="math/tex; mode=display">\frac{\mathrm{d}}{\mathrm{d}t}\vec{x}(t)=\vec{v}(t)</script>
 
@@ -316,7 +315,7 @@ Kinematics describes the motion of objects through space over time. Using an obj
     <span class="post-date">03 Mar 2018</span>
     <!-- Thought about this when we had to find Taylor series' for certain sinusoidal functions and the terms had hard to capture patterns of negative/even terms. It is possible to capture this via more sinusoidal functions but I wanted a polynomial answer. I don't think there is a polynomial answer for the general case, and the 2 examples below are the extent of my findings. -->
 
-<p>A parity sequence is a sequence of numbers that follow a set pattern of even and odd. The notation we will use is “<script type="math/tex">+</script>” for even and “<script type="math/tex">-</script>” for odd.</p>
+<p>A parity sequence is a sequence of numbers that follow a set pattern of even and odd. The notation we will use is “$+$” for even and “$-$” for odd.</p>
 
 <h2 id="examples">Examples</h2>
 <p>All examples start indexing at 0 (the most rational way to index lists).</p>

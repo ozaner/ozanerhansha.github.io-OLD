@@ -29,14 +29,12 @@
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
-  <!-- Adds MathJax -->
-  <!-- <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  </script> -->
-
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       tex2jax: {
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
       },
       jax: ["input/TeX","output/HTML-CSS"],
       displayAlign: "left !important",
@@ -80,6 +78,7 @@
     gtag('config', 'UA-111962015-1');
   </script>
 </head>
+
   <body>
 
     <div class="sidebar">
@@ -204,7 +203,7 @@
   
 ]</span>
   <!-- Make vectors bold rather than arrow headed -->
-<p><script type="math/tex">\renewcommand{\vec}[1]{\mathbf{#1}}</script>
+<p>$\renewcommand{\vec}[1]{\mathbf{#1}}$
 Kinematics describes the motion of objects through space over time. Using an object’s <a href="/2018/03/15/position">position</a>, velocity and acceleration vectors, it is possible to predict where it will be in the future and where it was in the past.</p>
 
 <h3 id="variable-acceleration">Variable Acceleration</h3>
@@ -223,12 +222,12 @@ Kinematics describes the motion of objects through space over time. Using an obj
 \end{align}</script>
 
 <ul>
-  <li><script type="math/tex">\vec{x}</script> is the object’s position as a function of time</li>
-  <li><script type="math/tex">\vec{x}_0</script> is the initial position, at <script type="math/tex">t=0</script></li>
-  <li><script type="math/tex">\vec{v}</script> is the object’s velocity as a function of time</li>
-  <li><script type="math/tex">\vec{v}_0</script> is the initial velocity, at <script type="math/tex">t=0</script></li>
-  <li><script type="math/tex">\vec{a}</script> is the object’s acceleration as a function of time</li>
-  <li><script type="math/tex">t</script> is time</li>
+  <li>$\vec{x}$ is the object’s position as a function of time</li>
+  <li>$\vec{x}_0$ is the initial position, at <script type="math/tex">t=0</script></li>
+  <li>$\vec{v}$ is the object’s velocity as a function of time</li>
+  <li>$\vec{v}_0$ is the initial velocity, at <script type="math/tex">t=0</script></li>
+  <li>$\vec{a}$ is the object’s acceleration as a function of time</li>
+  <li>$t$ is time</li>
 </ul>
 
 <!--more-->
@@ -244,7 +243,7 @@ $$\begin{align}
 \end{align}$$ -->
 
 <details>
-<summary><strong>Velocity Independent Equation</strong></summary>
+<summary><strong>Position Independent Equation</strong></summary>
 <p>$$\begin{align}
 \vec{v}&amp;=\int\vec{a} \,dt+\vec{v}_0 \tag{integral def. of \(\vec{v}\)}\\
 &amp;=\vec{a}\int dt+\vec{v}_0 \tag{\(\vec{a}\) is constant}\\
@@ -266,7 +265,7 @@ $$\begin{align}
 $$\boxed{\vec{x}=\frac{\vec{a}t^2}{2}+\vec{v}_0t+\vec{x}_0}$$ -->
 
 <details>
-<summary><strong>Position Independent Equation</strong></summary>
+<summary><strong>Velocity Independent Equation</strong></summary>
 <p>$$\begin{align}
 \vec{v}&amp;=\vec{a}t+\vec{v}_0 \tag{\(\vec{x}\) independent Eq.}\\
 \vec{x}&amp;=\int\vec{v} \,dt+\vec{x}_0 \tag{integral def. of \(\vec{x}\)}\\
@@ -341,12 +340,12 @@ $$\begin{align}
 <p>There are a couple of things we can do to clean up this set of 4 equations before we display them all together.</p>
 
 <h4 id="displacement-vs-position">Displacement vs. Position</h4>
-<p>While these equations describe the movement of an object in terms of its initial and current position, <script type="math/tex">\vec{x}_0</script> and <script type="math/tex">\vec{x}</script> respectively, it is common to think about kinematics in terms of <strong>displacement</strong> or change in distance instead. The change in distance <script type="math/tex">\Delta\vec{x}</script> is denoted:</p>
+<p>While these equations describe the movement of an object in terms of its initial and current position, $\vec{x}_0$ and $\vec{x}$ respectively, it is common to think about kinematics in terms of <strong>displacement</strong> or change in distance instead. The change in distance $\Delta\vec{x}$ is denoted:</p>
 
 <script type="math/tex; mode=display">\Delta\vec{x}=\vec{x}-\vec{x}_0</script>
 
 <h4 id="average-velocity">Average Velocity</h4>
-<p>If we look at the acceleration independent equation, we can see it contains the expression <script type="math/tex">\frac{\vec{v_0}+\vec{v}}{2}</script>. As it turns out, when acceleration is constant, this expression is actually equivalent to the object’s <strong>average velocity</strong> <script type="math/tex">\overline{\vec{v}}</script>:</p>
+<p>If we look at the acceleration independent equation, we can see it contains the expression $\frac{\vec{v_0}+\vec{v}}{2}$. As it turns out, when acceleration is constant, this expression is actually equivalent to the object’s <strong>average velocity</strong> $\overline{\vec{v}}$:</p>
 
 <details>
 <summary>Derivation</summary>
@@ -365,7 +364,7 @@ $$\begin{align}
 <script type="math/tex; mode=display">\boxed{\overline{\vec{v}}=\frac{\vec{v_0}+\vec{v}}{2}}</script>
 
 <h4 id="dot-product">Dot Product</h4>
-<p>When deriving the time independent kinematic equation, we used the dot product when manipulating the expressions <script type="math/tex">(\vec{v}+\vec{v}_0)\cdot \vec{a}</script> and <script type="math/tex">(\vec{v}+\vec{v}_0)\cdot(\vec{v}-\vec{v}_0)</script>. We were justified in doing so because the dot product is both commutative and distributive.</p>
+<p>When deriving the time independent kinematic equation, we used the dot product when manipulating the expressions $(\vec{v}+\vec{v}_0)\cdot \vec{a}$ and $(\vec{v}+\vec{v}_0)\cdot(\vec{v}-\vec{v}_0)$. We were justified in doing so because the dot product is both commutative and distributive.</p>
 
 <p>The dot product of a vector with itself is that vector’s <strong>squared norm</strong> and is often denoted as such:</p>
 
@@ -386,46 +385,46 @@ $$\begin{align}
 <p>When the position, velocity and acceleration functions are graphed with respect to time, their graphs are related by the kinematic equations.</p>
 
 <h4 id="general-info">General Info</h4>
-<p>For any graph of <script type="math/tex">\vec{x}(t)</script></p>
+<p>For any graph of $\vec{x}(t)$</p>
 <ul>
   <li>Slope of the secant line created by two points is the average velocity during that time interval.</li>
-  <li>Slope of line tangent to curve at time <script type="math/tex">t</script> is the object’s instantaneous velocity at <script type="math/tex">t</script>.</li>
+  <li>Slope of line tangent to curve at time <script type="math/tex">t</script> is the object’s instantaneous velocity at $t$.</li>
 </ul>
 
-<p>For any graph of <script type="math/tex">\vec{v}(t)</script></p>
+<p>For any graph of $\vec{v}(t)$</p>
 <ul>
   <li>Slope of the secant line created by two points is the average acceleration during that time interval.</li>
   <li>Slope of line tangent to curve at time <script type="math/tex">t</script> is the object’s instantaneous acceleration at <script type="math/tex">t</script>.</li>
-  <li>Area under a region of the curve from <script type="math/tex">[a,b]</script> is the object’s displacement during <script type="math/tex">[a,b]</script>.</li>
+  <li>Area under a region of the curve from $[a,b]$ is the object’s displacement during $[a,b]$.</li>
 </ul>
 
-<p>For any graph of <script type="math/tex">\vec{a}(t)</script></p>
+<p>For any graph of $\vec{a}(t)$</p>
 <ul>
-  <li>Area under a region of the curve from <script type="math/tex">[a,b]</script> is the object’s change in velocity during <script type="math/tex">[a,b]</script>.</li>
+  <li>Area under a region of the curve from $[a,b]$ is the object’s change in velocity during $[a,b]$.</li>
 </ul>
 
 <h4 id="an-object-at-rest">An Object at Rest</h4>
 <p><img src="/assets/physics/kinematics/kinematics_at_rest.png?style=centerme" alt="graphs" /></p>
 <ul>
-  <li><script type="math/tex">\vec{x}(t) = c</script>, where c is a constant.</li>
-  <li><script type="math/tex">\vec{v}(t)=</script> 0</li>
-  <li><script type="math/tex">\vec{a}(t)=</script> 0</li>
+  <li>$\vec{x}(t) = c$, where c is a constant.</li>
+  <li>$\vec{v}(t)=0$</li>
+  <li>$\vec{a}(t)=0$</li>
 </ul>
 
 <h4 id="an-object-with-constant-velocity">An Object with Constant Velocity</h4>
 <p><img src="/assets/physics/kinematics/kinematics_const_vel.png?style=centerme" alt="graphs" /></p>
 <ul>
-  <li><script type="math/tex">\vec{x}(t)</script> is linear.</li>
-  <li><script type="math/tex">\vec{v}(t) = c</script>, where c is a constant.</li>
-  <li><script type="math/tex">\vec{a}(t)=</script> 0</li>
+  <li>$\vec{x}(t)$ is linear.</li>
+  <li>$\vec{v}(t) = c$, where c is a constant.</li>
+  <li>$\vec{a}(t)=0$</li>
 </ul>
 
 <h4 id="an-object-with-constant-acceleraion">An Object with Constant Acceleraion</h4>
 <p><img src="/assets/physics/kinematics/kinematics_const_accel.png?style=centerme" alt="graphs" /></p>
 <ul>
-  <li><script type="math/tex">\vec{x}(t)</script> is quadratic.</li>
-  <li><script type="math/tex">\vec{v}(t)</script> is linear.</li>
-  <li><script type="math/tex">\vec{a}(t) = c</script>, where c is a constant.</li>
+  <li>$\vec{x}(t)$ is quadratic.</li>
+  <li>$\vec{v}(t)$ is linear.</li>
+  <li>$\vec{a}(t) = c$, where c is a constant.</li>
 </ul>
 
 </div>

@@ -29,14 +29,12 @@
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
-  <!-- Adds MathJax -->
-  <!-- <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  </script> -->
-
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       tex2jax: {
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
       },
       jax: ["input/TeX","output/HTML-CSS"],
       displayAlign: "left !important",
@@ -80,6 +78,7 @@
     gtag('config', 'UA-111962015-1');
   </script>
 </head>
+
   <body>
 
     <div class="sidebar">
@@ -205,7 +204,7 @@
 
 <p>The derivative of a function is itself a function and thus can be further differentiated. This means we can define things like the <strong>second derivative</strong> which is obtained by successively taking the derivative of a function twice.</p>
 
-<p>Take the function <script type="math/tex">x^3</script>. It’s first derivative is usually denoted:</p>
+<p>Take the function $x^3$. It’s first derivative is usually denoted:</p>
 
 <script type="math/tex; mode=display">\frac{\mathrm{d} }{\mathrm{d} x}x^3=3x^2</script>
 
@@ -213,7 +212,7 @@
 
 <script type="math/tex; mode=display">\frac{\mathrm{d} }{\mathrm{d} x}\left(\frac{\mathrm{d} }{\mathrm{d} x}x^3\right)=\frac{\mathrm{d^2} }{\mathrm{d} x^2}x^3=6x</script>
 
-<p>We can extend this idea (and its notation) to any integer <script type="math/tex">n</script> forming the nth derivative of a function <script type="math/tex">f(x)</script>:</p>
+<p>We can extend this idea (and its notation) to any integer $n$ forming the nth derivative of a function $f(x)$:</p>
 
 <script type="math/tex; mode=display">\frac{\mathrm{d^n} }{\mathrm{d} x^n}f(x)</script>
 
@@ -238,7 +237,7 @@
 
 <p><img src="https://www.pitt.edu/~jdnorton/teaching/HPS_0410/chapters/spacetime/planet4d.gif?style=centerme" alt="orbit3D" /></p>
 
-<!-- *It looks similar to euler's formula, $$e^{i\theta}=\cos \theta + i\sin\theta$$, with space being the complex plane and time being the angle $$\theta$$. The imaginary part will come in handy later.* -->
+<!-- *It looks similar to euler's formula, $e^{i\theta}=\cos \theta + i\sin\theta$, with space being the complex plane and time being the angle $\theta$. The imaginary part will come in handy later.* -->
 
 <p>This is an example of a 3D spacetime. It has 2 dimensions of space and 1 of time. Our universe has 3 space and 1 time dimension, making our spacetime (referred to as <em>Minkowski Spacetime</em>) 4 dimensional.</p>
 
@@ -288,7 +287,7 @@
     <h2 id="history-of-algebra">History of Algebra</h2>
 <p>The earliest forms of Algebra have been around since <a href="https://en.wikipedia.org/wiki/Diophantus">Diophantus</a> (3rd century Greek mathematician), who wrote on how to solve equations using geometry (the Greeks had a thing for geometry).</p>
 
-<p>Algebra as we know it wouldn’t appear until Al-Khwārizmī, a medieval Islamic mathematician, wrote his famous <a href="http://www.wilbourhall.org/pdfs/MBP/robertofchesters00khuw.pdf"><em>Compendious Book on Calculation by Completion and Balancing</em></a>. Its Arabic name is equally as large and so is shortened to <em>Al-Jabr</em> which translates to “the reunion of broken parts”. In fact the word algebra itself comes from this book (Al-Jabr –&gt; Algebra). Indeed it was this book that introduced the same notions of canceling and balancing equations to solve for <em>x</em> that we use today.</p>
+<p>Algebra as we know it wouldn’t appear until Al-Khwārizmī, a medieval Islamic mathematician, wrote his famous <a href="http://www.wilbourhall.org/pdfs/MBP/robertofchesters00khuw.pdf"><em>Compendious Book on Calculation by Completion and Balancing</em></a>. Its Arabic name is equally as large and so is shortened to <em>Al-Jabr</em> which translates to “the reunion of broken parts”. In fact the word algebra itself comes from this book (Al-Jabr –&gt; Algebra). Indeed it was this book that introduced the same notions of canceling and balancing equations to solve for $x$ that we use today.</p>
 
 
     <!--Adds Read more-->

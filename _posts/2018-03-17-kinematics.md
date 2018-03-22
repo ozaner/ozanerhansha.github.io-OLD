@@ -3,7 +3,7 @@ layout: post
 title: Kinematics
 tags: physics classical-mechanics
 ---
-<!-- Make vectors bold rather than arrow headed --> $$\renewcommand{\vec}[1]{\mathbf{#1}}$$
+<!-- Make vectors bold rather than arrow headed --> $\renewcommand{\vec}[1]{\mathbf{#1}}$
 Kinematics describes the motion of objects through space over time. Using an object's [position](/2018/03/15/position), velocity and acceleration vectors, it is possible to predict where it will be in the future and where it was in the past.
 
 ### Variable Acceleration
@@ -21,12 +21,12 @@ $$\begin{align}
 \vec{v}=\int\vec{a} \,dt+\vec{v}_0
 \end{align}$$
 
-- $$\vec{x}$$ is the object's position as a function of time
-- $$\vec{x}_0$$ is the initial position, at $$t=0$$
-- $$\vec{v}$$ is the object's velocity as a function of time
-- $$\vec{v}_0$$ is the initial velocity, at $$t=0$$
-- $$\vec{a}$$ is the object's acceleration as a function of time
-- $$t$$ is time
+- $\vec{x}$ is the object's position as a function of time
+- $\vec{x}_0$ is the initial position, at $$t=0$$
+- $\vec{v}$ is the object's velocity as a function of time
+- $\vec{v}_0$ is the initial velocity, at $$t=0$$
+- $\vec{a}$ is the object's acceleration as a function of time
+- $t$ is time
 
 <!--more-->
 
@@ -138,12 +138,12 @@ $$\begin{align}
 There are a couple of things we can do to clean up this set of 4 equations before we display them all together.
 
 #### Displacement vs. Position
-While these equations describe the movement of an object in terms of its initial and current position, $$\vec{x}_0$$ and $$\vec{x}$$ respectively, it is common to think about kinematics in terms of **displacement** or change in distance instead. The change in distance $$\Delta\vec{x}$$ is denoted:
+While these equations describe the movement of an object in terms of its initial and current position, $\vec{x}_0$ and $\vec{x}$ respectively, it is common to think about kinematics in terms of **displacement** or change in distance instead. The change in distance $\Delta\vec{x}$ is denoted:
 
 $$\Delta\vec{x}=\vec{x}-\vec{x}_0$$
 
 #### Average Velocity
-If we look at the acceleration independent equation, we can see it contains the expression $$\frac{\vec{v_0}+\vec{v}}{2}$$. As it turns out, when acceleration is constant, this expression is actually equivalent to the object's **average velocity** $$\overline{\vec{v}}$$:
+If we look at the acceleration independent equation, we can see it contains the expression $\frac{\vec{v_0}+\vec{v}}{2}$. As it turns out, when acceleration is constant, this expression is actually equivalent to the object's **average velocity** $\overline{\vec{v}}$:
 
 <details>
 <summary>Derivation</summary>
@@ -162,7 +162,7 @@ If we look at the acceleration independent equation, we can see it contains the 
 $$\boxed{\overline{\vec{v}}=\frac{\vec{v_0}+\vec{v}}{2}}$$
 
 #### Dot Product
-When deriving the time independent kinematic equation, we used the dot product when manipulating the expressions $$(\vec{v}+\vec{v}_0)\cdot \vec{a}$$ and $$(\vec{v}+\vec{v}_0)\cdot(\vec{v}-\vec{v}_0)$$. We were justified in doing so because the dot product is both commutative and distributive.
+When deriving the time independent kinematic equation, we used the dot product when manipulating the expressions $(\vec{v}+\vec{v}_0)\cdot \vec{a}$ and $(\vec{v}+\vec{v}_0)\cdot(\vec{v}-\vec{v}_0)$. We were justified in doing so because the dot product is both commutative and distributive.
 
 The dot product of a vector with itself is that vector's **squared norm** and is often denoted as such:
 
@@ -182,32 +182,32 @@ $$\begin{gather}
 When the position, velocity and acceleration functions are graphed with respect to time, their graphs are related by the kinematic equations.
 
 #### General Info
-For any graph of $$\vec{x}(t)$$
+For any graph of $\vec{x}(t)$
 -  Slope of the secant line created by two points is the average velocity during that time interval.
-- Slope of line tangent to curve at time $$t$$ is the object's instantaneous velocity at $$t$$.
+- Slope of line tangent to curve at time $$t$$ is the object's instantaneous velocity at $t$.
 
-For any graph of $$\vec{v}(t)$$
+For any graph of $\vec{v}(t)$
 -  Slope of the secant line created by two points is the average acceleration during that time interval.
 - Slope of line tangent to curve at time $$t$$ is the object's instantaneous acceleration at $$t$$.
-- Area under a region of the curve from $$[a,b]$$ is the object's displacement during $$[a,b]$$.
+- Area under a region of the curve from $[a,b]$ is the object's displacement during $[a,b]$.
 
-For any graph of $$\vec{a}(t)$$
-- Area under a region of the curve from $$[a,b]$$ is the object's change in velocity during $$[a,b]$$.
+For any graph of $\vec{a}(t)$
+- Area under a region of the curve from $[a,b]$ is the object's change in velocity during $[a,b]$.
 
 #### An Object at Rest
 ![graphs](/assets/physics/kinematics/kinematics_at_rest.png?style=centerme)
-- $$\vec{x}(t) = c$$, where c is a constant.
-- $$\vec{v}(t)=$$ 0
-- $$\vec{a}(t)=$$ 0
+- $\vec{x}(t) = c$, where c is a constant.
+- $\vec{v}(t)=0$
+- $\vec{a}(t)=0$
 
 #### An Object with Constant Velocity
 ![graphs](/assets/physics/kinematics/kinematics_const_vel.png?style=centerme)
-- $$\vec{x}(t)$$ is linear.
-- $$\vec{v}(t) = c$$, where c is a constant.
-- $$\vec{a}(t)=$$ 0
+- $\vec{x}(t)$ is linear.
+- $\vec{v}(t) = c$, where c is a constant.
+- $\vec{a}(t)=0$
 
 #### An Object with Constant Acceleraion
 ![graphs](/assets/physics/kinematics/kinematics_const_accel.png?style=centerme)
-- $$\vec{x}(t)$$ is quadratic.
-- $$\vec{v}(t)$$ is linear.
-- $$\vec{a}(t) = c$$, where c is a constant.
+- $\vec{x}(t)$ is quadratic.
+- $\vec{v}(t)$ is linear.
+- $\vec{a}(t) = c$, where c is a constant.

@@ -29,14 +29,12 @@
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
-  <!-- Adds MathJax -->
-  <!-- <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  </script> -->
-
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       tex2jax: {
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
       },
       jax: ["input/TeX","output/HTML-CSS"],
       displayAlign: "left !important",
@@ -80,6 +78,7 @@
     gtag('config', 'UA-111962015-1');
   </script>
 </head>
+
   <body>
 
     <div class="sidebar">
@@ -206,7 +205,7 @@
   <h2 id="history-of-algebra">History of Algebra</h2>
 <p>The earliest forms of Algebra have been around since <a href="https://en.wikipedia.org/wiki/Diophantus">Diophantus</a> (3rd century Greek mathematician), who wrote on how to solve equations using geometry (the Greeks had a thing for geometry).</p>
 
-<p>Algebra as we know it wouldn’t appear until Al-Khwārizmī, a medieval Islamic mathematician, wrote his famous <a href="http://www.wilbourhall.org/pdfs/MBP/robertofchesters00khuw.pdf"><em>Compendious Book on Calculation by Completion and Balancing</em></a>. Its Arabic name is equally as large and so is shortened to <em>Al-Jabr</em> which translates to “the reunion of broken parts”. In fact the word algebra itself comes from this book (Al-Jabr –&gt; Algebra). Indeed it was this book that introduced the same notions of canceling and balancing equations to solve for <em>x</em> that we use today.</p>
+<p>Algebra as we know it wouldn’t appear until Al-Khwārizmī, a medieval Islamic mathematician, wrote his famous <a href="http://www.wilbourhall.org/pdfs/MBP/robertofchesters00khuw.pdf"><em>Compendious Book on Calculation by Completion and Balancing</em></a>. Its Arabic name is equally as large and so is shortened to <em>Al-Jabr</em> which translates to “the reunion of broken parts”. In fact the word algebra itself comes from this book (Al-Jabr –&gt; Algebra). Indeed it was this book that introduced the same notions of canceling and balancing equations to solve for $x$ that we use today.</p>
 
 <!--more-->
 

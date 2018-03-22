@@ -29,14 +29,12 @@
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
-  <!-- Adds MathJax -->
-  <!-- <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  </script> -->
-
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       tex2jax: {
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
       },
       jax: ["input/TeX","output/HTML-CSS"],
       displayAlign: "left !important",
@@ -80,6 +78,7 @@
     gtag('config', 'UA-111962015-1');
   </script>
 </head>
+
   <body>
 
     <div class="sidebar">
@@ -219,7 +218,7 @@
   <li>Perimeter</li>
   <li>Area</li>
   <li>Smoothness (local variation in radius lengths)</li>
-  <li>Compactness <script type="math/tex">(\frac{perimeter^2}{area} - 1)</script></li>
+  <li>Compactness $(\frac{perimeter^2}{area} - 1)$</li>
   <li>Concavity (severity of concave portions of the contour)</li>
   <li>Concave points (number of concave portions of the contour)</li>
   <li>Symmetry</li>
@@ -295,11 +294,11 @@
 <script type="math/tex; mode=display">\hat{y}=\text{softmax}(Wx+b)</script>
 
 <ul>
-  <li><script type="math/tex">x</script> is the input (a 30 dimensional vector of all the cancer cell’s statistical values)</li>
-  <li><script type="math/tex">\hat{y}</script> is the network’s  approximation of <script type="math/tex">y</script>, the right answer (<script type="math/tex">\hat{y}</script> is a 2D vector with the first/second value corresponding to its confidence that the cell is benign/malignant)</li>
-  <li><script type="math/tex">W</script> is a matrix of weights (the matrix is 30x2 so that it turns 30 dimensional vectors into 2D vectors)</li>
-  <li><script type="math/tex">b</script> is a vector of ‘bias’ values (a 2D vector that allows the network more freedom when training)</li>
-  <li>The <script type="math/tex">\text{softmax}</script> function is the network’s <a href="https://en.wikipedia.org/wiki/Activation_function">activation function</a>, which introduces a nonlinearity to the network. This is integral for any neural network to learn from the data it’s provided. The function also equalizes the network’s confidence predictions so that they add up to 100%. The mathematical description of softmax is:</li>
+  <li>$x$ is the input (a 30 dimensional vector of all the cancer cell’s statistical values)</li>
+  <li>$\hat{y}$ is the network’s  approximation of $y$, the right answer ($\hat{y}$ is a 2D vector with the first/second value corresponding to its confidence that the cell is benign/malignant)</li>
+  <li>$W$ is a matrix of weights (the matrix is 30x2 so that it turns 30 dimensional vectors into 2D vectors)</li>
+  <li>$b$ is a vector of ‘bias’ values (a 2D vector that allows the network more freedom when training)</li>
+  <li>The $\text{softmax}$ function is the network’s <a href="https://en.wikipedia.org/wiki/Activation_function">activation function</a>, which introduces a nonlinearity to the network. This is integral for any neural network to learn from the data it’s provided. The function also equalizes the network’s confidence predictions so that they add up to 100%. The mathematical description of softmax is:</li>
 </ul>
 
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Mplwp_logistic_function.svg/1280px-Mplwp_logistic_function.svg.png" alt="softmax graph" /></p>
@@ -333,7 +332,7 @@
 <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">global_variables_initializer</span><span class="p">())</span> <span class="c">#Init Variables</span>
 </code></pre></div></div>
 
-<p>Next we create the actual training model. First we create a placeholder for the labels of the training data, <script type="math/tex">y</script>.</p>
+<p>Next we create the actual training model. First we create a placeholder for the labels of the training data, $y$.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#nx2 Matrix (One-Hot Vector, Label Data)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span><span class="n">name</span><span class="o">=</span><span class="s">'y_Labeled'</span><span class="p">)</span>
