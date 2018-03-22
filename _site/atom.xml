@@ -4,7 +4,7 @@
  <title>Oz∀n∈ℝ</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-03-21T11:59:09-04:00</updated>
+ <updated>2018-03-22T15:13:29-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -44,11 +44,11 @@
 &lt;h2 id=&quot;results&quot;&gt;Results&lt;/h2&gt;
 &lt;p&gt;Learning starts to appear after 1500 games (a game goes on until one player reaches 20 points) and it reaches a 50% win-rate at around 8000 games. More testing needs to be done to see the maximum accuracy of this particular network.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/projects/pongdata.png?style=centerme&quot; alt=&quot;pongdata&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/projects/pongAI/pongdata.png?style=centerme&quot; alt=&quot;pongdata&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Below is the network (on a good day) playing against the same bot it trained with for 10,000 games.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/projects/pongai.gif?style=centerme&quot; alt=&quot;bc&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/projects/pongAI/pongai.gif?style=centerme&quot; alt=&quot;bc&quot; /&gt;&lt;/p&gt;
 </content>
  </entry>
  
@@ -354,6 +354,13 @@ $$\begin{align}
 &lt;h3 id=&quot;classical-physics&quot;&gt;Classical Physics&lt;/h3&gt;
 &lt;p&gt;Classical physics is a catch all for the theories of physics that predated the relativistic and quantum theories of physics we have today. They very adequately describe the interactions and mechanics of everyday objects, fluids, gasses, electricity, magnetism, and even celestial bodies.&lt;/p&gt;
 
+&lt;p&gt;The 3 main branches of pre-Einsteinian physics are:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Classical Mechanics&lt;/li&gt;
+  &lt;li&gt;Classical Electrodynamics&lt;/li&gt;
+  &lt;li&gt;Thermodynamics&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;!--more--&gt;
 
 &lt;h3 id=&quot;special--general-relativity&quot;&gt;Special &amp;amp; General Relativity&lt;/h3&gt;
@@ -586,7 +593,7 @@ D^2x^n=n(n-1)x^{n-2}&lt;/script&gt;
 
 &lt;p&gt;The generalized factorial function is called the &lt;a href=&quot;https://en.wikipedia.org/wiki/Gamma_function&quot;&gt;&lt;strong&gt;gamma function&lt;/strong&gt;&lt;/a&gt; and is denoted: &lt;script type=&quot;math/tex&quot;&gt;\Gamma(x)&lt;/script&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/2018/01/fractional-calculus/gamma_function.png?style=centerme&quot; alt=&quot;gamma graph&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/math/fractional-calculus/gamma_function.png?style=centerme&quot; alt=&quot;gamma graph&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;In the graph above you’ll see that the gamma function returns the same result as factorial for integer values, but is shifted over by 1:&lt;/p&gt;
 
@@ -857,35 +864,34 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
 &lt;h3 id=&quot;text-files&quot;&gt;Text Files&lt;/h3&gt;
 &lt;p&gt;Take text files for example. Their content, of course, varies widely depending on the length and topic of discussion. But, even if they don’t use the same language, they all still use the same Unicode characters which all have the same configuration of bits. Meaning they share some similarities:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/2018/01/filetopng/text_diagram.png?style=centerme&quot; alt=&quot;Text in FileToPNG&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/projects/filetopng/text_diagram.png?style=centerme&quot; alt=&quot;Text in FileToPNG&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;1mb-file-of-random-noise-for-comparison&quot;&gt;1MB file of random noise for comparison:&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/2018/01/filetopng/random_data.png?style=centerme&quot; alt=&quot;Random Noise&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/projects/filetopng/random_data.png?style=centerme&quot; alt=&quot;Random Noise&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;music-files&quot;&gt;Music Files&lt;/h3&gt;
 &lt;p&gt;This one was kind of surprising. When I took an .mp3 file of a song and put it through the program, the resulting image looked almost random:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/2018/01/filetopng/song_mp3.png?style=centerme&quot; alt=&quot;mp3&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/projects/filetopng/song_mp3.png?style=centerme&quot; alt=&quot;mp3&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I was disappointed at first, but then I realized that randomness is fundamentally information packed. What I mean is that if the PNG representation had some sort of overarching structure, then that would imply that there is still some redundancy in the file that could be compressed, thereby making the file smaller and more random looking.&lt;/p&gt;
 
 &lt;p&gt;This lines up with the fact that mp3 files are &lt;strong&gt;lossy&lt;/strong&gt; (i.e they sacrifice perfect quality for a smaller size).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/2018/01/filetopng/song_wav.png?style=centerme&quot; alt=&quot;wav&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/projects/filetopng/song_wav.png?style=centerme&quot; alt=&quot;wav&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The natural step forward at that point was to get a .wav version of the song (which is &lt;strong&gt;lossless&lt;/strong&gt;) and see if it had any structure. And as expected, it did. It was also much bigger in size due to being lossless (the size difference isn’t reflected here because it would extend out of the webpage).&lt;/p&gt;
 
 &lt;h3 id=&quot;nintendo-64-roms&quot;&gt;Nintendo 64 ROMs&lt;/h3&gt;
 &lt;p&gt;As a test I thought I would try converting a couple of Nintendo 64 games (in file form) that were on my desktop to PNGs and, unsurprisingly, they share many similarities:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/2018/01/filetopng/n64_diagram.png?style=centerme&quot; alt=&quot;N64 Roms in FileToPNG&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/projects/filetopng/n64_diagram.png?style=centerme&quot; alt=&quot;N64 Roms in FileToPNG&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Interested, I did some research into N64 cartridges and found out that all ‘ROM dumps’ (files that were created by copying a physical N64 cartridge onto a computer) have what’s called a &lt;em&gt;header&lt;/em&gt;. This header includes custodial information like the game’s version, internal name, and other bits of information that would be interesting to a game historian. This header is the black box at the top &lt;em&gt;Super Mario 64&lt;/em&gt; and &lt;em&gt;Mario Kart 64&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;You may also notice that Super Mario 64 is smaller than Mario Kart 64, implying that it has a smaller file size. Apparently, N64 games came on a variety of hardware with different storage capacities and capabilities. This may seem normal nowadays but in an era where all games had to work on the same piece of limited hardware, this variability is pretty amazing.&lt;/p&gt;
 
 &lt;p&gt;Anyway this is also reflected at the bottom of the PNG representations. After the last black bar, both the ROMs are just filled with ‘garbage data’ meant to fill the ROM up. You can tell because this section looks more like the random sample then the rest of the picture.&lt;/p&gt;
-
 </content>
  </entry>
  
@@ -1041,7 +1047,7 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
 
 &lt;p&gt;Here’s a visualization:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://alykhantejani.github.io/images/gradient_descent_line_graph.gif&quot; alt=&quot;SGD&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/breast-cancer/gradient_descent_3D.gif?style=centerme&quot; alt=&quot;SGD&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;And here it is in tensorflow:&lt;/p&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#Performs Gradient Descent on loss function&lt;/span&gt;
