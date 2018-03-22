@@ -41,7 +41,7 @@ $$\begin{align}
 \end{align}$$ -->
 
 <details>
-<summary><strong>Velocity Independent Equation</strong></summary>
+<summary><strong>Position Independent Equation</strong></summary>
 <p>$$\begin{align}
 \vec{v}&=\int\vec{a} \,dt+\vec{v}_0 \tag{integral def. of \(\vec{v}\)}\\
 &=\vec{a}\int dt+\vec{v}_0 \tag{\(\vec{a}\) is constant}\\
@@ -63,7 +63,7 @@ $$\begin{align}
 $$\boxed{\vec{x}=\frac{\vec{a}t^2}{2}+\vec{v}_0t+\vec{x}_0}$$ -->
 
 <details>
-<summary><strong>Position Independent Equation</strong></summary>
+<summary><strong>Velocity Independent Equation</strong></summary>
 <p>$$\begin{align}
 \vec{v}&=\vec{a}t+\vec{v}_0 \tag{\(\vec{x}\) independent Eq.}\\
 \vec{x}&=\int\vec{v} \,dt+\vec{x}_0 \tag{integral def. of \(\vec{x}\)}\\
