@@ -66,6 +66,7 @@
 
 
 
+
   
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -107,6 +108,10 @@
           
         
       
+        
+      
+        
+          
         
       
         
@@ -196,7 +201,44 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/2018/03/18/reinforcement-learning-pong/">Playing Atari Pong with Reinforcement Learning</a>
+      <a href="/classical-physics/">Classical Physics</a>
+    </h1>
+    <span class="post-date">24 Mar 2018</span>
+    <p>Classical physics refers to the branches of physics that were conceived of prior to quantum mechanics and Einsteinian relativity. These branches of physics are still widely applicable today and serve as starting points for understanding and deriving modern physics.</p>
+
+<h2 id="classical-mechanics">Classical Mechanics</h2>
+<p>Classical mechanics is the study of the motion of massive bodies. It is usually split into two main branches:</p>
+
+<ul>
+  <li><a href="/kinematics">Kinematics</a> - The description of translational motion through space. Other types of motion include:
+    <ul>
+      <li>Rotational Kinematics</li>
+      <li>Simple Harmonic Motion (Oscillatory Motion)</li>
+    </ul>
+  </li>
+  <li>Dynamics - The causes of motion. Main topics include:
+    <ul>
+      <li>Forces</li>
+      <li>Work, Power &amp; Energy</li>
+      <li>Linear Momentum</li>
+      <li>Rotational Dynamics</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="reformulations">Reformulations</h3>
+<p>While Newtonian mechanics, as described by the <strong><em>principia</em></strong>, was the first formulation of classical mechanics, there exists others. Namely Lagrangian Mechanics and Hamiltonian mechanics. These formulations are instrumental in developing modern theories like quantum mechanics.</p>
+
+<p><img src="http://en.citizendium.org/images/thumb/f/f5/Classical_mechanics_timeline.PNG/800px-Classical_mechanics_timeline.PNG?style=centerme" alt="formulations" width="500px" /></p>
+
+
+    <!--Adds Read more-->
+    <a href="/classical-physics/">Read more</a>
+    <hr>
+    
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/reinforcement-learning-pong/">Playing Atari Pong with Reinforcement Learning</a>
     </h1>
     <span class="post-date">18 Mar 2018</span>
     <h2 id="background">Background</h2>
@@ -206,17 +248,17 @@
 
 
     <!--Adds Read more-->
-    <a href="/2018/03/18/reinforcement-learning-pong/">Read more</a>
+    <a href="/reinforcement-learning-pong/">Read more</a>
     <hr>
     
   <div class="post">
     <h1 class="post-title">
-      <a href="/2018/03/17/kinematics/">Kinematics</a>
+      <a href="/kinematics/">Kinematics</a>
     </h1>
     <span class="post-date">17 Mar 2018</span>
     <!-- Make vectors bold rather than arrow headed -->
 <p>$\renewcommand{\vec}[1]{\mathbf{#1}}$
-Kinematics describes the motion of objects through space over time. Using an object’s <a href="/2018/03/15/position">position</a>, velocity and acceleration vectors, it is possible to predict where it will be in the future and where it was in the past.</p>
+Translational Kinematics describes the motion of objects through space over time. Using an object’s <a href="/position">position</a>, velocity and acceleration vectors, it is possible to predict where it will be in the future and where it was in the past.</p>
 
 <h3 id="variable-acceleration">Variable Acceleration</h3>
 <p>To calculate the kinematics of an object with continuous acceleration, simply refer to the definitions of velocity and acceleration:</p>
@@ -244,12 +286,12 @@ Kinematics describes the motion of objects through space over time. Using an obj
 
 
     <!--Adds Read more-->
-    <a href="/2018/03/17/kinematics/">Read more</a>
+    <a href="/kinematics/">Read more</a>
     <hr>
     
   <div class="post">
     <h1 class="post-title">
-      <a href="/2018/03/15/position/">Position</a>
+      <a href="/position/">Position</a>
     </h1>
     <span class="post-date">15 Mar 2018</span>
     <p>The position of a particle or object in <strong>space</strong> is defined as a point on an n-dimensional <strong>Cartesian coordinate system</strong>. This point can equivalently be thought of as a vector.</p>
@@ -274,12 +316,12 @@ Kinematics describes the motion of objects through space over time. Using an obj
 
 
     <!--Adds Read more-->
-    <a href="/2018/03/15/position/">Read more</a>
+    <a href="/position/">Read more</a>
     <hr>
     
   <div class="post">
     <h1 class="post-title">
-      <a href="/2018/03/14/physics/">Physics</a>
+      <a href="/physics/">Physics</a>
     </h1>
     <span class="post-date">14 Mar 2018</span>
     <p>Physics is the branch of science that studies the properties and mechanics of matter, energy and spacetime.</p>
@@ -298,41 +340,14 @@ Kinematics describes the motion of objects through space over time. Using an obj
 
 <p>The 3 main branches of pre-Einsteinian physics are:</p>
 <ul>
-  <li>Classical Mechanics</li>
-  <li>Classical Electrodynamics</li>
-  <li>Thermodynamics</li>
+  <li><a href="/classical-physics#classical-mechanics">Classical Mechanics</a></li>
+  <li><a href="/classical-physics#classical-electromagnetism">Classical Electromagnetism</a></li>
+  <li><a href="/classical-physics#thermodynamics">Thermodynamics</a></li>
 </ul>
 
 
     <!--Adds Read more-->
-    <a href="/2018/03/14/physics/">Read more</a>
-    <hr>
-    
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/2018/03/03/parity-sequences/">Parity Sequences</a>
-    </h1>
-    <span class="post-date">03 Mar 2018</span>
-    <!-- Thought about this when we had to find Taylor series' for certain sinusoidal functions and the terms had hard to capture patterns of negative/even terms. It is possible to capture this via more sinusoidal functions but I wanted a polynomial answer. I don't think there is a polynomial answer for the general case, and the 2 examples below are the extent of my findings. -->
-
-<p>A parity sequence is a sequence of numbers that follow a set pattern of even and odd. The notation we will use is “$+$” for even and “$-$” for odd.</p>
-
-<h2 id="examples">Examples</h2>
-<p>All examples start indexing at 0 (the most rational way to index lists).</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{alignat*}{2}
-  S_n=\frac{n(n-1)}{2}& &&= \{0,0,1,3,6,10,15,21,\cdots\} && \\
-  & &&\rightarrow\{+,+,-,-,+,+,-,-,\cdots\} && \\
-  S_n=\frac{n^2(n-1)}{2}& &&= \{0,0,2,9,24,50,90,630,\cdots\} &&\\
-  & &&\rightarrow\{+,+,+,-,+,+,+,-,\cdots\}&&\\
-  S_n=\cos \frac{n\pi}{2}& &&= \{1,0,-1,0,1,0,-1,0,\cdots\} &&\\
-  & &&\rightarrow\{-,+,-,+,-,+,-,+,\cdots\}&&
-\end{alignat*} %]]></script>
-
-
-    <!--Adds Read more-->
-    <a href="/2018/03/03/parity-sequences/">Read more</a>
+    <a href="/physics/">Read more</a>
     <hr>
     
   </div>

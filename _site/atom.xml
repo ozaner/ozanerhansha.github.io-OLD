@@ -4,7 +4,7 @@
  <title>Oz∀n∈ℝ</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-03-22T17:18:50-04:00</updated>
+ <updated>2018-03-24T23:17:19-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -13,10 +13,77 @@
 
  
  <entry>
+   <title>Classical Physics</title>
+   <link href="http://localhost:4000/classical-physics/"/>
+   <updated>2018-03-24T00:00:00-04:00</updated>
+   <id>http://localhost:4000/classical-physics</id>
+   <content type="html">&lt;p&gt;Classical physics refers to the branches of physics that were conceived of prior to quantum mechanics and Einsteinian relativity. These branches of physics are still widely applicable today and serve as starting points for understanding and deriving modern physics.&lt;/p&gt;
+
+&lt;h2 id=&quot;classical-mechanics&quot;&gt;Classical Mechanics&lt;/h2&gt;
+&lt;p&gt;Classical mechanics is the study of the motion of massive bodies. It is usually split into two main branches:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/kinematics&quot;&gt;Kinematics&lt;/a&gt; - The description of translational motion through space. Other types of motion include:
+    &lt;ul&gt;
+      &lt;li&gt;Rotational Kinematics&lt;/li&gt;
+      &lt;li&gt;Simple Harmonic Motion (Oscillatory Motion)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Dynamics - The causes of motion. Main topics include:
+    &lt;ul&gt;
+      &lt;li&gt;Forces&lt;/li&gt;
+      &lt;li&gt;Work, Power &amp;amp; Energy&lt;/li&gt;
+      &lt;li&gt;Linear Momentum&lt;/li&gt;
+      &lt;li&gt;Rotational Dynamics&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;reformulations&quot;&gt;Reformulations&lt;/h3&gt;
+&lt;p&gt;While Newtonian mechanics, as described by the &lt;strong&gt;&lt;em&gt;principia&lt;/em&gt;&lt;/strong&gt;, was the first formulation of classical mechanics, there exists others. Namely Lagrangian Mechanics and Hamiltonian mechanics. These formulations are instrumental in developing modern theories like quantum mechanics.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://en.citizendium.org/images/thumb/f/f5/Classical_mechanics_timeline.PNG/800px-Classical_mechanics_timeline.PNG?style=centerme&quot; alt=&quot;formulations&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;classical-electromagnetism&quot;&gt;Classical Electromagnetism&lt;/h2&gt;
+&lt;p&gt;Classical electromagnetism studies the properties and interactions of electric charges, magnets, and the electromagnetic force in general. There are 4 main topics here:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Electrostatics
+    &lt;ul&gt;
+      &lt;li&gt;Electric Charge&lt;/li&gt;
+      &lt;li&gt;Electric Fields&lt;/li&gt;
+      &lt;li&gt;Electric Potential&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Magnetostatics&lt;/li&gt;
+  &lt;li&gt;Electrodynamics&lt;/li&gt;
+  &lt;li&gt;Electrical Networks
+    &lt;ul&gt;
+      &lt;li&gt;Capacitance&lt;/li&gt;
+      &lt;li&gt;Current&lt;/li&gt;
+      &lt;li&gt;Resistance&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;thermodynamics&quot;&gt;Thermodynamics&lt;/h2&gt;
+&lt;p&gt;Thermodynamics is the study of the workings d effects of heat, or &lt;strong&gt;thermal energy&lt;/strong&gt;, in a system. Some main topics inlude:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The 4 Laws of Thermodynamics&lt;/li&gt;
+  &lt;li&gt;Entropy&lt;/li&gt;
+  &lt;li&gt;Temperature&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Playing Atari Pong with Reinforcement Learning</title>
-   <link href="http://localhost:4000/2018/03/18/reinforcement-learning-pong/"/>
+   <link href="http://localhost:4000/reinforcement-learning-pong/"/>
    <updated>2018-03-18T00:00:00-04:00</updated>
-   <id>http://localhost:4000/2018/03/18/reinforcement-learning-pong</id>
+   <id>http://localhost:4000/reinforcement-learning-pong</id>
    <content type="html">&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
 &lt;p&gt;In 2013 the relatively new AI startup DeepMind released their paper &lt;a href=&quot;https://arxiv.org/pdf/1312.5602.pdf&quot;&gt;&lt;em&gt;Playing Atari with Deep Reinforcement Learning&lt;/em&gt;&lt;/a&gt; detailing an artificial neural network that was able to play, not 1, but 7 Atari games with human and even super-human level proficiency. What made this paper so astounding was the fact that it was a single, general purpose neural network (a &lt;strong&gt;general artificial intelligence&lt;/strong&gt; if you will) that could be trained to play all these games rather than 7 separate ones.&lt;/p&gt;
 
@@ -54,12 +121,12 @@
  
  <entry>
    <title>Kinematics</title>
-   <link href="http://localhost:4000/2018/03/17/kinematics/"/>
+   <link href="http://localhost:4000/kinematics/"/>
    <updated>2018-03-17T00:00:00-04:00</updated>
-   <id>http://localhost:4000/2018/03/17/kinematics</id>
+   <id>http://localhost:4000/kinematics</id>
    <content type="html">&lt;!-- Make vectors bold rather than arrow headed --&gt;
 &lt;p&gt;$\renewcommand{\vec}[1]{\mathbf{#1}}$
-Kinematics describes the motion of objects through space over time. Using an object’s &lt;a href=&quot;/2018/03/15/position&quot;&gt;position&lt;/a&gt;, velocity and acceleration vectors, it is possible to predict where it will be in the future and where it was in the past.&lt;/p&gt;
+Translational Kinematics describes the motion of objects through space over time. Using an object’s &lt;a href=&quot;/position&quot;&gt;position&lt;/a&gt;, velocity and acceleration vectors, it is possible to predict where it will be in the future and where it was in the past.&lt;/p&gt;
 
 &lt;h3 id=&quot;variable-acceleration&quot;&gt;Variable Acceleration&lt;/h3&gt;
 &lt;p&gt;To calculate the kinematics of an object with continuous acceleration, simply refer to the definitions of velocity and acceleration:&lt;/p&gt;
@@ -286,9 +353,9 @@ $$\begin{align}
  
  <entry>
    <title>Position</title>
-   <link href="http://localhost:4000/2018/03/15/position/"/>
+   <link href="http://localhost:4000/position/"/>
    <updated>2018-03-15T00:00:00-04:00</updated>
-   <id>http://localhost:4000/2018/03/15/position</id>
+   <id>http://localhost:4000/position</id>
    <content type="html">&lt;p&gt;The position of a particle or object in &lt;strong&gt;space&lt;/strong&gt; is defined as a point on an n-dimensional &lt;strong&gt;Cartesian coordinate system&lt;/strong&gt;. This point can equivalently be thought of as a vector.&lt;/p&gt;
 
 &lt;h3 id=&quot;classical-physics&quot;&gt;Classical Physics&lt;/h3&gt;
@@ -337,9 +404,9 @@ $$\begin{align}
  
  <entry>
    <title>Physics</title>
-   <link href="http://localhost:4000/2018/03/14/physics/"/>
+   <link href="http://localhost:4000/physics/"/>
    <updated>2018-03-14T00:00:00-04:00</updated>
-   <id>http://localhost:4000/2018/03/14/physics</id>
+   <id>http://localhost:4000/physics</id>
    <content type="html">&lt;p&gt;Physics is the branch of science that studies the properties and mechanics of matter, energy and spacetime.&lt;/p&gt;
 
 &lt;p&gt;There are 3 main divisions of physics:&lt;/p&gt;
@@ -356,9 +423,9 @@ $$\begin{align}
 
 &lt;p&gt;The 3 main branches of pre-Einsteinian physics are:&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Classical Mechanics&lt;/li&gt;
-  &lt;li&gt;Classical Electrodynamics&lt;/li&gt;
-  &lt;li&gt;Thermodynamics&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/classical-physics#classical-mechanics&quot;&gt;Classical Mechanics&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/classical-physics#classical-electromagnetism&quot;&gt;Classical Electromagnetism&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/classical-physics#thermodynamics&quot;&gt;Thermodynamics&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;!--more--&gt;
@@ -432,9 +499,9 @@ Quantum chromodynamics is the QFT of the strong nuclear force. This theory descr
  
  <entry>
    <title>Parity Sequences</title>
-   <link href="http://localhost:4000/2018/03/03/parity-sequences/"/>
+   <link href="http://localhost:4000/parity-sequences/"/>
    <updated>2018-03-03T00:00:00-05:00</updated>
-   <id>http://localhost:4000/2018/03/03/parity-sequences</id>
+   <id>http://localhost:4000/parity-sequences</id>
    <content type="html">&lt;!-- Thought about this when we had to find Taylor series' for certain sinusoidal functions and the terms had hard to capture patterns of negative/even terms. It is possible to capture this via more sinusoidal functions but I wanted a polynomial answer. I don't think there is a polynomial answer for the general case, and the 2 examples below are the extent of my findings. --&gt;
 
 &lt;p&gt;A parity sequence is a sequence of numbers that follow a set pattern of even and odd. The notation we will use is “$+$” for even and “$-$” for odd.&lt;/p&gt;
@@ -485,9 +552,9 @@ S'_n=\frac{n(n-1)}{2}+1&amp;=\{1,1,2,4,7,11,\cdots\}\\
  
  <entry>
    <title>Fractional Calculus</title>
-   <link href="http://localhost:4000/2018/01/30/fractional-calculus/"/>
+   <link href="http://localhost:4000/fractional-calculus/"/>
    <updated>2018-01-30T00:00:00-05:00</updated>
-   <id>http://localhost:4000/2018/01/30/fractional-calculus</id>
+   <id>http://localhost:4000/fractional-calculus</id>
    <content type="html">&lt;h2 id=&quot;basic-differentiation&quot;&gt;Basic Differentiation&lt;/h2&gt;
 &lt;p&gt;In general terms, derivatives are a measure of how a function changes with respect to another variable. Not all functions have derivatives, but those that do are called &lt;strong&gt;differentiable&lt;/strong&gt;.&lt;/p&gt;
 
@@ -689,9 +756,9 @@ Which I personally cannot do. But that's ok, because others more skilled than I 
  
  <entry>
    <title>Minkowski Spacetime</title>
-   <link href="http://localhost:4000/2018/01/23/minkowski-spacetime/"/>
+   <link href="http://localhost:4000/minkowski-spacetime/"/>
    <updated>2018-01-23T00:00:00-05:00</updated>
-   <id>http://localhost:4000/2018/01/23/minkowski-spacetime</id>
+   <id>http://localhost:4000/minkowski-spacetime</id>
    <content type="html">&lt;h2 id=&quot;what-is-spacetime&quot;&gt;What is Spacetime?&lt;/h2&gt;
 &lt;p&gt;Before we talk about Minkowski Spacetime, we need to address what it means to combine space and time.&lt;/p&gt;
 
@@ -713,7 +780,7 @@ Which I personally cannot do. But that's ok, because others more skilled than I 
 &lt;p&gt;Spacetime serves as a useful mathematical and intuitive model of the universe that we can use to reason about physics, particularly Einstein’s special relativity. Indeed, it was Einstein’s former teacher &lt;a href=&quot;https://en.wikipedia.org/wiki/Hermann_Minkowski&quot;&gt;Hermann Minkowski&lt;/a&gt; that came up with spacetime as a tool to understand his pupil’s breakthrough theory.&lt;/p&gt;
 
 &lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
-&lt;p&gt;Formally speaking, Minkowski spacetime (which I’ll simply refer to as &lt;em&gt;spacetime&lt;/em&gt;) is an &lt;a href=&quot;\2017\05\21\abstract-algebra&quot;&gt;algebraic structure&lt;/a&gt; that represents space purely in mathematical terms. In particular it is a 4D &lt;a href=&quot;https://en.wikipedia.org/wiki/Vector_space&quot;&gt;vector space&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Formally speaking, Minkowski spacetime (which I’ll simply refer to as &lt;em&gt;spacetime&lt;/em&gt;) is an &lt;a href=&quot;\abstract-algebra&quot;&gt;algebraic structure&lt;/a&gt; that represents space purely in mathematical terms. In particular it is a 4D &lt;a href=&quot;https://en.wikipedia.org/wiki/Vector_space&quot;&gt;vector space&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Points in this space are represented by vectors and are referred to as &lt;strong&gt;events&lt;/strong&gt;. The naming stems from the fact that these points represents both moments in time as well as locations in space.&lt;/p&gt;
 
@@ -836,9 +903,9 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
  
  <entry>
    <title>FileToPNG</title>
-   <link href="http://localhost:4000/2018/01/16/filetopng/"/>
+   <link href="http://localhost:4000/filetopng/"/>
    <updated>2018-01-16T00:00:00-05:00</updated>
-   <id>http://localhost:4000/2018/01/16/filetopng</id>
+   <id>http://localhost:4000/filetopng</id>
    <content type="html">&lt;h2 id=&quot;what-is-filetopng&quot;&gt;What is FileToPNG?&lt;/h2&gt;
 &lt;p&gt;FileToPNG is a tool written in Java that converts the raw bit representation of any file into a corresponding PNG representation. The PNG (being a lossless file type) can be sent (via text, email, etc) and finally reconstructed back into a file. The GithHub repository for this project can be found &lt;a href=&quot;https://github.com/ozanerhansha/FileToPNG&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
@@ -900,9 +967,9 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
  
  <entry>
    <title>Breast Cancer Classification</title>
-   <link href="http://localhost:4000/2018/01/15/breast-cancer-classification/"/>
+   <link href="http://localhost:4000/breast-cancer-classification/"/>
    <updated>2018-01-15T00:00:00-05:00</updated>
-   <id>http://localhost:4000/2018/01/15/breast-cancer-classification</id>
+   <id>http://localhost:4000/breast-cancer-classification</id>
    <content type="html">&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
 &lt;p&gt;I made this model to test how easily I could use external datasets to create and train a neural network with Google’s &lt;a href=&quot;https://www.tensorflow.org/&quot;&gt;&lt;em&gt;TensorFlow&lt;/em&gt;&lt;/a&gt; library. In this post I’ll attempt to explain the code, its results, and its accuracy. The &lt;a href=&quot;https://github.com/ozanerhansha/NeuralNetworks/blob/master/src/test/bcDiagnosis.py&quot;&gt;entire program&lt;/a&gt; is in my &lt;a href=&quot;https://github.com/ozanerhansha/NeuralNetworks&quot;&gt;NeuralNetwork&lt;/a&gt; repository on Github as well as at the end of this post.&lt;/p&gt;
 
@@ -1204,9 +1271,9 @@ Created on Jun 6, 2017
  
  <entry>
    <title>Abstract Algebra and Algebraic Structures</title>
-   <link href="http://localhost:4000/2018/01/07/abstract-algebra/"/>
+   <link href="http://localhost:4000/abstract-algebra/"/>
    <updated>2018-01-07T00:00:00-05:00</updated>
-   <id>http://localhost:4000/2018/01/07/abstract-algebra</id>
+   <id>http://localhost:4000/abstract-algebra</id>
    <content type="html">&lt;h2 id=&quot;history-of-algebra&quot;&gt;History of Algebra&lt;/h2&gt;
 &lt;p&gt;The earliest forms of Algebra have been around since &lt;a href=&quot;https://en.wikipedia.org/wiki/Diophantus&quot;&gt;Diophantus&lt;/a&gt; (3rd century Greek mathematician), who wrote on how to solve equations using geometry (the Greeks had a thing for geometry).&lt;/p&gt;
 
@@ -1241,9 +1308,9 @@ Created on Jun 6, 2017
  
  <entry>
    <title>Binary Prefixes</title>
-   <link href="http://localhost:4000/2018/01/05/binary-prefixes/"/>
+   <link href="http://localhost:4000/binary-prefixes/"/>
    <updated>2018-01-05T00:00:00-05:00</updated>
-   <id>http://localhost:4000/2018/01/05/binary-prefixes</id>
+   <id>http://localhost:4000/binary-prefixes</id>
    <content type="html">&lt;h2 id=&quot;decimal-prefixes&quot;&gt;Decimal Prefixes&lt;/h2&gt;
 &lt;p&gt;When dealing with very large or very small amounts it is common to
 append one of the SI (metric system) prefixes to whatever unit is being
