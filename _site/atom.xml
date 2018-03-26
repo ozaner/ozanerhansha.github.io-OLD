@@ -4,7 +4,7 @@
  <title>Oz∀n∈ℝ</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-03-26T19:42:02-04:00</updated>
+ <updated>2018-03-26T19:52:14-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -1235,7 +1235,7 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
 
 &lt;p&gt;Here’s a visualization:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/breast-cancer/gradient_descent_3D.gif?style=centerme&quot; alt=&quot;SGD&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/projects/breast-cancer/gradient_descent_3D.gif?style=centerme&quot; alt=&quot;SGD&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;And here it is in tensorflow:&lt;/p&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#Performs Gradient Descent on loss function&lt;/span&gt;

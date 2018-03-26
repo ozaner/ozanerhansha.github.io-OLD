@@ -2,7 +2,7 @@
 layout: post
 title: Breast Cancer Classification
 date: 2018-01-15
-tags: computer-science machine-learning
+tags: computer-science machine-learning projects
 ---
 ## Background
 I made this model to test how easily I could use external datasets to create and train a neural network with Google's [*TensorFlow*](https://www.tensorflow.org/) library. In this post I'll attempt to explain the code, its results, and its accuracy. The [entire program](https://github.com/ozanerhansha/NeuralNetworks/blob/master/src/test/bcDiagnosis.py) is in my [NeuralNetwork](https://github.com/ozanerhansha/NeuralNetworks) repository on Github as well as at the end of this post.
@@ -156,7 +156,7 @@ Finally we create the training step. This is where we choose what optimizationet
 
 Here's a visualization:
 
-![SGD](/assets/breast-cancer/gradient_descent_3D.gif?style=centerme)
+![SGD](/assets/projects/breast-cancer/gradient_descent_3D.gif?style=centerme)
 
 And here it is in tensorflow:
 ~~~ python

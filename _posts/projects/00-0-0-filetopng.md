@@ -2,7 +2,7 @@
 layout: post
 title: FileToPNG
 date: 2018-01-16
-tags: computer-science
+tags: computer-science projects
 ---
 ## What is FileToPNG?
 FileToPNG is a tool written in Java that converts the raw bit representation of any file into a corresponding PNG representation. The PNG (being a lossless file type) can be sent (via text, email, etc) and finally reconstructed back into a file. The GithHub repository for this project can be found [here](https://github.com/ozanerhansha/FileToPNG).

@@ -17,14 +17,14 @@ This is an artificial neural network trained to play pong against a competent bo
 
 ![bc](/assets/projects/pongAI/pongai.gif?style=centerme)
 
-[Read more...](/2018/03/18/reinforcement-learning-pong)
+[Read more...](/reinforcement-learning-pong)
 
 ## Breast Cancer Classification
 An artificial neural network trained on the [Wisconsin Breast Cancer Dataset](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(original)). It can classify breast cancer cells as benign or malignant based on 10 pieces of data regarding its size, shape and other variables. The network has around a 90% accuracy on random samples.
 
 ![bc](/assets/projects/breast-cancer/breastcancer.png?style=centerme)
 
-[Read more...](/2018/01/15/breast-cancer-classification)
+[Read more...](/breast-cancer-classification)
 
 ## Quantum Computing
 When IBM made their 5 qubit quantum computer available to the public (or more specifically those who signed up for research purposes) I was one of the first to sign up, despite the fact I had no formal knowledge of quantum computation or quantum algorithms.
@@ -42,7 +42,7 @@ An interesting consequence of how the image is directly encoded from the bits of
 
 ![Text in FileToPNG](/assets/projects/filetopng/text_diagram.png?style=centerme){:width="500px"}
 
-[Read more...](/2018/01/16/filetopng)
+[Read more...](/filetopng)
 
 ## Handwritten Digit Classifier
 #### Neural Network
