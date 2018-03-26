@@ -4,7 +4,7 @@ title: Classical Physics
 date: 2018-03-24
 tags: physics classical-physics classical-mechanics
 ---
-Classical physics refers to the branches of physics that were conceived of prior to quantum mechanics and Einsteinian relativity. These branches of physics are still widely applicable today and serve as starting points for understanding and deriving modern physics.
+Classical physics refers to the branches of physics that were conceived of prior to quantum mechanics and Einsteinian relativity. These branches of physics are more than sufficient for non-relativistic speeds and non-quantum scales. Moreover, they serve as starting points for understanding and deriving modern physics.
 
 ## Classical Mechanics
 Classical mechanics is the study of the motion of massive bodies. It is usually split into two main branches:
@@ -18,7 +18,7 @@ Classical mechanics is the study of the motion of massive bodies. It is usually 
   - Linear Momentum
   - Rotational Dynamics
 
-### Reformulations
+#### Reformulations
 While Newtonian mechanics, as described by the ***principia***, was the first formulation of classical mechanics, there exists others. Namely Lagrangian Mechanics and Hamiltonian mechanics. These formulations are instrumental in developing modern theories like quantum mechanics.
 
 ![formulations](http://en.citizendium.org/images/thumb/f/f5/Classical_mechanics_timeline.PNG/800px-Classical_mechanics_timeline.PNG?style=centerme){:width="500px"}

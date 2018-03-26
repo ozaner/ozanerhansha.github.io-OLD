@@ -4,7 +4,7 @@
  <title>Oz∀n∈ℝ</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-03-24T23:40:41-04:00</updated>
+ <updated>2018-03-26T19:42:02-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -13,11 +13,129 @@
 
  
  <entry>
+   <title>Friction</title>
+   <link href="http://localhost:4000/friction/"/>
+   <updated>2018-03-26T00:00:00-04:00</updated>
+   <id>http://localhost:4000/friction</id>
+   <content type="html">&lt;p&gt;$\renewcommand{\vec}[1]{\mathbf{#1}}$
+Dry Friction is a force that opposes the motion of two surfaces that slide against each other. This force is proportional to the normal force (that is the total force perpendicular to the direction of motion) of the object.&lt;/p&gt;
+
+&lt;h4 id=&quot;where-does-friction-come-from&quot;&gt;Where does Friction come from?&lt;/h4&gt;
+&lt;p&gt;The frictional force is not fundamental and is instead a useful abstraction of the complex electromagnetic interactions between two surfaces that come into contact with each other. These force created by these interactions can, in a variety of cases, be thought of as a singular force that is proportional to the normal force.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/physics/friction_between_surfaces.jpg?style=centerme&quot; alt=&quot;complexfriction&quot; width=&quot;450px&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;intuition-and-newtons-first-law&quot;&gt;Intuition and Newton’s First Law&lt;/h4&gt;
+&lt;p&gt;The frictional force is responsible for filling the gap between our everyday intuition of motion (that it eventually stops) and Newton’s first law (that an object in motion remains in motion, unless acted upon by an outside force). The ‘outside force’ that retards motion in the case many of everyday objects is indeed friction.&lt;/p&gt;
+
+&lt;h3 id=&quot;amontons-laws-of-dry-friction&quot;&gt;Amontons Laws of Dry Friction&lt;/h3&gt;
+&lt;p&gt;The empirical laws that govern friction were (re)discovered by French physicist Guillaume Amontons:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Amontons’ First Law&lt;/strong&gt;: The force of friction is directly proportional to the applied load.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Amontons’ Second Law&lt;/strong&gt;: The force of friction is independent of the apparent area of contact.&lt;/li&gt;
+  &lt;li&gt;Amontons’ Third Law (&lt;strong&gt;Coulomb’s Law of Friction&lt;/strong&gt;): Kinetic friction is independent of the sliding velocity.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--more--&gt;
+
+&lt;h3 id=&quot;coefficient-of-friction&quot;&gt;Coefficient of Friction&lt;/h3&gt;
+&lt;p&gt;The proportionality constant of the frictional force and the normal force is called the coefficient of static/kinetic friction and are denoted $\mu_s$ and $\mu_k$ respectively. This constant differs depending on the 2 surfaces involved and, as a result of being a abstract approximation of complex interactions, cannot be derived from first principles and are instead measured empirically.&lt;/p&gt;
+
+&lt;p&gt;Below are some common coefficients of static and kinetic friction:
+&lt;img src=&quot;http://hadron.physics.fsu.edu/~crede/TEACHING/PHY2048C/Calendar/W6_D1/Friction%20Coefficients_files/friction-coeffs.gif&quot; alt=&quot;table&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;from-static-to-kinetic-friction&quot;&gt;From Static to Kinetic Friction&lt;/h2&gt;
+&lt;p&gt;There are two types of friction: static friction which acts on an object at rest, and kinetic friction which acts on an object in motion. When the force of static friction reaches a maximum, kinetic friction takes over:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://3.bp.blogspot.com/-5pk-uJYub_Y/VFe1UdylnYI/AAAAAAAAFoI/8NyK6iU-GFo/s1600/graph-static-kinetic-friction.png?style=centerme&quot; alt=&quot;graph&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;static-friction&quot;&gt;Static Friction&lt;/h3&gt;
+&lt;p&gt;An object at rest on a surface will resist motion on the surface until a certain maximum force has been reached. The magnitude of that max force is given by:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;F_{s,max}=\mu_sN&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$F_{s,max}$ is the magnitude of the maximum force of static friction.&lt;/li&gt;
+  &lt;li&gt;$\mu_s$ is the coefficient of static friction.&lt;/li&gt;
+  &lt;li&gt;$N$ is the magnitude of the normal force on the object (the force normal to the object’s direction of motion).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;At any other point before that max force has been reached, the force of static friction cancels out the opposing forces parallel to the surface:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\vec{F_s}=\vec{F_{\parallel}}&lt;/script&gt;
+
+&lt;p&gt;The force parallel to the surface is simply the total force applied minus the normal force which is orthogonal to the surface:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\vec{F_{\parallel}}=\vec{F_{net}}-\vec{N}&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$\vec{F_\parallel}$ is the force parallel to the surface.&lt;/li&gt;
+  &lt;li&gt;$\vec{F_{net}}$ is the total force applied to the object.&lt;/li&gt;
+  &lt;li&gt;$\vec{N}$ is the normal force on the object.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Static friction is pointed in the opposite direction of the parallel force (so it can cancel out):&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\vec{F_s}}{\vec{\|F_s\|}}=-\frac{\vec{F_{\parallel}}}{\|\vec{F_{\parallel}}\|}&lt;/script&gt;
+
+&lt;h4 id=&quot;angle-of-repose&quot;&gt;Angle of Repose&lt;/h4&gt;
+&lt;p&gt;When an object is placed on a ramp, the object will overcome static friction and slide down the ramp at some angle $\theta$. As it turns out the tangent of this angle is equivalent to the coefficient of static friction:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\tan \theta = \mu_s&lt;/script&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/8/85/Free_body.svg?style=centerme&quot; alt=&quot;angle of repose&quot; /&gt;&lt;/p&gt;
+
+&lt;details&gt;&lt;summary&gt;Derivation&lt;/summary&gt;&lt;p&gt;$$\begin{align*}
+N=-mg\cos\theta \tag{force normal to the ramp}\\
+\mu_sN=-mg\sin\theta \tag{static friction at the moment of Slipping}\\
+-\mu_smg\cos\theta=-mg\sin\theta\\
+\mu_s=\frac{\sin\theta}{\cos\theta}=\tan\theta
+\end{align*}$$
+
+$$\boxed{\tan\theta=\mu_s}$$&lt;/p&gt;&lt;/details&gt;
+
+&lt;h3 id=&quot;kinetic-friction&quot;&gt;Kinetic Friction&lt;/h3&gt;
+&lt;p&gt;An object in motion on a surface will experience kinetic friction that is proportional to the normal force on the object and independent of its velocity. The magnitude of this force is given by:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;F_{k}=\mu_kN&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$F_{k}$ is the magnitude of the force of static friction.&lt;/li&gt;
+  &lt;li&gt;$\mu_k$ is the coefficient of kinetic friction.&lt;/li&gt;
+  &lt;li&gt;$N$ is the magnitude of the normal force on the object.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Kinetic friction is pointed in the opposite direction of the object’s velocity:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\vec{F_k}}{\|\vec{F_k}\|}=-\frac{\vec{v}}{\|\vec{v}\|}&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$\vec{F_k}$ is the force of kinetic friction.&lt;/li&gt;
+  &lt;li&gt;$\vec{v}$ is the object’s velocity.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;non-conservative-force-and-thermal-energy&quot;&gt;Non-Conservative Force and Thermal Energy&lt;/h4&gt;
+&lt;p&gt;Friction is non-conservative force, meaning that the work done by kinetic friction is dependent on the path taken. Friction also causes heat energy to be released into the system, meaning it does not conserve mechanical energy.&lt;/p&gt;
+
+&lt;p&gt;To calculate the thermal energy created by kinetic friction, a line integral through the path taken must be used:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;E_{th}=\int_C\vec{F_k}(\vec{x})\cdot d\vec{x}&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$\vec{F_k}$ is the force of kinetic friction.&lt;/li&gt;
+  &lt;li&gt;$\vec{x}$ is the position of the object.&lt;/li&gt;
+  &lt;li&gt;$C$ is the path the object took.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Classical Physics</title>
    <link href="http://localhost:4000/classical-physics/"/>
    <updated>2018-03-24T00:00:00-04:00</updated>
    <id>http://localhost:4000/classical-physics</id>
-   <content type="html">&lt;p&gt;Classical physics refers to the branches of physics that were conceived of prior to quantum mechanics and Einsteinian relativity. These branches of physics are still widely applicable today and serve as starting points for understanding and deriving modern physics.&lt;/p&gt;
+   <content type="html">&lt;p&gt;Classical physics refers to the branches of physics that were conceived of prior to quantum mechanics and Einsteinian relativity. These branches of physics are more than sufficient for non-relativistic speeds and non-quantum scales. Moreover, they serve as starting points for understanding and deriving modern physics.&lt;/p&gt;
 
 &lt;h2 id=&quot;classical-mechanics&quot;&gt;Classical Mechanics&lt;/h2&gt;
 &lt;p&gt;Classical mechanics is the study of the motion of massive bodies. It is usually split into two main branches:&lt;/p&gt;
@@ -39,7 +157,7 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;reformulations&quot;&gt;Reformulations&lt;/h3&gt;
+&lt;h4 id=&quot;reformulations&quot;&gt;Reformulations&lt;/h4&gt;
 &lt;p&gt;While Newtonian mechanics, as described by the &lt;strong&gt;&lt;em&gt;principia&lt;/em&gt;&lt;/strong&gt;, was the first formulation of classical mechanics, there exists others. Namely Lagrangian Mechanics and Hamiltonian mechanics. These formulations are instrumental in developing modern theories like quantum mechanics.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://en.citizendium.org/images/thumb/f/f5/Classical_mechanics_timeline.PNG/800px-Classical_mechanics_timeline.PNG?style=centerme&quot; alt=&quot;formulations&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
@@ -126,10 +244,10 @@
    <id>http://localhost:4000/kinematics</id>
    <content type="html">&lt;!-- Make vectors bold rather than arrow headed --&gt;
 &lt;p&gt;$\renewcommand{\vec}[1]{\mathbf{#1}}$
-Translational Kinematics describes the motion of objects through space over time. Using an object’s &lt;a href=&quot;/position&quot;&gt;position&lt;/a&gt;, velocity and acceleration vectors, it is possible to predict where it will be in the future and where it was in the past.&lt;/p&gt;
+Translational Kinematics describes the motion of objects through space over time. Using an object’s &lt;a href=&quot;/position&quot;&gt;position&lt;/a&gt;, velocity and acceleration vectors, it is possible to predict where it will be in the future and where it was in the past. Where an object gets that velocity/acceleration is what dynamics seeks to explain.&lt;/p&gt;
 
 &lt;h3 id=&quot;variable-acceleration&quot;&gt;Variable Acceleration&lt;/h3&gt;
-&lt;p&gt;To calculate the kinematics of an object with continuous acceleration, simply refer to the definitions of velocity and acceleration:&lt;/p&gt;
+&lt;p&gt;To calculate the motion of an object with continuous acceleration, simply refer to the definitions of velocity and acceleration:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align}
 \vec{v}=\frac{d\vec{x}}{dt}\\
@@ -144,11 +262,11 @@ Translational Kinematics describes the motion of objects through space over time
 \end{align}&lt;/script&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;$\vec{x}$ is the object’s position as a function of time&lt;/li&gt;
-  &lt;li&gt;$\vec{x}_0$ is the initial position, at &lt;script type=&quot;math/tex&quot;&gt;t=0&lt;/script&gt;&lt;/li&gt;
-  &lt;li&gt;$\vec{v}$ is the object’s velocity as a function of time&lt;/li&gt;
-  &lt;li&gt;$\vec{v}_0$ is the initial velocity, at &lt;script type=&quot;math/tex&quot;&gt;t=0&lt;/script&gt;&lt;/li&gt;
-  &lt;li&gt;$\vec{a}$ is the object’s acceleration as a function of time&lt;/li&gt;
+  &lt;li&gt;$\vec{x}$ is the object’s position as a function of time.&lt;/li&gt;
+  &lt;li&gt;$\vec{x}_0$ is the initial position, at &lt;script type=&quot;math/tex&quot;&gt;t=0&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;$\vec{v}$ is the object’s velocity as a function of time.&lt;/li&gt;
+  &lt;li&gt;$\vec{v}_0$ is the initial velocity, at &lt;script type=&quot;math/tex&quot;&gt;t=0&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;$\vec{a}$ is the object’s acceleration as a function of time.&lt;/li&gt;
   &lt;li&gt;$t$ is time&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -368,7 +486,7 @@ $$\begin{align}
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\left|\vec{x}\right|=\sqrt{x^2+y^2+z^2}&lt;/script&gt;
 
 &lt;h4 id=&quot;displacement-function&quot;&gt;Displacement Function&lt;/h4&gt;
-&lt;p&gt;An object’s position can be described as a function in time, $\vec{x}(t)$. This position function would then map from time to 3D-space:&lt;/p&gt;
+&lt;p&gt;An object’s position can be described as a function of time, $\vec{x}(t)$. This position function would thus map from time to 3D-space:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\vec{x}:\mathbb{R}\rightarrow \mathbb{R}^3&lt;/script&gt;
 
@@ -407,7 +525,7 @@ $$\begin{align}
    <link href="http://localhost:4000/physics/"/>
    <updated>2018-03-14T00:00:00-04:00</updated>
    <id>http://localhost:4000/physics</id>
-   <content type="html">&lt;p&gt;Physics is the branch of science that studies the properties and mechanics of matter, energy and spacetime.&lt;/p&gt;
+   <content type="html">&lt;p&gt;Physics is the branch of science that studies the properties and mechanics of matter and energy in  spacetime and their interaction with the 4 fundamental forces.&lt;/p&gt;
 
 &lt;p&gt;There are 3 main divisions of physics:&lt;/p&gt;
 &lt;ul&gt;
@@ -419,7 +537,7 @@ $$\begin{align}
 &lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/5/56/Modernphysicsfields.svg?style=centerme&quot; alt=&quot;physics&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;classical-physics&quot;&gt;Classical Physics&lt;/h3&gt;
-&lt;p&gt;Classical physics is a catch all for the theories of physics that predated the relativistic and quantum theories of physics we have today. They very adequately describe the interactions and mechanics of everyday objects, fluids, gasses, electricity, magnetism, and even celestial bodies.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/classical-physics&quot;&gt;Classical physics&lt;/a&gt; is a catch all for the theories of physics that predated the relativistic and quantum theories of physics we have today. They very adequately describe the interactions and mechanics of everyday objects, fluids, gasses, electricity, magnetism, and even celestial bodies.&lt;/p&gt;
 
 &lt;p&gt;The 3 main branches of pre-Einsteinian physics are:&lt;/p&gt;
 &lt;ul&gt;

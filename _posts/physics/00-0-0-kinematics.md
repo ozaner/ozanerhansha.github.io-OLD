@@ -5,10 +5,10 @@ date: 2018-03-17
 tags: physics classical-physics classical-mechanics
 ---
 <!-- Make vectors bold rather than arrow headed --> $\renewcommand{\vec}[1]{\mathbf{#1}}$
-Translational Kinematics describes the motion of objects through space over time. Using an object's [position](/position), velocity and acceleration vectors, it is possible to predict where it will be in the future and where it was in the past.
+Translational Kinematics describes the motion of objects through space over time. Using an object's [position](/position), velocity and acceleration vectors, it is possible to predict where it will be in the future and where it was in the past. Where an object gets that velocity/acceleration is what dynamics seeks to explain.
 
 ### Variable Acceleration
-To calculate the kinematics of an object with continuous acceleration, simply refer to the definitions of velocity and acceleration:
+To calculate the motion of an object with continuous acceleration, simply refer to the definitions of velocity and acceleration:
 
 $$\begin{align}
 \vec{v}=\frac{d\vec{x}}{dt}\\
@@ -22,11 +22,11 @@ $$\begin{align}
 \vec{v}=\int\vec{a} \,dt+\vec{v}_0
 \end{align}$$
 
-- $\vec{x}$ is the object's position as a function of time
-- $\vec{x}_0$ is the initial position, at $$t=0$$
-- $\vec{v}$ is the object's velocity as a function of time
-- $\vec{v}_0$ is the initial velocity, at $$t=0$$
-- $\vec{a}$ is the object's acceleration as a function of time
+- $\vec{x}$ is the object's position as a function of time.
+- $\vec{x}_0$ is the initial position, at $$t=0$$.
+- $\vec{v}$ is the object's velocity as a function of time.
+- $\vec{v}_0$ is the initial velocity, at $$t=0$$.
+- $\vec{a}$ is the object's acceleration as a function of time.
 - $t$ is time
 
 <!--more-->

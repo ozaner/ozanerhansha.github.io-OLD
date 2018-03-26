@@ -4,7 +4,7 @@ title: Physics
 date: 2018-03-14
 tags: physics classical-physics
 ---
-Physics is the branch of science that studies the properties and mechanics of matter, energy and spacetime.
+Physics is the branch of science that studies the properties and mechanics of matter and energy in  spacetime and their interaction with the 4 fundamental forces.
 
 There are 3 main divisions of physics:
 - [Classical Physics](#classical-physics)
@@ -14,7 +14,7 @@ There are 3 main divisions of physics:
 ![physics](https://upload.wikimedia.org/wikipedia/commons/5/56/Modernphysicsfields.svg?style=centerme)
 
 ### Classical Physics
-Classical physics is a catch all for the theories of physics that predated the relativistic and quantum theories of physics we have today. They very adequately describe the interactions and mechanics of everyday objects, fluids, gasses, electricity, magnetism, and even celestial bodies.
+[Classical physics](/classical-physics) is a catch all for the theories of physics that predated the relativistic and quantum theories of physics we have today. They very adequately describe the interactions and mechanics of everyday objects, fluids, gasses, electricity, magnetism, and even celestial bodies.
 
 The 3 main branches of pre-Einsteinian physics are:
 - [Classical Mechanics](/classical-physics#classical-mechanics)

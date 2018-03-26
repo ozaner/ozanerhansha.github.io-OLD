@@ -213,10 +213,40 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="/friction/">Friction</a>
+    </h1>
+    <span class="post-date">26 Mar 2018</span>
+    <p>$\renewcommand{\vec}[1]{\mathbf{#1}}$
+Dry Friction is a force that opposes the motion of two surfaces that slide against each other. This force is proportional to the normal force (that is the total force perpendicular to the direction of motion) of the object.</p>
+
+<h4 id="where-does-friction-come-from">Where does Friction come from?</h4>
+<p>The frictional force is not fundamental and is instead a useful abstraction of the complex electromagnetic interactions between two surfaces that come into contact with each other. These force created by these interactions can, in a variety of cases, be thought of as a singular force that is proportional to the normal force.</p>
+
+<p><img src="/assets/physics/friction_between_surfaces.jpg?style=centerme" alt="complexfriction" width="450px" /></p>
+
+<h4 id="intuition-and-newtons-first-law">Intuition and Newton’s First Law</h4>
+<p>The frictional force is responsible for filling the gap between our everyday intuition of motion (that it eventually stops) and Newton’s first law (that an object in motion remains in motion, unless acted upon by an outside force). The ‘outside force’ that retards motion in the case many of everyday objects is indeed friction.</p>
+
+<h3 id="amontons-laws-of-dry-friction">Amontons Laws of Dry Friction</h3>
+<p>The empirical laws that govern friction were (re)discovered by French physicist Guillaume Amontons:</p>
+
+<ul>
+  <li><strong>Amontons’ First Law</strong>: The force of friction is directly proportional to the applied load.</li>
+  <li><strong>Amontons’ Second Law</strong>: The force of friction is independent of the apparent area of contact.</li>
+  <li>Amontons’ Third Law (<strong>Coulomb’s Law of Friction</strong>): Kinetic friction is independent of the sliding velocity.</li>
+</ul>
+
+
+    <!--Adds Read more-->
+    <a href="/friction/">Read more</a>
+    <hr>
+    
+  <div class="post">
+    <h1 class="post-title">
       <a href="/classical-physics/">Classical Physics</a>
     </h1>
     <span class="post-date">24 Mar 2018</span>
-    <p>Classical physics refers to the branches of physics that were conceived of prior to quantum mechanics and Einsteinian relativity. These branches of physics are still widely applicable today and serve as starting points for understanding and deriving modern physics.</p>
+    <p>Classical physics refers to the branches of physics that were conceived of prior to quantum mechanics and Einsteinian relativity. These branches of physics are more than sufficient for non-relativistic speeds and non-quantum scales. Moreover, they serve as starting points for understanding and deriving modern physics.</p>
 
 <h2 id="classical-mechanics">Classical Mechanics</h2>
 <p>Classical mechanics is the study of the motion of massive bodies. It is usually split into two main branches:</p>
@@ -238,7 +268,7 @@
   </li>
 </ul>
 
-<h3 id="reformulations">Reformulations</h3>
+<h4 id="reformulations">Reformulations</h4>
 <p>While Newtonian mechanics, as described by the <strong><em>principia</em></strong>, was the first formulation of classical mechanics, there exists others. Namely Lagrangian Mechanics and Hamiltonian mechanics. These formulations are instrumental in developing modern theories like quantum mechanics.</p>
 
 <p><img src="http://en.citizendium.org/images/thumb/f/f5/Classical_mechanics_timeline.PNG/800px-Classical_mechanics_timeline.PNG?style=centerme" alt="formulations" width="500px" /></p>
@@ -270,10 +300,10 @@
     <span class="post-date">17 Mar 2018</span>
     <!-- Make vectors bold rather than arrow headed -->
 <p>$\renewcommand{\vec}[1]{\mathbf{#1}}$
-Translational Kinematics describes the motion of objects through space over time. Using an object’s <a href="/position">position</a>, velocity and acceleration vectors, it is possible to predict where it will be in the future and where it was in the past.</p>
+Translational Kinematics describes the motion of objects through space over time. Using an object’s <a href="/position">position</a>, velocity and acceleration vectors, it is possible to predict where it will be in the future and where it was in the past. Where an object gets that velocity/acceleration is what dynamics seeks to explain.</p>
 
 <h3 id="variable-acceleration">Variable Acceleration</h3>
-<p>To calculate the kinematics of an object with continuous acceleration, simply refer to the definitions of velocity and acceleration:</p>
+<p>To calculate the motion of an object with continuous acceleration, simply refer to the definitions of velocity and acceleration:</p>
 
 <script type="math/tex; mode=display">\begin{align}
 \vec{v}=\frac{d\vec{x}}{dt}\\
@@ -288,11 +318,11 @@ Translational Kinematics describes the motion of objects through space over time
 \end{align}</script>
 
 <ul>
-  <li>$\vec{x}$ is the object’s position as a function of time</li>
-  <li>$\vec{x}_0$ is the initial position, at <script type="math/tex">t=0</script></li>
-  <li>$\vec{v}$ is the object’s velocity as a function of time</li>
-  <li>$\vec{v}_0$ is the initial velocity, at <script type="math/tex">t=0</script></li>
-  <li>$\vec{a}$ is the object’s acceleration as a function of time</li>
+  <li>$\vec{x}$ is the object’s position as a function of time.</li>
+  <li>$\vec{x}_0$ is the initial position, at <script type="math/tex">t=0</script>.</li>
+  <li>$\vec{v}$ is the object’s velocity as a function of time.</li>
+  <li>$\vec{v}_0$ is the initial velocity, at <script type="math/tex">t=0</script>.</li>
+  <li>$\vec{a}$ is the object’s acceleration as a function of time.</li>
   <li>$t$ is time</li>
 </ul>
 
@@ -318,7 +348,7 @@ Translational Kinematics describes the motion of objects through space over time
 <script type="math/tex; mode=display">\left|\vec{x}\right|=\sqrt{x^2+y^2+z^2}</script>
 
 <h4 id="displacement-function">Displacement Function</h4>
-<p>An object’s position can be described as a function in time, $\vec{x}(t)$. This position function would then map from time to 3D-space:</p>
+<p>An object’s position can be described as a function of time, $\vec{x}(t)$. This position function would thus map from time to 3D-space:</p>
 
 <script type="math/tex; mode=display">\vec{x}:\mathbb{R}\rightarrow \mathbb{R}^3</script>
 
@@ -329,37 +359,6 @@ Translational Kinematics describes the motion of objects through space over time
 
     <!--Adds Read more-->
     <a href="/position/">Read more</a>
-    <hr>
-    
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/physics/">Physics</a>
-    </h1>
-    <span class="post-date">14 Mar 2018</span>
-    <p>Physics is the branch of science that studies the properties and mechanics of matter, energy and spacetime.</p>
-
-<p>There are 3 main divisions of physics:</p>
-<ul>
-  <li><a href="#classical-physics">Classical Physics</a></li>
-  <li><a href="#special--general-relativity">Special &amp; General Relativity</a></li>
-  <li><a href="#quantum-mechanics-qm">Quantum Mechanics</a></li>
-</ul>
-
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Modernphysicsfields.svg?style=centerme" alt="physics" /></p>
-
-<h3 id="classical-physics">Classical Physics</h3>
-<p>Classical physics is a catch all for the theories of physics that predated the relativistic and quantum theories of physics we have today. They very adequately describe the interactions and mechanics of everyday objects, fluids, gasses, electricity, magnetism, and even celestial bodies.</p>
-
-<p>The 3 main branches of pre-Einsteinian physics are:</p>
-<ul>
-  <li><a href="/classical-physics#classical-mechanics">Classical Mechanics</a></li>
-  <li><a href="/classical-physics#classical-electromagnetism">Classical Electromagnetism</a></li>
-  <li><a href="/classical-physics#thermodynamics">Thermodynamics</a></li>
-</ul>
-
-
-    <!--Adds Read more-->
-    <a href="/physics/">Read more</a>
     <hr>
     
   </div>
