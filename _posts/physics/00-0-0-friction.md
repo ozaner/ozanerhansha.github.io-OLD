@@ -46,19 +46,17 @@ $$F_{s,max}=\mu_sN$$
 
 At any other point before that max force has been reached, the force of static friction cancels out the opposing forces parallel to the surface:
 
-$$\vec{F_s}=\vec{F_{\parallel}}$$
+$$\vec{F_s}=-\vec{F_{\parallel}}$$
 
-The force parallel to the surface is simply the total force applied minus the normal force which is orthogonal to the surface:
+- $\vec{F_s}$ is the force of static friction.
+- $\vec{F_\parallel}$ is the force on the object parallel to the surface.
+
+This parallel force can be described in terms of the normal force which is orthogonal to the surface:
 
 $$\vec{F_{\parallel}}=\vec{F_{net}}-\vec{N}$$
 
-- $\vec{F_\parallel}$ is the force parallel to the surface.
 - $\vec{F_{net}}$ is the total force applied to the object.
 - $\vec{N}$ is the normal force on the object.
-
-Static friction is pointed in the opposite direction of the parallel force (so it can cancel out):
-
-$$\frac{\vec{F_s}}{\vec{\|F_s\|}}=-\frac{\vec{F_{\parallel}}}{\|\vec{F_{\parallel}}\|}$$
 
 #### Angle of Repose
 When an object is placed on a ramp, the object will overcome static friction and slide down the ramp at some angle $\theta$. As it turns out the tangent of this angle is equivalent to the coefficient of static friction:
@@ -87,10 +85,14 @@ $$F_{k}=\mu_kN$$
 
 Kinetic friction is pointed in the opposite direction of the object's velocity:
 
-$$\frac{\vec{F_k}}{\|\vec{F_k}\|}=-\frac{\vec{v}}{\|\vec{v}\|}$$
+$$\hat{\vec{F_k}}=-\hat{\vec{v}}$$
 
-- $\vec{F_k}$ is the force of kinetic friction.
-- $\vec{v}$ is the object's velocity.
+- $\hat{\vec{F_k}}$ is the unit vector of the object's velocity.
+- $\hat{\vec{v}}$ is the unit vector of the object's velocity.
+
+Putting these together we find that the force of kinetic friction is:
+
+$$\vec{F_{k}}=-\mu_kN\hat{\vec{v}}=\frac{-\mu_kN}{\|\vec{v}\|}\vec{v}$$
 
 #### Non-Conservative Force and Thermal Energy
 Friction is non-conservative force, meaning that the work done by kinetic friction is dependent on the path taken. Friction also causes heat energy to be released into the system, meaning it does not conserve mechanical energy.
@@ -99,6 +101,6 @@ To calculate the thermal energy created by kinetic friction, a line integral thr
 
 $$E_{th}=\int_C\vec{F_k}(\vec{x})\cdot d\vec{x}$$
 
-- $\vec{F_k}$ is the force of kinetic friction.
+- $\vec{F_k}(\vec{x})$ is a vector field of the force of kinetic friction.
 - $\vec{x}$ is the position of the object.
 - $C$ is the path the object took.

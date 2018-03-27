@@ -5,7 +5,7 @@ date: 2018-01-15
 tags: computer-science machine-learning projects
 ---
 ## Background
-I made this model to test how easily I could use external datasets to create and train a neural network with Google's [*TensorFlow*](https://www.tensorflow.org/) library. In this post I'll attempt to explain the code, its results, and its accuracy. The [entire program](https://github.com/ozanerhansha/NeuralNetworks/blob/master/src/test/bcDiagnosis.py) is in my [NeuralNetwork](https://github.com/ozanerhansha/NeuralNetworks) repository on Github as well as at the end of this post.
+I made this model to test how easily I could use external datasets to create and train a neural network with Google's [*TensorFlow*](https://www.tensorflow.org/) library. In this post I'll attempt to explain the code, its results, and its accuracy. The [entire program](https://github.com/ozanerhansha/NeuralNetworks/blob/master/src/test/bcDiagnosis.py) is in my [NeuralNetwork](https://github.com/ozanerhansha/NeuralNetworks) repository on GitHub as well as at the end of this post.
 
 ## The Training Data
 All the training data comes from the [Wisconsin Breast Cancer Data Set](http://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+%28diagnostic%29), hosted by the University of California's [Machine Learning Repository](http://archive.ics.uci.edu/ml/index.php).

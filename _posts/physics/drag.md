@@ -4,33 +4,37 @@ title: Drag Force
 date: 2018-03-27
 tags: physics classical-physics classical-mechanics
 ---
-Dry Friction is a force that opposes the motion of two surfaces that slide against each other. This force is proportional to the normal force (that is the total force perpendicular to the direction of motion) of the object.
+$\renewcommand{\vec}[1]{\mathbf{#1}}$
+Drag
 
-#### Where does Friction come from?
-The frictional force is not fundamental and is instead a useful abstraction of the complex electromagnetic interactions between two surfaces that come into contact with each other. These force created by these interactions can, in a variety of cases, be thought of as a singular force that is proportional to the normal force.
-
-![complexfriction](/assets/physics/friction_between_surfaces.jpg?style=centerme){:width="450px"}
+#### Where does Drag come from?
 
 #### Non-Conservative Force
-Friction is non-conservative force, meaning that the work done by friction is dependent on the path taken. Friction also causes heat energy to be released into the system, meaning it does not conserve mechanical energy.
 
-## Coefficient of Friction
-The proportionality constant of the frictional force and the normal force is called the coefficient of static/kinetic friction and are denoted $\mu_s$ and $\mu_k$ respectively. This constant differs depending on the 2 surfaces involved and, as a result of being a abstract approximation of complex interactions, can only be calculated empirically.
+## Drag Equation
+The magnitude of the drag force is given by:
 
-Below are some common coefficients of static and kinetic friction:
-![table](http://hadron.physics.fsu.edu/~crede/TEACHING/PHY2048C/Calendar/W6_D1/Friction%20Coefficients_files/friction-coeffs.gif)
+$$F_D=\frac{\rho AC_Dv^2}{2}$$
 
-## Mathematical Description
-There are two types of friction: static friction which acts on an object at rest, and kinetic friction which acts on an object in motion.
+- $F_D$ is the magnitude of the drag force.
+- $\rho$ is density of the fluid.
+- $A$ is the cross-sectional area of the object (or more accurately an orthographic projection of the object onto a plane perpendicular to the velocity).
+- $C_D$ is the drag coefficient of the fluid.
+- $v$ is the magnitude of the velocity.
 
-![cross sectional area](){:width="500px"}
+The direction of drag is opposite that of the object's velocity in the liquid:
 
-$$\vec{F_d}=\frac{C\rho Av^2}{2}$$
+$$\hat{\vec{F_D}}=-\hat{\vec{v}}$$
+
+Combining these two equations, we can write the drag force as:
+
+$$\vec{F_D}=\frac{-\rho AC_Dv^2}{2}\hat{\vec{v}}=\frac{-\rho AC_D\|\vec{v}\|}{2}\vec{v}$$
+
+### Drag Coefficient
 
 ### Terminal Velocity
 
-$$v_t=\mu_sN$$
+### Power to Overcome Drag
+We can find the power required to overcome the drag force by the dot product of drag and the velocity of the object. Since
 
-- $F_{k}$ is the force of kinetic friction.
-- $\mu_s$ is the coefficient of static friction.
-- $N$ is the force on the object normal to the object's direction of motion.
+$$P_d=\vec{F_D}\cdot\vec{v}=\frac{\rho v^3C_DA}{2}$$
