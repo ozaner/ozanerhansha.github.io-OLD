@@ -4,33 +4,33 @@ title: Friction
 date: 2018-03-26
 tags: physics classical-physics classical-mechanics
 ---
-$\renewcommand{\vec}[1]{\mathbf{#1}}$
-Dry Friction is a force that opposes the motion of two surfaces that slide against each other. This force is proportional to the normal force (that is the total force perpendicular to the direction of motion) of the object.
+### General Info & Table of Contents
+Dry Friction is a force that opposes the motion of two surfaces that slide against each other. This force is proportional to the normal force of the object.
+
+- [Amontons' Laws of Dry Friction](#amontons-laws-of-dry-friction)
+- [From Static to Kinetic Friction](#from-static-to-kinetic-friction)
+- [Static Friction](#static-friction)
+- [Kinetic Friction](#kinetic-friction)
+- [Coefficient of Friction](#coefficient-of-friction)
 
 #### Where does Friction come from?
-The frictional force is not fundamental and is instead a useful abstraction of the complex electromagnetic interactions between two surfaces that come into contact with each other. These force created by these interactions can, in a variety of cases, be thought of as a singular force that is proportional to the normal force.
+The frictional force is not fundamental and is instead a useful abstraction of the complex electromagnetic interactions between two surfaces that come into contact with each other. The forces created by these interactions can, in a variety of cases, be thought of as a singular force that is proportional to the normal force.
 
 ![complexfriction](/assets/physics/friction_between_surfaces.jpg?style=centerme){:width="450px"}
 
 #### Intuition and Newton's First Law
 The frictional force is responsible for filling the gap between our everyday intuition of motion (that it eventually stops) and Newton's first law (that an object in motion remains in motion, unless acted upon by an outside force). The 'outside force' that retards motion in the case many of everyday objects is indeed friction.
+$\renewcommand{\vec}[1]{\mathbf{#1}}$
+<!--more-->
 
-### Amontons Laws of Dry Friction
+### Amontons' Laws of Dry Friction
 The empirical laws that govern friction were (re)discovered by French physicist Guillaume Amontons:
 
 - **Amontons' First Law**: The force of friction is directly proportional to the applied load.
 - **Amontons' Second Law**: The force of friction is independent of the apparent area of contact.
 - Amontons' Third Law (**Coulomb's Law of Friction**): Kinetic friction is independent of the sliding velocity.
 
-<!--more-->
-
-### Coefficient of Friction
-The proportionality constant of the frictional force and the normal force is called the coefficient of static/kinetic friction and are denoted $\mu_s$ and $\mu_k$ respectively. This constant differs depending on the 2 surfaces involved and, as a result of being a abstract approximation of complex interactions, cannot be derived from first principles and are instead measured empirically.
-
-Below are some common coefficients of static and kinetic friction:
-![table](http://hadron.physics.fsu.edu/~crede/TEACHING/PHY2048C/Calendar/W6_D1/Friction%20Coefficients_files/friction-coeffs.gif){:width="600px"}
-
-## From Static to Kinetic Friction
+### From Static to Kinetic Friction
 There are two types of friction: static friction which acts on an object at rest, and kinetic friction which acts on an object in motion. When the force of static friction reaches a maximum, kinetic friction takes over:
 
 ![graph](http://3.bp.blogspot.com/-5pk-uJYub_Y/VFe1UdylnYI/AAAAAAAAFoI/8NyK6iU-GFo/s1600/graph-static-kinetic-friction.png?style=centerme){:width="500px"}
@@ -42,14 +42,14 @@ $$F_{s,max}=\mu_sN$$
 
 - $F_{s,max}$ is the magnitude of the maximum force of static friction.
 - $\mu_s$ is the coefficient of static friction.
-- $N$ is the magnitude of the normal force on the object (the force normal to the object's direction of motion).
+- $N$ is the magnitude of the normal force on the object (the component of the total force on the object that is normal to the plane it's resting on).
 
-At any other point before that max force has been reached, the force of static friction cancels out the opposing forces parallel to the surface:
+At any other point before that max force has been reached, the force of static friction is equal in magnitude and opposite in direction to the component of the total force on the object that is parallel to the plane it's resting on, effectively canceling out any acceleration across the surface:
 
 $$\vec{F_s}=-\vec{F_{\parallel}}$$
 
 - $\vec{F_s}$ is the force of static friction.
-- $\vec{F_\parallel}$ is the force on the object parallel to the surface.
+- $\vec{F_\parallel}$ is the total force on the object parallel to the surface.
 
 This parallel force can be described in terms of the normal force which is orthogonal to the surface:
 
@@ -58,21 +58,8 @@ $$\vec{F_{\parallel}}=\vec{F_{net}}-\vec{N}$$
 - $\vec{F_{net}}$ is the total force applied to the object.
 - $\vec{N}$ is the normal force on the object.
 
-#### Angle of Repose
-When an object is placed on a ramp, the object will overcome static friction and slide down the ramp at some angle $\theta$. As it turns out the tangent of this angle is equivalent to the coefficient of static friction:
-
-$$\tan \theta = \mu_s$$
-
-![angle of repose](https://upload.wikimedia.org/wikipedia/commons/8/85/Free_body.svg?style=centerme)
-
-<details><summary>Derivation</summary><p>$$\begin{align*}
-N=-mg\cos\theta \tag{force normal to the ramp}\\
-\mu_sN=-mg\sin\theta \tag{static friction at the moment of Slipping}\\
--\mu_smg\cos\theta=-mg\sin\theta\\
-\mu_s=\frac{\sin\theta}{\cos\theta}=\tan\theta
-\end{align*}$$
-
-$$\boxed{\tan\theta=\mu_s}$$</p></details>
+#### Work done by Static Friction
+Notice that because static friction cancels out all motion across a particular surface, the force does not do any work (at least from the reference frame of the two surfaces).
 
 ### Kinetic Friction
 An object in motion on a surface will experience kinetic friction that is proportional to the normal force on the object and independent of its velocity. The magnitude of this force is given by:
@@ -94,6 +81,8 @@ Putting these together we find that the force of kinetic friction is:
 
 $$\vec{F_{k}}=-\mu_kN\hat{\vec{v}}=\frac{-\mu_kN}{\|\vec{v}\|}\vec{v}$$
 
+*Note that this does not violate Coulomb’s Law of Friction because it refers only to the magnitude of kinetic friction.*
+
 #### Non-Conservative Force and Thermal Energy
 Friction is non-conservative force, meaning that the work done by kinetic friction is dependent on the path taken. Friction also causes heat energy to be released into the system, meaning it does not conserve mechanical energy.
 
@@ -104,3 +93,23 @@ $$E_{th}=\int_C\vec{F_k}(\vec{x})\cdot d\vec{x}$$
 - $\vec{F_k}(\vec{x})$ is a vector field of the force of kinetic friction.
 - $\vec{x}$ is the position of the object.
 - $C$ is the path the object took.
+
+### Coefficient of Friction
+The proportionality constant between the frictional force and the normal force is called the coefficient of static/kinetic friction and is denoted $\mu_s$ and $\mu_k$ respectively. This constant differs depending on the 2 surfaces involved and, as a result of being a abstract approximation of complex interactions, cannot be derived from first principles and is instead measured empirically.
+
+Below are some common coefficients of static and kinetic friction:
+![table](http://hadron.physics.fsu.edu/~crede/TEACHING/PHY2048C/Calendar/W6_D1/Friction%20Coefficients_files/friction-coeffs.gif){:width="600px"}
+
+#### Angle of Repose
+When an object is placed on a ramp, the object will overcome static friction and slide down the ramp at some angle $\theta$. As it turns out, the tangent of this angle is equivalent to the coefficient of static friction:
+
+![angle of repose](https://upload.wikimedia.org/wikipedia/commons/8/85/Free_body.svg?style=centerme)
+
+<details><summary>Derivation</summary><p>$$\begin{align*}
+N=mg\cos\theta \tag{force normal to the ramp}\\
+\mu_sN=mg\sin\theta \tag{static friction at the moment of Slipping}\\
+\mu_smg\cos\theta=mg\sin\theta\\
+\mu_s=\frac{\sin\theta}{\cos\theta}=\tan\theta
+\end{align*}$$</p></details>
+
+$$\boxed{\tan\theta=\mu_s}$$

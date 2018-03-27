@@ -4,7 +4,7 @@
  <title>Oz∀n∈ℝ</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-03-26T19:52:14-04:00</updated>
+ <updated>2018-03-27T19:35:25-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -17,18 +17,28 @@
    <link href="http://localhost:4000/friction/"/>
    <updated>2018-03-26T00:00:00-04:00</updated>
    <id>http://localhost:4000/friction</id>
-   <content type="html">&lt;p&gt;$\renewcommand{\vec}[1]{\mathbf{#1}}$
-Dry Friction is a force that opposes the motion of two surfaces that slide against each other. This force is proportional to the normal force (that is the total force perpendicular to the direction of motion) of the object.&lt;/p&gt;
+   <content type="html">&lt;h3 id=&quot;general-info--table-of-contents&quot;&gt;General Info &amp;amp; Table of Contents&lt;/h3&gt;
+&lt;p&gt;Dry Friction is a force that opposes the motion of two surfaces that slide against each other. This force is proportional to the normal force of the object.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#amontons-laws-of-dry-friction&quot;&gt;Amontons’ Laws of Dry Friction&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#from-static-to-kinetic-friction&quot;&gt;From Static to Kinetic Friction&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#static-friction&quot;&gt;Static Friction&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#kinetic-friction&quot;&gt;Kinetic Friction&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#coefficient-of-friction&quot;&gt;Coefficient of Friction&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h4 id=&quot;where-does-friction-come-from&quot;&gt;Where does Friction come from?&lt;/h4&gt;
-&lt;p&gt;The frictional force is not fundamental and is instead a useful abstraction of the complex electromagnetic interactions between two surfaces that come into contact with each other. These force created by these interactions can, in a variety of cases, be thought of as a singular force that is proportional to the normal force.&lt;/p&gt;
+&lt;p&gt;The frictional force is not fundamental and is instead a useful abstraction of the complex electromagnetic interactions between two surfaces that come into contact with each other. The forces created by these interactions can, in a variety of cases, be thought of as a singular force that is proportional to the normal force.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/physics/friction_between_surfaces.jpg?style=centerme&quot; alt=&quot;complexfriction&quot; width=&quot;450px&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;intuition-and-newtons-first-law&quot;&gt;Intuition and Newton’s First Law&lt;/h4&gt;
-&lt;p&gt;The frictional force is responsible for filling the gap between our everyday intuition of motion (that it eventually stops) and Newton’s first law (that an object in motion remains in motion, unless acted upon by an outside force). The ‘outside force’ that retards motion in the case many of everyday objects is indeed friction.&lt;/p&gt;
+&lt;p&gt;The frictional force is responsible for filling the gap between our everyday intuition of motion (that it eventually stops) and Newton’s first law (that an object in motion remains in motion, unless acted upon by an outside force). The ‘outside force’ that retards motion in the case many of everyday objects is indeed friction.
+$\renewcommand{\vec}[1]{\mathbf{#1}}$
+&lt;!--more--&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;amontons-laws-of-dry-friction&quot;&gt;Amontons Laws of Dry Friction&lt;/h3&gt;
+&lt;h3 id=&quot;amontons-laws-of-dry-friction&quot;&gt;Amontons’ Laws of Dry Friction&lt;/h3&gt;
 &lt;p&gt;The empirical laws that govern friction were (re)discovered by French physicist Guillaume Amontons:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -37,15 +47,7 @@ Dry Friction is a force that opposes the motion of two surfaces that slide again
   &lt;li&gt;Amontons’ Third Law (&lt;strong&gt;Coulomb’s Law of Friction&lt;/strong&gt;): Kinetic friction is independent of the sliding velocity.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;!--more--&gt;
-
-&lt;h3 id=&quot;coefficient-of-friction&quot;&gt;Coefficient of Friction&lt;/h3&gt;
-&lt;p&gt;The proportionality constant of the frictional force and the normal force is called the coefficient of static/kinetic friction and are denoted $\mu_s$ and $\mu_k$ respectively. This constant differs depending on the 2 surfaces involved and, as a result of being a abstract approximation of complex interactions, cannot be derived from first principles and are instead measured empirically.&lt;/p&gt;
-
-&lt;p&gt;Below are some common coefficients of static and kinetic friction:
-&lt;img src=&quot;http://hadron.physics.fsu.edu/~crede/TEACHING/PHY2048C/Calendar/W6_D1/Friction%20Coefficients_files/friction-coeffs.gif&quot; alt=&quot;table&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;from-static-to-kinetic-friction&quot;&gt;From Static to Kinetic Friction&lt;/h2&gt;
+&lt;h3 id=&quot;from-static-to-kinetic-friction&quot;&gt;From Static to Kinetic Friction&lt;/h3&gt;
 &lt;p&gt;There are two types of friction: static friction which acts on an object at rest, and kinetic friction which acts on an object in motion. When the force of static friction reaches a maximum, kinetic friction takes over:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://3.bp.blogspot.com/-5pk-uJYub_Y/VFe1UdylnYI/AAAAAAAAFoI/8NyK6iU-GFo/s1600/graph-static-kinetic-friction.png?style=centerme&quot; alt=&quot;graph&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
@@ -58,42 +60,29 @@ Dry Friction is a force that opposes the motion of two surfaces that slide again
 &lt;ul&gt;
   &lt;li&gt;$F_{s,max}$ is the magnitude of the maximum force of static friction.&lt;/li&gt;
   &lt;li&gt;$\mu_s$ is the coefficient of static friction.&lt;/li&gt;
-  &lt;li&gt;$N$ is the magnitude of the normal force on the object (the force normal to the object’s direction of motion).&lt;/li&gt;
+  &lt;li&gt;$N$ is the magnitude of the normal force on the object (the component of the total force on the object that is normal to the plane it’s resting on).&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;At any other point before that max force has been reached, the force of static friction cancels out the opposing forces parallel to the surface:&lt;/p&gt;
+&lt;p&gt;At any other point before that max force has been reached, the force of static friction is equal in magnitude and opposite in direction to the component of the total force on the object that is parallel to the plane it’s resting on, effectively canceling out any acceleration across the surface:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\vec{F_s}=\vec{F_{\parallel}}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\vec{F_s}=-\vec{F_{\parallel}}&lt;/script&gt;
 
-&lt;p&gt;The force parallel to the surface is simply the total force applied minus the normal force which is orthogonal to the surface:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;$\vec{F_s}$ is the force of static friction.&lt;/li&gt;
+  &lt;li&gt;$\vec{F_\parallel}$ is the total force on the object parallel to the surface.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This parallel force can be described in terms of the normal force which is orthogonal to the surface:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\vec{F_{\parallel}}=\vec{F_{net}}-\vec{N}&lt;/script&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;$\vec{F_\parallel}$ is the force parallel to the surface.&lt;/li&gt;
   &lt;li&gt;$\vec{F_{net}}$ is the total force applied to the object.&lt;/li&gt;
   &lt;li&gt;$\vec{N}$ is the normal force on the object.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Static friction is pointed in the opposite direction of the parallel force (so it can cancel out):&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\vec{F_s}}{\vec{\|F_s\|}}=-\frac{\vec{F_{\parallel}}}{\|\vec{F_{\parallel}}\|}&lt;/script&gt;
-
-&lt;h4 id=&quot;angle-of-repose&quot;&gt;Angle of Repose&lt;/h4&gt;
-&lt;p&gt;When an object is placed on a ramp, the object will overcome static friction and slide down the ramp at some angle $\theta$. As it turns out the tangent of this angle is equivalent to the coefficient of static friction:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\tan \theta = \mu_s&lt;/script&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/8/85/Free_body.svg?style=centerme&quot; alt=&quot;angle of repose&quot; /&gt;&lt;/p&gt;
-
-&lt;details&gt;&lt;summary&gt;Derivation&lt;/summary&gt;&lt;p&gt;$$\begin{align*}
-N=-mg\cos\theta \tag{force normal to the ramp}\\
-\mu_sN=-mg\sin\theta \tag{static friction at the moment of Slipping}\\
--\mu_smg\cos\theta=-mg\sin\theta\\
-\mu_s=\frac{\sin\theta}{\cos\theta}=\tan\theta
-\end{align*}$$
-
-$$\boxed{\tan\theta=\mu_s}$$&lt;/p&gt;&lt;/details&gt;
+&lt;h4 id=&quot;work-done-by-static-friction&quot;&gt;Work done by Static Friction&lt;/h4&gt;
+&lt;p&gt;Notice that because static friction cancels out all motion across a particular surface, the force does not do any work (at least from the reference frame of the two surfaces).&lt;/p&gt;
 
 &lt;h3 id=&quot;kinetic-friction&quot;&gt;Kinetic Friction&lt;/h3&gt;
 &lt;p&gt;An object in motion on a surface will experience kinetic friction that is proportional to the normal force on the object and independent of its velocity. The magnitude of this force is given by:&lt;/p&gt;
@@ -108,12 +97,18 @@ $$\boxed{\tan\theta=\mu_s}$$&lt;/p&gt;&lt;/details&gt;
 
 &lt;p&gt;Kinetic friction is pointed in the opposite direction of the object’s velocity:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\vec{F_k}}{\|\vec{F_k}\|}=-\frac{\vec{v}}{\|\vec{v}\|}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\hat{\vec{F_k}}=-\hat{\vec{v}}&lt;/script&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;$\vec{F_k}$ is the force of kinetic friction.&lt;/li&gt;
-  &lt;li&gt;$\vec{v}$ is the object’s velocity.&lt;/li&gt;
+  &lt;li&gt;$\hat{\vec{F_k}}$ is the unit vector of the object’s velocity.&lt;/li&gt;
+  &lt;li&gt;$\hat{\vec{v}}$ is the unit vector of the object’s velocity.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;Putting these together we find that the force of kinetic friction is:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\vec{F_{k}}=-\mu_kN\hat{\vec{v}}=\frac{-\mu_kN}{\|\vec{v}\|}\vec{v}&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;Note that this does not violate Coulomb’s Law of Friction because it refers only to the magnitude of kinetic friction.&lt;/em&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;non-conservative-force-and-thermal-energy&quot;&gt;Non-Conservative Force and Thermal Energy&lt;/h4&gt;
 &lt;p&gt;Friction is non-conservative force, meaning that the work done by kinetic friction is dependent on the path taken. Friction also causes heat energy to be released into the system, meaning it does not conserve mechanical energy.&lt;/p&gt;
@@ -123,10 +118,30 @@ $$\boxed{\tan\theta=\mu_s}$$&lt;/p&gt;&lt;/details&gt;
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;E_{th}=\int_C\vec{F_k}(\vec{x})\cdot d\vec{x}&lt;/script&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;$\vec{F_k}$ is the force of kinetic friction.&lt;/li&gt;
+  &lt;li&gt;$\vec{F_k}(\vec{x})$ is a vector field of the force of kinetic friction.&lt;/li&gt;
   &lt;li&gt;$\vec{x}$ is the position of the object.&lt;/li&gt;
   &lt;li&gt;$C$ is the path the object took.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h3 id=&quot;coefficient-of-friction&quot;&gt;Coefficient of Friction&lt;/h3&gt;
+&lt;p&gt;The proportionality constant between the frictional force and the normal force is called the coefficient of static/kinetic friction and is denoted $\mu_s$ and $\mu_k$ respectively. This constant differs depending on the 2 surfaces involved and, as a result of being a abstract approximation of complex interactions, cannot be derived from first principles and is instead measured empirically.&lt;/p&gt;
+
+&lt;p&gt;Below are some common coefficients of static and kinetic friction:
+&lt;img src=&quot;http://hadron.physics.fsu.edu/~crede/TEACHING/PHY2048C/Calendar/W6_D1/Friction%20Coefficients_files/friction-coeffs.gif&quot; alt=&quot;table&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;angle-of-repose&quot;&gt;Angle of Repose&lt;/h4&gt;
+&lt;p&gt;When an object is placed on a ramp, the object will overcome static friction and slide down the ramp at some angle $\theta$. As it turns out, the tangent of this angle is equivalent to the coefficient of static friction:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/8/85/Free_body.svg?style=centerme&quot; alt=&quot;angle of repose&quot; /&gt;&lt;/p&gt;
+
+&lt;details&gt;&lt;summary&gt;Derivation&lt;/summary&gt;&lt;p&gt;$$\begin{align*}
+N=mg\cos\theta \tag{force normal to the ramp}\\
+\mu_sN=mg\sin\theta \tag{static friction at the moment of Slipping}\\
+\mu_smg\cos\theta=mg\sin\theta\\
+\mu_s=\frac{\sin\theta}{\cos\theta}=\tan\theta
+\end{align*}$$&lt;/p&gt;&lt;/details&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\boxed{\tan\theta=\mu_s}&lt;/script&gt;
 </content>
  </entry>
  
@@ -1089,7 +1104,7 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
    <updated>2018-01-15T00:00:00-05:00</updated>
    <id>http://localhost:4000/breast-cancer-classification</id>
    <content type="html">&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
-&lt;p&gt;I made this model to test how easily I could use external datasets to create and train a neural network with Google’s &lt;a href=&quot;https://www.tensorflow.org/&quot;&gt;&lt;em&gt;TensorFlow&lt;/em&gt;&lt;/a&gt; library. In this post I’ll attempt to explain the code, its results, and its accuracy. The &lt;a href=&quot;https://github.com/ozanerhansha/NeuralNetworks/blob/master/src/test/bcDiagnosis.py&quot;&gt;entire program&lt;/a&gt; is in my &lt;a href=&quot;https://github.com/ozanerhansha/NeuralNetworks&quot;&gt;NeuralNetwork&lt;/a&gt; repository on Github as well as at the end of this post.&lt;/p&gt;
+&lt;p&gt;I made this model to test how easily I could use external datasets to create and train a neural network with Google’s &lt;a href=&quot;https://www.tensorflow.org/&quot;&gt;&lt;em&gt;TensorFlow&lt;/em&gt;&lt;/a&gt; library. In this post I’ll attempt to explain the code, its results, and its accuracy. The &lt;a href=&quot;https://github.com/ozanerhansha/NeuralNetworks/blob/master/src/test/bcDiagnosis.py&quot;&gt;entire program&lt;/a&gt; is in my &lt;a href=&quot;https://github.com/ozanerhansha/NeuralNetworks&quot;&gt;NeuralNetwork&lt;/a&gt; repository on GitHub as well as at the end of this post.&lt;/p&gt;
 
 &lt;h2 id=&quot;the-training-data&quot;&gt;The Training Data&lt;/h2&gt;
 &lt;p&gt;All the training data comes from the &lt;a href=&quot;http://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+%28diagnostic%29&quot;&gt;Wisconsin Breast Cancer Data Set&lt;/a&gt;, hosted by the University of California’s &lt;a href=&quot;http://archive.ics.uci.edu/ml/index.php&quot;&gt;Machine Learning Repository&lt;/a&gt;.&lt;/p&gt;
