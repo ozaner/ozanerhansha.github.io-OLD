@@ -40,7 +40,7 @@ We can find the power required to overcome the drag force by the dot product of 
 $$P_d=\vec{F_D}\cdot\vec{v}=\frac{\rho C_DAv^3}{2}$$
 
 #### Terminal Velocity
-When an object is in free-fall in a liquid, gravity is counteracted by drag until they reach an equilibrium. At this equilibrium the net force on the object, $\vec{F_{net}}$, equals zero and the object's velocity stays constant:
+When an object is in free-fall in a liquid, gravity is counteracted by drag until it reaches an equilibrium. At this equilibrium the net force on the object, $\vec{F_{net}}$, equals zero and the object's velocity stays constant:
 
 ![terminalvel](/assets/physics/terminal_velocity.png?style=centerme)
 
