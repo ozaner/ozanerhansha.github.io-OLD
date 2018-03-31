@@ -6,7 +6,8 @@ highlighter:      rouge
 permalink:        /:categories/:title/
 
 # Setup
-title:            Oz∀n∈ℝ
+# Oz∀n∈ℝ
+title:            Ozaner
 tagline:          'My Projects'
 description:      'A compilation of my notes,
                   projects, and articles.'

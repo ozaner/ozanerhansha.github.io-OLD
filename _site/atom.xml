@@ -4,7 +4,7 @@
  <title>Oz∀n∈ℝ</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-03-27T21:42:13-04:00</updated>
+ <updated>2018-03-30T22:25:17-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Drag Force</title>
-   <link href="http://localhost:4000/drag/"/>
+   <link href="http://localhost:4000/drag-force/"/>
    <updated>2018-03-27T00:00:00-04:00</updated>
-   <id>http://localhost:4000/drag</id>
+   <id>http://localhost:4000/drag-force</id>
    <content type="html">&lt;h3 id=&quot;general-info&quot;&gt;General Info&lt;/h3&gt;
 &lt;p&gt;The drag force, or fluid friction, is a force that opposes the motion of an object through a fluid/gas, similar to dry &lt;a href=&quot;\friction&quot;&gt;friction&lt;/a&gt;. It can also be used to describe the resistance between a fluid in another fluid.&lt;/p&gt;
 
@@ -35,7 +35,7 @@ $\renewcommand{\vec}[1]{\mathbf{#1}}$&lt;/p&gt;
   &lt;li&gt;$F_D$ is the magnitude of the drag force.&lt;/li&gt;
   &lt;li&gt;$\rho$ is density of the fluid.&lt;/li&gt;
   &lt;li&gt;$C_D$ is the drag coefficient of the fluid.&lt;/li&gt;
-  &lt;li&gt;$A$ is the cross-sectional area of the object (or more accurately an orthographic projection of the object onto a plane perpendicular to the velocity).&lt;/li&gt;
+  &lt;li&gt;$A$ is the cross-sectional area of the object (or more accurately the area of a projection of the object onto a plane perpendicular to the velocity).&lt;/li&gt;
   &lt;li&gt;$v$ is the magnitude of the velocity.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -52,10 +52,10 @@ $\renewcommand{\vec}[1]{\mathbf{#1}}$&lt;/p&gt;
 &lt;h4 id=&quot;power-to-overcome-drag&quot;&gt;Power to Overcome Drag&lt;/h4&gt;
 &lt;p&gt;We can find the power required to overcome the drag force by the dot product of drag and the velocity of the object. And since the drag force is always oriented the same way as velocity, we can say:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P_d=\vec{F_D}\cdot\vec{v}=\frac{\rho v^3C_DA}{2}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;P_d=\vec{F_D}\cdot\vec{v}=\frac{\rho C_DAv^3}{2}&lt;/script&gt;
 
 &lt;h4 id=&quot;terminal-velocity&quot;&gt;Terminal Velocity&lt;/h4&gt;
-&lt;p&gt;When an object is in free-fall in a liquid, gravity is counteracted by drag until they reach an equilibrium. At this equilibrium the net force on the object, $\vec{F_{net}}$, equals zero and the object’s velocity stays constant:&lt;/p&gt;
+&lt;p&gt;When an object is in free-fall in a liquid, gravity is counteracted by drag until it reaches an equilibrium. At this equilibrium the net force on the object, $\vec{F_{net}}$, equals zero and the object’s velocity stays constant:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/physics/terminal_velocity.png?style=centerme&quot; alt=&quot;terminalvel&quot; /&gt;&lt;/p&gt;
 
@@ -84,16 +84,15 @@ v^2=\frac{2mg}{\rho C_DAv^2}
    <link href="http://localhost:4000/friction/"/>
    <updated>2018-03-26T00:00:00-04:00</updated>
    <id>http://localhost:4000/friction</id>
-   <content type="html">&lt;h3 id=&quot;general-info--table-of-contents&quot;&gt;General Info &amp;amp; Table of Contents&lt;/h3&gt;
+   <content type="html">&lt;h3 id=&quot;general-info&quot;&gt;General Info&lt;/h3&gt;
+&lt;!-- &amp; Table of Contents --&gt;
 &lt;p&gt;Dry Friction is a force that opposes the motion of two surfaces that slide against each other. This force is proportional to the normal force of the object.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#amontons-laws-of-dry-friction&quot;&gt;Amontons’ Laws of Dry Friction&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#from-static-to-kinetic-friction&quot;&gt;From Static to Kinetic Friction&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#static-friction&quot;&gt;Static Friction&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#kinetic-friction&quot;&gt;Kinetic Friction&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#coefficient-of-friction&quot;&gt;Coefficient of Friction&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;!-- - [Amontons' Laws of Dry Friction](#amontons-laws-of-dry-friction)
+- [From Static to Kinetic Friction](#from-static-to-kinetic-friction)
+- [Static Friction](#static-friction)
+- [Kinetic Friction](#kinetic-friction)
+- [Coefficient of Friction](#coefficient-of-friction) --&gt;
 
 &lt;h4 id=&quot;where-does-friction-come-from&quot;&gt;Where does Friction come from?&lt;/h4&gt;
 &lt;p&gt;The frictional force is not fundamental and is instead a useful abstraction of the complex electromagnetic interactions between two surfaces that come into contact with each other. The forces created by these interactions can, in a variety of cases, be thought of as a singular force that is proportional to the normal force.&lt;/p&gt;
@@ -239,12 +238,12 @@ N=mg\cos\theta \tag{force normal to the ramp}\\
   &lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;!--more--&gt;
+
 &lt;h4 id=&quot;reformulations&quot;&gt;Reformulations&lt;/h4&gt;
 &lt;p&gt;While Newtonian mechanics, as described by the &lt;strong&gt;&lt;em&gt;principia&lt;/em&gt;&lt;/strong&gt;, was the first formulation of classical mechanics, there exists others. Namely Lagrangian Mechanics and Hamiltonian mechanics. These formulations are instrumental in developing modern theories like quantum mechanics.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://en.citizendium.org/images/thumb/f/f5/Classical_mechanics_timeline.PNG/800px-Classical_mechanics_timeline.PNG?style=centerme&quot; alt=&quot;formulations&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
-
-&lt;!--more--&gt;
 
 &lt;h2 id=&quot;classical-electromagnetism&quot;&gt;Classical Electromagnetism&lt;/h2&gt;
 &lt;p&gt;Classical electromagnetism studies the properties and interactions of electric charges, magnets, and the electromagnetic force in general. There are 4 main topics here:&lt;/p&gt;
@@ -343,6 +342,8 @@ Translational Kinematics describes the motion of objects through space over time
 \vec{v}=\int\vec{a} \,dt+\vec{v}_0
 \end{align}&lt;/script&gt;
 
+&lt;!--more--&gt;
+
 &lt;ul&gt;
   &lt;li&gt;$\vec{x}$ is the object’s position as a function of time.&lt;/li&gt;
   &lt;li&gt;$\vec{x}_0$ is the initial position, at &lt;script type=&quot;math/tex&quot;&gt;t=0&lt;/script&gt;.&lt;/li&gt;
@@ -351,8 +352,6 @@ Translational Kinematics describes the motion of objects through space over time
   &lt;li&gt;$\vec{a}$ is the object’s acceleration as a function of time.&lt;/li&gt;
   &lt;li&gt;$t$ is time&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;!--more--&gt;
 
 &lt;h3 id=&quot;constant-acceleration&quot;&gt;Constant Acceleration&lt;/h3&gt;
 &lt;p&gt;When acceleration is assumed to be constant, as is the case for many physical systems, the following kinematic equations can be derived:&lt;/p&gt;
@@ -567,6 +566,8 @@ $$\begin{align}
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\left|\vec{x}\right|=\sqrt{x^2+y^2+z^2}&lt;/script&gt;
 
+&lt;!--more--&gt;
+
 &lt;h4 id=&quot;displacement-function&quot;&gt;Displacement Function&lt;/h4&gt;
 &lt;p&gt;An object’s position can be described as a function of time, $\vec{x}(t)$. This position function would thus map from time to 3D-space:&lt;/p&gt;
 
@@ -575,8 +576,6 @@ $$\begin{align}
 &lt;p&gt;Taking the derivative of an object’s displacement function with respect to $t$ provides the object’s &lt;a href=&quot;&quot;&gt;velocity&lt;/a&gt; function, $\vec{v}(t)$:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\mathrm{d}}{\mathrm{d}t}\vec{x}(t)=\vec{v}(t)&lt;/script&gt;
-
-&lt;!--more--&gt;
 
 &lt;!-- Click [here]() for a list of the repeated time derivatives of displacement. --&gt;
 
@@ -618,6 +617,8 @@ $$\begin{align}
 
 &lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/5/56/Modernphysicsfields.svg?style=centerme&quot; alt=&quot;physics&quot; /&gt;&lt;/p&gt;
 
+&lt;!--more--&gt;
+
 &lt;h3 id=&quot;classical-physics&quot;&gt;Classical Physics&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;/classical-physics&quot;&gt;Classical physics&lt;/a&gt; is a catch all for the theories of physics that predated the relativistic and quantum theories of physics we have today. They very adequately describe the interactions and mechanics of everyday objects, fluids, gasses, electricity, magnetism, and even celestial bodies.&lt;/p&gt;
 
@@ -627,8 +628,6 @@ $$\begin{align}
   &lt;li&gt;&lt;a href=&quot;/classical-physics#classical-electromagnetism&quot;&gt;Classical Electromagnetism&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/classical-physics#thermodynamics&quot;&gt;Thermodynamics&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;!--more--&gt;
 
 &lt;h3 id=&quot;special--general-relativity&quot;&gt;Special &amp;amp; General Relativity&lt;/h3&gt;
 &lt;h4 id=&quot;special-relativity-sr&quot;&gt;Special Relativity (SR)&lt;/h4&gt;
@@ -720,6 +719,31 @@ Quantum chromodynamics is the QFT of the strong nuclear force. This theory descr
 \end{alignat*} %]]&gt;&lt;/script&gt;
 
 &lt;!--more--&gt;
+
+&lt;h4 id=&quot;the-fibonacci-sequence&quot;&gt;The Fibonacci Sequence&lt;/h4&gt;
+&lt;p&gt;The Fibonacci sequence can be considered a parity sequence with the pattern:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+F_n=F_{n-2}+F_{n-1}&amp;=\{0,1,1,2,3,5,8,13,\cdots\}\\
+&amp;\rightarrow\{+,-,-,+,-,-,+,-,\cdots\}\\
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\text{where } F_0=0, F_1 = 1&lt;/script&gt;
+
+&lt;details&gt;
+  &lt;summary&gt;Closed Form&lt;/summary&gt;
+  &lt;p&gt;$$\begin{align}
+  F_n=\frac{\phi^n-\psi^n}{\sqrt 5}&amp;amp;=\{0,1,1,2,3,5,8,13,\cdots\}\\
+  &amp;amp;\rightarrow\{+,-,-,+,-,-,+,-,\cdots\}\\
+  \end{align}$$
+
+  $$\begin{align*}
+  \text{where } &amp;amp;\phi=\frac{1+\sqrt 5}{2} \text{ (the golden ratio)}\\
+  &amp;amp;\psi=\frac{1-\sqrt 5}{2} \text{ (the conjugate golden ratio)}
+  \end{align*}$$
+  &lt;/p&gt;
+&lt;/details&gt;
 
 &lt;h2 id=&quot;use&quot;&gt;Use&lt;/h2&gt;
 &lt;p&gt;Notice that when we raise $-1$ to the power of one of these sequences, it will evaluate to $+1$ for even values and $-1$ for odd values.&lt;/p&gt;

@@ -4,14 +4,15 @@ title: Friction
 date: 2018-03-26
 tags: physics classical-physics classical-mechanics
 ---
-### General Info & Table of Contents
+### General Info
+<!-- & Table of Contents -->
 Dry Friction is a force that opposes the motion of two surfaces that slide against each other. This force is proportional to the normal force of the object.
 
-- [Amontons' Laws of Dry Friction](#amontons-laws-of-dry-friction)
+<!-- - [Amontons' Laws of Dry Friction](#amontons-laws-of-dry-friction)
 - [From Static to Kinetic Friction](#from-static-to-kinetic-friction)
 - [Static Friction](#static-friction)
 - [Kinetic Friction](#kinetic-friction)
-- [Coefficient of Friction](#coefficient-of-friction)
+- [Coefficient of Friction](#coefficient-of-friction) -->
 
 #### Where does Friction come from?
 The frictional force is not fundamental and is instead a useful abstraction of the complex electromagnetic interactions between two surfaces that come into contact with each other. The forces created by these interactions can, in a variety of cases, be thought of as a singular force that is proportional to the normal force.

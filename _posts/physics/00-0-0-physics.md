@@ -13,6 +13,8 @@ There are 3 main divisions of physics:
 
 ![physics](https://upload.wikimedia.org/wikipedia/commons/5/56/Modernphysicsfields.svg?style=centerme)
 
+<!--more-->
+
 ### Classical Physics
 [Classical physics](/classical-physics) is a catch all for the theories of physics that predated the relativistic and quantum theories of physics we have today. They very adequately describe the interactions and mechanics of everyday objects, fluids, gasses, electricity, magnetism, and even celestial bodies.
 
@@ -20,8 +22,6 @@ The 3 main branches of pre-Einsteinian physics are:
 - [Classical Mechanics](/classical-physics#classical-mechanics)
 - [Classical Electromagnetism](/classical-physics#classical-electromagnetism)
 - [Thermodynamics](/classical-physics#thermodynamics)
-
-<!--more-->
 
 ### Special & General Relativity
 #### Special Relativity (SR)

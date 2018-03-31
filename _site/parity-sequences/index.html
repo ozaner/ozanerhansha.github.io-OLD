@@ -239,6 +239,31 @@
 
 <!--more-->
 
+<h4 id="the-fibonacci-sequence">The Fibonacci Sequence</h4>
+<p>The Fibonacci sequence can be considered a parity sequence with the pattern:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+F_n=F_{n-2}+F_{n-1}&=\{0,1,1,2,3,5,8,13,\cdots\}\\
+&\rightarrow\{+,-,-,+,-,-,+,-,\cdots\}\\
+\end{align} %]]></script>
+
+<script type="math/tex; mode=display">\text{where } F_0=0, F_1 = 1</script>
+
+<details>
+  <summary>Closed Form</summary>
+  <p>$$\begin{align}
+  F_n=\frac{\phi^n-\psi^n}{\sqrt 5}&amp;=\{0,1,1,2,3,5,8,13,\cdots\}\\
+  &amp;\rightarrow\{+,-,-,+,-,-,+,-,\cdots\}\\
+  \end{align}$$
+
+  $$\begin{align*}
+  \text{where } &amp;\phi=\frac{1+\sqrt 5}{2} \text{ (the golden ratio)}\\
+  &amp;\psi=\frac{1-\sqrt 5}{2} \text{ (the conjugate golden ratio)}
+  \end{align*}$$
+  </p>
+</details>
+
 <h2 id="use">Use</h2>
 <p>Notice that when we raise $-1$ to the power of one of these sequences, it will evaluate to $+1$ for even values and $-1$ for odd values.</p>
 
@@ -274,7 +299,7 @@ S'_n=\frac{n(n-1)}{2}+1&=\{1,1,2,4,7,11,\cdots\}\\
     
       <li>
         <h3>
-          <a href="/drag/">
+          <a href="/drag-force/">
             Drag Force
             <small>27 Mar 2018</small>
           </a>

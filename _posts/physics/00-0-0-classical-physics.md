@@ -18,12 +18,12 @@ Classical mechanics is the study of the motion of massive bodies. It is usually 
   - Linear Momentum
   - Rotational Dynamics
 
+<!--more-->
+
 #### Reformulations
 While Newtonian mechanics, as described by the ***principia***, was the first formulation of classical mechanics, there exists others. Namely Lagrangian Mechanics and Hamiltonian mechanics. These formulations are instrumental in developing modern theories like quantum mechanics.
 
 ![formulations](http://en.citizendium.org/images/thumb/f/f5/Classical_mechanics_timeline.PNG/800px-Classical_mechanics_timeline.PNG?style=centerme){:width="500px"}
-
-<!--more-->
 
 ## Classical Electromagnetism
 Classical electromagnetism studies the properties and interactions of electric charges, magnets, and the electromagnetic force in general. There are 4 main topics here:

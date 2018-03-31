@@ -22,6 +22,30 @@ $$\begin{alignat*}{2}
 
 <!--more-->
 
+#### The Fibonacci Sequence
+The Fibonacci sequence can be considered a parity sequence with the pattern:
+
+$$\begin{align}
+F_n=F_{n-2}+F_{n-1}&=\{0,1,1,2,3,5,8,13,\cdots\}\\
+&\rightarrow\{+,-,-,+,-,-,+,-,\cdots\}\\
+\end{align}$$
+
+$$\text{where } F_0=0, F_1 = 1$$
+
+<details>
+  <summary>Closed Form</summary>
+  <p>$$\begin{align}
+  F_n=\frac{\phi^n-\psi^n}{\sqrt 5}&=\{0,1,1,2,3,5,8,13,\cdots\}\\
+  &\rightarrow\{+,-,-,+,-,-,+,-,\cdots\}\\
+  \end{align}$$
+
+  $$\begin{align*}
+  \text{where } &\phi=\frac{1+\sqrt 5}{2} \text{ (the golden ratio)}\\
+  &\psi=\frac{1-\sqrt 5}{2} \text{ (the conjugate golden ratio)}
+  \end{align*}$$
+  </p>
+</details>
+
 ## Use
 Notice that when we raise $-1$ to the power of one of these sequences, it will evaluate to $+1$ for even values and $-1$ for odd values.
 

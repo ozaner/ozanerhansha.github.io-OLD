@@ -15,6 +15,8 @@ The magnitude of displacement, or net **distance**, is calculated the same as an
 
 $$\left|\vec{x}\right|=\sqrt{x^2+y^2+z^2}$$
 
+<!--more-->
+
 #### Displacement Function
 An object's position can be described as a function of time, $\vec{x}(t)$. This position function would thus map from time to 3D-space:
 
@@ -23,8 +25,6 @@ $$\vec{x}:\mathbb{R}\rightarrow \mathbb{R}^3$$
 Taking the derivative of an object's displacement function with respect to $t$ provides the object's [velocity]() function, $\vec{v}(t)$:
 
 $$\frac{\mathrm{d}}{\mathrm{d}t}\vec{x}(t)=\vec{v}(t)$$
-
-<!--more-->
 
 <!-- Click [here]() for a list of the repeated time derivatives of displacement. -->
 
