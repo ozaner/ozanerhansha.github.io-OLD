@@ -71,3 +71,4 @@ A compendium of links, articles, books and other references I have read and/or h
 * [xkcd](https://xkcd.com) --- You've probably seen one (if not more) of them before. "A webcomic of romance, sarcasm, math, and language."
 * [Google Recursion](https://www.google.com/search?q=recursion) --- Try googling "recursion"
 * [pannenkoek2012](https://www.youtube.com/user/pannenkeok2012) --- A YouTube channel devoted to breaking down the mechanics and exploitation of those mechanics in Super Mario 64. The level of detail Pannenkoek provides is astounding and how someone could turn a particular Nintendo 64 game into a well documented science is beyond me.
+* [The Dictionary of Obscure Sorrows](http://www.dictionaryofobscuresorrows.com) by John Koenig --- A website of different neologisms created to describe emotions (usually existentialist ones) that lack a descriptive word of their own. The most famous of his obscure words being *Sonder*.

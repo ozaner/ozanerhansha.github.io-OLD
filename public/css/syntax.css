@@ -64,6 +64,9 @@
 .css .o + .nt,
 .css .nt + .nt { color: #999; }
 
+
+/* MY STUFF */
+
 img[src$="centerme"] {
   display:block;
   margin: 0 auto;
@@ -77,4 +80,20 @@ pre.highlight {
   max-height: 600px; /* Change to your desired max height */
   overflow: auto; /* Make code block scroll if needed*/
   /* display: inline-block; */
+}
+
+h1.inline {
+  display: inline;
+}
+
+h2.inline {
+  display: inline;
+}
+
+h3.inline {
+  display: inline;
+}
+
+h4.inline {
+  display: inline;
 }

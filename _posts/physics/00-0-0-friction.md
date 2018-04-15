@@ -28,8 +28,11 @@ $\renewcommand{\vec}[1]{\mathbf{#1}}$
 The empirical laws that govern friction were (re)discovered by French physicist Guillaume Amontons:
 
 - **Amontons' First Law**: The force of friction is directly proportional to the applied load.
+  - The more an object is pushed into a surface (normal force) the more it interacts with that surface (friction).
 - **Amontons' Second Law**: The force of friction is independent of the apparent area of contact.
+  - While more surface area means more interactions with the surface (friction), having more area means the applied load is more distributed, offsetting the increase in area.
 - Amontons' Third Law (**Coulomb's Law of Friction**): Kinetic friction is independent of the sliding velocity.
+  - Kinetic friction takes over after static friction has been overcome and object starts to move, but once its in motion friction is constant.
 
 ### From Static to Kinetic Friction
 There are two types of friction: static friction which acts on an object at rest, and kinetic friction which acts on an object in motion. When the force of static friction reaches a maximum, kinetic friction takes over:

@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <title>
     
-      Parity Sequences &middot; Oz∀n∈ℝ
+      Parity Sequences &middot; Ozaner
     
   </title>
 
@@ -222,24 +222,37 @@
 ]</span>
   <!-- Thought about this when we had to find Taylor series' for certain sinusoidal functions and the terms had hard to capture patterns of negative/even terms. It is possible to capture this via more sinusoidal functions but I wanted a polynomial answer. I don't think there is a polynomial answer for the general case, and the 2 examples below are the extent of my findings. -->
 
-<p>A parity sequence is a sequence of numbers that follow a set pattern of even and odd. The notation we will use is “$+$” for even and “$-$” for odd.</p>
+<p>A parity sequence is a sequence of numbers that follow a set pattern of even and odd. Only the parity of the numbers is important, not the actual values themselves. As such, we can represent the parity sequence of a sequence as a set of “$+$” for even and “$-$” for odd numbers.</p>
 
-<h2 id="examples">Examples</h2>
-<p>All examples start indexing at 0 (the most rational way to index lists).</p>
+<h2 id="use">Use</h2>
+<p>Notice that when we raise $-1$ to the power of one of these sequences, it will evaluate to $+1$ for even values and $-1$ for odd values.</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{alignat*}{2}
-  S_n=\frac{n(n-1)}{2}& &&= \{0,0,1,3,6,10,15,21,\cdots\} && \\
-  & &&\rightarrow\{+,+,-,-,+,+,-,-,\cdots\} && \\
-  S_n=\frac{n^2(n-1)}{2}& &&= \{0,0,2,9,24,50,90,630,\cdots\} &&\\
-  & &&\rightarrow\{+,+,+,-,+,+,+,-,\cdots\}&&\\
-  S_n=\cos \frac{n\pi}{2}& &&= \{1,0,-1,0,1,0,-1,0,\cdots\} &&\\
-  & &&\rightarrow\{-,+,-,+,-,+,-,+,\cdots\}&&
-\end{alignat*} %]]></script>
+<p><em>This property is where the $+$ $-$ notation comes from.</em></p>
+
+<p>When constructing things like Taylor Series’, this is a useful property to have. Terms that alternate from negative to positives can be dealt with by appending a factor of $(-1)^{S_n}$ to the series.</p>
 
 <!--more-->
 
-<h4 id="the-fibonacci-sequence">The Fibonacci Sequence</h4>
+<h3 id="base-case-parity-sequences">Base Case Parity Sequences</h3>
+<p>The two most simple parity sequences are simply the natural numbers:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+S_n=n&=\{0,1,2,3,4,5,6,7,\cdots\}\\
+&\rightarrow\{+,-,+,-,+,-,+,-,\cdots\}\\
+\end{align} %]]></script>
+
+<p>and the even numbers:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+S_n=2n&=\{0,2,4,6,8,10,12,14,\cdots\}\\
+&\rightarrow\{+,+,+,+,+,+,+,+,\cdots\}\\
+\end{align} %]]></script>
+
+<p>These two sequences can be parity swapped (explained below) to form the parity sequences ${-,+,-,+,-,+,\cdots}$ and ${-,-,-,-,-,-,\cdots}$ respectively.</p>
+
+<h3 id="the-fibonacci-sequence">The Fibonacci Sequence</h3>
 <p>The Fibonacci sequence can be considered a parity sequence with the pattern:</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
@@ -264,12 +277,29 @@ F_n=F_{n-2}+F_{n-1}&=\{0,1,1,2,3,5,8,13,\cdots\}\\
   </p>
 </details>
 
-<h2 id="use">Use</h2>
-<p>Notice that when we raise $-1$ to the power of one of these sequences, it will evaluate to $+1$ for even values and $-1$ for odd values.</p>
+<h3 id="other-examples">Other Examples</h3>
+<p>All examples start indexing at 0 (the most rational way to index lists).</p>
 
-<p><em>This property is where the $+$ $-$ notation comes from.</em></p>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{alignat*}{2}
+  S_n=\frac{n(n-1)}{2}& &&= \{0,0,1,3,6,10,15,21,\cdots\} && \\
+  & &&\rightarrow\{+,+,-,-,+,+,-,-,\cdots\} && \\
+  S_n=\frac{n^2(n-1)}{2}& &&= \{0,0,2,9,24,50,90,630,\cdots\} &&\\
+  & &&\rightarrow\{+,+,+,-,+,+,+,-,\cdots\}&&\\
+  S_n=\cos \frac{n\pi}{2}& &&= \{1,0,-1,0,1,0,-1,0,\cdots\} &&\\
+  & &&\rightarrow\{-,+,-,+,-,+,-,+,\cdots\}&&
+\end{alignat*} %]]></script>
 
-<p>When constructing things like Taylor Series’, this is a useful property to have. Terms that alternate from negative to positives can be dealt with by appending a factor of $(-1)^{S_n}$ to the series.</p>
+<h2 id="parity-swap">Parity Swap</h2>
+<p>A useful property to take note of when constructing these sequences is that adding $1$ to the sequence flips the parity of each element in the sequence:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+S_n=\frac{n(n-1)}{2}&=\{0,0,1,3,6,10,\cdots\}\\
+&\rightarrow\{+,+,-,-,+,+,\cdots\}\\
+S'_ n=\frac{n(n-1)}{2}+1&=\{1,1,2,4,7,11,\cdots\}\\
+&\rightarrow\{-,-,+,+,-,-,\cdots\}
+\end{align} %]]></script>
 
 <h2 id="equivalence">Equivalence</h2>
 <p>When the corresponding elements of two sequences have the same parity, we can call those two sequences <strong>parity equivalent</strong>.</p>
@@ -280,22 +310,20 @@ F_n=F_{n-2}+F_{n-1}&=\{0,1,1,2,3,5,8,13,\cdots\}\\
 
 <p>i.e for all Natural Numbers $n$, if $-1$ to the $A_n$ equals $-1$ to the $B_n$, then the sequences $A$ and $B$ are parity equivalent.</p>
 
-<h2 id="parity-swap">Parity Swap</h2>
-<p>A useful property to take note of when constructing these sequences is that adding $1$ to the sequence flips the parity of each element in the sequence:</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-S_n=\frac{n(n-1)}{2}&=\{0,0,1,3,6,10,\cdots\}\\
-&\rightarrow\{+,+,-,-,+,+,\cdots\}\\
-S'_n=\frac{n(n-1)}{2}+1&=\{1,1,2,4,7,11,\cdots\}\\
-&\rightarrow\{-,-,+,+,-,-,\cdots\}
-\end{align} %]]></script>
-
 </div>
 
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/metaphysical-nightmare/">
+            On the Grounding of Ideas
+            <small>09 Apr 2018</small>
+          </a>
+        </h3>
+      </li>
     
       <li>
         <h3>
@@ -311,15 +339,6 @@ S'_n=\frac{n(n-1)}{2}+1&=\{1,1,2,4,7,11,\cdots\}\\
           <a href="/friction/">
             Friction
             <small>26 Mar 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/classical-physics/">
-            Classical Physics
-            <small>24 Mar 2018</small>
           </a>
         </h3>
       </li>

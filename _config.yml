@@ -21,4 +21,4 @@ author:
 paginate:         5
 plugins:          [jekyll-paginate]
 
-excerpt_separator: <!--more-->  # you can specify your own separator, of course.
+excerpt_separator: <!--more-->

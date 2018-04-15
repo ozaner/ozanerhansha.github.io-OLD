@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <title>
     
-      Oz∀n∈ℝ &middot; My Projects
+      Ozaner &middot; My Projects
     
   </title>
 
@@ -217,6 +217,35 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="/kinematics/">Kinematics</a>
+    </h1>
+    <span class="post-date">17 Mar 2018</span>
+    <!-- Make vectors bold rather than arrow headed -->
+<p>$\renewcommand{\vec}[1]{\mathbf{#1}}$
+Translational Kinematics describes the motion of objects through space over time. Using an object’s <a href="/position">position</a>, velocity and acceleration vectors, it is possible to predict where it will be in the future and where it was in the past. Where an object gets that velocity/acceleration is what dynamics seeks to explain.</p>
+
+<h3 id="variable-acceleration">Variable Acceleration</h3>
+<p>To calculate the motion of an object with continuous acceleration, simply refer to the definitions of velocity and acceleration:</p>
+
+<script type="math/tex; mode=display">\begin{align}
+\vec{v}=\frac{d\vec{x}}{dt}\\
+\vec{a}=\frac{d\vec{v}}{dt}
+\end{align}</script>
+
+<p>Integrating these equations we get:</p>
+
+<script type="math/tex; mode=display">\begin{align}
+\vec{x}=\int\vec{v} \,dt+\vec{x}_0\\
+\vec{v}=\int\vec{a} \,dt+\vec{v}_0
+\end{align}</script>
+
+
+    <!--Adds Read more-->
+    <a href="/kinematics/">Read more</a>
+    <hr>
+    
+  <div class="post">
+    <h1 class="post-title">
       <a href="/position/">Position</a>
     </h1>
     <span class="post-date">15 Mar 2018</span>
@@ -264,20 +293,14 @@
     <span class="post-date">03 Mar 2018</span>
     <!-- Thought about this when we had to find Taylor series' for certain sinusoidal functions and the terms had hard to capture patterns of negative/even terms. It is possible to capture this via more sinusoidal functions but I wanted a polynomial answer. I don't think there is a polynomial answer for the general case, and the 2 examples below are the extent of my findings. -->
 
-<p>A parity sequence is a sequence of numbers that follow a set pattern of even and odd. The notation we will use is “$+$” for even and “$-$” for odd.</p>
+<p>A parity sequence is a sequence of numbers that follow a set pattern of even and odd. Only the parity of the numbers is important, not the actual values themselves. As such, we can represent the parity sequence of a sequence as a set of “$+$” for even and “$-$” for odd numbers.</p>
 
-<h2 id="examples">Examples</h2>
-<p>All examples start indexing at 0 (the most rational way to index lists).</p>
+<h2 id="use">Use</h2>
+<p>Notice that when we raise $-1$ to the power of one of these sequences, it will evaluate to $+1$ for even values and $-1$ for odd values.</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{alignat*}{2}
-  S_n=\frac{n(n-1)}{2}& &&= \{0,0,1,3,6,10,15,21,\cdots\} && \\
-  & &&\rightarrow\{+,+,-,-,+,+,-,-,\cdots\} && \\
-  S_n=\frac{n^2(n-1)}{2}& &&= \{0,0,2,9,24,50,90,630,\cdots\} &&\\
-  & &&\rightarrow\{+,+,+,-,+,+,+,-,\cdots\}&&\\
-  S_n=\cos \frac{n\pi}{2}& &&= \{1,0,-1,0,1,0,-1,0,\cdots\} &&\\
-  & &&\rightarrow\{-,+,-,+,-,+,-,+,\cdots\}&&
-\end{alignat*} %]]></script>
+<p><em>This property is where the $+$ $-$ notation comes from.</em></p>
+
+<p>When constructing things like Taylor Series’, this is a useful property to have. Terms that alternate from negative to positives can be dealt with by appending a factor of $(-1)^{S_n}$ to the series.</p>
 
 
     <!--Adds Read more-->
@@ -309,31 +332,6 @@
 
     <!--Adds Read more-->
     <a href="/fractional-calculus/">Read more</a>
-    <hr>
-    
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/minkowski-spacetime/">Minkowski Spacetime</a>
-    </h1>
-    <span class="post-date">23 Jan 2018</span>
-    <h2 id="what-is-spacetime">What is Spacetime?</h2>
-<p>Before we talk about Minkowski Spacetime, we need to address what it means to combine space and time.</p>
-
-<p>Imagine the Earth orbiting the sun. At every point in time it will be in a different point in its orbit:</p>
-
-<p><img src="https://www.pitt.edu/~jdnorton/teaching/HPS_0410/chapters/spacetime/planet3d.gif?style=centerme" alt="orbit2D" /></p>
-
-<p>If we stack these slices of time in a third (temporal) dimension, it would look like this:</p>
-
-<p><img src="https://www.pitt.edu/~jdnorton/teaching/HPS_0410/chapters/spacetime/planet4d.gif?style=centerme" alt="orbit3D" /></p>
-
-<!-- *It looks similar to euler's formula, $e^{i\theta}=\cos \theta + i\sin\theta$, with space being the complex plane and time being the angle $\theta$. The imaginary part will come in handy later.* -->
-
-<p>This is an example of a 3D spacetime. It has 2 dimensions of space and 1 of time. Our universe has 3 space and 1 time dimension, making our spacetime (referred to as <em>Minkowski Spacetime</em>) 4 dimensional.</p>
-
-
-    <!--Adds Read more-->
-    <a href="/minkowski-spacetime/">Read more</a>
     <hr>
     
   </div>

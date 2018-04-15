@@ -1,16 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="https://www.w3.org/2005/Atom">
 
- <title>Oz∀n∈ℝ</title>
+ <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-03-30T22:25:17-04:00</updated>
+ <updated>2018-04-14T22:20:37-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>On the Grounding of Ideas</title>
+   <link href="http://localhost:4000/metaphysical-nightmare/"/>
+   <updated>2018-04-09T00:00:00-04:00</updated>
+   <id>http://localhost:4000/metaphysical-nightmare</id>
+   <content type="html">&lt;h2 id=&quot;poorly-defined-concepts&quot;&gt;Poorly Defined Concepts&lt;/h2&gt;
+&lt;p&gt;What is jealousy? What is a cat? What does it mean to be free? What &lt;em&gt;are&lt;/em&gt; you?&lt;/p&gt;
+
+&lt;p&gt;These aren’t foreign questions to us. Jealousy is an emotion we feel when we envy someone for what they have, a cat is an animal with a tail and four paws, freedom is the state of being able to do what you please, and I am a human being with thoughts and emotions.&lt;/p&gt;
+
+&lt;p&gt;But what is jealousy &lt;em&gt;really&lt;/em&gt;? What’s a cat &lt;em&gt;really&lt;/em&gt;? What does it &lt;em&gt;really&lt;/em&gt; mean to be human?&lt;/p&gt;
+
+&lt;p&gt;There is no formal definition of these concepts. We just know them when we see them. I know what jealousy feels like, I know what being human feels like (I hope), and I know a cat when I see it.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;“Alright,” you might say, “maybe humanity and jealousy are too lofty to state objectively, but can’t cats be formally defined?” Surely a cat has a particular genome that defines it regardless of its outward appearance, right? But in a world where cats evolved from another species via gradual mutations to individual base pairs in their DNA (not big leaps), where do we draw the line between cat and cave-cat, so to speak.&lt;/p&gt;
+
+&lt;p&gt;Moreover is a picture of a cat a cat? It certainly represents the notion of a cat, but it doesn’t exactly have genetic material. Plus, there is no formal way to tell whether a given picture is of a cat or not. No formula, no physical law of cats. We can tell a cat, real or drawn, from another animal using our &lt;em&gt;intuition&lt;/em&gt;, whatever that is.&lt;/p&gt;
+
+&lt;p&gt;“But it’s easy” you might say, “just look for a tail, 4 legs, pointy ears and some fur.” What about hairless cats? a cat drawn with no tail? a cat who’s ears are down, etc. There are so many exceptions that it’s a miracle we are even able to tell cat from dog!&lt;/p&gt;
+
+&lt;h4 id=&quot;whats-wrong-with-being-poorly-defined&quot;&gt;What’s Wrong with being Poorly Defined?&lt;/h4&gt;
+&lt;p&gt;Why is this a problem? Well, without a concrete definition, the statements we can make about a concept are limited and just as hazy as the definition.&lt;/p&gt;
+
+&lt;p&gt;Take morality. Unlike a well defined concept, you can’t point to some mathematical construction or set of rules that it follows. I can’t tell you without a doubt whether a given action was ‘moral’ or not, nor can I even define morality.&lt;/p&gt;
+
+&lt;p&gt;Killing is certainly immoral… right? Well, except when it’s in the defense of yourself or others. What about hitting a kid as punishment. We certainly wouldn’t find that acceptable today, but it was commonplace not too long ago. How can there be an objective definition of morality if it is riddled with exceptions and even evolves over time?&lt;/p&gt;
+
+&lt;p&gt;A chemist can give you certainty that a particular solution will erode a metal because chemistry is a formal science with mathematical definitions of all its concepts. A psychologist, however, may only have a hazy idea of why you may feel a certain emotion (whatever an emotion is) and what could have caused it.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;That said, it’s not too far-fetched to imagine an operational definition of emotions based on the amount of certain neurotransmitters in one’s brain. But of course, this is a bit of an oversimplification.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;computation&quot;&gt;Computation&lt;/h4&gt;
+&lt;p&gt;Computers are a prime example of this, as they can only deal with problems that are well defined (i.e programmable via a set of steps or &lt;strong&gt;algorithm&lt;/strong&gt;). Ask it to solve the quadratic function, model an atom, or even play music and it’ll do just fine. But ask it to judge how strong an argumentative essay is and it might run into trouble. Digital music is just a sound wave sampled at a high rate, easy. But what is a good essay, formally speaking?&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This problem of doing shakily defined tasks on computers can be partially dealt with via &lt;strong&gt;machine learning&lt;/strong&gt;. And the underlying philosophy behind it’s effectiveness in the real world is called the &lt;a href=&quot;http://www.deeplearningbook.org/version-2015-10-03/contents/manifolds.html&quot;&gt;manifold hypothesis&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;well-defined-concepts&quot;&gt;Well Defined Concepts&lt;/h2&gt;
+&lt;p&gt;To formally deal with any idea or concept, it has to be well defined. By making our definitions more concrete we can make more precise statements about these ideas. This is how math and science are born.&lt;/p&gt;
+
+&lt;p&gt;Take the atom. An atom is a collection of protons, neutrons and electrons which are further composed of elementary particles, all of which are governed by an exact set of equations (i.e quantum mechanics).&lt;/p&gt;
+
+&lt;p&gt;A Cesium atom, for example, is thus completely mathematically defined. Everything about it is encapsulated in it’s wave function, no need to look at the natural world to understand it.&lt;/p&gt;
+
+&lt;p&gt;This applies to all atoms, and thus all molecules, and further anything in the universe made of matter, like humans. This shouldn’t come as a surprise. After all, we know that math is the bedrock of science and thus of formal knowledge as a whole.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Of course, modeling even molecules (much less humans) as quantum wave functions is pretty much out of our reach computationally. As such claiming that quantum wave functions can model all aspects of our lives is a solely theoretical one.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/philosophy/metaphysical-nightmare/chain_of_abstraction.png?style=centerme&quot; alt=&quot;chain of abstraction&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Take psychology. It is really just applied biology, which is just applied chemistry, which is just applied physics, which is just (as we’ve seen) applied mathematics.&lt;/p&gt;
+
+&lt;p&gt;This &lt;em&gt;chain of abstraction&lt;/em&gt; applies to all fields of human knowledge, but its relation to psychology and the human mind will be particularly useful to us…&lt;/p&gt;
+
+&lt;h2 id=&quot;bridging-the-gap&quot;&gt;Bridging the Gap&lt;/h2&gt;
+&lt;p&gt;Now consider the concept of love. It seems impossible to define it objectively right? Sure, it’s an evolutionary aid to sexual reproduction, but that’s far from concrete and certainly ignores our own experience of it.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;We must first ask ourselves “what is love?”
+    &lt;ul&gt;
+      &lt;li&gt;Well it’s an emotion, right?&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Sure, but what’s an emotion?
+    &lt;ul&gt;
+      &lt;li&gt;A state of mind.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;But what is &lt;em&gt;“the mind”&lt;/em&gt;?
+    &lt;ul&gt;
+      &lt;li&gt;The mind arises from the brain processing the information blasted into it via our senses.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;What is the brain made up of, and what comprises its state?
+    &lt;ul&gt;
+      &lt;li&gt;The brain is comprised of trillions of specialized cells called neurons. These neurons connect to form large &lt;em&gt;neural networks&lt;/em&gt; and communicate via electrical activity and chemicals known as neurotransmitters.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And further neurons are comprised of different organelle and so on until we reach atoms and ultimately the fundamental particles of the universe.&lt;/p&gt;
+
+&lt;p&gt;This relation between the most fundamental (and very well defined) concepts in our universe, like elementary particles, to the most hazy and abstract ones, like emotions, is what will allow us the bridge the between poorly defined and well defined in a somewhat, admittedly, crude way.&lt;/p&gt;
+
+&lt;h4 id=&quot;brain-graphs&quot;&gt;Brain Graphs&lt;/h4&gt;
+&lt;p&gt;Consider the human brain. It is simply a collection of interconnected neurons, no? We can represent that neural network as graph. This graph will contain a bunch (billions) of nodes, each representing a neuron, and even more (trillions) of vertices between those nodes, representing connections.&lt;/p&gt;
+
+&lt;p&gt;Making our definition a bit more concrete, we can define any brain, in a single instant, as a graph of it’s neurons:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;B=\left(N,C\right)&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$B$ is a graph of a brain.&lt;/li&gt;
+  &lt;li&gt;$N$ is the set of all nodes in $B$ (neurons).&lt;/li&gt;
+  &lt;li&gt;$C$ is the set of all connections between members of $N$ (neurons).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;functions-of-time&quot;&gt;Functions of Time&lt;/h4&gt;
+&lt;p&gt;Of course, a thought doesn’t occur in an instant, it happens over a small interval of time. So these brain graphs would actually be brain graph functions over time. Plugging in a time into the function would output the state of the brain graph at that moment in time.&lt;/p&gt;
+
+&lt;p&gt;We can formalize this via:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;B(t)=\left(N,C(t)\right)&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$B(t)$ is a function of the graph of a brain over time.&lt;/li&gt;
+  &lt;li&gt;$N$ is the same as before (assuming the neurons in the brain stay constant during this thought)&lt;/li&gt;
+  &lt;li&gt;$C$ is the a function of the set of all connections between members of $N$ (neurons) over time.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;set-of-all-of-brain-graph-functions&quot;&gt;Set of all of Brain Graph Functions&lt;/h4&gt;
+&lt;p&gt;Finally we can define an idea or concept as the set $S$ of all the possible brain graph functions that (we would consider) are thinking of that idea:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;S=\left\{B \in T\mid B \text{ is a brain that is thinking of S}\right\}&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$S$ is a particular idea (represented by a set).&lt;/li&gt;
+  &lt;li&gt;$B$ is a brain graph function. (The $(t)$ is omitted because we are just talking about the function itself).&lt;/li&gt;
+  &lt;li&gt;$T$ is the set of all possible brain graph functions.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Notice that in this definition we are quantifying over all &lt;em&gt;possible&lt;/em&gt; brain graphs not just the ones that have existed or will exist. Thus, for example a cat:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align*}
+\text{Cat}&amp;=\left\{B \in T\mid B \text{ is a brain that is thinking of cat}\right\}\\
+\text{Cat}&amp;=\left\{B_1,B_2,B_3,B_4,\cdots\right\}
+\end{align*} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;In the example above $B_1, B_2, B_3$ and so on are all different possible human brains that are thinking about cats.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-does-this-definition-even-help&quot;&gt;How does this Definition even Help?&lt;/h2&gt;
+&lt;p&gt;Remember when I said formally defining concepts allows us to make formal statements about them? Well that was only partially true. While this ‘set of all particle configuration’ definition is more formal than your standard notion of jealousy, it’s not exactly helpful in trying to understand the nature of emotion of people’s interactions with each other.&lt;/p&gt;
+
+&lt;p&gt;So then what’s the real point? The real point is purely a semantic one. A scientist/philosopher might like to associate some physical meaning to ideas like emotion or creativity. Thus, we can be rest assured that everything imaginable can be considered physical in some sense. Even if that physicality is purely expressed as your brain thinking about said concept, it’s still just particles following the same physical laws.&lt;/p&gt;
+
+&lt;h4 id=&quot;an-aside&quot;&gt;An Aside&lt;/h4&gt;
+&lt;p&gt;The idea I presented above is, of course, ridiculous and riddled with problems. It is just meant to serve as a rough idea of how one might formalize the notion of an “idea” or “concept” when , at first, it may seem that it only exists in our minds. Indeed these concepts do only exist in our minds, but our minds are purely physical (unless you’re a &lt;a href=&quot;https://plato.stanford.edu/entries/dualism/&quot;&gt;duelist&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;One such problem I would like to somewhat address is the apparent circularity of saying “the notion of cat is encompassed by the set of all brains that are thinking of the concept of cat.” This isn’t as bad as it sounds because it should really be phrased as “the notion of cat is encompassed by the set of all brains that are thinking of &lt;strong&gt;what we consider&lt;/strong&gt; the concept of cat.” This definition draws on our own subjective ideas of cats to objectively define them. (In this case &lt;em&gt;our&lt;/em&gt; might represent an average of all human opinions or something of the sort.)&lt;/p&gt;
+
+&lt;p&gt;Another, more obvious, problem is that a certain concept or idea that occurs in a human mind may not be isolated in their brains. The human mind is a complex mechanism whose function is a product of one’s body, senses, and general environment. This problem can be solved by simply replacing the idea of brain graph with the set of cells that represent the human body or even set of particles/wavefunction that comprise that human body if necessary. The brain graph formulation I used above is simply for convenience.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Drag Force</title>
@@ -108,9 +254,21 @@ $\renewcommand{\vec}[1]{\mathbf{#1}}$
 &lt;p&gt;The empirical laws that govern friction were (re)discovered by French physicist Guillaume Amontons:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Amontons’ First Law&lt;/strong&gt;: The force of friction is directly proportional to the applied load.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Amontons’ Second Law&lt;/strong&gt;: The force of friction is independent of the apparent area of contact.&lt;/li&gt;
-  &lt;li&gt;Amontons’ Third Law (&lt;strong&gt;Coulomb’s Law of Friction&lt;/strong&gt;): Kinetic friction is independent of the sliding velocity.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Amontons’ First Law&lt;/strong&gt;: The force of friction is directly proportional to the applied load.
+    &lt;ul&gt;
+      &lt;li&gt;The more an object is pushed into a surface (normal force) the more it interacts with that surface (friction).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Amontons’ Second Law&lt;/strong&gt;: The force of friction is independent of the apparent area of contact.
+    &lt;ul&gt;
+      &lt;li&gt;While more surface area means more interactions with the surface (friction), having more area means the applied load is more distributed, offsetting the increase in area.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Amontons’ Third Law (&lt;strong&gt;Coulomb’s Law of Friction&lt;/strong&gt;): Kinetic friction is independent of the sliding velocity.
+    &lt;ul&gt;
+      &lt;li&gt;Kinetic friction takes over after static friction has been overcome and object starts to move, but once its in motion friction is constant.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;from-static-to-kinetic-friction&quot;&gt;From Static to Kinetic Friction&lt;/h3&gt;
@@ -703,24 +861,37 @@ Quantum chromodynamics is the QFT of the strong nuclear force. This theory descr
    <id>http://localhost:4000/parity-sequences</id>
    <content type="html">&lt;!-- Thought about this when we had to find Taylor series' for certain sinusoidal functions and the terms had hard to capture patterns of negative/even terms. It is possible to capture this via more sinusoidal functions but I wanted a polynomial answer. I don't think there is a polynomial answer for the general case, and the 2 examples below are the extent of my findings. --&gt;
 
-&lt;p&gt;A parity sequence is a sequence of numbers that follow a set pattern of even and odd. The notation we will use is “$+$” for even and “$-$” for odd.&lt;/p&gt;
+&lt;p&gt;A parity sequence is a sequence of numbers that follow a set pattern of even and odd. Only the parity of the numbers is important, not the actual values themselves. As such, we can represent the parity sequence of a sequence as a set of “$+$” for even and “$-$” for odd numbers.&lt;/p&gt;
 
-&lt;h2 id=&quot;examples&quot;&gt;Examples&lt;/h2&gt;
-&lt;p&gt;All examples start indexing at 0 (the most rational way to index lists).&lt;/p&gt;
+&lt;h2 id=&quot;use&quot;&gt;Use&lt;/h2&gt;
+&lt;p&gt;Notice that when we raise $-1$ to the power of one of these sequences, it will evaluate to $+1$ for even values and $-1$ for odd values.&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{alignat*}{2}
-  S_n=\frac{n(n-1)}{2}&amp; &amp;&amp;= \{0,0,1,3,6,10,15,21,\cdots\} &amp;&amp; \\
-  &amp; &amp;&amp;\rightarrow\{+,+,-,-,+,+,-,-,\cdots\} &amp;&amp; \\
-  S_n=\frac{n^2(n-1)}{2}&amp; &amp;&amp;= \{0,0,2,9,24,50,90,630,\cdots\} &amp;&amp;\\
-  &amp; &amp;&amp;\rightarrow\{+,+,+,-,+,+,+,-,\cdots\}&amp;&amp;\\
-  S_n=\cos \frac{n\pi}{2}&amp; &amp;&amp;= \{1,0,-1,0,1,0,-1,0,\cdots\} &amp;&amp;\\
-  &amp; &amp;&amp;\rightarrow\{-,+,-,+,-,+,-,+,\cdots\}&amp;&amp;
-\end{alignat*} %]]&gt;&lt;/script&gt;
+&lt;p&gt;&lt;em&gt;This property is where the $+$ $-$ notation comes from.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;When constructing things like Taylor Series’, this is a useful property to have. Terms that alternate from negative to positives can be dealt with by appending a factor of $(-1)^{S_n}$ to the series.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
-&lt;h4 id=&quot;the-fibonacci-sequence&quot;&gt;The Fibonacci Sequence&lt;/h4&gt;
+&lt;h3 id=&quot;base-case-parity-sequences&quot;&gt;Base Case Parity Sequences&lt;/h3&gt;
+&lt;p&gt;The two most simple parity sequences are simply the natural numbers:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+S_n=n&amp;=\{0,1,2,3,4,5,6,7,\cdots\}\\
+&amp;\rightarrow\{+,-,+,-,+,-,+,-,\cdots\}\\
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;and the even numbers:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+S_n=2n&amp;=\{0,2,4,6,8,10,12,14,\cdots\}\\
+&amp;\rightarrow\{+,+,+,+,+,+,+,+,\cdots\}\\
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;These two sequences can be parity swapped (explained below) to form the parity sequences ${-,+,-,+,-,+,\cdots}$ and ${-,-,-,-,-,-,\cdots}$ respectively.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-fibonacci-sequence&quot;&gt;The Fibonacci Sequence&lt;/h3&gt;
 &lt;p&gt;The Fibonacci sequence can be considered a parity sequence with the pattern:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
@@ -745,12 +916,29 @@ F_n=F_{n-2}+F_{n-1}&amp;=\{0,1,1,2,3,5,8,13,\cdots\}\\
   &lt;/p&gt;
 &lt;/details&gt;
 
-&lt;h2 id=&quot;use&quot;&gt;Use&lt;/h2&gt;
-&lt;p&gt;Notice that when we raise $-1$ to the power of one of these sequences, it will evaluate to $+1$ for even values and $-1$ for odd values.&lt;/p&gt;
+&lt;h3 id=&quot;other-examples&quot;&gt;Other Examples&lt;/h3&gt;
+&lt;p&gt;All examples start indexing at 0 (the most rational way to index lists).&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;This property is where the $+$ $-$ notation comes from.&lt;/em&gt;&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{alignat*}{2}
+  S_n=\frac{n(n-1)}{2}&amp; &amp;&amp;= \{0,0,1,3,6,10,15,21,\cdots\} &amp;&amp; \\
+  &amp; &amp;&amp;\rightarrow\{+,+,-,-,+,+,-,-,\cdots\} &amp;&amp; \\
+  S_n=\frac{n^2(n-1)}{2}&amp; &amp;&amp;= \{0,0,2,9,24,50,90,630,\cdots\} &amp;&amp;\\
+  &amp; &amp;&amp;\rightarrow\{+,+,+,-,+,+,+,-,\cdots\}&amp;&amp;\\
+  S_n=\cos \frac{n\pi}{2}&amp; &amp;&amp;= \{1,0,-1,0,1,0,-1,0,\cdots\} &amp;&amp;\\
+  &amp; &amp;&amp;\rightarrow\{-,+,-,+,-,+,-,+,\cdots\}&amp;&amp;
+\end{alignat*} %]]&gt;&lt;/script&gt;
 
-&lt;p&gt;When constructing things like Taylor Series’, this is a useful property to have. Terms that alternate from negative to positives can be dealt with by appending a factor of $(-1)^{S_n}$ to the series.&lt;/p&gt;
+&lt;h2 id=&quot;parity-swap&quot;&gt;Parity Swap&lt;/h2&gt;
+&lt;p&gt;A useful property to take note of when constructing these sequences is that adding $1$ to the sequence flips the parity of each element in the sequence:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+S_n=\frac{n(n-1)}{2}&amp;=\{0,0,1,3,6,10,\cdots\}\\
+&amp;\rightarrow\{+,+,-,-,+,+,\cdots\}\\
+S'_ n=\frac{n(n-1)}{2}+1&amp;=\{1,1,2,4,7,11,\cdots\}\\
+&amp;\rightarrow\{-,-,+,+,-,-,\cdots\}
+\end{align} %]]&gt;&lt;/script&gt;
 
 &lt;h2 id=&quot;equivalence&quot;&gt;Equivalence&lt;/h2&gt;
 &lt;p&gt;When the corresponding elements of two sequences have the same parity, we can call those two sequences &lt;strong&gt;parity equivalent&lt;/strong&gt;.&lt;/p&gt;
@@ -760,17 +948,6 @@ F_n=F_{n-2}+F_{n-1}&amp;=\{0,1,1,2,3,5,8,13,\cdots\}\\
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\forall n\in\mathbb{N},\text{ }(-1)^{A_n}=(-1)^{B_n}&lt;/script&gt;
 
 &lt;p&gt;i.e for all Natural Numbers $n$, if $-1$ to the $A_n$ equals $-1$ to the $B_n$, then the sequences $A$ and $B$ are parity equivalent.&lt;/p&gt;
-
-&lt;h2 id=&quot;parity-swap&quot;&gt;Parity Swap&lt;/h2&gt;
-&lt;p&gt;A useful property to take note of when constructing these sequences is that adding $1$ to the sequence flips the parity of each element in the sequence:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align}
-S_n=\frac{n(n-1)}{2}&amp;=\{0,0,1,3,6,10,\cdots\}\\
-&amp;\rightarrow\{+,+,-,-,+,+,\cdots\}\\
-S'_n=\frac{n(n-1)}{2}+1&amp;=\{1,1,2,4,7,11,\cdots\}\\
-&amp;\rightarrow\{-,-,+,+,-,-,\cdots\}
-\end{align} %]]&gt;&lt;/script&gt;
 </content>
  </entry>
  
