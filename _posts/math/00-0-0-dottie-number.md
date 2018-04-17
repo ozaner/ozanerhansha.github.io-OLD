@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Dottie Number
-date: 2018-04-15
+date: 2018-04-16
 tags: math
 ---
 The Dottie number, which I will denote as $\textbf{d}$, is the only real solution to the following equation:
@@ -103,7 +103,7 @@ We can write this more succinctly (and as Kaplan originally proved) as so:
 
 $$\textbf{d} = \sum_{n=0}^{\infty}a_n\pi^{2n+1}$$
 
-Where $a_n$ is the sequence of rational numbers defined above.
+Where $a_n$ is a sequence of rational numbers found by solving the above equation.
 
 <!-- Proof of Kaplan's Series -->
 <details>
@@ -207,8 +207,8 @@ Where $a_n$ is the sequence of rational numbers defined above.
 
     Now we just have to solve for each of the terms in this sequence.
 
-    <details><summary>
-      The zeroth term is equal to:</summary>
+    <details>
+      <summary>The zeroth term is equal to:</summary>
       $$g\left(\frac{\pi}{2}\right)\frac{\left(-\pi\right)^0}{2^00!}=\frac{\pi}{2}$$
     </details>
 
@@ -226,7 +226,7 @@ Where $a_n$ is the sequence of rational numbers defined above.
     </details>
 
     <details>
-      <summary>The second term equals</summary>
+      <summary>The second term equals:</summary>
 
       $$g''\left(\frac{\pi}{2}\right)\frac{\left(-\pi\right)^2}{2^22!}=0$$
 
@@ -242,7 +242,7 @@ Where $a_n$ is the sequence of rational numbers defined above.
 
     Putting these terms together we find the following sequence:
 
-    $$\textbf{d} = \frac{\pi}{2} - \frac{\pi}{4} - \frac{\pi^3}{768} - \frac{\pi^5}{61440} - \cdots$$
+    $$\textbf{d} = \frac{\pi}{2} - \frac{\pi}{4} + 0 - \frac{\pi^3}{768} + 0 - \frac{\pi^5}{61440} - \cdots$$
 
     One thing to note here are that all the even derivatives of $g(\frac{\pi}{2})$ are always $0$ meaning we can ignore all the even terms of the sequence.
     <p></p>

@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-04-16T20:15:41-04:00</updated>
+ <updated>2018-04-16T22:05:46-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -15,7 +15,7 @@
  <entry>
    <title>Dottie Number</title>
    <link href="http://localhost:4000/dottie-number/"/>
-   <updated>2018-04-15T00:00:00-04:00</updated>
+   <updated>2018-04-16T00:00:00-04:00</updated>
    <id>http://localhost:4000/dottie-number</id>
    <content type="html">&lt;p&gt;The Dottie number, which I will denote as $\textbf{d}$, is the only real solution to the following equation:&lt;/p&gt;
 
@@ -116,7 +116,7 @@ $$\therefore\textbf{d}\notin \mathbb{A} \tag{q.e.d}$$
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\textbf{d} = \sum_{n=0}^{\infty}a_n\pi^{2n+1}&lt;/script&gt;
 
-&lt;p&gt;Where $a_n$ is the sequence of rational numbers defined above.&lt;/p&gt;
+&lt;p&gt;Where $a_n$ is a sequence of rational numbers found by solving the above equation.&lt;/p&gt;
 
 &lt;!-- Proof of Kaplan's Series --&gt;
 &lt;details&gt;
@@ -220,8 +220,8 @@ $$\therefore\textbf{d}\notin \mathbb{A} \tag{q.e.d}$$
 
     Now we just have to solve for each of the terms in this sequence.
 
-    &lt;details&gt;&lt;summary&gt;
-      The zeroth term is equal to:&lt;/summary&gt;
+    &lt;details&gt;
+      &lt;summary&gt;The zeroth term is equal to:&lt;/summary&gt;
       $$g\left(\frac{\pi}{2}\right)\frac{\left(-\pi\right)^0}{2^00!}=\frac{\pi}{2}$$
     &lt;/details&gt;
 
@@ -239,7 +239,7 @@ $$\therefore\textbf{d}\notin \mathbb{A} \tag{q.e.d}$$
     &lt;/details&gt;
 
     &lt;details&gt;
-      &lt;summary&gt;The second term equals&lt;/summary&gt;
+      &lt;summary&gt;The second term equals:&lt;/summary&gt;
 
       $$g''\left(\frac{\pi}{2}\right)\frac{\left(-\pi\right)^2}{2^22!}=0$$
 
@@ -255,7 +255,7 @@ $$\therefore\textbf{d}\notin \mathbb{A} \tag{q.e.d}$$
 
     Putting these terms together we find the following sequence:
 
-    $$\textbf{d} = \frac{\pi}{2} - \frac{\pi}{4} - \frac{\pi^3}{768} - \frac{\pi^5}{61440} - \cdots$$
+    $$\textbf{d} = \frac{\pi}{2} - \frac{\pi}{4} + 0 - \frac{\pi^3}{768} + 0 - \frac{\pi^5}{61440} - \cdots$$
 
     One thing to note here are that all the even derivatives of $g(\frac{\pi}{2})$ are always $0$ meaning we can ignore all the even terms of the sequence.
     &lt;p&gt;&lt;/p&gt;
