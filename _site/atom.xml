@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-04-16T22:05:46-04:00</updated>
+ <updated>2018-04-17T23:03:32-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -13,7 +13,7 @@
 
  
  <entry>
-   <title>Dottie Number</title>
+   <title>The Dottie Number</title>
    <link href="http://localhost:4000/dottie-number/"/>
    <updated>2018-04-16T00:00:00-04:00</updated>
    <id>http://localhost:4000/dottie-number</id>
@@ -27,7 +27,7 @@
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\textbf{d}=0.7390851332151606...&lt;/script&gt;
 
-&lt;p&gt;&lt;em&gt;The Dottie number is sequence &lt;a href=&quot;http://oeis.org/A003957&quot;&gt;A003957&lt;/a&gt; in the OEIS.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;The Dottie number is sequence &lt;a href=&quot;https://oeis.org/A003957&quot;&gt;A003957&lt;/a&gt; in the OEIS.&lt;/em&gt;&lt;/p&gt;
 
 &lt;!--more--&gt;
 

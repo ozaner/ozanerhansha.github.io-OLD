@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Dottie Number
+title: The Dottie Number
 date: 2018-04-16
 tags: math
 ---
@@ -14,7 +14,7 @@ The above is what's known as a transcendental equation. Equations like these usu
 
 $$\textbf{d}=0.7390851332151606...$$
 
-*The Dottie number is sequence [A003957](http://oeis.org/A003957) in the OEIS.*
+*The Dottie number is sequence [A003957](https://oeis.org/A003957) in the OEIS.*
 
 <!--more-->
 
