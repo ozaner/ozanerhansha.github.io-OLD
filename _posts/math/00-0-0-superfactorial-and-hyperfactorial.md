@@ -59,7 +59,7 @@ $$n{$}\cdot H(n)=n!^{n+1}$$
 <details>
 <summary><h4 class="inline">Proof</h4></summary>
 
-We can prove the above statement, which we'll call $P(n)$, by induction. First we must show that if $P(n)$ then $P(n+1)$:
+We can prove the above statement, which we'll call $P(n)$, by induction:
 
 $$P(n)\equiv n{$}\cdot H(n)=n!^{n+1}$$
 
@@ -76,7 +76,7 @@ $$(n+1){$}\cdot H(n+1)$$
 Now let's deal with right hand side. Notice that the expression can be rewritten as:
 
 $$\begin{align}
-n!^{n+1} (n+1)!(n+1)^{n+1}&=n!^{n+1} n!(n+1)(n+1)^{n+1}\\
+n!^{n+1} \color{green}{(n+1)!}(n+1)^{n+1}&=n!^{n+1}\color{green}{n!(n+1)}(n+1)^{n+1}\\
 &=n!^{n+2}(n+1)^{n+2}\\
 &=(n+1)!^{n+2}\\
 \end{align}$$
@@ -104,7 +104,3 @@ $$\begin{align}
 &P(1)\\
 \therefore\ &\hline{\forall n\in \mathbb{N},\ P(n)}\\
 \end{align}$$
-
-And remember, we defined $P(n)$ as the factorial identity:
-
-$$P(n)\equiv n{$}\cdot H(n)=n!^{n+1}$$
