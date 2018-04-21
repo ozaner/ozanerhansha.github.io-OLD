@@ -69,7 +69,7 @@ Let us assume that $\textbf{d}$ is algebraic. If this is the case then:
 
 $$\left(\textbf{d}+i\sqrt{1-\textbf{d}^2}\right) \in \mathbb{A}$$
 
-This is because it consists solely of algebraic numbers and operations $\left(\textbf{d},i,1,+,-,x^2,\sqrt{x}\right)$ and thus is a root of a polynomial with integer coefficients (i.e algebraic).
+This is because it consists solely of algebraic numbers $\left(\textbf{d},i,1\right)$ and basic algebraic operations $\left(+,-,x^2,\sqrt{x}\right)$ and thus must be root of a polynomial with rational coefficients (i.e algebraic).
 
 However, also assuming $\textbf{d}$ is algebraic:
 

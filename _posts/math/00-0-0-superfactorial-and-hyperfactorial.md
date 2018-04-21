@@ -5,7 +5,7 @@ date: 2018-04-18
 tags: math
 ---
 ### Factorial
-The factorial function $n!$ is the product of the first $n$ positive integers. We can denote this as such:
+The factorial function $n!$ is the product of the first $n$ positive integers. We can define it as:
 
 $$n!=\prod_{k=1}^{n}k=1\times2\times3\times\cdots\times n$$
 
@@ -24,7 +24,7 @@ While there is much to discuss about the factorial function, this post concerns 
 <!--more-->
 
 ### Superfactorial
-We denote the superfactorial of $n$ as $n{$}$. It is defined as the product of the first $n$ factorials. We can denote this as such:
+We denote the superfactorial of $n$ as $n{$}$. It is defined as the product of the first $n$ factorials. We can define it as:
 
 $$n$=\prod_{k=1}^{n}k!=1!\times2!\times3!\times\cdots\times n!$$
 
@@ -39,7 +39,7 @@ $$$:\mathbb{N}\rightarrow\mathbb{N}$$
 *Like factorial, the superfactorial function can be generalized to the complex numbers, resulting in $G(z)$ the [Barnes G-function](https://en.wikipedia.org/wiki/Barnes_G-function).*
 
 ### Hyperfactorial
-The hyperfactorial of $n$ is denoted $H(n)$ and is defined as so:
+The hyperfactorial of $n$ is denoted $H(n)$ and is defined as:
 
 $$H(n)=\prod_{k=1}^{n}k^k=1^1\times2^2\times3^3\times\cdots\times n^n$$
 
@@ -49,61 +49,62 @@ Again, we can consider this function to be a map from the naturals onto itself:
 
 $$H:\mathbb{N}\rightarrow\mathbb{N}$$
 
-*The hyperfactorial too can be generalized to the complex numbers. The resulting function is known as $K(z)$ the [K-function](https://en.wikipedia.org/wiki/K-function)*
+*The hyperfactorial too can be generalized to the complex numbers. The resulting function is known as $K(z)$ the [K-function](https://en.wikipedia.org/wiki/K-function).*
 
 ### Factorial Identity
 It is possible to relate all three of these factorial variants (factorial, superfactorial and hyperfactorial):
 
-$$n{$}\cdot H(n)=(n!)^{n+1}$$
+$$n{$}\cdot H(n)=n!^{n+1}$$
 
 <details>
 <summary><h4 class="inline">Proof</h4></summary>
 
 We can prove the above statement, which we'll call $P(n)$, by induction. First we must show that if $P(n)$ then $P(n+1)$:
 
-$$P(n)\equiv n{$}\cdot H(n)=(n!)^{n+1}$$
+$$P(n)\equiv n{$}\cdot H(n)=n!^{n+1}$$
 
 First we multiply both sides of the equation by $(n+1)!(n+1)^{n+1}$:
 
-$$(n+1)!(n+1)^{n+1}n{$}\cdot H(n)=(n!)^{n+1} (n+1)!(n+1)^{n+1}$$
-
-Next we notice that $n{\$}(n+1)!=(n+1){\$}$:
-
-$$(n+1){$}\cdot H(n)(n+1)^{n+1}=(n!)^{n+1} (n+1)!(n+1)^{n+1}$$
-
-Now we notice that $H(n)(n+1)^{n+1}=H(n+1)$:
-
-$$(n+1){$}\cdot H(n+1)=(n!)^{n+1} (n+1)!(n+1)^{n+1}$$
-
-We're done with the right hand side, now let's deal with the $(n!)^{n+1} (n+1)!$ factors on the right hand side:
-
-$$\begin{align}
-(n!)^{n+1} (n+1)!&=(n!)^{n+1} (n)!(n+1)\\
-&=(n!)^{n+2}(n+1)\\
+$$\begin{align}n{$}\cdot H(n)&=n!^{n+1}\\
+(n+1)!(n+1)^{n+1}& \ \ \ \ \ (n+1)!(n+1)^{n+1}
 \end{align}$$
 
-Plugging this back into the original equation we can see:
+Now let's simplify the left hand side first. Notice that $n{\$}\cdot(n+1)!=(n+1){\$}$ and that $H(n)\cdot(n+1)^{n+1}=H(n+1)$. From this the left hand side simply becomes:
+
+$$(n+1){$}\cdot H(n+1)$$
+
+Now let's deal with right hand side. Notice that the expression can be rewritten as:
 
 $$\begin{align}
-(n+1){$}\cdot H(n+1)&=(n!)^{n+2}(n+1)(n+1)^{n+1}\\
-&=(n!)^{n+2}(n+1)^{n+2}\\
-&=(n+1)!^{n+2}
+n!^{n+1} (n+1)!(n+1)^{n+1}&=n!^{n+1} n!(n+1)(n+1)^{n+1}\\
+&=n!^{n+2}(n+1)^{n+2}\\
+&=(n+1)!^{n+2}\\
 \end{align}$$
+
+Putting the right and left hand sides back together we can see that we just proved $P(n+1)$:
 
 $$P(n+1)\equiv(n+1){$}\cdot H(n+1)=(n+1)!^{n+2}$$
 
-We just proved that if $P(n)$ being true means $P(n+1)$ is also true:
+However $P(n+1)$ was proved under the assumption that $P(n)$ was true. Thus:
 
 $$P(n)\implies P(n+1)$$
 
-Now, because $P(1)$ is true:
+But, notice that $P(1)$ is true:
 
 $$\begin{align}
 P(1)&\equiv 1{$}\cdot H(1)=(1!)^{1+1}\\
-&\equiv1=1\\
+&\equiv1\cdot1=1\\
 &\equiv T
 \end{align}$$
 
-This means that $P(1+1)=P(2)$ is true, which means $P(3)$ is true and so on. Thus by induction:
+Because $P(1)$ is true, this means that $P(1+1)=P(2)$ is true. This implies that $P(2+1)=P(3)$ is true and so on and so forth for all integers above $1$. Thus by induction:
 
-$$n{$}\cdot H(n)=(n!)^{n+1}$$
+$$\begin{align}
+&P(n)\implies P(n+1)\\
+&P(1)\\
+\therefore\ &\hline{\forall n\in \mathbb{N},\ P(n)}\\
+\end{align}$$
+
+And remember, we defined $P(n)$ as the factorial identity:
+
+$$P(n)\equiv n{$}\cdot H(n)=n!^{n+1}$$

@@ -4,13 +4,126 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-04-17T23:03:32-04:00</updated>
+ <updated>2018-04-20T22:13:00-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Superfactorial and Hyperfactorial</title>
+   <link href="http://localhost:4000/superfactorial-and-hyperfactorial/"/>
+   <updated>2018-04-18T00:00:00-04:00</updated>
+   <id>http://localhost:4000/superfactorial-and-hyperfactorial</id>
+   <content type="html">&lt;h3 id=&quot;factorial&quot;&gt;Factorial&lt;/h3&gt;
+&lt;p&gt;The factorial function $n!$ is the product of the first $n$ positive integers. We can define it as:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;n!=\prod_{k=1}^{n}k=1\times2\times3\times\cdots\times n&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;The factorials are sequence &lt;a href=&quot;https://oeis.org/A000142&quot;&gt;A000142&lt;/a&gt; in the OEIS.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;It’s important to note that $0!$ is defined as $1$ because it is an &lt;a href=&quot;https://en.wikipedia.org/wiki/Empty_product&quot;&gt;empty product&lt;/a&gt;. This is not an arbitrary definition and in fact simplifies many formulas involving factorials.&lt;/p&gt;
+
+&lt;p&gt;The function is a mapping from the natural numbers to itself:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;!:\mathbb{N}\rightarrow\mathbb{N}&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;Using &lt;a href=&quot;https://en.wikipedia.org/wiki/Analytic_continuation&quot;&gt;analytic continuation&lt;/a&gt; the factorial function can be generalized to complex numbers. The resulting function is dubbed the $\Gamma(z)$ &lt;a href=&quot;https://en.wikipedia.org/wiki/Gamma_function&quot;&gt;gamma function&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;While there is much to discuss about the factorial function, this post concerns itself with two particular extensions of the factorial. Namely the superfactorial and the hyperfactorial.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h3 id=&quot;superfactorial&quot;&gt;Superfactorial&lt;/h3&gt;
+&lt;p&gt;We denote the superfactorial of $n$ as $n{$}$. It is defined as the product of the first $n$ factorials. We can define it as:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;n$=\prod_{k=1}^{n}k!=1!\times2!\times3!\times\cdots\times n!&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;The superfactorials are sequence &lt;a href=&quot;https://oeis.org/A000178&quot;&gt;A000178&lt;/a&gt; in the OEIS.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;The above definition of the superfactorial was created by Neil J.A. Sloane and Simon Plouffe (co-authors of the OEIS). Another definition of superfactorials exists: $n{$}=n!\uparrow\uparrow n!$ where the double arrows denote &lt;a href=&quot;https://en.wikipedia.org/wiki/Tetration&quot;&gt;tetration&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;And, like the factorial function, it is a map from the naturals onto itself:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;$:\mathbb{N}\rightarrow\mathbb{N}&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;Like factorial, the superfactorial function can be generalized to the complex numbers, resulting in $G(z)$ the &lt;a href=&quot;https://en.wikipedia.org/wiki/Barnes_G-function&quot;&gt;Barnes G-function&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;hyperfactorial&quot;&gt;Hyperfactorial&lt;/h3&gt;
+&lt;p&gt;The hyperfactorial of $n$ is denoted $H(n)$ and is defined as:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;H(n)=\prod_{k=1}^{n}k^k=1^1\times2^2\times3^3\times\cdots\times n^n&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;The hyperfactorials are sequence &lt;a href=&quot;https://oeis.org/A002109&quot;&gt;A002109&lt;/a&gt; in the OEIS.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Again, we can consider this function to be a map from the naturals onto itself:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;H:\mathbb{N}\rightarrow\mathbb{N}&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;The hyperfactorial too can be generalized to the complex numbers. The resulting function is known as $K(z)$ the &lt;a href=&quot;https://en.wikipedia.org/wiki/K-function&quot;&gt;K-function&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;factorial-identity&quot;&gt;Factorial Identity&lt;/h3&gt;
+&lt;p&gt;It is possible to relate all three of these factorial variants (factorial, superfactorial and hyperfactorial):&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;n{$}\cdot H(n)=n!^{n+1}&lt;/script&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Proof&lt;/h4&gt;&lt;/summary&gt;
+
+We can prove the above statement, which we'll call $P(n)$, by induction. First we must show that if $P(n)$ then $P(n+1)$:
+
+$$P(n)\equiv n{$}\cdot H(n)=n!^{n+1}$$
+
+First we multiply both sides of the equation by $(n+1)!(n+1)^{n+1}$:
+
+$$\begin{align}n{$}\cdot H(n)&amp;amp;=n!^{n+1}\\
+(n+1)!(n+1)^{n+1}&amp;amp; \ \ \ \ \ (n+1)!(n+1)^{n+1}
+\end{align}$$
+
+Now let's simplify the left hand side first. Notice that $n{\$}\cdot(n+1)!=(n+1){\$}$ and that $H(n)\cdot(n+1)^{n+1}=H(n+1)$. From this the left hand side simply becomes:
+
+$$(n+1){$}\cdot H(n+1)$$
+
+Now let's deal with right hand side. Notice that the expression can be rewritten as:
+
+$$\begin{align}
+n!^{n+1} (n+1)!(n+1)^{n+1}&amp;amp;=n!^{n+1} n!(n+1)(n+1)^{n+1}\\
+&amp;amp;=n!^{n+2}(n+1)^{n+2}\\
+&amp;amp;=(n+1)!^{n+2}\\
+\end{align}$$
+
+Putting the right and left hand sides back together we can see that we just proved $P(n+1)$:
+
+$$P(n+1)\equiv(n+1){$}\cdot H(n+1)=(n+1)!^{n+2}$$
+
+However $P(n+1)$ was proved under the assumption that $P(n)$ was true. Thus:
+
+$$P(n)\implies P(n+1)$$
+
+But, notice that $P(1)$ is true:
+
+$$\begin{align}
+P(1)&amp;amp;\equiv 1{$}\cdot H(1)=(1!)^{1+1}\\
+&amp;amp;\equiv1\cdot1=1\\
+&amp;amp;\equiv T
+\end{align}$$
+
+Because $P(1)$ is true, this means that $P(1+1)=P(2)$ is true. This implies that $P(2+1)=P(3)$ is true and so on and so forth for all integers above $1$. Thus by induction:
+
+$$\begin{align}
+&amp;amp;P(n)\implies P(n+1)\\
+&amp;amp;P(1)\\
+\therefore\ &amp;amp;\hline{\forall n\in \mathbb{N},\ P(n)}\\
+\end{align}$$
+
+And remember, we defined $P(n)$ as the factorial identity:
+
+$$P(n)\equiv n{$}\cdot H(n)=n!^{n+1}$$
+&lt;/details&gt;
+</content>
+ </entry>
  
  <entry>
    <title>The Dottie Number</title>
@@ -82,7 +195,7 @@ Let us assume that $\textbf{d}$ is algebraic. If this is the case then:
 
 $$\left(\textbf{d}+i\sqrt{1-\textbf{d}^2}\right) \in \mathbb{A}$$
 
-This is because it consists solely of algebraic numbers and operations $\left(\textbf{d},i,1,+,-,x^2,\sqrt{x}\right)$ and thus is a root of a polynomial with integer coefficients (i.e algebraic).
+This is because it consists solely of algebraic numbers $\left(\textbf{d},i,1\right)$ and basic algebraic operations $\left(+,-,x^2,\sqrt{x}\right)$ and thus must be root of a polynomial with rational coefficients (i.e algebraic).
 
 However, also assuming $\textbf{d}$ is algebraic:
 
@@ -1063,11 +1176,11 @@ $$\begin{align}
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\psi:\mathbb{R^4}\rightarrow \mathbb{C}&lt;/script&gt;
 
-&lt;p&gt;The probability of observing a particle, in the one dimensional case, at position $x$ at time $t$ is given by $\left \vert \psi \right \vert^2$. This implies that for a given time $t$:&lt;/p&gt;
+&lt;p&gt;The probability of observing a particle at position $x$ at time $t$ is given by $\left \vert \psi \right \vert^2$. This implies that, in the one dimensional case, for a given time $t$:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\int_{-\infty}^{\infty}\left | \psi(x) \right |^2 dx=1&lt;/script&gt;
 
-&lt;p&gt;Because the particle has to be somewhere in space, the probabilities must sum to 1. We integrate from $-\infty$ to $\infty$ since the particle is a wave spread out over all of space. With some vector calculus, this can extended to the 3D case we see in the real world.&lt;/p&gt;
+&lt;p&gt;Because the particle has to be somewhere in space, the probabilities must sum to 1. We integrate from $-\infty$ to $\infty$ since the particle is a wave spread out over all of space. This means that the particle could possibly be anywhere in the universe, just with an unfathomably low probability. With some vector calculus, this can extended to the 3D case we see in the real world.&lt;/p&gt;
 </content>
  </entry>
  

@@ -42,8 +42,8 @@ In quantum mechanics, the state of a particle is given, and completely described
 
 $$\psi:\mathbb{R^4}\rightarrow \mathbb{C}$$
 
-The probability of observing a particle, in the one dimensional case, at position $x$ at time $t$ is given by $\left \vert \psi \right \vert^2$. This implies that for a given time $t$:
+The probability of observing a particle at position $x$ at time $t$ is given by $\left \vert \psi \right \vert^2$. This implies that, in the one dimensional case, for a given time $t$:
 
 $$\int_{-\infty}^{\infty}\left | \psi(x) \right |^2 dx=1$$
 
-Because the particle has to be somewhere in space, the probabilities must sum to 1. We integrate from $-\infty$ to $\infty$ since the particle is a wave spread out over all of space. With some vector calculus, this can extended to the 3D case we see in the real world.
+Because the particle has to be somewhere in space, the probabilities must sum to 1. We integrate from $-\infty$ to $\infty$ since the particle is a wave spread out over all of space. This means that the particle could possibly be anywhere in the universe, just with an unfathomably low probability. With some vector calculus, this can extended to the 3D case we see in the real world.
