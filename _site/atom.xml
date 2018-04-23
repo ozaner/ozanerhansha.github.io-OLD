@@ -4,13 +4,232 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-04-20T22:13:00-04:00</updated>
+ <updated>2018-04-23T18:17:45-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>n-Tuples</title>
+   <link href="http://localhost:4000/n-tuples/"/>
+   <updated>2018-04-23T00:00:00-04:00</updated>
+   <id>http://localhost:4000/n-tuples</id>
+   <content type="html">&lt;p&gt;An $n$-tuple is an ordered list of $n$ elements. It is dissimilar to a set in that the order of its elements matter, it must be finite, and it can contain multiples of the same element.&lt;/p&gt;
+
+&lt;p&gt;Here are some common names for tuples of different size:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;$n$-tuple&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Name(s)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;$0$&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;null-tuple, $0$-tuple&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;$1$&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;singleton, $1$-tuple&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;$2$&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;ordered pair, $2$-tuple&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;$3$&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;ordered triplet, $3$-tuple&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;$n$&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;$n$-tuple&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;em&gt;My &lt;a href=&quot;https://medium.com/@ozanerhansha/the-ordered-pair-and-set-theory-69aa6e2b8a32&quot;&gt;medium article&lt;/a&gt; on ordered pairs and their uses.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;definition&quot;&gt;Definition&lt;/h3&gt;
+&lt;h4 id=&quot;2-tuples&quot;&gt;$2$-tuples&lt;/h4&gt;
+&lt;p&gt;We define ordered pairs, or $2$-tuples, as &lt;a href=&quot;https://en.wikipedia.org/wiki/Kazimierz_Kuratowski&quot;&gt;Kuratowski&lt;/a&gt; did:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;(x_1,x_2)=\{\{x_1\},\{x_1,x_2\}\}&lt;/script&gt;
+
+&lt;p&gt;The above definition distinguishes $a$ from $b$ in that both sets in the right set contain $a$ but only one contains $b$. This is what gives the pair order.&lt;/p&gt;
+
+&lt;!--more--&gt;
+&lt;h4 id=&quot;n-tuples&quot;&gt;$n$-tuples&lt;/h4&gt;
+&lt;p&gt;Using the $2$-tuple, we can define all $n$-tuples recursively as an ordered pair of an $(n-1)$-tuple and another element. The $3$-tuple, for example, would be:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+(x_1,x_2,x_3)&amp;=((x_1,x_2),x_3)\\
+&amp;=\{\{(x_1,x_2)\},\{(x_1,x_2),x_3\}\}\\
+&amp;=\{\{\{\{x_1\},\{x_1,x_2\}\}\},\{\{\{x_1\},\{x_1,x_2\}\},x_3\}\}\\
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;And in general, an $n$-tuple for $n&amp;gt;2$ is defined as:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;(x_1,x_2,\cdots,x_{n-1},x_n)=((x_1,x_2,\cdots,x_{n-1}),x_n)&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;The above definition lacks a notion of a $0$ and $1$-tuple. I can’t find a use for them that justifies their complication to the definition of $n$-tuple, so I excluded them. But see &lt;a href=&quot;https://en.wikipedia.org/wiki/Tuple#Tuples_as_nested_sets&quot;&gt;this&lt;/a&gt; for a different definition of $n$-tuples that uses the null-tuple as a base case rather than ordered pairs.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Whatever definition is used, all that matters is that the equality of two $n$-tuples be defined as below:&lt;/p&gt;
+
+&lt;h3 id=&quot;equality&quot;&gt;Equality&lt;/h3&gt;
+&lt;p&gt;Two ordered pairs are equivalent if and only if the elements in each of their respective indices are equal:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;X=(x_1,x_2,x_3,\cdots,x_n)\\
+Y=(y_1,y_2,y_3,\cdots,y_n)&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+X=Y&amp;\equiv\forall k\in\mathbb{N}_n^* (x_k=y_k)\\
+&amp;\equiv x_1=y_1 \land x_2=y_2 \land \cdots \land x_n=y_n\\
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;Where $\mathbb{N}_n^* $ is the set of all positive integers from and including $1$ to $n$.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Note that for this definition to work, the two tuples have to be the same size. As such, tuples of different sizes will never be equal.&lt;/p&gt;
+
+&lt;h3 id=&quot;extraction&quot;&gt;Extraction&lt;/h3&gt;
+&lt;h4 id=&quot;first-element&quot;&gt;First Element&lt;/h4&gt;
+&lt;p&gt;To extract the first element $a=\pi_1(P)$ of an ordered pair $P=(a,b)$ we can use the following construction:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;a=\pi_1(P)=\bigcup\bigcap P&lt;/script&gt;
+
+&lt;details&gt;&lt;summary&gt;Proof&lt;/summary&gt;
+  &lt;b&gt;Lemma 1&lt;/b&gt;
+  &lt;p&gt;To make proving the above statement easier, it would help to prove that the arbitrary union of a set of an element $\{x\}$ is that element $x$:
+
+  $$\bigcup \{x\}=x$$
+
+  First let's start with the definition of the arbitrary union of a set $S$:
+
+  $$\bigcup S=\{a\mid \left(\exists b\in S\right)a\in b\}$$
+
+  In in English this means, all elements $a$ that are contained in at least one set $b$ that are contained in $S$. (i.e the union of all the elements in $S$). Plugging $\{x\}$ in for $S$ we see:
+
+  $$\bigcup \{x\}=\{a\mid \left(\exists b\in \{x\}\right)a\in b\}\\$$
+
+  Since there is only one element in ${b}$, namely $x$, there is only one set $b$ could be: $x$. So, we can say the following:
+
+  $$\bigcup \{x\}=\{a\mid a\in x\}\\$$
+
+  And since the set of all elements in $x$ is simply that same set:
+
+  $$\boxed{\bigcup \{x\}=x}$$
+  &lt;/p&gt;
+  &lt;b&gt;The Proof&lt;/b&gt;
+  &lt;p&gt;
+
+  $$\begin{align}
+  \pi_1(P)&amp;amp;=\bigcup\bigcap P\\
+  &amp;amp;=\bigcup\bigcap \{\{a\},\{a,b\}\}\\
+  &amp;amp;=\bigcup \left(\{a\}\cap\{a,b\}\right)\\
+  \end{align}$$
+
+  Of course the only element in common between $\{a\}$ and $\{a,b\}$ is $a$ so:
+
+  $$\pi_1(P)=\bigcup \{a\}$$
+
+  And from Lemma 1, we know this equals:
+
+  $$\pi_1(P)=\bigcup \{a\}=a$$
+
+  And indeed, $a$ is the first element of the ordered pair $P$.
+  &lt;/p&gt;
+&lt;/details&gt;
+
+&lt;h4 id=&quot;second-element&quot;&gt;Second Element&lt;/h4&gt;
+&lt;p&gt;The second element $b=\pi_2(P)$ of an ordered pair $P=(a,b)$ can be found like so:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;b=\pi_2(P)=\bigcup\{x\in\bigcup P\mid\bigcup P\not=\bigcap P\implies x\not\in\bigcap P\}&lt;/script&gt;
+
+&lt;details&gt;&lt;summary&gt;Proof&lt;/summary&gt;
+I'll do it later...
+&lt;/details&gt;
+
+&lt;h4 id=&quot;extracting-elements-of-n-tuples&quot;&gt;Extracting Elements of $n$-Tuples&lt;/h4&gt;
+&lt;p&gt;You may have noticed that the above definitions only apply to $2$-tuples. What about $n$-tuples? Well, as it turns out, we can extract the elements of an $n$-tuple of any size by recursively using the $\pi_1$ and $\pi_2$ functions we defined above.&lt;/p&gt;
+
+&lt;p&gt;The notation we’ll use is as follows: $\pi^n_a(P)$ is the $a$th element of $P$, where $P$ is an $n$-tuple:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;P=\left(x_1,x_2,x_3,\cdots,x_n\right)&lt;/script&gt;
+
+&lt;p&gt;The first element of $P$ can be found like so:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\pi^n_1(P)=\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-1\text{ compositions}}(P)=x_1&lt;/script&gt;
+
+&lt;p&gt;For any element &lt;em&gt;other&lt;/em&gt; than $1$, we can use the following formula:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\pi^n_a(P)=\pi_2\circ\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-a\text{ compositions}}(P)=x_a&lt;/script&gt;
+
+&lt;details&gt;&lt;summary&gt;Proof&lt;/summary&gt;
+Not really a proof, I just wrote down how to find the elements of $2,3,4,5$-tuples and found the pattern:
+
+$$\begin{align}
+  &amp;amp;2\text{-tuple}\left\{
+    \begin{array}{l}
+      \pi^2_1=\pi_1(P)\\
+      \pi^2_2=\pi_2(P)\\
+    \end{array}
+  \right.\\
+  &amp;amp;3\text{-tuple}\left\{
+    \begin{array}{l}
+      \pi^3_1=\pi_1\left(\pi_1\left(P\right)\right)\\
+      \pi^3_2=\pi_2\left(\pi_1\left(P\right)\right)\\
+      \pi^3_3=\pi_2\left(P\right)\\
+    \end{array}
+  \right.\\
+  &amp;amp;4\text{-tuple}\left\{
+    \begin{array}{l}
+      \pi^4_1=\pi_1\left(\pi_1\left(\pi_1\left(P\right)\right)\right)\\
+      \pi^4_2=\pi_2\left(\pi_1\left(\pi_1\left(P\right)\right)\right)\\
+      \pi^4_3=\pi_2\left(\pi_1\left(P\right)\right)\\
+      \pi^4_4=\pi_2\left(P\right)\\
+    \end{array}
+  \right.\\
+  &amp;amp;5\text{-tuple}\left\{
+    \begin{array}{l}
+      \pi^5_1=\pi_1\left(\pi_1\left(\pi_1\left(\pi_1\left(P\right)\right)\right)\right)\\
+      \pi^5_2=\pi_2\left(\pi_1\left(\pi_1\left(\pi_1\left(P\right)\right)\right)\right)\\
+      \pi^5_3=\pi_2\left(\pi_1\left(\pi_1\left(P\right)\right)\right)\\
+      \pi^5_4=\pi_2\left(\pi_1\left(P\right)\right)\\
+      \pi^5_5=\pi_2\left(P\right)\\
+    \end{array}
+  \right.\\
+\end{align}$$
+&lt;/details&gt;
+
+&lt;h3 id=&quot;some-uses&quot;&gt;Some Uses&lt;/h3&gt;
+&lt;h4 id=&quot;functions-and-relations&quot;&gt;Functions and Relations&lt;/h4&gt;
+&lt;p&gt;$n$-tuples are necessary to define relations and thus functions and operations. For example, assuming multiplication has been defined, division can be defined as a collection of $3$-tuples:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\div&amp;\equiv\{(x,y,z)\mid x=y\times z\ \land y\not=0\}\\
+&amp;\equiv\{\cdots,\left(10,2,5\right),\left(4,3,\frac{4}{3}\right),\left(2,1,2\right),\cdots\}
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;And because there is a unique $z$ for every $x$ and $y$ (this is what makes it a function instead of a relation), we can define a function $\div(x,y)=z$. So, for example, $\div(15,3)=5$ or if we use more conventional notation: $15\div 3=5$.&lt;/p&gt;
+
+&lt;h4 id=&quot;coordinates&quot;&gt;Coordinates&lt;/h4&gt;
+&lt;p&gt;They are also used in describing the locations of points in space:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cartesian-coordinate-system.svg/354px-Cartesian-coordinate-system.svg.png?style=centerme&quot; alt=&quot;plane&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is crucial in constructing physical theories of space and spacetime, plotting and making inferences from data, and visualizing functions over numbers.&lt;/p&gt;
+
+&lt;h4 id=&quot;mathematical-structures&quot;&gt;Mathematical Structures&lt;/h4&gt;
+&lt;p&gt;Tuples are often used to encapsulate sets along with some operator or relation into a complete mathematical structure. One example is a graph which is defined as an ordered pair $G=(V,E)$ where $V$ is a set of vertices and $E$ a set of edges connecting those vertices. Another example is a group which is defined as an ordered pair $G=(S,\cdot)$ where $\cdot$ is some binary operation on the elements of $S$. Tuples are also used to encapsulate rings, fields, vector spaces, topological spaces, ordered sets, and so on.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Superfactorial and Hyperfactorial</title>
@@ -72,7 +291,7 @@
 &lt;details&gt;
 &lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Proof&lt;/h4&gt;&lt;/summary&gt;
 
-We can prove the above statement, which we'll call $P(n)$, by induction. First we must show that if $P(n)$ then $P(n+1)$:
+We can prove the above statement, which we'll call $P(n)$, by induction:
 
 $$P(n)\equiv n{$}\cdot H(n)=n!^{n+1}$$
 
@@ -89,7 +308,7 @@ $$(n+1){$}\cdot H(n+1)$$
 Now let's deal with right hand side. Notice that the expression can be rewritten as:
 
 $$\begin{align}
-n!^{n+1} (n+1)!(n+1)^{n+1}&amp;amp;=n!^{n+1} n!(n+1)(n+1)^{n+1}\\
+n!^{n+1} \color{green}{(n+1)!}(n+1)^{n+1}&amp;amp;=n!^{n+1}\color{green}{n!(n+1)}(n+1)^{n+1}\\
 &amp;amp;=n!^{n+2}(n+1)^{n+2}\\
 &amp;amp;=(n+1)!^{n+2}\\
 \end{align}$$
@@ -117,10 +336,6 @@ $$\begin{align}
 &amp;amp;P(1)\\
 \therefore\ &amp;amp;\hline{\forall n\in \mathbb{N},\ P(n)}\\
 \end{align}$$
-
-And remember, we defined $P(n)$ as the factorial identity:
-
-$$P(n)\equiv n{$}\cdot H(n)=n!^{n+1}$$
 &lt;/details&gt;
 </content>
  </entry>
@@ -147,14 +362,14 @@ $$P(n)\equiv n{$}\cdot H(n)=n!^{n+1}$$
 &lt;h3 id=&quot;fixed-point&quot;&gt;Fixed Point&lt;/h3&gt;
 &lt;p&gt;$\textbf{d}$ is what’s called a fixed point of $\cos x$, because the cosine function maps $\textbf{d}$ to itself. As a result, repeatedly taking the cosine of $\textbf{d}$ returns the same result:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\cos \textbf{d} = \textbf{d} \implies \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n\text{ iterations}}\ \textbf{d}=\textbf{d}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\cos \textbf{d} = \textbf{d} \implies \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n\text{ compositions}}\ \textbf{d}=\textbf{d}&lt;/script&gt;
 
 &lt;p&gt;$\textbf{d}$ is the $\cos$ function’s only real fixed point, but there exists infinitely many solutions to $\cos z=z$ for the complex numbers. Those solutions, however, are not attractors.&lt;/p&gt;
 
 &lt;h3 id=&quot;universal-attractor&quot;&gt;Universal Attractor&lt;/h3&gt;
 &lt;p&gt;What’s interesting about $\textbf{d}$ is that it’s not just the real fixed point of $\cos$ but also its &lt;strong&gt;universal fixed point attractor&lt;/strong&gt;. That is to say, if you take the cosine of any real number and repeatedly take the cosine of the result, you will always approach $\textbf{d}$:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\forall x\in\mathbb{R} \left(\lim_{n\to\infty} \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n\text{ iterations}}\ x=\textbf{d}\right)&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\forall x\in\mathbb{R} \left(\lim_{n\to\infty} \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n\text{ compositions}}\ x=\textbf{d}\right)&lt;/script&gt;
 
 &lt;p&gt;In fact, the above is true for a certain range of the complex numbers as well. This range forms the &lt;a href=&quot;https://en.wikipedia.org/wiki/Julia_set&quot;&gt;&lt;em&gt;Julia Set&lt;/em&gt;&lt;/a&gt; of $\cos z$.&lt;/p&gt;
 
@@ -195,15 +410,21 @@ Let us assume that $\textbf{d}$ is algebraic. If this is the case then:
 
 $$\left(\textbf{d}+i\sqrt{1-\textbf{d}^2}\right) \in \mathbb{A}$$
 
-This is because it consists solely of algebraic numbers $\left(\textbf{d},i,1\right)$ and basic algebraic operations $\left(+,-,x^2,\sqrt{x}\right)$ and thus must be root of a polynomial with rational coefficients (i.e algebraic).
+This is because it consists solely of algebraic numbers $\left(\textbf{d},i,1\right)$ and basic algebraic operations $\left(+,-,\times,x^2,\sqrt{x}\right)$ and thus must be root of a polynomial with rational coefficients (i.e algebraic).&lt;p&gt;&lt;/p&gt;
 
-However, also assuming $\textbf{d}$ is algebraic:
+However, also assuming $\textbf{d}$ is algebraic, LWT tells us:
 
-$$e^{i\textbf{d}}\notin \mathbb{A} \tag{LWT}$$
+$$e^{i\textbf{d}}\notin \mathbb{A}$$
 
 Since the right side of the boxed equation is algebraic yet LWT guarantees that the left side is transcendental (because $i\textbf{d}$ is algebraic), we are left with a contradiction. Meaning our initial assumption, that $\textbf{d}$ is algebraic, was false. Via &lt;i&gt;reductio ad absurdum&lt;/i&gt; we can conclude:
 
-$$\therefore\textbf{d}\notin \mathbb{A} \tag{q.e.d}$$
+$$\begin{align}
+&amp;amp;e^{i\textbf{d}}=\textbf{d}+i\sqrt{1-\textbf{d}^2} \tag{Euler's formula}\\
+&amp;amp;e^{i\textbf{d}}\notin \mathbb{A} \tag{LWT}\\
+&amp;amp;\left(\textbf{d}+i\sqrt{1-\textbf{d}^2}\right) \in \mathbb{A} \tag{def. of algebraic number}\\
+\therefore\ &amp;amp;\hline{\textbf{d}\notin \mathbb{A}} \tag{q.e.d}\\
+\end{align}$$
+
 &lt;/p&gt;&lt;/details&gt;
 
 &lt;h3 id=&quot;kaplans-series&quot;&gt;Kaplan’s Series&lt;/h3&gt;
@@ -783,9 +1004,11 @@ $\renewcommand{\vec}[1]{\mathbf{#1}}$
 
 &lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/8/85/Free_body.svg?style=centerme&quot; alt=&quot;angle of repose&quot; /&gt;&lt;/p&gt;
 
-&lt;details&gt;&lt;summary&gt;Derivation&lt;/summary&gt;&lt;p&gt;$$\begin{align*}
+&lt;details&gt;&lt;summary&gt;Derivation&lt;/summary&gt;&lt;p&gt;
+
+$$\begin{align*}
 N=mg\cos\theta \tag{force normal to the ramp}\\
-\mu_sN=mg\sin\theta \tag{static friction at the moment of Slipping}\\
+\mu_sN=mg\sin\theta \tag{$F_k$ at the moment of slipping}\\
 \mu_smg\cos\theta=mg\sin\theta\\
 \mu_s=\frac{\sin\theta}{\cos\theta}=\tan\theta
 \end{align*}$$&lt;/p&gt;&lt;/details&gt;
@@ -851,7 +1074,7 @@ N=mg\cos\theta \tag{force normal to the ramp}\\
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;thermodynamics&quot;&gt;Thermodynamics&lt;/h2&gt;
-&lt;p&gt;Thermodynamics is the study of the workings d effects of heat, or &lt;strong&gt;thermal energy&lt;/strong&gt;, in a system. Some main topics inlude:&lt;/p&gt;
+&lt;p&gt;Thermodynamics is the study of the workings d effects of heat, or &lt;strong&gt;thermal energy&lt;/strong&gt;, in a system. Some main topics include:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;The 4 Laws of Thermodynamics&lt;/li&gt;
@@ -1172,7 +1395,7 @@ $$\begin{align}
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;(\Delta s)^2=(c\Delta t)^2-(\Delta x)^2-(\Delta y)^2-(\Delta z)^2&lt;/script&gt;
 
 &lt;h3 id=&quot;quantum-mechanics&quot;&gt;Quantum Mechanics&lt;/h3&gt;
-&lt;p&gt;In quantum mechanics, the state of a particle is given, and completely described, by its &lt;strong&gt;wavefunction&lt;/strong&gt; $\psi(\mathbf{x}, t)$. With $\mathbf{x}$ being a point in 3-space and $t$ being a point in time. $\psi$ returns a complex valued probability amplitude.&lt;/p&gt;
+&lt;p&gt;In quantum mechanics, the state of a particle is given (and completely described) by its &lt;strong&gt;wavefunction&lt;/strong&gt; $\psi(\mathbf{x}, t)$. With $\mathbf{x}$ being a point in 3-space and $t$ being a point in time. $\psi$ returns a complex valued probability amplitude.&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\psi:\mathbb{R^4}\rightarrow \mathbb{C}&lt;/script&gt;
 
@@ -1288,7 +1511,7 @@ Quantum chromodynamics is the QFT of the strong nuclear force. This theory descr
 
 &lt;p&gt;A parity sequence is a sequence of numbers that follow a set pattern of even and odd. Only the parity of the numbers is important, not the actual values themselves. As such, we can represent the parity sequence of a sequence as a set of “$+$” for even and “$-$” for odd numbers.&lt;/p&gt;
 
-&lt;h2 id=&quot;use&quot;&gt;Use&lt;/h2&gt;
+&lt;h3 id=&quot;use&quot;&gt;Use&lt;/h3&gt;
 &lt;p&gt;Notice that when we raise $-1$ to the power of one of these sequences, it will evaluate to $+1$ for even values and $-1$ for odd values.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;This property is where the $+$ $-$ notation comes from.&lt;/em&gt;&lt;/p&gt;
@@ -1297,7 +1520,7 @@ Quantum chromodynamics is the QFT of the strong nuclear force. This theory descr
 
 &lt;!--more--&gt;
 
-&lt;h3 id=&quot;base-case-parity-sequences&quot;&gt;Base Case Parity Sequences&lt;/h3&gt;
+&lt;h4 id=&quot;base-case-parity-sequences&quot;&gt;Base Case Parity Sequences&lt;/h4&gt;
 &lt;p&gt;The two most simple parity sequences are simply the natural numbers:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
@@ -1316,7 +1539,7 @@ S_n=2n&amp;=\{0,2,4,6,8,10,12,14,\cdots\}\\
 
 &lt;p&gt;These two sequences can be parity swapped (explained below) to form the parity sequences ${-,+,-,+,-,+,\cdots}$ and ${-,-,-,-,-,-,\cdots}$ respectively.&lt;/p&gt;
 
-&lt;h3 id=&quot;the-fibonacci-sequence&quot;&gt;The Fibonacci Sequence&lt;/h3&gt;
+&lt;h4 id=&quot;the-fibonacci-sequence&quot;&gt;The Fibonacci Sequence&lt;/h4&gt;
 &lt;p&gt;The Fibonacci sequence can be considered a parity sequence with the pattern:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
@@ -1329,7 +1552,9 @@ F_n=F_{n-2}+F_{n-1}&amp;=\{0,1,1,2,3,5,8,13,\cdots\}\\
 
 &lt;details&gt;
   &lt;summary&gt;Closed Form&lt;/summary&gt;
-  &lt;p&gt;$$\begin{align}
+  &lt;p&gt;
+
+  $$\begin{align}
   F_n=\frac{\phi^n-\psi^n}{\sqrt 5}&amp;amp;=\{0,1,1,2,3,5,8,13,\cdots\}\\
   &amp;amp;\rightarrow\{+,-,-,+,-,-,+,-,\cdots\}\\
   \end{align}$$
@@ -1341,7 +1566,7 @@ F_n=F_{n-2}+F_{n-1}&amp;=\{0,1,1,2,3,5,8,13,\cdots\}\\
   &lt;/p&gt;
 &lt;/details&gt;
 
-&lt;h3 id=&quot;other-examples&quot;&gt;Other Examples&lt;/h3&gt;
+&lt;h4 id=&quot;other-examples&quot;&gt;Other Examples&lt;/h4&gt;
 &lt;p&gt;All examples start indexing at 0 (the most rational way to index lists).&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
@@ -1354,7 +1579,7 @@ F_n=F_{n-2}+F_{n-1}&amp;=\{0,1,1,2,3,5,8,13,\cdots\}\\
   &amp; &amp;&amp;\rightarrow\{-,+,-,+,-,+,-,+,\cdots\}&amp;&amp;
 \end{alignat*} %]]&gt;&lt;/script&gt;
 
-&lt;h2 id=&quot;parity-swap&quot;&gt;Parity Swap&lt;/h2&gt;
+&lt;h3 id=&quot;parity-swap&quot;&gt;Parity Swap&lt;/h3&gt;
 &lt;p&gt;A useful property to take note of when constructing these sequences is that adding $1$ to the sequence flips the parity of each element in the sequence:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
@@ -1365,7 +1590,7 @@ S'_ n=\frac{n(n-1)}{2}+1&amp;=\{1,1,2,4,7,11,\cdots\}\\
 &amp;\rightarrow\{-,-,+,+,-,-,\cdots\}
 \end{align} %]]&gt;&lt;/script&gt;
 
-&lt;h2 id=&quot;equivalence&quot;&gt;Equivalence&lt;/h2&gt;
+&lt;h3 id=&quot;equivalence&quot;&gt;Equivalence&lt;/h3&gt;
 &lt;p&gt;When the corresponding elements of two sequences have the same parity, we can call those two sequences &lt;strong&gt;parity equivalent&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;This can be formally stated as:&lt;/p&gt;
@@ -1373,6 +1598,15 @@ S'_ n=\frac{n(n-1)}{2}+1&amp;=\{1,1,2,4,7,11,\cdots\}\\
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\forall n\in\mathbb{N},\text{ }(-1)^{A_n}=(-1)^{B_n}&lt;/script&gt;
 
 &lt;p&gt;i.e for all Natural Numbers $n$, if $-1$ to the $A_n$ equals $-1$ to the $B_n$, then the sequences $A$ and $B$ are parity equivalent.&lt;/p&gt;
+
+&lt;h3 id=&quot;eveningodding-out&quot;&gt;Evening/Odding Out&lt;/h3&gt;
+&lt;p&gt;When any parity sequence is multiplied by $2$ it becomes parity equivalent to $2n$. This is called evening out:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\forall S_n:2S_n=\{+,+,+,+,+,\cdots\}&lt;/script&gt;
+
+&lt;p&gt;Similarly, when any parity sequence is multiplied by $2$ then increased by $1$, it becomes parity equivalent to $2n+1$. This is called odding out:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\forall S_n:2S_n+1=\{-,-,-,-,-,\cdots\}&lt;/script&gt;
 </content>
  </entry>
  

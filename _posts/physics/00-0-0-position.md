@@ -38,7 +38,7 @@ In special relativity the distance between two positions is not invariant in dif
 $$(\Delta s)^2=(c\Delta t)^2-(\Delta x)^2-(\Delta y)^2-(\Delta z)^2$$
 
 ### Quantum Mechanics
-In quantum mechanics, the state of a particle is given, and completely described, by its **wavefunction** $\psi(\mathbf{x}, t)$. With $\mathbf{x}$ being a point in 3-space and $t$ being a point in time. $\psi$ returns a complex valued probability amplitude.
+In quantum mechanics, the state of a particle is given (and completely described) by its **wavefunction** $\psi(\mathbf{x}, t)$. With $\mathbf{x}$ being a point in 3-space and $t$ being a point in time. $\psi$ returns a complex valued probability amplitude.
 
 $$\psi:\mathbb{R^4}\rightarrow \mathbb{C}$$
 

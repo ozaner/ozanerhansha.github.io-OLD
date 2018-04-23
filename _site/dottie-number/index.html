@@ -31,14 +31,22 @@
 
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
+      positionToHash: true,
+      jax: ["input/TeX", "output/HTML-CSS"],
       tex2jax: {
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-          processEscapes: true
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
       },
-      jax: ["input/TeX","output/HTML-CSS"],
-      displayAlign: "left !important",
-      displayIndent: "0em"
+      messageStyle: "none",
+      "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        styles: {".MathJax": {color: "#CCCCCC"}}
+      },
+      displayAlign: "center!important",
+      // displayIndent: "0em"
     });
     MathJax.Hub.Queue(function() {
       // Fix <code> tags after MathJax finishes running. This is a
@@ -241,14 +249,14 @@
 <h3 id="fixed-point">Fixed Point</h3>
 <p>$\textbf{d}$ is what’s called a fixed point of $\cos x$, because the cosine function maps $\textbf{d}$ to itself. As a result, repeatedly taking the cosine of $\textbf{d}$ returns the same result:</p>
 
-<script type="math/tex; mode=display">\cos \textbf{d} = \textbf{d} \implies \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n\text{ iterations}}\ \textbf{d}=\textbf{d}</script>
+<script type="math/tex; mode=display">\cos \textbf{d} = \textbf{d} \implies \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n\text{ compositions}}\ \textbf{d}=\textbf{d}</script>
 
 <p>$\textbf{d}$ is the $\cos$ function’s only real fixed point, but there exists infinitely many solutions to $\cos z=z$ for the complex numbers. Those solutions, however, are not attractors.</p>
 
 <h3 id="universal-attractor">Universal Attractor</h3>
 <p>What’s interesting about $\textbf{d}$ is that it’s not just the real fixed point of $\cos$ but also its <strong>universal fixed point attractor</strong>. That is to say, if you take the cosine of any real number and repeatedly take the cosine of the result, you will always approach $\textbf{d}$:</p>
 
-<script type="math/tex; mode=display">\forall x\in\mathbb{R} \left(\lim_{n\to\infty} \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n\text{ iterations}}\ x=\textbf{d}\right)</script>
+<script type="math/tex; mode=display">\forall x\in\mathbb{R} \left(\lim_{n\to\infty} \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n\text{ compositions}}\ x=\textbf{d}\right)</script>
 
 <p>In fact, the above is true for a certain range of the complex numbers as well. This range forms the <a href="https://en.wikipedia.org/wiki/Julia_set"><em>Julia Set</em></a> of $\cos z$.</p>
 
@@ -289,15 +297,21 @@ Let us assume that $\textbf{d}$ is algebraic. If this is the case then:
 
 $$\left(\textbf{d}+i\sqrt{1-\textbf{d}^2}\right) \in \mathbb{A}$$
 
-This is because it consists solely of algebraic numbers $\left(\textbf{d},i,1\right)$ and basic algebraic operations $\left(+,-,x^2,\sqrt{x}\right)$ and thus must be root of a polynomial with rational coefficients (i.e algebraic).
+This is because it consists solely of algebraic numbers $\left(\textbf{d},i,1\right)$ and basic algebraic operations $\left(+,-,\times,x^2,\sqrt{x}\right)$ and thus must be root of a polynomial with rational coefficients (i.e algebraic).<p></p>
 
-However, also assuming $\textbf{d}$ is algebraic:
+However, also assuming $\textbf{d}$ is algebraic, LWT tells us:
 
-$$e^{i\textbf{d}}\notin \mathbb{A} \tag{LWT}$$
+$$e^{i\textbf{d}}\notin \mathbb{A}$$
 
 Since the right side of the boxed equation is algebraic yet LWT guarantees that the left side is transcendental (because $i\textbf{d}$ is algebraic), we are left with a contradiction. Meaning our initial assumption, that $\textbf{d}$ is algebraic, was false. Via <i>reductio ad absurdum</i> we can conclude:
 
-$$\therefore\textbf{d}\notin \mathbb{A} \tag{q.e.d}$$
+$$\begin{align}
+&amp;e^{i\textbf{d}}=\textbf{d}+i\sqrt{1-\textbf{d}^2} \tag{Euler's formula}\\
+&amp;e^{i\textbf{d}}\notin \mathbb{A} \tag{LWT}\\
+&amp;\left(\textbf{d}+i\sqrt{1-\textbf{d}^2}\right) \in \mathbb{A} \tag{def. of algebraic number}\\
+\therefore\ &amp;\hline{\textbf{d}\notin \mathbb{A}} \tag{q.e.d}\\
+\end{align}$$
+
 </p></details>
 
 <h3 id="kaplans-series">Kaplan’s Series</h3>
@@ -537,6 +551,15 @@ $$\therefore\textbf{d}\notin \mathbb{A} \tag{q.e.d}$$
     
       <li>
         <h3>
+          <a href="/n-tuples/">
+            n-Tuples
+            <small>23 Apr 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/superfactorial-and-hyperfactorial/">
             Superfactorial and Hyperfactorial
             <small>18 Apr 2018</small>
@@ -549,15 +572,6 @@ $$\therefore\textbf{d}\notin \mathbb{A} \tag{q.e.d}$$
           <a href="/metaphysical-nightmare/">
             On the Grounding of Ideas
             <small>09 Apr 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/drag-force/">
-            Drag Force
-            <small>27 Mar 2018</small>
           </a>
         </h3>
       </li>

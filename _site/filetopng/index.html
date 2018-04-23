@@ -31,14 +31,22 @@
 
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
+      positionToHash: true,
+      jax: ["input/TeX", "output/HTML-CSS"],
       tex2jax: {
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-          processEscapes: true
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
       },
-      jax: ["input/TeX","output/HTML-CSS"],
-      displayAlign: "left !important",
-      displayIndent: "0em"
+      messageStyle: "none",
+      "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        styles: {".MathJax": {color: "#CCCCCC"}}
+      },
+      displayAlign: "center!important",
+      // displayIndent: "0em"
     });
     MathJax.Hub.Queue(function() {
       // Fix <code> tags after MathJax finishes running. This is a
@@ -292,6 +300,15 @@
     
       <li>
         <h3>
+          <a href="/n-tuples/">
+            n-Tuples
+            <small>23 Apr 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/superfactorial-and-hyperfactorial/">
             Superfactorial and Hyperfactorial
             <small>18 Apr 2018</small>
@@ -304,15 +321,6 @@
           <a href="/dottie-number/">
             The Dottie Number
             <small>16 Apr 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/metaphysical-nightmare/">
-            On the Grounding of Ideas
-            <small>09 Apr 2018</small>
           </a>
         </h3>
       </li>

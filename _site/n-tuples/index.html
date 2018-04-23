@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>
+    
+      n-Tuples &middot; Ozaner
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- Load JQuery (JavaScript)-->
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      positionToHash: true,
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      messageStyle: "none",
+      "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        styles: {".MathJax": {color: "#CCCCCC"}}
+      },
+      displayAlign: "center!important",
+      // displayIndent: "0em"
+    });
+    MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  <!-- Adds MathJax -->
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <!-- Adds Awesome Icons-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Collects tags of all posts-->
+  
+    
+
+
+
+
+
+
+  
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111962015-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111962015-1');
+  </script>
+</head>
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          $$\large{\text {Oz}}\tiny{\underbrace{\large {\text {∀n∈ℝ}}}_{\tiny {\text {For all real n...}}}}$$
+        </a>
+      </h1>
+      <p class="lead">A compilation of my notes, projects, and articles.</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="https://medium.com/@ozanerhansha" target="_blank">Articles</a><br/>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/notes/">Notes</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/references/">Interesting References</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <style>
+        p.small {
+            line-height: 0.7;
+        }
+      </style>
+
+      <br>
+
+      <p class="small">
+        <!--- Icon Links -->
+        <b>Links: </b>
+        <a href="https://github.com/ozanerhansha"><i class='fa fa-github'></i></a>
+        <!-- <a href="https://www.quora.com/profile/Ozaner-Hansha/questions"><i class='fa fa-quora'></i></a> -->
+        <a href="https://medium.com/@ozanerhansha"<i class='fa fa-medium'></i></a>
+        <!-- <a href="https://math.stackexchange.com/users/490433/ozaner-hansha?tab=questions"><i class='fa fa-stack-exchange'></i></a> -->
+
+        <br>
+        <font size="2"><a href="https://github.com/ozanerhansha/ozanerhansha.github.io">This Website's Code</a></font>
+      </p>
+    </nav>
+    <p>2018 Ozaner Hansha</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">n-Tuples</h1>
+  <span class="post-date">23 Apr 2018</span>
+  <span>[
+  
+    
+    <a href="/tag/math"><code class="highligher-rouge"><nobr>math</nobr></code>&nbsp;</a>
+  
+]</span>
+  <p>An $n$-tuple is an ordered list of $n$ elements. It is dissimilar to a set in that the order of its elements matter, it must be finite, and it can contain multiples of the same element.</p>
+
+<p>Here are some common names for tuples of different size:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">$n$-tuple</th>
+      <th style="text-align: left">Name(s)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right">$0$</td>
+      <td style="text-align: left">null-tuple, $0$-tuple</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">$1$</td>
+      <td style="text-align: left">singleton, $1$-tuple</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">$2$</td>
+      <td style="text-align: left">ordered pair, $2$-tuple</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">$3$</td>
+      <td style="text-align: left">ordered triplet, $3$-tuple</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">$n$</td>
+      <td style="text-align: left">$n$-tuple</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>My <a href="https://medium.com/@ozanerhansha/the-ordered-pair-and-set-theory-69aa6e2b8a32">medium article</a> on ordered pairs and their uses.</em></p>
+
+<h3 id="definition">Definition</h3>
+<h4 id="2-tuples">$2$-tuples</h4>
+<p>We define ordered pairs, or $2$-tuples, as <a href="https://en.wikipedia.org/wiki/Kazimierz_Kuratowski">Kuratowski</a> did:</p>
+
+<script type="math/tex; mode=display">(x_1,x_2)=\{\{x_1\},\{x_1,x_2\}\}</script>
+
+<p>The above definition distinguishes $a$ from $b$ in that both sets in the right set contain $a$ but only one contains $b$. This is what gives the pair order.</p>
+
+<!--more-->
+<h4 id="n-tuples">$n$-tuples</h4>
+<p>Using the $2$-tuple, we can define all $n$-tuples recursively as an ordered pair of an $(n-1)$-tuple and another element. The $3$-tuple, for example, would be:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+(x_1,x_2,x_3)&=((x_1,x_2),x_3)\\
+&=\{\{(x_1,x_2)\},\{(x_1,x_2),x_3\}\}\\
+&=\{\{\{\{x_1\},\{x_1,x_2\}\}\},\{\{\{x_1\},\{x_1,x_2\}\},x_3\}\}\\
+\end{align} %]]></script>
+
+<p>And in general, an $n$-tuple for $n&gt;2$ is defined as:</p>
+
+<script type="math/tex; mode=display">(x_1,x_2,\cdots,x_{n-1},x_n)=((x_1,x_2,\cdots,x_{n-1}),x_n)</script>
+
+<p><em>The above definition lacks a notion of a $0$ and $1$-tuple. I can’t find a use for them that justifies their complication to the definition of $n$-tuple, so I excluded them. But see <a href="https://en.wikipedia.org/wiki/Tuple#Tuples_as_nested_sets">this</a> for a different definition of $n$-tuples that uses the null-tuple as a base case rather than ordered pairs.</em></p>
+
+<p>Whatever definition is used, all that matters is that the equality of two $n$-tuples be defined as below:</p>
+
+<h3 id="equality">Equality</h3>
+<p>Two ordered pairs are equivalent if and only if the elements in each of their respective indices are equal:</p>
+
+<script type="math/tex; mode=display">X=(x_1,x_2,x_3,\cdots,x_n)\\
+Y=(y_1,y_2,y_3,\cdots,y_n)</script>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+X=Y&\equiv\forall k\in\mathbb{N}_n^* (x_k=y_k)\\
+&\equiv x_1=y_1 \land x_2=y_2 \land \cdots \land x_n=y_n\\
+\end{align} %]]></script>
+
+<p><em>Where $\mathbb{N}_n^* $ is the set of all positive integers from and including $1$ to $n$.</em></p>
+
+<p>Note that for this definition to work, the two tuples have to be the same size. As such, tuples of different sizes will never be equal.</p>
+
+<h3 id="extraction">Extraction</h3>
+<h4 id="first-element">First Element</h4>
+<p>To extract the first element $a=\pi_1(P)$ of an ordered pair $P=(a,b)$ we can use the following construction:</p>
+
+<script type="math/tex; mode=display">a=\pi_1(P)=\bigcup\bigcap P</script>
+
+<details><summary>Proof</summary>
+  <b>Lemma 1</b>
+  <p>To make proving the above statement easier, it would help to prove that the arbitrary union of a set of an element $\{x\}$ is that element $x$:
+
+  $$\bigcup \{x\}=x$$
+
+  First let's start with the definition of the arbitrary union of a set $S$:
+
+  $$\bigcup S=\{a\mid \left(\exists b\in S\right)a\in b\}$$
+
+  In in English this means, all elements $a$ that are contained in at least one set $b$ that are contained in $S$. (i.e the union of all the elements in $S$). Plugging $\{x\}$ in for $S$ we see:
+
+  $$\bigcup \{x\}=\{a\mid \left(\exists b\in \{x\}\right)a\in b\}\\$$
+
+  Since there is only one element in ${b}$, namely $x$, there is only one set $b$ could be: $x$. So, we can say the following:
+
+  $$\bigcup \{x\}=\{a\mid a\in x\}\\$$
+
+  And since the set of all elements in $x$ is simply that same set:
+
+  $$\boxed{\bigcup \{x\}=x}$$
+  </p>
+  <b>The Proof</b>
+  <p>
+
+  $$\begin{align}
+  \pi_1(P)&amp;=\bigcup\bigcap P\\
+  &amp;=\bigcup\bigcap \{\{a\},\{a,b\}\}\\
+  &amp;=\bigcup \left(\{a\}\cap\{a,b\}\right)\\
+  \end{align}$$
+
+  Of course the only element in common between $\{a\}$ and $\{a,b\}$ is $a$ so:
+
+  $$\pi_1(P)=\bigcup \{a\}$$
+
+  And from Lemma 1, we know this equals:
+
+  $$\pi_1(P)=\bigcup \{a\}=a$$
+
+  And indeed, $a$ is the first element of the ordered pair $P$.
+  </p>
+</details>
+
+<h4 id="second-element">Second Element</h4>
+<p>The second element $b=\pi_2(P)$ of an ordered pair $P=(a,b)$ can be found like so:</p>
+
+<script type="math/tex; mode=display">b=\pi_2(P)=\bigcup\{x\in\bigcup P\mid\bigcup P\not=\bigcap P\implies x\not\in\bigcap P\}</script>
+
+<details><summary>Proof</summary>
+I'll do it later...
+</details>
+
+<h4 id="extracting-elements-of-n-tuples">Extracting Elements of $n$-Tuples</h4>
+<p>You may have noticed that the above definitions only apply to $2$-tuples. What about $n$-tuples? Well, as it turns out, we can extract the elements of an $n$-tuple of any size by recursively using the $\pi_1$ and $\pi_2$ functions we defined above.</p>
+
+<p>The notation we’ll use is as follows: $\pi^n_a(P)$ is the $a$th element of $P$, where $P$ is an $n$-tuple:</p>
+
+<script type="math/tex; mode=display">P=\left(x_1,x_2,x_3,\cdots,x_n\right)</script>
+
+<p>The first element of $P$ can be found like so:</p>
+
+<script type="math/tex; mode=display">\pi^n_1(P)=\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-1\text{ compositions}}(P)=x_1</script>
+
+<p>For any element <em>other</em> than $1$, we can use the following formula:</p>
+
+<script type="math/tex; mode=display">\pi^n_a(P)=\pi_2\circ\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-a\text{ compositions}}(P)=x_a</script>
+
+<details><summary>Proof</summary>
+Not really a proof, I just wrote down how to find the elements of $2,3,4,5$-tuples and found the pattern:
+
+$$\begin{align}
+  &amp;2\text{-tuple}\left\{
+    \begin{array}{l}
+      \pi^2_1=\pi_1(P)\\
+      \pi^2_2=\pi_2(P)\\
+    \end{array}
+  \right.\\
+  &amp;3\text{-tuple}\left\{
+    \begin{array}{l}
+      \pi^3_1=\pi_1\left(\pi_1\left(P\right)\right)\\
+      \pi^3_2=\pi_2\left(\pi_1\left(P\right)\right)\\
+      \pi^3_3=\pi_2\left(P\right)\\
+    \end{array}
+  \right.\\
+  &amp;4\text{-tuple}\left\{
+    \begin{array}{l}
+      \pi^4_1=\pi_1\left(\pi_1\left(\pi_1\left(P\right)\right)\right)\\
+      \pi^4_2=\pi_2\left(\pi_1\left(\pi_1\left(P\right)\right)\right)\\
+      \pi^4_3=\pi_2\left(\pi_1\left(P\right)\right)\\
+      \pi^4_4=\pi_2\left(P\right)\\
+    \end{array}
+  \right.\\
+  &amp;5\text{-tuple}\left\{
+    \begin{array}{l}
+      \pi^5_1=\pi_1\left(\pi_1\left(\pi_1\left(\pi_1\left(P\right)\right)\right)\right)\\
+      \pi^5_2=\pi_2\left(\pi_1\left(\pi_1\left(\pi_1\left(P\right)\right)\right)\right)\\
+      \pi^5_3=\pi_2\left(\pi_1\left(\pi_1\left(P\right)\right)\right)\\
+      \pi^5_4=\pi_2\left(\pi_1\left(P\right)\right)\\
+      \pi^5_5=\pi_2\left(P\right)\\
+    \end{array}
+  \right.\\
+\end{align}$$
+</details>
+
+<h3 id="some-uses">Some Uses</h3>
+<h4 id="functions-and-relations">Functions and Relations</h4>
+<p>$n$-tuples are necessary to define relations and thus functions and operations. For example, assuming multiplication has been defined, division can be defined as a collection of $3$-tuples:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\div&\equiv\{(x,y,z)\mid x=y\times z\ \land y\not=0\}\\
+&\equiv\{\cdots,\left(10,2,5\right),\left(4,3,\frac{4}{3}\right),\left(2,1,2\right),\cdots\}
+\end{align} %]]></script>
+
+<p>And because there is a unique $z$ for every $x$ and $y$ (this is what makes it a function instead of a relation), we can define a function $\div(x,y)=z$. So, for example, $\div(15,3)=5$ or if we use more conventional notation: $15\div 3=5$.</p>
+
+<h4 id="coordinates">Coordinates</h4>
+<p>They are also used in describing the locations of points in space:</p>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cartesian-coordinate-system.svg/354px-Cartesian-coordinate-system.svg.png?style=centerme" alt="plane" /></p>
+
+<p>This is crucial in constructing physical theories of space and spacetime, plotting and making inferences from data, and visualizing functions over numbers.</p>
+
+<h4 id="mathematical-structures">Mathematical Structures</h4>
+<p>Tuples are often used to encapsulate sets along with some operator or relation into a complete mathematical structure. One example is a graph which is defined as an ordered pair $G=(V,E)$ where $V$ is a set of vertices and $E$ a set of edges connecting those vertices. Another example is a group which is defined as an ordered pair $G=(S,\cdot)$ where $\cdot$ is some binary operation on the elements of $S$. Tuples are also used to encapsulate rings, fields, vector spaces, topological spaces, ordered sets, and so on.</p>
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/superfactorial-and-hyperfactorial/">
+            Superfactorial and Hyperfactorial
+            <small>18 Apr 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/dottie-number/">
+            The Dottie Number
+            <small>16 Apr 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/metaphysical-nightmare/">
+            On the Grounding of Ideas
+            <small>09 Apr 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+    </div>
+  </body>
+</html>

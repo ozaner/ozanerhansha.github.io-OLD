@@ -31,14 +31,22 @@
 
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
+      positionToHash: true,
+      jax: ["input/TeX", "output/HTML-CSS"],
       tex2jax: {
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-          processEscapes: true
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
       },
-      jax: ["input/TeX","output/HTML-CSS"],
-      displayAlign: "left !important",
-      displayIndent: "0em"
+      messageStyle: "none",
+      "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        styles: {".MathJax": {color: "#CCCCCC"}}
+      },
+      displayAlign: "center!important",
+      // displayIndent: "0em"
     });
     MathJax.Hub.Queue(function() {
       // Fix <code> tags after MathJax finishes running. This is a
@@ -221,9 +229,27 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="/breast-cancer-classification/">Breast Cancer Classification</a>
+    </h1>
+    <span class="post-date">January 15, 2018</span>
+    <h2 id="background">Background</h2>
+<p>I made this model to test how easily I could use external datasets to create and train a neural network with Google’s <a href="https://www.tensorflow.org/"><em>TensorFlow</em></a> library. In this post I’ll attempt to explain the code, its results, and its accuracy. The <a href="https://github.com/ozanerhansha/NeuralNetworks/blob/master/src/test/bcDiagnosis.py">entire program</a> is in my <a href="https://github.com/ozanerhansha/NeuralNetworks">NeuralNetwork</a> repository on GitHub as well as at the end of this post.</p>
+
+<h2 id="the-training-data">The Training Data</h2>
+<p>All the training data comes from the <a href="http://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+%28diagnostic%29">Wisconsin Breast Cancer Data Set</a>, hosted by the University of California’s <a href="http://archive.ics.uci.edu/ml/index.php">Machine Learning Repository</a>.</p>
+
+<p>The training data consists of 569 subjects each with 3 values (mean, worst value, and standard error) for each of 10 categories:</p>
+
+
+    <!--Adds Read more-->
+    <a href="/breast-cancer-classification/">Read more</a>
+    <hr>
+    
+  <div class="post">
+    <h1 class="post-title">
       <a href="/abstract-algebra/">Abstract Algebra and Algebraic Structures</a>
     </h1>
-    <span class="post-date">07 Jan 2018</span>
+    <span class="post-date">January 7, 2018</span>
     <h2 id="history-of-algebra">History of Algebra</h2>
 <p>The earliest forms of Algebra have been around since <a href="https://en.wikipedia.org/wiki/Diophantus">Diophantus</a> (3rd century Greek mathematician), who wrote on how to solve equations using geometry (the Greeks had a thing for geometry).</p>
 
@@ -238,7 +264,7 @@
     <h1 class="post-title">
       <a href="/binary-prefixes/">Binary Prefixes</a>
     </h1>
-    <span class="post-date">05 Jan 2018</span>
+    <span class="post-date">January 5, 2018</span>
     <h2 id="decimal-prefixes">Decimal Prefixes</h2>
 <p>When dealing with very large or very small amounts it is common to
 append one of the SI (metric system) prefixes to whatever unit is being

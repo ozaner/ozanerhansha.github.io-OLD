@@ -31,14 +31,22 @@
 
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
+      positionToHash: true,
+      jax: ["input/TeX", "output/HTML-CSS"],
       tex2jax: {
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-          processEscapes: true
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
       },
-      jax: ["input/TeX","output/HTML-CSS"],
-      displayAlign: "left !important",
-      displayIndent: "0em"
+      messageStyle: "none",
+      "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        styles: {".MathJax": {color: "#CCCCCC"}}
+      },
+      displayAlign: "center!important",
+      // displayIndent: "0em"
     });
     MathJax.Hub.Queue(function() {
       // Fix <code> tags after MathJax finishes running. This is a
@@ -228,7 +236,7 @@
 
 <p>A parity sequence is a sequence of numbers that follow a set pattern of even and odd. Only the parity of the numbers is important, not the actual values themselves. As such, we can represent the parity sequence of a sequence as a set of “$+$” for even and “$-$” for odd numbers.</p>
 
-<h2 id="use">Use</h2>
+<h3 id="use">Use</h3>
 <p>Notice that when we raise $-1$ to the power of one of these sequences, it will evaluate to $+1$ for even values and $-1$ for odd values.</p>
 
 <p><em>This property is where the $+$ $-$ notation comes from.</em></p>
@@ -237,7 +245,7 @@
 
 <!--more-->
 
-<h3 id="base-case-parity-sequences">Base Case Parity Sequences</h3>
+<h4 id="base-case-parity-sequences">Base Case Parity Sequences</h4>
 <p>The two most simple parity sequences are simply the natural numbers:</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
@@ -256,7 +264,7 @@ S_n=2n&=\{0,2,4,6,8,10,12,14,\cdots\}\\
 
 <p>These two sequences can be parity swapped (explained below) to form the parity sequences ${-,+,-,+,-,+,\cdots}$ and ${-,-,-,-,-,-,\cdots}$ respectively.</p>
 
-<h3 id="the-fibonacci-sequence">The Fibonacci Sequence</h3>
+<h4 id="the-fibonacci-sequence">The Fibonacci Sequence</h4>
 <p>The Fibonacci sequence can be considered a parity sequence with the pattern:</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
@@ -269,7 +277,9 @@ F_n=F_{n-2}+F_{n-1}&=\{0,1,1,2,3,5,8,13,\cdots\}\\
 
 <details>
   <summary>Closed Form</summary>
-  <p>$$\begin{align}
+  <p>
+
+  $$\begin{align}
   F_n=\frac{\phi^n-\psi^n}{\sqrt 5}&amp;=\{0,1,1,2,3,5,8,13,\cdots\}\\
   &amp;\rightarrow\{+,-,-,+,-,-,+,-,\cdots\}\\
   \end{align}$$
@@ -281,7 +291,7 @@ F_n=F_{n-2}+F_{n-1}&=\{0,1,1,2,3,5,8,13,\cdots\}\\
   </p>
 </details>
 
-<h3 id="other-examples">Other Examples</h3>
+<h4 id="other-examples">Other Examples</h4>
 <p>All examples start indexing at 0 (the most rational way to index lists).</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
@@ -294,7 +304,7 @@ F_n=F_{n-2}+F_{n-1}&=\{0,1,1,2,3,5,8,13,\cdots\}\\
   & &&\rightarrow\{-,+,-,+,-,+,-,+,\cdots\}&&
 \end{alignat*} %]]></script>
 
-<h2 id="parity-swap">Parity Swap</h2>
+<h3 id="parity-swap">Parity Swap</h3>
 <p>A useful property to take note of when constructing these sequences is that adding $1$ to the sequence flips the parity of each element in the sequence:</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
@@ -305,7 +315,7 @@ S'_ n=\frac{n(n-1)}{2}+1&=\{1,1,2,4,7,11,\cdots\}\\
 &\rightarrow\{-,-,+,+,-,-,\cdots\}
 \end{align} %]]></script>
 
-<h2 id="equivalence">Equivalence</h2>
+<h3 id="equivalence">Equivalence</h3>
 <p>When the corresponding elements of two sequences have the same parity, we can call those two sequences <strong>parity equivalent</strong>.</p>
 
 <p>This can be formally stated as:</p>
@@ -314,11 +324,29 @@ S'_ n=\frac{n(n-1)}{2}+1&=\{1,1,2,4,7,11,\cdots\}\\
 
 <p>i.e for all Natural Numbers $n$, if $-1$ to the $A_n$ equals $-1$ to the $B_n$, then the sequences $A$ and $B$ are parity equivalent.</p>
 
+<h3 id="eveningodding-out">Evening/Odding Out</h3>
+<p>When any parity sequence is multiplied by $2$ it becomes parity equivalent to $2n$. This is called evening out:</p>
+
+<script type="math/tex; mode=display">\forall S_n:2S_n=\{+,+,+,+,+,\cdots\}</script>
+
+<p>Similarly, when any parity sequence is multiplied by $2$ then increased by $1$, it becomes parity equivalent to $2n+1$. This is called odding out:</p>
+
+<script type="math/tex; mode=display">\forall S_n:2S_n+1=\{-,-,-,-,-,\cdots\}</script>
+
 </div>
 
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/n-tuples/">
+            n-Tuples
+            <small>23 Apr 2018</small>
+          </a>
+        </h3>
+      </li>
     
       <li>
         <h3>
@@ -334,15 +362,6 @@ S'_ n=\frac{n(n-1)}{2}+1&=\{1,1,2,4,7,11,\cdots\}\\
           <a href="/dottie-number/">
             The Dottie Number
             <small>16 Apr 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/metaphysical-nightmare/">
-            On the Grounding of Ideas
-            <small>09 Apr 2018</small>
           </a>
         </h3>
       </li>

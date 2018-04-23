@@ -31,14 +31,22 @@
 
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
+      positionToHash: true,
+      jax: ["input/TeX", "output/HTML-CSS"],
       tex2jax: {
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-          processEscapes: true
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
       },
-      jax: ["input/TeX","output/HTML-CSS"],
-      displayAlign: "left !important",
-      displayIndent: "0em"
+      messageStyle: "none",
+      "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        styles: {".MathJax": {color: "#CCCCCC"}}
+      },
+      displayAlign: "center!important",
+      // displayIndent: "0em"
     });
     MathJax.Hub.Queue(function() {
       // Fix <code> tags after MathJax finishes running. This is a
@@ -358,9 +366,11 @@ $\renewcommand{\vec}[1]{\mathbf{#1}}$
 
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Free_body.svg?style=centerme" alt="angle of repose" /></p>
 
-<details><summary>Derivation</summary><p>$$\begin{align*}
+<details><summary>Derivation</summary><p>
+
+$$\begin{align*}
 N=mg\cos\theta \tag{force normal to the ramp}\\
-\mu_sN=mg\sin\theta \tag{static friction at the moment of Slipping}\\
+\mu_sN=mg\sin\theta \tag{$F_k$ at the moment of slipping}\\
 \mu_smg\cos\theta=mg\sin\theta\\
 \mu_s=\frac{\sin\theta}{\cos\theta}=\tan\theta
 \end{align*}$$</p></details>
@@ -372,6 +382,15 @@ N=mg\cos\theta \tag{force normal to the ramp}\\
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/n-tuples/">
+            n-Tuples
+            <small>23 Apr 2018</small>
+          </a>
+        </h3>
+      </li>
     
       <li>
         <h3>
@@ -387,15 +406,6 @@ N=mg\cos\theta \tag{force normal to the ramp}\\
           <a href="/dottie-number/">
             The Dottie Number
             <small>16 Apr 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/metaphysical-nightmare/">
-            On the Grounding of Ideas
-            <small>09 Apr 2018</small>
           </a>
         </h3>
       </li>

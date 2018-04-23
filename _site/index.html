@@ -31,14 +31,22 @@
 
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
+      positionToHash: true,
+      jax: ["input/TeX", "output/HTML-CSS"],
       tex2jax: {
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-          processEscapes: true
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
       },
-      jax: ["input/TeX","output/HTML-CSS"],
-      displayAlign: "left !important",
-      displayIndent: "0em"
+      messageStyle: "none",
+      "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        styles: {".MathJax": {color: "#CCCCCC"}}
+      },
+      displayAlign: "center!important",
+      // displayIndent: "0em"
     });
     MathJax.Hub.Queue(function() {
       // Fix <code> tags after MathJax finishes running. This is a
@@ -221,9 +229,64 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="/n-tuples/">n-Tuples</a>
+    </h1>
+    <span class="post-date">April 23, 2018</span>
+    <p>An $n$-tuple is an ordered list of $n$ elements. It is dissimilar to a set in that the order of its elements matter, it must be finite, and it can contain multiples of the same element.</p>
+
+<p>Here are some common names for tuples of different size:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">$n$-tuple</th>
+      <th style="text-align: left">Name(s)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right">$0$</td>
+      <td style="text-align: left">null-tuple, $0$-tuple</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">$1$</td>
+      <td style="text-align: left">singleton, $1$-tuple</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">$2$</td>
+      <td style="text-align: left">ordered pair, $2$-tuple</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">$3$</td>
+      <td style="text-align: left">ordered triplet, $3$-tuple</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">$n$</td>
+      <td style="text-align: left">$n$-tuple</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>My <a href="https://medium.com/@ozanerhansha/the-ordered-pair-and-set-theory-69aa6e2b8a32">medium article</a> on ordered pairs and their uses.</em></p>
+
+<h3 id="definition">Definition</h3>
+<h4 id="2-tuples">$2$-tuples</h4>
+<p>We define ordered pairs, or $2$-tuples, as <a href="https://en.wikipedia.org/wiki/Kazimierz_Kuratowski">Kuratowski</a> did:</p>
+
+<script type="math/tex; mode=display">(x_1,x_2)=\{\{x_1\},\{x_1,x_2\}\}</script>
+
+<p>The above definition distinguishes $a$ from $b$ in that both sets in the right set contain $a$ but only one contains $b$. This is what gives the pair order.</p>
+
+
+    <!--Adds Read more-->
+    <a href="/n-tuples/">Read more</a>
+    <hr>
+    
+  <div class="post">
+    <h1 class="post-title">
       <a href="/superfactorial-and-hyperfactorial/">Superfactorial and Hyperfactorial</a>
     </h1>
-    <span class="post-date">18 Apr 2018</span>
+    <span class="post-date">April 18, 2018</span>
     <h3 id="factorial">Factorial</h3>
 <p>The factorial function $n!$ is the product of the first $n$ positive integers. We can define it as:</p>
 
@@ -250,7 +313,7 @@
     <h1 class="post-title">
       <a href="/dottie-number/">The Dottie Number</a>
     </h1>
-    <span class="post-date">16 Apr 2018</span>
+    <span class="post-date">April 16, 2018</span>
     <p>The Dottie number, which I will denote as $\textbf{d}$, is the only real solution to the following equation:</p>
 
 <script type="math/tex; mode=display">\cos x=x</script>
@@ -272,7 +335,7 @@
     <h1 class="post-title">
       <a href="/metaphysical-nightmare/">On the Grounding of Ideas</a>
     </h1>
-    <span class="post-date">09 Apr 2018</span>
+    <span class="post-date">April 9, 2018</span>
     <h2 id="poorly-defined-concepts">Poorly Defined Concepts</h2>
 <p>What is jealousy? What is a cat? What does it mean to be free? What <em>are</em> you?</p>
 
@@ -291,7 +354,7 @@
     <h1 class="post-title">
       <a href="/drag-force/">Drag Force</a>
     </h1>
-    <span class="post-date">27 Mar 2018</span>
+    <span class="post-date">March 27, 2018</span>
     <h3 id="general-info">General Info</h3>
 <p>The drag force, or fluid friction, is a force that opposes the motion of an object through a fluid/gas, similar to dry <a href="\friction">friction</a>. It can also be used to describe the resistance between a fluid in another fluid.</p>
 
@@ -317,35 +380,6 @@ $\renewcommand{\vec}[1]{\mathbf{#1}}$</p>
 
     <!--Adds Read more-->
     <a href="/drag-force/">Read more</a>
-    <hr>
-    
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/friction/">Friction</a>
-    </h1>
-    <span class="post-date">26 Mar 2018</span>
-    <h3 id="general-info">General Info</h3>
-<!-- & Table of Contents -->
-<p>Dry Friction is a force that opposes the motion of two surfaces that slide against each other. This force is proportional to the normal force of the object.</p>
-
-<!-- - [Amontons' Laws of Dry Friction](#amontons-laws-of-dry-friction)
-- [From Static to Kinetic Friction](#from-static-to-kinetic-friction)
-- [Static Friction](#static-friction)
-- [Kinetic Friction](#kinetic-friction)
-- [Coefficient of Friction](#coefficient-of-friction) -->
-
-<h4 id="where-does-friction-come-from">Where does Friction come from?</h4>
-<p>The frictional force is not fundamental and is instead a useful abstraction of the complex electromagnetic interactions between two surfaces that come into contact with each other. The forces created by these interactions can, in a variety of cases, be thought of as a singular force that is proportional to the normal force.</p>
-
-<p><img src="/assets/physics/friction_between_surfaces.jpg?style=centerme" alt="complexfriction" width="450px" /></p>
-
-<h4 id="intuition-and-newtons-first-law">Intuition and Newton’s First Law</h4>
-<p>The frictional force is responsible for filling the gap between our everyday intuition of motion (that it eventually stops) and Newton’s first law (that an object in motion remains in motion, unless acted upon by an outside force). The ‘outside force’ that retards motion in the case many of everyday objects is indeed friction.
-$\renewcommand{\vec}[1]{\mathbf{#1}}$</p>
-
-
-    <!--Adds Read more-->
-    <a href="/friction/">Read more</a>
     <hr>
     
   </div>

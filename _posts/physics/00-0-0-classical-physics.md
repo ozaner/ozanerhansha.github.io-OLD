@@ -40,7 +40,7 @@ Classical electromagnetism studies the properties and interactions of electric c
   - Resistance
 
 ## Thermodynamics
-Thermodynamics is the study of the workings d effects of heat, or **thermal energy**, in a system. Some main topics inlude:
+Thermodynamics is the study of the workings d effects of heat, or **thermal energy**, in a system. Some main topics include:
 
 - The 4 Laws of Thermodynamics
 - Entropy

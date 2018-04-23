@@ -109,9 +109,11 @@ When an object is placed on a ramp, the object will overcome static friction and
 
 ![angle of repose](https://upload.wikimedia.org/wikipedia/commons/8/85/Free_body.svg?style=centerme)
 
-<details><summary>Derivation</summary><p>$$\begin{align*}
+<details><summary>Derivation</summary><p>
+
+$$\begin{align*}
 N=mg\cos\theta \tag{force normal to the ramp}\\
-\mu_sN=mg\sin\theta \tag{static friction at the moment of Slipping}\\
+\mu_sN=mg\sin\theta \tag{$F_k$ at the moment of slipping}\\
 \mu_smg\cos\theta=mg\sin\theta\\
 \mu_s=\frac{\sin\theta}{\cos\theta}=\tan\theta
 \end{align*}$$</p></details>

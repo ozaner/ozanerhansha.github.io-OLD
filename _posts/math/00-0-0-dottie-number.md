@@ -21,14 +21,14 @@ $$\textbf{d}=0.7390851332151606...$$
 ### Fixed Point
 $\textbf{d}$ is what's called a fixed point of $\cos x$, because the cosine function maps $\textbf{d}$ to itself. As a result, repeatedly taking the cosine of $\textbf{d}$ returns the same result:
 
-$$\cos \textbf{d} = \textbf{d} \implies \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n\text{ iterations}}\ \textbf{d}=\textbf{d}$$
+$$\cos \textbf{d} = \textbf{d} \implies \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n\text{ compositions}}\ \textbf{d}=\textbf{d}$$
 
 $\textbf{d}$ is the $\cos$ function's only real fixed point, but there exists infinitely many solutions to $\cos z=z$ for the complex numbers. Those solutions, however, are not attractors.
 
 ### Universal Attractor
 What's interesting about $\textbf{d}$ is that it's not just the real fixed point of $\cos$ but also its **universal fixed point attractor**. That is to say, if you take the cosine of any real number and repeatedly take the cosine of the result, you will always approach $\textbf{d}$:
 
-$$\forall x\in\mathbb{R} \left(\lim_{n\to\infty} \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n\text{ iterations}}\ x=\textbf{d}\right)$$
+$$\forall x\in\mathbb{R} \left(\lim_{n\to\infty} \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n\text{ compositions}}\ x=\textbf{d}\right)$$
 
 In fact, the above is true for a certain range of the complex numbers as well. This range forms the [*Julia Set*](https://en.wikipedia.org/wiki/Julia_set) of $\cos z$.
 
@@ -69,15 +69,21 @@ Let us assume that $\textbf{d}$ is algebraic. If this is the case then:
 
 $$\left(\textbf{d}+i\sqrt{1-\textbf{d}^2}\right) \in \mathbb{A}$$
 
-This is because it consists solely of algebraic numbers $\left(\textbf{d},i,1\right)$ and basic algebraic operations $\left(+,-,x^2,\sqrt{x}\right)$ and thus must be root of a polynomial with rational coefficients (i.e algebraic).
+This is because it consists solely of algebraic numbers $\left(\textbf{d},i,1\right)$ and basic algebraic operations $\left(+,-,\times,x^2,\sqrt{x}\right)$ and thus must be root of a polynomial with rational coefficients (i.e algebraic).<p></p>
 
-However, also assuming $\textbf{d}$ is algebraic:
+However, also assuming $\textbf{d}$ is algebraic, LWT tells us:
 
-$$e^{i\textbf{d}}\notin \mathbb{A} \tag{LWT}$$
+$$e^{i\textbf{d}}\notin \mathbb{A}$$
 
 Since the right side of the boxed equation is algebraic yet LWT guarantees that the left side is transcendental (because $i\textbf{d}$ is algebraic), we are left with a contradiction. Meaning our initial assumption, that $\textbf{d}$ is algebraic, was false. Via <i>reductio ad absurdum</i> we can conclude:
 
-$$\therefore\textbf{d}\notin \mathbb{A} \tag{q.e.d}$$
+$$\begin{align}
+&e^{i\textbf{d}}=\textbf{d}+i\sqrt{1-\textbf{d}^2} \tag{Euler's formula}\\
+&e^{i\textbf{d}}\notin \mathbb{A} \tag{LWT}\\
+&\left(\textbf{d}+i\sqrt{1-\textbf{d}^2}\right) \in \mathbb{A} \tag{def. of algebraic number}\\
+\therefore\ &\hline{\textbf{d}\notin \mathbb{A}} \tag{q.e.d}\\
+\end{align}$$
+
 </p></details>
 
 ### Kaplan's Series

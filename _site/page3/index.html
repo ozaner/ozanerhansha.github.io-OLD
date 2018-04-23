@@ -31,14 +31,22 @@
 
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
+      positionToHash: true,
+      jax: ["input/TeX", "output/HTML-CSS"],
       tex2jax: {
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-          processEscapes: true
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
       },
-      jax: ["input/TeX","output/HTML-CSS"],
-      displayAlign: "left !important",
-      displayIndent: "0em"
+      messageStyle: "none",
+      "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        styles: {".MathJax": {color: "#CCCCCC"}}
+      },
+      displayAlign: "center!important",
+      // displayIndent: "0em"
     });
     MathJax.Hub.Queue(function() {
       // Fix <code> tags after MathJax finishes running. This is a
@@ -221,14 +229,35 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="/physics/">Physics</a>
+    </h1>
+    <span class="post-date">March 14, 2018</span>
+    <p>Physics is the branch of science that studies the properties and mechanics of matter and energy in  spacetime and their interaction with the 4 fundamental forces.</p>
+
+<p>There are 3 main divisions of physics:</p>
+<ul>
+  <li><a href="#classical-physics">Classical Physics</a></li>
+  <li><a href="#special--general-relativity">Special &amp; General Relativity</a></li>
+  <li><a href="#quantum-mechanics-qm">Quantum Mechanics</a></li>
+</ul>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Modernphysicsfields.svg?style=centerme" alt="physics" /></p>
+
+
+    <!--Adds Read more-->
+    <a href="/physics/">Read more</a>
+    <hr>
+    
+  <div class="post">
+    <h1 class="post-title">
       <a href="/parity-sequences/">Parity Sequences</a>
     </h1>
-    <span class="post-date">03 Mar 2018</span>
+    <span class="post-date">March 3, 2018</span>
     <!-- Thought about this when we had to find Taylor series' for certain sinusoidal functions and the terms had hard to capture patterns of negative/even terms. It is possible to capture this via more sinusoidal functions but I wanted a polynomial answer. I don't think there is a polynomial answer for the general case, and the 2 examples below are the extent of my findings. -->
 
 <p>A parity sequence is a sequence of numbers that follow a set pattern of even and odd. Only the parity of the numbers is important, not the actual values themselves. As such, we can represent the parity sequence of a sequence as a set of “$+$” for even and “$-$” for odd numbers.</p>
 
-<h2 id="use">Use</h2>
+<h3 id="use">Use</h3>
 <p>Notice that when we raise $-1$ to the power of one of these sequences, it will evaluate to $+1$ for even values and $-1$ for odd values.</p>
 
 <p><em>This property is where the $+$ $-$ notation comes from.</em></p>
@@ -244,7 +273,7 @@
     <h1 class="post-title">
       <a href="/fractional-calculus/">Fractional Calculus</a>
     </h1>
-    <span class="post-date">30 Jan 2018</span>
+    <span class="post-date">January 30, 2018</span>
     <h2 id="basic-differentiation">Basic Differentiation</h2>
 <p>In general terms, derivatives are a measure of how a function changes with respect to another variable. Not all functions have derivatives, but those that do are called <strong>differentiable</strong>.</p>
 
@@ -271,7 +300,7 @@
     <h1 class="post-title">
       <a href="/minkowski-spacetime/">Minkowski Spacetime</a>
     </h1>
-    <span class="post-date">23 Jan 2018</span>
+    <span class="post-date">January 23, 2018</span>
     <h2 id="what-is-spacetime">What is Spacetime?</h2>
 <p>Before we talk about Minkowski Spacetime, we need to address what it means to combine space and time.</p>
 
@@ -296,7 +325,7 @@
     <h1 class="post-title">
       <a href="/filetopng/">FileToPNG</a>
     </h1>
-    <span class="post-date">16 Jan 2018</span>
+    <span class="post-date">January 16, 2018</span>
     <h2 id="what-is-filetopng">What is FileToPNG?</h2>
 <p>FileToPNG is a tool written in Java that converts the raw bit representation of any file into a corresponding PNG representation. The PNG (being a lossless file type) can be sent (via text, email, etc) and finally reconstructed back into a file. The GithHub repository for this project can be found <a href="https://github.com/ozanerhansha/FileToPNG">here</a>.</p>
 
@@ -305,24 +334,6 @@
 
     <!--Adds Read more-->
     <a href="/filetopng/">Read more</a>
-    <hr>
-    
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/breast-cancer-classification/">Breast Cancer Classification</a>
-    </h1>
-    <span class="post-date">15 Jan 2018</span>
-    <h2 id="background">Background</h2>
-<p>I made this model to test how easily I could use external datasets to create and train a neural network with Google’s <a href="https://www.tensorflow.org/"><em>TensorFlow</em></a> library. In this post I’ll attempt to explain the code, its results, and its accuracy. The <a href="https://github.com/ozanerhansha/NeuralNetworks/blob/master/src/test/bcDiagnosis.py">entire program</a> is in my <a href="https://github.com/ozanerhansha/NeuralNetworks">NeuralNetwork</a> repository on GitHub as well as at the end of this post.</p>
-
-<h2 id="the-training-data">The Training Data</h2>
-<p>All the training data comes from the <a href="http://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+%28diagnostic%29">Wisconsin Breast Cancer Data Set</a>, hosted by the University of California’s <a href="http://archive.ics.uci.edu/ml/index.php">Machine Learning Repository</a>.</p>
-
-<p>The training data consists of 569 subjects each with 3 values (mean, worst value, and standard error) for each of 10 categories:</p>
-
-
-    <!--Adds Read more-->
-    <a href="/breast-cancer-classification/">Read more</a>
     <hr>
     
   </div>
