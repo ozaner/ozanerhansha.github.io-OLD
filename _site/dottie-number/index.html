@@ -46,7 +46,7 @@
         styles: {".MathJax": {color: "#CCCCCC"}}
       },
       displayAlign: "center!important",
-      // displayIndent: "0em"
+      displayIndent: "0em"
     });
     MathJax.Hub.Queue(function() {
       // Fix <code> tags after MathJax finishes running. This is a
@@ -520,17 +520,23 @@ $$\begin{align}
 
 <script type="math/tex; mode=display">\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!}- \frac{x^6}{6!}+\cdots</script>
 
-<p>For the <strong>second</strong> degree Taylor polynomial:
-<script type="math/tex">1-\frac{x^2}{2!}=x \\
--\frac{x^2}{2}-x+1=0</script></p>
+<p>For the <strong>second</strong> degree Taylor polynomial:</p>
+
+<script type="math/tex; mode=display">\begin{align}
+1-\frac{x^2}{2!}=x\\
+-\frac{x^2}{2}-x+1=0
+\end{align}</script>
 
 <p>Using the quadratic formula we find:</p>
 
 <script type="math/tex; mode=display">x = \sqrt{3}-1 = 0.73\color{red}{205\cdots}</script>
 
-<p>For the <strong>fourth</strong> degree Taylor polynomial:
-<script type="math/tex">1-\frac{x^2}{2!}+\frac{x^4}{4!}=x \\
-\frac{x^4}{24}-\frac{x^2}{2}-x+1=0</script></p>
+<p>For the <strong>fourth</strong> degree Taylor polynomial:</p>
+
+<script type="math/tex; mode=display">\begin{align}
+1-\frac{x^2}{2!}+\frac{x^4}{4!}=x \\
+\frac{x^4}{24}-\frac{x^2}{2}-x+1=0
+\end{align}</script>
 
 <p>Using the <a href="https://en.wikipedia.org/wiki/Quartic_function#General_formula_for_roots">quartic formula</a> we find:</p>
 

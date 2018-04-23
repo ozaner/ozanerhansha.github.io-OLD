@@ -292,16 +292,22 @@ Another way to approximate $\textbf{d}$ is to simply substitute Taylor polynomia
 $$\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!}- \frac{x^6}{6!}+\cdots$$
 
 For the **second** degree Taylor polynomial:
-$$1-\frac{x^2}{2!}=x \\
--\frac{x^2}{2}-x+1=0$$
+
+$$\begin{align}
+1-\frac{x^2}{2!}=x\\
+-\frac{x^2}{2}-x+1=0
+\end{align}$$
 
 Using the quadratic formula we find:
 
 $$x = \sqrt{3}-1 = 0.73\color{red}{205\cdots}$$
 
 For the **fourth** degree Taylor polynomial:
-$$1-\frac{x^2}{2!}+\frac{x^4}{4!}=x \\
-\frac{x^4}{24}-\frac{x^2}{2}-x+1=0$$
+
+$$\begin{align}
+1-\frac{x^2}{2!}+\frac{x^4}{4!}=x \\
+\frac{x^4}{24}-\frac{x^2}{2}-x+1=0
+\end{align}$$
 
 Using the [quartic formula](https://en.wikipedia.org/wiki/Quartic_function#General_formula_for_roots) we find:
 

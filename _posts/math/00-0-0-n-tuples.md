@@ -45,10 +45,14 @@ $$(x_1,x_2,\cdots,x_{n-1},x_n)=((x_1,x_2,\cdots,x_{n-1}),x_n)$$
 Whatever definition is used, all that matters is that the equality of two $n$-tuples be defined as below:
 
 ### Equality
-Two ordered pairs are equivalent if and only if the elements in each of their respective indices are equal:
+Two ordered pairs are equivalent if and only if the elements in each of their respective indices are equal. For two $n$-tuples $X$ and $Y$:
 
-$$X=(x_1,x_2,x_3,\cdots,x_n)\\
-Y=(y_1,y_2,y_3,\cdots,y_n)$$
+$$\begin{align}
+X&=(x_1,x_2,x_3,\cdots,x_n)\\
+Y&=(y_1,y_2,y_3,\cdots,y_n)
+\end{align}$$
+
+$X$ and $Y$ are only equal if:
 
 $$\begin{align}
 X=Y&\equiv\forall k\in\mathbb{N}_n^* (x_k=y_k)\\

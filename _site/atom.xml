@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-04-23T18:17:45-04:00</updated>
+ <updated>2018-04-23T18:35:09-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -82,10 +82,15 @@
 &lt;p&gt;Whatever definition is used, all that matters is that the equality of two $n$-tuples be defined as below:&lt;/p&gt;
 
 &lt;h3 id=&quot;equality&quot;&gt;Equality&lt;/h3&gt;
-&lt;p&gt;Two ordered pairs are equivalent if and only if the elements in each of their respective indices are equal:&lt;/p&gt;
+&lt;p&gt;Two ordered pairs are equivalent if and only if the elements in each of their respective indices are equal. For two $n$-tuples $X$ and $Y$:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;X=(x_1,x_2,x_3,\cdots,x_n)\\
-Y=(y_1,y_2,y_3,\cdots,y_n)&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+X&amp;=(x_1,x_2,x_3,\cdots,x_n)\\
+Y&amp;=(y_1,y_2,y_3,\cdots,y_n)
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;$X$ and $Y$ are only equal if:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{align}
@@ -633,17 +638,23 @@ $$\begin{align}
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!}- \frac{x^6}{6!}+\cdots&lt;/script&gt;
 
-&lt;p&gt;For the &lt;strong&gt;second&lt;/strong&gt; degree Taylor polynomial:
-&lt;script type=&quot;math/tex&quot;&gt;1-\frac{x^2}{2!}=x \\
--\frac{x^2}{2}-x+1=0&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;For the &lt;strong&gt;second&lt;/strong&gt; degree Taylor polynomial:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align}
+1-\frac{x^2}{2!}=x\\
+-\frac{x^2}{2}-x+1=0
+\end{align}&lt;/script&gt;
 
 &lt;p&gt;Using the quadratic formula we find:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;x = \sqrt{3}-1 = 0.73\color{red}{205\cdots}&lt;/script&gt;
 
-&lt;p&gt;For the &lt;strong&gt;fourth&lt;/strong&gt; degree Taylor polynomial:
-&lt;script type=&quot;math/tex&quot;&gt;1-\frac{x^2}{2!}+\frac{x^4}{4!}=x \\
-\frac{x^4}{24}-\frac{x^2}{2}-x+1=0&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;For the &lt;strong&gt;fourth&lt;/strong&gt; degree Taylor polynomial:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align}
+1-\frac{x^2}{2!}+\frac{x^4}{4!}=x \\
+\frac{x^4}{24}-\frac{x^2}{2}-x+1=0
+\end{align}&lt;/script&gt;
 
 &lt;p&gt;Using the &lt;a href=&quot;https://en.wikipedia.org/wiki/Quartic_function#General_formula_for_roots&quot;&gt;quartic formula&lt;/a&gt; we find:&lt;/p&gt;
 

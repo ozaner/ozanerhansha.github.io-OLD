@@ -46,7 +46,7 @@
         styles: {".MathJax": {color: "#CCCCCC"}}
       },
       displayAlign: "center!important",
-      // displayIndent: "0em"
+      displayIndent: "0em"
     });
     MathJax.Hub.Queue(function() {
       // Fix <code> tags after MathJax finishes running. This is a
@@ -297,10 +297,15 @@
 <p>Whatever definition is used, all that matters is that the equality of two $n$-tuples be defined as below:</p>
 
 <h3 id="equality">Equality</h3>
-<p>Two ordered pairs are equivalent if and only if the elements in each of their respective indices are equal:</p>
+<p>Two ordered pairs are equivalent if and only if the elements in each of their respective indices are equal. For two $n$-tuples $X$ and $Y$:</p>
 
-<script type="math/tex; mode=display">X=(x_1,x_2,x_3,\cdots,x_n)\\
-Y=(y_1,y_2,y_3,\cdots,y_n)</script>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+X&=(x_1,x_2,x_3,\cdots,x_n)\\
+Y&=(y_1,y_2,y_3,\cdots,y_n)
+\end{align} %]]></script>
+
+<p>$X$ and $Y$ are only equal if:</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
