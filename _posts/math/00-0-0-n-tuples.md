@@ -2,7 +2,7 @@
 layout: post
 title: n-Tuples
 date: 2018-04-23
-tags: math
+tags: math set-theory
 ---
 An $n$-tuple is an ordered list of $n$ elements. It is dissimilar to a set in that the order of its elements matter, it must be finite, and it can contain multiples of the same element.
 
@@ -130,11 +130,11 @@ $$P=\left(x_1,x_2,x_3,\cdots,x_n\right)$$
 
 The first element of $P$ can be found like so:
 
-$$\pi^n_1(P)=\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-1\text{ compositions}}(P)=x_1$$
+$$\pi^n_1(P)=\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-1\text{ iterations}}(P)=x_1$$
 
 For any element *other* than $1$, we can use the following formula:
 
-$$\pi^n_a(P)=\pi_2\circ\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-a\text{ compositions}}(P)=x_a$$
+$$\pi^n_a(P)=\pi_2\circ\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-a\text{ iterations}}(P)=x_a$$
 
 <details><summary>Proof</summary>
 Not really a proof, I just wrote down how to find the elements of $2,3,4,5$-tuples and found the pattern:

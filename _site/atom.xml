@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-04-23T18:35:09-04:00</updated>
+ <updated>2018-04-23T18:48:22-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -169,11 +169,11 @@ I'll do it later...
 
 &lt;p&gt;The first element of $P$ can be found like so:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\pi^n_1(P)=\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-1\text{ compositions}}(P)=x_1&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\pi^n_1(P)=\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-1\text{ iterations}}(P)=x_1&lt;/script&gt;
 
 &lt;p&gt;For any element &lt;em&gt;other&lt;/em&gt; than $1$, we can use the following formula:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\pi^n_a(P)=\pi_2\circ\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-a\text{ compositions}}(P)=x_a&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\pi^n_a(P)=\pi_2\circ\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-a\text{ iterations}}(P)=x_a&lt;/script&gt;
 
 &lt;details&gt;&lt;summary&gt;Proof&lt;/summary&gt;
 Not really a proof, I just wrote down how to find the elements of $2,3,4,5$-tuples and found the pattern:
@@ -367,14 +367,14 @@ $$\begin{align}
 &lt;h3 id=&quot;fixed-point&quot;&gt;Fixed Point&lt;/h3&gt;
 &lt;p&gt;$\textbf{d}$ is what’s called a fixed point of $\cos x$, because the cosine function maps $\textbf{d}$ to itself. As a result, repeatedly taking the cosine of $\textbf{d}$ returns the same result:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\cos \textbf{d} = \textbf{d} \implies \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n\text{ compositions}}\ \textbf{d}=\textbf{d}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\cos \textbf{d} = \textbf{d} \implies \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n\text{ iterations}}\ \textbf{d}=\textbf{d}&lt;/script&gt;
 
 &lt;p&gt;$\textbf{d}$ is the $\cos$ function’s only real fixed point, but there exists infinitely many solutions to $\cos z=z$ for the complex numbers. Those solutions, however, are not attractors.&lt;/p&gt;
 
 &lt;h3 id=&quot;universal-attractor&quot;&gt;Universal Attractor&lt;/h3&gt;
 &lt;p&gt;What’s interesting about $\textbf{d}$ is that it’s not just the real fixed point of $\cos$ but also its &lt;strong&gt;universal fixed point attractor&lt;/strong&gt;. That is to say, if you take the cosine of any real number and repeatedly take the cosine of the result, you will always approach $\textbf{d}$:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\forall x\in\mathbb{R} \left(\lim_{n\to\infty} \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n\text{ compositions}}\ x=\textbf{d}\right)&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\forall x\in\mathbb{R} \left(\lim_{n\to\infty} \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n\text{ iterations}}\ x=\textbf{d}\right)&lt;/script&gt;
 
 &lt;p&gt;In fact, the above is true for a certain range of the complex numbers as well. This range forms the &lt;a href=&quot;https://en.wikipedia.org/wiki/Julia_set&quot;&gt;&lt;em&gt;Julia Set&lt;/em&gt;&lt;/a&gt; of $\cos z$.&lt;/p&gt;
 
