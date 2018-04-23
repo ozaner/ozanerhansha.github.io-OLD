@@ -136,7 +136,7 @@ For any element *other* than $1$, we can use the following formula:
 
 $$\pi^n_a(P)=\pi_2\circ\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-a\text{ iterations}}(P)=x_a$$
 
-<details><summary>Proof</summary>
+<details><summary>Intuition & "Proof"</summary>
 Not really a proof, I just wrote down how to find the elements of $2,3,4,5$-tuples and found the pattern:
 
 $$\begin{align}
@@ -171,6 +171,8 @@ $$\begin{align}
     \end{array}
   \right.\\
 \end{align}$$
+
+Why are is there a conditional definition of the $a$th element of an $n$-tuple? What causes this asymmetry? Well it must be the fact that our base case in defining $n$-tuples was the ordered pair rather than some sort of $1$-tuple. Although it's possible that starting with a $1$-tuple wouldn't change this conditional...
 </details>
 
 ### Some Uses

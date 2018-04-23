@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-04-23T18:48:22-04:00</updated>
+ <updated>2018-04-23T18:57:28-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -175,7 +175,7 @@ I'll do it later...
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\pi^n_a(P)=\pi_2\circ\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-a\text{ iterations}}(P)=x_a&lt;/script&gt;
 
-&lt;details&gt;&lt;summary&gt;Proof&lt;/summary&gt;
+&lt;details&gt;&lt;summary&gt;Intuition &amp;amp; &quot;Proof&quot;&lt;/summary&gt;
 Not really a proof, I just wrote down how to find the elements of $2,3,4,5$-tuples and found the pattern:
 
 $$\begin{align}
@@ -210,6 +210,8 @@ $$\begin{align}
     \end{array}
   \right.\\
 \end{align}$$
+
+Why are is there a conditional definition of the $a$th element of an $n$-tuple? What causes this asymmetry? Well it must be the fact that our base case in defining $n$-tuples was the ordered pair rather than some sort of $1$-tuple. Although it's possible that starting with a $1$-tuple wouldn't change this conditional...
 &lt;/details&gt;
 
 &lt;h3 id=&quot;some-uses&quot;&gt;Some Uses&lt;/h3&gt;
