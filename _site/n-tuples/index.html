@@ -304,7 +304,7 @@
 <p>Whatever definition is used, all that matters is that the equality of two $n$-tuples be defined as below:</p>
 
 <h3 id="equality">Equality</h3>
-<p>Two ordered pairs are equivalent if and only if the elements in each of their respective indices are equal. For two $n$-tuples $X$ and $Y$:</p>
+<p>Two ordered pairs are equivalent if and only if the elements in each of their respective indices are equal. That is to say, for two $n$-tuples $X$ and $Y$:</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
@@ -326,9 +326,9 @@ X=Y&\equiv\forall k\in\mathbb{N}_n^* (x_k=y_k)\\
 
 <h3 id="extraction">Extraction</h3>
 <h4 id="first-element">First Element</h4>
-<p>To extract the first element $a=\pi_1(P)$ of an ordered pair $P=(a,b)$ we can use the following construction:</p>
+<p>To extract the first element $\pi_1(P)$ of an ordered pair $P=(a,b)$ we can use the following construction:</p>
 
-<script type="math/tex; mode=display">a=\pi_1(P)=\bigcup\bigcap P</script>
+<script type="math/tex; mode=display">\pi_1(P)=\bigcup\bigcap P=a</script>
 
 <details><summary>Proof</summary>
   <b>Lemma 1</b>
@@ -342,11 +342,11 @@ X=Y&\equiv\forall k\in\mathbb{N}_n^* (x_k=y_k)\\
 
   In in English this means, all elements $a$ that are contained in at least one set $b$ that are contained in $S$. (i.e the union of all the elements in $S$). Plugging $\{x\}$ in for $S$ we see:
 
-  $$\bigcup \{x\}=\{a\mid \left(\exists b\in \{x\}\right)a\in b\}\\$$
+  $$\bigcup \{x\}=\{a\mid \left(\exists b\in \{x\}\right)a\in b\}$$
 
   Since there is only one element in ${b}$, namely $x$, there is only one set $b$ could be: $x$. So, we can say the following:
 
-  $$\bigcup \{x\}=\{a\mid a\in x\}\\$$
+  $$\bigcup \{x\}=\{a\mid a\in x\}$$
 
   And since the set of all elements in $x$ is simply that same set:
 
@@ -374,9 +374,9 @@ X=Y&\equiv\forall k\in\mathbb{N}_n^* (x_k=y_k)\\
 </details>
 
 <h4 id="second-element">Second Element</h4>
-<p>The second element $b=\pi_2(P)$ of an ordered pair $P=(a,b)$ can be found like so:</p>
+<p>The second element $\pi_2(P)$ of an ordered pair $P=(a,b)$ can be found like so:</p>
 
-<script type="math/tex; mode=display">b=\pi_2(P)=\bigcup\{x\in\bigcup P\mid\bigcup P\not=\bigcap P\implies x\not\in\bigcap P\}</script>
+<script type="math/tex; mode=display">\pi_2(P)=\bigcup\{x\in\bigcup P\mid\bigcup P\not=\bigcap P\implies x\not\in\bigcap P\}=b</script>
 
 <details><summary>Proof</summary>
 I'll do it later...
@@ -385,7 +385,7 @@ I'll do it later...
 <h4 id="extracting-elements-of-n-tuples">Extracting Elements of $n$-Tuples</h4>
 <p>You may have noticed that the above definitions only apply to $2$-tuples. What about $n$-tuples? Well, as it turns out, we can extract the elements of an $n$-tuple of any size by recursively using the $\pi_1$ and $\pi_2$ functions we defined above.</p>
 
-<p>The notation we’ll use is as follows: $\pi^n_a(P)$ is the $a$th element of $P$, where $P$ is an $n$-tuple:</p>
+<p>The notation we’ll use is as follows: $\pi^n_a(P)$ is the $a$th element of $P$, which is an $n$-tuple:</p>
 
 <script type="math/tex; mode=display">P=\left(x_1,x_2,x_3,\cdots,x_n\right)</script>
 
@@ -393,11 +393,11 @@ I'll do it later...
 
 <script type="math/tex; mode=display">\pi^n_1(P)=\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-1\text{ iterations}}(P)=x_1</script>
 
-<p>For any element <em>other</em> than $1$, we can use the following formula:</p>
+<p>For any element <em>other</em> than the first, we can use the following formula:</p>
 
 <script type="math/tex; mode=display">\pi^n_a(P)=\pi_2\circ\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-a\text{ iterations}}(P)=x_a</script>
 
-<details><summary>Intuition &amp; "Proof"</summary>
+<details><summary>"Proof" &amp; Intuition</summary>
 Not really a proof, I just wrote down how to find the elements of $2,3,4,5$-tuples and found the pattern:
 
 $$\begin{align}
@@ -446,7 +446,9 @@ Why are is there a conditional definition of the $a$th element of an $n$-tuple? 
 &\equiv\{\cdots,\left(10,2,5\right),\left(4,3,\frac{4}{3}\right),\left(2,1,2\right),\cdots\}
 \end{align} %]]></script>
 
-<p>And because there is a unique $z$ for every $x$ and $y$ (this is what makes it a function instead of a relation), we can define a function $\div(x,y)=z$. So, for example, $\div(15,3)=5$ or if we use more conventional notation: $15\div 3=5$.</p>
+<p>And because there is a unique $z$ for every $x$ and $y$ (this is what makes it a function instead of just a relation), we can define the following function: $\div(x,y)=z$.</p>
+
+<p>So, for example, $\div(15,3)=5$ or if we use more conventional notation: $15\div 3=5$.</p>
 
 <h4 id="coordinates">Coordinates</h4>
 <p>They are also used in describing the locations of points in space:</p>

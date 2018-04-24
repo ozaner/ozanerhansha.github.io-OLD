@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-04-23T22:53:28-04:00</updated>
+ <updated>2018-04-24T19:47:06-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -82,7 +82,7 @@
 &lt;p&gt;Whatever definition is used, all that matters is that the equality of two $n$-tuples be defined as below:&lt;/p&gt;
 
 &lt;h3 id=&quot;equality&quot;&gt;Equality&lt;/h3&gt;
-&lt;p&gt;Two ordered pairs are equivalent if and only if the elements in each of their respective indices are equal. For two $n$-tuples $X$ and $Y$:&lt;/p&gt;
+&lt;p&gt;Two ordered pairs are equivalent if and only if the elements in each of their respective indices are equal. That is to say, for two $n$-tuples $X$ and $Y$:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{align}
@@ -104,9 +104,9 @@ X=Y&amp;\equiv\forall k\in\mathbb{N}_n^* (x_k=y_k)\\
 
 &lt;h3 id=&quot;extraction&quot;&gt;Extraction&lt;/h3&gt;
 &lt;h4 id=&quot;first-element&quot;&gt;First Element&lt;/h4&gt;
-&lt;p&gt;To extract the first element $a=\pi_1(P)$ of an ordered pair $P=(a,b)$ we can use the following construction:&lt;/p&gt;
+&lt;p&gt;To extract the first element $\pi_1(P)$ of an ordered pair $P=(a,b)$ we can use the following construction:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;a=\pi_1(P)=\bigcup\bigcap P&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\pi_1(P)=\bigcup\bigcap P=a&lt;/script&gt;
 
 &lt;details&gt;&lt;summary&gt;Proof&lt;/summary&gt;
   &lt;b&gt;Lemma 1&lt;/b&gt;
@@ -120,11 +120,11 @@ X=Y&amp;\equiv\forall k\in\mathbb{N}_n^* (x_k=y_k)\\
 
   In in English this means, all elements $a$ that are contained in at least one set $b$ that are contained in $S$. (i.e the union of all the elements in $S$). Plugging $\{x\}$ in for $S$ we see:
 
-  $$\bigcup \{x\}=\{a\mid \left(\exists b\in \{x\}\right)a\in b\}\\$$
+  $$\bigcup \{x\}=\{a\mid \left(\exists b\in \{x\}\right)a\in b\}$$
 
   Since there is only one element in ${b}$, namely $x$, there is only one set $b$ could be: $x$. So, we can say the following:
 
-  $$\bigcup \{x\}=\{a\mid a\in x\}\\$$
+  $$\bigcup \{x\}=\{a\mid a\in x\}$$
 
   And since the set of all elements in $x$ is simply that same set:
 
@@ -152,9 +152,9 @@ X=Y&amp;\equiv\forall k\in\mathbb{N}_n^* (x_k=y_k)\\
 &lt;/details&gt;
 
 &lt;h4 id=&quot;second-element&quot;&gt;Second Element&lt;/h4&gt;
-&lt;p&gt;The second element $b=\pi_2(P)$ of an ordered pair $P=(a,b)$ can be found like so:&lt;/p&gt;
+&lt;p&gt;The second element $\pi_2(P)$ of an ordered pair $P=(a,b)$ can be found like so:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;b=\pi_2(P)=\bigcup\{x\in\bigcup P\mid\bigcup P\not=\bigcap P\implies x\not\in\bigcap P\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\pi_2(P)=\bigcup\{x\in\bigcup P\mid\bigcup P\not=\bigcap P\implies x\not\in\bigcap P\}=b&lt;/script&gt;
 
 &lt;details&gt;&lt;summary&gt;Proof&lt;/summary&gt;
 I'll do it later...
@@ -163,7 +163,7 @@ I'll do it later...
 &lt;h4 id=&quot;extracting-elements-of-n-tuples&quot;&gt;Extracting Elements of $n$-Tuples&lt;/h4&gt;
 &lt;p&gt;You may have noticed that the above definitions only apply to $2$-tuples. What about $n$-tuples? Well, as it turns out, we can extract the elements of an $n$-tuple of any size by recursively using the $\pi_1$ and $\pi_2$ functions we defined above.&lt;/p&gt;
 
-&lt;p&gt;The notation we’ll use is as follows: $\pi^n_a(P)$ is the $a$th element of $P$, where $P$ is an $n$-tuple:&lt;/p&gt;
+&lt;p&gt;The notation we’ll use is as follows: $\pi^n_a(P)$ is the $a$th element of $P$, which is an $n$-tuple:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;P=\left(x_1,x_2,x_3,\cdots,x_n\right)&lt;/script&gt;
 
@@ -171,11 +171,11 @@ I'll do it later...
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\pi^n_1(P)=\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-1\text{ iterations}}(P)=x_1&lt;/script&gt;
 
-&lt;p&gt;For any element &lt;em&gt;other&lt;/em&gt; than $1$, we can use the following formula:&lt;/p&gt;
+&lt;p&gt;For any element &lt;em&gt;other&lt;/em&gt; than the first, we can use the following formula:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\pi^n_a(P)=\pi_2\circ\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-a\text{ iterations}}(P)=x_a&lt;/script&gt;
 
-&lt;details&gt;&lt;summary&gt;Intuition &amp;amp; &quot;Proof&quot;&lt;/summary&gt;
+&lt;details&gt;&lt;summary&gt;&quot;Proof&quot; &amp;amp; Intuition&lt;/summary&gt;
 Not really a proof, I just wrote down how to find the elements of $2,3,4,5$-tuples and found the pattern:
 
 $$\begin{align}
@@ -224,7 +224,9 @@ Why are is there a conditional definition of the $a$th element of an $n$-tuple? 
 &amp;\equiv\{\cdots,\left(10,2,5\right),\left(4,3,\frac{4}{3}\right),\left(2,1,2\right),\cdots\}
 \end{align} %]]&gt;&lt;/script&gt;
 
-&lt;p&gt;And because there is a unique $z$ for every $x$ and $y$ (this is what makes it a function instead of a relation), we can define a function $\div(x,y)=z$. So, for example, $\div(15,3)=5$ or if we use more conventional notation: $15\div 3=5$.&lt;/p&gt;
+&lt;p&gt;And because there is a unique $z$ for every $x$ and $y$ (this is what makes it a function instead of just a relation), we can define the following function: $\div(x,y)=z$.&lt;/p&gt;
+
+&lt;p&gt;So, for example, $\div(15,3)=5$ or if we use more conventional notation: $15\div 3=5$.&lt;/p&gt;
 
 &lt;h4 id=&quot;coordinates&quot;&gt;Coordinates&lt;/h4&gt;
 &lt;p&gt;They are also used in describing the locations of points in space:&lt;/p&gt;

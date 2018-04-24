@@ -45,7 +45,7 @@ $$(x_1,x_2,\cdots,x_{n-1},x_n)=((x_1,x_2,\cdots,x_{n-1}),x_n)$$
 Whatever definition is used, all that matters is that the equality of two $n$-tuples be defined as below:
 
 ### Equality
-Two ordered pairs are equivalent if and only if the elements in each of their respective indices are equal. For two $n$-tuples $X$ and $Y$:
+Two ordered pairs are equivalent if and only if the elements in each of their respective indices are equal. That is to say, for two $n$-tuples $X$ and $Y$:
 
 $$\begin{align}
 X&=(x_1,x_2,x_3,\cdots,x_n)\\
@@ -65,9 +65,9 @@ Note that for this definition to work, the two tuples have to be the same size. 
 
 ### Extraction
 #### First Element
-To extract the first element $a=\pi_1(P)$ of an ordered pair $P=(a,b)$ we can use the following construction:
+To extract the first element $\pi_1(P)$ of an ordered pair $P=(a,b)$ we can use the following construction:
 
-$$a=\pi_1(P)=\bigcup\bigcap P$$
+$$\pi_1(P)=\bigcup\bigcap P=a$$
 
 <details><summary>Proof</summary>
   <b>Lemma 1</b>
@@ -81,11 +81,11 @@ $$a=\pi_1(P)=\bigcup\bigcap P$$
 
   In in English this means, all elements $a$ that are contained in at least one set $b$ that are contained in $S$. (i.e the union of all the elements in $S$). Plugging $\{x\}$ in for $S$ we see:
 
-  $$\bigcup \{x\}=\{a\mid \left(\exists b\in \{x\}\right)a\in b\}\\$$
+  $$\bigcup \{x\}=\{a\mid \left(\exists b\in \{x\}\right)a\in b\}$$
 
   Since there is only one element in ${b}$, namely $x$, there is only one set $b$ could be: $x$. So, we can say the following:
 
-  $$\bigcup \{x\}=\{a\mid a\in x\}\\$$
+  $$\bigcup \{x\}=\{a\mid a\in x\}$$
 
   And since the set of all elements in $x$ is simply that same set:
 
@@ -113,9 +113,9 @@ $$a=\pi_1(P)=\bigcup\bigcap P$$
 </details>
 
 #### Second Element
-The second element $b=\pi_2(P)$ of an ordered pair $P=(a,b)$ can be found like so:
+The second element $\pi_2(P)$ of an ordered pair $P=(a,b)$ can be found like so:
 
-$$b=\pi_2(P)=\bigcup\{x\in\bigcup P\mid\bigcup P\not=\bigcap P\implies x\not\in\bigcap P\}$$
+$$\pi_2(P)=\bigcup\{x\in\bigcup P\mid\bigcup P\not=\bigcap P\implies x\not\in\bigcap P\}=b$$
 
 <details><summary>Proof</summary>
 I'll do it later...
@@ -124,7 +124,7 @@ I'll do it later...
 #### Extracting Elements of $n$-Tuples
 You may have noticed that the above definitions only apply to $2$-tuples. What about $n$-tuples? Well, as it turns out, we can extract the elements of an $n$-tuple of any size by recursively using the $\pi_1$ and $\pi_2$ functions we defined above.
 
-The notation we'll use is as follows: $\pi^n_a(P)$ is the $a$th element of $P$, where $P$ is an $n$-tuple:
+The notation we'll use is as follows: $\pi^n_a(P)$ is the $a$th element of $P$, which is an $n$-tuple:
 
 $$P=\left(x_1,x_2,x_3,\cdots,x_n\right)$$
 
@@ -132,11 +132,11 @@ The first element of $P$ can be found like so:
 
 $$\pi^n_1(P)=\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-1\text{ iterations}}(P)=x_1$$
 
-For any element *other* than $1$, we can use the following formula:
+For any element *other* than the first, we can use the following formula:
 
 $$\pi^n_a(P)=\pi_2\circ\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-a\text{ iterations}}(P)=x_a$$
 
-<details><summary>Intuition & "Proof"</summary>
+<details><summary>"Proof" & Intuition</summary>
 Not really a proof, I just wrote down how to find the elements of $2,3,4,5$-tuples and found the pattern:
 
 $$\begin{align}
@@ -184,7 +184,9 @@ $$\begin{align}
 &\equiv\{\cdots,\left(10,2,5\right),\left(4,3,\frac{4}{3}\right),\left(2,1,2\right),\cdots\}
 \end{align}$$
 
-And because there is a unique $z$ for every $x$ and $y$ (this is what makes it a function instead of a relation), we can define a function $\div(x,y)=z$. So, for example, $\div(15,3)=5$ or if we use more conventional notation: $15\div 3=5$.
+And because there is a unique $z$ for every $x$ and $y$ (this is what makes it a function instead of just a relation), we can define the following function: $\div(x,y)=z$.
+
+So, for example, $\div(15,3)=5$ or if we use more conventional notation: $15\div 3=5$.
 
 #### Coordinates
 They are also used in describing the locations of points in space:
