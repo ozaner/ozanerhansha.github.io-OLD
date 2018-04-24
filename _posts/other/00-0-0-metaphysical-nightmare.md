@@ -15,7 +15,9 @@ There is no formal definition of these concepts. We just know them when we see t
 
 <!--more-->
 
-"Alright," you might say, "maybe humanity and jealousy are too lofty to state objectively, but can't cats be formally defined?" Surely a cat has a particular genome that defines it regardless of its outward appearance, right? But in a world where cats evolved from another species via gradual mutations to individual base pairs in their DNA (not big leaps), where do we draw the line between cat and cave-cat, so to speak.
+"Alright," you might say, "maybe humanity and jealousy are too lofty to state objectively, but can't cats be formally defined? Surely a cat has a particular genome that defines it regardless of its outward appearance, right?"
+
+But in a world where cats evolved from another species via gradual mutations to individual base pairs in their DNA (not big leaps), where do we draw the line between cat and cave-cat, so to speak.
 
 Moreover is a picture of a cat a cat? It certainly represents the notion of a cat, but it doesn't exactly have genetic material. Plus, there is no formal way to tell whether a given picture is of a cat or not. No formula, no physical law of cats. We can tell a cat, real or drawn, from another animal using our *intuition*, whatever that is.
 
@@ -26,7 +28,7 @@ Why is this a problem? Well, without a concrete definition, the statements we ca
 
 Take morality. Unlike a well defined concept, you can't point to some mathematical construction or set of rules that it follows. I can't tell you without a doubt whether a given action was 'moral' or not, nor can I even define morality.
 
-Killing is certainly immoral... right? Well, except when it's in the defense of yourself or others. What about hitting a kid as punishment. We certainly wouldn't find that acceptable today, but it was commonplace not too long ago. How can there be an objective definition of morality if it is riddled with exceptions and even evolves over time?
+Killing is certainly immoral... right? Well, except when it's in the defense of yourself or others. What about hitting a kid as punishment? We certainly wouldn't find that acceptable today, but it was commonplace not too long ago. How can there be an objective definition of morality if it is riddled with exceptions and even evolves over time?
 
 A chemist can give you certainty that a particular solution will erode a metal because chemistry is a formal science with mathematical definitions of all its concepts. A psychologist, however, may only have a hazy idea of why you may feel a certain emotion (whatever an emotion is) and what could have caused it.
 
@@ -46,7 +48,7 @@ A Cesium atom, for example, is thus completely mathematically defined. Everythin
 
 This applies to all atoms, and thus all molecules, and further anything in the universe made of matter, like humans. This shouldn't come as a surprise. After all, we know that math is the bedrock of science and thus of formal knowledge as a whole.
 
-*Of course, modeling even molecules (much less humans) as quantum wave functions is pretty much out of our reach computationally. As such claiming that quantum wave functions can model all aspects of our lives is a solely theoretical one.*
+*Of course, modeling even molecules (much less humans) as quantum wave functions is pretty much out of our reach computationally. As such the claim that quantum wave functions can model all aspects of our lives is solely a theoretical one.*
 
 ![chain of abstraction](/assets/philosophy/metaphysical-nightmare/chain_of_abstraction.png?style=centerme)
 
