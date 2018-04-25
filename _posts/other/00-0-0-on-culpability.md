@@ -1,0 +1,41 @@
+---
+layout: post
+title: A Thought on Culpability
+date: 2018-04-25
+tags: philosophy
+---
+#### Scenario 1
+Consider a man driving home late after having a few too many drinks. While drunk he decides to run a red light. Nothing comes of it and he manages to arrive home safe and sound.
+
+#### Scenario 2
+Now imagine this same man, under the same circumstances; a man who had just as many drinks, a man who decided to drive while inebriated at the same late hour.
+
+This time he still decides to run the red light but, unlike in the other situation, he blindsides a little girl walking across the street. He puts on the brakes as soon as he sees her but, his reaction time being delayed, runs over and kills her.
+
+<!--more-->
+
+#### Result
+Gruesome to be sure, but consider the repercussions of his actions in both cases. In one instance the man got home scot-free, with nothing more than a traffic ticket, DUI, and/or angry wife looming over his head.
+
+In the other instance however, he was charged and convicted of manslaughter.
+
+Both instances of the man made the same decisions up to that point, and neither wanted to kill anybody that night. So what delineates these two situations? What makes one a murderer and the other a drunk driver?
+
+Luck.
+
+#### Why?
+If you were to ask someone whether the one who ran the red-light with no consequence or the one who ran over a pedestrian was more guilty, you would have good reason to believe they would say the pedestrian killer. And even if we were to concede that, at least by intent, the two drunk men were equally culpable, it still just doesn’t sit right with us. How could it be that a murderer is just as evil as a reckless driver? Does it seem wrong that one be locked up for life and the other lose a star on their driver's license?
+
+Well… I don’t know. Why is it that a 17 year old, a day before his birthday, isn’t fully responsible for his actions but once he is 18 is considered independent by the law? How can anybody be culpable if they are a product of their parents, environment, genetics, etc? What is culpability?
+
+<!-- HOW CAN CULPABILITY EXITTS WITHOUT FREE WILL -->
+
+Well someone has to be culpable. You have to draw the line in the sand somewhere. Why? Well it seems that punishment may not be dealt out to punish those who have evil intent but instead, to make an affirmation that the effects their intent caused are unwanted.
+
+When a court decides that the pedestrian killer should serve 15 years in jail and the red light offender shouldn’t, they may very well be considering his intent, but they also consider the effects his intent has caused, whether it be in his control or not. A judiciary in a government, I’d say, serves to remove and make examples of those who do not follow the norms of society and who may pose danger to it. Whether or not they are more culpable then the next driver they still killed someone and so we make sure to discourage this behavior not because we care for their intent but because we care for their effects.
+
+"But wait", many have objected, "punishing people for their actions in this way rather than offering support to correct their behavior is a misguided tactic in reducing these unwanted effects (stealing, murder, crime, etc.)." And indeed, these objectors may very well be right. So then is there another reason that such methods are employed if more effective ones exist? I think so.
+
+It boils down to our own feelings and behaviors. *Our* meaning human. Of course it doesn't feel right to punish the two men in the same way, whether locking them both up or simply taking a star from both of their licenses. We *FEEL* like they must be dealt with differently. It is ultimately our own instincts, begot from evolutionary processes, that drives us to do what we do.
+
+<!-- MORALITY TOO IS NOTHING BUT A FARCE TO COVER UP OUR INSTINCTS -->

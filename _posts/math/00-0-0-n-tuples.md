@@ -18,6 +18,8 @@ $n$ | $n$-tuple
 
 *My [medium article](https://medium.com/@ozanerhansha/the-ordered-pair-and-set-theory-69aa6e2b8a32) on ordered pairs and their uses.*
 
+<!--more-->
+
 ### Definition
 #### $2$-tuples
 We define ordered pairs, or $2$-tuples, as [Kuratowski](https://en.wikipedia.org/wiki/Kazimierz_Kuratowski) did:
@@ -26,7 +28,6 @@ $$(x_1,x_2)=\{\{x_1\},\{x_1,x_2\}\}$$
 
 The above definition distinguishes $a$ from $b$ in that both sets in the right set contain $a$ but only one contains $b$. This is what gives the pair order.
 
-<!--more-->
 #### $n$-tuples
 Using the $2$-tuple, we can define all $n$-tuples recursively as an ordered pair of an $(n-1)$-tuple and another element. The $3$-tuple, for example, would be:
 
