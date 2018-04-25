@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A Thought on Culpability
+title: On Culpability
 date: 2018-04-25
 tags: philosophy
 ---
@@ -34,8 +34,8 @@ Well someone has to be culpable. You have to draw the line in the sand somewhere
 
 When a court decides that the pedestrian killer should serve 15 years in jail and the red light offender shouldn’t, they may very well be considering his intent, but they also consider the effects his intent has caused, whether it be in his control or not. A judiciary in a government, I’d say, serves to remove and make examples of those who do not follow the norms of society and who may pose danger to it. Whether or not they are more culpable then the next driver they still killed someone and so we make sure to discourage this behavior not because we care for their intent but because we care for their effects.
 
-"But wait", many have objected, "punishing people for their actions in this way rather than offering support to correct their behavior is a misguided tactic in reducing these unwanted effects (stealing, murder, crime, etc.)." And indeed, these objectors may very well be right. So then is there another reason that such methods are employed if more effective ones exist? I think so.
+"But wait", many have objected, "punishing people for their actions in this way rather than offering support to correct their behavior is a misguided tactic in reducing these unwanted effects (stealing, murder, crime, etc.)." And indeed, these objectors may very well be right. So then is there another reason that such methods are employed if more effective ones exist? Is there something fundamental about punishing others for actions a society does not like? I think so.
 
-It boils down to our own feelings and behaviors. *Our* meaning human. Of course it doesn't feel right to punish the two men in the same way, whether locking them both up or simply taking a star from both of their licenses. We *FEEL* like they must be dealt with differently. It is ultimately our own instincts, begot from evolutionary processes, that drives us to do what we do.
+It boils down to our own feelings and behaviors. *Our* meaning human. Of course it doesn't feel right to punish the two men in the same way, whether locking them both up or simply taking a star from both of their licenses. We *FEEL* like they must be dealt with differently. It is ultimately our own instincts that drive our behavior as a society. The system of justice we have today is not the product not careful reasoning, but an ad-hoc solution. One begot from evolutionary processes. Processes that took time immemorial just to get a working solution, much less an optimal one...
 
 <!-- MORALITY TOO IS NOTHING BUT A FARCE TO COVER UP OUR INSTINCTS -->
