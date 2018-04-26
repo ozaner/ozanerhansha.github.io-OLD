@@ -19,7 +19,7 @@ Gruesome to be sure, but consider the repercussions of his actions in both cases
 
 In the other instance however, he was charged and convicted of manslaughter.
 
-Both instances of the man made the same, poor, decisions up to the point of the accident. And neither wanted to kill anybody that night. What then delineates these two situations? What makes the man a murderer in one situation and in the other a drunk driver?
+Both instances of the man made the same, poor decisions up to the point of the accident. And neither wanted to kill anybody that night. What then delineates these two situations? What makes the man a murderer in one situation and in the other just a drunk driver?
 
 Luck.
 
