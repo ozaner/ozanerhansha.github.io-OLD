@@ -15,7 +15,7 @@ This time he still decides to run the red light but, unlike in the other situati
 <!--more-->
 
 #### Result
-Gruesome to be sure, but consider the repercussions of his actions in both cases. In one instance the man got home scot-free, with nothing more than a traffic ticket, DUI, and/or angry wife looming over his head.
+Gruesome to be sure, but consider the repercussions of his actions in both cases. In one instance the man got home scot-free, with nothing more than a traffic ticket looming over his head.
 
 In the other instance however, he was charged and convicted of manslaughter.
 
