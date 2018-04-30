@@ -73,23 +73,23 @@ $$A\times B \times C=(A \times B)\times C$$
 <details>
 <summary><h3 class="inline">Distributive Properties</h3></summary>
 
-#### Union
+<h4>Union</h4>
 $$A\times\left(B\cup C\right)=\left(A\times B\right)\cup \left(A\times C\right)$$
 
-#### Intersection
+<h4>Intersection</h4>
 $$A\times\left(B\cap C\right)=\left(A\times B\right)\cap \left(A\times C\right)$$
 
 $$\left(A\times B\right)\cap \left(C\times D\right)=\left(A\cap B\right)\times \left(C\cap D\right)$$
 
-#### Set Difference
+<h4>Set Difference</h4>
 $$A\times\left(B\setminus C\right)=\left(A\times B\right)\setminus \left(A\times C\right)$$
 
-#### Subsets
+<h4>Subsets</h4>
 $$B\subseteq C\iff\left(A\times B\right)\subseteq \left(A\times C\right)$$
 
 $$\left(A\times B\right)\subseteq \left(C\times D\right)\iff\left(A\subseteq B\right)\land \left(C\subseteq D\right)$$
 
-#### Complements
+<h4>Complements</h4>
 If $A$ and $B$ are memebers of some universal set $U$, then their absolute complement is denoted $A^C$ and $B^C$ respectively.
 
 $$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right)\cup\left(A\times B^C\right)$$
