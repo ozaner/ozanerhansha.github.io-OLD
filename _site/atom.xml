@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-04-28T11:14:33-04:00</updated>
+ <updated>2018-04-30T17:54:22-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -15,7 +15,7 @@
  <entry>
    <title>Cartesian Product</title>
    <link href="http://localhost:4000/cartesian-product/"/>
-   <updated>2018-04-27T00:00:00-04:00</updated>
+   <updated>2018-04-30T00:00:00-04:00</updated>
    <id>http://localhost:4000/cartesian-product</id>
    <content type="html">&lt;h3 id=&quot;definition&quot;&gt;Definition&lt;/h3&gt;
 &lt;p&gt;The Cartesian product $\times$ is an operation on two sets, $A$ and $B$, that returns the set of all &lt;a href=&quot;/n-tuples&quot;&gt;ordered pairs&lt;/a&gt; with their first element from $A$ and their second from $B$.&lt;/p&gt;
@@ -41,7 +41,7 @@
 
 &lt;details&gt;&lt;summary&gt;Details &amp;amp; Explanation&lt;/summary&gt;
 
-Because of this, and the definition of an [$n$-tuple](/n-tuples#n-tuples), we can give an example of a $3$-ary Cartesian product returning a set of $3$-tuples:
+Because of this, and the definition of an &lt;a href=&quot;/n-tuples#n-tuples&quot;&gt;$n$-tuple&lt;/a&gt;, we can give an example of a $3$-ary Cartesian product returning a set of $3$-tuples:
 
 $$\begin{align}
 A\times B\times C&amp;amp;=(A \times B)\times C\\
@@ -57,31 +57,55 @@ A\times B\times C&amp;amp;=(A \times B)\times C\\
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\underbrace{S\times S \times \cdots \times S}_{n\text{ sets}}=S^n&lt;/script&gt;
 
-&lt;h3 id=&quot;properties&quot;&gt;Properties&lt;/h3&gt;
+&lt;h3 id=&quot;order-properties&quot;&gt;Order Properties&lt;/h3&gt;
 &lt;h4 id=&quot;non-commutative&quot;&gt;Non-Commutative&lt;/h4&gt;
 &lt;p&gt;The Cartesian product is a non-commutative operator:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;A\times B \not= B \times A&lt;/script&gt;
 
-&lt;details&gt;&lt;summary&gt;Rationale&lt;/summary&gt;
-
-This should be obvious as the ordered tuples $(a,b)\not=(b,a)$ where $a\in A$ and $b\in B$ via the definition of [tuple equality](/n-tuples#equality).
-&lt;/details&gt;
+&lt;p&gt;This should be obvious as the ordered tuples $(a,b)\not=(b,a)$ where $a\in A$ and $b\in B$ via the definition of &lt;a href=&quot;/n-tuples#equality&quot;&gt;tuple equality&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h4 id=&quot;non-associative&quot;&gt;Non-Associative&lt;/h4&gt;
 &lt;p&gt;The Cartesian product is a non-associative operator:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\left(A\times B\right) \times C \not= A\times \left(B \times C\right)&lt;/script&gt;
 
-&lt;details&gt;&lt;summary&gt;Rationale&lt;/summary&gt;
-
-Similar to its non-commutativity, we can illustrate this by noting that $((a,b),c)\not= (a,(b,c))$ where $a\in A$, $b\in B$, and $c\in C$.
-&lt;/details&gt;
+&lt;p&gt;Similar to its non-commutativity, we can illustrate this by noting that $((a,b),c)\not= (a,(b,c))$ where $a\in A$, $b\in B$, and $c\in C$.&lt;/p&gt;
 
 &lt;h4 id=&quot;left-associative&quot;&gt;Left-Associative&lt;/h4&gt;
 &lt;p&gt;When faced with an $n$-ary Cartesian product, it is conventionally evaluated from left to right. That is to say the Cartesian product is left-associative:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;A\times B \times C=(A \times B)\times C&lt;/script&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;Distributive Properties&lt;/h3&gt;&lt;/summary&gt;
+
+&lt;h4&gt;Union&lt;/h4&gt;
+$$A\times\left(B\cup C\right)=\left(A\times B\right)\cup \left(A\times C\right)$$
+
+&lt;h4&gt;Intersection&lt;/h4&gt;
+$$A\times\left(B\cap C\right)=\left(A\times B\right)\cap \left(A\times C\right)$$
+
+$$\left(A\times B\right)\cap \left(C\times D\right)=\left(A\cap B\right)\times \left(C\cap D\right)$$
+
+&lt;h4&gt;Set Difference&lt;/h4&gt;
+$$A\times\left(B\setminus C\right)=\left(A\times B\right)\setminus \left(A\times C\right)$$
+
+&lt;h4&gt;Subsets&lt;/h4&gt;
+$$B\subseteq C\iff\left(A\times B\right)\subseteq \left(A\times C\right)$$
+
+$$\left(A\times B\right)\subseteq \left(C\times D\right)\iff\left(A\subseteq B\right)\land \left(C\subseteq D\right)$$
+
+&lt;h4&gt;Complements&lt;/h4&gt;
+If $A$ and $B$ are memebers of some universal set $U$, then their absolute complement is denoted $A^C$ and $B^C$ respectively.
+
+$$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right)\cup\left(A\times B^C\right)$$
+&lt;/details&gt;
+
+&lt;h3 id=&quot;cardinal-multiplication&quot;&gt;Cardinal Multiplication&lt;/h3&gt;
+&lt;p&gt;Cartesian products are used to define the product of two cardinal numbers:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\left|X\right|\cdot\left|Y\right|=\left|X\times Y\right|&lt;/script&gt;
 
 &lt;h3 id=&quot;some-uses&quot;&gt;Some Uses&lt;/h3&gt;
 &lt;h4 id=&quot;functions-and-relations&quot;&gt;Functions and Relations&lt;/h4&gt;

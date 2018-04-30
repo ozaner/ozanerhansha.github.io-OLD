@@ -28,7 +28,7 @@ $$S_1\times S_2\times \cdots \times S_n=\{\left(s_1,s_2,\cdots,s_n\right)\mid\fo
 
 <details><summary>Details & Explanation</summary>
 
-Because of this, and the definition of an [$n$-tuple](/n-tuples#n-tuples), we can give an example of a $3$-ary Cartesian product returning a set of $3$-tuples:
+Because of this, and the definition of an <a href="/n-tuples#n-tuples">$n$-tuple</a>, we can give an example of a $3$-ary Cartesian product returning a set of $3$-tuples:
 
 $$\begin{align}
 A\times B\times C&=(A \times B)\times C\\
@@ -50,20 +50,14 @@ The Cartesian product is a non-commutative operator:
 
 $$A\times B \not= B \times A$$
 
-<details><summary>Rationale</summary>
-
 This should be obvious as the ordered tuples $(a,b)\not=(b,a)$ where $a\in A$ and $b\in B$ via the definition of [tuple equality](/n-tuples#equality).
-</details>
 
 #### Non-Associative
 The Cartesian product is a non-associative operator:
 
 $$\left(A\times B\right) \times C \not= A\times \left(B \times C\right)$$
 
-<details><summary>Rationale</summary>
-
 Similar to its non-commutativity, we can illustrate this by noting that $((a,b),c)\not= (a,(b,c))$ where $a\in A$, $b\in B$, and $c\in C$.
-</details>
 
 #### Left-Associative
 When faced with an $n$-ary Cartesian product, it is conventionally evaluated from left to right. That is to say the Cartesian product is left-associative:
