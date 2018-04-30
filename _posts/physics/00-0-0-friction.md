@@ -2,7 +2,7 @@
 layout: post
 title: Friction
 date: 2018-03-26
-tags: physics classical-physics classical-mechanics
+tags: physics classical-mechanics
 ---
 ### General Info
 <!-- & Table of Contents -->

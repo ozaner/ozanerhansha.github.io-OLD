@@ -144,10 +144,6 @@
       
         
           
-        
-      
-        
-          
             <a class="sidebar-nav-item" href="/notes/">Notes</a>
           
         
@@ -162,11 +158,11 @@
       
         
           
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
         
       
         
-          
-            <a class="sidebar-nav-item" href="/projects/">Projects</a>
           
         
       
@@ -231,6 +227,35 @@
 <br></br>
 <div class="posts">
   
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/kinematics/">Kinematics</a>
+    </h1>
+    <span class="post-date">March 17, 2018</span>
+    <!-- Make vectors bold rather than arrow headed -->
+<p>$\renewcommand{\vec}[1]{\mathbf{#1}}$
+Translational Kinematics describes the motion of objects through space over time. Using an object’s <a href="/position">position</a>, velocity and acceleration vectors, it is possible to predict where it will be in the future and where it was in the past. Where an object gets that velocity/acceleration is what dynamics seeks to explain.</p>
+
+<h3 id="variable-acceleration">Variable Acceleration</h3>
+<p>To calculate the motion of an object with continuous acceleration, simply refer to the definitions of velocity and acceleration:</p>
+
+<script type="math/tex; mode=display">\begin{align}
+\vec{v}=\frac{d\vec{x}}{dt}\\
+\vec{a}=\frac{d\vec{v}}{dt}
+\end{align}</script>
+
+<p>Integrating these equations we get:</p>
+
+<script type="math/tex; mode=display">\begin{align}
+\vec{x}=\int\vec{v} \,dt+\vec{x}_0\\
+\vec{v}=\int\vec{a} \,dt+\vec{v}_0
+\end{align}</script>
+
+
+    <!--Adds Read more-->
+    <a href="/kinematics/">Read more</a>
+    <hr>
+    
   <div class="post">
     <h1 class="post-title">
       <a href="/position/">Position</a>
@@ -319,31 +344,6 @@
 
     <!--Adds Read more-->
     <a href="/fractional-calculus/">Read more</a>
-    <hr>
-    
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/minkowski-spacetime/">Minkowski Spacetime</a>
-    </h1>
-    <span class="post-date">January 23, 2018</span>
-    <h2 id="what-is-spacetime">What is Spacetime?</h2>
-<p>Before we talk about Minkowski Spacetime, we need to address what it means to combine space and time.</p>
-
-<p>Imagine the Earth orbiting the sun. At every point in time it will be in a different point in its orbit:</p>
-
-<p><img src="https://www.pitt.edu/~jdnorton/teaching/HPS_0410/chapters/spacetime/planet3d.gif?style=centerme" alt="orbit2D" /></p>
-
-<p>If we stack these slices of time in a third (temporal) dimension, it would look like this:</p>
-
-<p><img src="https://www.pitt.edu/~jdnorton/teaching/HPS_0410/chapters/spacetime/planet4d.gif?style=centerme" alt="orbit3D" /></p>
-
-<!-- *It looks similar to euler's formula, $e^{i\theta}=\cos \theta + i\sin\theta$, with space being the complex plane and time being the angle $\theta$. The imaginary part will come in handy later.* -->
-
-<p>This is an example of a 3D spacetime. It has 2 dimensions of space and 1 of time. Our universe has 3 space and 1 time dimension, making our spacetime (referred to as <em>Minkowski Spacetime</em>) 4 dimensional.</p>
-
-
-    <!--Adds Read more-->
-    <a href="/minkowski-spacetime/">Read more</a>
     <hr>
     
   </div>

@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <title>
     
-      Ozaner &middot; Recent Posts
+      Cartesian Product &middot; Ozaner
     
   </title>
 
@@ -223,16 +223,16 @@
 
 
     <div class="content container">
-      <font size="7">Recent Posts</font>
-<br></br>
-<div class="posts">
+      <div class="post">
+  <h1 class="post-title">Cartesian Product</h1>
+  <span class="post-date">27 Apr 2018</span>
+  <span>[
   
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/cartesian-product/">Cartesian Product</a>
-    </h1>
-    <span class="post-date">April 27, 2018</span>
-    <h3 id="definition">Definition</h3>
+    
+    <a href="/tag/math"><code class="highligher-rouge"><nobr>math</nobr></code>&nbsp;</a>
+  
+]</span>
+  <h3 id="definition">Definition</h3>
 <p>The Cartesian product $\times$ is an operation on two sets, $A$ and $B$, that returns the set of all <a href="/n-tuples">ordered pairs</a> with their first element from $A$ and their second from $B$.</p>
 
 <script type="math/tex; mode=display">A\times B=\{(a,b)\mid a\in A \land b\in B\}</script>
@@ -247,135 +247,114 @@
 
 <p>$A\cup B$ is guaranteed by the axiom of union, and its repeated power sets are guaranteed by the axiom of power set. This coupled with the fact that the Cartesian product is only a subset of the above expression implies that it must exist.</p>
 
+<!--more-->
 
-    <!--Adds Read more-->
-    <a href="/cartesian-product/">Read more</a>
-    <hr>
-    
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/on-culpability/">On Culpability</a>
-    </h1>
-    <span class="post-date">April 25, 2018</span>
-    <h4 id="scenario-1">Scenario 1</h4>
-<p>Consider a man driving home late after having a few too many drinks. While drunk he decides to run a red light. Nothing comes of it and he manages to arrive home safe and sound.</p>
+<h3 id="n-ary-cartesian-product">$n$-ary Cartesian Product</h3>
+<p>While the Cartesian product of two sets returns a set of ordered pairs, the Cartesian product of $n$ sets returns an $n$-tuple:</p>
 
-<h4 id="scenario-2">Scenario 2</h4>
-<p>Now imagine this same man, under the same circumstances; a man who had just as many drinks, a man who decided to drive while inebriated at the same late hour.</p>
+<script type="math/tex; mode=display">S_1\times S_2\times \cdots \times S_n=\{\left(s_1,s_2,\cdots,s_n\right)\mid\forall k\in\mathbb{N}^* _ n,\ s_k\in S_k)\}</script>
 
-<p>This time he still decides to run the red light but, unlike in the other situation, he blindsides a little girl walking across the street. He puts on the brakes as soon as he sees her but, his reaction time being delayed, runs over and kills her.</p>
+<details><summary>Details &amp; Explanation</summary>
 
+Because of this, and the definition of an [$n$-tuple](/n-tuples#n-tuples), we can give an example of a $3$-ary Cartesian product returning a set of $3$-tuples:
 
-    <!--Adds Read more-->
-    <a href="/on-culpability/">Read more</a>
-    <hr>
-    
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/n-tuples/">n-Tuples</a>
-    </h1>
-    <span class="post-date">April 23, 2018</span>
-    <p>An $n$-tuple is an ordered list of $n$ elements. It is dissimilar to a set in that the order of its elements matter, it must be finite, and it can contain multiples of the same element.</p>
+$$\begin{align}
+A\times B\times C&amp;=(A \times B)\times C\\
+&amp;=\{(a,b)\}\times C\\
+&amp;=\{((a,b),c)\}\\
+&amp;=\{(a,b,c)\}
+\end{align}$$
+*Where $a\in A$, $b\in B$, and $c\in C$*.
+</details>
 
-<p>Here are some common names for tuples of different size:</p>
+<h4 id="cartesian-powers">Cartesian Powers</h4>
+<p>When referring to the repeated Cartesian product of the same set $S$, we can use an abbreviated notation:</p>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: right">$n$-tuple</th>
-      <th style="text-align: left">Name(s)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: right">$0$</td>
-      <td style="text-align: left">null-tuple, $0$-tuple</td>
-    </tr>
-    <tr>
-      <td style="text-align: right">$1$</td>
-      <td style="text-align: left">singleton, $1$-tuple</td>
-    </tr>
-    <tr>
-      <td style="text-align: right">$2$</td>
-      <td style="text-align: left">ordered pair, $2$-tuple</td>
-    </tr>
-    <tr>
-      <td style="text-align: right">$3$</td>
-      <td style="text-align: left">ordered triplet, $3$-tuple</td>
-    </tr>
-    <tr>
-      <td style="text-align: right">$n$</td>
-      <td style="text-align: left">$n$-tuple</td>
-    </tr>
-  </tbody>
-</table>
+<script type="math/tex; mode=display">\underbrace{S\times S \times \cdots \times S}_{n\text{ sets}}=S^n</script>
 
-<p><em>My <a href="https://medium.com/@ozanerhansha/the-ordered-pair-and-set-theory-69aa6e2b8a32">medium article</a> on ordered pairs and their uses.</em></p>
+<h3 id="properties">Properties</h3>
+<h4 id="non-commutative">Non-Commutative</h4>
+<p>The Cartesian product is a non-commutative operator:</p>
 
+<script type="math/tex; mode=display">A\times B \not= B \times A</script>
 
-    <!--Adds Read more-->
-    <a href="/n-tuples/">Read more</a>
-    <hr>
-    
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/superfactorial-and-hyperfactorial/">Superfactorial and Hyperfactorial</a>
-    </h1>
-    <span class="post-date">April 18, 2018</span>
-    <h3 id="factorial">Factorial</h3>
-<p>The factorial function $n!$ is the product of the first $n$ positive integers. We can define it as:</p>
+<details><summary>Rationale</summary>
 
-<script type="math/tex; mode=display">n!=\prod_{k=1}^{n}k=1\times2\times3\times\cdots\times n</script>
+This should be obvious as the ordered tuples $(a,b)\not=(b,a)$ where $a\in A$ and $b\in B$ via the definition of [tuple equality](/n-tuples#equality).
+</details>
 
-<p><em>The factorials are sequence <a href="https://oeis.org/A000142">A000142</a> in the OEIS.</em></p>
+<h4 id="non-associative">Non-Associative</h4>
+<p>The Cartesian product is a non-associative operator:</p>
 
-<p>It’s important to note that $0!$ is defined as $1$ because it is an <a href="https://en.wikipedia.org/wiki/Empty_product">empty product</a>. This is not an arbitrary definition and in fact simplifies many formulas involving factorials.</p>
+<script type="math/tex; mode=display">\left(A\times B\right) \times C \not= A\times \left(B \times C\right)</script>
 
-<p>The function is a mapping from the natural numbers to itself:</p>
+<details><summary>Rationale</summary>
 
-<script type="math/tex; mode=display">!:\mathbb{N}\rightarrow\mathbb{N}</script>
+Similar to its non-commutativity, we can illustrate this by noting that $((a,b),c)\not= (a,(b,c))$ where $a\in A$, $b\in B$, and $c\in C$.
+</details>
 
-<p><em>Using <a href="https://en.wikipedia.org/wiki/Analytic_continuation">analytic continuation</a> the factorial function can be generalized to complex numbers. The resulting function is dubbed the $\Gamma(z)$ <a href="https://en.wikipedia.org/wiki/Gamma_function">gamma function</a>.</em></p>
+<h4 id="left-associative">Left-Associative</h4>
+<p>When faced with an $n$-ary Cartesian product, it is conventionally evaluated from left to right. That is to say the Cartesian product is left-associative:</p>
 
-<p>While there is much to discuss about the factorial function, this post concerns itself with two particular extensions of the factorial. Namely the superfactorial and the hyperfactorial.</p>
+<script type="math/tex; mode=display">A\times B \times C=(A \times B)\times C</script>
 
+<h3 id="some-uses">Some Uses</h3>
+<h4 id="functions-and-relations">Functions and Relations</h4>
+<p>Relations, and thus functions and operations, from a set $A$ to a set $B$ are defined as subsets of the Cartesian product $A\times B$. For example the less than or equal to relation $\le$ on the integers can be defined as so:</p>
 
-    <!--Adds Read more-->
-    <a href="/superfactorial-and-hyperfactorial/">Read more</a>
-    <hr>
-    
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/dottie-number/">The Dottie Number</a>
-    </h1>
-    <span class="post-date">April 16, 2018</span>
-    <p>The Dottie number, which I will denote as $\textbf{d}$, is the only real solution to the following equation:</p>
+<script type="math/tex; mode=display">\le\equiv\{\cdots,\left(1,2\right),\left(-14,0\right),\left(5,5\right),\left(12,13\right),\cdots\}</script>
 
-<script type="math/tex; mode=display">\cos x=x</script>
+<p><em>We can formalize this definition to set theory by comparing the cardinality of the sets represented by the naturals and further the integers.</em></p>
 
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Dottie_number.svg/800px-Dottie_number.svg.png?style=centerme" alt="graph" width="440px" /></p>
+<p>And so, because $10$ is less than $12$, the ordered pair $(10,12)\in\le$. We can write this more conventionally as $10\le12$.</p>
 
-<p>The above is what’s known as a transcendental equation. Equations like these usually return transcendental numbers and indeed $\textbf{d}$ is transcendental. It’s decimal expansion is as follows:</p>
+<h4 id="coordinates">Coordinates</h4>
+<p>Every point in $2$-space represents an element of the Cartesian product of the Reals with themselves (i.e $\mathbb{R}^2$). This can be generalized for $n$-space with every point being an element of $\mathbb{R}^n$:</p>
 
-<script type="math/tex; mode=display">\textbf{d}=0.7390851332151606...</script>
+<script type="math/tex; mode=display">\mathbb{R}^n=\{(x_1,x_2,\cdots,x_n)\mid \forall k\in \mathbb{N}^* _ n,\   x_k\in\mathbb{R}\}</script>
 
-<p><em>The Dottie number is sequence <a href="https://oeis.org/A003957">A003957</a> in the OEIS.</em></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cartesian-coordinate-system.svg/354px-Cartesian-coordinate-system.svg.png?style=centerme" alt="plane" /></p>
 
+<p><em>Indeed, the graphical representation above was dubbed the Cartesian plane after the same <a href="https://en.wikipedia.org/wiki/René_Descartes">Descartes</a> that used it to represent the Cartesian product $\mathbb{R}\times\mathbb{R}$.</em></p>
 
-    <!--Adds Read more-->
-    <a href="/dottie-number/">Read more</a>
-    <hr>
-    
-  </div>
+<p>Points in $3$-space are necessary in describing the <a href="/position">position</a> of objects and particles in space and thus set up the study of <a href="\kinematics">motion</a>, the causes of that motion and, ultimately, the rest of physics.</p>
+
+<p>Moreover, $2$-space (and less frequently $3$-space) is useful in plotting and making inferences from data, as well as visualizing functions over numbers.</p>
+
 </div>
 
-<div class="pagination">
-  
-    <a class="pagination-item older" href="/page2">Older</a>
-  
-  
-    <span class="pagination-item newer">Newer</span>
-  
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/on-culpability/">
+            On Culpability
+            <small>25 Apr 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/n-tuples/">
+            n-Tuples
+            <small>23 Apr 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/superfactorial-and-hyperfactorial/">
+            Superfactorial and Hyperfactorial
+            <small>18 Apr 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
 </div>
 
     </div>

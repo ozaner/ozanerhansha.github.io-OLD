@@ -125,9 +125,7 @@ I'll do it later...
 #### Extracting Elements of $n$-Tuples
 You may have noticed that the above definitions only apply to $2$-tuples. What about $n$-tuples? Well, as it turns out, we can extract the elements of an $n$-tuple of any size by recursively using the $\pi_1$ and $\pi_2$ functions we defined above.
 
-The notation we'll use is as follows: $\pi^n_a(P)$ is the $a$th element of $P$, which is an $n$-tuple:
-
-$$P=\left(x_1,x_2,x_3,\cdots,x_n\right)$$
+The notation we'll use is as follows: $\pi^n_a(P)$ is the $a$th element of the $n$-tuple $P=\left(x_1,x_2,x_3,\cdots,x_n\right)$.
 
 The first element of $P$ can be found like so:
 
@@ -177,24 +175,8 @@ Why are is there a conditional definition of the $a$th element of an $n$-tuple? 
 </details>
 
 ### Some Uses
-#### Functions and Relations
-$n$-tuples are necessary to define relations and thus functions and operations. For example, assuming multiplication has been defined, division can be defined as a collection of $3$-tuples:
-
-$$\begin{align}
-\div&\equiv\{(x,y,z)\mid x=y\times z\ \land y\not=0\}\\
-&\equiv\{\cdots,\left(10,2,5\right),\left(4,3,\frac{4}{3}\right),\left(2,1,2\right),\cdots\}
-\end{align}$$
-
-And because there is a unique $z$ for every $x$ and $y$ (this is what makes it a function instead of just a relation), we can define the following function: $\div(x,y)=z$.
-
-So, for example, $\div(15,3)=5$ or if we use more conventional notation: $15\div 3=5$.
-
-#### Coordinates
-They are also used in describing the locations of points in space:
-
-![plane](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cartesian-coordinate-system.svg/354px-Cartesian-coordinate-system.svg.png?style=centerme)
-
-This is crucial in constructing physical theories of space and spacetime, plotting and making inferences from data, and visualizing functions over numbers.
+#### [Cartesian Product](/cartesian-product)
+Ordered pairs are necessary in defining the Cartesian product, which in turn are used to define relations, functions, coordinates, etc.
 
 #### Mathematical Structures
 Tuples are often used to encapsulate sets along with some operator or relation into a complete mathematical structure. One example is a graph which is defined as an ordered pair $G=(V,E)$ where $V$ is a set of vertices and $E$ a set of edges connecting those vertices. Another example is a group which is defined as an ordered pair $G=(S,\cdot)$ where $\cdot$ is some binary operation on the elements of $S$. Tuples are also used to encapsulate rings, fields, vector spaces, topological spaces, ordered sets, and so on.

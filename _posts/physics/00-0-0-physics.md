@@ -2,7 +2,7 @@
 layout: post
 title: Physics
 date: 2018-03-14
-tags: physics classical-physics
+tags: physics
 ---
 Physics is the branch of science that studies the properties and mechanics of matter and energy in  spacetime and their interaction with the 4 fundamental forces.
 

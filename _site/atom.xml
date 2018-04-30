@@ -4,13 +4,109 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-04-25T19:36:23-04:00</updated>
+ <updated>2018-04-28T11:14:33-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Cartesian Product</title>
+   <link href="http://localhost:4000/cartesian-product/"/>
+   <updated>2018-04-27T00:00:00-04:00</updated>
+   <id>http://localhost:4000/cartesian-product</id>
+   <content type="html">&lt;h3 id=&quot;definition&quot;&gt;Definition&lt;/h3&gt;
+&lt;p&gt;The Cartesian product $\times$ is an operation on two sets, $A$ and $B$, that returns the set of all &lt;a href=&quot;/n-tuples&quot;&gt;ordered pairs&lt;/a&gt; with their first element from $A$ and their second from $B$.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;A\times B=\{(a,b)\mid a\in A \land b\in B\}&lt;/script&gt;
+
+&lt;h4 id=&quot;existence-in-zfc&quot;&gt;Existence in ZFC&lt;/h4&gt;
+&lt;p&gt;We can show that, utilizing the &lt;a href=&quot;/n-tuples#definition&quot;&gt;Kuratowski definition&lt;/a&gt; of ordered pairs, that the Cartesian product of two sets is merely a subset of the following:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;A\times B \in \mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)&lt;/script&gt;
+
+&lt;details&gt;&lt;summary&gt;Proof&lt;/summary&gt;Ill do it later...&lt;/details&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;$A\cup B$ is guaranteed by the axiom of union, and its repeated power sets are guaranteed by the axiom of power set. This coupled with the fact that the Cartesian product is only a subset of the above expression implies that it must exist.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h3 id=&quot;n-ary-cartesian-product&quot;&gt;$n$-ary Cartesian Product&lt;/h3&gt;
+&lt;p&gt;While the Cartesian product of two sets returns a set of ordered pairs, the Cartesian product of $n$ sets returns an $n$-tuple:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;S_1\times S_2\times \cdots \times S_n=\{\left(s_1,s_2,\cdots,s_n\right)\mid\forall k\in\mathbb{N}^* _ n,\ s_k\in S_k)\}&lt;/script&gt;
+
+&lt;details&gt;&lt;summary&gt;Details &amp;amp; Explanation&lt;/summary&gt;
+
+Because of this, and the definition of an [$n$-tuple](/n-tuples#n-tuples), we can give an example of a $3$-ary Cartesian product returning a set of $3$-tuples:
+
+$$\begin{align}
+A\times B\times C&amp;amp;=(A \times B)\times C\\
+&amp;amp;=\{(a,b)\}\times C\\
+&amp;amp;=\{((a,b),c)\}\\
+&amp;amp;=\{(a,b,c)\}
+\end{align}$$
+*Where $a\in A$, $b\in B$, and $c\in C$*.
+&lt;/details&gt;
+
+&lt;h4 id=&quot;cartesian-powers&quot;&gt;Cartesian Powers&lt;/h4&gt;
+&lt;p&gt;When referring to the repeated Cartesian product of the same set $S$, we can use an abbreviated notation:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\underbrace{S\times S \times \cdots \times S}_{n\text{ sets}}=S^n&lt;/script&gt;
+
+&lt;h3 id=&quot;properties&quot;&gt;Properties&lt;/h3&gt;
+&lt;h4 id=&quot;non-commutative&quot;&gt;Non-Commutative&lt;/h4&gt;
+&lt;p&gt;The Cartesian product is a non-commutative operator:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;A\times B \not= B \times A&lt;/script&gt;
+
+&lt;details&gt;&lt;summary&gt;Rationale&lt;/summary&gt;
+
+This should be obvious as the ordered tuples $(a,b)\not=(b,a)$ where $a\in A$ and $b\in B$ via the definition of [tuple equality](/n-tuples#equality).
+&lt;/details&gt;
+
+&lt;h4 id=&quot;non-associative&quot;&gt;Non-Associative&lt;/h4&gt;
+&lt;p&gt;The Cartesian product is a non-associative operator:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\left(A\times B\right) \times C \not= A\times \left(B \times C\right)&lt;/script&gt;
+
+&lt;details&gt;&lt;summary&gt;Rationale&lt;/summary&gt;
+
+Similar to its non-commutativity, we can illustrate this by noting that $((a,b),c)\not= (a,(b,c))$ where $a\in A$, $b\in B$, and $c\in C$.
+&lt;/details&gt;
+
+&lt;h4 id=&quot;left-associative&quot;&gt;Left-Associative&lt;/h4&gt;
+&lt;p&gt;When faced with an $n$-ary Cartesian product, it is conventionally evaluated from left to right. That is to say the Cartesian product is left-associative:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;A\times B \times C=(A \times B)\times C&lt;/script&gt;
+
+&lt;h3 id=&quot;some-uses&quot;&gt;Some Uses&lt;/h3&gt;
+&lt;h4 id=&quot;functions-and-relations&quot;&gt;Functions and Relations&lt;/h4&gt;
+&lt;p&gt;Relations, and thus functions and operations, from a set $A$ to a set $B$ are defined as subsets of the Cartesian product $A\times B$. For example the less than or equal to relation $\le$ on the integers can be defined as so:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\le\equiv\{\cdots,\left(1,2\right),\left(-14,0\right),\left(5,5\right),\left(12,13\right),\cdots\}&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;We can formalize this definition to set theory by comparing the cardinality of the sets represented by the naturals and further the integers.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;And so, because $10$ is less than $12$, the ordered pair $(10,12)\in\le$. We can write this more conventionally as $10\le12$.&lt;/p&gt;
+
+&lt;h4 id=&quot;coordinates&quot;&gt;Coordinates&lt;/h4&gt;
+&lt;p&gt;Every point in $2$-space represents an element of the Cartesian product of the Reals with themselves (i.e $\mathbb{R}^2$). This can be generalized for $n$-space with every point being an element of $\mathbb{R}^n$:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbb{R}^n=\{(x_1,x_2,\cdots,x_n)\mid \forall k\in \mathbb{N}^* _ n,\   x_k\in\mathbb{R}\}&lt;/script&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cartesian-coordinate-system.svg/354px-Cartesian-coordinate-system.svg.png?style=centerme&quot; alt=&quot;plane&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Indeed, the graphical representation above was dubbed the Cartesian plane after the same &lt;a href=&quot;https://en.wikipedia.org/wiki/René_Descartes&quot;&gt;Descartes&lt;/a&gt; that used it to represent the Cartesian product $\mathbb{R}\times\mathbb{R}$.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Points in $3$-space are necessary in describing the &lt;a href=&quot;/position&quot;&gt;position&lt;/a&gt; of objects and particles in space and thus set up the study of &lt;a href=&quot;\kinematics&quot;&gt;motion&lt;/a&gt;, the causes of that motion and, ultimately, the rest of physics.&lt;/p&gt;
+
+&lt;p&gt;Moreover, $2$-space (and less frequently $3$-space) is useful in plotting and making inferences from data, as well as visualizing functions over numbers.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>On Culpability</title>
@@ -28,11 +124,11 @@
 &lt;!--more--&gt;
 
 &lt;h4 id=&quot;result&quot;&gt;Result&lt;/h4&gt;
-&lt;p&gt;Gruesome to be sure, but consider the repercussions of his actions in both cases. In one instance the man got home scot-free, with nothing more than a traffic ticket, DUI, and/or angry wife looming over his head.&lt;/p&gt;
+&lt;p&gt;Gruesome to be sure, but consider the repercussions of his actions in both cases. In one instance the man got home scot-free, with nothing more than a traffic ticket looming over his head.&lt;/p&gt;
 
 &lt;p&gt;In the other instance however, he was charged and convicted of manslaughter.&lt;/p&gt;
 
-&lt;p&gt;Both instances of the man made the same decisions up to that point, and neither wanted to kill anybody that night. So what delineates these two situations? What makes one a murderer and the other a drunk driver?&lt;/p&gt;
+&lt;p&gt;Both instances of the man made the same, poor decisions up to the point of the accident. And neither wanted to kill anybody that night. What then delineates these two situations? What makes the man a murderer in one situation and in the other just a drunk driver?&lt;/p&gt;
 
 &lt;p&gt;Luck.&lt;/p&gt;
 
@@ -209,9 +305,7 @@ I'll do it later...
 &lt;h4 id=&quot;extracting-elements-of-n-tuples&quot;&gt;Extracting Elements of $n$-Tuples&lt;/h4&gt;
 &lt;p&gt;You may have noticed that the above definitions only apply to $2$-tuples. What about $n$-tuples? Well, as it turns out, we can extract the elements of an $n$-tuple of any size by recursively using the $\pi_1$ and $\pi_2$ functions we defined above.&lt;/p&gt;
 
-&lt;p&gt;The notation we’ll use is as follows: $\pi^n_a(P)$ is the $a$th element of $P$, which is an $n$-tuple:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P=\left(x_1,x_2,x_3,\cdots,x_n\right)&lt;/script&gt;
+&lt;p&gt;The notation we’ll use is as follows: $\pi^n_a(P)$ is the $a$th element of the $n$-tuple $P=\left(x_1,x_2,x_3,\cdots,x_n\right)$.&lt;/p&gt;
 
 &lt;p&gt;The first element of $P$ can be found like so:&lt;/p&gt;
 
@@ -261,25 +355,8 @@ Why are is there a conditional definition of the $a$th element of an $n$-tuple? 
 &lt;/details&gt;
 
 &lt;h3 id=&quot;some-uses&quot;&gt;Some Uses&lt;/h3&gt;
-&lt;h4 id=&quot;functions-and-relations&quot;&gt;Functions and Relations&lt;/h4&gt;
-&lt;p&gt;$n$-tuples are necessary to define relations and thus functions and operations. For example, assuming multiplication has been defined, division can be defined as a collection of $3$-tuples:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align}
-\div&amp;\equiv\{(x,y,z)\mid x=y\times z\ \land y\not=0\}\\
-&amp;\equiv\{\cdots,\left(10,2,5\right),\left(4,3,\frac{4}{3}\right),\left(2,1,2\right),\cdots\}
-\end{align} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;And because there is a unique $z$ for every $x$ and $y$ (this is what makes it a function instead of just a relation), we can define the following function: $\div(x,y)=z$.&lt;/p&gt;
-
-&lt;p&gt;So, for example, $\div(15,3)=5$ or if we use more conventional notation: $15\div 3=5$.&lt;/p&gt;
-
-&lt;h4 id=&quot;coordinates&quot;&gt;Coordinates&lt;/h4&gt;
-&lt;p&gt;They are also used in describing the locations of points in space:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cartesian-coordinate-system.svg/354px-Cartesian-coordinate-system.svg.png?style=centerme&quot; alt=&quot;plane&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This is crucial in constructing physical theories of space and spacetime, plotting and making inferences from data, and visualizing functions over numbers.&lt;/p&gt;
+&lt;h4 id=&quot;cartesian-product&quot;&gt;&lt;a href=&quot;/cartesian-product&quot;&gt;Cartesian Product&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Ordered pairs are necessary in defining the Cartesian product, which in turn are used to define relations, functions, coordinates, etc.&lt;/p&gt;
 
 &lt;h4 id=&quot;mathematical-structures&quot;&gt;Mathematical Structures&lt;/h4&gt;
 &lt;p&gt;Tuples are often used to encapsulate sets along with some operator or relation into a complete mathematical structure. One example is a graph which is defined as an ordered pair $G=(V,E)$ where $V$ is a set of vertices and $E$ a set of edges connecting those vertices. Another example is a group which is defined as an ordered pair $G=(S,\cdot)$ where $\cdot$ is some binary operation on the elements of $S$. Tuples are also used to encapsulate rings, fields, vector spaces, topological spaces, ordered sets, and so on.&lt;/p&gt;

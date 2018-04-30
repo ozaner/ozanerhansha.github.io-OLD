@@ -2,7 +2,7 @@
 layout: post
 title: Drag Force
 date: 2018-03-27
-tags: physics classical-physics classical-mechanics
+tags: physics classical-mechanics
 ---
 ### General Info
 The drag force, or fluid friction, is a force that opposes the motion of an object through a fluid/gas, similar to dry [friction](\friction). It can also be used to describe the resistance between a fluid in another fluid.

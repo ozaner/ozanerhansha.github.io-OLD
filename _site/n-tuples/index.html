@@ -144,10 +144,6 @@
       
         
           
-        
-      
-        
-          
             <a class="sidebar-nav-item" href="/notes/">Notes</a>
           
         
@@ -162,11 +158,11 @@
       
         
           
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
         
       
         
-          
-            <a class="sidebar-nav-item" href="/projects/">Projects</a>
           
         
       
@@ -386,9 +382,7 @@ I'll do it later...
 <h4 id="extracting-elements-of-n-tuples">Extracting Elements of $n$-Tuples</h4>
 <p>You may have noticed that the above definitions only apply to $2$-tuples. What about $n$-tuples? Well, as it turns out, we can extract the elements of an $n$-tuple of any size by recursively using the $\pi_1$ and $\pi_2$ functions we defined above.</p>
 
-<p>The notation we’ll use is as follows: $\pi^n_a(P)$ is the $a$th element of $P$, which is an $n$-tuple:</p>
-
-<script type="math/tex; mode=display">P=\left(x_1,x_2,x_3,\cdots,x_n\right)</script>
+<p>The notation we’ll use is as follows: $\pi^n_a(P)$ is the $a$th element of the $n$-tuple $P=\left(x_1,x_2,x_3,\cdots,x_n\right)$.</p>
 
 <p>The first element of $P$ can be found like so:</p>
 
@@ -438,25 +432,8 @@ Why are is there a conditional definition of the $a$th element of an $n$-tuple? 
 </details>
 
 <h3 id="some-uses">Some Uses</h3>
-<h4 id="functions-and-relations">Functions and Relations</h4>
-<p>$n$-tuples are necessary to define relations and thus functions and operations. For example, assuming multiplication has been defined, division can be defined as a collection of $3$-tuples:</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\div&\equiv\{(x,y,z)\mid x=y\times z\ \land y\not=0\}\\
-&\equiv\{\cdots,\left(10,2,5\right),\left(4,3,\frac{4}{3}\right),\left(2,1,2\right),\cdots\}
-\end{align} %]]></script>
-
-<p>And because there is a unique $z$ for every $x$ and $y$ (this is what makes it a function instead of just a relation), we can define the following function: $\div(x,y)=z$.</p>
-
-<p>So, for example, $\div(15,3)=5$ or if we use more conventional notation: $15\div 3=5$.</p>
-
-<h4 id="coordinates">Coordinates</h4>
-<p>They are also used in describing the locations of points in space:</p>
-
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cartesian-coordinate-system.svg/354px-Cartesian-coordinate-system.svg.png?style=centerme" alt="plane" /></p>
-
-<p>This is crucial in constructing physical theories of space and spacetime, plotting and making inferences from data, and visualizing functions over numbers.</p>
+<h4 id="cartesian-product"><a href="/cartesian-product">Cartesian Product</a></h4>
+<p>Ordered pairs are necessary in defining the Cartesian product, which in turn are used to define relations, functions, coordinates, etc.</p>
 
 <h4 id="mathematical-structures">Mathematical Structures</h4>
 <p>Tuples are often used to encapsulate sets along with some operator or relation into a complete mathematical structure. One example is a graph which is defined as an ordered pair $G=(V,E)$ where $V$ is a set of vertices and $E$ a set of edges connecting those vertices. Another example is a group which is defined as an ordered pair $G=(S,\cdot)$ where $\cdot$ is some binary operation on the elements of $S$. Tuples are also used to encapsulate rings, fields, vector spaces, topological spaces, ordered sets, and so on.</p>
@@ -466,6 +443,15 @@ Why are is there a conditional definition of the $a$th element of an $n$-tuple? 
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/cartesian-product/">
+            Cartesian Product
+            <small>27 Apr 2018</small>
+          </a>
+        </h3>
+      </li>
     
       <li>
         <h3>
@@ -481,15 +467,6 @@ Why are is there a conditional definition of the $a$th element of an $n$-tuple? 
           <a href="/superfactorial-and-hyperfactorial/">
             Superfactorial and Hyperfactorial
             <small>18 Apr 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/dottie-number/">
-            The Dottie Number
-            <small>16 Apr 2018</small>
           </a>
         </h3>
       </li>
