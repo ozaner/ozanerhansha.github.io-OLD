@@ -25,6 +25,8 @@ The training data consists of 569 subjects each with 3 values (mean, worst value
 * Symmetry
 * Fractal dimension (measure of edge complexity)
 
+*The meaning of these values is irrelevant to our purpose. All we need to know is that we can use these $10\times3=30$ values to predict whether the given breast cancer sample is malignant or benign.*
+
 All the training examples are stored on a CSV (Comma Separated Value) file called `wdbc.data`, so our first job is to import the file into our program:
 
 ~~~ python
@@ -39,7 +41,7 @@ file_object = open(file_name, 'r')
 ## Cleaning the Data
 Now that it's imported, we can start 'cleaning' the data (that is turning this large string of numbers into a list of training examples labeled  **benign** or **malignant**).
 
-First off we have to split up the dataset (which is currently just one massive string) into a bunch of strings, one for each subject (patient):
+First off we have to split up the dataset, which is currently just one massive string, into a bunch of strings. One for each subject (patient):
 
 ~~~ python
 #Split dataset into separate points (as strings)
@@ -47,13 +49,15 @@ string_points = file_object.read().split('\n')
 string_points.pop(-1)
 ~~~
 
-If you take a look at the actual [`wdbc.data`](https://github.com/ozanerhansha/NeuralNetworks/blob/master/src/test/wdbc.data) file, you'll see that some of the subjects are grouped together benign and malignant. If we trained the network with the subjects in this order it bias the network's guesses. So we shuffle the subjects to avoid this:
+If you take a look at the actual [`wdbc.data`](https://github.com/ozanerhansha/NeuralNetworks/blob/master/src/test/wdbc.data) file, you'll see that some of the subjects are clustered in groups of benign and malignant. If we trained the network with the subjects in this order, it would bias the network's guesses. To avoid this, we'll shuffle the subjects:
 
 ~~~ python
 random.shuffle(string_points) #Randomize (avoid bias)
 ~~~
 
-Next we create a list of feature vectors (a list of all the statistical data for each subject) and y labels (whether the subject is benign or malignant).
+Next we create a list of **feature vectors**, each with 30 entries. A feature vector is simply a list of all the data we have about a particular problem, or in this case a particular subject. Its purpose is to be transformed into the desired answer by the neural network. It's the **input**.
+
+We will also create a list of $y$ labels (`[0,1]` for benign and `[1,0]` for malignant) that correspond with the list of feature vectors. This is the desired **output**.
 
 We'll be using the [numpy](http://www.numpy.org) library here, so let's import it as well:
 
@@ -81,7 +85,7 @@ for point in string_points:
     point_array = np.append(point_array, [temp], axis=0)
 ~~~
 
-All that is left is to split up the subjects into training and testing sets. Testing using the same data as the network was trained on encourages the network to memorize the data rather than generalize the dataset make meaningful predictions.
+All that's left is to split up the subjects (the list of feature vectors) into training and testing sets. Testing using the same data as the network was trained on encourages the network to memorize the data rather than generalize the dataset make meaningful predictions.
 
 Of the 569 subjects, the first 400 will be used to train the network while the remaining 169 will be used to test the network's accuracy:
 
@@ -94,19 +98,19 @@ test_matrix_y = y_labels[400:]
 ~~~
 
 ## Constructing the Network
-A single layer perceptron network seems to do well enough in fitting the test data, so we'll build one here. The standard model fo such a network in matrix notation is:
+A single layer perceptron network seems to do well enough in fitting the test data, so we'll build one here. The standard model for such a network is given by:
 
 $$\hat{y}=\text{softmax}(Wx+b)$$
 
-* $x$ is the input (a 30 dimensional vector of all the cancer cell's statistical values)
-* $\hat{y}$ is the network's  approximation of $y$, the right answer ($\hat{y}$ is a 2D vector with the first/second value corresponding to its confidence that the cell is benign/malignant)
-* $W$ is a matrix of weights (the matrix is 30x2 so that it turns 30 dimensional vectors into 2D vectors)
-* $b$ is a vector of 'bias' values (a 2D vector that allows the network more freedom when training)
+* $x$ is the input (a 30 dimensional vector of all the cancer cell's statistical values).
+* $\hat{y}$ is the network's approximation of $y$, the right answer. (a $2$D vector with the first/second value corresponding to its confidence that the cell is benign/malignant).
+* $W$ is a matrix of weights (the matrix is $30\times2$ so that it transforms $30$ dimensional vectors into $2$ dimensional ones).
+* $b$ is a vector of 'bias' values (a $2$D vector that allows the network more freedom when training, similar to the y-intercept in a linear equation).
 * The $\text{softmax}$ function is the network's [activation function](https://en.wikipedia.org/wiki/Activation_function), which introduces a nonlinearity to the network. This is integral for any neural network to learn from the data it's provided. The function also equalizes the network's confidence predictions so that they add up to 100%. The mathematical description of softmax is:
 
 ![softmax graph](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Mplwp_logistic_function.svg/1280px-Mplwp_logistic_function.svg.png)
 
-Here's what it looks like in python with [TensorFlow](https://www.tensorflow.org/):
+Here's what the model looks like in python with [TensorFlow](https://www.tensorflow.org/):
 
 ~~~ python
 import tensorflow as tf
@@ -124,10 +128,12 @@ import tensorflow as tf
 y_hat = tf.nn.softmax(y_noSoftmax, name='y_Hat')
 ~~~
 
+*Note that we've computed $Wx+b$ first before computing its $\text{softmax}$. Separating these steps will allow us to compute the error function more easily with the TensorFlow library later on.*
+
 ## Training the Network
 Now that we've assembled the network, we need to train it using the training data, or `experience_matrix`, and the associated training labels we made earlier.
 
-TensorFlow works by creating what is called a computational graph from which it can calculate and find derivatives of every value in the program, thereby allowing it to optimize (i.e teach) the neural network [(Christopher Olah's blog has a great post on this)](http://colah.github.io/posts/2015-08-Backprop/).
+TensorFlow works by creating what is called a computational graph from which it can calculate and find derivatives of every value in the network, thereby allowing it to optimize (i.e teach) the neural network via backpropagation [(Christopher Olah's blog has a great post on this)](http://colah.github.io/posts/2015-08-Backprop/).
 
 And so, the network won't start until we create a new graph (session) on which all the training calculations can run:
 
@@ -144,7 +150,7 @@ Next we create the actual training model. First we create a placeholder for the 
 y = tf.placeholder(tf.float32, shape=[None, 2],name='y_Labeled')
 ~~~
 
-Then we create a loss function. A loss function is basically a measure of how off the network is in its guesses. This means the smaller the output of this function, the more accurate our network becomes. So, naturally, if we minimize this function using calculus we will have effectively *trained* the network. This is deep learning in a nutshell. Here, we use [Cross Entropy](https://en.wikipedia.org/wiki/Cross_entropy) as it works nicely with the softmax layer we have at the end.
+Then we create a loss function. A loss function is basically a measure of how off the network is in its guesses. This means the smaller the output of this function, the more accurate our network becomes. So, naturally, if we minimize this function we will have effectively *trained* the network. This is deep learning in a nutshell. Here we use [Cross Entropy](https://en.wikipedia.org/wiki/Cross_entropy), as it works nicely with the softmax layer we have at the end.
 
 ~~~ python
 #Loss Function (cross entropy between y and y_hat)
@@ -152,9 +158,9 @@ cross_entropy = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits
   (logits = y_noSoftmax, labels = y),name='Loss_Function')
 ~~~
 
-Finally we create the training step. This is where we choose what optimizationethod to use. In this case we'll use the tried and true [Gradient Descent](https://en.wikipedia.org/wiki/Gradient_descent). I reccommend you look into it yourself, but the gist is that we take partial derivatives of the cost function with respect to every weight variable in the network then slightly adjust them towards 0.
+Finally we create the training step. This is where we choose what optimization method to use. In this case we'll use the tried and true [Gradient Descent](https://en.wikipedia.org/wiki/Gradient_descent). I reccommend you look into it yourself, but the gist is that we take partial derivatives of the cost function with respect to every weight variable in the network then slightly adjust them in the direction that would minimize the cost.
 
-Here's a visualization:
+This algorithm approaches the local minimum rapidly at first but then slows down once it has gotten close. Here's a visualization:
 
 ![SGD](/assets/projects/breast-cancer/gradient_descent_3D.gif?style=centerme)
 
@@ -212,7 +218,7 @@ Because we randomized our sample at the start, the accuracy of the network varie
 
 That said the slight increase/decrease in accuracy are just products of how the weights work out with the examples. As such any perceived improvement is probably coincidental and don't reflect how accurate the network will be in the face of new samples. To get an accurate view of the network's ability, running it multiple times and taking the average of its accuracy is probably your best bet.
 
-Doing this for our network yields about a **90% accuracy**. Not bad. For reference, a monkey (that is a random process) would classify the cells correctly 50% of the time (only two categories). That's a 40% increase over randomly guessing!
+Doing this for our network yields about a **90% accuracy**. Not bad. For reference, a monkey (that is, a random process) would classify the cells correctly 50% of the time (there are only two categories). That's a 40% increase over randomly guessing!
 
 ## The Full Code
 This is all the code put together and is how it appears on my [NeuralNetwork](https://github.com/ozanerhansha/NeuralNetworks) repository. All the imports have been moved to the top of the program:

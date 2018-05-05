@@ -5,27 +5,20 @@ date: 2018-01-05
 tags: computer-science
 ---
 ## Decimal Prefixes
-When dealing with very large or very small amounts it is common to
-append one of the SI (metric system) prefixes to whatever unit is being
-used. For example, the average human weighs 62000g but because that
-number is so big we usually append *kilo* (the SI prefix meaning a
-thousand) to the gram unit and say 62kg instead. This system works
-just fine for all sorts of units but when it's applied to units of
-information, like bits and bytes, a problem arises...
+When dealing with very large or very small amounts, it is common to append, or rather *pre*pend, one of the SI (metric system) prefixes to whatever unit is being used. For example, the average human weighs $62000\text{g}$ but because that number is cumbersome to use, we usually append *kilo-* (the SI prefix meaning a thousand) to the gram unit and say $62\text{kg}$ instead.
+
+This system works just fine for all sorts of units of measure like mass, length, energy, etc. But when it's applied to units of information, specifically binary ones like bits and bytes, a problem arises...
 
 <!--more-->
 
 ## Binary Prefixes
-You may have bought a hard drive or even a new phone and found that
-there is a discrepancy between the amount of storage shown on the
-package and the maximum amount displayed when you look in the
-settings.
+You may have bought a hard drive or even a new phone and found that there is a discrepancy between the amount of storage shown on the package and the maximum amount displayed when you look in the settings.
 
 So what causes this disparity?
 
 The difference between a GB (gigabyte) and a GiB (gibibyte).
 
-Historically when a computer scientist wrote kB, for example, they didn’t mean 1000 bytes. They meant 1024 bytes. This is because computers operate in binary which is based of powers of two. In the kilobyte’s case, 2<sup>10</sup> = 1024 which is almost 1000. This makes it a close enough approximation for the computer scientist that can only deal in powers of two.
+Historically when a computer scientist wrote kB, for example, they didn’t mean $1000$ bytes. They meant $1024$ bytes. This is because computers operate in binary which is based of powers of two. In the kilobyte’s case, $2^{10} = 1024$ which is almost $1000$. This made it a close enough approximation of memory in a computer which was based on powers of $2$.
 
 This changed around 1998 when the International Electrotechnical Commission (IEC) and other regulatory organizations created a new set of prefixes to be used as binary prefixes. The US National Institute of Standards and Technology (NIST) followed suit and required that the SI prefixes only be used in the decimal sense. Below is a table of the metric prefixes vs the binary ones.
 

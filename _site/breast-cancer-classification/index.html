@@ -113,10 +113,6 @@
         
       
         
-          
-        
-      
-        
       
         
           
@@ -261,6 +257,8 @@
   <li>Fractal dimension (measure of edge complexity)</li>
 </ul>
 
+<p><em>The meaning of these values is irrelevant to our purpose. All we need to know is that we can use these $10\times3=30$ values to predict whether the given breast cancer sample is malignant or benign.</em></p>
+
 <p>All the training examples are stored on a CSV (Comma Separated Value) file called <code class="highlighter-rouge">wdbc.data</code>, so our first job is to import the file into our program:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span> <span class="c">#Used for finding file path</span>
@@ -274,19 +272,21 @@
 <h2 id="cleaning-the-data">Cleaning the Data</h2>
 <p>Now that it’s imported, we can start ‘cleaning’ the data (that is turning this large string of numbers into a list of training examples labeled  <strong>benign</strong> or <strong>malignant</strong>).</p>
 
-<p>First off we have to split up the dataset (which is currently just one massive string) into a bunch of strings, one for each subject (patient):</p>
+<p>First off we have to split up the dataset, which is currently just one massive string, into a bunch of strings. One for each subject (patient):</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Split dataset into separate points (as strings)</span>
 <span class="n">string_points</span> <span class="o">=</span> <span class="n">file_object</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
 <span class="n">string_points</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>If you take a look at the actual <a href="https://github.com/ozanerhansha/NeuralNetworks/blob/master/src/test/wdbc.data"><code class="highlighter-rouge">wdbc.data</code></a> file, you’ll see that some of the subjects are grouped together benign and malignant. If we trained the network with the subjects in this order it bias the network’s guesses. So we shuffle the subjects to avoid this:</p>
+<p>If you take a look at the actual <a href="https://github.com/ozanerhansha/NeuralNetworks/blob/master/src/test/wdbc.data"><code class="highlighter-rouge">wdbc.data</code></a> file, you’ll see that some of the subjects are clustered in groups of benign and malignant. If we trained the network with the subjects in this order, it would bias the network’s guesses. To avoid this, we’ll shuffle the subjects:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">string_points</span><span class="p">)</span> <span class="c">#Randomize (avoid bias)</span>
 </code></pre></div></div>
 
-<p>Next we create a list of feature vectors (a list of all the statistical data for each subject) and y labels (whether the subject is benign or malignant).</p>
+<p>Next we create a list of <strong>feature vectors</strong>, each with 30 entries. A feature vector is simply a list of all the data we have about a particular problem, or in this case a particular subject. Its purpose is to be transformed into the desired answer by the neural network. It’s the <strong>input</strong>.</p>
+
+<p>We will also create a list of $y$ labels (<code class="highlighter-rouge">[0,1]</code> for benign and <code class="highlighter-rouge">[1,0]</code> for malignant) that correspond with the list of feature vectors. This is the desired <strong>output</strong>.</p>
 
 <p>We’ll be using the <a href="http://www.numpy.org">numpy</a> library here, so let’s import it as well:</p>
 
@@ -313,7 +313,7 @@
     <span class="n">point_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">point_array</span><span class="p">,</span> <span class="p">[</span><span class="n">temp</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>All that is left is to split up the subjects into training and testing sets. Testing using the same data as the network was trained on encourages the network to memorize the data rather than generalize the dataset make meaningful predictions.</p>
+<p>All that’s left is to split up the subjects (the list of feature vectors) into training and testing sets. Testing using the same data as the network was trained on encourages the network to memorize the data rather than generalize the dataset make meaningful predictions.</p>
 
 <p>Of the 569 subjects, the first 400 will be used to train the network while the remaining 169 will be used to test the network’s accuracy:</p>
 
@@ -325,21 +325,21 @@
 </code></pre></div></div>
 
 <h2 id="constructing-the-network">Constructing the Network</h2>
-<p>A single layer perceptron network seems to do well enough in fitting the test data, so we’ll build one here. The standard model fo such a network in matrix notation is:</p>
+<p>A single layer perceptron network seems to do well enough in fitting the test data, so we’ll build one here. The standard model for such a network is given by:</p>
 
 <script type="math/tex; mode=display">\hat{y}=\text{softmax}(Wx+b)</script>
 
 <ul>
-  <li>$x$ is the input (a 30 dimensional vector of all the cancer cell’s statistical values)</li>
-  <li>$\hat{y}$ is the network’s  approximation of $y$, the right answer ($\hat{y}$ is a 2D vector with the first/second value corresponding to its confidence that the cell is benign/malignant)</li>
-  <li>$W$ is a matrix of weights (the matrix is 30x2 so that it turns 30 dimensional vectors into 2D vectors)</li>
-  <li>$b$ is a vector of ‘bias’ values (a 2D vector that allows the network more freedom when training)</li>
+  <li>$x$ is the input (a 30 dimensional vector of all the cancer cell’s statistical values).</li>
+  <li>$\hat{y}$ is the network’s approximation of $y$, the right answer. (a $2$D vector with the first/second value corresponding to its confidence that the cell is benign/malignant).</li>
+  <li>$W$ is a matrix of weights (the matrix is $30\times2$ so that it transforms $30$ dimensional vectors into $2$ dimensional ones).</li>
+  <li>$b$ is a vector of ‘bias’ values (a $2$D vector that allows the network more freedom when training, similar to the y-intercept in a linear equation).</li>
   <li>The $\text{softmax}$ function is the network’s <a href="https://en.wikipedia.org/wiki/Activation_function">activation function</a>, which introduces a nonlinearity to the network. This is integral for any neural network to learn from the data it’s provided. The function also equalizes the network’s confidence predictions so that they add up to 100%. The mathematical description of softmax is:</li>
 </ul>
 
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Mplwp_logistic_function.svg/1280px-Mplwp_logistic_function.svg.png" alt="softmax graph" /></p>
 
-<p>Here’s what it looks like in python with <a href="https://www.tensorflow.org/">TensorFlow</a>:</p>
+<p>Here’s what the model looks like in python with <a href="https://www.tensorflow.org/">TensorFlow</a>:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
 
@@ -356,10 +356,12 @@
 <span class="n">y_hat</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">y_noSoftmax</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'y_Hat'</span><span class="p">)</span>
 </code></pre></div></div>
 
+<p><em>Note that we’ve computed $Wx+b$ first before computing its $\text{softmax}$. Separating these steps will allow us to compute the error function more easily with the TensorFlow library later on.</em></p>
+
 <h2 id="training-the-network">Training the Network</h2>
 <p>Now that we’ve assembled the network, we need to train it using the training data, or <code class="highlighter-rouge">experience_matrix</code>, and the associated training labels we made earlier.</p>
 
-<p>TensorFlow works by creating what is called a computational graph from which it can calculate and find derivatives of every value in the program, thereby allowing it to optimize (i.e teach) the neural network <a href="http://colah.github.io/posts/2015-08-Backprop/">(Christopher Olah’s blog has a great post on this)</a>.</p>
+<p>TensorFlow works by creating what is called a computational graph from which it can calculate and find derivatives of every value in the network, thereby allowing it to optimize (i.e teach) the neural network via backpropagation <a href="http://colah.github.io/posts/2015-08-Backprop/">(Christopher Olah’s blog has a great post on this)</a>.</p>
 
 <p>And so, the network won’t start until we create a new graph (session) on which all the training calculations can run:</p>
 
@@ -374,16 +376,16 @@
 <span class="n">y</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span><span class="n">name</span><span class="o">=</span><span class="s">'y_Labeled'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Then we create a loss function. A loss function is basically a measure of how off the network is in its guesses. This means the smaller the output of this function, the more accurate our network becomes. So, naturally, if we minimize this function using calculus we will have effectively <em>trained</em> the network. This is deep learning in a nutshell. Here, we use <a href="https://en.wikipedia.org/wiki/Cross_entropy">Cross Entropy</a> as it works nicely with the softmax layer we have at the end.</p>
+<p>Then we create a loss function. A loss function is basically a measure of how off the network is in its guesses. This means the smaller the output of this function, the more accurate our network becomes. So, naturally, if we minimize this function we will have effectively <em>trained</em> the network. This is deep learning in a nutshell. Here we use <a href="https://en.wikipedia.org/wiki/Cross_entropy">Cross Entropy</a>, as it works nicely with the softmax layer we have at the end.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Loss Function (cross entropy between y and y_hat)</span>
 <span class="n">cross_entropy</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">reduce_mean</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax_cross_entropy_with_logits</span>
   <span class="p">(</span><span class="n">logits</span> <span class="o">=</span> <span class="n">y_noSoftmax</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">y</span><span class="p">),</span><span class="n">name</span><span class="o">=</span><span class="s">'Loss_Function'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Finally we create the training step. This is where we choose what optimizationethod to use. In this case we’ll use the tried and true <a href="https://en.wikipedia.org/wiki/Gradient_descent">Gradient Descent</a>. I reccommend you look into it yourself, but the gist is that we take partial derivatives of the cost function with respect to every weight variable in the network then slightly adjust them towards 0.</p>
+<p>Finally we create the training step. This is where we choose what optimization method to use. In this case we’ll use the tried and true <a href="https://en.wikipedia.org/wiki/Gradient_descent">Gradient Descent</a>. I reccommend you look into it yourself, but the gist is that we take partial derivatives of the cost function with respect to every weight variable in the network then slightly adjust them in the direction that would minimize the cost.</p>
 
-<p>Here’s a visualization:</p>
+<p>This algorithm approaches the local minimum rapidly at first but then slows down once it has gotten close. Here’s a visualization:</p>
 
 <p><img src="/assets/projects/breast-cancer/gradient_descent_3D.gif?style=centerme" alt="SGD" /></p>
 
@@ -438,7 +440,7 @@
 
 <p>That said the slight increase/decrease in accuracy are just products of how the weights work out with the examples. As such any perceived improvement is probably coincidental and don’t reflect how accurate the network will be in the face of new samples. To get an accurate view of the network’s ability, running it multiple times and taking the average of its accuracy is probably your best bet.</p>
 
-<p>Doing this for our network yields about a <strong>90% accuracy</strong>. Not bad. For reference, a monkey (that is a random process) would classify the cells correctly 50% of the time (only two categories). That’s a 40% increase over randomly guessing!</p>
+<p>Doing this for our network yields about a <strong>90% accuracy</strong>. Not bad. For reference, a monkey (that is, a random process) would classify the cells correctly 50% of the time (there are only two categories). That’s a 40% increase over randomly guessing!</p>
 
 <h2 id="the-full-code">The Full Code</h2>
 <p>This is all the code put together and is how it appears on my <a href="https://github.com/ozanerhansha/NeuralNetworks">NeuralNetwork</a> repository. All the imports have been moved to the top of the program:</p>

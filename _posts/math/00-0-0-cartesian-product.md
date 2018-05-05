@@ -2,7 +2,7 @@
 layout: post
 title: Cartesian Product
 date: 2018-04-30
-tags: math
+tags: math set-theory
 ---
 ### Definition
 The Cartesian product $\times$ is an operation on two sets, $A$ and $B$, that returns the set of all [ordered pairs](/n-tuples) with their first element from $A$ and their second from $B$.

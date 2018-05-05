@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-04-30T17:54:22-04:00</updated>
+ <updated>2018-05-05T14:26:06-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -2217,6 +2217,8 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
   &lt;li&gt;Fractal dimension (measure of edge complexity)&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;&lt;em&gt;The meaning of these values is irrelevant to our purpose. All we need to know is that we can use these $10\times3=30$ values to predict whether the given breast cancer sample is malignant or benign.&lt;/em&gt;&lt;/p&gt;
+
 &lt;p&gt;All the training examples are stored on a CSV (Comma Separated Value) file called &lt;code class=&quot;highlighter-rouge&quot;&gt;wdbc.data&lt;/code&gt;, so our first job is to import the file into our program:&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Used for finding file path&lt;/span&gt;
@@ -2230,19 +2232,21 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
 &lt;h2 id=&quot;cleaning-the-data&quot;&gt;Cleaning the Data&lt;/h2&gt;
 &lt;p&gt;Now that it’s imported, we can start ‘cleaning’ the data (that is turning this large string of numbers into a list of training examples labeled  &lt;strong&gt;benign&lt;/strong&gt; or &lt;strong&gt;malignant&lt;/strong&gt;).&lt;/p&gt;
 
-&lt;p&gt;First off we have to split up the dataset (which is currently just one massive string) into a bunch of strings, one for each subject (patient):&lt;/p&gt;
+&lt;p&gt;First off we have to split up the dataset, which is currently just one massive string, into a bunch of strings. One for each subject (patient):&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#Split dataset into separate points (as strings)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;string_points&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;file_object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;string_points&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;If you take a look at the actual &lt;a href=&quot;https://github.com/ozanerhansha/NeuralNetworks/blob/master/src/test/wdbc.data&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;wdbc.data&lt;/code&gt;&lt;/a&gt; file, you’ll see that some of the subjects are grouped together benign and malignant. If we trained the network with the subjects in this order it bias the network’s guesses. So we shuffle the subjects to avoid this:&lt;/p&gt;
+&lt;p&gt;If you take a look at the actual &lt;a href=&quot;https://github.com/ozanerhansha/NeuralNetworks/blob/master/src/test/wdbc.data&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;wdbc.data&lt;/code&gt;&lt;/a&gt; file, you’ll see that some of the subjects are clustered in groups of benign and malignant. If we trained the network with the subjects in this order, it would bias the network’s guesses. To avoid this, we’ll shuffle the subjects:&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shuffle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string_points&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Randomize (avoid bias)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Next we create a list of feature vectors (a list of all the statistical data for each subject) and y labels (whether the subject is benign or malignant).&lt;/p&gt;
+&lt;p&gt;Next we create a list of &lt;strong&gt;feature vectors&lt;/strong&gt;, each with 30 entries. A feature vector is simply a list of all the data we have about a particular problem, or in this case a particular subject. Its purpose is to be transformed into the desired answer by the neural network. It’s the &lt;strong&gt;input&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;We will also create a list of $y$ labels (&lt;code class=&quot;highlighter-rouge&quot;&gt;[0,1]&lt;/code&gt; for benign and &lt;code class=&quot;highlighter-rouge&quot;&gt;[1,0]&lt;/code&gt; for malignant) that correspond with the list of feature vectors. This is the desired &lt;strong&gt;output&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;We’ll be using the &lt;a href=&quot;http://www.numpy.org&quot;&gt;numpy&lt;/a&gt; library here, so let’s import it as well:&lt;/p&gt;
 
@@ -2269,7 +2273,7 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
     &lt;span class=&quot;n&quot;&gt;point_array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;point_array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;All that is left is to split up the subjects into training and testing sets. Testing using the same data as the network was trained on encourages the network to memorize the data rather than generalize the dataset make meaningful predictions.&lt;/p&gt;
+&lt;p&gt;All that’s left is to split up the subjects (the list of feature vectors) into training and testing sets. Testing using the same data as the network was trained on encourages the network to memorize the data rather than generalize the dataset make meaningful predictions.&lt;/p&gt;
 
 &lt;p&gt;Of the 569 subjects, the first 400 will be used to train the network while the remaining 169 will be used to test the network’s accuracy:&lt;/p&gt;
 
@@ -2281,21 +2285,21 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;constructing-the-network&quot;&gt;Constructing the Network&lt;/h2&gt;
-&lt;p&gt;A single layer perceptron network seems to do well enough in fitting the test data, so we’ll build one here. The standard model fo such a network in matrix notation is:&lt;/p&gt;
+&lt;p&gt;A single layer perceptron network seems to do well enough in fitting the test data, so we’ll build one here. The standard model for such a network is given by:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\hat{y}=\text{softmax}(Wx+b)&lt;/script&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;$x$ is the input (a 30 dimensional vector of all the cancer cell’s statistical values)&lt;/li&gt;
-  &lt;li&gt;$\hat{y}$ is the network’s  approximation of $y$, the right answer ($\hat{y}$ is a 2D vector with the first/second value corresponding to its confidence that the cell is benign/malignant)&lt;/li&gt;
-  &lt;li&gt;$W$ is a matrix of weights (the matrix is 30x2 so that it turns 30 dimensional vectors into 2D vectors)&lt;/li&gt;
-  &lt;li&gt;$b$ is a vector of ‘bias’ values (a 2D vector that allows the network more freedom when training)&lt;/li&gt;
+  &lt;li&gt;$x$ is the input (a 30 dimensional vector of all the cancer cell’s statistical values).&lt;/li&gt;
+  &lt;li&gt;$\hat{y}$ is the network’s approximation of $y$, the right answer. (a $2$D vector with the first/second value corresponding to its confidence that the cell is benign/malignant).&lt;/li&gt;
+  &lt;li&gt;$W$ is a matrix of weights (the matrix is $30\times2$ so that it transforms $30$ dimensional vectors into $2$ dimensional ones).&lt;/li&gt;
+  &lt;li&gt;$b$ is a vector of ‘bias’ values (a $2$D vector that allows the network more freedom when training, similar to the y-intercept in a linear equation).&lt;/li&gt;
   &lt;li&gt;The $\text{softmax}$ function is the network’s &lt;a href=&quot;https://en.wikipedia.org/wiki/Activation_function&quot;&gt;activation function&lt;/a&gt;, which introduces a nonlinearity to the network. This is integral for any neural network to learn from the data it’s provided. The function also equalizes the network’s confidence predictions so that they add up to 100%. The mathematical description of softmax is:&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Mplwp_logistic_function.svg/1280px-Mplwp_logistic_function.svg.png&quot; alt=&quot;softmax graph&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Here’s what it looks like in python with &lt;a href=&quot;https://www.tensorflow.org/&quot;&gt;TensorFlow&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;Here’s what the model looks like in python with &lt;a href=&quot;https://www.tensorflow.org/&quot;&gt;TensorFlow&lt;/a&gt;:&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;tensorflow&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;
 
@@ -2312,10 +2316,12 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
 &lt;span class=&quot;n&quot;&gt;y_hat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;softmax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y_noSoftmax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'y_Hat'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;p&gt;&lt;em&gt;Note that we’ve computed $Wx+b$ first before computing its $\text{softmax}$. Separating these steps will allow us to compute the error function more easily with the TensorFlow library later on.&lt;/em&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;training-the-network&quot;&gt;Training the Network&lt;/h2&gt;
 &lt;p&gt;Now that we’ve assembled the network, we need to train it using the training data, or &lt;code class=&quot;highlighter-rouge&quot;&gt;experience_matrix&lt;/code&gt;, and the associated training labels we made earlier.&lt;/p&gt;
 
-&lt;p&gt;TensorFlow works by creating what is called a computational graph from which it can calculate and find derivatives of every value in the program, thereby allowing it to optimize (i.e teach) the neural network &lt;a href=&quot;http://colah.github.io/posts/2015-08-Backprop/&quot;&gt;(Christopher Olah’s blog has a great post on this)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;TensorFlow works by creating what is called a computational graph from which it can calculate and find derivatives of every value in the network, thereby allowing it to optimize (i.e teach) the neural network via backpropagation &lt;a href=&quot;http://colah.github.io/posts/2015-08-Backprop/&quot;&gt;(Christopher Olah’s blog has a great post on this)&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;And so, the network won’t start until we create a new graph (session) on which all the training calculations can run:&lt;/p&gt;
 
@@ -2330,16 +2336,16 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
 &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;placeholder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;float32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'y_Labeled'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Then we create a loss function. A loss function is basically a measure of how off the network is in its guesses. This means the smaller the output of this function, the more accurate our network becomes. So, naturally, if we minimize this function using calculus we will have effectively &lt;em&gt;trained&lt;/em&gt; the network. This is deep learning in a nutshell. Here, we use &lt;a href=&quot;https://en.wikipedia.org/wiki/Cross_entropy&quot;&gt;Cross Entropy&lt;/a&gt; as it works nicely with the softmax layer we have at the end.&lt;/p&gt;
+&lt;p&gt;Then we create a loss function. A loss function is basically a measure of how off the network is in its guesses. This means the smaller the output of this function, the more accurate our network becomes. So, naturally, if we minimize this function we will have effectively &lt;em&gt;trained&lt;/em&gt; the network. This is deep learning in a nutshell. Here we use &lt;a href=&quot;https://en.wikipedia.org/wiki/Cross_entropy&quot;&gt;Cross Entropy&lt;/a&gt;, as it works nicely with the softmax layer we have at the end.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#Loss Function (cross entropy between y and y_hat)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;cross_entropy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reduce_mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;softmax_cross_entropy_with_logits&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logits&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y_noSoftmax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;labels&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Loss_Function'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Finally we create the training step. This is where we choose what optimizationethod to use. In this case we’ll use the tried and true &lt;a href=&quot;https://en.wikipedia.org/wiki/Gradient_descent&quot;&gt;Gradient Descent&lt;/a&gt;. I reccommend you look into it yourself, but the gist is that we take partial derivatives of the cost function with respect to every weight variable in the network then slightly adjust them towards 0.&lt;/p&gt;
+&lt;p&gt;Finally we create the training step. This is where we choose what optimization method to use. In this case we’ll use the tried and true &lt;a href=&quot;https://en.wikipedia.org/wiki/Gradient_descent&quot;&gt;Gradient Descent&lt;/a&gt;. I reccommend you look into it yourself, but the gist is that we take partial derivatives of the cost function with respect to every weight variable in the network then slightly adjust them in the direction that would minimize the cost.&lt;/p&gt;
 
-&lt;p&gt;Here’s a visualization:&lt;/p&gt;
+&lt;p&gt;This algorithm approaches the local minimum rapidly at first but then slows down once it has gotten close. Here’s a visualization:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/projects/breast-cancer/gradient_descent_3D.gif?style=centerme&quot; alt=&quot;SGD&quot; /&gt;&lt;/p&gt;
 
@@ -2394,7 +2400,7 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
 
 &lt;p&gt;That said the slight increase/decrease in accuracy are just products of how the weights work out with the examples. As such any perceived improvement is probably coincidental and don’t reflect how accurate the network will be in the face of new samples. To get an accurate view of the network’s ability, running it multiple times and taking the average of its accuracy is probably your best bet.&lt;/p&gt;
 
-&lt;p&gt;Doing this for our network yields about a &lt;strong&gt;90% accuracy&lt;/strong&gt;. Not bad. For reference, a monkey (that is a random process) would classify the cells correctly 50% of the time (only two categories). That’s a 40% increase over randomly guessing!&lt;/p&gt;
+&lt;p&gt;Doing this for our network yields about a &lt;strong&gt;90% accuracy&lt;/strong&gt;. Not bad. For reference, a monkey (that is, a random process) would classify the cells correctly 50% of the time (there are only two categories). That’s a 40% increase over randomly guessing!&lt;/p&gt;
 
 &lt;h2 id=&quot;the-full-code&quot;&gt;The Full Code&lt;/h2&gt;
 &lt;p&gt;This is all the code put together and is how it appears on my &lt;a href=&quot;https://github.com/ozanerhansha/NeuralNetworks&quot;&gt;NeuralNetwork&lt;/a&gt; repository. All the imports have been moved to the top of the program:&lt;/p&gt;
@@ -2494,69 +2500,25 @@ Created on Jun 6, 2017
  </entry>
  
  <entry>
-   <title>Abstract Algebra and Algebraic Structures</title>
-   <link href="http://localhost:4000/abstract-algebra/"/>
-   <updated>2018-01-07T00:00:00-05:00</updated>
-   <id>http://localhost:4000/abstract-algebra</id>
-   <content type="html">&lt;h2 id=&quot;history-of-algebra&quot;&gt;History of Algebra&lt;/h2&gt;
-&lt;p&gt;The earliest forms of Algebra have been around since &lt;a href=&quot;https://en.wikipedia.org/wiki/Diophantus&quot;&gt;Diophantus&lt;/a&gt; (3rd century Greek mathematician), who wrote on how to solve equations using geometry (the Greeks had a thing for geometry).&lt;/p&gt;
-
-&lt;p&gt;Algebra as we know it wouldn’t appear until Al-Khwārizmī, a medieval Islamic mathematician, wrote his famous &lt;a href=&quot;http://www.wilbourhall.org/pdfs/MBP/robertofchesters00khuw.pdf&quot;&gt;&lt;em&gt;Compendious Book on Calculation by Completion and Balancing&lt;/em&gt;&lt;/a&gt;. Its Arabic name is equally as large and so is shortened to &lt;em&gt;Al-Jabr&lt;/em&gt; which translates to “the reunion of broken parts”. In fact the word algebra itself comes from this book (Al-Jabr –&amp;gt; Algebra). Indeed it was this book that introduced the same notions of canceling and balancing equations to solve for $x$ that we use today.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;What was so vital about this work was that it was the first to &lt;strong&gt;abstract&lt;/strong&gt; away algebra from geometry and arithmetic, establishing it as an independent field of mathematics.&lt;/p&gt;
-
-&lt;p&gt;This kind of jump wasn’t done again until the 19th century, when mathematician realized that algebra could be considered not just for numbers but for any set of objects, and that there could be many different types of algebra rather than just the one we learn in school. This was the birth of &lt;strong&gt;Abstract Algebra&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;algebraic-structures&quot;&gt;Algebraic Structures&lt;/h2&gt;
-&lt;p&gt;Just like how geometry studies shapes and forms or arithmetic studies numbers and doing operations on them, abstract algebra studies algebraic structures and their construction. These structures have important applications both in pure math as well as sciences like physics and chemistry.&lt;/p&gt;
-
-&lt;p&gt;An algebraic structure is a combination of a &lt;strong&gt;set&lt;/strong&gt; and one or more &lt;strong&gt;operations&lt;/strong&gt; that can be applied to the elements of that set.&lt;/p&gt;
-
-&lt;p&gt;Some examples of Algebraic structures:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Group&lt;/li&gt;
-  &lt;li&gt;Rings&lt;/li&gt;
-  &lt;li&gt;Field&lt;/li&gt;
-  &lt;li&gt;Vector Space&lt;/li&gt;
-  &lt;li&gt;Boolean Algebra&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;!-- Click here to see my posts on three of the most important algebraic structures:
-* [Groups](/2017/05/23/groups)
-* [Rings](/2017/05/24/rings)
-* [Fields](/2017/05/24/fields) --&gt;
-</content>
- </entry>
- 
- <entry>
    <title>Binary Prefixes</title>
    <link href="http://localhost:4000/binary-prefixes/"/>
    <updated>2018-01-05T00:00:00-05:00</updated>
    <id>http://localhost:4000/binary-prefixes</id>
    <content type="html">&lt;h2 id=&quot;decimal-prefixes&quot;&gt;Decimal Prefixes&lt;/h2&gt;
-&lt;p&gt;When dealing with very large or very small amounts it is common to
-append one of the SI (metric system) prefixes to whatever unit is being
-used. For example, the average human weighs 62000g but because that
-number is so big we usually append &lt;em&gt;kilo&lt;/em&gt; (the SI prefix meaning a
-thousand) to the gram unit and say 62kg instead. This system works
-just fine for all sorts of units but when it’s applied to units of
-information, like bits and bytes, a problem arises…&lt;/p&gt;
+&lt;p&gt;When dealing with very large or very small amounts, it is common to append, or rather &lt;em&gt;pre&lt;/em&gt;pend, one of the SI (metric system) prefixes to whatever unit is being used. For example, the average human weighs $62000\text{g}$ but because that number is cumbersome to use, we usually append &lt;em&gt;kilo-&lt;/em&gt; (the SI prefix meaning a thousand) to the gram unit and say $62\text{kg}$ instead.&lt;/p&gt;
+
+&lt;p&gt;This system works just fine for all sorts of units of measure like mass, length, energy, etc. But when it’s applied to units of information, specifically binary ones like bits and bytes, a problem arises…&lt;/p&gt;
 
 &lt;!--more--&gt;
 
 &lt;h2 id=&quot;binary-prefixes&quot;&gt;Binary Prefixes&lt;/h2&gt;
-&lt;p&gt;You may have bought a hard drive or even a new phone and found that
-there is a discrepancy between the amount of storage shown on the
-package and the maximum amount displayed when you look in the
-settings.&lt;/p&gt;
+&lt;p&gt;You may have bought a hard drive or even a new phone and found that there is a discrepancy between the amount of storage shown on the package and the maximum amount displayed when you look in the settings.&lt;/p&gt;
 
 &lt;p&gt;So what causes this disparity?&lt;/p&gt;
 
 &lt;p&gt;The difference between a GB (gigabyte) and a GiB (gibibyte).&lt;/p&gt;
 
-&lt;p&gt;Historically when a computer scientist wrote kB, for example, they didn’t mean 1000 bytes. They meant 1024 bytes. This is because computers operate in binary which is based of powers of two. In the kilobyte’s case, 2&lt;sup&gt;10&lt;/sup&gt; = 1024 which is almost 1000. This makes it a close enough approximation for the computer scientist that can only deal in powers of two.&lt;/p&gt;
+&lt;p&gt;Historically when a computer scientist wrote kB, for example, they didn’t mean $1000$ bytes. They meant $1024$ bytes. This is because computers operate in binary which is based of powers of two. In the kilobyte’s case, $2^{10} = 1024$ which is almost $1000$. This made it a close enough approximation of memory in a computer which was based on powers of $2$.&lt;/p&gt;
 
 &lt;p&gt;This changed around 1998 when the International Electrotechnical Commission (IEC) and other regulatory organizations created a new set of prefixes to be used as binary prefixes. The US National Institute of Standards and Technology (NIST) followed suit and required that the SI prefixes only be used in the decimal sense. Below is a table of the metric prefixes vs the binary ones.&lt;/p&gt;
 
