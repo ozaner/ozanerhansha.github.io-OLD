@@ -150,7 +150,7 @@ Next we create the actual training model. First we create a placeholder for the 
 y = tf.placeholder(tf.float32, shape=[None, 2],name='y_Labeled')
 ~~~
 
-Then we create a loss function. A loss function is basically a measure of how off the network is in its guesses. This means the smaller the output of this function, the more accurate our network becomes. So, naturally, if we minimize this function we will have effectively *trained* the network. This is deep learning in a nutshell. Here we use [Cross Entropy](https://en.wikipedia.org/wiki/Cross_entropy), as it works nicely with the softmax layer we have at the end.
+Then we create a loss function. A loss function is basically a measure of how off the network is in its guesses. This means the smaller the output of this function, the more accurate our network becomes. So, naturally, if we minimize this function we will have effectively *trained* the network. This is deep learning in a nutshell. Here we use **[Cross Entropy](https://en.wikipedia.org/wiki/Cross_entropy)**, as it works nicely with the softmax layer we have at the end.
 
 ~~~ python
 #Loss Function (cross entropy between y and y_hat)
@@ -158,7 +158,7 @@ cross_entropy = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits
   (logits = y_noSoftmax, labels = y),name='Loss_Function')
 ~~~
 
-Finally we create the training step. This is where we choose what optimization method to use. In this case we'll use the tried and true [Gradient Descent](https://en.wikipedia.org/wiki/Gradient_descent). I reccommend you look into it yourself, but the gist is that we take partial derivatives of the cost function with respect to every weight variable in the network then slightly adjust them in the direction that would minimize the cost.
+Finally we create the training step. This is where we choose what optimization method to use. In this case we'll use the tried and true **[Gradient Descent](https://en.wikipedia.org/wiki/Gradient_descent)**. I reccommend you look into it yourself, but the gist is that we take partial derivatives of the cost function with respect to every weight variable in the network then slightly adjust them in the direction that would minimize the cost.
 
 This algorithm approaches the local minimum rapidly at first but then slows down once it has gotten close. Here's a visualization:
 

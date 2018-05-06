@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-05-05T14:26:06-04:00</updated>
+ <updated>2018-05-05T21:37:53-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -2126,14 +2126,16 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
  </entry>
  
  <entry>
-   <title>FileToPNG</title>
+   <title>Compression, Images, and FileToPNG</title>
    <link href="http://localhost:4000/filetopng/"/>
    <updated>2018-01-16T00:00:00-05:00</updated>
    <id>http://localhost:4000/filetopng</id>
    <content type="html">&lt;h2 id=&quot;what-is-filetopng&quot;&gt;What is FileToPNG?&lt;/h2&gt;
-&lt;p&gt;FileToPNG is a tool written in Java that converts the raw bit representation of any file into a corresponding PNG representation. The PNG (being a lossless file type) can be sent (via text, email, etc) and finally reconstructed back into a file. The GithHub repository for this project can be found &lt;a href=&quot;https://github.com/ozanerhansha/FileToPNG&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;FileToPNG is a tool I wrote in Java that converts the raw binary representation of any file into a corresponding PNG representation. The resulting PNG (being a lossless file type) can be sent through text, email, etc. before finally being reconstructed back into its original form.&lt;/p&gt;
 
-&lt;p&gt;That said, while the main purpose of FileToPNG was to make a tool for sending files over image only communication channels, I’ve found that the PNG representation of the files have interesting properties based on what kind of files are put in.&lt;/p&gt;
+&lt;p&gt;The project’s GitHub repository can be found &lt;a href=&quot;https://github.com/ozanerhansha/FileToPNG&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;While the main purpose of FileToPNG was to make a tool for sending files over image only communication channels, I’ve found that the PNG representation of the files have interesting properties based on what kind of files are put in. I will elaborate on a couple of these findings in this post.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
@@ -2152,40 +2154,52 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
 
 &lt;p&gt;Reconstructing the images into files is as simple as reversing this process.&lt;/p&gt;
 
+&lt;h4 id=&quot;side-note-on-function-mapping&quot;&gt;Side Note on Function Mapping&lt;/h4&gt;
+&lt;p&gt;You can think of the program as a function that maps the set of all &lt;a href=&quot;https://en.wikipedia.org/wiki/Kleene_star&quot;&gt;finite bit strings&lt;/a&gt; to the set of all square images. Because this image is a square of pixels with 4 layers (red, green, blue, and alpha) we can represent it as the set of all rank 3 tensors with size $n\times n\times 4$ and integer elements from $0$ to $255$:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\text{FileToPNG}:\{0,1\}^+\to \left(\mathbb{N}_{255}\right)^{n\times n\times 4}&lt;/script&gt;
+
 &lt;h2 id=&quot;properties-of-png-representations&quot;&gt;Properties of PNG Representations&lt;/h2&gt;
-&lt;p&gt;The main algorithm doesn’t do any encrypting (as of yet) or rearranging of the file’s bits. As such, the PNG representation of the file can give us an, obfuscated to be sure, look at its structure.&lt;/p&gt;
+&lt;p&gt;The main algorithm doesn’t do any sort of encrypting compression of the file’s data (as of yet). As such, the PNG representation it spits out can give us a look at the file’s structure.&lt;/p&gt;
 
 &lt;h3 id=&quot;text-files&quot;&gt;Text Files&lt;/h3&gt;
-&lt;p&gt;Take text files for example. Their content, of course, varies widely depending on the length and topic of discussion. But, even if they don’t use the same language, they all still use the same Unicode characters which all have the same configuration of bits. Meaning they share some similarities:&lt;/p&gt;
+&lt;p&gt;Take text files for example. Their content, of course, varies widely depending on the length and topic of discussion. But, even if they don’t use the same language, they all still use the same set of Unicode characters which all have the same configuration of bits. Meaning they share some similarities:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/projects/filetopng/text_diagram.png?style=centerme&quot; alt=&quot;Text in FileToPNG&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;1mb-file-of-random-noise-for-comparison&quot;&gt;1MB file of random noise for comparison:&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/projects/filetopng/random_data.png?style=centerme&quot; alt=&quot;Random Noise&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/projects/filetopng/text_diagram.png?style=centerme&quot; alt=&quot;Text in FileToPNG&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;music-files&quot;&gt;Music Files&lt;/h3&gt;
-&lt;p&gt;This one was kind of surprising. When I took an .mp3 file of a song and put it through the program, the resulting image looked almost random:&lt;/p&gt;
+&lt;p&gt;This one was kind of surprising. When I took an .mp3 file of a song and put it through the program, the resulting image was seemingly random:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/projects/filetopng/song_mp3.png?style=centerme&quot; alt=&quot;mp3&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
+&lt;!-- ![mp3](/assets/projects/filetopng/song_mp3.png?style=centerme){:width=&quot;300px&quot;}
 
-&lt;p&gt;I was disappointed at first, but then I realized that randomness is fundamentally information packed. What I mean is that if the PNG representation had some sort of overarching structure, then that would imply that there is still some redundancy in the file that could be compressed, thereby making the file smaller and more random looking.&lt;/p&gt;
+### 1MB file of random noise for comparison:
+![Random Noise](/assets/projects/filetopng/random_data.png?style=centerme){:width=&quot;300px&quot;} --&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/projects/filetopng/random_music.png?style=centerme&quot; alt=&quot;mp3&quot; width=&quot;700px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I was disappointed at first, but then I realized that randomness is fundamentally information packed. That is to say, if the PNG representation had some sort of overarching structure, then that would imply that there is still some redundancy in the file that could be compressed, thereby making the file smaller and more random looking.&lt;/p&gt;
 
 &lt;p&gt;This lines up with the fact that mp3 files are &lt;strong&gt;lossy&lt;/strong&gt; (i.e they sacrifice perfect quality for a smaller size).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/projects/filetopng/song_wav.png?style=centerme&quot; alt=&quot;wav&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;The natural step forward at that point was to get a .wav version of the song, which is &lt;strong&gt;lossless&lt;/strong&gt;, and see if it had any structure. And, as expected, it did:&lt;/p&gt;
 
-&lt;p&gt;The natural step forward at that point was to get a .wav version of the song (which is &lt;strong&gt;lossless&lt;/strong&gt;) and see if it had any structure. And as expected, it did. It was also much bigger in size due to being lossless (the size difference isn’t reflected here because it would extend out of the webpage).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/projects/filetopng/song_wav.png?style=centerme&quot; alt=&quot;wav&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Note the repeating bands of different ‘frequencies.’ The image was also much bigger in area due to being lossless (the size difference isn’t reflected here because the image would extend out of the webpage).&lt;/p&gt;
+
+&lt;h4 id=&quot;qualitative-measure-of-information-density&quot;&gt;Qualitative Measure of Information Density&lt;/h4&gt;
+&lt;p&gt;It is in this way, converting a file into an image, that we can examine with our own eyes how densely packed it is with information. If we see patterns in the colors or structure of the image, we know there can be more compression done. If it the image looks identical to an equivalent pe&lt;/p&gt;
 
 &lt;h3 id=&quot;nintendo-64-roms&quot;&gt;Nintendo 64 ROMs&lt;/h3&gt;
 &lt;p&gt;As a test I thought I would try converting a couple of Nintendo 64 games (in file form) that were on my desktop to PNGs and, unsurprisingly, they share many similarities:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/projects/filetopng/n64_diagram.png?style=centerme&quot; alt=&quot;N64 Roms in FileToPNG&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/projects/filetopng/n64_diagram.png?style=centerme&quot; alt=&quot;N64 Roms in FileToPNG&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Interested, I did some research into N64 cartridges and found out that all ‘ROM dumps’ (files that were created by copying a physical N64 cartridge onto a computer) have what’s called a &lt;em&gt;header&lt;/em&gt;. This header includes custodial information like the game’s version, internal name, and other bits of information that would be interesting to a game historian. This header is the black box at the top &lt;em&gt;Super Mario 64&lt;/em&gt; and &lt;em&gt;Mario Kart 64&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Interested, I did some research into N64 cartridges and found out that all ‘ROM dumps’ (files that were created by copying a physical N64 cartridge onto a computer) have what’s called a &lt;em&gt;header&lt;/em&gt;. This header includes custodial information like the game’s version, internal name, and other bits of information that might be interesting to a game historian. These headers are the black boxes at the top of &lt;em&gt;Super Mario 64&lt;/em&gt; and &lt;em&gt;Mario Kart 64&lt;/em&gt; respectively.&lt;/p&gt;
 
 &lt;p&gt;You may also notice that Super Mario 64 is smaller than Mario Kart 64, implying that it has a smaller file size. Apparently, N64 games came on a variety of hardware with different storage capacities and capabilities. This may seem normal nowadays but in an era where all games had to work on the same piece of limited hardware, this variability is pretty amazing.&lt;/p&gt;
 
-&lt;p&gt;Anyway this is also reflected at the bottom of the PNG representations. After the last black bar, both the ROMs are just filled with ‘garbage data’ meant to fill the ROM up. You can tell because this section looks more like the random sample then the rest of the picture.&lt;/p&gt;
+&lt;p&gt;Anyway this is also reflected at the bottom of the PNG representations. After the last black bar, both the ROMs consist of ‘garbage data’ meant to fill the ROM up. You can tell because this section looks more like the random sample then the rest of the picture.&lt;/p&gt;
 </content>
  </entry>
  
@@ -2336,14 +2350,14 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
 &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;placeholder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;float32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'y_Labeled'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Then we create a loss function. A loss function is basically a measure of how off the network is in its guesses. This means the smaller the output of this function, the more accurate our network becomes. So, naturally, if we minimize this function we will have effectively &lt;em&gt;trained&lt;/em&gt; the network. This is deep learning in a nutshell. Here we use &lt;a href=&quot;https://en.wikipedia.org/wiki/Cross_entropy&quot;&gt;Cross Entropy&lt;/a&gt;, as it works nicely with the softmax layer we have at the end.&lt;/p&gt;
+&lt;p&gt;Then we create a loss function. A loss function is basically a measure of how off the network is in its guesses. This means the smaller the output of this function, the more accurate our network becomes. So, naturally, if we minimize this function we will have effectively &lt;em&gt;trained&lt;/em&gt; the network. This is deep learning in a nutshell. Here we use &lt;strong&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Cross_entropy&quot;&gt;Cross Entropy&lt;/a&gt;&lt;/strong&gt;, as it works nicely with the softmax layer we have at the end.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#Loss Function (cross entropy between y and y_hat)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;cross_entropy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reduce_mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;softmax_cross_entropy_with_logits&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;logits&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y_noSoftmax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;labels&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Loss_Function'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Finally we create the training step. This is where we choose what optimization method to use. In this case we’ll use the tried and true &lt;a href=&quot;https://en.wikipedia.org/wiki/Gradient_descent&quot;&gt;Gradient Descent&lt;/a&gt;. I reccommend you look into it yourself, but the gist is that we take partial derivatives of the cost function with respect to every weight variable in the network then slightly adjust them in the direction that would minimize the cost.&lt;/p&gt;
+&lt;p&gt;Finally we create the training step. This is where we choose what optimization method to use. In this case we’ll use the tried and true &lt;strong&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Gradient_descent&quot;&gt;Gradient Descent&lt;/a&gt;&lt;/strong&gt;. I reccommend you look into it yourself, but the gist is that we take partial derivatives of the cost function with respect to every weight variable in the network then slightly adjust them in the direction that would minimize the cost.&lt;/p&gt;
 
 &lt;p&gt;This algorithm approaches the local minimum rapidly at first but then slows down once it has gotten close. Here’s a visualization:&lt;/p&gt;
 
