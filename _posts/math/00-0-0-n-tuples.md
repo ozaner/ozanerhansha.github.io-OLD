@@ -20,7 +20,7 @@ $n$ | $n$-tuple
 
 <!--more-->
 
-### Definition
+## Definition
 #### $2$-tuples
 We define ordered pairs, or $2$-tuples, as [Kuratowski](https://en.wikipedia.org/wiki/Kazimierz_Kuratowski) did:
 
@@ -43,9 +43,11 @@ $$(x_1,x_2,\cdots,x_{n-1},x_n)=((x_1,x_2,\cdots,x_{n-1}),x_n)$$
 
 *The above definition lacks a notion of a $0$ and $1$-tuple. I can't find a use for them that justifies their complication to the definition of $n$-tuple, so I excluded them. But see [this](https://en.wikipedia.org/wiki/Tuple#Tuples_as_nested_sets) for a different definition of $n$-tuples that uses the null-tuple as a base case rather than ordered pairs.*
 
+*Alternatively, $n$-tuples can also be defined as functions with domains over some finite interval of the positive integers. In this sense, they would be equivalent to finite sequences.*
+
 Whatever definition is used, all that matters is that the equality of two $n$-tuples be defined as below:
 
-### Equality
+## Equality
 Two ordered pairs are equivalent if and only if the elements in each of their respective indices are equal. That is to say, for two $n$-tuples $X$ and $Y$:
 
 $$\begin{align}
@@ -64,7 +66,7 @@ _Where $\mathbb{N}_n^* $ is the set of all positive integers from and including 
 
 Note that for this definition to work, the two tuples have to be the same size. As such, tuples of different sizes will never be equal.
 
-### Extraction
+## Extraction
 #### First Element
 To extract the first element $\pi_1(P)$ of an ordered pair $P=(a,b)$ we can use the following construction:
 
@@ -174,7 +176,7 @@ $$\begin{align}
 Why are is there a conditional definition of the $a$th element of an $n$-tuple? What causes this asymmetry? Well it must be the fact that our base case in defining $n$-tuples was the ordered pair rather than some sort of $1$-tuple. Although it's possible that starting with a $1$-tuple wouldn't change this conditional...
 </details>
 
-### Some Uses
+## Some Uses
 #### [Cartesian Product](/cartesian-product)
 Ordered pairs are necessary in defining the Cartesian product, which in turn are used to define relations, functions, coordinates, etc.
 

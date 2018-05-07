@@ -270,7 +270,7 @@
 
 <!--more-->
 
-<h3 id="definition">Definition</h3>
+<h2 id="definition">Definition</h2>
 <h4 id="2-tuples">$2$-tuples</h4>
 <p>We define ordered pairs, or $2$-tuples, as <a href="https://en.wikipedia.org/wiki/Kazimierz_Kuratowski">Kuratowski</a> did:</p>
 
@@ -294,9 +294,11 @@
 
 <p><em>The above definition lacks a notion of a $0$ and $1$-tuple. I can’t find a use for them that justifies their complication to the definition of $n$-tuple, so I excluded them. But see <a href="https://en.wikipedia.org/wiki/Tuple#Tuples_as_nested_sets">this</a> for a different definition of $n$-tuples that uses the null-tuple as a base case rather than ordered pairs.</em></p>
 
+<p><em>Alternatively, $n$-tuples can also be defined as functions with domains over some finite interval of the positive integers. In this sense, they would be equivalent to finite sequences.</em></p>
+
 <p>Whatever definition is used, all that matters is that the equality of two $n$-tuples be defined as below:</p>
 
-<h3 id="equality">Equality</h3>
+<h2 id="equality">Equality</h2>
 <p>Two ordered pairs are equivalent if and only if the elements in each of their respective indices are equal. That is to say, for two $n$-tuples $X$ and $Y$:</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
@@ -317,7 +319,7 @@ X=Y&\equiv\forall k\in\mathbb{N}_n^* (x_k=y_k)\\
 
 <p>Note that for this definition to work, the two tuples have to be the same size. As such, tuples of different sizes will never be equal.</p>
 
-<h3 id="extraction">Extraction</h3>
+<h2 id="extraction">Extraction</h2>
 <h4 id="first-element">First Element</h4>
 <p>To extract the first element $\pi_1(P)$ of an ordered pair $P=(a,b)$ we can use the following construction:</p>
 
@@ -427,7 +429,7 @@ $$\begin{align}
 Why are is there a conditional definition of the $a$th element of an $n$-tuple? What causes this asymmetry? Well it must be the fact that our base case in defining $n$-tuples was the ordered pair rather than some sort of $1$-tuple. Although it's possible that starting with a $1$-tuple wouldn't change this conditional...
 </details>
 
-<h3 id="some-uses">Some Uses</h3>
+<h2 id="some-uses">Some Uses</h2>
 <h4 id="cartesian-product"><a href="/cartesian-product">Cartesian Product</a></h4>
 <p>Ordered pairs are necessary in defining the Cartesian product, which in turn are used to define relations, functions, coordinates, etc.</p>
 

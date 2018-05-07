@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-05-05T21:37:53-04:00</updated>
+ <updated>2018-05-06T20:53:50-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -221,7 +221,7 @@ $$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right
 
 &lt;!--more--&gt;
 
-&lt;h3 id=&quot;definition&quot;&gt;Definition&lt;/h3&gt;
+&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
 &lt;h4 id=&quot;2-tuples&quot;&gt;$2$-tuples&lt;/h4&gt;
 &lt;p&gt;We define ordered pairs, or $2$-tuples, as &lt;a href=&quot;https://en.wikipedia.org/wiki/Kazimierz_Kuratowski&quot;&gt;Kuratowski&lt;/a&gt; did:&lt;/p&gt;
 
@@ -245,9 +245,11 @@ $$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right
 
 &lt;p&gt;&lt;em&gt;The above definition lacks a notion of a $0$ and $1$-tuple. I can’t find a use for them that justifies their complication to the definition of $n$-tuple, so I excluded them. But see &lt;a href=&quot;https://en.wikipedia.org/wiki/Tuple#Tuples_as_nested_sets&quot;&gt;this&lt;/a&gt; for a different definition of $n$-tuples that uses the null-tuple as a base case rather than ordered pairs.&lt;/em&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;em&gt;Alternatively, $n$-tuples can also be defined as functions with domains over some finite interval of the positive integers. In this sense, they would be equivalent to finite sequences.&lt;/em&gt;&lt;/p&gt;
+
 &lt;p&gt;Whatever definition is used, all that matters is that the equality of two $n$-tuples be defined as below:&lt;/p&gt;
 
-&lt;h3 id=&quot;equality&quot;&gt;Equality&lt;/h3&gt;
+&lt;h2 id=&quot;equality&quot;&gt;Equality&lt;/h2&gt;
 &lt;p&gt;Two ordered pairs are equivalent if and only if the elements in each of their respective indices are equal. That is to say, for two $n$-tuples $X$ and $Y$:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
@@ -268,7 +270,7 @@ X=Y&amp;\equiv\forall k\in\mathbb{N}_n^* (x_k=y_k)\\
 
 &lt;p&gt;Note that for this definition to work, the two tuples have to be the same size. As such, tuples of different sizes will never be equal.&lt;/p&gt;
 
-&lt;h3 id=&quot;extraction&quot;&gt;Extraction&lt;/h3&gt;
+&lt;h2 id=&quot;extraction&quot;&gt;Extraction&lt;/h2&gt;
 &lt;h4 id=&quot;first-element&quot;&gt;First Element&lt;/h4&gt;
 &lt;p&gt;To extract the first element $\pi_1(P)$ of an ordered pair $P=(a,b)$ we can use the following construction:&lt;/p&gt;
 
@@ -378,7 +380,7 @@ $$\begin{align}
 Why are is there a conditional definition of the $a$th element of an $n$-tuple? What causes this asymmetry? Well it must be the fact that our base case in defining $n$-tuples was the ordered pair rather than some sort of $1$-tuple. Although it's possible that starting with a $1$-tuple wouldn't change this conditional...
 &lt;/details&gt;
 
-&lt;h3 id=&quot;some-uses&quot;&gt;Some Uses&lt;/h3&gt;
+&lt;h2 id=&quot;some-uses&quot;&gt;Some Uses&lt;/h2&gt;
 &lt;h4 id=&quot;cartesian-product&quot;&gt;&lt;a href=&quot;/cartesian-product&quot;&gt;Cartesian Product&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;Ordered pairs are necessary in defining the Cartesian product, which in turn are used to define relations, functions, coordinates, etc.&lt;/p&gt;
 
@@ -1673,9 +1675,53 @@ Quantum chromodynamics is the QFT of the strong nuclear force. This theory descr
    <id>http://localhost:4000/parity-sequences</id>
    <content type="html">&lt;!-- Thought about this when we had to find Taylor series' for certain sinusoidal functions and the terms had hard to capture patterns of negative/even terms. It is possible to capture this via more sinusoidal functions but I wanted a polynomial answer. I don't think there is a polynomial answer for the general case, and the 2 examples below are the extent of my findings. --&gt;
 
-&lt;p&gt;A parity sequence is a sequence of numbers that follow a set pattern of even and odd. Only the parity of the numbers is important, not the actual values themselves. As such, we can represent the parity sequence of a sequence as a set of “$+$” for even and “$-$” for odd numbers.&lt;/p&gt;
+&lt;p&gt;A parity sequence is a pattern of alternating even and odd numbers. Only the parity of the numbers is important, not the actual values themselves. As such, we can represent the parity sequence of a sequence as a list of “$+$” for even and “$-$” for odd numbers.&lt;/p&gt;
 
-&lt;h3 id=&quot;use&quot;&gt;Use&lt;/h3&gt;
+&lt;h2 id=&quot;definition-and-equivalence&quot;&gt;Definition and Equivalence&lt;/h2&gt;
+&lt;p&gt;Consider the set of all integer sequences (that is, all functions from the natural numbers to the integers):&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;S_\mathbb{Z}\equiv\{f\mid f:\mathbb{N}\to\mathbb{Z}\}&lt;/script&gt;
+
+&lt;p&gt;We can define an equivalence relation $Ꝑ$ on $S_\mathbb{Z}$ that relates sequences that have the same parity for each element:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;Ꝑ\equiv\{\left(a_n,b_n\right)\in (S_\mathbb{Z})^2\mid\forall n\in\mathbb{N},\ (-1)^{a_n}=(-1)^{b_n}\}&lt;/script&gt;
+
+&lt;p&gt;Or in English: if $-1$ to the $n$th element of sequence $a_n$ equals $-1$ to the $n$th element of sequence $b_n$, then the sequences are &lt;strong&gt;parity equivalent&lt;/strong&gt;. We can write this more succinctly as:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+a_nꝐb_n&amp;\equiv (a_n,b_n)\in Ꝑ\\
+&amp;\equiv (-1)^{a_n}=(-1)^{b_n}
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Using this notion of parity equivalence, we can say that a parity sequence of a given sequence $S_n$ is simply its equivalence class in $Ꝑ$:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;[S_n]=\{x\mid a_nꝐx\}&lt;/script&gt;
+
+&lt;h2 id=&quot;-and---notation&quot;&gt;$+$ and $-$ Notation&lt;/h2&gt;
+&lt;p&gt;Because a parity sequence is uniquely defined by the parity of any one of its members’ elements, we can construct the following notation:&lt;/p&gt;
+
+&lt;h2 id=&quot;parity-swap&quot;&gt;Parity Swap&lt;/h2&gt;
+&lt;p&gt;A useful property to take note of when constructing these sequences is that adding $1$ to the sequence flips the parity of each element in the sequence:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+S_n=\frac{n(n-1)}{2}&amp;=\{0,0,1,3,6,10,\cdots\}\\
+&amp;\rightarrow\{+,+,-,-,+,+,\cdots\}\\
+S'_ n=\frac{n(n-1)}{2}+1&amp;=\{1,1,2,4,7,11,\cdots\}\\
+&amp;\rightarrow\{-,-,+,+,-,-,\cdots\}
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;h2 id=&quot;eveningodding-out&quot;&gt;Evening/Odding Out&lt;/h2&gt;
+&lt;p&gt;When any parity sequence is multiplied by $2$ it becomes parity equivalent to $2n$. This is called evening out:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\forall S_n:2S_n=\{+,+,+,+,+,\cdots\}&lt;/script&gt;
+
+&lt;p&gt;Similarly, when any parity sequence is multiplied by $2$ then increased by $1$, it becomes parity equivalent to $2n+1$. This is called odding out:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\forall S_n:2S_n+1=\{-,-,-,-,-,\cdots\}&lt;/script&gt;
+
+&lt;h2 id=&quot;use&quot;&gt;Use&lt;/h2&gt;
 &lt;p&gt;Notice that when we raise $-1$ to the power of one of these sequences, it will evaluate to $+1$ for even values and $-1$ for odd values.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;This property is where the $+$ $-$ notation comes from.&lt;/em&gt;&lt;/p&gt;
@@ -1683,7 +1729,7 @@ Quantum chromodynamics is the QFT of the strong nuclear force. This theory descr
 &lt;p&gt;When constructing things like Taylor Series’, this is a useful property to have. Terms that alternate from negative to positives can be dealt with by appending a factor of $(-1)^{S_n}$ to the series.&lt;/p&gt;
 
 &lt;!--more--&gt;
-
+&lt;h2 id=&quot;examples&quot;&gt;Examples&lt;/h2&gt;
 &lt;h4 id=&quot;base-case-parity-sequences&quot;&gt;Base Case Parity Sequences&lt;/h4&gt;
 &lt;p&gt;The two most simple parity sequences are simply the natural numbers:&lt;/p&gt;
 
@@ -1742,239 +1788,6 @@ F_n=F_{n-2}+F_{n-1}&amp;=\{0,1,1,2,3,5,8,13,\cdots\}\\
   S_n=\cos \frac{n\pi}{2}&amp; &amp;&amp;= \{1,0,-1,0,1,0,-1,0,\cdots\} &amp;&amp;\\
   &amp; &amp;&amp;\rightarrow\{-,+,-,+,-,+,-,+,\cdots\}&amp;&amp;
 \end{alignat*} %]]&gt;&lt;/script&gt;
-
-&lt;h3 id=&quot;parity-swap&quot;&gt;Parity Swap&lt;/h3&gt;
-&lt;p&gt;A useful property to take note of when constructing these sequences is that adding $1$ to the sequence flips the parity of each element in the sequence:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align}
-S_n=\frac{n(n-1)}{2}&amp;=\{0,0,1,3,6,10,\cdots\}\\
-&amp;\rightarrow\{+,+,-,-,+,+,\cdots\}\\
-S'_ n=\frac{n(n-1)}{2}+1&amp;=\{1,1,2,4,7,11,\cdots\}\\
-&amp;\rightarrow\{-,-,+,+,-,-,\cdots\}
-\end{align} %]]&gt;&lt;/script&gt;
-
-&lt;h3 id=&quot;equivalence&quot;&gt;Equivalence&lt;/h3&gt;
-&lt;p&gt;When the corresponding elements of two sequences have the same parity, we can call those two sequences &lt;strong&gt;parity equivalent&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;This can be formally stated as:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\forall n\in\mathbb{N},\text{ }(-1)^{A_n}=(-1)^{B_n}&lt;/script&gt;
-
-&lt;p&gt;i.e for all Natural Numbers $n$, if $-1$ to the $A_n$ equals $-1$ to the $B_n$, then the sequences $A$ and $B$ are parity equivalent.&lt;/p&gt;
-
-&lt;h3 id=&quot;eveningodding-out&quot;&gt;Evening/Odding Out&lt;/h3&gt;
-&lt;p&gt;When any parity sequence is multiplied by $2$ it becomes parity equivalent to $2n$. This is called evening out:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\forall S_n:2S_n=\{+,+,+,+,+,\cdots\}&lt;/script&gt;
-
-&lt;p&gt;Similarly, when any parity sequence is multiplied by $2$ then increased by $1$, it becomes parity equivalent to $2n+1$. This is called odding out:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\forall S_n:2S_n+1=\{-,-,-,-,-,\cdots\}&lt;/script&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Fractional Calculus</title>
-   <link href="http://localhost:4000/fractional-calculus/"/>
-   <updated>2018-01-30T00:00:00-05:00</updated>
-   <id>http://localhost:4000/fractional-calculus</id>
-   <content type="html">&lt;h2 id=&quot;basic-differentiation&quot;&gt;Basic Differentiation&lt;/h2&gt;
-&lt;p&gt;In general terms, derivatives are a measure of how a function changes with respect to another variable. Not all functions have derivatives, but those that do are called &lt;strong&gt;differentiable&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;The derivative of a function is itself a function and thus can be further differentiated. This means we can define things like the &lt;strong&gt;second derivative&lt;/strong&gt; which is obtained by successively taking the derivative of a function twice.&lt;/p&gt;
-
-&lt;p&gt;Take the function $x^3$. It’s first derivative is usually denoted:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\mathrm{d} }{\mathrm{d} x}x^3=3x^2&lt;/script&gt;
-
-&lt;p&gt;It’s second derivative is denoted:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\mathrm{d} }{\mathrm{d} x}\left(\frac{\mathrm{d} }{\mathrm{d} x}x^3\right)=\frac{\mathrm{d^2} }{\mathrm{d} x^2}x^3=6x&lt;/script&gt;
-
-&lt;p&gt;We can extend this idea (and its notation) to any integer $n$ forming the nth derivative of a function $f(x)$:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\mathrm{d^n} }{\mathrm{d} x^n}f(x)&lt;/script&gt;
-
-&lt;!--more--&gt;
-
-&lt;h4 id=&quot;differential-operator&quot;&gt;Differential operator&lt;/h4&gt;
-&lt;p&gt;Before we go any further, let’s introduce a less cumbersome notation for differentiation:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\mathrm{d} }{\mathrm{d} x}f(x)=D[f(x)]=Df&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\mathrm{d^n} }{\mathrm{d} x^n}f(x)=D^n[f(x)]=D^nf&lt;/script&gt;
-
-&lt;p&gt;&lt;em&gt;This is called the &lt;a href=&quot;https://en.wikipedia.org/wiki/Differential_operator&quot;&gt;differential operator&lt;/a&gt; its used in other fields of calculus. Since all our functions are of one variable ($x$) there is no ambiguity in using it. Also note that the operators are not being raised to a power, it’s just notation&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Also note that the differential operator also includes antidifferentiation, or integration. The indefinite integral of a function $f$ is just:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\int{f(x)}\,\mathrm{d}x=D^{-1}[f(x)]=D^{-1}f&lt;/script&gt;
-
-&lt;p&gt;And further integrals can be defined as you’d expect:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\iint{f(x)}\,\mathrm{d}x=D^{-2}[f(x)]=D^{-2}f&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\iiint{f(x)}\,\mathrm{d}x=D^{-3}[f(x)]=D^{-3}f&lt;/script&gt;
-
-&lt;!-- ## Halving Operators
-Before we get to fractional derivatives, we need to understand what it means to extend an operator to non-integer forms.
-
-#### Exponentiation
-Take exponentiation. It is naively defined as repeated multiplication:
-
-$$x^n=\underbrace{x\times x\times x\cdots}_{n\text{ times}}$$
-
-So a number, say 5, to the power of 3 is simply:
-
-$$5^3=5\times 5\times 5=125$$
-
-But what if I plugged in $\frac{1}{2}$ for n? What does it mean to multiply $x$ by itself half a time?
-
-#### Adding Exponents
-Let's take a step back to regular exponentiation, the kind with integer exponents. One of the properties of exponentiation is that multiplying two numbers of the same base is the same as adding their exponents together:
-
-$$x^n\times x^m=x^{n+m}$$
-
-This should be clear with an example:
-
-$$x^3\times x^2=(x\times x\times x)\times(x\times x)=x^5$$
-
-So what? Well, if our notion of 'fractional' exponents is to hold we, it should satisfy this property (i.e $x^{1/2}\times x^{1/2}=x^{1/2+1/2}=x$).
-
-This is what we call the **square root** of a number $x$. --&gt;
-
-&lt;h2 id=&quot;fractional-differentiation&quot;&gt;Fractional Differentiation&lt;/h2&gt;
-&lt;p&gt;Naturally, one might ask the question “What about derivatives of a non-integer order?” What might such a nonstandard derivative look like? Well, to help us out, let’s take a look at a property of derivatives.&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;D^n(D^mf)=D^{n+m}f&lt;/script&gt;
-
-&lt;p&gt;That is, the $n$th derivative of the $m$th derivative of a function is equivalent to the $(n+m)$th derivative of the function. This should come as no surprise as the definition of the second, third, etc. derivatives are just repeated use of the differential operator:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{align*}
-D(Df)=D^2f \tag{Because 1+1=2}\\
-D(D^2f)=D^3f \tag{Because 1+2=3}\\
-D(D^3f)=D^4f \tag{Because 1+3=4}\\
-\end{align*}&lt;/script&gt;
-
-&lt;p&gt;&lt;em&gt;This should remind you of exponents and their properties. As well as the fact that it is not immediately clear what $x^{1/2}$ means.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;It should follow that there exists half derivatives, or &lt;strong&gt;semiderivatives&lt;/strong&gt;, of functions. This semiderivative has to satisfy the following:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;D^{1/2}D^{1/2}f=Df \tag{Because \(\frac{1}{2}+\frac{1}{2}=1\)}&lt;/script&gt;
-
-&lt;h4 id=&quot;power-rule&quot;&gt;Power Rule&lt;/h4&gt;
-&lt;p&gt;But how do we calculate $D^{1/2}f$? Let’s assume $f(x)$ is some polynomial function. If that’s the case we can apply the power rule to find the first and second derivatives:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;Dx^n=nx^{n-1}&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;D^2x^n=n(n-1)x^{n-2}&lt;/script&gt;
-
-&lt;p&gt;As we find higher and higher derivatives a pattern emerges:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;D^kx^n=\frac{n!}{(n-k)!}x^{n-k}&lt;/script&gt;
-
-&lt;p&gt;&lt;em&gt;If that wasn’t clear, realize that as we successively apply the power rule we multiply the expression by its power then subtract its power by 1 and so on forming a partial factorial. To deal with the fact that these terms don’t form a full factorial, we divide by the missing terms which are encapsulated by $(n-k)!$&lt;/em&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;the-gamma-function&quot;&gt;The Gamma Function&lt;/h4&gt;
-&lt;p&gt;This formula works for any integer order derivative but if we attempt to plug, say $\frac{1}{2}$, into the expression we’re left with:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;D^{1/2}x^n=\frac{n!}{(n-\frac{1}{2})!}x^{n-\frac{1}{2}}&lt;/script&gt;
-
-&lt;p&gt;When $n$ is an integer, $n-\frac{1}{2}$, will always be a rational number. This means we cannot evaluate the denominator because the factorial function $x!$ is only defined for integer $x$.&lt;/p&gt;
-
-&lt;p&gt;But luckily there is a way to amend the factorial function such that it accepts any real (and even complex) numbers. This done by a process known as &lt;a href=&quot;https://en.wikipedia.org/wiki/Analytic_continuation&quot;&gt;&lt;strong&gt;analytical continuation&lt;/strong&gt;&lt;/a&gt;, resulting in a &lt;em&gt;unique&lt;/em&gt; generalized function.&lt;/p&gt;
-
-&lt;p&gt;The generalized factorial function is called the &lt;a href=&quot;https://en.wikipedia.org/wiki/Gamma_function&quot;&gt;&lt;strong&gt;gamma function&lt;/strong&gt;&lt;/a&gt; and is denoted: $\Gamma(x)$&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/math/fractional-calculus/gamma_function.png?style=centerme&quot; alt=&quot;gamma graph&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;In the graph above you’ll see that the gamma function returns the same result as factorial for integer values, but is shifted over by 1:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\Gamma(x+1)=x!\tag{for all integer x}&lt;/script&gt;
-
-&lt;p&gt;&lt;em&gt;Why is the gamma function shifted over by 1? Well no particular reason, it’s just an unfortunate turn of mathematical history&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;There is so much interesting math that makes use of the Gamma Function that I couldn’t even hope to touch on it here. For the rest of this article I’ll assume you know how to google a &lt;a href=&quot;https://www.wolframalpha.com/input/?i=gamma+(x)&quot;&gt;‘gamma function calculator’&lt;/a&gt; for evaluating it.&lt;/p&gt;
-
-&lt;h4 id=&quot;fractional-power-rule&quot;&gt;Fractional Power Rule&lt;/h4&gt;
-&lt;p&gt;We now have all the necessary machinery to derive an expression for fractional (and indeed complex) order derivatives of polynomial functions. It’s as simple as replacing the factorial function in our original definition of the power rule with the continuous gamma function:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;D^kx^n=\frac{n!}{(n-k)!}x^{n-k} \rightarrow \frac{\Gamma(n+1)}{\Gamma(n-k+1)}x^{n-k}&lt;/script&gt;
-
-&lt;p&gt;&lt;em&gt;Remember, we added 1 to each of the function’s arguments because the gamma function is shifted from factorial.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;And so now we have a general formula for the fractional derivative (or integral if $k$ is negative) of any polynomial.&lt;/p&gt;
-
-&lt;h4 id=&quot;an-example&quot;&gt;An Example&lt;/h4&gt;
-&lt;p&gt;Now we can finally take the semiderivative of a function. Let’s start off with a simple one: $f(x)=x$&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align*}
-D^{1/2}x&amp;=\frac{\Gamma(1+1)}{\Gamma(1-1/2+1)}x^{1-1/2}\\
-&amp;=\frac{\Gamma(2)}{\Gamma(3/2)}\sqrt x \\
-&amp;=\frac{1}{\frac{\sqrt{\pi}}{2}}\sqrt x \\
-&amp;=2\sqrt{\frac{x}{\pi}}
-\end{align*} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;Below, we can see the derivative of $y=x$ changing between it’s first derivative which is just the constant function $y=1$ and it’s first integral (i.e $D^{-1}x$) which is $y=\frac{x^2}{2}$&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/a/ac/Fractional_Derivative_of_Basic_Power_Function_%282014%29.gif?style=centerme&quot; alt=&quot;continuous fractional derivative&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;If we pause this animation at the semiderivative, $2\sqrt{\frac{x}{\pi}}$, we get:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Half-derivative.svg/434px-Half-derivative.svg.png?style=centerme&quot; alt=&quot;graph of semiderivative of x&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;In blue is the function $x$, in red it’s first derivative, $1$, and in purple it’s semiderivative.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;a-more-complex-example&quot;&gt;A More &lt;strong&gt;Complex&lt;/strong&gt; Example&lt;/h4&gt;
-&lt;p&gt;Let’s take a more complex example, the $(1+i)$th derivative of $3x^4$:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align*}
-D^{1+i}3x^4&amp;=\frac{\Gamma(4+1)}{\Gamma(3-(1+i)+1)}3x^{4-(1+i)}\\
-&amp;=\frac{\Gamma(5)}{\Gamma(3-i)}3x^{3-i}\\
-&amp;=\frac{24}{0.96+1.34i}3x^{3-i}\\
-&amp;=(25.48+35.44i)x^{3-i}
-\end{align*} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;Unfortunately, the gamma function of complex numbers aren’t usually nice looking. As such, we have to use an approximate value for &lt;script type=&quot;math/tex&quot;&gt;\Gamma{(3-i)}&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;If you’re wondering how to raise a number to a complex power, I’ve written about it and other consequences of Euler’s formula &lt;a href=&quot;https://medium.com/@ozanerhansha/applications-of-eulers-formula-857bf60ba32d&quot;&gt;here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;fractional-derivatives-of-other-common-functions&quot;&gt;Fractional Derivatives of other Common Functions&lt;/h2&gt;
-&lt;p&gt;You may have noticed that the above &lt;strong&gt;fractional power rule&lt;/strong&gt; for finding the fractional derivatives of polynomials isn’t very general. What about terms with negative exponents (i.e $x^{-5}$)? The power rule above doesn’t work for them because the gamma function isn’t defined for negative integers (it is defined for all other negative real and complex numbers):&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/5/52/Gamma_plot.svg?style=centerme&quot; alt=&quot;full real gamma function&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;And we haven’t even mentioned the fractional derivatives of $e^{x}$, $\sin x$, and $\cos x$…&lt;/p&gt;
-
-&lt;p&gt;Deriving the fractional derivatives of these expressions is a lot to cram into one post, so I’ll shelve them for now.&lt;/p&gt;
-
-&lt;!-- ## Fractional Derivatives of General Functions
-What if you wanted to find the fractional/complex derivative of $\sin x$? $e^x$?, $\Gamma(x)$ itself? Well it certainly is possible, and the general formula is as follows:
-
-$$D^{n}f(x)={\frac {1}{\Gamma (1-n)}} \left( \frac{\mathrm{d} }{\mathrm{d} x}\int_{0}^{x}{\frac {f(t)}{(x-t)^{n}}}\,\mathrm{d}t \right)$$
-
-The problem is that the integral part:
-
-$$\int_{0}^{x}{\frac {f(t)}{(x-t)^{n}}}\,\mathrm{d}t$$
-
-Can be quite tricky to evaluate without very advanced techniques. Say we wanted to find the semiderivative of $\sin x$:
-
-$$
-\begin{align*}
-D^{1/2}f(x)&amp;=\frac {1}{\Gamma (1-1/2)} \left(\frac{\mathrm{d}}{\mathrm{d} x}\int_{0}^{x}{\frac {\sin(t)}{(x-t)^{1/2}}}\,\mathrm{d}t \right)
-\\
-&amp;=\frac {1}{\sqrt\pi} \left(\frac{\mathrm{d}}{\mathrm{d} x}\int_{0}^{x}{\frac{\sin(t)}{\sqrt{x-t}}}\,\mathrm{d}t \right)
-\end{align*}
-$$
-
-After simplifying the coefficient, we're left with the problem of integrating this expression:
-
-$$\int_{0}^{x}{\frac{\sin(t)}{\sqrt{x-t}}}\,\mathrm{d}t$$
-
-Which I personally cannot do. But that's ok, because others more skilled than I have already solved it for us. Click here for a table of [common fractional derivatives](https://link.springer.com/content/pdf/bbm%3A978-3-642-30898-7%2F1.pdf). --&gt;
 </content>
  </entry>
  
@@ -2160,7 +1973,7 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\text{FileToPNG}:\{0,1\}^+\to \left(\mathbb{N}_{255}\right)^{n\times n\times 4}&lt;/script&gt;
 
 &lt;h2 id=&quot;properties-of-png-representations&quot;&gt;Properties of PNG Representations&lt;/h2&gt;
-&lt;p&gt;The main algorithm doesn’t do any sort of encrypting compression of the file’s data (as of yet). As such, the PNG representation it spits out can give us a look at the file’s structure.&lt;/p&gt;
+&lt;p&gt;FileToPNG doesn’t do any sort of encrypting or compression of the file’s data (as of yet). As such, the PNG representation it spits out can give us an unfiltered look at the file’s structure.&lt;/p&gt;
 
 &lt;h3 id=&quot;text-files&quot;&gt;Text Files&lt;/h3&gt;
 &lt;p&gt;Take text files for example. Their content, of course, varies widely depending on the length and topic of discussion. But, even if they don’t use the same language, they all still use the same set of Unicode characters which all have the same configuration of bits. Meaning they share some similarities:&lt;/p&gt;
@@ -2188,16 +2001,16 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
 &lt;p&gt;Note the repeating bands of different ‘frequencies.’ The image was also much bigger in area due to being lossless (the size difference isn’t reflected here because the image would extend out of the webpage).&lt;/p&gt;
 
 &lt;h4 id=&quot;qualitative-measure-of-information-density&quot;&gt;Qualitative Measure of Information Density&lt;/h4&gt;
-&lt;p&gt;It is in this way, converting a file into an image, that we can examine with our own eyes how densely packed it is with information. If we see patterns in the colors or structure of the image, we know there can be more compression done. If it the image looks identical to an equivalent pe&lt;/p&gt;
+&lt;p&gt;It is in this way that we can examine how densely packed a given file is with information. If we see patterns in the colors or structure of the image, we know there can be more compression done. If it the image is indistinguishable from random noise, then it’s probably rich in information.&lt;/p&gt;
 
 &lt;h3 id=&quot;nintendo-64-roms&quot;&gt;Nintendo 64 ROMs&lt;/h3&gt;
-&lt;p&gt;As a test I thought I would try converting a couple of Nintendo 64 games (in file form) that were on my desktop to PNGs and, unsurprisingly, they share many similarities:&lt;/p&gt;
+&lt;p&gt;As a final test, I thought I would try converting a couple of Nintendo 64 games (in file form) that were on my desktop to PNGs and, unsurprisingly, they share many similarities:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/projects/filetopng/n64_diagram.png?style=centerme&quot; alt=&quot;N64 Roms in FileToPNG&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Interested, I did some research into N64 cartridges and found out that all ‘ROM dumps’ (files that were created by copying a physical N64 cartridge onto a computer) have what’s called a &lt;em&gt;header&lt;/em&gt;. This header includes custodial information like the game’s version, internal name, and other bits of information that might be interesting to a game historian. These headers are the black boxes at the top of &lt;em&gt;Super Mario 64&lt;/em&gt; and &lt;em&gt;Mario Kart 64&lt;/em&gt; respectively.&lt;/p&gt;
 
-&lt;p&gt;You may also notice that Super Mario 64 is smaller than Mario Kart 64, implying that it has a smaller file size. Apparently, N64 games came on a variety of hardware with different storage capacities and capabilities. This may seem normal nowadays but in an era where all games had to work on the same piece of limited hardware, this variability is pretty amazing.&lt;/p&gt;
+&lt;p&gt;You may also notice that &lt;em&gt;Super Mario 64&lt;/em&gt; is smaller than &lt;em&gt;Mario Kart 64&lt;/em&gt;, implying that it has a smaller file size. Apparently, N64 games came on a variety of hardware with different storage capacities and capabilities. This may seem normal nowadays but in an era where all games had to work on the same piece of limited hardware, this variability is pretty amazing.&lt;/p&gt;
 
 &lt;p&gt;Anyway this is also reflected at the bottom of the PNG representations. After the last black bar, both the ROMs consist of ‘garbage data’ meant to fill the ROM up. You can tell because this section looks more like the random sample then the rest of the picture.&lt;/p&gt;
 </content>

@@ -32,7 +32,7 @@ You can think of the program as a function that maps the set of all [finite bit 
 $$\text{FileToPNG}:\{0,1\}^+\to \left(\mathbb{N}_{255}\right)^{n\times n\times 4}$$
 
 ## Properties of PNG Representations
-The main algorithm doesn't do any sort of encrypting compression of the file's data (as of yet). As such, the PNG representation it spits out can give us a look at the file's structure.
+FileToPNG doesn't do any sort of encrypting or compression of the file's data (as of yet). As such, the PNG representation it spits out can give us an unfiltered look at the file's structure.
 
 ### Text Files
 Take text files for example. Their content, of course, varies widely depending on the length and topic of discussion. But, even if they don't use the same language, they all still use the same set of Unicode characters which all have the same configuration of bits. Meaning they share some similarities:
@@ -60,15 +60,15 @@ The natural step forward at that point was to get a .wav version of the song, wh
 Note the repeating bands of different 'frequencies.' The image was also much bigger in area due to being lossless (the size difference isn't reflected here because the image would extend out of the webpage).
 
 #### Qualitative Measure of Information Density
-It is in this way, converting a file into an image, that we can examine with our own eyes how densely packed it is with information. If we see patterns in the colors or structure of the image, we know there can be more compression done. If it the image looks identical to an equivalent pe
+It is in this way that we can examine how densely packed a given file is with information. If we see patterns in the colors or structure of the image, we know there can be more compression done. If it the image is indistinguishable from random noise, then it's probably rich in information.
 
 ### Nintendo 64 ROMs
-As a test I thought I would try converting a couple of Nintendo 64 games (in file form) that were on my desktop to PNGs and, unsurprisingly, they share many similarities:
+As a final test, I thought I would try converting a couple of Nintendo 64 games (in file form) that were on my desktop to PNGs and, unsurprisingly, they share many similarities:
 
 ![N64 Roms in FileToPNG](/assets/projects/filetopng/n64_diagram.png?style=centerme){:width="500px"}
 
 Interested, I did some research into N64 cartridges and found out that all 'ROM dumps' (files that were created by copying a physical N64 cartridge onto a computer) have what's called a *header*. This header includes custodial information like the game's version, internal name, and other bits of information that might be interesting to a game historian. These headers are the black boxes at the top of *Super Mario 64* and *Mario Kart 64* respectively.
 
-You may also notice that Super Mario 64 is smaller than Mario Kart 64, implying that it has a smaller file size. Apparently, N64 games came on a variety of hardware with different storage capacities and capabilities. This may seem normal nowadays but in an era where all games had to work on the same piece of limited hardware, this variability is pretty amazing.
+You may also notice that *Super Mario 64* is smaller than *Mario Kart 64*, implying that it has a smaller file size. Apparently, N64 games came on a variety of hardware with different storage capacities and capabilities. This may seem normal nowadays but in an era where all games had to work on the same piece of limited hardware, this variability is pretty amazing.
 
 Anyway this is also reflected at the bottom of the PNG representations. After the last black bar, both the ROMs consist of 'garbage data' meant to fill the ROM up. You can tell because this section looks more like the random sample then the rest of the picture.
