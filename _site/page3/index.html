@@ -310,19 +310,19 @@ Translational Kinematics describes the motion of objects through space over time
 
 <p>We can define an equivalence relation $Ꝑ$ on $S_\mathbb{Z}$ that relates sequences that have the same parity for each element:</p>
 
-<script type="math/tex; mode=display">Ꝑ\equiv\{\left(a_n,b_n\right)\in (S_\mathbb{Z})^2\mid\forall n\in\mathbb{N},\ (-1)^{a_n}=(-1)^{b_n}\}</script>
+<script type="math/tex; mode=display">\sim\equiv\{\left(a_n,b_n\right)\in (S_\mathbb{Z})^2\mid\forall n\in\mathbb{N},\ (-1)^{a_n}=(-1)^{b_n}\}</script>
 
 <p>Or in English: if $-1$ to the $n$th element of sequence $a_n$ equals $-1$ to the $n$th element of sequence $b_n$, then the sequences are <strong>parity equivalent</strong>. We can write this more succinctly as:</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
-a_nꝐb_n&\equiv (a_n,b_n)\in Ꝑ\\
+a_n\sim b_n&\equiv (a_n,b_n)\in \sim\\
 &\equiv (-1)^{a_n}=(-1)^{b_n}
 \end{align} %]]></script>
 
 <p>Using this notion of parity equivalence, we can say that a parity sequence of a given sequence $S_n$ is simply its equivalence class in $Ꝑ$:</p>
 
-<script type="math/tex; mode=display">[S_n]=\{x\mid a_nꝐx\}</script>
+<script type="math/tex; mode=display">[S_n]=\{x\mid a_n\sim x\}</script>
 
 <h2 id="-and---notation">$+$ and $-$ Notation</h2>
 <p>Because a parity sequence is uniquely defined by the parity of any one of its members’ elements, we can construct the following notation:</p>

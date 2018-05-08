@@ -15,18 +15,18 @@ $$S_\mathbb{Z}\equiv\{f\mid f:\mathbb{N}\to\mathbb{Z}\}$$
 
 We can define an equivalence relation $Ꝑ$ on $S_\mathbb{Z}$ that relates sequences that have the same parity for each element:
 
-$$Ꝑ\equiv\{\left(a_n,b_n\right)\in (S_\mathbb{Z})^2\mid\forall n\in\mathbb{N},\ (-1)^{a_n}=(-1)^{b_n}\}$$
+$$\sim\equiv\{\left(a_n,b_n\right)\in (S_\mathbb{Z})^2\mid\forall n\in\mathbb{N},\ (-1)^{a_n}=(-1)^{b_n}\}$$
 
 Or in English: if $-1$ to the $n$th element of sequence $a_n$ equals $-1$ to the $n$th element of sequence $b_n$, then the sequences are **parity equivalent**. We can write this more succinctly as:
 
 $$\begin{align}
-a_nꝐb_n&\equiv (a_n,b_n)\in Ꝑ\\
+a_n\sim b_n&\equiv (a_n,b_n)\in \sim\\
 &\equiv (-1)^{a_n}=(-1)^{b_n}
 \end{align}$$
 
 Using this notion of parity equivalence, we can say that a parity sequence of a given sequence $S_n$ is simply its equivalence class in $Ꝑ$:
 
-$$[S_n]=\{x\mid a_nꝐx\}$$
+$$[S_n]=\{x\mid a_n\sim x\}$$
 
 ## $+$ and $-$ Notation
 Because a parity sequence is uniquely defined by the parity of any one of its members' elements, we can construct the following notation:

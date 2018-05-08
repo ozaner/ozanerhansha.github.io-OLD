@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-05-06T20:53:50-04:00</updated>
+ <updated>2018-05-07T19:18:31-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -1684,19 +1684,19 @@ Quantum chromodynamics is the QFT of the strong nuclear force. This theory descr
 
 &lt;p&gt;We can define an equivalence relation $Ꝑ$ on $S_\mathbb{Z}$ that relates sequences that have the same parity for each element:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;Ꝑ\equiv\{\left(a_n,b_n\right)\in (S_\mathbb{Z})^2\mid\forall n\in\mathbb{N},\ (-1)^{a_n}=(-1)^{b_n}\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\sim\equiv\{\left(a_n,b_n\right)\in (S_\mathbb{Z})^2\mid\forall n\in\mathbb{N},\ (-1)^{a_n}=(-1)^{b_n}\}&lt;/script&gt;
 
 &lt;p&gt;Or in English: if $-1$ to the $n$th element of sequence $a_n$ equals $-1$ to the $n$th element of sequence $b_n$, then the sequences are &lt;strong&gt;parity equivalent&lt;/strong&gt;. We can write this more succinctly as:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{align}
-a_nꝐb_n&amp;\equiv (a_n,b_n)\in Ꝑ\\
+a_n\sim b_n&amp;\equiv (a_n,b_n)\in \sim\\
 &amp;\equiv (-1)^{a_n}=(-1)^{b_n}
 \end{align} %]]&gt;&lt;/script&gt;
 
 &lt;p&gt;Using this notion of parity equivalence, we can say that a parity sequence of a given sequence $S_n$ is simply its equivalence class in $Ꝑ$:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;[S_n]=\{x\mid a_nꝐx\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;[S_n]=\{x\mid a_n\sim x\}&lt;/script&gt;
 
 &lt;h2 id=&quot;-and---notation&quot;&gt;$+$ and $-$ Notation&lt;/h2&gt;
 &lt;p&gt;Because a parity sequence is uniquely defined by the parity of any one of its members’ elements, we can construct the following notation:&lt;/p&gt;
