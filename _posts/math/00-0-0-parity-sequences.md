@@ -2,7 +2,7 @@
 layout: post
 title: Parity Sequences
 date: 2018-05-10
-tags: math
+tags: math set-theory
 ---
 <!--
 New Date is formal reformulation of parity sequences

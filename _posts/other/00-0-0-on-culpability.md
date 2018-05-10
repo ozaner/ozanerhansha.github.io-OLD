@@ -4,17 +4,17 @@ title: On Culpability
 date: 2018-04-25
 tags: philosophy
 ---
-#### Scenario 1
+### Scenario 1
 Consider a man driving home late after having a few too many drinks. While drunk he decides to run a red light. Nothing comes of it and he manages to arrive home safe and sound.
 
-#### Scenario 2
+### Scenario 2
 Now imagine this same man, under the same circumstances; a man who had just as many drinks, a man who decided to drive while inebriated at the same late hour.
 
 This time he still decides to run the red light but, unlike in the other situation, he blindsides a little girl walking across the street. He puts on the brakes as soon as he sees her but, his reaction time being delayed, runs over and kills her.
 
 <!--more-->
 
-#### Result
+### Result
 Gruesome to be sure, but consider the repercussions of his actions in both cases. In one instance the man got home scot-free, with nothing more than a traffic ticket looming over his head.
 
 In the other instance however, he was charged and convicted of manslaughter.
@@ -23,7 +23,7 @@ Both instances of the man made the same, poor decisions up to the point of the a
 
 Luck.
 
-#### Why?
+### Why?
 If you were to ask someone whether the one who ran the red-light with no consequence or the one who ran over a pedestrian was more guilty, you would have good reason to believe they would say the pedestrian killer. And even if we were to concede that, at least by intent, the two drunk men were equally culpable, it still just doesn’t sit right with us. How could it be that a murderer is just as evil as a reckless driver? Does it seem wrong that one be locked up for life and the other lose a star on their driver's license?
 
 Well… I don’t know. Why is it that a 17 year old, a day before his birthday, isn’t fully responsible for his actions but once he is 18 is considered independent by the law? How can anybody be culpable if they are a product of their parents, environment, genetics, etc? What is culpability?
