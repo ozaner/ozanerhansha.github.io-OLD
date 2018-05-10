@@ -35,7 +35,7 @@ a_n\sim b_n&\equiv (a_n,b_n)\in \sim\\
 
 Using this notion of parity equivalence, we can say that a parity sequence of a given sequence $S_n$ is simply its equivalence class in $\sim$:
 
-$$[S_n]=\{x\in S_\mathbb{Z}\mid S_n\sim x\}$$
+$$[S_n]=\{x\in \mathbb{Z}^\mathbb{N}\mid S_n\sim x\}$$
 
 ## $+$ and $-$ Notation
 Because a parity sequence is uniquely defined by the parity of the elements of any one of its members, we can represent the parity sequence of a sequence by replacing all its even terms with a $+$ and its odd terms with a $-$. For example:
