@@ -22,7 +22,7 @@ $$\mathbb{Z}^\mathbb{N}\equiv\{f\mid f:\mathbb{N}\to\mathbb{Z}\}$$
 
 <!--more-->
 
-We can define an equivalence relation $₽$ on $\mathbb{Z}^\mathbb{N}$ that relates sequences that have the same parity for each element:
+We can define an equivalence relation $\sim$ on $\mathbb{Z}^\mathbb{N}$ that relates sequences that have the same parity for each element:
 
 $$\sim\equiv\{\left(a_n,b_n\right)\in (\mathbb{Z}^\mathbb{N})^2\mid\forall n\in\mathbb{N},\ (-1)^{a_n}=(-1)^{b_n}\}$$
 

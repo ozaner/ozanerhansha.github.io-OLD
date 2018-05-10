@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-05-10T19:29:27-04:00</updated>
+ <updated>2018-05-10T19:39:15-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -35,7 +35,7 @@ first publish date: 2018-03-03--&gt;
 
 &lt;!--more--&gt;
 
-&lt;p&gt;We can define an equivalence relation $₽$ on $\mathbb{Z}^\mathbb{N}$ that relates sequences that have the same parity for each element:&lt;/p&gt;
+&lt;p&gt;We can define an equivalence relation $\sim$ on $\mathbb{Z}^\mathbb{N}$ that relates sequences that have the same parity for each element:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\sim\equiv\{\left(a_n,b_n\right)\in (\mathbb{Z}^\mathbb{N})^2\mid\forall n\in\mathbb{N},\ (-1)^{a_n}=(-1)^{b_n}\}&lt;/script&gt;
 
