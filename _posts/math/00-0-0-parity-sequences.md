@@ -13,7 +13,7 @@ first publish date: 2018-03-03-->
 
 While toying around with infinite alternating series, I become interested in the idea of alternation beyond the simple $+,-,+,-$ like that of the power series of $\sin x$. This is where **parity sequences** come in.
 
-A parity sequence is a pattern of alternating even and odd numbers. Only the parity of the numbers is important, not the actual values themselves. As such, we can represent the parity sequence of a sequence as a list of "$+$" for even and "$-$" for odd numbers. Below I formally define what the notion of a parity sequence, and some of its properties.
+A parity sequence is a pattern of alternating even and odd numbers. Only the parity of the numbers is important, not the actual values themselves. As such, we can represent the parity sequence of a sequence as a list of "$+$" for even and "$-$" for odd numbers. Below I formally define the notion of a parity sequence, and some of their properties.
 
 ## Definition and Equivalence
 Consider the set of all integer sequences (that is, all functions from the natural numbers to the integers):
@@ -97,7 +97,7 @@ $$n=\{0,1,2,3,4,5,6,7,\cdots\}$$
 
 $$[n]=\{+,-,+,-,+,-,+,-,\cdots\}$$
 
-and the even numbers:
+and the positive even numbers:
 
 $$2n=\{0,2,4,6,8,10,12,14,\cdots\}$$
 
