@@ -51,14 +51,14 @@ $$P=[n^2]=\{+,-,+,-,+,-,+,\cdots\}$$
 
 $$\bar{P}=[n^2+1]=\{-,+,-,+,-,+,-,\cdots\}$$
 
-This is an obvious consequence of the fact that an even number plus $1$ is an odd number and vice versa for odd numbers.
+This is an obvious consequence of the fact that an even number plus $1$ is an odd number and vice versa for odd numbers. This means that performing a parity swap on a sequence $2$ times or any even amount of times results in $P$ and doing it any odd number of times results in $\bar{P}$.
 
 ## Evening/Odding Out
-When any parity sequence is multiplied by $2$ it becomes parity equivalent to $2n$. This is called **evening out** a sequence:
+When an integer sequence is multiplied by $2$ it becomes parity equivalent to $2n$. This is called **evening out** a sequence:
 
 $$[2S_n]=\{+,+,+,+,+,\cdots\}$$
 
-Similarly, when any parity sequence is multiplied by $2$ then increased by $1$, it becomes parity equivalent to $2n+1$. This is called **odding out** a sequence:
+Similarly, when a sequence is multiplied by $2$ then increased by $1$, it becomes parity equivalent to $2n+1$. This is called **odding out** a sequence:
 
 $$[2S_n+1]=\{-,-,-,-,-,\cdots\}$$
 
