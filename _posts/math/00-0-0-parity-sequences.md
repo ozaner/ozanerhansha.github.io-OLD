@@ -33,9 +33,9 @@ a_n\sim b_n&\equiv (a_n,b_n)\in \sim\\
 &\equiv (-1)^{a_n}=(-1)^{b_n}
 \end{align}$$
 
-Using this notion of parity equivalence, we can say that a parity sequence of a given sequence $S_n$ is simply its equivalence class in $\sim$:
+Using this notion of parity equivalence, we can say that a parity sequence $P$ of a given sequence $S_n$ is simply its equivalence class in $\sim$:
 
-$$[S_n]=\{x\in \mathbb{Z}^\mathbb{N}\mid S_n\sim x\}$$
+$$P=[S_n]=\{x\in \mathbb{Z}^\mathbb{N}\mid S_n\sim x\}$$
 
 ## $+$ and $-$ Notation
 Because a parity sequence is uniquely defined by the parity of the elements of any one of its members, we can represent the parity sequence of a sequence by replacing all its even terms with a $+$ and its odd terms with a $-$. For example:
@@ -47,30 +47,48 @@ $$[n^2]=\{+,-,+,-,+,-,+,-,\cdots\}$$
 ## Parity Swap
 A useful property to take note of when constructing these sequences is that adding $1$ to a sequence $P$ flips the parity of each element in the sequence. After performing this **parity swap**, we call the resulting parity sequence $\bar{P}$:
 
-$$P_n=[n^2]=\{+,-,+,-,+,-,+,\cdots\}$$
+$$P=[n^2]=\{+,-,+,-,+,-,+,\cdots\}$$
 
-$$\bar{P_n}=[n^2+1]=\{-,+,-,+,-,+,-,\cdots\}$$
+$$\bar{P}=[n^2+1]=\{-,+,-,+,-,+,-,\cdots\}$$
 
 This is an obvious consequence of the fact that an even number plus $1$ is an odd number and vice versa for odd numbers.
 
 ## Evening/Odding Out
 When any parity sequence is multiplied by $2$ it becomes parity equivalent to $2n$. This is called **evening out** a sequence:
 
-$$[2P_n]=\{+,+,+,+,+,\cdots\}$$
+$$[2S_n]=\{+,+,+,+,+,\cdots\}$$
 
 Similarly, when any parity sequence is multiplied by $2$ then increased by $1$, it becomes parity equivalent to $2n+1$. This is called **odding out** a sequence:
 
-$$[2P_n+1]=\{-,-,-,-,-,\cdots\}$$
+$$[2S_n+1]=\{-,-,-,-,-,\cdots\}$$
 
+*Note that odding out a sequence is equivalent to evening it out then parity swapping it. $2S_n$ is the evening and the $+1$ is the parity swap.*
 
 ## Uses
 Notice that when we raise $-1$ to the power of one of these sequences, it will evaluate to $+1$ for even values and $-1$ for odd values.
 
 *This property is where the $+$ $-$ notation comes from.*
 
-When constructing things like Taylor Series', this is a useful property to have. Terms that alternate from negative to positives can be dealt with by appending a factor of $(-1)^{P_n}$ to the series.
+When constructing things like Taylor Series', this is a useful property to have. Terms that alternate from negative to positive in different patterns can be dealt with by appending a factor of $(-1)^{S_n}$ to the series.
 
-## Examples
+Parity equivalence also allows us to simplify otherwise overly complicated sequences purely using algebra rather than writing the terms out and trying to spot the pattern. Here's an example:
+
+$$(-1)^{\sin \frac{n\pi}{2}}\left(\frac{n^2-2n}{3}\right)^n$$
+
+At first this expression seems a little intimidating. However, once we realize that $\sin \frac{n\pi}{2}$ and $n$ are parity equivalent:
+
+$$\left[\sin \frac{n\pi}{2}\right]=\left[n\right]=\{+,-,+,-,+,-,+,-,\cdots\}$$
+
+Using this knowledge, and the fact that $-1$ is being raised to this sequence, we can simplify the above expression as so:
+
+$$\begin{align}
+(-1)^{\sin \frac{n\pi}{2}}\left(\frac{n^2-2n}{3}\right)^n&=(-1)^{n}\left(\frac{n^2-2n}{3}\right)^n\\
+&=\left(\frac{2n-n^2}{3}\right)^n
+\end{align}$$
+
+Remember, parity equivalence is only defined on the integers (rational and real numbers don't have parity) so the above result only holds for integer $n$.
+
+## Examples of Parity Sequences
 All examples start indexing at 0 (the most rational way to index lists).
 #### Base Case Parity Sequences
 The two most simple parity sequences are simply the natural numbers:
