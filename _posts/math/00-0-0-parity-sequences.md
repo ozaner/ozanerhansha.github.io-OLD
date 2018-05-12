@@ -75,7 +75,7 @@ Parity equivalence also allows us to simplify otherwise overly complicated seque
 
 $$(-1)^{\sin \frac{n\pi}{2}}\left(\frac{n^2-2n}{3}\right)^n$$
 
-At first this expression seems a little intimidating. However, once we realize that $\sin \frac{n\pi}{2}$ and $n$ are parity equivalent:
+At first this expression seems a little intimidating. However, notice that $\sin \frac{n\pi}{2}$ and $n$ are parity equivalent:
 
 $$\left[\sin \frac{n\pi}{2}\right]=\left[n\right]=\{+,-,+,-,+,-,+,-,\cdots\}$$
 

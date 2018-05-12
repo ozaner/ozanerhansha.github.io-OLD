@@ -79,3 +79,12 @@ Interested, I did some research into N64 cartridges and found out that all 'ROM 
 You may also notice that the *Super Mario 64* rom is smaller than the *Mario Kart 64* one, implying that it has a smaller file size. Apparently, N64 games came on a variety of hardware with different storage capacities and capabilities. This may seem normal nowadays but in an era where all games had to work on the same piece of limited hardware, this variability is pretty amazing.
 
 Another similarity can be spotted after the last black bar, at then bottom of the images. Past this point, both the ROMs consist of 'garbage data' meant to fill up the game cartridge they were stored on. You can tell because this section looks more like the random sample then the rest of the picture.
+
+![xkcd](https://imgs.xkcd.com/comics/digital_data.png?style=centerme)
+<center><i>Relevant xckd</i></center>
+
+<!-- ![xkcd](https://imgs.xkcd.com/comics/file_extensions.png?style=centerme)
+<center><i>Relevant xckd</i></center> -->
+
+<!-- ![xkcd](https://imgs.xkcd.com/comics/porn.png?style=centerme)
+<center><i>Relevant xckd</i></center> -->

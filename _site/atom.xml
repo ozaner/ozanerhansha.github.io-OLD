@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-05-10T19:39:15-04:00</updated>
+ <updated>2018-05-12T16:22:24-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -26,7 +26,7 @@ first publish date: 2018-03-03--&gt;
 
 &lt;p&gt;While toying around with infinite alternating series, I become interested in the idea of alternation beyond the simple $+,-,+,-$ like that of the power series of $\sin x$. This is where &lt;strong&gt;parity sequences&lt;/strong&gt; come in.&lt;/p&gt;
 
-&lt;p&gt;A parity sequence is a pattern of alternating even and odd numbers. Only the parity of the numbers is important, not the actual values themselves. As such, we can represent the parity sequence of a sequence as a list of “$+$” for even and “$-$” for odd numbers. Below I formally define what the notion of a parity sequence, and some of its properties.&lt;/p&gt;
+&lt;p&gt;A parity sequence is a pattern of alternating even and odd numbers. Only the parity of the numbers is important, not the actual values themselves. As such, we can represent the parity sequence of a sequence as a list of “$+$” for even and “$-$” for odd numbers. Below I formally define the notion of a parity sequence, and some of their properties.&lt;/p&gt;
 
 &lt;h2 id=&quot;definition-and-equivalence&quot;&gt;Definition and Equivalence&lt;/h2&gt;
 &lt;p&gt;Consider the set of all integer sequences (that is, all functions from the natural numbers to the integers):&lt;/p&gt;
@@ -47,9 +47,9 @@ a_n\sim b_n&amp;\equiv (a_n,b_n)\in \sim\\
 &amp;\equiv (-1)^{a_n}=(-1)^{b_n}
 \end{align} %]]&gt;&lt;/script&gt;
 
-&lt;p&gt;Using this notion of parity equivalence, we can say that a parity sequence of a given sequence $S_n$ is simply its equivalence class in $\sim$:&lt;/p&gt;
+&lt;p&gt;Using this notion of parity equivalence, we can say that a parity sequence $P$ of a given sequence $S_n$ is simply its equivalence class in $\sim$:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;[S_n]=\{x\in S_\mathbb{Z}\mid S_n\sim x\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;P=[S_n]=\{x\in \mathbb{Z}^\mathbb{N}\mid S_n\sim x\}&lt;/script&gt;
 
 &lt;h2 id=&quot;-and---notation&quot;&gt;$+$ and $-$ Notation&lt;/h2&gt;
 &lt;p&gt;Because a parity sequence is uniquely defined by the parity of the elements of any one of its members, we can represent the parity sequence of a sequence by replacing all its even terms with a $+$ and its odd terms with a $-$. For example:&lt;/p&gt;
@@ -61,29 +61,49 @@ a_n\sim b_n&amp;\equiv (a_n,b_n)\in \sim\\
 &lt;h2 id=&quot;parity-swap&quot;&gt;Parity Swap&lt;/h2&gt;
 &lt;p&gt;A useful property to take note of when constructing these sequences is that adding $1$ to a sequence $P$ flips the parity of each element in the sequence. After performing this &lt;strong&gt;parity swap&lt;/strong&gt;, we call the resulting parity sequence $\bar{P}$:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P_n=[n^2]=\{+,-,+,-,+,-,+,\cdots\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;P=[n^2]=\{+,-,+,-,+,-,+,\cdots\}&lt;/script&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\bar{P_n}=[n^2+1]=\{-,+,-,+,-,+,-,\cdots\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\bar{P}=[n^2+1]=\{-,+,-,+,-,+,-,\cdots\}&lt;/script&gt;
 
-&lt;p&gt;This is an obvious consequence of the fact that an even number plus $1$ is an odd number and vice versa for odd numbers.&lt;/p&gt;
+&lt;p&gt;This is an obvious consequence of the fact that an even number plus $1$ is an odd number and vice versa for odd numbers. This means that performing a parity swap on a sequence $2$ times or any even amount of times results in $P$ and doing it any odd number of times results in $\bar{P}$.&lt;/p&gt;
 
 &lt;h2 id=&quot;eveningodding-out&quot;&gt;Evening/Odding Out&lt;/h2&gt;
-&lt;p&gt;When any parity sequence is multiplied by $2$ it becomes parity equivalent to $2n$. This is called &lt;strong&gt;evening out&lt;/strong&gt; a sequence:&lt;/p&gt;
+&lt;p&gt;When an integer sequence is multiplied by $2$ it becomes parity equivalent to $2n$. This is called &lt;strong&gt;evening out&lt;/strong&gt; a sequence:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;[2P_n]=\{+,+,+,+,+,\cdots\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;[2S_n]=\{+,+,+,+,+,\cdots\}&lt;/script&gt;
 
-&lt;p&gt;Similarly, when any parity sequence is multiplied by $2$ then increased by $1$, it becomes parity equivalent to $2n+1$. This is called &lt;strong&gt;odding out&lt;/strong&gt; a sequence:&lt;/p&gt;
+&lt;p&gt;Similarly, when a sequence is multiplied by $2$ then increased by $1$, it becomes parity equivalent to $2n+1$. This is called &lt;strong&gt;odding out&lt;/strong&gt; a sequence:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;[2P_n+1]=\{-,-,-,-,-,\cdots\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;[2S_n+1]=\{-,-,-,-,-,\cdots\}&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;Note that odding out a sequence is equivalent to evening it out then parity swapping it. $2S_n$ is the evening and the $+1$ is the parity swap.&lt;/em&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;uses&quot;&gt;Uses&lt;/h2&gt;
 &lt;p&gt;Notice that when we raise $-1$ to the power of one of these sequences, it will evaluate to $+1$ for even values and $-1$ for odd values.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;This property is where the $+$ $-$ notation comes from.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;When constructing things like Taylor Series’, this is a useful property to have. Terms that alternate from negative to positives can be dealt with by appending a factor of $(-1)^{P_n}$ to the series.&lt;/p&gt;
+&lt;p&gt;When constructing things like Taylor Series’, this is a useful property to have. Terms that alternate from negative to positive in different patterns can be dealt with by appending a factor of $(-1)^{S_n}$ to the series.&lt;/p&gt;
 
-&lt;h2 id=&quot;examples&quot;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;Parity equivalence also allows us to simplify otherwise overly complicated sequences purely using algebra rather than writing the terms out and trying to spot the pattern. Here’s an example:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;(-1)^{\sin \frac{n\pi}{2}}\left(\frac{n^2-2n}{3}\right)^n&lt;/script&gt;
+
+&lt;p&gt;At first this expression seems a little intimidating. However, notice that $\sin \frac{n\pi}{2}$ and $n$ are parity equivalent:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\left[\sin \frac{n\pi}{2}\right]=\left[n\right]=\{+,-,+,-,+,-,+,-,\cdots\}&lt;/script&gt;
+
+&lt;p&gt;Using this knowledge, and the fact that $-1$ is being raised to this sequence, we can simplify the above expression as so:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+(-1)^{\sin \frac{n\pi}{2}}\left(\frac{n^2-2n}{3}\right)^n&amp;=(-1)^{n}\left(\frac{n^2-2n}{3}\right)^n\\
+&amp;=\left(\frac{2n-n^2}{3}\right)^n
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Remember, parity equivalence is only defined on the integers (rational and real numbers don’t have parity) so the above result only holds for integer $n$.&lt;/p&gt;
+
+&lt;h2 id=&quot;examples-of-parity-sequences&quot;&gt;Examples of Parity Sequences&lt;/h2&gt;
 &lt;p&gt;All examples start indexing at 0 (the most rational way to index lists).&lt;/p&gt;
 &lt;h4 id=&quot;base-case-parity-sequences&quot;&gt;Base Case Parity Sequences&lt;/h4&gt;
 &lt;p&gt;The two most simple parity sequences are simply the natural numbers:&lt;/p&gt;
@@ -92,7 +112,7 @@ a_n\sim b_n&amp;\equiv (a_n,b_n)\in \sim\\
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;[n]=\{+,-,+,-,+,-,+,-,\cdots\}&lt;/script&gt;
 
-&lt;p&gt;and the even numbers:&lt;/p&gt;
+&lt;p&gt;and the positive even numbers:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;2n=\{0,2,4,6,8,10,12,14,\cdots\}&lt;/script&gt;
 
@@ -140,6 +160,126 @@ F_n&amp;=F_{n-2}+F_{n-1}\\
   \cos \frac{n\pi}{2}&amp; &amp;&amp;= \{1,0,-1,0,1,0,-1,0,\cdots\} &amp;&amp;\\
   \left[\cos \frac{n\pi}{2}\right]&amp; &amp;&amp;=\{-,+,-,+,-,+,-,+,\cdots\}&amp;&amp;
 \end{alignat*} %]]&gt;&lt;/script&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Cartesian Product</title>
+   <link href="http://localhost:4000/cartesian-product/"/>
+   <updated>2018-04-30T00:00:00-04:00</updated>
+   <id>http://localhost:4000/cartesian-product</id>
+   <content type="html">&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
+&lt;p&gt;The Cartesian product $\times$ is an operation on two sets, $A$ and $B$, that returns the set of all &lt;a href=&quot;/n-tuples&quot;&gt;ordered pairs&lt;/a&gt; with their first element from $A$ and their second from $B$.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;A\times B=\{(a,b)\mid a\in A \land b\in B\}&lt;/script&gt;
+
+&lt;h4 id=&quot;existence-in-zfc&quot;&gt;Existence in ZFC&lt;/h4&gt;
+&lt;p&gt;We can show that, utilizing the &lt;a href=&quot;/n-tuples#definition&quot;&gt;Kuratowski definition&lt;/a&gt; of ordered pairs, that the Cartesian product of two sets is merely a subset of the following:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;A\times B \in \mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)&lt;/script&gt;
+
+&lt;details&gt;&lt;summary&gt;Proof&lt;/summary&gt;Ill do it later...&lt;/details&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;$A\cup B$ is guaranteed by the axiom of union, and its repeated power sets are guaranteed by the axiom of power set. This coupled with the fact that the Cartesian product is only a subset of the above expression implies that it must exist.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;n-ary-cartesian-product&quot;&gt;$n$-ary Cartesian Product&lt;/h2&gt;
+&lt;p&gt;While the Cartesian product of two sets returns a set of ordered pairs, the Cartesian product of $n$ sets returns an $n$-tuple:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;S_1\times S_2\times \cdots \times S_n=\{\left(s_1,s_2,\cdots,s_n\right)\mid\forall k\in\mathbb{N}^* _ n,\ s_k\in S_k)\}&lt;/script&gt;
+
+&lt;details&gt;&lt;summary&gt;Details &amp;amp; Explanation&lt;/summary&gt;
+
+Because of this, and the definition of an &lt;a href=&quot;/n-tuples#n-tuples&quot;&gt;$n$-tuple&lt;/a&gt;, we can give an example of a $3$-ary Cartesian product returning a set of $3$-tuples:
+
+$$\begin{align}
+A\times B\times C&amp;amp;=(A \times B)\times C\\
+&amp;amp;=\{(a,b)\}\times C\\
+&amp;amp;=\{((a,b),c)\}\\
+&amp;amp;=\{(a,b,c)\}
+\end{align}$$
+*Where $a\in A$, $b\in B$, and $c\in C$*.
+&lt;/details&gt;
+
+&lt;h4 id=&quot;cartesian-powers&quot;&gt;Cartesian Powers&lt;/h4&gt;
+&lt;p&gt;When referring to the repeated Cartesian product of the same set $S$, we can use an abbreviated notation:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\underbrace{S\times S \times \cdots \times S}_{n\text{ sets}}=S^n&lt;/script&gt;
+
+&lt;h2 id=&quot;order-properties&quot;&gt;Order Properties&lt;/h2&gt;
+&lt;h4 id=&quot;non-commutative&quot;&gt;Non-Commutative&lt;/h4&gt;
+&lt;p&gt;The Cartesian product is a non-commutative operator:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;A\times B \not= B \times A&lt;/script&gt;
+
+&lt;p&gt;This should be obvious as the ordered tuples $(a,b)\not=(b,a)$ where $a\in A$ and $b\in B$ via the definition of &lt;a href=&quot;/n-tuples#equality&quot;&gt;tuple equality&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;non-associative&quot;&gt;Non-Associative&lt;/h4&gt;
+&lt;p&gt;The Cartesian product is a non-associative operator:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\left(A\times B\right) \times C \not= A\times \left(B \times C\right)&lt;/script&gt;
+
+&lt;p&gt;Similar to its non-commutativity, we can illustrate this by noting that $((a,b),c)\not= (a,(b,c))$ where $a\in A$, $b\in B$, and $c\in C$.&lt;/p&gt;
+
+&lt;h4 id=&quot;left-associative&quot;&gt;Left-Associative&lt;/h4&gt;
+&lt;p&gt;When faced with an $n$-ary Cartesian product, it is conventionally evaluated from left to right. That is to say the Cartesian product is left-associative:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;A\times B \times C=(A \times B)\times C&lt;/script&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h2 class=&quot;inline&quot;&gt;Distributive Properties&lt;/h2&gt;&lt;/summary&gt;
+
+&lt;h4&gt;Union&lt;/h4&gt;
+$$A\times\left(B\cup C\right)=\left(A\times B\right)\cup \left(A\times C\right)$$
+
+&lt;h4&gt;Intersection&lt;/h4&gt;
+$$A\times\left(B\cap C\right)=\left(A\times B\right)\cap \left(A\times C\right)$$
+
+$$\left(A\times B\right)\cap \left(C\times D\right)=\left(A\cap B\right)\times \left(C\cap D\right)$$
+
+&lt;h4&gt;Set Difference&lt;/h4&gt;
+$$A\times\left(B\setminus C\right)=\left(A\times B\right)\setminus \left(A\times C\right)$$
+
+&lt;h4&gt;Subsets&lt;/h4&gt;
+$$B\subseteq C\iff\left(A\times B\right)\subseteq \left(A\times C\right)$$
+
+$$\left(A\times B\right)\subseteq \left(C\times D\right)\iff\left(A\subseteq B\right)\land \left(C\subseteq D\right)$$
+
+&lt;h4&gt;Complements&lt;/h4&gt;
+If $A$ and $B$ are memebers of some universal set $U$, then their absolute complement is denoted $A^C$ and $B^C$ respectively.
+
+$$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right)\cup\left(A\times B^C\right)$$
+&lt;/details&gt;
+
+&lt;h2 id=&quot;cardinal-multiplication&quot;&gt;Cardinal Multiplication&lt;/h2&gt;
+&lt;p&gt;Cartesian products are used to define the product of two cardinal numbers:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\left|X\right|\cdot\left|Y\right|=\left|X\times Y\right|&lt;/script&gt;
+
+&lt;h2 id=&quot;some-uses&quot;&gt;Some Uses&lt;/h2&gt;
+&lt;h4 id=&quot;functions-and-relations&quot;&gt;Functions and Relations&lt;/h4&gt;
+&lt;p&gt;Relations, and thus functions and operations, from a set $A$ to a set $B$ are defined as subsets of the Cartesian product $A\times B$. For example the less than or equal to relation $\le$ on the integers can be defined as so:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\le\equiv\{\cdots,\left(1,2\right),\left(-14,0\right),\left(5,5\right),\left(12,13\right),\cdots\}&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;We can formalize this definition to set theory by comparing the cardinality of the sets represented by the naturals and further the integers.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;And so, because $10$ is less than $12$, the ordered pair $(10,12)\in\le$. We can write this more conventionally as $10\le12$.&lt;/p&gt;
+
+&lt;h4 id=&quot;coordinates&quot;&gt;Coordinates&lt;/h4&gt;
+&lt;p&gt;Every point in $2$-space represents an element of the Cartesian product of the Reals with themselves (i.e $\mathbb{R}^2$). This can be generalized for $n$-space with every point being an element of $\mathbb{R}^n$:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbb{R}^n=\{(x_1,x_2,\cdots,x_n)\mid \forall k\in \mathbb{N}^* _ n,\   x_k\in\mathbb{R}\}&lt;/script&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cartesian-coordinate-system.svg/354px-Cartesian-coordinate-system.svg.png?style=centerme&quot; alt=&quot;plane&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Indeed, the graphical representation above was dubbed the Cartesian plane after the same &lt;a href=&quot;https://en.wikipedia.org/wiki/René_Descartes&quot;&gt;Descartes&lt;/a&gt; that used it to represent the Cartesian product $\mathbb{R}\times\mathbb{R}$.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Points in $3$-space are necessary in describing the &lt;a href=&quot;/position&quot;&gt;position&lt;/a&gt; of objects and particles in space and thus set up the study of &lt;a href=&quot;\kinematics&quot;&gt;motion&lt;/a&gt;, the causes of that motion and, ultimately, the rest of physics.&lt;/p&gt;
+
+&lt;p&gt;Moreover, $2$-space (and less frequently $3$-space) is useful in plotting and making inferences from data, as well as visualizing functions over numbers.&lt;/p&gt;
 </content>
  </entry>
  
@@ -405,7 +545,7 @@ Why are is there a conditional definition of the $a$th element of an $n$-tuple? 
    <link href="http://localhost:4000/superfactorial-and-hyperfactorial/"/>
    <updated>2018-04-18T00:00:00-04:00</updated>
    <id>http://localhost:4000/superfactorial-and-hyperfactorial</id>
-   <content type="html">&lt;h3 id=&quot;factorial&quot;&gt;Factorial&lt;/h3&gt;
+   <content type="html">&lt;h2 id=&quot;factorial&quot;&gt;Factorial&lt;/h2&gt;
 &lt;p&gt;The factorial function $n!$ is the product of the first $n$ positive integers. We can define it as:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;n!=\prod_{k=1}^{n}k=1\times2\times3\times\cdots\times n&lt;/script&gt;
@@ -424,7 +564,7 @@ Why are is there a conditional definition of the $a$th element of an $n$-tuple? 
 
 &lt;!--more--&gt;
 
-&lt;h3 id=&quot;superfactorial&quot;&gt;Superfactorial&lt;/h3&gt;
+&lt;h2 id=&quot;superfactorial&quot;&gt;Superfactorial&lt;/h2&gt;
 &lt;p&gt;We denote the superfactorial of $n$ as $n{$}$. It is defined as the product of the first $n$ factorials. We can define it as:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;n$=\prod_{k=1}^{n}k!=1!\times2!\times3!\times\cdots\times n!&lt;/script&gt;
@@ -439,7 +579,7 @@ Why are is there a conditional definition of the $a$th element of an $n$-tuple? 
 
 &lt;p&gt;&lt;em&gt;Like factorial, the superfactorial function can be generalized to the complex numbers, resulting in $G(z)$ the &lt;a href=&quot;https://en.wikipedia.org/wiki/Barnes_G-function&quot;&gt;Barnes G-function&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;hyperfactorial&quot;&gt;Hyperfactorial&lt;/h3&gt;
+&lt;h2 id=&quot;hyperfactorial&quot;&gt;Hyperfactorial&lt;/h2&gt;
 &lt;p&gt;The hyperfactorial of $n$ is denoted $H(n)$ and is defined as:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;H(n)=\prod_{k=1}^{n}k^k=1^1\times2^2\times3^3\times\cdots\times n^n&lt;/script&gt;
@@ -452,7 +592,7 @@ Why are is there a conditional definition of the $a$th element of an $n$-tuple? 
 
 &lt;p&gt;&lt;em&gt;The hyperfactorial too can be generalized to the complex numbers. The resulting function is known as $K(z)$ the &lt;a href=&quot;https://en.wikipedia.org/wiki/K-function&quot;&gt;K-function&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;factorial-identity&quot;&gt;Factorial Identity&lt;/h3&gt;
+&lt;h2 id=&quot;factorial-identity&quot;&gt;Factorial Identity&lt;/h2&gt;
 &lt;p&gt;It is possible to relate all three of these factorial variants (factorial, superfactorial and hyperfactorial):&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;n{$}\cdot H(n)=n!^{n+1}&lt;/script&gt;
@@ -890,6 +1030,9 @@ $$\begin{align}
 
 &lt;p&gt;This &lt;em&gt;chain of abstraction&lt;/em&gt; applies to all fields of human knowledge, but its relation to psychology and the human mind will be particularly useful to us…&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&quot;https://imgs.xkcd.com/comics/purity.png?style=centerme&quot; alt=&quot;xkcd&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;i&gt;Relevant xckd&lt;/i&gt;&lt;/center&gt;
+
 &lt;h2 id=&quot;bridging-the-gap&quot;&gt;Bridging the Gap&lt;/h2&gt;
 &lt;p&gt;Now consider the concept of love. It seems impossible to define it objectively right? Sure, it’s an evolutionary aid to sexual reproduction, but that’s far from concrete and certainly ignores our own experience of it.&lt;/p&gt;
 
@@ -1073,6 +1216,9 @@ v^2=\frac{2mg}{\rho C_DAv^2}
 $\renewcommand{\vec}[1]{\mathbf{#1}}$
 &lt;!--more--&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&quot;https://imgs.xkcd.com/comics/experiment.png?style=centerme&quot; alt=&quot;xkcd&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;i&gt;Relevant xckd&lt;/i&gt;&lt;/center&gt;
+
 &lt;h3 id=&quot;amontons-laws-of-dry-friction&quot;&gt;Amontons’ Laws of Dry Friction&lt;/h3&gt;
 &lt;p&gt;The empirical laws that govern friction were (re)discovered by French physicist Guillaume Amontons:&lt;/p&gt;
 
@@ -1176,6 +1322,9 @@ $\renewcommand{\vec}[1]{\mathbf{#1}}$
 &lt;p&gt;Below are some common coefficients of static and kinetic friction:
 &lt;img src=&quot;http://hadron.physics.fsu.edu/~crede/TEACHING/PHY2048C/Calendar/W6_D1/Friction%20Coefficients_files/friction-coeffs.gif&quot; alt=&quot;table&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&quot;https://imgs.xkcd.com/comics/mu.png?style=centerme&quot; alt=&quot;xkcd&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;i&gt;Relevant xckd&lt;/i&gt;&lt;/center&gt;
+
 &lt;h4 id=&quot;angle-of-repose&quot;&gt;Angle of Repose&lt;/h4&gt;
 &lt;p&gt;When an object is placed on a ramp, the object will overcome static friction and slide down the ramp at some angle $\theta$. As it turns out, the tangent of this angle is equivalent to the coefficient of static friction:&lt;/p&gt;
 
@@ -1272,6 +1421,9 @@ N=mg\cos\theta \tag{force normal to the ramp}\\
 &lt;p&gt;If this wasn’t enough, in 2015 they blew the machine learning community, and everyone else considering the news coverage, away with their paper &lt;a href=&quot;https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf&quot;&gt;&lt;em&gt;Human-level control through deep reinforcement learning&lt;/em&gt;&lt;/a&gt; in which they construct what they call a &lt;strong&gt;Deep Q Network&lt;/strong&gt; (DQN) to play &lt;em&gt;42&lt;/em&gt; different Atari games, all of varying complexity, with performance that exceeded a professional human player.&lt;a href=&quot;https://deepmind.com/research/dqn/&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;!--more--&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://imgs.xkcd.com/comics/pong.png?style=centerme&quot; alt=&quot;xkcd&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;i&gt;Relevant xckd&lt;/i&gt;&lt;/center&gt;
 
 &lt;h2 id=&quot;q-learning&quot;&gt;Q-Learning&lt;/h2&gt;
 &lt;p&gt;The researchers at Google’s DeepMind achieved this stunning success with a type of machine learning called &lt;strong&gt;reinforcement learning&lt;/strong&gt; and more specifically &lt;strong&gt;Q-learning&lt;/strong&gt;. In essence, the goal of Q-learning is to approximate some ideal function $Q(s,a)$ that outputs a reward (how good we are doing at the task), where $s$ is a possible state of the environment/game/etc. and $a$ is a possible action to take in that state. If we had such a function, or even a good approximation, we could simply plug in our current state and choose whatever action will maximize $Q$ which would then maximize how well we perform the task. To approximate this function, the researches used a convolutional neural network (CNN) and trained it using Q-learning, thus creating a Deep Q Network. You can read more about Q-learning and DQNs &lt;a href=&quot;https://ai.intel.com/demystifying-deep-reinforcement-learning/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -1671,6 +1823,9 @@ Quantum chromodynamics is the QFT of the strong nuclear force. This theory descr
 &lt;p&gt;The Standard Model is the combination of QED, EQT, and QCD into one unified theory of electromagnetism, the weak nuclear force, and the strong nuclear force. It is humanity’s ultimate theory of the universe. That said, it still lacks a description of gravity. Such a theory of quantum gravity would allow for the creation of a “Theory of Everything” (TOE) that describes all four fundamental forces in tandem.
 &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/0/00/Standard_Model_of_Elementary_Particles.svg?style=centerme&quot; alt=&quot;standardmodel&quot; /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&quot;https://imgs.xkcd.com/comics/turn-on.png?style=centerme&quot; alt=&quot;xkcd&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;i&gt;Relevant xckd&lt;/i&gt;&lt;/center&gt;
+
 &lt;!-- &lt;details open&gt;
 &lt;summary&gt;&lt;strong&gt;Standard Model of Physics&lt;/strong&gt;&lt;/summary&gt;
 &lt;p&gt;The Standard Model is the combination of all the QFT into one unified theory of electromagnetism, the weak nuclear force, and the strong nuclear force. It is humanity's ultimate theory of the universe. That said, it still lacks a description of gravity. Such a theory of quantum gravity would allow for the creation of a &quot;Theory of Everything&quot; (TOE) that describes all four fundamental forces in tandem.&lt;/p&gt;
@@ -1908,6 +2063,15 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
 &lt;p&gt;You may also notice that the &lt;em&gt;Super Mario 64&lt;/em&gt; rom is smaller than the &lt;em&gt;Mario Kart 64&lt;/em&gt; one, implying that it has a smaller file size. Apparently, N64 games came on a variety of hardware with different storage capacities and capabilities. This may seem normal nowadays but in an era where all games had to work on the same piece of limited hardware, this variability is pretty amazing.&lt;/p&gt;
 
 &lt;p&gt;Another similarity can be spotted after the last black bar, at then bottom of the images. Past this point, both the ROMs consist of ‘garbage data’ meant to fill up the game cartridge they were stored on. You can tell because this section looks more like the random sample then the rest of the picture.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://imgs.xkcd.com/comics/digital_data.png?style=centerme&quot; alt=&quot;xkcd&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;i&gt;Relevant xckd&lt;/i&gt;&lt;/center&gt;
+
+&lt;!-- ![xkcd](https://imgs.xkcd.com/comics/file_extensions.png?style=centerme)
+&lt;center&gt;&lt;i&gt;Relevant xckd&lt;/i&gt;&lt;/center&gt; --&gt;
+
+&lt;!-- ![xkcd](https://imgs.xkcd.com/comics/porn.png?style=centerme)
+&lt;center&gt;&lt;i&gt;Relevant xckd&lt;/i&gt;&lt;/center&gt; --&gt;
 </content>
  </entry>
  
@@ -2326,6 +2490,9 @@ Created on Jun 6, 2017
 &lt;p&gt;So problem solved, right? Well no. Most people have never heard of a kibibyte (kiB), mebibyte (MiB), or gibibyte (Gib) and probably never will. Hardware manufacturers know this and, rather than deal with the consumer’s perception of information storage, opt to just use the closest decimal prefix.&lt;/p&gt;
 
 &lt;p&gt;That said, there are a growing number of software and hardware applications that make use of binary prefixes.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://imgs.xkcd.com/comics/kilobyte.png?style=centerme&quot; alt=&quot;xkcd&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;i&gt;Relevant xckd&lt;/i&gt;&lt;/center&gt;
 </content>
  </entry>
  

@@ -56,6 +56,9 @@ Take psychology. It is really just applied biology, which is just applied chemis
 
 This *chain of abstraction* applies to all fields of human knowledge, but its relation to psychology and the human mind will be particularly useful to us...
 
+![xkcd](https://imgs.xkcd.com/comics/purity.png?style=centerme)
+<center><i>Relevant xckd</i></center>
+
 ## Bridging the Gap
 Now consider the concept of love. It seems impossible to define it objectively right? Sure, it's an evolutionary aid to sexual reproduction, but that's far from concrete and certainly ignores our own experience of it.
 

@@ -36,3 +36,6 @@ yotta (Y) | 10<sup>24</sup> | 1000<sup>8</sup> | yobi (Yi) | 2<sup>80</sup> | 10
 So problem solved, right? Well no. Most people have never heard of a kibibyte (kiB), mebibyte (MiB), or gibibyte (Gib) and probably never will. Hardware manufacturers know this and, rather than deal with the consumer's perception of information storage, opt to just use the closest decimal prefix.
 
 That said, there are a growing number of software and hardware applications that make use of binary prefixes.
+
+![xkcd](https://imgs.xkcd.com/comics/kilobyte.png?style=centerme)
+<center><i>Relevant xckd</i></center>

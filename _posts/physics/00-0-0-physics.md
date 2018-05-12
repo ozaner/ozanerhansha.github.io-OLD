@@ -80,6 +80,9 @@ Quantum chromodynamics is the QFT of the strong nuclear force. This theory descr
 The Standard Model is the combination of QED, EQT, and QCD into one unified theory of electromagnetism, the weak nuclear force, and the strong nuclear force. It is humanity's ultimate theory of the universe. That said, it still lacks a description of gravity. Such a theory of quantum gravity would allow for the creation of a "Theory of Everything" (TOE) that describes all four fundamental forces in tandem.
 ![standardmodel](https://upload.wikimedia.org/wikipedia/commons/0/00/Standard_Model_of_Elementary_Particles.svg?style=centerme)
 
+![xkcd](https://imgs.xkcd.com/comics/turn-on.png?style=centerme)
+<center><i>Relevant xckd</i></center>
+
 <!-- <details open>
 <summary><strong>Standard Model of Physics</strong></summary>
 <p>The Standard Model is the combination of all the QFT into one unified theory of electromagnetism, the weak nuclear force, and the strong nuclear force. It is humanity's ultimate theory of the universe. That said, it still lacks a description of gravity. Such a theory of quantum gravity would allow for the creation of a "Theory of Everything" (TOE) that describes all four fundamental forces in tandem.</p>

@@ -4,7 +4,7 @@ title: Cartesian Product
 date: 2018-04-30
 tags: math set-theory
 ---
-### Definition
+## Definition
 The Cartesian product $\times$ is an operation on two sets, $A$ and $B$, that returns the set of all [ordered pairs](/n-tuples) with their first element from $A$ and their second from $B$.
 
 $$A\times B=\{(a,b)\mid a\in A \land b\in B\}$$
@@ -21,7 +21,7 @@ $A\cup B$ is guaranteed by the axiom of union, and its repeated power sets are g
 
 <!--more-->
 
-### $n$-ary Cartesian Product
+## $n$-ary Cartesian Product
 While the Cartesian product of two sets returns a set of ordered pairs, the Cartesian product of $n$ sets returns an $n$-tuple:
 
 $$S_1\times S_2\times \cdots \times S_n=\{\left(s_1,s_2,\cdots,s_n\right)\mid\forall k\in\mathbb{N}^* _ n,\ s_k\in S_k)\}$$
@@ -44,7 +44,7 @@ When referring to the repeated Cartesian product of the same set $S$, we can use
 
  $$\underbrace{S\times S \times \cdots \times S}_{n\text{ sets}}=S^n$$
 
-### Order Properties
+## Order Properties
 #### Non-Commutative
 The Cartesian product is a non-commutative operator:
 
@@ -65,7 +65,7 @@ When faced with an $n$-ary Cartesian product, it is conventionally evaluated fro
 $$A\times B \times C=(A \times B)\times C$$
 
 <details>
-<summary><h3 class="inline">Distributive Properties</h3></summary>
+<summary><h2 class="inline">Distributive Properties</h2></summary>
 
 <h4>Union</h4>
 $$A\times\left(B\cup C\right)=\left(A\times B\right)\cup \left(A\times C\right)$$
@@ -89,12 +89,12 @@ If $A$ and $B$ are memebers of some universal set $U$, then their absolute compl
 $$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right)\cup\left(A\times B^C\right)$$
 </details>
 
-### Cardinal Multiplication
+## Cardinal Multiplication
 Cartesian products are used to define the product of two cardinal numbers:
 
 $$\left|X\right|\cdot\left|Y\right|=\left|X\times Y\right|$$
 
-### Some Uses
+## Some Uses
 #### Functions and Relations
 Relations, and thus functions and operations, from a set $A$ to a set $B$ are defined as subsets of the Cartesian product $A\times B$. For example the less than or equal to relation $\le$ on the integers can be defined as so:
 

@@ -4,7 +4,7 @@ title: Superfactorial and Hyperfactorial
 date: 2018-04-18
 tags: math
 ---
-### Factorial
+## Factorial
 The factorial function $n!$ is the product of the first $n$ positive integers. We can define it as:
 
 $$n!=\prod_{k=1}^{n}k=1\times2\times3\times\cdots\times n$$
@@ -23,7 +23,7 @@ While there is much to discuss about the factorial function, this post concerns 
 
 <!--more-->
 
-### Superfactorial
+## Superfactorial
 We denote the superfactorial of $n$ as $n{$}$. It is defined as the product of the first $n$ factorials. We can define it as:
 
 $$n$=\prod_{k=1}^{n}k!=1!\times2!\times3!\times\cdots\times n!$$
@@ -38,7 +38,7 @@ $$$:\mathbb{N}\rightarrow\mathbb{N}$$
 
 *Like factorial, the superfactorial function can be generalized to the complex numbers, resulting in $G(z)$ the [Barnes G-function](https://en.wikipedia.org/wiki/Barnes_G-function).*
 
-### Hyperfactorial
+## Hyperfactorial
 The hyperfactorial of $n$ is denoted $H(n)$ and is defined as:
 
 $$H(n)=\prod_{k=1}^{n}k^k=1^1\times2^2\times3^3\times\cdots\times n^n$$
@@ -51,7 +51,7 @@ $$H:\mathbb{N}\rightarrow\mathbb{N}$$
 
 *The hyperfactorial too can be generalized to the complex numbers. The resulting function is known as $K(z)$ the [K-function](https://en.wikipedia.org/wiki/K-function).*
 
-### Factorial Identity
+## Factorial Identity
 It is possible to relate all three of these factorial variants (factorial, superfactorial and hyperfactorial):
 
 $$n{$}\cdot H(n)=n!^{n+1}$$

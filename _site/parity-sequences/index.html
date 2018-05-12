@@ -240,7 +240,7 @@ first publish date: 2018-03-03-->
 
 <p>While toying around with infinite alternating series, I become interested in the idea of alternation beyond the simple $+,-,+,-$ like that of the power series of $\sin x$. This is where <strong>parity sequences</strong> come in.</p>
 
-<p>A parity sequence is a pattern of alternating even and odd numbers. Only the parity of the numbers is important, not the actual values themselves. As such, we can represent the parity sequence of a sequence as a list of “$+$” for even and “$-$” for odd numbers. Below I formally define what the notion of a parity sequence, and some of its properties.</p>
+<p>A parity sequence is a pattern of alternating even and odd numbers. Only the parity of the numbers is important, not the actual values themselves. As such, we can represent the parity sequence of a sequence as a list of “$+$” for even and “$-$” for odd numbers. Below I formally define the notion of a parity sequence, and some of their properties.</p>
 
 <h2 id="definition-and-equivalence">Definition and Equivalence</h2>
 <p>Consider the set of all integer sequences (that is, all functions from the natural numbers to the integers):</p>
@@ -261,9 +261,9 @@ a_n\sim b_n&\equiv (a_n,b_n)\in \sim\\
 &\equiv (-1)^{a_n}=(-1)^{b_n}
 \end{align} %]]></script>
 
-<p>Using this notion of parity equivalence, we can say that a parity sequence of a given sequence $S_n$ is simply its equivalence class in $\sim$:</p>
+<p>Using this notion of parity equivalence, we can say that a parity sequence $P$ of a given sequence $S_n$ is simply its equivalence class in $\sim$:</p>
 
-<script type="math/tex; mode=display">[S_n]=\{x\in S_\mathbb{Z}\mid S_n\sim x\}</script>
+<script type="math/tex; mode=display">P=[S_n]=\{x\in \mathbb{Z}^\mathbb{N}\mid S_n\sim x\}</script>
 
 <h2 id="-and---notation">$+$ and $-$ Notation</h2>
 <p>Because a parity sequence is uniquely defined by the parity of the elements of any one of its members, we can represent the parity sequence of a sequence by replacing all its even terms with a $+$ and its odd terms with a $-$. For example:</p>
@@ -275,29 +275,49 @@ a_n\sim b_n&\equiv (a_n,b_n)\in \sim\\
 <h2 id="parity-swap">Parity Swap</h2>
 <p>A useful property to take note of when constructing these sequences is that adding $1$ to a sequence $P$ flips the parity of each element in the sequence. After performing this <strong>parity swap</strong>, we call the resulting parity sequence $\bar{P}$:</p>
 
-<script type="math/tex; mode=display">P_n=[n^2]=\{+,-,+,-,+,-,+,\cdots\}</script>
+<script type="math/tex; mode=display">P=[n^2]=\{+,-,+,-,+,-,+,\cdots\}</script>
 
-<script type="math/tex; mode=display">\bar{P_n}=[n^2+1]=\{-,+,-,+,-,+,-,\cdots\}</script>
+<script type="math/tex; mode=display">\bar{P}=[n^2+1]=\{-,+,-,+,-,+,-,\cdots\}</script>
 
-<p>This is an obvious consequence of the fact that an even number plus $1$ is an odd number and vice versa for odd numbers.</p>
+<p>This is an obvious consequence of the fact that an even number plus $1$ is an odd number and vice versa for odd numbers. This means that performing a parity swap on a sequence $2$ times or any even amount of times results in $P$ and doing it any odd number of times results in $\bar{P}$.</p>
 
 <h2 id="eveningodding-out">Evening/Odding Out</h2>
-<p>When any parity sequence is multiplied by $2$ it becomes parity equivalent to $2n$. This is called <strong>evening out</strong> a sequence:</p>
+<p>When an integer sequence is multiplied by $2$ it becomes parity equivalent to $2n$. This is called <strong>evening out</strong> a sequence:</p>
 
-<script type="math/tex; mode=display">[2P_n]=\{+,+,+,+,+,\cdots\}</script>
+<script type="math/tex; mode=display">[2S_n]=\{+,+,+,+,+,\cdots\}</script>
 
-<p>Similarly, when any parity sequence is multiplied by $2$ then increased by $1$, it becomes parity equivalent to $2n+1$. This is called <strong>odding out</strong> a sequence:</p>
+<p>Similarly, when a sequence is multiplied by $2$ then increased by $1$, it becomes parity equivalent to $2n+1$. This is called <strong>odding out</strong> a sequence:</p>
 
-<script type="math/tex; mode=display">[2P_n+1]=\{-,-,-,-,-,\cdots\}</script>
+<script type="math/tex; mode=display">[2S_n+1]=\{-,-,-,-,-,\cdots\}</script>
+
+<p><em>Note that odding out a sequence is equivalent to evening it out then parity swapping it. $2S_n$ is the evening and the $+1$ is the parity swap.</em></p>
 
 <h2 id="uses">Uses</h2>
 <p>Notice that when we raise $-1$ to the power of one of these sequences, it will evaluate to $+1$ for even values and $-1$ for odd values.</p>
 
 <p><em>This property is where the $+$ $-$ notation comes from.</em></p>
 
-<p>When constructing things like Taylor Series’, this is a useful property to have. Terms that alternate from negative to positives can be dealt with by appending a factor of $(-1)^{P_n}$ to the series.</p>
+<p>When constructing things like Taylor Series’, this is a useful property to have. Terms that alternate from negative to positive in different patterns can be dealt with by appending a factor of $(-1)^{S_n}$ to the series.</p>
 
-<h2 id="examples">Examples</h2>
+<p>Parity equivalence also allows us to simplify otherwise overly complicated sequences purely using algebra rather than writing the terms out and trying to spot the pattern. Here’s an example:</p>
+
+<script type="math/tex; mode=display">(-1)^{\sin \frac{n\pi}{2}}\left(\frac{n^2-2n}{3}\right)^n</script>
+
+<p>At first this expression seems a little intimidating. However, notice that $\sin \frac{n\pi}{2}$ and $n$ are parity equivalent:</p>
+
+<script type="math/tex; mode=display">\left[\sin \frac{n\pi}{2}\right]=\left[n\right]=\{+,-,+,-,+,-,+,-,\cdots\}</script>
+
+<p>Using this knowledge, and the fact that $-1$ is being raised to this sequence, we can simplify the above expression as so:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+(-1)^{\sin \frac{n\pi}{2}}\left(\frac{n^2-2n}{3}\right)^n&=(-1)^{n}\left(\frac{n^2-2n}{3}\right)^n\\
+&=\left(\frac{2n-n^2}{3}\right)^n
+\end{align} %]]></script>
+
+<p>Remember, parity equivalence is only defined on the integers (rational and real numbers don’t have parity) so the above result only holds for integer $n$.</p>
+
+<h2 id="examples-of-parity-sequences">Examples of Parity Sequences</h2>
 <p>All examples start indexing at 0 (the most rational way to index lists).</p>
 <h4 id="base-case-parity-sequences">Base Case Parity Sequences</h4>
 <p>The two most simple parity sequences are simply the natural numbers:</p>
@@ -306,7 +326,7 @@ a_n\sim b_n&\equiv (a_n,b_n)\in \sim\\
 
 <script type="math/tex; mode=display">[n]=\{+,-,+,-,+,-,+,-,\cdots\}</script>
 
-<p>and the even numbers:</p>
+<p>and the positive even numbers:</p>
 
 <script type="math/tex; mode=display">2n=\{0,2,4,6,8,10,12,14,\cdots\}</script>
 
@@ -363,6 +383,15 @@ F_n&=F_{n-2}+F_{n-1}\\
     
       <li>
         <h3>
+          <a href="/cartesian-product/">
+            Cartesian Product
+            <small>30 Apr 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/on-culpability/">
             On Culpability
             <small>25 Apr 2018</small>
@@ -375,15 +404,6 @@ F_n&=F_{n-2}+F_{n-1}\\
           <a href="/n-tuples/">
             n-Tuples
             <small>23 Apr 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/superfactorial-and-hyperfactorial/">
-            Superfactorial and Hyperfactorial
-            <small>18 Apr 2018</small>
           </a>
         </h3>
       </li>
