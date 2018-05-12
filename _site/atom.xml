@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-05-12T16:22:24-04:00</updated>
+ <updated>2018-05-12T17:40:44-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -2044,6 +2044,9 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
 
 &lt;p&gt;This lines up with the fact that mp3 files are &lt;strong&gt;lossy&lt;/strong&gt; (i.e they sacrifice perfect quality for a smaller size).&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&quot;https://imgs.xkcd.com/comics/digital_data.png?style=centerme&quot; alt=&quot;xkcd&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;i&gt;Relevant xckd&lt;/i&gt;&lt;/center&gt;
+
 &lt;p&gt;The natural step forward at that point was to get a .wav version of the song, which is &lt;strong&gt;lossless&lt;/strong&gt;, and see if it had any structure. And, as expected, it did:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/projects/filetopng/song_wav.png?style=centerme&quot; alt=&quot;wav&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
@@ -2063,9 +2066,6 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
 &lt;p&gt;You may also notice that the &lt;em&gt;Super Mario 64&lt;/em&gt; rom is smaller than the &lt;em&gt;Mario Kart 64&lt;/em&gt; one, implying that it has a smaller file size. Apparently, N64 games came on a variety of hardware with different storage capacities and capabilities. This may seem normal nowadays but in an era where all games had to work on the same piece of limited hardware, this variability is pretty amazing.&lt;/p&gt;
 
 &lt;p&gt;Another similarity can be spotted after the last black bar, at then bottom of the images. Past this point, both the ROMs consist of ‘garbage data’ meant to fill up the game cartridge they were stored on. You can tell because this section looks more like the random sample then the rest of the picture.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://imgs.xkcd.com/comics/digital_data.png?style=centerme&quot; alt=&quot;xkcd&quot; /&gt;&lt;/p&gt;
-&lt;center&gt;&lt;i&gt;Relevant xckd&lt;/i&gt;&lt;/center&gt;
 
 &lt;!-- ![xkcd](https://imgs.xkcd.com/comics/file_extensions.png?style=centerme)
 &lt;center&gt;&lt;i&gt;Relevant xckd&lt;/i&gt;&lt;/center&gt; --&gt;
