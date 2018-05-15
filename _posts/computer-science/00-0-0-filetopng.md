@@ -60,8 +60,8 @@ I was disappointed at first, but then I realized that randomness is fundamentall
 
 This lines up with the fact that mp3 files are **lossy** (i.e they sacrifice perfect quality for a smaller size).
 
-![xkcd](https://imgs.xkcd.com/comics/digital_data.png?style=centerme){:width="600px"}
-<center><i>Relevant xckd</i></center>
+<!-- ![xkcd](https://imgs.xkcd.com/comics/digital_data.png?style=centerme){:width="600px"}
+<center><i>Relevant xckd</i></center> -->
 
 The natural step forward at that point was to get a .wav version of the song, which is **lossless**, and see if it had any structure. And, as expected, it did:
 

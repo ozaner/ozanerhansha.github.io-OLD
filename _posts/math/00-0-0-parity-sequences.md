@@ -45,7 +45,7 @@ $$n^2=\{0,1,4,9,16,25,36,49,\cdots\}$$
 $$[n^2]=\{+,-,+,-,+,-,+,-,\cdots\}$$
 
 ## Parity Swap
-A useful property to take note of when constructing these sequences is that adding $1$ to a sequence $P$ flips the parity of each element in the sequence. After performing this **parity swap**, we call the resulting parity sequence $\bar{P}$:
+A useful property to take note of when constructing these sequences is that adding $1$ to a sequence flips the parity of each element in the sequence. After performing this **parity swap** on a parity sequence $P$, we call the resulting parity sequence $\bar{P}$:
 
 $$P=[n^2]=\{+,-,+,-,+,-,+,\cdots\}$$
 

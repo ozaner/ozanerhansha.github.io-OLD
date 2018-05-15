@@ -24,8 +24,8 @@ The frictional force is responsible for filling the gap between our everyday int
 $\renewcommand{\vec}[1]{\mathbf{#1}}$
 <!--more-->
 
-![xkcd](https://imgs.xkcd.com/comics/experiment.png?style=centerme)
-<center><i>Relevant xckd</i></center>
+<!-- ![xkcd](https://imgs.xkcd.com/comics/experiment.png?style=centerme)
+<center><i>Relevant xckd</i></center> -->
 
 ### Amontons' Laws of Dry Friction
 The empirical laws that govern friction were (re)discovered by French physicist Guillaume Amontons:
@@ -107,8 +107,8 @@ The proportionality constant between the frictional force and the normal force i
 Below are some common coefficients of static and kinetic friction:
 ![table](http://hadron.physics.fsu.edu/~crede/TEACHING/PHY2048C/Calendar/W6_D1/Friction%20Coefficients_files/friction-coeffs.gif){:width="600px"}
 
-![xkcd](https://imgs.xkcd.com/comics/mu.png?style=centerme)
-<center><i>Relevant xckd</i></center>
+<!-- ![xkcd](https://imgs.xkcd.com/comics/mu.png?style=centerme)
+<center><i>Relevant xckd</i></center> -->
 
 #### Angle of Repose
 When an object is placed on a ramp, the object will overcome static friction and slide down the ramp at some angle $\theta$. As it turns out, the tangent of this angle is equivalent to the coefficient of static friction:
