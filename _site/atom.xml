@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-05-12T17:40:44-04:00</updated>
+ <updated>2018-05-18T18:01:17-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -26,7 +26,7 @@ first publish date: 2018-03-03--&gt;
 
 &lt;p&gt;While toying around with infinite alternating series, I become interested in the idea of alternation beyond the simple $+,-,+,-$ like that of the power series of $\sin x$. This is where &lt;strong&gt;parity sequences&lt;/strong&gt; come in.&lt;/p&gt;
 
-&lt;p&gt;A parity sequence is a pattern of alternating even and odd numbers. Only the parity of the numbers is important, not the actual values themselves. As such, we can represent the parity sequence of a sequence as a list of “$+$” for even and “$-$” for odd numbers. Below I formally define the notion of a parity sequence, and some of their properties.&lt;/p&gt;
+&lt;p&gt;A parity sequence is a pattern of alternating even and odd numbers. Only the parity of the numbers is important, not the actual values themselves. As such, we can represent the parity sequence of a sequence as a list of “$+$” for even and “$-$” for odd numbers. Below I formally define the notion of a parity sequence, and some of their properties (at least the ones I could think of off the top of my head).&lt;/p&gt;
 
 &lt;h2 id=&quot;definition-and-equivalence&quot;&gt;Definition and Equivalence&lt;/h2&gt;
 &lt;p&gt;Consider the set of all integer sequences (that is, all functions from the natural numbers to the integers):&lt;/p&gt;
@@ -37,44 +37,67 @@ first publish date: 2018-03-03--&gt;
 
 &lt;p&gt;We can define an equivalence relation $\sim$ on $\mathbb{Z}^\mathbb{N}$ that relates sequences that have the same parity for each element:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\sim\equiv\{\left(a_n,b_n\right)\in (\mathbb{Z}^\mathbb{N})^2\mid\forall n\in\mathbb{N},\ (-1)^{a_n}=(-1)^{b_n}\}&lt;/script&gt;
+&lt;!-- $$\sim\equiv\{\left(a_n,b_n\right)\in (\mathbb{Z}^\mathbb{N})^2\mid\forall n\in\mathbb{N},\ (-1)^{a_n}=(-1)^{b_n}\}$$ --&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\sim\equiv\{\left(a,b\right) \in \mathbb{Z}^\mathbb{N} \times \mathbb{Z}^\mathbb{N} \mid \forall n\in\mathbb{N},\ (-1)^{a_n}=(-1)^{b_n}\}&lt;/script&gt;
 
 &lt;p&gt;Or in English: if $-1$ to the $n$th element of sequence $a_n$ equals $-1$ to the $n$th element of sequence $b_n$, then the sequences are &lt;strong&gt;parity equivalent&lt;/strong&gt;. We can write this more succinctly as:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{align}
-a_n\sim b_n&amp;\equiv (a_n,b_n)\in \sim\\
+a\sim b&amp;\equiv (a,b)\in \sim\\
 &amp;\equiv (-1)^{a_n}=(-1)^{b_n}
 \end{align} %]]&gt;&lt;/script&gt;
 
-&lt;p&gt;Using this notion of parity equivalence, we can say that a parity sequence $P$ of a given sequence $S_n$ is simply its equivalence class in $\sim$:&lt;/p&gt;
+&lt;p&gt;Using this notion of parity equivalence, we can say that a parity sequence $P$ of a given sequence $S$ is simply its equivalence class in $\sim$:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P=[S_n]=\{x\in \mathbb{Z}^\mathbb{N}\mid S_n\sim x\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;P=[S]=\{x\in \mathbb{Z}^\mathbb{N}\mid S\sim x\}&lt;/script&gt;
 
 &lt;h2 id=&quot;-and---notation&quot;&gt;$+$ and $-$ Notation&lt;/h2&gt;
 &lt;p&gt;Because a parity sequence is uniquely defined by the parity of the elements of any one of its members, we can represent the parity sequence of a sequence by replacing all its even terms with a $+$ and its odd terms with a $-$. For example:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;n^2=\{0,1,4,9,16,25,36,49,\cdots\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;n^2=\left(0,1,4,9,16,25,36,49,\cdots\right)&lt;/script&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;[n^2]=\{+,-,+,-,+,-,+,-,\cdots\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;[n^2]=\left(+,-,+,-,+,-,+,-,\cdots\right)&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;As a shorthand, I will refer to sequences, like the sequence $(n^2)_ {n\in\mathbb{N}}$ above, by simply their $n$th term starting at $n=0$. This should not introduce any ambiguities.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;what-are--and--&quot;&gt;What are $+$ and $-$?&lt;/h4&gt;
+&lt;p&gt;If we want to formalize the $+$ $-$ notation we can define them as such:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;+\equiv0 \ \ \ \ \ \ \ \ -\equiv1&lt;/script&gt;
+
+&lt;p&gt;Thus the parity sequence $[n]$ is simply:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\left(+,-,+,-,+,-,\cdots\right)=\left(0,1,0,1,0,1,\cdots\right)&lt;/script&gt;
+
+&lt;p&gt;Another point to make is that $[n]\not=\left(+,-,+,-,+,-,\cdots\right)$ but in fact is an element of it:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+[n]&amp;\in\left(+,-,+,-,+,-,\cdots\right)\\
+&amp;\in\left(0,1,0,1,0,1,\cdots\right)\\
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;We only say $[n]=\left(+,-,+,-,+,-,\cdots\right)$ as a shorthand. And again, we can do this because a parity sequence is uniquely defined by the parity of the elements (integers) of any one of its members (integer sequences).&lt;/p&gt;
 
 &lt;h2 id=&quot;parity-swap&quot;&gt;Parity Swap&lt;/h2&gt;
-&lt;p&gt;A useful property to take note of when constructing these sequences is that adding $1$ to a sequence $P$ flips the parity of each element in the sequence. After performing this &lt;strong&gt;parity swap&lt;/strong&gt;, we call the resulting parity sequence $\bar{P}$:&lt;/p&gt;
+&lt;p&gt;A useful property to take note of when constructing these sequences is that adding $1$ to a sequence flips the parity of each element in the sequence. After performing this &lt;strong&gt;parity swap&lt;/strong&gt; on a parity sequence $P$, we call the resulting parity sequence $\bar{P}$:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P=[n^2]=\{+,-,+,-,+,-,+,\cdots\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;P=[n^2]=\left(+,-,+,-,+,-,+,\cdots\right)&lt;/script&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\bar{P}=[n^2+1]=\{-,+,-,+,-,+,-,\cdots\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\bar{P}=[n^2+1]=\left(-,+,-,+,-,+,-,\cdots\right)&lt;/script&gt;
 
 &lt;p&gt;This is an obvious consequence of the fact that an even number plus $1$ is an odd number and vice versa for odd numbers. This means that performing a parity swap on a sequence $2$ times or any even amount of times results in $P$ and doing it any odd number of times results in $\bar{P}$.&lt;/p&gt;
 
 &lt;h2 id=&quot;eveningodding-out&quot;&gt;Evening/Odding Out&lt;/h2&gt;
 &lt;p&gt;When an integer sequence is multiplied by $2$ it becomes parity equivalent to $2n$. This is called &lt;strong&gt;evening out&lt;/strong&gt; a sequence:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;[2S_n]=\{+,+,+,+,+,\cdots\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;[2S_n]=\left(+,+,+,+,+,\cdots\right)&lt;/script&gt;
 
 &lt;p&gt;Similarly, when a sequence is multiplied by $2$ then increased by $1$, it becomes parity equivalent to $2n+1$. This is called &lt;strong&gt;odding out&lt;/strong&gt; a sequence:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;[2S_n+1]=\{-,-,-,-,-,\cdots\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;[2S_n+1]=\left(-,-,-,-,-,\cdots\right)&lt;/script&gt;
 
 &lt;p&gt;&lt;em&gt;Note that odding out a sequence is equivalent to evening it out then parity swapping it. $2S_n$ is the evening and the $+1$ is the parity swap.&lt;/em&gt;&lt;/p&gt;
 
@@ -85,13 +108,13 @@ a_n\sim b_n&amp;\equiv (a_n,b_n)\in \sim\\
 
 &lt;p&gt;When constructing things like Taylor Series’, this is a useful property to have. Terms that alternate from negative to positive in different patterns can be dealt with by appending a factor of $(-1)^{S_n}$ to the series.&lt;/p&gt;
 
-&lt;p&gt;Parity equivalence also allows us to simplify otherwise overly complicated sequences purely using algebra rather than writing the terms out and trying to spot the pattern. Here’s an example:&lt;/p&gt;
+&lt;p&gt;Parity equivalence also allows us to simplify otherwise overly complicated sequences and expressions purely using algebra rather than writing the terms out and trying to spot the pattern. Here’s an example:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;(-1)^{\sin \frac{n\pi}{2}}\left(\frac{n^2-2n}{3}\right)^n&lt;/script&gt;
 
 &lt;p&gt;At first this expression seems a little intimidating. However, notice that $\sin \frac{n\pi}{2}$ and $n$ are parity equivalent:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\left[\sin \frac{n\pi}{2}\right]=\left[n\right]=\{+,-,+,-,+,-,+,-,\cdots\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\left[\sin \frac{n\pi}{2}\right]=\left[n\right]=\left(+,-,+,-,+,-,+,-,\cdots\right)&lt;/script&gt;
 
 &lt;p&gt;Using this knowledge, and the fact that $-1$ is being raised to this sequence, we can simplify the above expression as so:&lt;/p&gt;
 
@@ -108,17 +131,17 @@ a_n\sim b_n&amp;\equiv (a_n,b_n)\in \sim\\
 &lt;h4 id=&quot;base-case-parity-sequences&quot;&gt;Base Case Parity Sequences&lt;/h4&gt;
 &lt;p&gt;The two most simple parity sequences are simply the natural numbers:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;n=\{0,1,2,3,4,5,6,7,\cdots\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;n=\left(0,1,2,3,4,5,6,7,\cdots\right)&lt;/script&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;[n]=\{+,-,+,-,+,-,+,-,\cdots\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;[n]=\left(+,-,+,-,+,-,+,-,\cdots\right)&lt;/script&gt;
 
 &lt;p&gt;and the positive even numbers:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;2n=\{0,2,4,6,8,10,12,14,\cdots\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;2n=\left(0,2,4,6,8,10,12,14,\cdots\right)&lt;/script&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;[2n]=\{+,+,+,+,+,+,+,+,\cdots\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;[2n]=\left(+,+,+,+,+,+,+,+,\cdots\right)&lt;/script&gt;
 
-&lt;p&gt;These two sequences can be parity swapped to form the parity sequences ${-,+,-,+,-,+,\cdots}$ and ${-,-,-,-,-,-,\cdots}$ respectively.&lt;/p&gt;
+&lt;p&gt;These two sequences can be parity swapped to form the parity sequences $\left(-,+,-,+,-,+,\cdots\right)$ and $\left(-,-,-,-,-,-,\cdots\right)$ respectively.&lt;/p&gt;
 
 &lt;h4 id=&quot;the-fibonacci-sequence&quot;&gt;The Fibonacci Sequence&lt;/h4&gt;
 &lt;p&gt;The Fibonacci sequence can be considered a parity sequence with the pattern:&lt;/p&gt;
@@ -126,22 +149,22 @@ a_n\sim b_n&amp;\equiv (a_n,b_n)\in \sim\\
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{align}
 F_n&amp;=F_{n-2}+F_{n-1}\\
-&amp;=\{0,1,1,2,3,5,8,13,\cdots\}\\
+&amp;=\left(0,1,1,2,3,5,8,13,\cdots\right)\\
 \end{align} %]]&gt;&lt;/script&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\text{where } F_0=0 \land F_1 = 1&lt;/script&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;[F_n]=\{+,-,-,+,-,-,+,-,\cdots\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;[F_n]=\left(+,-,-,+,-,-,+,-,\cdots\right)&lt;/script&gt;
 
 &lt;details&gt;
   &lt;summary&gt;Closed Form&lt;/summary&gt;
   &lt;p&gt;
 
   $$\begin{align}
-  F_n=\frac{\phi^n-\psi^n}{\sqrt 5}&amp;amp;=\{0,1,1,2,3,5,8,13,\cdots\}
+  F_n=\frac{\phi^n-\psi^n}{\sqrt 5}&amp;amp;=\left(0,1,1,2,3,5,8,13,\cdots\right)
   \end{align}$$
 
-  $$[F_n]=\{+,-,-,+,-,-,+,-,\cdots\}$$
+  $$[F_n]=\left(+,-,-,+,-,-,+,-,\cdots\right)$$
 
   $$\begin{align*}
   \text{where } &amp;amp;\phi=\frac{1+\sqrt 5}{2} \text{ (the golden ratio)}\\
@@ -153,12 +176,12 @@ F_n&amp;=F_{n-2}+F_{n-1}\\
 &lt;h4 id=&quot;other-examples&quot;&gt;Other Examples&lt;/h4&gt;
 &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
 \begin{alignat*}{2}
-  \frac{n(n-1)}{2}&amp; &amp;&amp;= \{0,0,1,3,6,10,15,21,\cdots\} &amp;&amp; \\
-  \left[\frac{n(n-1)}{2}\right]&amp; &amp;&amp;=\{+,+,-,-,+,+,-,-,\cdots\} &amp;&amp; \\\\
-  \frac{n^2(n-1)}{2}&amp; &amp;&amp;= \{0,0,2,9,24,50,90,630,\cdots\} &amp;&amp;\\
-  \left[\frac{n^2(n-1)}{2}\right]&amp; &amp;&amp;=\{+,+,+,-,+,+,+,-,\cdots\}&amp;&amp;\\\\
-  \cos \frac{n\pi}{2}&amp; &amp;&amp;= \{1,0,-1,0,1,0,-1,0,\cdots\} &amp;&amp;\\
-  \left[\cos \frac{n\pi}{2}\right]&amp; &amp;&amp;=\{-,+,-,+,-,+,-,+,\cdots\}&amp;&amp;
+  \frac{n(n-1)}{2}&amp; &amp;&amp;= \left(0,0,1,3,6,10,15,21,\cdots\right) &amp;&amp; \\
+  \left[\frac{n(n-1)}{2}\right]&amp; &amp;&amp;=\left(+,+,-,-,+,+,-,-,\cdots\right) &amp;&amp; \\\\
+  \frac{n^2(n-1)}{2}&amp; &amp;&amp;= \left(0,0,2,9,24,50,90,630,\cdots\right) &amp;&amp;\\
+  \left[\frac{n^2(n-1)}{2}\right]&amp; &amp;&amp;=\left(+,+,+,-,+,+,+,-,\cdots\right)&amp;&amp;\\\\
+  \cos \frac{n\pi}{2}&amp; &amp;&amp;= \left(1,0,-1,0,1,0,-1,0,\cdots\right) &amp;&amp;\\
+  \left[\cos \frac{n\pi}{2}\right]&amp; &amp;&amp;=\left(-,+,-,+,-,+,-,+,\cdots\right)&amp;&amp;
 \end{alignat*} %]]&gt;&lt;/script&gt;&lt;/p&gt;
 </content>
  </entry>
@@ -188,11 +211,11 @@ F_n&amp;=F_{n-2}+F_{n-1}\\
 &lt;h2 id=&quot;n-ary-cartesian-product&quot;&gt;$n$-ary Cartesian Product&lt;/h2&gt;
 &lt;p&gt;While the Cartesian product of two sets returns a set of ordered pairs, the Cartesian product of $n$ sets returns an $n$-tuple:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;S_1\times S_2\times \cdots \times S_n=\{\left(s_1,s_2,\cdots,s_n\right)\mid\forall k\in\mathbb{N}^* _ n,\ s_k\in S_k)\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;S_1\times S_2\times \cdots \times S_n=\{\left(s_1,s_2,\cdots,s_n\right)\mid\forall k,\ s_k\in S_k)\}&lt;/script&gt;
 
 &lt;details&gt;&lt;summary&gt;Details &amp;amp; Explanation&lt;/summary&gt;
 
-Because of this, and the definition of an &lt;a href=&quot;/n-tuples#n-tuples&quot;&gt;$n$-tuple&lt;/a&gt;, we can give an example of a $3$-ary Cartesian product returning a set of $3$-tuples:
+Here's an example of a $3$-ary Cartesian product returning a set of $3$-tuples that uses the definition of an &lt;a href=&quot;/n-tuples#n-tuples&quot;&gt;$n$-tuple&lt;/a&gt;:
 
 $$\begin{align}
 A\times B\times C&amp;amp;=(A \times B)\times C\\
@@ -271,7 +294,7 @@ $$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right
 &lt;h4 id=&quot;coordinates&quot;&gt;Coordinates&lt;/h4&gt;
 &lt;p&gt;Every point in $2$-space represents an element of the Cartesian product of the Reals with themselves (i.e $\mathbb{R}^2$). This can be generalized for $n$-space with every point being an element of $\mathbb{R}^n$:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbb{R}^n=\{(x_1,x_2,\cdots,x_n)\mid \forall k\in \mathbb{N}^* _ n,\   x_k\in\mathbb{R}\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbb{R}^n=\{(x_1,x_2,\cdots,x_n)\mid \forall k,\   x_k\in\mathbb{R}\}&lt;/script&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cartesian-coordinate-system.svg/354px-Cartesian-coordinate-system.svg.png?style=centerme&quot; alt=&quot;plane&quot; /&gt;&lt;/p&gt;
 
@@ -413,7 +436,7 @@ Y&amp;=(y_1,y_2,y_3,\cdots,y_n)
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{align}
-X=Y&amp;\equiv\forall k\in\mathbb{N}_n^* (x_k=y_k)\\
+X=Y&amp;\equiv\forall k \ (x_k=y_k)\\
 &amp;\equiv x_1=y_1 \land x_2=y_2 \land \cdots \land x_n=y_n\\
 \end{align} %]]&gt;&lt;/script&gt;
 
@@ -671,14 +694,14 @@ $$\begin{align}
 &lt;h3 id=&quot;fixed-point&quot;&gt;Fixed Point&lt;/h3&gt;
 &lt;p&gt;$\textbf{d}$ is what’s called a fixed point of $\cos x$, because the cosine function maps $\textbf{d}$ to itself. As a result, repeatedly taking the cosine of $\textbf{d}$ returns the same result:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\cos \textbf{d} = \textbf{d} \implies \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n\text{ iterations}}\ \textbf{d}=\textbf{d}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\cos \textbf{d} = \textbf{d} \implies (\forall n\in\mathbb{N})\  \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n}\ \textbf{d}=\textbf{d}&lt;/script&gt;
 
 &lt;p&gt;$\textbf{d}$ is the $\cos$ function’s only real fixed point, but there exists infinitely many solutions to $\cos z=z$ for the complex numbers. Those solutions, however, are not attractors.&lt;/p&gt;
 
 &lt;h3 id=&quot;universal-attractor&quot;&gt;Universal Attractor&lt;/h3&gt;
 &lt;p&gt;What’s interesting about $\textbf{d}$ is that it’s not just the real fixed point of $\cos$ but also its &lt;strong&gt;universal fixed point attractor&lt;/strong&gt;. That is to say, if you take the cosine of any real number and repeatedly take the cosine of the result, you will always approach $\textbf{d}$:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\forall x\in\mathbb{R} \left(\lim_{n\to\infty} \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n\text{ iterations}}\ x=\textbf{d}\right)&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\forall x\in\mathbb{R} \left(\lim_{n\to\infty} \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n}\ x=\textbf{d}\right)&lt;/script&gt;
 
 &lt;p&gt;In fact, the above is true for a certain range of the complex numbers as well. This range forms the &lt;a href=&quot;https://en.wikipedia.org/wiki/Julia_set&quot;&gt;&lt;em&gt;Julia Set&lt;/em&gt;&lt;/a&gt; of $\cos z$.&lt;/p&gt;
 
@@ -1216,8 +1239,8 @@ v^2=\frac{2mg}{\rho C_DAv^2}
 $\renewcommand{\vec}[1]{\mathbf{#1}}$
 &lt;!--more--&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://imgs.xkcd.com/comics/experiment.png?style=centerme&quot; alt=&quot;xkcd&quot; /&gt;&lt;/p&gt;
-&lt;center&gt;&lt;i&gt;Relevant xckd&lt;/i&gt;&lt;/center&gt;
+&lt;!-- ![xkcd](https://imgs.xkcd.com/comics/experiment.png?style=centerme)
+&lt;center&gt;&lt;i&gt;Relevant xckd&lt;/i&gt;&lt;/center&gt; --&gt;
 
 &lt;h3 id=&quot;amontons-laws-of-dry-friction&quot;&gt;Amontons’ Laws of Dry Friction&lt;/h3&gt;
 &lt;p&gt;The empirical laws that govern friction were (re)discovered by French physicist Guillaume Amontons:&lt;/p&gt;
@@ -1322,8 +1345,8 @@ $\renewcommand{\vec}[1]{\mathbf{#1}}$
 &lt;p&gt;Below are some common coefficients of static and kinetic friction:
 &lt;img src=&quot;http://hadron.physics.fsu.edu/~crede/TEACHING/PHY2048C/Calendar/W6_D1/Friction%20Coefficients_files/friction-coeffs.gif&quot; alt=&quot;table&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://imgs.xkcd.com/comics/mu.png?style=centerme&quot; alt=&quot;xkcd&quot; /&gt;&lt;/p&gt;
-&lt;center&gt;&lt;i&gt;Relevant xckd&lt;/i&gt;&lt;/center&gt;
+&lt;!-- ![xkcd](https://imgs.xkcd.com/comics/mu.png?style=centerme)
+&lt;center&gt;&lt;i&gt;Relevant xckd&lt;/i&gt;&lt;/center&gt; --&gt;
 
 &lt;h4 id=&quot;angle-of-repose&quot;&gt;Angle of Repose&lt;/h4&gt;
 &lt;p&gt;When an object is placed on a ramp, the object will overcome static friction and slide down the ramp at some angle $\theta$. As it turns out, the tangent of this angle is equivalent to the coefficient of static friction:&lt;/p&gt;
@@ -1422,8 +1445,8 @@ N=mg\cos\theta \tag{force normal to the ramp}\\
 
 &lt;!--more--&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://imgs.xkcd.com/comics/pong.png?style=centerme&quot; alt=&quot;xkcd&quot; /&gt;&lt;/p&gt;
-&lt;center&gt;&lt;i&gt;Relevant xckd&lt;/i&gt;&lt;/center&gt;
+&lt;!-- ![xkcd](https://imgs.xkcd.com/comics/pong.png?style=centerme)
+&lt;center&gt;&lt;i&gt;Relevant xckd&lt;/i&gt;&lt;/center&gt; --&gt;
 
 &lt;h2 id=&quot;q-learning&quot;&gt;Q-Learning&lt;/h2&gt;
 &lt;p&gt;The researchers at Google’s DeepMind achieved this stunning success with a type of machine learning called &lt;strong&gt;reinforcement learning&lt;/strong&gt; and more specifically &lt;strong&gt;Q-learning&lt;/strong&gt;. In essence, the goal of Q-learning is to approximate some ideal function $Q(s,a)$ that outputs a reward (how good we are doing at the task), where $s$ is a possible state of the environment/game/etc. and $a$ is a possible action to take in that state. If we had such a function, or even a good approximation, we could simply plug in our current state and choose whatever action will maximize $Q$ which would then maximize how well we perform the task. To approximate this function, the researches used a convolutional neural network (CNN) and trained it using Q-learning, thus creating a Deep Q Network. You can read more about Q-learning and DQNs &lt;a href=&quot;https://ai.intel.com/demystifying-deep-reinforcement-learning/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -1823,8 +1846,8 @@ Quantum chromodynamics is the QFT of the strong nuclear force. This theory descr
 &lt;p&gt;The Standard Model is the combination of QED, EQT, and QCD into one unified theory of electromagnetism, the weak nuclear force, and the strong nuclear force. It is humanity’s ultimate theory of the universe. That said, it still lacks a description of gravity. Such a theory of quantum gravity would allow for the creation of a “Theory of Everything” (TOE) that describes all four fundamental forces in tandem.
 &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/0/00/Standard_Model_of_Elementary_Particles.svg?style=centerme&quot; alt=&quot;standardmodel&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://imgs.xkcd.com/comics/turn-on.png?style=centerme&quot; alt=&quot;xkcd&quot; /&gt;&lt;/p&gt;
-&lt;center&gt;&lt;i&gt;Relevant xckd&lt;/i&gt;&lt;/center&gt;
+&lt;!-- ![xkcd](https://imgs.xkcd.com/comics/turn-on.png?style=centerme)
+&lt;center&gt;&lt;i&gt;Relevant xckd&lt;/i&gt;&lt;/center&gt; --&gt;
 
 &lt;!-- &lt;details open&gt;
 &lt;summary&gt;&lt;strong&gt;Standard Model of Physics&lt;/strong&gt;&lt;/summary&gt;
@@ -2044,8 +2067,8 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
 
 &lt;p&gt;This lines up with the fact that mp3 files are &lt;strong&gt;lossy&lt;/strong&gt; (i.e they sacrifice perfect quality for a smaller size).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://imgs.xkcd.com/comics/digital_data.png?style=centerme&quot; alt=&quot;xkcd&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
-&lt;center&gt;&lt;i&gt;Relevant xckd&lt;/i&gt;&lt;/center&gt;
+&lt;!-- ![xkcd](https://imgs.xkcd.com/comics/digital_data.png?style=centerme){:width=&quot;600px&quot;}
+&lt;center&gt;&lt;i&gt;Relevant xckd&lt;/i&gt;&lt;/center&gt; --&gt;
 
 &lt;p&gt;The natural step forward at that point was to get a .wav version of the song, which is &lt;strong&gt;lossless&lt;/strong&gt;, and see if it had any structure. And, as expected, it did:&lt;/p&gt;
 

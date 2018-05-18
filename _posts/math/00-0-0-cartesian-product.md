@@ -24,11 +24,11 @@ $A\cup B$ is guaranteed by the axiom of union, and its repeated power sets are g
 ## $n$-ary Cartesian Product
 While the Cartesian product of two sets returns a set of ordered pairs, the Cartesian product of $n$ sets returns an $n$-tuple:
 
-$$S_1\times S_2\times \cdots \times S_n=\{\left(s_1,s_2,\cdots,s_n\right)\mid\forall k\in\mathbb{N}^* _ n,\ s_k\in S_k)\}$$
+$$S_1\times S_2\times \cdots \times S_n=\{\left(s_1,s_2,\cdots,s_n\right)\mid\forall k,\ s_k\in S_k)\}$$
 
 <details><summary>Details & Explanation</summary>
 
-Because of this, and the definition of an <a href="/n-tuples#n-tuples">$n$-tuple</a>, we can give an example of a $3$-ary Cartesian product returning a set of $3$-tuples:
+Here's an example of a $3$-ary Cartesian product returning a set of $3$-tuples that uses the definition of an <a href="/n-tuples#n-tuples">$n$-tuple</a>:
 
 $$\begin{align}
 A\times B\times C&=(A \times B)\times C\\
@@ -107,7 +107,7 @@ And so, because $10$ is less than $12$, the ordered pair $(10,12)\in\le$. We can
 #### Coordinates
 Every point in $2$-space represents an element of the Cartesian product of the Reals with themselves (i.e $\mathbb{R}^2$). This can be generalized for $n$-space with every point being an element of $\mathbb{R}^n$:
 
-$$\mathbb{R}^n=\{(x_1,x_2,\cdots,x_n)\mid \forall k\in \mathbb{N}^* _ n,\   x_k\in\mathbb{R}\}$$
+$$\mathbb{R}^n=\{(x_1,x_2,\cdots,x_n)\mid \forall k,\   x_k\in\mathbb{R}\}$$
 
 ![plane](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cartesian-coordinate-system.svg/354px-Cartesian-coordinate-system.svg.png?style=centerme)
 

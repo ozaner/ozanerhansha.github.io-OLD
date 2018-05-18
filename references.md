@@ -68,7 +68,7 @@ A compendium of links, articles, books and other references I have read and/or h
 * [Bogobogosort](http://www.dangermouse.net/esoteric/bogobogosort.html) --- A sorting algorithm that will take longer than the [heat death of the universe](https://en.wikipedia.org/wiki/Heat_death_of_the_universe) to complete on any sizable list.
 * [Intelligent Design Sort](http://www.dangermouse.net/esoteric/intelligentdesignsort.html) --- Turns out the list was already sorted!
 * [8values](https://8values.github.io) --- An online quiz that aims to  classify your economic, diplomatic, civil, and societal beliefs.
-* [xkcd](https://xkcd.com) --- You've probably seen one (if not more) of them before. "A webcomic of romance, sarcasm, math, and language."
+* [Relevant xkcd](https://relevant-xkcd.github.io) --- There's an internet maxim that states there is a relevant [xkcd](https://xkcd.com) comic for whatever you're discussing. This site allows you to search for them.
 * [Google Recursion](https://www.google.com/search?q=recursion) --- Try googling "recursion"
 * [pannenkoek2012](https://www.youtube.com/user/pannenkeok2012) --- A YouTube channel devoted to breaking down the mechanics and exploitation of those mechanics in Super Mario 64. The level of detail Pannenkoek provides is astounding and how someone could turn a particular Nintendo 64 game into a well documented science is beyond me.
 * [The Dictionary of Obscure Sorrows](http://www.dictionaryofobscuresorrows.com) by John Koenig --- A website of different neologisms created to describe emotions (usually existentialist ones) that lack a descriptive word of their own. The most famous of his obscure words being *Sonder*.

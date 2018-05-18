@@ -21,14 +21,14 @@ $$\textbf{d}=0.7390851332151606...$$
 ### Fixed Point
 $\textbf{d}$ is what's called a fixed point of $\cos x$, because the cosine function maps $\textbf{d}$ to itself. As a result, repeatedly taking the cosine of $\textbf{d}$ returns the same result:
 
-$$\cos \textbf{d} = \textbf{d} \implies \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n\text{ iterations}}\ \textbf{d}=\textbf{d}$$
+$$\cos \textbf{d} = \textbf{d} \implies (\forall n\in\mathbb{N})\  \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n}\ \textbf{d}=\textbf{d}$$
 
 $\textbf{d}$ is the $\cos$ function's only real fixed point, but there exists infinitely many solutions to $\cos z=z$ for the complex numbers. Those solutions, however, are not attractors.
 
 ### Universal Attractor
 What's interesting about $\textbf{d}$ is that it's not just the real fixed point of $\cos$ but also its **universal fixed point attractor**. That is to say, if you take the cosine of any real number and repeatedly take the cosine of the result, you will always approach $\textbf{d}$:
 
-$$\forall x\in\mathbb{R} \left(\lim_{n\to\infty} \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n\text{ iterations}}\ x=\textbf{d}\right)$$
+$$\forall x\in\mathbb{R} \left(\lim_{n\to\infty} \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n}\ x=\textbf{d}\right)$$
 
 In fact, the above is true for a certain range of the complex numbers as well. This range forms the [*Julia Set*](https://en.wikipedia.org/wiki/Julia_set) of $\cos z$.
 
