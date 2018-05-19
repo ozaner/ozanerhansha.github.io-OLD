@@ -33,6 +33,7 @@
 
 html {
   font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  /* font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif; */
 }
 @media (min-width: 48em) {
   html {
@@ -57,7 +58,10 @@ html {
   text-align: center;
   padding: 2rem 1rem;
   color: rgba(255,255,255,.5);
-  background-color: #202020;
+  /* background-color: #202020; */
+  /* background-color: #2a5970; */
+  background-color: #1b485e;
+  /* background-color: #235b40; */
 }
 @media (min-width: 48em) {
   .sidebar {

@@ -157,6 +157,7 @@ $$[F_n]=\left(+,-,-,+,-,-,+,-,\cdots\right)$$
 </details>
 
 #### Other Examples
+
 $$\begin{alignat*}{2}
   \frac{n(n-1)}{2}& &&= \left(0,0,1,3,6,10,15,21,\cdots\right) && \\
   \left[\frac{n(n-1)}{2}\right]& &&=\left(+,+,-,-,+,+,-,-,\cdots\right) && \\\\

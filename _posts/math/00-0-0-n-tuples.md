@@ -47,6 +47,11 @@ $$(x_1,x_2,\cdots,x_{n-1},x_n)=((x_1,x_2,\cdots,x_{n-1}),x_n)$$
 
 Whatever definition is used, all that matters is that the equality of two $n$-tuples be defined as below:
 
+#### Existence in ZFC
+The existence of an ordered pair of elements in ZFC can be proved using the axiom of union (to combine $\{a\}$ and $\{a,b\}$) and the axiom of pairing (to prove that $\{a\}$ and $\{a,b\}$ exist).
+
+And since, $n$-tuples are simply nested ordered pairs, they too must exist.
+
 ## Equality
 Two ordered pairs are equivalent if and only if the elements in each of their respective indices are equal. That is to say, for two $n$-tuples $X$ and $Y$:
 

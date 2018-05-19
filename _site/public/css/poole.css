@@ -60,7 +60,9 @@ html {
 
 body {
   color: #515151;
-  background-color: #fff;
+  /* color: #fff; */
+  /* background-color: #fff; */
+  background-color: #edf7fc;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
@@ -82,9 +84,11 @@ a:focus {
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: .5rem;
-  font-weight: bold;
+  font-weight: bolder;
   line-height: 1.25;
-  color: #313131;
+  /* color: #313131; */
+  color: #2a5970;
+  /* color: #235b40; */
   text-rendering: optimizeLegibility;
 }
 h1 {
@@ -339,7 +343,9 @@ tbody tr:nth-child(odd) th {
 .page-title,
 .post-title,
 .post-title a {
-  color: #303030;
+  /* color: #303030; */
+  color: #2a5970;
+  /* color: #235b40; */
 }
 .page-title,
 .post-title {
@@ -351,7 +357,9 @@ tbody tr:nth-child(odd) th {
   display: block;
   margin-top: -.5rem;
   margin-bottom: 1rem;
-  color: #9a9a9a;
+  /* color: #9a9a9a; */
+  color: #3b4144
+
 }
 
 /* Related posts */
