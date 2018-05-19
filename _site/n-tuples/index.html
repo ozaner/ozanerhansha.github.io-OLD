@@ -299,7 +299,7 @@
 <p>Whatever definition is used, all that matters is that the equality of two $n$-tuples be defined as below:</p>
 
 <h4 id="existence-in-zfc">Existence in ZFC</h4>
-<p>The existence of an ordered pair of elements in ZFC can be proved using the axiom of union (to combine ${a}$ and ${a,b}$) and the axiom of pairing (to prove that ${a}$ and ${a,b}$ exist).</p>
+<p>The existence of an ordered pair of elements in ZFC can be proved using the axiom of pairing twice over. Once to prove that $ \{ a \} $ and $ \{ a,b \} $ exist and again to pair them with each other.</p>
 
 <p>And since, $n$-tuples are simply nested ordered pairs, they too must exist.</p>
 
@@ -316,11 +316,11 @@ Y&=(y_1,y_2,y_3,\cdots,y_n)
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
-X=Y&\equiv\forall k \ (x_k=y_k)\\
+X=Y&\equiv\forall k\in\mathbb{N}_n^ * \ (x_k=y_k)\\
 &\equiv x_1=y_1 \land x_2=y_2 \land \cdots \land x_n=y_n\\
 \end{align} %]]></script>
 
-<p><em>Where $\mathbb{N}_n^* $ is the set of all positive integers from and including $1$ to $n$.</em></p>
+<p><em>Where <a href="/natural-numbers#notation">$\mathbb{N}_n^ * $</a> is the set of all positive integers from and including $1$ to $n$.</em></p>
 
 <p>Note that for this definition to work, the two tuples have to be the same size. As such, tuples of different sizes will never be equal.</p>
 
@@ -449,6 +449,15 @@ Why are is there a conditional definition of the $a$th element of an $n$-tuple? 
     
       <li>
         <h3>
+          <a href="/natural-numbers/">
+            Natural Numbers
+            <small>19 May 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/parity-sequences/">
             Parity Sequences
             <small>10 May 2018</small>
@@ -461,15 +470,6 @@ Why are is there a conditional definition of the $a$th element of an $n$-tuple? 
           <a href="/cartesian-product/">
             Cartesian Product
             <small>30 Apr 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/on-culpability/">
-            On Culpability
-            <small>25 Apr 2018</small>
           </a>
         </h3>
       </li>

@@ -4,13 +4,81 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-05-19T10:43:56-04:00</updated>
+ <updated>2018-05-19T12:49:56-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Natural Numbers</title>
+   <link href="http://localhost:4000/natural-numbers/"/>
+   <updated>2018-05-19T00:00:00-04:00</updated>
+   <id>http://localhost:4000/natural-numbers</id>
+   <content type="html">&lt;h2 id=&quot;what-are-natural-numbers&quot;&gt;What are Natural Numbers?&lt;/h2&gt;
+&lt;p&gt;The natural numbers are considered the most &lt;em&gt;natural&lt;/em&gt; set of numbers humans can begin to think of, observe and calculate. They are the numbers we count with $0,1,2,3,4,5,\cdots$ When used to denote the &lt;em&gt;order&lt;/em&gt; of objects they are considered &lt;strong&gt;ordinal&lt;/strong&gt; numbers. When used to describe the quantity of a set of objects they are considered &lt;strong&gt;cardinal&lt;/strong&gt; numbers. This distinction becomes important when the naturals are extended to include transfinite numbers.&lt;/p&gt;
+
+&lt;h4 id=&quot;is-0-an-element-of-mathbbn&quot;&gt;Is $0$ an element of $\mathbb{N}$?&lt;/h4&gt;
+&lt;p&gt;Some definitions of the natural numbers don’t include $0$ but, all things considered, including it makes defining the naturals as well as expressing a variety formulae easier. As such, whenever I reference the set of naturals it will always contain $0$. The &lt;a href=&quot;#notation&quot;&gt;notation&lt;/a&gt; for different variations is cleared up below.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
+&lt;p&gt;The natural numbers are defined by defining the empty set as zero, then defining the next number, or &lt;strong&gt;successor&lt;/strong&gt;, as the set of all previous numbers:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+0&amp;\equiv\emptyset\\
+1&amp;\equiv\{0\}=\{\emptyset\}\\
+2&amp;\equiv\{0,1\}=\{\emptyset,\{\emptyset\}\}\\
+3&amp;\equiv\{0,1,2\}=\{\emptyset,\{\emptyset\},\{\emptyset,\{\emptyset\}\}\}\\
+&amp;\ \ \vdots\\
+n&amp;\equiv\{0,1,2,3,\cdots,n-1\}\\
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Defining the naturals in this way gives us the first part of the &lt;a href=&quot;http://mathworld.wolfram.com/OrdinalNumber.html&quot;&gt;von Neumann ordinals&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;successor-function&quot;&gt;Successor Function&lt;/h4&gt;
+&lt;p&gt;This definition of the naturals can be more succinctly written via the successor function $S(n)$ which returns the number that comes after $n$:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;S(n)=n\cup\{n\}&lt;/script&gt;
+
+&lt;p&gt;So, if $0$ is $\emptyset$ then:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+S(0)&amp;=0\cup\{0\}\\
+&amp;=\emptyset\cup\{\emptyset\}\\
+&amp;=\{\emptyset\}
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;And remeber, we define $1$ to be the successor, or number that comes after, $0$. As such $1\equiv S(0)={\emptyset}$. The same is true for all natural numbers: $n+1\equiv S(n)$.&lt;/p&gt;
+
+&lt;h4 id=&quot;existence-in-zfc&quot;&gt;Existence in ZFC&lt;/h4&gt;
+&lt;p&gt;While it is possible to construct the successor of every natural number using the axiom of pairing (to prove the existence of the singleton set) and the axiom of union, we can only prove that any &lt;em&gt;finite&lt;/em&gt; natural number exists. No matter how many successors we compute, there will always be another.&lt;/p&gt;
+
+&lt;p&gt;So how do we prove the existence of the infinite set of natural numbers? Well, as it turns out, the only way to do this is to simply declare that such a set exists. This is the &lt;strong&gt;axiom of infinity&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\exists S\left(\emptyset\in S\land\forall x\in S\left(\left(x\cup\{x\}\right)\in S\right)\right)&lt;/script&gt;
+
+&lt;p&gt;In English, the above statement asserts that there exists a set $S$ that contains the empty set $\emptyset$ as well as contains the successor to every one of its members. Notice that since we can always take the successor of another number, this set is &lt;em&gt;necessarily&lt;/em&gt; infinite. Indeed all infinite sets from ZFC originate from this set $S$ which we more commonly denote $\mathbb{N}$.&lt;/p&gt;
+
+&lt;h2 id=&quot;notation&quot;&gt;Notation&lt;/h2&gt;
+&lt;p&gt;The set of natural numbers is denoted by the double struck capital letter $\mathbb{N}$. But there are variations on the set that do/don’t include $0$ as well as include all natural numbers up to and including $n$:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{alignat*}{2}
+&amp;\mathbb{N}&amp;&amp;=\{0,1,2,3,4,5,\cdots\}\\
+&amp;\mathbb{N}^* &amp;&amp;=\{1,2,3,4,5,\cdots\}\\
+&amp;\mathbb{N}_n&amp;&amp;=\{0,1,2,3,4,\cdots,n\}\\
+&amp;\mathbb{N}^* _ n&amp;&amp;=\{1,2,3,4,\cdots,n\}\\
+\end{alignat*} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;The last one in particular, the set of all non-zero natural numbers up to $n$, can be written as the integer interval $[1\ldotp\ldotp n]$ to avoid confusion.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Parity Sequences</title>
@@ -295,7 +363,7 @@ $$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right
 &lt;h4 id=&quot;coordinates&quot;&gt;Coordinates&lt;/h4&gt;
 &lt;p&gt;Every point in $2$-space represents an element of the Cartesian product of the Reals with themselves (i.e $\mathbb{R}^2$). This can be generalized for $n$-space with every point being an element of $\mathbb{R}^n$:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbb{R}^n=\{(x_1,x_2,\cdots,x_n)\mid \forall k,\   x_k\in\mathbb{R}\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbb{R}^n=\{(x_1,x_2,\cdots,x_n)\mid \forall k\in\mathbb{N}_n^* :   x_k\in\mathbb{R}\}&lt;/script&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cartesian-coordinate-system.svg/354px-Cartesian-coordinate-system.svg.png?style=centerme&quot; alt=&quot;plane&quot; /&gt;&lt;/p&gt;
 
@@ -425,7 +493,7 @@ $$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right
 &lt;p&gt;Whatever definition is used, all that matters is that the equality of two $n$-tuples be defined as below:&lt;/p&gt;
 
 &lt;h4 id=&quot;existence-in-zfc&quot;&gt;Existence in ZFC&lt;/h4&gt;
-&lt;p&gt;The existence of an ordered pair of elements in ZFC can be proved using the axiom of union (to combine ${a}$ and ${a,b}$) and the axiom of pairing (to prove that ${a}$ and ${a,b}$ exist).&lt;/p&gt;
+&lt;p&gt;The existence of an ordered pair of elements in ZFC can be proved using the axiom of pairing twice over. Once to prove that $ \{ a \} $ and $ \{ a,b \} $ exist and again to pair them with each other.&lt;/p&gt;
 
 &lt;p&gt;And since, $n$-tuples are simply nested ordered pairs, they too must exist.&lt;/p&gt;
 
@@ -442,11 +510,11 @@ Y&amp;=(y_1,y_2,y_3,\cdots,y_n)
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{align}
-X=Y&amp;\equiv\forall k \ (x_k=y_k)\\
+X=Y&amp;\equiv\forall k\in\mathbb{N}_n^ * \ (x_k=y_k)\\
 &amp;\equiv x_1=y_1 \land x_2=y_2 \land \cdots \land x_n=y_n\\
 \end{align} %]]&gt;&lt;/script&gt;
 
-&lt;p&gt;&lt;em&gt;Where $\mathbb{N}_n^* $ is the set of all positive integers from and including $1$ to $n$.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Where &lt;a href=&quot;/natural-numbers#notation&quot;&gt;$\mathbb{N}_n^ * $&lt;/a&gt; is the set of all positive integers from and including $1$ to $n$.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Note that for this definition to work, the two tuples have to be the same size. As such, tuples of different sizes will never be equal.&lt;/p&gt;
 

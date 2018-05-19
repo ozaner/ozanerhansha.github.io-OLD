@@ -107,7 +107,7 @@ And so, because $10$ is less than $12$, the ordered pair $(10,12)\in\le$. We can
 #### Coordinates
 Every point in $2$-space represents an element of the Cartesian product of the Reals with themselves (i.e $\mathbb{R}^2$). This can be generalized for $n$-space with every point being an element of $\mathbb{R}^n$:
 
-$$\mathbb{R}^n=\{(x_1,x_2,\cdots,x_n)\mid \forall k,\   x_k\in\mathbb{R}\}$$
+$$\mathbb{R}^n=\{(x_1,x_2,\cdots,x_n)\mid \forall k\in\mathbb{N}_n^* :   x_k\in\mathbb{R}\}$$
 
 ![plane](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cartesian-coordinate-system.svg/354px-Cartesian-coordinate-system.svg.png?style=centerme)
 

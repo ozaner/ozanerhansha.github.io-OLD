@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <title>
     
-      Binary Prefixes &middot; Ozaner
+      Natural Numbers &middot; Ozaner
     
   </title>
 
@@ -220,132 +220,83 @@
 
     <div class="content container">
       <div class="post">
-  <h1 class="post-title">Binary Prefixes</h1>
-  <span class="post-date">05 Jan 2018</span>
+  <h1 class="post-title">Natural Numbers</h1>
+  <span class="post-date">19 May 2018</span>
   <span>[
   
     
-    <a href="/tag/computer-science"><code class="highligher-rouge"><nobr>computer-science</nobr></code>&nbsp;</a>
+    <a href="/tag/math"><code class="highligher-rouge"><nobr>math</nobr></code>&nbsp;</a>
+  
+    
+    <a href="/tag/set-theory"><code class="highligher-rouge"><nobr>set-theory</nobr></code>&nbsp;</a>
   
 ]</span>
-  <h2 id="decimal-prefixes">Decimal Prefixes</h2>
-<p>When dealing with very large or very small amounts, it is common to append, or rather <em>pre</em>pend, one of the SI (metric system) prefixes to whatever unit is being used. For example, the average human weighs $62000\text{g}$ but because that number is cumbersome to use, we usually append <em>kilo-</em> (the SI prefix meaning a thousand) to the gram unit and say $62\text{kg}$ instead.</p>
+  <h2 id="what-are-natural-numbers">What are Natural Numbers?</h2>
+<p>The natural numbers are considered the most <em>natural</em> set of numbers humans can begin to think of, observe and calculate. They are the numbers we count with $0,1,2,3,4,5,\cdots$ When used to denote the <em>order</em> of objects they are considered <strong>ordinal</strong> numbers. When used to describe the quantity of a set of objects they are considered <strong>cardinal</strong> numbers. This distinction becomes important when the naturals are extended to include transfinite numbers.</p>
 
-<p>This system works just fine for all sorts of units of measure like mass, length, energy, etc. But when it’s applied to units of information, specifically binary ones like bits and bytes, a problem arises…</p>
+<h4 id="is-0-an-element-of-mathbbn">Is $0$ an element of $\mathbb{N}$?</h4>
+<p>Some definitions of the natural numbers don’t include $0$ but, all things considered, including it makes defining the naturals as well as expressing a variety formulae easier. As such, whenever I reference the set of naturals it will always contain $0$. The <a href="#notation">notation</a> for different variations is cleared up below.</p>
 
 <!--more-->
 
-<h2 id="binary-prefixes">Binary Prefixes</h2>
-<p>You may have bought a hard drive or even a new phone and found that there is a discrepancy between the amount of storage shown on the package and the maximum amount displayed when you look in the settings.</p>
+<h2 id="definition">Definition</h2>
+<p>The natural numbers are defined by defining the empty set as zero, then defining the next number, or <strong>successor</strong>, as the set of all previous numbers:</p>
 
-<p>So what causes this disparity?</p>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+0&\equiv\emptyset\\
+1&\equiv\{0\}=\{\emptyset\}\\
+2&\equiv\{0,1\}=\{\emptyset,\{\emptyset\}\}\\
+3&\equiv\{0,1,2\}=\{\emptyset,\{\emptyset\},\{\emptyset,\{\emptyset\}\}\}\\
+&\ \ \vdots\\
+n&\equiv\{0,1,2,3,\cdots,n-1\}\\
+\end{align} %]]></script>
 
-<p>The difference between a GB (gigabyte) and a GiB (gibibyte).</p>
+<p>Defining the naturals in this way gives us the first part of the <a href="http://mathworld.wolfram.com/OrdinalNumber.html">von Neumann ordinals</a>.</p>
 
-<p>Historically when a computer scientist wrote kB, for example, they didn’t mean $1000$ bytes. They meant $1024$ bytes. This is because computers operate in binary which is based of powers of two. In the kilobyte’s case, $2^{10} = 1024$ which is almost $1000$. This made it a close enough approximation of memory in a computer which was based on powers of $2$.</p>
+<h4 id="successor-function">Successor Function</h4>
+<p>This definition of the naturals can be more succinctly written via the successor function $S(n)$ which returns the number that comes after $n$:</p>
 
-<p>This changed around 1998 when the International Electrotechnical Commission (IEC) and other regulatory organizations created a new set of prefixes to be used as binary prefixes. The US National Institute of Standards and Technology (NIST) followed suit and required that the SI prefixes only be used in the decimal sense. Below is a table of the metric prefixes vs the binary ones.</p>
+<script type="math/tex; mode=display">S(n)=n\cup\{n\}</script>
 
-<table>
-  <thead>
-    <tr>
-      <th>Decimal Prefix (SI)</th>
-      <th>Value</th>
-      <th>Value (1000)</th>
-      <th>Binary Prefix (IEC)</th>
-      <th>Value</th>
-      <th>Value (1024)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>kilo (k)</td>
-      <td>10<sup>3</sup></td>
-      <td>1000</td>
-      <td>kibi (ki)</td>
-      <td>2<sup>10</sup></td>
-      <td>1024</td>
-    </tr>
-    <tr>
-      <td>mega (M)</td>
-      <td>10<sup>6</sup></td>
-      <td>1000<sup>2</sup></td>
-      <td>mebi (Mi)</td>
-      <td>2<sup>20</sup></td>
-      <td>1024<sup>2</sup></td>
-    </tr>
-    <tr>
-      <td>giga (G)</td>
-      <td>10<sup>9</sup></td>
-      <td>1000<sup>3</sup></td>
-      <td>gibi (Gi)</td>
-      <td>2<sup>30</sup></td>
-      <td>1024<sup>3</sup></td>
-    </tr>
-    <tr>
-      <td>tera (T)</td>
-      <td>10<sup>12</sup></td>
-      <td>1000<sup>4</sup></td>
-      <td>tebi (Ti)</td>
-      <td>2<sup>40</sup></td>
-      <td>1024<sup>4</sup></td>
-    </tr>
-    <tr>
-      <td>peta (P)</td>
-      <td>10<sup>15</sup></td>
-      <td>1000<sup>5</sup></td>
-      <td>pebi (Pi)</td>
-      <td>2<sup>50</sup></td>
-      <td>1024<sup>5</sup></td>
-    </tr>
-    <tr>
-      <td>exa (E)</td>
-      <td>10<sup>18</sup></td>
-      <td>1000<sup>6</sup></td>
-      <td>exbi (Ei)</td>
-      <td>2<sup>60</sup></td>
-      <td>1024<sup>6</sup></td>
-    </tr>
-    <tr>
-      <td>zetta (Z)</td>
-      <td>10<sup>21</sup></td>
-      <td>1000<sup>7</sup></td>
-      <td>zebi (Zi)</td>
-      <td>2<sup>70</sup></td>
-      <td>1024<sup>7</sup></td>
-    </tr>
-    <tr>
-      <td>yotta (Y)</td>
-      <td>10<sup>24</sup></td>
-      <td>1000<sup>8</sup></td>
-      <td>yobi (Yi)</td>
-      <td>2<sup>80</sup></td>
-      <td>1024<sup>8</sup></td>
-    </tr>
-  </tbody>
-</table>
+<p>So, if $0$ is $\emptyset$ then:</p>
 
-<p>So problem solved, right? Well no. Most people have never heard of a kibibyte (kiB), mebibyte (MiB), or gibibyte (Gib) and probably never will. Hardware manufacturers know this and, rather than deal with the consumer’s perception of information storage, opt to just use the closest decimal prefix.</p>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+S(0)&=0\cup\{0\}\\
+&=\emptyset\cup\{\emptyset\}\\
+&=\{\emptyset\}
+\end{align} %]]></script>
 
-<p>That said, there are a growing number of software and hardware applications that make use of binary prefixes.</p>
+<p>And remeber, we define $1$ to be the successor, or number that comes after, $0$. As such $1\equiv S(0)={\emptyset}$. The same is true for all natural numbers: $n+1\equiv S(n)$.</p>
 
-<p><img src="https://imgs.xkcd.com/comics/kilobyte.png?style=centerme" alt="xkcd" /></p>
-<center><i>Relevant xckd</i></center>
+<h4 id="existence-in-zfc">Existence in ZFC</h4>
+<p>While it is possible to construct the successor of every natural number using the axiom of pairing (to prove the existence of the singleton set) and the axiom of union, we can only prove that any <em>finite</em> natural number exists. No matter how many successors we compute, there will always be another.</p>
+
+<p>So how do we prove the existence of the infinite set of natural numbers? Well, as it turns out, the only way to do this is to simply declare that such a set exists. This is the <strong>axiom of infinity</strong>:</p>
+
+<script type="math/tex; mode=display">\exists S\left(\emptyset\in S\land\forall x\in S\left(\left(x\cup\{x\}\right)\in S\right)\right)</script>
+
+<p>In English, the above statement asserts that there exists a set $S$ that contains the empty set $\emptyset$ as well as contains the successor to every one of its members. Notice that since we can always take the successor of another number, this set is <em>necessarily</em> infinite. Indeed all infinite sets from ZFC originate from this set $S$ which we more commonly denote $\mathbb{N}$.</p>
+
+<h2 id="notation">Notation</h2>
+<p>The set of natural numbers is denoted by the double struck capital letter $\mathbb{N}$. But there are variations on the set that do/don’t include $0$ as well as include all natural numbers up to and including $n$:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{alignat*}{2}
+&\mathbb{N}&&=\{0,1,2,3,4,5,\cdots\}\\
+&\mathbb{N}^* &&=\{1,2,3,4,5,\cdots\}\\
+&\mathbb{N}_n&&=\{0,1,2,3,4,\cdots,n\}\\
+&\mathbb{N}^* _ n&&=\{1,2,3,4,\cdots,n\}\\
+\end{alignat*} %]]></script>
+
+<p>The last one in particular, the set of all non-zero natural numbers up to $n$, can be written as the integer interval $[1\ldotp\ldotp n]$ to avoid confusion.</p>
 
 </div>
 
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/natural-numbers/">
-            Natural Numbers
-            <small>19 May 2018</small>
-          </a>
-        </h3>
-      </li>
     
       <li>
         <h3>
@@ -361,6 +312,15 @@
           <a href="/cartesian-product/">
             Cartesian Product
             <small>30 Apr 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/on-culpability/">
+            On Culpability
+            <small>25 Apr 2018</small>
           </a>
         </h3>
       </li>

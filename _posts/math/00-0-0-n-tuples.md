@@ -48,7 +48,7 @@ $$(x_1,x_2,\cdots,x_{n-1},x_n)=((x_1,x_2,\cdots,x_{n-1}),x_n)$$
 Whatever definition is used, all that matters is that the equality of two $n$-tuples be defined as below:
 
 #### Existence in ZFC
-The existence of an ordered pair of elements in ZFC can be proved using the axiom of union (to combine $\{a\}$ and $\{a,b\}$) and the axiom of pairing (to prove that $\{a\}$ and $\{a,b\}$ exist).
+The existence of an ordered pair of elements in ZFC can be proved using the axiom of pairing twice over. Once to prove that $ \\{ a \\} $ and $ \\{ a,b \\} $ exist and again to pair them with each other.
 
 And since, $n$-tuples are simply nested ordered pairs, they too must exist.
 
@@ -63,11 +63,11 @@ Y&=(y_1,y_2,y_3,\cdots,y_n)
 $X$ and $Y$ are only equal if:
 
 $$\begin{align}
-X=Y&\equiv\forall k \ (x_k=y_k)\\
+X=Y&\equiv\forall k\in\mathbb{N}_n^ * \ (x_k=y_k)\\
 &\equiv x_1=y_1 \land x_2=y_2 \land \cdots \land x_n=y_n\\
 \end{align}$$
 
-_Where $\mathbb{N}_n^* $ is the set of all positive integers from and including $1$ to $n$._
+*Where [$\mathbb{N}_n^ * $](/natural-numbers#notation) is the set of all positive integers from and including $1$ to $n$.*
 
 Note that for this definition to work, the two tuples have to be the same size. As such, tuples of different sizes will never be equal.
 
