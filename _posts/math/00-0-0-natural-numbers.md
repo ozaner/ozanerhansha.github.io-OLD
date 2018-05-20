@@ -24,7 +24,7 @@ $$\begin{align}
 n&\equiv\{0,1,2,3,\cdots,n-1\}\\
 \end{align}$$
 
-Defining the naturals in this way gives us the first part of the [von Neumann ordinals](http://mathworld.wolfram.com/OrdinalNumber.html).
+Defining the naturals in this way is consistent with the construction of the [von Neumann ordinals](http://mathworld.wolfram.com/OrdinalNumber.html).
 
 #### Successor Function
 This definition of the naturals can be more succinctly written via the successor function $S(n)$ which returns the number that comes after $n$:
@@ -42,9 +42,9 @@ S(0)&=0\cup\{0\}\\
 And remeber, we define $1$ to be the successor, or number that comes after, $0$. As such $1\equiv S(0)=\{\emptyset\}$. The same is true for all natural numbers: $n+1\equiv S(n)$.
 
 #### Existence in ZFC
-While it is possible to construct the successor of every natural number using the axiom of pairing (to prove the existence of the singleton set) and the axiom of union, we can only prove that any *finite* natural number exists. No matter how many successors we compute, there will always be another.
+While it is possible to construct the successor of every natural number, using the axiom of pairing (to prove the existence of the singleton set) and the axiom of union, we can only prove that any *finite* natural number exists. No matter how many successors we compute, there will always be another.
 
-So how do we prove the existence of the infinite set of natural numbers? Well, as it turns out, the only way to do this is to simply declare that such a set exists. This is the **axiom of infinity**:
+So how do we prove the existence of the entire infinite set of natural numbers and not just an arbitrarily large, finite subset? Well as it turns out, the only way to do this is to simply declare that such a set exists. This is the **axiom of infinity**:
 
 $$\exists S\left(\emptyset\in S\land\forall x\in S\left(\left(x\cup\{x\}\right)\in S\right)\right)$$
 
@@ -61,3 +61,19 @@ $$\begin{alignat*}{2}
 \end{alignat*}$$
 
 The last one in particular, the set of all non-zero natural numbers up to $n$, can be written as the integer interval $[1\ldotp\ldotp n]$ to avoid confusion.
+
+## Defining Arithmetic on the Naturals
+### Addition (and subtraction?)
+Todo
+
+### Multiplication
+Todo
+
+### Division
+Todo
+
+### Order
+Todo
+
+## Algebraic Structure of the Naturals
+Todo

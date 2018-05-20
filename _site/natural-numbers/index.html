@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <title>
     
-      Playing Atari Pong with Reinforcement Learning &middot; Ozaner
+      Natural Numbers &middot; Ozaner
     
   </title>
 
@@ -220,55 +220,93 @@
 
     <div class="content container">
       <div class="post">
-  <h1 class="post-title">Playing Atari Pong with Reinforcement Learning</h1>
-  <span class="post-date">18 Mar 2018</span>
+  <h1 class="post-title">Natural Numbers</h1>
+  <span class="post-date">19 May 2018</span>
   <span>[
   
     
-    <a href="/tag/computer-science"><code class="highligher-rouge"><nobr>computer-science</nobr></code>&nbsp;</a>
+    <a href="/tag/math"><code class="highligher-rouge"><nobr>math</nobr></code>&nbsp;</a>
   
     
-    <a href="/tag/machine-learning"><code class="highligher-rouge"><nobr>machine-learning</nobr></code>&nbsp;</a>
-  
-    
-    <a href="/tag/projects"><code class="highligher-rouge"><nobr>projects</nobr></code>&nbsp;</a>
+    <a href="/tag/set-theory"><code class="highligher-rouge"><nobr>set-theory</nobr></code>&nbsp;</a>
   
 ]</span>
-  <h2 id="background">Background</h2>
-<p>In 2013 the relatively new AI startup DeepMind released their paper <a href="https://arxiv.org/pdf/1312.5602.pdf"><em>Playing Atari with Deep Reinforcement Learning</em></a> detailing an artificial neural network that was able to play, not 1, but 7 Atari games with human and even super-human level proficiency. What made this paper so astounding was the fact that it was a single, general purpose neural network (a <strong>general artificial intelligence</strong> if you will) that could be trained to play all these games rather than 7 separate ones.</p>
+  <h2 id="what-are-natural-numbers">What are Natural Numbers?</h2>
+<p>The natural numbers are considered the most <em>natural</em> set of numbers humans can begin to think of, observe and calculate. They are the numbers we count with $0,1,2,3,4,5,\cdots$ When used to denote the <em>order</em> of objects they are considered <strong>ordinal</strong> numbers. When used to describe the quantity of a set of objects they are considered <strong>cardinal</strong> numbers. This distinction becomes important when the naturals are extended to include transfinite numbers.</p>
 
-<p>If this wasn’t enough, in 2015 they blew the machine learning community, and everyone else considering the news coverage, away with their paper <a href="https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf"><em>Human-level control through deep reinforcement learning</em></a> in which they construct what they call a <strong>Deep Q Network</strong> (DQN) to play <em>42</em> different Atari games, all of varying complexity, with performance that exceeded a professional human player.<a href="https://deepmind.com/research/dqn/"><sup>1</sup></a></p>
+<h4 id="is-0-an-element-of-mathbbn">Is $0$ an element of $\mathbb{N}$?</h4>
+<p>Some definitions of the natural numbers don’t include $0$ but, all things considered, including it makes defining the naturals as well as expressing a variety formulae easier. As such, whenever I reference the set of naturals it will always contain $0$. The <a href="#notation">notation</a> for different variations is cleared up below.</p>
 
 <!--more-->
 
-<!-- ![xkcd](https://imgs.xkcd.com/comics/pong.png?style=centerme)
-<center><i>Relevant xckd</i></center> -->
+<h2 id="definition">Definition</h2>
+<p>The natural numbers are defined by defining the empty set as zero, then defining the next number, or <strong>successor</strong>, as the set of all previous numbers:</p>
 
-<h2 id="q-learning">Q-Learning</h2>
-<p>The researchers at Google’s DeepMind achieved this stunning success with a type of machine learning called <strong>reinforcement learning</strong> and more specifically <strong>Q-learning</strong>. In essence, the goal of Q-learning is to approximate some ideal function $Q(s,a)$ that outputs a reward (how good we are doing at the task), where $s$ is a possible state of the environment/game/etc. and $a$ is a possible action to take in that state. If we had such a function, or even a good approximation, we could simply plug in our current state and choose whatever action will maximize $Q$ which would then maximize how well we perform the task. To approximate this function, the researches used a convolutional neural network (CNN) and trained it using Q-learning, thus creating a Deep Q Network. You can read more about Q-learning and DQNs <a href="https://ai.intel.com/demystifying-deep-reinforcement-learning/">here</a>.</p>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+0&\equiv\emptyset\\
+1&\equiv\{0\}=\{\emptyset\}\\
+2&\equiv\{0,1\}=\{\emptyset,\{\emptyset\}\}\\
+3&\equiv\{0,1,2\}=\{\emptyset,\{\emptyset\},\{\emptyset,\{\emptyset\}\}\}\\
+&\ \ \vdots\\
+n&\equiv\{0,1,2,3,\cdots,n-1\}\\
+\end{align} %]]></script>
 
-<p>By implementing Q-learning in a convolutional neural network (CNN) they create a DQN capable of predicting what actions to take based on the current state of the game.</p>
+<p>Defining the naturals in this way is consistent with the construction of the <a href="http://mathworld.wolfram.com/OrdinalNumber.html">von Neumann ordinals</a>.</p>
 
-<h2 id="policy-gradients">Policy Gradients</h2>
-<p>That said, Q-learning isn’t the only way to achieve these results. Another popular type of reinforcement learning is what known as <strong>policy gradients</strong>. This method is more direct and conceptually simpler than Q-learning. Essentially, you input the current state, action taken, and reward given at every step and optimize the network accordingly.</p>
+<h4 id="successor-function">Successor Function</h4>
+<p>This definition of the naturals can be more succinctly written via the successor function $S(n)$ which returns the number that comes after $n$:</p>
 
-<p>And make no mistake, while simpler, policy networks can be just as good as DQNs. In fact, when tuned correctly, they perform even better than DQNs. Don’t believe me? Just ask the authors of the original papers themselves:
-<a href="https://arxiv.org/pdf/1602.01783.pdf">Asynchronous Methods for Deep Reinforcement Learning</a>.</p>
+<script type="math/tex; mode=display">S(n)=n\cup\{n\}</script>
 
-<h2 id="my-attempt">My Attempt</h2>
-<!-- Encouraged by the aforementioned research, I thought I would attempt to create an ANN capable of playing pong using reinforcement learning. Using OpenAI's [Gym](https://gym.openai.com) package to model [Pong](https://gym.openai.com/envs/Pong-v0/), and Google's [*TensorFlow*](https://www.tensorflow.org/) library to construct the network, I'll attempt to explain the code, its results, and its accuracy. -->
-<p>Encouraged by the aforementioned research, I thought I would attempt to create an ANN capable of playing pong using reinforcement learning. To do this I used OpenAI’s <a href="https://gym.openai.com">Gym</a> package to model <a href="https://gym.openai.com/envs/Pong-v0/">Pong</a>, and Google’s <a href="https://www.tensorflow.org/"><em>TensorFlow</em></a> library to construct the network.</p>
+<p>So, if $0$ is $\emptyset$ then:</p>
 
-<p>The <a href="https://github.com/ozanerhansha/NeuralNetworks/tree/master/src/pongRL">code</a> for this network, dubbed PongNet, is in my <a href="https://github.com/ozanerhansha/NeuralNetworks">NeuralNetwork</a> repository on GitHub.</p>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+S(0)&=0\cup\{0\}\\
+&=\emptyset\cup\{\emptyset\}\\
+&=\{\emptyset\}
+\end{align} %]]></script>
 
-<h2 id="results">Results</h2>
-<p>Learning starts to appear after 1500 games (a game goes on until one player reaches 20 points) and it reaches a 50% win-rate at around 8000 games. More testing needs to be done to see the maximum accuracy of this particular network.</p>
+<p>And remeber, we define $1$ to be the successor, or number that comes after, $0$. As such $1\equiv S(0)={\emptyset}$. The same is true for all natural numbers: $n+1\equiv S(n)$.</p>
 
-<p><img src="/assets/projects/pongAI/pongdata.png?style=centerme" alt="pongdata" /></p>
+<h4 id="existence-in-zfc">Existence in ZFC</h4>
+<p>While it is possible to construct the successor of every natural number, using the axiom of pairing (to prove the existence of the singleton set) and the axiom of union, we can only prove that any <em>finite</em> natural number exists. No matter how many successors we compute, there will always be another.</p>
 
-<p>Below is the network (on a good day) playing against the same bot it trained with for 10,000 games.</p>
+<p>So how do we prove the existence of the entire infinite set of natural numbers and not just an arbitrarily large, finite subset? Well as it turns out, the only way to do this is to simply declare that such a set exists. This is the <strong>axiom of infinity</strong>:</p>
 
-<p><img src="/assets/projects/pongAI/pongai.gif?style=centerme" alt="bc" /></p>
+<script type="math/tex; mode=display">\exists S\left(\emptyset\in S\land\forall x\in S\left(\left(x\cup\{x\}\right)\in S\right)\right)</script>
+
+<p>In English, the above statement asserts that there exists a set $S$ that contains the empty set $\emptyset$ as well as contains the successor to every one of its members. Notice that since we can always take the successor of another number, this set is <em>necessarily</em> infinite. Indeed all infinite sets from ZFC originate from this set $S$ which we more commonly denote $\mathbb{N}$.</p>
+
+<h2 id="notation">Notation</h2>
+<p>The set of natural numbers is denoted by the double struck capital letter $\mathbb{N}$. But there are variations on the set that do/don’t include $0$ as well as include all natural numbers up to and including $n$:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{alignat*}{2}
+&\mathbb{N}&&=\{0,1,2,3,4,5,\cdots\}\\
+&\mathbb{N}^* &&=\{1,2,3,4,5,\cdots\}\\
+&\mathbb{N}_n&&=\{0,1,2,3,4,\cdots,n\}\\
+&\mathbb{N}^* _ n&&=\{1,2,3,4,\cdots,n\}\\
+\end{alignat*} %]]></script>
+
+<p>The last one in particular, the set of all non-zero natural numbers up to $n$, can be written as the integer interval $[1\ldotp\ldotp n]$ to avoid confusion.</p>
+
+<h2 id="defining-arithmetic-on-the-naturals">Defining Arithmetic on the Naturals</h2>
+<h3 id="addition-and-subtraction">Addition (and subtraction?)</h3>
+<p>Todo</p>
+
+<h3 id="multiplication">Multiplication</h3>
+<p>Todo</p>
+
+<h3 id="division">Division</h3>
+<p>Todo</p>
+
+<h3 id="order">Order</h3>
+<p>Todo</p>
+
+<h2 id="algebraic-structure-of-the-naturals">Algebraic Structure of the Naturals</h2>
+<p>Todo</p>
 
 </div>
 
@@ -287,18 +325,18 @@
     
       <li>
         <h3>
-          <a href="/natural-numbers/">
-            Natural Numbers
-            <small>19 May 2018</small>
+          <a href="/parity-sequences/">
+            Parity Sequences
+            <small>10 May 2018</small>
           </a>
         </h3>
       </li>
     
       <li>
         <h3>
-          <a href="/parity-sequences/">
-            Parity Sequences
-            <small>10 May 2018</small>
+          <a href="/cartesian-product/">
+            Cartesian Product
+            <small>30 Apr 2018</small>
           </a>
         </h3>
       </li>

@@ -7,7 +7,7 @@ tags: physics classical-mechanics
 ### General Info
 The drag force, or fluid friction, is a force that opposes the motion of an object through a fluid/gas, similar to dry [friction](\friction). It can also be used to describe the resistance between a fluid in another fluid.
 
-When the fluid is air, we refer to the force as aerodynamic drag or "air resistance." When it's water we call it hydrodynamic drag.
+When the fluid is air, we refer to the force as *aerodynamic drag* or **air resistance**. When it's water we call it *hydrodynamic drag*.
 
 #### Non-Conservative Force
 Like friction, the drag force is a non-conservative force meaning the work done by it is path dependent. And, also like friction, drag converts some energy into heat, thus it does not conserve mechanical energy.

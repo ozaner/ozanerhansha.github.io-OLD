@@ -29,7 +29,7 @@ $$\frac{\mathrm{d}}{\mathrm{d}t}\vec{x}(t)=\vec{v}(t)$$
 <!-- Click [here]() for a list of the repeated time derivatives of displacement. -->
 
 ### Relativity
-In relativity, position is only invariant in a particular non-inertial reference frame. This necessitates a notion of position that is invariant with respect to space-time. This 4-dimensional position (3 spatial dimensions and 1 time) is called 4-position, or more commonly as an **event**.
+In relativity, position is only invariant in a particular non-inertial reference frame. This necessitates a notion of position that is invariant with respect to space-time. This 4-dimensional position (3 spatial dimensions and 1 time) is called 4-position or, more commonly, as an **event**.
 
 An event is defined as a 4-dimensional vector with components $\left(t,x,y,z\right)$. Relativity shows that events that occur at the same time in one reference frame, don't necessarily happen at the same time in another. This is known as **relativity of simultaneity**.
 

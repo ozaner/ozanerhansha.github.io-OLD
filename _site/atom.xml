@@ -4,13 +4,168 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-05-19T13:07:42-04:00</updated>
+ <updated>2018-05-20T14:42:01-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>3D Game Development Vocab + Unity</title>
+   <link href="http://localhost:4000/3d-game-dev-vocab/"/>
+   <updated>2018-05-20T00:00:00-04:00</updated>
+   <id>http://localhost:4000/3d-game-dev-vocab</id>
+   <content type="html">&lt;h2 id=&quot;3d-game-development&quot;&gt;3D Game Development&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Inheritance System&lt;/strong&gt;: All objects are types and these types exist on an inheritance tree. (a particular object could be an instance of zombie which is a child of hostile AI, which is a child of AI, etc.)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Component System&lt;/strong&gt;: All objects have individual components that add functionality. (i.e movement component, hostile Ai component, health component, etc.)&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Unity uses a component system, but technically you can consider the component system as a generalization of the inheritance system. As such you could force yourself to use inheritance in Unity.&lt;/em&gt;&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;strong&gt;The Three Transforms&lt;/strong&gt;: The camera used in the scene view as well as objects can all be transformed in 3 basic ways:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Translation&lt;/strong&gt;: Translating an object means moving it across in 3D space.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Rotation&lt;/strong&gt;: Rotating an object means rotating about an axis. If an object is at (0,0,0) then the object would rotate in place.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Scaling&lt;/strong&gt;: Scaling an object means increasing or decreasing its size. You can either do this equally on all 3 axes (growing or shrinking the object) or scale each axis separately (stretching and squishing the object).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Rect Tool&lt;/strong&gt;: In 2D, transformations are simple enough that the above three can be combined into a single tool. Thus when making 2D unity games, the &lt;em&gt;Rect Tool&lt;/em&gt; is all you’ll need.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note That these transformations can all be done with respect to the global coordinate system or the objects own local coordinate system.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Left-Handed vs. Right-Handed Coordinate Systems&lt;/strong&gt;: When manipulating objects in 3D space, it is important to be consistent in what axes we use. &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/b/b2/3D_Cartesian_Coodinate_Handedness.jpg?style=centerme&quot; alt=&quot;hands&quot; width=&quot;400px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3 Types of Light Sources&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Point Light&lt;/strong&gt;: These sources emanate light in all directions around a single point. The farther away you are from this source, the dimmer it will be (the light rays are not as bunched up so to speak). It is analogous to a light bulb.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Directional Light&lt;/strong&gt;: A directional light source emanates light uniformly everywhere in a scene. As such its position doesn’t matter only the direction it is facing. This is analogous to the sun. (the sun is just a point light very far away, giving it the effect of a directional light). Typically, there is only one directional light per scene.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Spot Light&lt;/strong&gt;: These lights are similar to point lights except they only emanate in a limited cone before their light is cut short. They’re usually used to highlight an area of the scene rather than provide light to see your surroundings.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Free Look&lt;/strong&gt;: Free look is the player’s ability to move their mouse, joypad, control stick, etc. around and freely view the 3D world their character inhabits. For computer games this is referred to as &lt;em&gt;mouse-look&lt;/em&gt;. (The N64 for example, didn’t even have a full analog stick dedicated to the camera. It instead use a set of  directional buttons known as the c-buttons or camera buttons)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Euler Angles vs. Quaternions&lt;/strong&gt;: When representing rotations in 3D space we can either use a set of 3 angles (1 for the rotation about each axis) or a single 4D number known as a quaternion. The quaternions $\mathbb{H}$ are a 4D generalization of the 2D complex numbers that are very apt in describing natural 3D rotations (similar to how the complex numbers are apt in describing 2D rotations).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Frame Rate Dependent Code&lt;/strong&gt;:
+All scripts have an update method that run at every pass of the object. If that update code happens to, for example, move the player, the player’s speed would be dependent on the speed of the computer running the game. To remedy this we have to take into account the &lt;em&gt;frame rate&lt;/em&gt; of the game and make sure that every update is spread out over a single frame rather than done all at once.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Raycasting&lt;/strong&gt;: Raycasting is when a ray (an imaginary line that extends out form a point) is sent out at some angle and the location of the point it first intersects with, if it hits at all, is recorded. A first person shooter, for example, would use raycasting to tell whether a fired bullet hit an enemy or wall. In this case the ray would be perpendicular to the middle of the player’s screen.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Mouse Picking&lt;/strong&gt;: Mouse picking is finding the spot a mouse clicked on in 3D space. Doing this requires casting a ray from the user’s point of view and seeing where it first collides.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Rendering&lt;/strong&gt;: Computing the 2D array of pixels that corresponds to the current camera angle and 3D world it is viewing. This array is what is drawn onto the screen. (3D world -&amp;gt; 2D screen)&lt;/p&gt;
+
+&lt;h2 id=&quot;unity-game-development&quot;&gt;Unity Game Development&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Core Parts of a Unity Game&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Scenes&lt;/strong&gt;: All levels/areas/worlds are known as scenes in Unity. All games, 2D and 3D, are the result of the interactions between the objects in the current scene.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Objects&lt;/strong&gt;: Objects (they are instances of &lt;code class=&quot;highlighter-rouge&quot;&gt;GameObject&lt;/code&gt; in code) are the things the scene is made up of. All things in a scene are objects (the player, weapons, tools, cars, buildings, scenery, the floor, cameras, light sources) and so all Unity games are made of these. Even when implementing a component with non-tangible functionality (like a global timer) these can be added to an empty object (because all components and scripts must be part of an object).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Components&lt;/strong&gt;: These are the things that give objects functionality. Unity comes prepackaged with general components for objects (cameras, collision, light sources, sound sources, etc.). By default all objects must have a position component (even if they are an empty object that do not physically exist in the scene). Scripts are the custom components that the developer adds to objects in order to create functionality in a game.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Scripts&lt;/strong&gt;: Scripts are custom components that can be added to Unity objects. Unity allows for scripting in C# and JavaScript (although due to the difference in programming websites and 3D games, JavaScript is often called UnityScript when being used for Unity.) These scripts are at the core of programming a Unity game. Some basic things you might need to create scripts for are movement, UI, AI, collision behavior, etc.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;The Unity Editor&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Hierarchy&lt;/strong&gt;: This tab (by default on the left) shows a text list of all the objects in the current scene. Note that objects can be linked together (by dragging them on top of each other in the hierarchy tab) in order to group them together.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Scene View&lt;/strong&gt;: The scene view (in the middle of the screen) shows the current scene and all the objects within it. You can navigate the scene and transform objects in it with the mouse and keyboard. (&lt;code class=&quot;highlighter-rouge&quot;&gt;W&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;E&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;R&lt;/code&gt; are the transformations, and &lt;code class=&quot;highlighter-rouge&quot;&gt;CTRL&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;ALT&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;SHIFT&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;MOUSE 1&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;MOUSE 2&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;MOUSE 3&lt;/code&gt; move the camera around)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Inspector&lt;/strong&gt;: When you click on an object in the scene view or hierarchy, all its properties (i.e the properties of its components) appear in the inspector tab (by default on the right). Here you can modify the different parameters of a component (the location of the object, what camera angle the object is using, the maximum speed of the objects movement, etc.)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Game View &amp;amp; the Toolbar&lt;/strong&gt;: The game view (also in the middle of the screen) actually runs the game when you press play in the toolbar (at the top of the screen). It’s important tot note that the game view actually updates in real time with changes in code/scene, so you can rapidly prototype.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Project&lt;/strong&gt;: Located at the bottom of the screen, the project tab shows all the assets, scenes, and scripts for the current project. It’s basically a file explorer. You can right click to create new scripts, scenes, and objects in this tab.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Console&lt;/strong&gt;: This outputs whatever was programmed to be outputted there by the scripts that are currently running in the scene. Usually used for debugging or to output errors encountered while running the script.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Coroutines&lt;/strong&gt;: ???&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Prefabs&lt;/strong&gt;: ???&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Natural Numbers</title>
+   <link href="http://localhost:4000/natural-numbers/"/>
+   <updated>2018-05-19T00:00:00-04:00</updated>
+   <id>http://localhost:4000/natural-numbers</id>
+   <content type="html">&lt;h2 id=&quot;what-are-natural-numbers&quot;&gt;What are Natural Numbers?&lt;/h2&gt;
+&lt;p&gt;The natural numbers are considered the most &lt;em&gt;natural&lt;/em&gt; set of numbers humans can begin to think of, observe and calculate. They are the numbers we count with $0,1,2,3,4,5,\cdots$ When used to denote the &lt;em&gt;order&lt;/em&gt; of objects they are considered &lt;strong&gt;ordinal&lt;/strong&gt; numbers. When used to describe the quantity of a set of objects they are considered &lt;strong&gt;cardinal&lt;/strong&gt; numbers. This distinction becomes important when the naturals are extended to include transfinite numbers.&lt;/p&gt;
+
+&lt;h4 id=&quot;is-0-an-element-of-mathbbn&quot;&gt;Is $0$ an element of $\mathbb{N}$?&lt;/h4&gt;
+&lt;p&gt;Some definitions of the natural numbers don’t include $0$ but, all things considered, including it makes defining the naturals as well as expressing a variety formulae easier. As such, whenever I reference the set of naturals it will always contain $0$. The &lt;a href=&quot;#notation&quot;&gt;notation&lt;/a&gt; for different variations is cleared up below.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
+&lt;p&gt;The natural numbers are defined by defining the empty set as zero, then defining the next number, or &lt;strong&gt;successor&lt;/strong&gt;, as the set of all previous numbers:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+0&amp;\equiv\emptyset\\
+1&amp;\equiv\{0\}=\{\emptyset\}\\
+2&amp;\equiv\{0,1\}=\{\emptyset,\{\emptyset\}\}\\
+3&amp;\equiv\{0,1,2\}=\{\emptyset,\{\emptyset\},\{\emptyset,\{\emptyset\}\}\}\\
+&amp;\ \ \vdots\\
+n&amp;\equiv\{0,1,2,3,\cdots,n-1\}\\
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Defining the naturals in this way is consistent with the construction of the &lt;a href=&quot;http://mathworld.wolfram.com/OrdinalNumber.html&quot;&gt;von Neumann ordinals&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;successor-function&quot;&gt;Successor Function&lt;/h4&gt;
+&lt;p&gt;This definition of the naturals can be more succinctly written via the successor function $S(n)$ which returns the number that comes after $n$:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;S(n)=n\cup\{n\}&lt;/script&gt;
+
+&lt;p&gt;So, if $0$ is $\emptyset$ then:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+S(0)&amp;=0\cup\{0\}\\
+&amp;=\emptyset\cup\{\emptyset\}\\
+&amp;=\{\emptyset\}
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;And remeber, we define $1$ to be the successor, or number that comes after, $0$. As such $1\equiv S(0)={\emptyset}$. The same is true for all natural numbers: $n+1\equiv S(n)$.&lt;/p&gt;
+
+&lt;h4 id=&quot;existence-in-zfc&quot;&gt;Existence in ZFC&lt;/h4&gt;
+&lt;p&gt;While it is possible to construct the successor of every natural number, using the axiom of pairing (to prove the existence of the singleton set) and the axiom of union, we can only prove that any &lt;em&gt;finite&lt;/em&gt; natural number exists. No matter how many successors we compute, there will always be another.&lt;/p&gt;
+
+&lt;p&gt;So how do we prove the existence of the entire infinite set of natural numbers and not just an arbitrarily large, finite subset? Well as it turns out, the only way to do this is to simply declare that such a set exists. This is the &lt;strong&gt;axiom of infinity&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\exists S\left(\emptyset\in S\land\forall x\in S\left(\left(x\cup\{x\}\right)\in S\right)\right)&lt;/script&gt;
+
+&lt;p&gt;In English, the above statement asserts that there exists a set $S$ that contains the empty set $\emptyset$ as well as contains the successor to every one of its members. Notice that since we can always take the successor of another number, this set is &lt;em&gt;necessarily&lt;/em&gt; infinite. Indeed all infinite sets from ZFC originate from this set $S$ which we more commonly denote $\mathbb{N}$.&lt;/p&gt;
+
+&lt;h2 id=&quot;notation&quot;&gt;Notation&lt;/h2&gt;
+&lt;p&gt;The set of natural numbers is denoted by the double struck capital letter $\mathbb{N}$. But there are variations on the set that do/don’t include $0$ as well as include all natural numbers up to and including $n$:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{alignat*}{2}
+&amp;\mathbb{N}&amp;&amp;=\{0,1,2,3,4,5,\cdots\}\\
+&amp;\mathbb{N}^* &amp;&amp;=\{1,2,3,4,5,\cdots\}\\
+&amp;\mathbb{N}_n&amp;&amp;=\{0,1,2,3,4,\cdots,n\}\\
+&amp;\mathbb{N}^* _ n&amp;&amp;=\{1,2,3,4,\cdots,n\}\\
+\end{alignat*} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;The last one in particular, the set of all non-zero natural numbers up to $n$, can be written as the integer interval $[1\ldotp\ldotp n]$ to avoid confusion.&lt;/p&gt;
+
+&lt;h2 id=&quot;defining-arithmetic-on-the-naturals&quot;&gt;Defining Arithmetic on the Naturals&lt;/h2&gt;
+&lt;h3 id=&quot;addition-and-subtraction&quot;&gt;Addition (and subtraction?)&lt;/h3&gt;
+&lt;p&gt;Todo&lt;/p&gt;
+
+&lt;h3 id=&quot;multiplication&quot;&gt;Multiplication&lt;/h3&gt;
+&lt;p&gt;Todo&lt;/p&gt;
+
+&lt;h3 id=&quot;division&quot;&gt;Division&lt;/h3&gt;
+&lt;p&gt;Todo&lt;/p&gt;
+
+&lt;h3 id=&quot;order&quot;&gt;Order&lt;/h3&gt;
+&lt;p&gt;Todo&lt;/p&gt;
+
+&lt;h2 id=&quot;algebraic-structure-of-the-naturals&quot;&gt;Algebraic Structure of the Naturals&lt;/h2&gt;
+&lt;p&gt;Todo&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Parity Sequences</title>
@@ -1161,7 +1316,7 @@ $$\begin{align}
    <content type="html">&lt;h3 id=&quot;general-info&quot;&gt;General Info&lt;/h3&gt;
 &lt;p&gt;The drag force, or fluid friction, is a force that opposes the motion of an object through a fluid/gas, similar to dry &lt;a href=&quot;\friction&quot;&gt;friction&lt;/a&gt;. It can also be used to describe the resistance between a fluid in another fluid.&lt;/p&gt;
 
-&lt;p&gt;When the fluid is air, we refer to the force as aerodynamic drag or “air resistance.” When it’s water we call it hydrodynamic drag.&lt;/p&gt;
+&lt;p&gt;When the fluid is air, we refer to the force as &lt;em&gt;aerodynamic drag&lt;/em&gt; or &lt;strong&gt;air resistance&lt;/strong&gt;. When it’s water we call it &lt;em&gt;hydrodynamic drag&lt;/em&gt;.&lt;/p&gt;
 
 &lt;h4 id=&quot;non-conservative-force&quot;&gt;Non-Conservative Force&lt;/h4&gt;
 &lt;p&gt;Like friction, the drag force is a non-conservative force meaning the work done by it is path dependent. And, also like friction, drag converts some energy into heat, thus it does not conserve mechanical energy.
@@ -1744,7 +1899,7 @@ $$\begin{align}
 &lt;!-- Click [here]() for a list of the repeated time derivatives of displacement. --&gt;
 
 &lt;h3 id=&quot;relativity&quot;&gt;Relativity&lt;/h3&gt;
-&lt;p&gt;In relativity, position is only invariant in a particular non-inertial reference frame. This necessitates a notion of position that is invariant with respect to space-time. This 4-dimensional position (3 spatial dimensions and 1 time) is called 4-position, or more commonly as an &lt;strong&gt;event&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;In relativity, position is only invariant in a particular non-inertial reference frame. This necessitates a notion of position that is invariant with respect to space-time. This 4-dimensional position (3 spatial dimensions and 1 time) is called 4-position or, more commonly, as an &lt;strong&gt;event&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;An event is defined as a 4-dimensional vector with components $\left(t,x,y,z\right)$. Relativity shows that events that occur at the same time in one reference frame, don’t necessarily happen at the same time in another. This is known as &lt;strong&gt;relativity of simultaneity&lt;/strong&gt;.&lt;/p&gt;
 
