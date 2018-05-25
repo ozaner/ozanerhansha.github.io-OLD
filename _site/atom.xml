@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-05-23T22:55:53-04:00</updated>
+ <updated>2018-05-25T18:38:13-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -15,7 +15,7 @@
  <entry>
    <title>Natural Numbers</title>
    <link href="http://localhost:4000/natural-numbers/"/>
-   <updated>2018-05-23T00:00:00-04:00</updated>
+   <updated>2018-05-25T00:00:00-04:00</updated>
    <id>http://localhost:4000/natural-numbers</id>
    <content type="html">&lt;h2 id=&quot;what-are-natural-numbers&quot;&gt;What are Natural Numbers?&lt;/h2&gt;
 &lt;p&gt;The natural numbers are considered the most &lt;em&gt;natural&lt;/em&gt; set of numbers humans can begin to think of, observe and calculate. They are the numbers we count with $0,1,2,3,4,5,\cdots$&lt;/p&gt;
@@ -28,7 +28,7 @@
 &lt;!--more--&gt;
 
 &lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
-&lt;p&gt;The natural numbers are defined by defining the empty set as zero, then defining the next number, or &lt;strong&gt;successor&lt;/strong&gt;, as the set of all previous numbers:&lt;/p&gt;
+&lt;p&gt;The natural numbers are constructed by defining the empty set as zero, then defining the next number, or &lt;strong&gt;successor&lt;/strong&gt;, as the set of all previous numbers:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{align}
@@ -47,16 +47,17 @@ n&amp;\equiv\{0,1,2,3,\cdots,n-1\}\\
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;S(n)=n\cup\{n\}&lt;/script&gt;
 
-&lt;p&gt;So, if $0$ is $\emptyset$ then:&lt;/p&gt;
+&lt;p&gt;For example, we define the number $1$ to be the successor, or number that comes after, $0$. Since $0=\emptyset$ we can say:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{align}
-S(0)&amp;=0\cup\{0\}\\
+1&amp;=S(0)\\
+&amp;=0\cup\{0\}\\
 &amp;=\emptyset\cup\{\emptyset\}\\
 &amp;=\{\emptyset\}
 \end{align} %]]&gt;&lt;/script&gt;
 
-&lt;p&gt;And remeber, we define $1$ to be the successor, or number that comes after, $0$. As such $1\equiv S(0)={\emptyset}$. The same is true for all natural numbers: $n+1\equiv S(n)$.&lt;/p&gt;
+&lt;p&gt;$2\equiv S(1)$, $3\equiv S(2)$ and in general, we can say $n+1\equiv S(n)$ for all natural numbers.&lt;/p&gt;
 
 &lt;h4 id=&quot;existence-in-zfc&quot;&gt;Existence in ZFC&lt;/h4&gt;
 &lt;p&gt;While it is possible to construct the successor of every natural number, using the axiom of pairing (to prove the existence of the singleton set) and the axiom of union, we can only prove that any &lt;em&gt;finite&lt;/em&gt; natural number exists. No matter how many successors we compute, there will always be another.&lt;/p&gt;
@@ -65,10 +66,10 @@ S(0)&amp;=0\cup\{0\}\\
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\exists S\left(\emptyset\in S\land\forall x\in S\left(\left(x\cup\{x\}\right)\in S\right)\right)&lt;/script&gt;
 
-&lt;p&gt;In English, the above statement asserts that there exists a set $S$ that contains the empty set $\emptyset$ as well as contains the successor to every one of its members. Notice that since we can always take the successor of another number, this set is &lt;em&gt;necessarily&lt;/em&gt; infinite. Indeed all infinite sets in ZFC originate from this set $S$ which we more commonly denote $\mathbb{N}$.&lt;/p&gt;
+&lt;p&gt;In English, the above statement asserts that there exists a set $S$ that contains the empty set $\emptyset$ as well as contains the successor (i.e $x\cup{x}$) to every one of its members. Notice that since we can always take the successor of another number, this set is &lt;em&gt;necessarily&lt;/em&gt; infinite. Indeed all infinite sets in ZFC originate from this set $S$ which we more commonly denote $\mathbb{N}$.&lt;/p&gt;
 
 &lt;h2 id=&quot;notation&quot;&gt;Notation&lt;/h2&gt;
-&lt;p&gt;The set of natural numbers is denoted by the double struck capital letter $\mathbb{N}$. But there are variations on the set that do/don’t include $0$ as well as include all natural numbers up to and including $n$:&lt;/p&gt;
+&lt;p&gt;The set of natural numbers is denoted by the double struck capital letter $\mathbb{N}$. But there are variations on the set that do/don’t include $0$ as well as ones that include all natural numbers up to and including $n$:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{alignat*}{2}
@@ -82,12 +83,13 @@ S(0)&amp;=0\cup\{0\}\\
 
 &lt;h2 id=&quot;structure-on-the-naturals&quot;&gt;Structure on the Naturals&lt;/h2&gt;
 &lt;h3 id=&quot;addition&quot;&gt;Addition&lt;/h3&gt;
-&lt;p&gt;Using the successor function and two rules, we can &lt;em&gt;inductively&lt;/em&gt; define an operation $+$ such that it forms a commutative monoid $(\mathbb{N},+)$ on the naturals:&lt;/p&gt;
+&lt;p&gt;Using the successor function and two rules, we can &lt;em&gt;inductively&lt;/em&gt; define an operation $+$ such that it forms a commutative monoid $(\mathbb{N},+)$ with identity $0$ on the naturals:&lt;/p&gt;
 
 &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;a+0=0 \tag{1}&lt;/script&gt;
 &lt;script type=&quot;math/tex&quot;&gt;a+S(b)=S(a+b) \tag{2}&lt;/script&gt;&lt;/p&gt;
 
 &lt;details&gt;&lt;summary&gt;&lt;strong&gt;Example&lt;/strong&gt;&lt;/summary&gt;
+
 $$\begin{align}
 2+2&amp;amp;=2+S(1) \tag{def of $2\equiv S(1)$}\\
 &amp;amp;=S(2+1) \tag{addition rule #2}\\
@@ -100,18 +102,25 @@ $$\begin{align}
 &lt;/details&gt;
 &lt;p&gt;&lt;/p&gt;
 
+&lt;p&gt;It is from the addition operation $+$ (and successor function $S(n)$) that we can define all the other operations on the naturals, namely $-,\dot-,\times,\div,\div_E$ and $\le$&lt;/p&gt;
+
 &lt;p&gt;This monoid is also &lt;strong&gt;cancellative&lt;/strong&gt;, meaning that an equation is still true even if we add or remove the same number on both sides:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;b+a=c+a\implies b=c&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;a+c=b+c\implies a=b&lt;/script&gt;
 
 &lt;h3 id=&quot;subtraction&quot;&gt;Subtraction&lt;/h3&gt;
 &lt;p&gt;We can define subtraction in terms of addition as so:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;-\equiv\{(a,b,c)\in\mathbb{N}^3\mid a=b+c\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;a-b=c\iff a=b+c&lt;/script&gt;
+
+&lt;!-- The set that represents this binary operation would be constructed like this:
+
+$$-\equiv\{(a,b,c)\in\mathbb{N}^3\mid a=b+c\}$$ --&gt;
 
 &lt;p&gt;But note that the difference between two natural numbers $a-b$ exists only if $a\ge b$. As such, subtraction is not defined for any two natural numbers and so is not closed. Moreover, subtraction isn’t associative: $(a-b)-c\not=a-(b-c)$.&lt;/p&gt;
 
-&lt;p&gt;It is possible, however, to define a meaningful notion of subtraction on the naturals called &lt;strong&gt;truncated subtraction&lt;/strong&gt; denoted $\dot-$. In conjunction with  $(\mathbb{N},+)$, this operator is forms a commutative monoid with &lt;strong&gt;monus&lt;/strong&gt;.&lt;/p&gt;
+&lt;h4 id=&quot;truncated-subtraction&quot;&gt;Truncated Subtraction&lt;/h4&gt;
+&lt;p&gt;It is possible, however, to define a meaningful notion of subtraction on the naturals called &lt;strong&gt;truncated subtraction&lt;/strong&gt; denoted $\dot-$, such that it forms a magma $(\mathbb{N},\dot-)$.&lt;/p&gt;
 
 &lt;p&gt;If we are using the naturals as a subset of the integers, then we can define truncated subtraction as:&lt;/p&gt;
 
@@ -122,7 +131,7 @@ a\ \dot- \ b=
     a-b,&amp; a\ge b
 \end{cases} %]]&gt;&lt;/script&gt;
 
-&lt;p&gt;If we want to define it purely in terms of natural arithmetic, we can &lt;em&gt;inductively&lt;/em&gt; define $\dot-$ such that it forms a magma $(\mathbb{N},\dot-)$ similar to how we defined $+$:&lt;/p&gt;
+&lt;p&gt;If we want to define it purely in terms of natural arithmetic, we can &lt;em&gt;inductively&lt;/em&gt; define $\dot-$ similar to how we defined $+$:&lt;/p&gt;
 
 &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;a\ \dot- \ 0=a \tag{1}&lt;/script&gt;
 &lt;script type=&quot;math/tex&quot;&gt;0\ \dot- \ a=0 \tag{2}&lt;/script&gt;
@@ -153,14 +162,103 @@ $$\begin{align}
 &lt;/details&gt;
 &lt;p&gt;&lt;/p&gt;
 
+&lt;p&gt;In conjunction with the commutative monoid on the naturals $(\mathbb{N},+)$, this operator is referred to as a &lt;strong&gt;monus&lt;/strong&gt; and forms a CMM, commutative monoid with monus: $(\mathbb{N},+,\dot-)$.&lt;/p&gt;
+
 &lt;h3 id=&quot;multiplication&quot;&gt;Multiplication&lt;/h3&gt;
-&lt;p&gt;Todo&lt;/p&gt;
+&lt;p&gt;We can define the multiplication of natural numbers in terms of repeated addition:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;a\times b=c\iff \underbrace{a+a+\cdots+a}_{b\text{ copies}}=c&lt;/script&gt;
+
+&lt;!-- The set that represents this binary operation would be constructed like this:
+
+$$\times\equiv\{(a,b,c)\in\mathbb{N}^3\mid\underbrace{a+a+\cdots+a}_{b\text{ copies}}=c\}$$ --&gt;
+
+&lt;p&gt;We can also &lt;em&gt;inductively&lt;/em&gt; define $\times$ with 2 rules:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;a\times 0=0 \tag{1}&lt;/script&gt;
+&lt;script type=&quot;math/tex&quot;&gt;a\times S(b)=(a\times b) + a \tag{2}&lt;/script&gt;&lt;/p&gt;
+
+&lt;details&gt;&lt;summary&gt;&lt;strong&gt;Example&lt;/strong&gt;&lt;/summary&gt;
+$$\begin{align}
+2+3&amp;amp;=2\times S(2) \tag{def of $3\equiv S(2)$}\\
+&amp;amp;=(2\times 2)+2 \tag{multiplication rule #2}\\
+&amp;amp;=(2\times S(1))+2 \tag{def of $2\equiv S(1)$}\\
+&amp;amp;=((2\times 1)+2)+2 \tag{multiplication rule #2}\\
+&amp;amp;=((2\times S(0))+2)+2 \tag{def of $1\equiv S(0)$}\\
+&amp;amp;=(((2\times 0)+2)+2)+2 \tag{multiplication rule #2}\\
+&amp;amp;=((0+2)+2)+2 \tag{multiplication rule #1}\\
+&amp;amp;=(2+2)+2\\
+&amp;amp;=4+2\\
+&amp;amp;=6\\
+\end{align}$$
+&lt;/details&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;The naturals and multiplication form a commutative magma $(\mathbb{N},\times)$. However, if we exclude $0$, the naturals can form a commutative monoid $(\mathbb{N}^* ,\times)$. This is because $1\times 0=0$, which destroys $1$’s identity property.&lt;/p&gt;
+
+&lt;p&gt;Note that, like with addition, This monoid is &lt;strong&gt;cancellative&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;a\times c=b\times c\implies a=b&lt;/script&gt;
+
+&lt;h4 id=&quot;commutative-semiring&quot;&gt;Commutative Semiring&lt;/h4&gt;
+&lt;p&gt;Even further, if we combine the $\times$ operator with the monoid  $(\mathbb{N},+)$ and the fact that it is distributive over $+$:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;a\times(b+c)=(a\times b)+(a\times c)&lt;/script&gt;
+
+&lt;p&gt;we obtain the commutative semiring $(\mathbb{N},+,\times)$. It is &lt;em&gt;semi&lt;/em&gt; because the $+$ operator has no inverse operation, which is necessary for a full ring.&lt;/p&gt;
 
 &lt;h3 id=&quot;division&quot;&gt;Division&lt;/h3&gt;
-&lt;p&gt;Todo&lt;/p&gt;
+&lt;p&gt;We can define the division of natural numbers in terms of multiplication:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;a\div b=c\iff a=b\times c&lt;/script&gt;
+
+&lt;!-- The set that represents this binary operation would be constructed like this:
+
+$$\div\equiv\{(a,b,c)\in\mathbb{N}^3\mid a=b\times c\}$$ --&gt;
+
+&lt;p&gt;However, like subtraction, division isn’t defined for all the naturals and so isn’t closed (and certainly isn’t associative).&lt;/p&gt;
+
+&lt;h4 id=&quot;euclidean-division&quot;&gt;Euclidean Division&lt;/h4&gt;
+&lt;p&gt;But like truncated subtraction, it is possible to define a meaningful division operation on the naturals in terms of $+$ and $\times$. This operation is known as &lt;strong&gt;Euclidean division&lt;/strong&gt; (which I’ll denote $\div_E$). It divides two natural numbers $a$ and $b$ and returns a &lt;strong&gt;quotient&lt;/strong&gt; $q$ and a &lt;strong&gt;remainder&lt;/strong&gt; $r$:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+a\div_E b=(q,r)\iff (a=b\times q+r) \land (r&lt;b) %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;For every pair of naturals there is a &lt;em&gt;unique&lt;/em&gt; pair of resultants. As such, you can consider $\div_E$ as a function that maps two naturals to two other naturals:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\div_E:\mathbb{N}^2\to\mathbb{N}^2&lt;/script&gt;
+
+&lt;!-- The set that represents this binary operation would be constructed like this:
+
+$$\div_E\equiv\{(a,b,q,r)\in\mathbb{N}^4\mid a=b\times q+r \land r&lt;b\}$$ --&gt;
+
+&lt;!-- We can *inductively* define division with 2 rules: --&gt;
 
 &lt;h3 id=&quot;order&quot;&gt;Order&lt;/h3&gt;
-&lt;p&gt;Todo&lt;/p&gt;
+&lt;p&gt;We can define a total order $\le$ on the natural numbers as so:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;a\le b\iff(\exists c\in\mathbb{N})\ a+c=b&lt;/script&gt;
+
+&lt;!-- The set that represents this binary relation would be constructed like this:
+
+$$\le\equiv\{(a,b)\in\mathbb{N}^2\mid(\exists c\in\mathbb{N})\ a+c=b\}$$ --&gt;
+
+&lt;p&gt;The naturals along with this binary relation form a totally ordered set $(\mathbb{N},\le)$ that also happens to be well-ordered. Its order type is the ordinal number $\omega$, the first infinite ordinal.&lt;/p&gt;
+
+&lt;h4 id=&quot;ordered-structures&quot;&gt;Ordered Structures&lt;/h4&gt;
+&lt;p&gt;In conjunction with any (barring one) of the algebraic structures mentioned above, the $\le$ relation forms an ordered magma/monoid/semiring. This is because they satisfy the following properties:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;a\le b\iff a+c\le b+c&lt;/script&gt;
+
+&lt;p&gt;For addition we can create the ordered monoid $(\mathbb{N},+,\le)$.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;a\le b\iff a\ \dot-\ c\le b\ \dot-\ c&lt;/script&gt;
+
+&lt;p&gt;For truncated subtraction we can create the ordered magma $(\mathbb{N},\dot-,\le)$ and the ordered CMM $(\mathbb{N},+,\dot-,\le)$.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;a\le b\iff a\times c\le b\times c&lt;/script&gt;
+
+&lt;p&gt;For multiplication we can create the ordered monoid $(\mathbb{N},\times,\le)$ and the ordered semiring $(\mathbb{N},+,\times,\le)$.&lt;/p&gt;
 </content>
  </entry>
  

@@ -15,7 +15,7 @@ Some definitions of the natural numbers don't include $0$ but, all things consid
 <!--more-->
 
 ## Definition
-The natural numbers are defined by defining the empty set as zero, then defining the next number, or **successor**, as the set of all previous numbers:
+The natural numbers are constructed by defining the empty set as zero, then defining the next number, or **successor**, as the set of all previous numbers:
 
 $$\begin{align}
 0&\equiv\emptyset\\
@@ -33,15 +33,16 @@ This definition of the naturals can be more succinctly written via the successor
 
 $$S(n)=n\cup\{n\}$$
 
-So, if $0$ is $\emptyset$ then:
+For example, we define the number $1$ to be the successor, or number that comes after, $0$. Since $0=\emptyset$ we can say:
 
 $$\begin{align}
-S(0)&=0\cup\{0\}\\
+1&=S(0)\\
+&=0\cup\{0\}\\
 &=\emptyset\cup\{\emptyset\}\\
 &=\{\emptyset\}
 \end{align}$$
 
-And remeber, we define $1$ to be the successor, or number that comes after, $0$. As such $1\equiv S(0)=\{\emptyset\}$. The same is true for all natural numbers: $n+1\equiv S(n)$.
+$2\equiv S(1)$, $3\equiv S(2)$ and in general, we can say $n+1\equiv S(n)$ for all natural numbers.
 
 #### Existence in ZFC
 While it is possible to construct the successor of every natural number, using the axiom of pairing (to prove the existence of the singleton set) and the axiom of union, we can only prove that any *finite* natural number exists. No matter how many successors we compute, there will always be another.
@@ -50,10 +51,10 @@ So how do we prove the existence of the entire infinite set of natural numbers a
 
 $$\exists S\left(\emptyset\in S\land\forall x\in S\left(\left(x\cup\{x\}\right)\in S\right)\right)$$
 
-In English, the above statement asserts that there exists a set $S$ that contains the empty set $\emptyset$ as well as contains the successor to every one of its members. Notice that since we can always take the successor of another number, this set is *necessarily* infinite. Indeed all infinite sets in ZFC originate from this set $S$ which we more commonly denote $\mathbb{N}$.
+In English, the above statement asserts that there exists a set $S$ that contains the empty set $\emptyset$ as well as contains the successor (i.e $x\cup\{x\}$) to every one of its members. Notice that since we can always take the successor of another number, this set is *necessarily* infinite. Indeed all infinite sets in ZFC originate from this set $S$ which we more commonly denote $\mathbb{N}$.
 
 ## Notation
-The set of natural numbers is denoted by the double struck capital letter $\mathbb{N}$. But there are variations on the set that do/don't include $0$ as well as include all natural numbers up to and including $n$:
+The set of natural numbers is denoted by the double struck capital letter $\mathbb{N}$. But there are variations on the set that do/don't include $0$ as well as ones that include all natural numbers up to and including $n$:
 
 $$\begin{alignat*}{2}
 &\mathbb{N}&&=\{0,1,2,3,4,5,\cdots\}\\
