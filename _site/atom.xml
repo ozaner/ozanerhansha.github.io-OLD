@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-05-25T18:38:13-04:00</updated>
+ <updated>2018-05-25T18:55:29-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -102,11 +102,11 @@ $$\begin{align}
 &lt;/details&gt;
 &lt;p&gt;&lt;/p&gt;
 
-&lt;p&gt;It is from the addition operation $+$ (and successor function $S(n)$) that we can define all the other operations on the naturals, namely $-,\dot-,\times,\div,\div_E$ and $\le$&lt;/p&gt;
-
 &lt;p&gt;This monoid is also &lt;strong&gt;cancellative&lt;/strong&gt;, meaning that an equation is still true even if we add or remove the same number on both sides:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;a+c=b+c\implies a=b&lt;/script&gt;
+
+&lt;p&gt;It is from the addition operation $+$ (and successor function $S(n)$) that we can define all the other operations/relations on the naturals.&lt;/p&gt;
 
 &lt;h3 id=&quot;subtraction&quot;&gt;Subtraction&lt;/h3&gt;
 &lt;p&gt;We can define subtraction in terms of addition as so:&lt;/p&gt;
@@ -180,7 +180,7 @@ $$\times\equiv\{(a,b,c)\in\mathbb{N}^3\mid\underbrace{a+a+\cdots+a}_{b\text{ cop
 
 &lt;details&gt;&lt;summary&gt;&lt;strong&gt;Example&lt;/strong&gt;&lt;/summary&gt;
 $$\begin{align}
-2+3&amp;amp;=2\times S(2) \tag{def of $3\equiv S(2)$}\\
+2\times 3&amp;amp;=2\times S(2) \tag{def of $3\equiv S(2)$}\\
 &amp;amp;=(2\times 2)+2 \tag{multiplication rule #2}\\
 &amp;amp;=(2\times S(1))+2 \tag{def of $2\equiv S(1)$}\\
 &amp;amp;=((2\times 1)+2)+2 \tag{multiplication rule #2}\\
@@ -194,9 +194,9 @@ $$\begin{align}
 &lt;/details&gt;
 &lt;p&gt;&lt;/p&gt;
 
-&lt;p&gt;The naturals and multiplication form a commutative magma $(\mathbb{N},\times)$. However, if we exclude $0$, the naturals can form a commutative monoid $(\mathbb{N}^* ,\times)$. This is because $1\times 0=0$, which destroys $1$’s identity property.&lt;/p&gt;
+&lt;p&gt;The naturals and multiplication form a commutative magma $(\mathbb{N},\times)$. However, if we exclude $0$, the naturals can form a commutative monoid $(\mathbb{N}^* ,\times)$ with identity $1$. This is because $1\times 0=0$, which destroys $1$’s identity property.&lt;/p&gt;
 
-&lt;p&gt;Note that, like with addition, This monoid is &lt;strong&gt;cancellative&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;Note that, like with addition, this monoid is &lt;strong&gt;cancellative&lt;/strong&gt;:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;a\times c=b\times c\implies a=b&lt;/script&gt;
 
@@ -219,7 +219,7 @@ $$\div\equiv\{(a,b,c)\in\mathbb{N}^3\mid a=b\times c\}$$ --&gt;
 &lt;p&gt;However, like subtraction, division isn’t defined for all the naturals and so isn’t closed (and certainly isn’t associative).&lt;/p&gt;
 
 &lt;h4 id=&quot;euclidean-division&quot;&gt;Euclidean Division&lt;/h4&gt;
-&lt;p&gt;But like truncated subtraction, it is possible to define a meaningful division operation on the naturals in terms of $+$ and $\times$. This operation is known as &lt;strong&gt;Euclidean division&lt;/strong&gt; (which I’ll denote $\div_E$). It divides two natural numbers $a$ and $b$ and returns a &lt;strong&gt;quotient&lt;/strong&gt; $q$ and a &lt;strong&gt;remainder&lt;/strong&gt; $r$:&lt;/p&gt;
+&lt;p&gt;But, like truncated subtraction, it is possible to define a meaningful division operation on the naturals in terms of $+$ and $\times$. This operation is known as &lt;strong&gt;Euclidean division&lt;/strong&gt; (which I’ll denote $\div_E$). It divides two natural numbers $a$ and $b$ and returns a &lt;strong&gt;quotient&lt;/strong&gt; $q$ and a &lt;strong&gt;remainder&lt;/strong&gt; $r$:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 a\div_E b=(q,r)\iff (a=b\times q+r) \land (r&lt;b) %]]&gt;&lt;/script&gt;
@@ -258,7 +258,7 @@ $$\le\equiv\{(a,b)\in\mathbb{N}^2\mid(\exists c\in\mathbb{N})\ a+c=b\}$$ --&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;a\le b\iff a\times c\le b\times c&lt;/script&gt;
 
-&lt;p&gt;For multiplication we can create the ordered monoid $(\mathbb{N},\times,\le)$ and the ordered semiring $(\mathbb{N},+,\times,\le)$.&lt;/p&gt;
+&lt;p&gt;For multiplication we can create the ordered monoid $(\mathbb{N}^* ,\times,\le)$ and the ordered semiring $(\mathbb{N},+,\times,\le)$. Note that we cannot order the magma $(\mathbb{N},\times)$ because, due to $1\times 0=0$, it does not satisfy the above property.&lt;/p&gt;
 </content>
  </entry>
  

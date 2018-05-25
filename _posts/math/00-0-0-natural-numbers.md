@@ -86,11 +86,11 @@ $$\begin{align}
 </details>
 <p></p>
 
-It is from the addition operation $+$ (and successor function $S(n)$) that we can define all the other operations on the naturals, namely $-,\dot-,\times,\div,\div_E$ and $\le$
-
 This monoid is also **cancellative**, meaning that an equation is still true even if we add or remove the same number on both sides:
 
 $$a+c=b+c\implies a=b$$
+
+It is from the addition operation $+$ (and successor function $S(n)$) that we can define all the other operations/relations on the naturals.
 
 ### Subtraction
 We can define subtraction in terms of addition as so:
@@ -163,7 +163,7 @@ $$a\times S(b)=(a\times b) + a \tag{2}$$
 
 <details><summary><strong>Example</strong></summary>
 $$\begin{align}
-2+3&=2\times S(2) \tag{def of $3\equiv S(2)$}\\
+2\times 3&=2\times S(2) \tag{def of $3\equiv S(2)$}\\
 &=(2\times 2)+2 \tag{multiplication rule #2}\\
 &=(2\times S(1))+2 \tag{def of $2\equiv S(1)$}\\
 &=((2\times 1)+2)+2 \tag{multiplication rule #2}\\
@@ -177,9 +177,9 @@ $$\begin{align}
 </details>
 <p></p>
 
-The naturals and multiplication form a commutative magma $(\mathbb{N},\times)$. However, if we exclude $0$, the naturals can form a commutative monoid $(\mathbb{N}^* ,\times)$. This is because $1\times 0=0$, which destroys $1$'s identity property.
+The naturals and multiplication form a commutative magma $(\mathbb{N},\times)$. However, if we exclude $0$, the naturals can form a commutative monoid $(\mathbb{N}^* ,\times)$ with identity $1$. This is because $1\times 0=0$, which destroys $1$'s identity property.
 
-Note that, like with addition, This monoid is **cancellative**:
+Note that, like with addition, this monoid is **cancellative**:
 
 $$a\times c=b\times c\implies a=b$$
 
@@ -202,7 +202,7 @@ $$\div\equiv\{(a,b,c)\in\mathbb{N}^3\mid a=b\times c\}$$ -->
 However, like subtraction, division isn't defined for all the naturals and so isn't closed (and certainly isn't associative).
 
 #### Euclidean Division
-But like truncated subtraction, it is possible to define a meaningful division operation on the naturals in terms of $+$ and $\times$. This operation is known as **Euclidean division** (which I'll denote $\div_E$). It divides two natural numbers $a$ and $b$ and returns a **quotient** $q$ and a **remainder** $r$:
+But, like truncated subtraction, it is possible to define a meaningful division operation on the naturals in terms of $+$ and $\times$. This operation is known as **Euclidean division** (which I'll denote $\div_E$). It divides two natural numbers $a$ and $b$ and returns a **quotient** $q$ and a **remainder** $r$:
 
 $$a\div_E b=(q,r)\iff (a=b\times q+r) \land (r<b)$$
 
@@ -240,4 +240,4 @@ For truncated subtraction we can create the ordered magma $(\mathbb{N},\dot-,\le
 
 $$a\le b\iff a\times c\le b\times c$$
 
-For multiplication we can create the ordered monoid $(\mathbb{N},\times,\le)$ and the ordered semiring $(\mathbb{N},+,\times,\le)$.
+For multiplication we can create the ordered monoid $(\mathbb{N}^* ,\times,\le)$ and the ordered semiring $(\mathbb{N},+,\times,\le)$. Note that we cannot order the magma $(\mathbb{N},\times)$ because, due to $1\times 0=0$, it does not satisfy the above property.
