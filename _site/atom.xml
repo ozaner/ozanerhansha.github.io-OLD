@@ -4,13 +4,165 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-05-20T14:42:01-04:00</updated>
+ <updated>2018-05-23T22:55:53-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Natural Numbers</title>
+   <link href="http://localhost:4000/natural-numbers/"/>
+   <updated>2018-05-23T00:00:00-04:00</updated>
+   <id>http://localhost:4000/natural-numbers</id>
+   <content type="html">&lt;h2 id=&quot;what-are-natural-numbers&quot;&gt;What are Natural Numbers?&lt;/h2&gt;
+&lt;p&gt;The natural numbers are considered the most &lt;em&gt;natural&lt;/em&gt; set of numbers humans can begin to think of, observe and calculate. They are the numbers we count with $0,1,2,3,4,5,\cdots$&lt;/p&gt;
+
+&lt;p&gt;When used to denote the &lt;em&gt;order&lt;/em&gt; of objects, they are considered &lt;strong&gt;ordinal&lt;/strong&gt; numbers. When used to describe the quantity of a set of objects, they are considered &lt;strong&gt;cardinal&lt;/strong&gt; numbers. This distinction becomes important when the naturals are extended to include transfinite numbers.&lt;/p&gt;
+
+&lt;h4 id=&quot;is-0-an-element-of-mathbbn&quot;&gt;Is $0$ an element of $\mathbb{N}$?&lt;/h4&gt;
+&lt;p&gt;Some definitions of the natural numbers don’t include $0$ but, all things considered, including it makes defining the naturals as well as expressing a variety formulae easier. As such, whenever I reference the set of naturals it will always contain $0$. The &lt;a href=&quot;#notation&quot;&gt;notation&lt;/a&gt; for different variations is cleared up below.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
+&lt;p&gt;The natural numbers are defined by defining the empty set as zero, then defining the next number, or &lt;strong&gt;successor&lt;/strong&gt;, as the set of all previous numbers:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+0&amp;\equiv\emptyset\\
+1&amp;\equiv\{0\}=\{\emptyset\}\\
+2&amp;\equiv\{0,1\}=\{\emptyset,\{\emptyset\}\}\\
+3&amp;\equiv\{0,1,2\}=\{\emptyset,\{\emptyset\},\{\emptyset,\{\emptyset\}\}\}\\
+&amp;\ \ \vdots\\
+n&amp;\equiv\{0,1,2,3,\cdots,n-1\}\\
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Defining the naturals in this way is consistent with the construction of the &lt;a href=&quot;http://mathworld.wolfram.com/OrdinalNumber.html&quot;&gt;von Neumann ordinals&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;successor-function&quot;&gt;Successor Function&lt;/h4&gt;
+&lt;p&gt;This definition of the naturals can be more succinctly written via the successor function $S(n)$ which returns the number that comes after $n$:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;S(n)=n\cup\{n\}&lt;/script&gt;
+
+&lt;p&gt;So, if $0$ is $\emptyset$ then:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+S(0)&amp;=0\cup\{0\}\\
+&amp;=\emptyset\cup\{\emptyset\}\\
+&amp;=\{\emptyset\}
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;And remeber, we define $1$ to be the successor, or number that comes after, $0$. As such $1\equiv S(0)={\emptyset}$. The same is true for all natural numbers: $n+1\equiv S(n)$.&lt;/p&gt;
+
+&lt;h4 id=&quot;existence-in-zfc&quot;&gt;Existence in ZFC&lt;/h4&gt;
+&lt;p&gt;While it is possible to construct the successor of every natural number, using the axiom of pairing (to prove the existence of the singleton set) and the axiom of union, we can only prove that any &lt;em&gt;finite&lt;/em&gt; natural number exists. No matter how many successors we compute, there will always be another.&lt;/p&gt;
+
+&lt;p&gt;So how do we prove the existence of the entire infinite set of natural numbers and not just an arbitrarily large, finite subset? Well as it turns out, the only way to do this is to simply declare that such a set exists. This is the &lt;strong&gt;axiom of infinity&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\exists S\left(\emptyset\in S\land\forall x\in S\left(\left(x\cup\{x\}\right)\in S\right)\right)&lt;/script&gt;
+
+&lt;p&gt;In English, the above statement asserts that there exists a set $S$ that contains the empty set $\emptyset$ as well as contains the successor to every one of its members. Notice that since we can always take the successor of another number, this set is &lt;em&gt;necessarily&lt;/em&gt; infinite. Indeed all infinite sets in ZFC originate from this set $S$ which we more commonly denote $\mathbb{N}$.&lt;/p&gt;
+
+&lt;h2 id=&quot;notation&quot;&gt;Notation&lt;/h2&gt;
+&lt;p&gt;The set of natural numbers is denoted by the double struck capital letter $\mathbb{N}$. But there are variations on the set that do/don’t include $0$ as well as include all natural numbers up to and including $n$:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{alignat*}{2}
+&amp;\mathbb{N}&amp;&amp;=\{0,1,2,3,4,5,\cdots\}\\
+&amp;\mathbb{N}^* &amp;&amp;=\{1,2,3,4,5,\cdots\}\\
+&amp;\mathbb{N}_n&amp;&amp;=\{0,1,2,3,4,\cdots,n\}\\
+&amp;\mathbb{N}^* _ n&amp;&amp;=\{1,2,3,4,\cdots,n\}\\
+\end{alignat*} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;The last one in particular, the set of all non-zero natural numbers up to $n$, can be written as the integer interval $[1\ldotp\ldotp n]$ to avoid confusion.&lt;/p&gt;
+
+&lt;h2 id=&quot;structure-on-the-naturals&quot;&gt;Structure on the Naturals&lt;/h2&gt;
+&lt;h3 id=&quot;addition&quot;&gt;Addition&lt;/h3&gt;
+&lt;p&gt;Using the successor function and two rules, we can &lt;em&gt;inductively&lt;/em&gt; define an operation $+$ such that it forms a commutative monoid $(\mathbb{N},+)$ on the naturals:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;a+0=0 \tag{1}&lt;/script&gt;
+&lt;script type=&quot;math/tex&quot;&gt;a+S(b)=S(a+b) \tag{2}&lt;/script&gt;&lt;/p&gt;
+
+&lt;details&gt;&lt;summary&gt;&lt;strong&gt;Example&lt;/strong&gt;&lt;/summary&gt;
+$$\begin{align}
+2+2&amp;amp;=2+S(1) \tag{def of $2\equiv S(1)$}\\
+&amp;amp;=S(2+1) \tag{addition rule #2}\\
+&amp;amp;=S(2+S(0)) \tag{def of $1\equiv S(0)$}\\
+&amp;amp;=S(S(2+0)) \tag{addition rule #2}\\
+&amp;amp;=S(S(2)) \tag{addition rule #1}\\
+&amp;amp;=S(3) \tag{def of $3\equiv S(2)$}\\
+&amp;amp;=4 \tag{def of $4\equiv S(3)$}\\
+\end{align}$$
+&lt;/details&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;This monoid is also &lt;strong&gt;cancellative&lt;/strong&gt;, meaning that an equation is still true even if we add or remove the same number on both sides:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;b+a=c+a\implies b=c&lt;/script&gt;
+
+&lt;h3 id=&quot;subtraction&quot;&gt;Subtraction&lt;/h3&gt;
+&lt;p&gt;We can define subtraction in terms of addition as so:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;-\equiv\{(a,b,c)\in\mathbb{N}^3\mid a=b+c\}&lt;/script&gt;
+
+&lt;p&gt;But note that the difference between two natural numbers $a-b$ exists only if $a\ge b$. As such, subtraction is not defined for any two natural numbers and so is not closed. Moreover, subtraction isn’t associative: $(a-b)-c\not=a-(b-c)$.&lt;/p&gt;
+
+&lt;p&gt;It is possible, however, to define a meaningful notion of subtraction on the naturals called &lt;strong&gt;truncated subtraction&lt;/strong&gt; denoted $\dot-$. In conjunction with  $(\mathbb{N},+)$, this operator is forms a commutative monoid with &lt;strong&gt;monus&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;If we are using the naturals as a subset of the integers, then we can define truncated subtraction as:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+a\ \dot- \ b=
+\begin{cases}
+    0,&amp; a&lt;b\\
+    a-b,&amp; a\ge b
+\end{cases} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;If we want to define it purely in terms of natural arithmetic, we can &lt;em&gt;inductively&lt;/em&gt; define $\dot-$ such that it forms a magma $(\mathbb{N},\dot-)$ similar to how we defined $+$:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;a\ \dot- \ 0=a \tag{1}&lt;/script&gt;
+&lt;script type=&quot;math/tex&quot;&gt;0\ \dot- \ a=0 \tag{2}&lt;/script&gt;
+&lt;script type=&quot;math/tex&quot;&gt;S(a)\ \dot- \ S(b)=a\ \dot- \ b \tag{3}&lt;/script&gt;&lt;/p&gt;
+
+&lt;details&gt;&lt;summary&gt;&lt;strong&gt;Examples&lt;/strong&gt;&lt;/summary&gt;
+When $a&amp;gt;b$
+$$\begin{align}
+5\ \dot- \ 3&amp;amp;=S(4)\ \dot- \ S(2) \tag{def of $5$ &amp;amp; $3$}\\
+&amp;amp;=4\ \dot- \ 2 \tag{subtraction rule #3}\\
+&amp;amp;=S(3)\ \dot- \ S(1) \tag{def of $4$ &amp;amp; $2$}\\
+&amp;amp;=3\ \dot- \ 1 \tag{subtraction rule #3}\\
+&amp;amp;=S(2)\ \dot- \ S(0) \tag{def of $3$ &amp;amp; $1$}\\
+&amp;amp;=2\ \dot- \ 0 \tag{subtraction rule #3}\\
+&amp;amp;=2 \tag{subtraction rule #1}\\
+\end{align}$$
+
+When $a&amp;lt;b$
+$$\begin{align}
+3\ \dot- \ 5&amp;amp;=S(2)\ \dot- \ S(4) \tag{def of $3$ &amp;amp; $5$}\\
+&amp;amp;=2\ \dot- \ 4 \tag{subtraction rule #3}\\
+&amp;amp;=S(1)\ \dot- \ S(3) \tag{def of $2$ &amp;amp; $4$}\\
+&amp;amp;=1\ \dot- \ 3 \tag{subtraction rule #3}\\
+&amp;amp;=S(0)\ \dot- \ S(2) \tag{def of $1$ &amp;amp; $3$}\\
+&amp;amp;=0\ \dot- \ 2 \tag{subtraction rule #3}\\
+&amp;amp;=0 \tag{subtraction rule #2}\\
+\end{align}$$
+&lt;/details&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;multiplication&quot;&gt;Multiplication&lt;/h3&gt;
+&lt;p&gt;Todo&lt;/p&gt;
+
+&lt;h3 id=&quot;division&quot;&gt;Division&lt;/h3&gt;
+&lt;p&gt;Todo&lt;/p&gt;
+
+&lt;h3 id=&quot;order&quot;&gt;Order&lt;/h3&gt;
+&lt;p&gt;Todo&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>3D Game Development Vocab + Unity</title>
@@ -80,90 +232,6 @@ All scripts have an update method that run at every pass of the object. If that 
 &lt;p&gt;&lt;strong&gt;Coroutines&lt;/strong&gt;: ???&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Prefabs&lt;/strong&gt;: ???&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Natural Numbers</title>
-   <link href="http://localhost:4000/natural-numbers/"/>
-   <updated>2018-05-19T00:00:00-04:00</updated>
-   <id>http://localhost:4000/natural-numbers</id>
-   <content type="html">&lt;h2 id=&quot;what-are-natural-numbers&quot;&gt;What are Natural Numbers?&lt;/h2&gt;
-&lt;p&gt;The natural numbers are considered the most &lt;em&gt;natural&lt;/em&gt; set of numbers humans can begin to think of, observe and calculate. They are the numbers we count with $0,1,2,3,4,5,\cdots$ When used to denote the &lt;em&gt;order&lt;/em&gt; of objects they are considered &lt;strong&gt;ordinal&lt;/strong&gt; numbers. When used to describe the quantity of a set of objects they are considered &lt;strong&gt;cardinal&lt;/strong&gt; numbers. This distinction becomes important when the naturals are extended to include transfinite numbers.&lt;/p&gt;
-
-&lt;h4 id=&quot;is-0-an-element-of-mathbbn&quot;&gt;Is $0$ an element of $\mathbb{N}$?&lt;/h4&gt;
-&lt;p&gt;Some definitions of the natural numbers don’t include $0$ but, all things considered, including it makes defining the naturals as well as expressing a variety formulae easier. As such, whenever I reference the set of naturals it will always contain $0$. The &lt;a href=&quot;#notation&quot;&gt;notation&lt;/a&gt; for different variations is cleared up below.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
-&lt;p&gt;The natural numbers are defined by defining the empty set as zero, then defining the next number, or &lt;strong&gt;successor&lt;/strong&gt;, as the set of all previous numbers:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align}
-0&amp;\equiv\emptyset\\
-1&amp;\equiv\{0\}=\{\emptyset\}\\
-2&amp;\equiv\{0,1\}=\{\emptyset,\{\emptyset\}\}\\
-3&amp;\equiv\{0,1,2\}=\{\emptyset,\{\emptyset\},\{\emptyset,\{\emptyset\}\}\}\\
-&amp;\ \ \vdots\\
-n&amp;\equiv\{0,1,2,3,\cdots,n-1\}\\
-\end{align} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;Defining the naturals in this way is consistent with the construction of the &lt;a href=&quot;http://mathworld.wolfram.com/OrdinalNumber.html&quot;&gt;von Neumann ordinals&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h4 id=&quot;successor-function&quot;&gt;Successor Function&lt;/h4&gt;
-&lt;p&gt;This definition of the naturals can be more succinctly written via the successor function $S(n)$ which returns the number that comes after $n$:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;S(n)=n\cup\{n\}&lt;/script&gt;
-
-&lt;p&gt;So, if $0$ is $\emptyset$ then:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align}
-S(0)&amp;=0\cup\{0\}\\
-&amp;=\emptyset\cup\{\emptyset\}\\
-&amp;=\{\emptyset\}
-\end{align} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;And remeber, we define $1$ to be the successor, or number that comes after, $0$. As such $1\equiv S(0)={\emptyset}$. The same is true for all natural numbers: $n+1\equiv S(n)$.&lt;/p&gt;
-
-&lt;h4 id=&quot;existence-in-zfc&quot;&gt;Existence in ZFC&lt;/h4&gt;
-&lt;p&gt;While it is possible to construct the successor of every natural number, using the axiom of pairing (to prove the existence of the singleton set) and the axiom of union, we can only prove that any &lt;em&gt;finite&lt;/em&gt; natural number exists. No matter how many successors we compute, there will always be another.&lt;/p&gt;
-
-&lt;p&gt;So how do we prove the existence of the entire infinite set of natural numbers and not just an arbitrarily large, finite subset? Well as it turns out, the only way to do this is to simply declare that such a set exists. This is the &lt;strong&gt;axiom of infinity&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\exists S\left(\emptyset\in S\land\forall x\in S\left(\left(x\cup\{x\}\right)\in S\right)\right)&lt;/script&gt;
-
-&lt;p&gt;In English, the above statement asserts that there exists a set $S$ that contains the empty set $\emptyset$ as well as contains the successor to every one of its members. Notice that since we can always take the successor of another number, this set is &lt;em&gt;necessarily&lt;/em&gt; infinite. Indeed all infinite sets from ZFC originate from this set $S$ which we more commonly denote $\mathbb{N}$.&lt;/p&gt;
-
-&lt;h2 id=&quot;notation&quot;&gt;Notation&lt;/h2&gt;
-&lt;p&gt;The set of natural numbers is denoted by the double struck capital letter $\mathbb{N}$. But there are variations on the set that do/don’t include $0$ as well as include all natural numbers up to and including $n$:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{alignat*}{2}
-&amp;\mathbb{N}&amp;&amp;=\{0,1,2,3,4,5,\cdots\}\\
-&amp;\mathbb{N}^* &amp;&amp;=\{1,2,3,4,5,\cdots\}\\
-&amp;\mathbb{N}_n&amp;&amp;=\{0,1,2,3,4,\cdots,n\}\\
-&amp;\mathbb{N}^* _ n&amp;&amp;=\{1,2,3,4,\cdots,n\}\\
-\end{alignat*} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;The last one in particular, the set of all non-zero natural numbers up to $n$, can be written as the integer interval $[1\ldotp\ldotp n]$ to avoid confusion.&lt;/p&gt;
-
-&lt;h2 id=&quot;defining-arithmetic-on-the-naturals&quot;&gt;Defining Arithmetic on the Naturals&lt;/h2&gt;
-&lt;h3 id=&quot;addition-and-subtraction&quot;&gt;Addition (and subtraction?)&lt;/h3&gt;
-&lt;p&gt;Todo&lt;/p&gt;
-
-&lt;h3 id=&quot;multiplication&quot;&gt;Multiplication&lt;/h3&gt;
-&lt;p&gt;Todo&lt;/p&gt;
-
-&lt;h3 id=&quot;division&quot;&gt;Division&lt;/h3&gt;
-&lt;p&gt;Todo&lt;/p&gt;
-
-&lt;h3 id=&quot;order&quot;&gt;Order&lt;/h3&gt;
-&lt;p&gt;Todo&lt;/p&gt;
-
-&lt;h2 id=&quot;algebraic-structure-of-the-naturals&quot;&gt;Algebraic Structure of the Naturals&lt;/h2&gt;
-&lt;p&gt;Todo&lt;/p&gt;
 </content>
  </entry>
  
