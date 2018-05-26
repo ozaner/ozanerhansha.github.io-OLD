@@ -21,7 +21,9 @@ $$\textbf{d}=0.7390851332151606...$$
 ### Fixed Point
 $\textbf{d}$ is what's called a fixed point of $\cos x$, because the cosine function maps $\textbf{d}$ to itself. As a result, repeatedly taking the cosine of $\textbf{d}$ returns the same result:
 
-$$\cos \textbf{d} = \textbf{d} \implies (\forall n\in\mathbb{N})\  \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n}\ \textbf{d}=\textbf{d}$$
+<!-- $$\cos \textbf{d} = \textbf{d} \implies (\forall n\in\mathbb{N})\  \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n}\ \textbf{d}=\textbf{d}$$ -->
+
+$$\cos \textbf{d} = \textbf{d} \implies \forall n\in\mathbb{N}\  \left(\underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n}\ \textbf{d}=\textbf{d}\right)$$
 
 $\textbf{d}$ is the $\cos$ function's only real fixed point, but there exists infinitely many solutions to $\cos z=z$ for the complex numbers. Those solutions, however, are not attractors.
 

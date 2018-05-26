@@ -17,7 +17,7 @@ Dry Friction is a force that opposes the motion of two surfaces that slide again
 #### Where does Friction come from?
 The frictional force is not fundamental and is instead a useful abstraction of the complex electromagnetic interactions between two surfaces that come into contact with each other. The forces created by these interactions can, in a variety of cases, be thought of as a singular force that is proportional to the normal force.
 
-![complexfriction](/assets/physics/friction_between_surfaces.jpg?style=centerme){:width="450px"}
+![complexfriction](/assets/physics/friction_between_surfaces.png?style=centerme){:width="450px"}
 
 #### Intuition and Newton's First Law
 The frictional force is responsible for filling the gap between our everyday intuition of motion (that it eventually stops) and Newton's first law (that an object in motion remains in motion, unless acted upon by an outside force). The 'outside force' that retards motion in the case many of everyday objects is indeed friction.
@@ -40,7 +40,7 @@ The empirical laws that govern friction were (re)discovered by French physicist 
 ### From Static to Kinetic Friction
 There are two types of friction: static friction which acts on an object at rest, and kinetic friction which acts on an object in motion. When the force of static friction reaches a maximum, kinetic friction takes over:
 
-![graph](http://3.bp.blogspot.com/-5pk-uJYub_Y/VFe1UdylnYI/AAAAAAAAFoI/8NyK6iU-GFo/s1600/graph-static-kinetic-friction.png?style=centerme){:width="500px"}
+![graph](/assets/physics/friction_graph.png?style=centerme){:width="500px"}
 
 ### Static Friction
 An object at rest on a surface will resist motion on the surface until a certain maximum force has been reached. The magnitude of that max force is given by:
@@ -91,7 +91,7 @@ $$\vec{F_{k}}=-\mu_kN\hat{\vec{v}}=\frac{-\mu_kN}{\|\vec{v}\|}\vec{v}$$
 *Note that this does not violate Coulomb’s Law of Friction because it refers only to the magnitude of kinetic friction.*
 
 #### Non-Conservative Force and Thermal Energy
-Friction is non-conservative force, meaning that the work done by kinetic friction is dependent on the path taken. Friction also causes heat energy to be released into the system, meaning it does not conserve mechanical energy.
+Friction is a non-conservative force, meaning that the work done by kinetic friction is dependent on the path taken. Friction also causes heat energy to be released into the system, meaning it does not conserve mechanical energy.
 
 To calculate the thermal energy created by kinetic friction, a line integral through the path taken must be used:
 

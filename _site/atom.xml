@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-05-25T18:55:29-04:00</updated>
+ <updated>2018-05-26T14:19:30-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -53,11 +53,11 @@ n&amp;\equiv\{0,1,2,3,\cdots,n-1\}\\
 \begin{align}
 1&amp;=S(0)\\
 &amp;=0\cup\{0\}\\
-&amp;=\emptyset\cup\{\emptyset\}\\
+&amp;=\{0\}\\
 &amp;=\{\emptyset\}
 \end{align} %]]&gt;&lt;/script&gt;
 
-&lt;p&gt;$2\equiv S(1)$, $3\equiv S(2)$ and in general, we can say $n+1\equiv S(n)$ for all natural numbers.&lt;/p&gt;
+&lt;p&gt;We can keep going with $2\equiv S(1)$, $3\equiv S(2)$ and in general, we can say $n+1\equiv S(n)$ for all natural numbers.&lt;/p&gt;
 
 &lt;h4 id=&quot;existence-in-zfc&quot;&gt;Existence in ZFC&lt;/h4&gt;
 &lt;p&gt;While it is possible to construct the successor of every natural number, using the axiom of pairing (to prove the existence of the singleton set) and the axiom of union, we can only prove that any &lt;em&gt;finite&lt;/em&gt; natural number exists. No matter how many successors we compute, there will always be another.&lt;/p&gt;
@@ -896,7 +896,7 @@ Why are is there a conditional definition of the $a$th element of an $n$-tuple? 
    <updated>2018-04-18T00:00:00-04:00</updated>
    <id>http://localhost:4000/superfactorial-and-hyperfactorial</id>
    <content type="html">&lt;h2 id=&quot;factorial&quot;&gt;Factorial&lt;/h2&gt;
-&lt;p&gt;The factorial function $n!$ is the product of the first $n$ positive integers. We can define it as:&lt;/p&gt;
+&lt;p&gt;The factorial function $n!$ is the product of the first $n$ &lt;a href=&quot;/natural-numbers&quot;&gt;natural numbers&lt;/a&gt;:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;n!=\prod_{k=1}^{n}k=1\times2\times3\times\cdots\times n&lt;/script&gt;
 
@@ -915,7 +915,7 @@ Why are is there a conditional definition of the $a$th element of an $n$-tuple? 
 &lt;!--more--&gt;
 
 &lt;h2 id=&quot;superfactorial&quot;&gt;Superfactorial&lt;/h2&gt;
-&lt;p&gt;We denote the superfactorial of $n$ as $n{$}$. It is defined as the product of the first $n$ factorials. We can define it as:&lt;/p&gt;
+&lt;p&gt;We denote the superfactorial of $n$ as $n{$}$. It is defined as the product of the first $n$ factorials:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;n$=\prod_{k=1}^{n}k!=1!\times2!\times3!\times\cdots\times n!&lt;/script&gt;
 
@@ -1021,7 +1021,9 @@ $$\begin{align}
 &lt;h3 id=&quot;fixed-point&quot;&gt;Fixed Point&lt;/h3&gt;
 &lt;p&gt;$\textbf{d}$ is what’s called a fixed point of $\cos x$, because the cosine function maps $\textbf{d}$ to itself. As a result, repeatedly taking the cosine of $\textbf{d}$ returns the same result:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\cos \textbf{d} = \textbf{d} \implies (\forall n\in\mathbb{N})\  \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n}\ \textbf{d}=\textbf{d}&lt;/script&gt;
+&lt;!-- $$\cos \textbf{d} = \textbf{d} \implies (\forall n\in\mathbb{N})\  \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n}\ \textbf{d}=\textbf{d}$$ --&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\cos \textbf{d} = \textbf{d} \implies \forall n\in\mathbb{N}\  \left(\underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n}\ \textbf{d}=\textbf{d}\right)&lt;/script&gt;
 
 &lt;p&gt;$\textbf{d}$ is the $\cos$ function’s only real fixed point, but there exists infinitely many solutions to $\cos z=z$ for the complex numbers. Those solutions, however, are not attractors.&lt;/p&gt;
 
@@ -1399,7 +1401,7 @@ $$\begin{align}
   &lt;/li&gt;
   &lt;li&gt;But what is &lt;em&gt;“the mind”&lt;/em&gt;?
     &lt;ul&gt;
-      &lt;li&gt;The mind arises from the brain processing the information blasted into it via our senses.&lt;/li&gt;
+      &lt;li&gt;Well, the mind arises from the brain processing the information blasted into it via our senses.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;What is the brain made up of, and what comprises its state?
@@ -1409,7 +1411,7 @@ $$\begin{align}
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;And further neurons are comprised of different organelle and so on until we reach atoms and ultimately the fundamental particles of the universe.&lt;/p&gt;
+&lt;p&gt;And further, neurons are comprised of different organelle and so on until we reach atoms and ultimately the fundamental particles of the universe.&lt;/p&gt;
 
 &lt;p&gt;This relation between the most fundamental (and very well defined) concepts in our universe, like elementary particles, to the most hazy and abstract ones, like emotions, is what will allow us the bridge the between poorly defined and well defined in a somewhat, admittedly, crude way.&lt;/p&gt;
 
@@ -1460,6 +1462,8 @@ $$\begin{align}
 
 &lt;p&gt;In the example above $B_1, B_2, B_3$ and so on are all different possible human brains that are thinking about cats.&lt;/p&gt;
 
+&lt;p&gt;&lt;em&gt;Labeling the graphs with subscript $1,2,3,\cdots$ is misleading because such a set is most likely not countable.&lt;/em&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;how-does-this-definition-even-help&quot;&gt;How does this Definition even Help?&lt;/h2&gt;
 &lt;p&gt;Remember when I said formally defining concepts allows us to make formal statements about them? Well that was only partially true. While this ‘set of all particle configuration’ definition is more formal than your standard notion of jealousy, it’s not exactly helpful in trying to understand the nature of emotion of people’s interactions with each other.&lt;/p&gt;
 
@@ -1509,7 +1513,7 @@ $\renewcommand{\vec}[1]{\mathbf{#1}}$&lt;/p&gt;
 
 &lt;p&gt;Combining these two equations, we can write the drag force as:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\vec{F_D}=\frac{-\rho C_D A v^2}{2}\hat{\vec{v}}=\frac{-\rho C_D A\|\vec{v}\|}{2}\vec{v}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\vec{F_D}=\frac{-\rho C_D A v^2}{2}\hat{\vec{v}}=\frac{-\rho C_D Av}{2}\vec{v}&lt;/script&gt;
 
 &lt;h4 id=&quot;power-to-overcome-drag&quot;&gt;Power to Overcome Drag&lt;/h4&gt;
 &lt;p&gt;We can find the power required to overcome the drag force by the dot product of drag and the velocity of the object. And since the drag force is always oriented the same way as velocity, we can say:&lt;/p&gt;
@@ -1559,7 +1563,7 @@ v^2=\frac{2mg}{\rho C_DAv^2}
 &lt;h4 id=&quot;where-does-friction-come-from&quot;&gt;Where does Friction come from?&lt;/h4&gt;
 &lt;p&gt;The frictional force is not fundamental and is instead a useful abstraction of the complex electromagnetic interactions between two surfaces that come into contact with each other. The forces created by these interactions can, in a variety of cases, be thought of as a singular force that is proportional to the normal force.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/physics/friction_between_surfaces.jpg?style=centerme&quot; alt=&quot;complexfriction&quot; width=&quot;450px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/physics/friction_between_surfaces.png?style=centerme&quot; alt=&quot;complexfriction&quot; width=&quot;450px&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;intuition-and-newtons-first-law&quot;&gt;Intuition and Newton’s First Law&lt;/h4&gt;
 &lt;p&gt;The frictional force is responsible for filling the gap between our everyday intuition of motion (that it eventually stops) and Newton’s first law (that an object in motion remains in motion, unless acted upon by an outside force). The ‘outside force’ that retards motion in the case many of everyday objects is indeed friction.
@@ -1593,7 +1597,7 @@ $\renewcommand{\vec}[1]{\mathbf{#1}}$
 &lt;h3 id=&quot;from-static-to-kinetic-friction&quot;&gt;From Static to Kinetic Friction&lt;/h3&gt;
 &lt;p&gt;There are two types of friction: static friction which acts on an object at rest, and kinetic friction which acts on an object in motion. When the force of static friction reaches a maximum, kinetic friction takes over:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://3.bp.blogspot.com/-5pk-uJYub_Y/VFe1UdylnYI/AAAAAAAAFoI/8NyK6iU-GFo/s1600/graph-static-kinetic-friction.png?style=centerme&quot; alt=&quot;graph&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/physics/friction_graph.png?style=centerme&quot; alt=&quot;graph&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;static-friction&quot;&gt;Static Friction&lt;/h3&gt;
 &lt;p&gt;An object at rest on a surface will resist motion on the surface until a certain maximum force has been reached. The magnitude of that max force is given by:&lt;/p&gt;
@@ -1654,7 +1658,7 @@ $\renewcommand{\vec}[1]{\mathbf{#1}}$
 &lt;p&gt;&lt;em&gt;Note that this does not violate Coulomb’s Law of Friction because it refers only to the magnitude of kinetic friction.&lt;/em&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;non-conservative-force-and-thermal-energy&quot;&gt;Non-Conservative Force and Thermal Energy&lt;/h4&gt;
-&lt;p&gt;Friction is non-conservative force, meaning that the work done by kinetic friction is dependent on the path taken. Friction also causes heat energy to be released into the system, meaning it does not conserve mechanical energy.&lt;/p&gt;
+&lt;p&gt;Friction is a non-conservative force, meaning that the work done by kinetic friction is dependent on the path taken. Friction also causes heat energy to be released into the system, meaning it does not conserve mechanical energy.&lt;/p&gt;
 
 &lt;p&gt;To calculate the thermal energy created by kinetic friction, a line integral through the path taken must be used:&lt;/p&gt;
 
@@ -1987,6 +1991,9 @@ $$\begin{align}
 &amp;v^2 = v_0^2+2\vec{a}\cdot\Delta\vec{x} \tag{t independent}
 \end{gather} %]]&gt;&lt;/script&gt;
 
+&lt;!-- #### Note on Applicability of Kinematic Equations
+It is important to note that the kinematic equations apply to all systems of 3 variables $x, \frac{dx}{dt}$, and $\frac{d^2x}{dt^2}$ as long as $$\frac{d^2x}{dt^2}$$ is constant. For example, $x$ could represent the  --&gt;
+
 &lt;h3 id=&quot;graphing&quot;&gt;Graphing&lt;/h3&gt;
 &lt;p&gt;When the position, velocity and acceleration functions are graphed with respect to time, their graphs are related by the kinematic equations.&lt;/p&gt;
 
@@ -2040,7 +2047,7 @@ $$\begin{align}
    <link href="http://localhost:4000/position/"/>
    <updated>2018-03-15T00:00:00-04:00</updated>
    <id>http://localhost:4000/position</id>
-   <content type="html">&lt;p&gt;The position of a particle or object in &lt;strong&gt;space&lt;/strong&gt; is defined as a point on an n-dimensional &lt;strong&gt;Cartesian coordinate system&lt;/strong&gt;. This point can equivalently be thought of as a vector.&lt;/p&gt;
+   <content type="html">&lt;p&gt;The position of a particle or object in &lt;strong&gt;space&lt;/strong&gt; is defined as a point on an n-dimensional &lt;a href=&quot;/cartesian-product/#coordinates&quot;&gt;&lt;strong&gt;Cartesian coordinate system&lt;/strong&gt;&lt;/a&gt;. This point can equivalently be thought of as a vector.&lt;/p&gt;
 
 &lt;h3 id=&quot;classical-physics&quot;&gt;Classical Physics&lt;/h3&gt;
 &lt;p&gt;In classical physics, a position or displacement $\vec{x}$ is a 3-dimensional vector with components $\left(x,y,z\right)$.&lt;/p&gt;
@@ -2058,18 +2065,20 @@ $$\begin{align}
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\vec{x}:\mathbb{R}\rightarrow \mathbb{R}^3&lt;/script&gt;
 
-&lt;p&gt;Taking the derivative of an object’s displacement function with respect to $t$ provides the object’s &lt;a href=&quot;&quot;&gt;velocity&lt;/a&gt; function, $\vec{v}(t)$:&lt;/p&gt;
+&lt;p&gt;Taking the derivative of an object’s displacement function with respect to $t$ provides the object’s velocity function, $\vec{v}(t)$:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\mathrm{d}}{\mathrm{d}t}\vec{x}(t)=\vec{v}(t)&lt;/script&gt;
 
 &lt;!-- Click [here]() for a list of the repeated time derivatives of displacement. --&gt;
 
 &lt;h3 id=&quot;relativity&quot;&gt;Relativity&lt;/h3&gt;
-&lt;p&gt;In relativity, position is only invariant in a particular non-inertial reference frame. This necessitates a notion of position that is invariant with respect to space-time. This 4-dimensional position (3 spatial dimensions and 1 time) is called 4-position or, more commonly, as an &lt;strong&gt;event&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;In relativity, both time and space are combined into a single space-time continuum. As such, we need a more general notion of ‘&lt;em&gt;position&lt;/em&gt;’ that includes time. This 4-dimensional position (3 spatial dimensions and 1 time) is called 4-position or, more commonly, an &lt;strong&gt;event&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;An event is defined as a 4-dimensional vector with components $\left(t,x,y,z\right)$. Relativity shows that events that occur at the same time in one reference frame, don’t necessarily happen at the same time in another. This is known as &lt;strong&gt;relativity of simultaneity&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;In special relativity the distance between two positions is not invariant in different reference frames. This brings us to the &lt;strong&gt;spacetime interval&lt;/strong&gt;. The spacetime interval, $(\Delta s)^2$ between two events stays constant in all reference frames:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This is only true for space-like separated events where $|c\Delta t| \lt |\Delta x|$&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;In special relativity the distance between two positions is not invariant in different reference frames. This brings us to the &lt;strong&gt;spacetime interval&lt;/strong&gt;. The spacetime interval, $(\Delta s)^2$ between two events stays constant in all reference frames. In special relativity $(\Delta s)^2$ is:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;(\Delta s)^2=(c\Delta t)^2-(\Delta x)^2-(\Delta y)^2-(\Delta z)^2&lt;/script&gt;
 
@@ -2533,7 +2542,7 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
   &lt;li&gt;The $\text{softmax}$ function is the network’s &lt;a href=&quot;https://en.wikipedia.org/wiki/Activation_function&quot;&gt;activation function&lt;/a&gt;, which introduces a nonlinearity to the network. This is integral for any neural network to learn from the data it’s provided. The function also equalizes the network’s confidence predictions so that they add up to 100%. The mathematical description of softmax is:&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Mplwp_logistic_function.svg/1280px-Mplwp_logistic_function.svg.png&quot; alt=&quot;softmax graph&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/projects/breast-cancer/softmax.png&quot; alt=&quot;softmax graph&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Here’s what the model looks like in python with &lt;a href=&quot;https://www.tensorflow.org/&quot;&gt;TensorFlow&lt;/a&gt;:&lt;/p&gt;
 
@@ -2583,7 +2592,7 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
 
 &lt;p&gt;This algorithm approaches the local minimum rapidly at first but then slows down once it has gotten close. Here’s a visualization:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/projects/breast-cancer/gradient_descent_3D.gif?style=centerme&quot; alt=&quot;SGD&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/projects/breast-cancer/gradient_descent_3D_alpha.gif?style=centerme&quot; alt=&quot;SGD&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;And here it is in tensorflow:&lt;/p&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#Performs Gradient Descent on loss function&lt;/span&gt;

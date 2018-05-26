@@ -4,7 +4,7 @@ title: Position
 date: 2018-03-15
 tags: physics classical-mechanics
 ---
-The position of a particle or object in **space** is defined as a point on an n-dimensional **Cartesian coordinate system**. This point can equivalently be thought of as a vector.
+The position of a particle or object in **space** is defined as a point on an n-dimensional [**Cartesian coordinate system**](/cartesian-product/#coordinates). This point can equivalently be thought of as a vector.
 
 ### Classical Physics
 In classical physics, a position or displacement $\vec{x}$ is a 3-dimensional vector with components $\left(x,y,z\right)$.
@@ -22,18 +22,20 @@ An object's position can be described as a function of time, $\vec{x}(t)$. This 
 
 $$\vec{x}:\mathbb{R}\rightarrow \mathbb{R}^3$$
 
-Taking the derivative of an object's displacement function with respect to $t$ provides the object's [velocity]() function, $\vec{v}(t)$:
+Taking the derivative of an object's displacement function with respect to $t$ provides the object's velocity function, $\vec{v}(t)$:
 
 $$\frac{\mathrm{d}}{\mathrm{d}t}\vec{x}(t)=\vec{v}(t)$$
 
 <!-- Click [here]() for a list of the repeated time derivatives of displacement. -->
 
 ### Relativity
-In relativity, position is only invariant in a particular non-inertial reference frame. This necessitates a notion of position that is invariant with respect to space-time. This 4-dimensional position (3 spatial dimensions and 1 time) is called 4-position or, more commonly, as an **event**.
+In relativity, both time and space are combined into a single space-time continuum. As such, we need a more general notion of '*position*' that includes time. This 4-dimensional position (3 spatial dimensions and 1 time) is called 4-position or, more commonly, an **event**.
 
 An event is defined as a 4-dimensional vector with components $\left(t,x,y,z\right)$. Relativity shows that events that occur at the same time in one reference frame, don't necessarily happen at the same time in another. This is known as **relativity of simultaneity**.
 
-In special relativity the distance between two positions is not invariant in different reference frames. This brings us to the **spacetime interval**. The spacetime interval, $(\Delta s)^2$ between two events stays constant in all reference frames:
+*This is only true for space-like separated events where $\|c\Delta t\| \lt \|\Delta x\|$*.
+
+In special relativity the distance between two positions is not invariant in different reference frames. This brings us to the **spacetime interval**. The spacetime interval, $(\Delta s)^2$ between two events stays constant in all reference frames. In special relativity $(\Delta s)^2$ is:
 
 $$(\Delta s)^2=(c\Delta t)^2-(\Delta x)^2-(\Delta y)^2-(\Delta z)^2$$
 

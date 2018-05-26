@@ -5,7 +5,7 @@ date: 2018-04-18
 tags: math
 ---
 ## Factorial
-The factorial function $n!$ is the product of the first $n$ positive integers. We can define it as:
+The factorial function $n!$ is the product of the first $n$ [natural numbers](/natural-numbers):
 
 $$n!=\prod_{k=1}^{n}k=1\times2\times3\times\cdots\times n$$
 
@@ -24,7 +24,7 @@ While there is much to discuss about the factorial function, this post concerns 
 <!--more-->
 
 ## Superfactorial
-We denote the superfactorial of $n$ as $n{$}$. It is defined as the product of the first $n$ factorials. We can define it as:
+We denote the superfactorial of $n$ as $n{$}$. It is defined as the product of the first $n$ factorials:
 
 $$n$=\prod_{k=1}^{n}k!=1!\times2!\times3!\times\cdots\times n!$$
 

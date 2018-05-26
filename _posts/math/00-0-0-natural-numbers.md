@@ -38,11 +38,11 @@ For example, we define the number $1$ to be the successor, or number that comes 
 $$\begin{align}
 1&=S(0)\\
 &=0\cup\{0\}\\
-&=\emptyset\cup\{\emptyset\}\\
+&=\{0\}\\
 &=\{\emptyset\}
 \end{align}$$
 
-$2\equiv S(1)$, $3\equiv S(2)$ and in general, we can say $n+1\equiv S(n)$ for all natural numbers.
+We can keep going with $2\equiv S(1)$, $3\equiv S(2)$ and in general, we can say $n+1\equiv S(n)$ for all natural numbers.
 
 #### Existence in ZFC
 While it is possible to construct the successor of every natural number, using the axiom of pairing (to prove the existence of the singleton set) and the axiom of union, we can only prove that any *finite* natural number exists. No matter how many successors we compute, there will always be another.

@@ -337,7 +337,7 @@
   <li>The $\text{softmax}$ function is the network’s <a href="https://en.wikipedia.org/wiki/Activation_function">activation function</a>, which introduces a nonlinearity to the network. This is integral for any neural network to learn from the data it’s provided. The function also equalizes the network’s confidence predictions so that they add up to 100%. The mathematical description of softmax is:</li>
 </ul>
 
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Mplwp_logistic_function.svg/1280px-Mplwp_logistic_function.svg.png" alt="softmax graph" /></p>
+<p><img src="/assets/projects/breast-cancer/softmax.png" alt="softmax graph" /></p>
 
 <p>Here’s what the model looks like in python with <a href="https://www.tensorflow.org/">TensorFlow</a>:</p>
 
@@ -387,7 +387,7 @@
 
 <p>This algorithm approaches the local minimum rapidly at first but then slows down once it has gotten close. Here’s a visualization:</p>
 
-<p><img src="/assets/projects/breast-cancer/gradient_descent_3D.gif?style=centerme" alt="SGD" /></p>
+<p><img src="/assets/projects/breast-cancer/gradient_descent_3D_alpha.gif?style=centerme" alt="SGD" /></p>
 
 <p>And here it is in tensorflow:</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Performs Gradient Descent on loss function</span>

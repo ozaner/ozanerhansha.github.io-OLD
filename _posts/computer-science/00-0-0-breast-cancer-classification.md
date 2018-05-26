@@ -108,7 +108,7 @@ $$\hat{y}=\text{softmax}(Wx+b)$$
 * $b$ is a vector of 'bias' values (a $2$D vector that allows the network more freedom when training, similar to the y-intercept in a linear equation).
 * The $\text{softmax}$ function is the network's [activation function](https://en.wikipedia.org/wiki/Activation_function), which introduces a nonlinearity to the network. This is integral for any neural network to learn from the data it's provided. The function also equalizes the network's confidence predictions so that they add up to 100%. The mathematical description of softmax is:
 
-![softmax graph](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Mplwp_logistic_function.svg/1280px-Mplwp_logistic_function.svg.png)
+![softmax graph](/assets/projects/breast-cancer/softmax.png)
 
 Here's what the model looks like in python with [TensorFlow](https://www.tensorflow.org/):
 
@@ -162,7 +162,7 @@ Finally we create the training step. This is where we choose what optimization m
 
 This algorithm approaches the local minimum rapidly at first but then slows down once it has gotten close. Here's a visualization:
 
-![SGD](/assets/projects/breast-cancer/gradient_descent_3D.gif?style=centerme)
+![SGD](/assets/projects/breast-cancer/gradient_descent_3D_alpha.gif?style=centerme)
 
 And here it is in tensorflow:
 ~~~ python

@@ -32,7 +32,7 @@ $$\hat{\vec{F_D}}=-\hat{\vec{v}}$$
 
 Combining these two equations, we can write the drag force as:
 
-$$\vec{F_D}=\frac{-\rho C_D A v^2}{2}\hat{\vec{v}}=\frac{-\rho C_D A\|\vec{v}\|}{2}\vec{v}$$
+$$\vec{F_D}=\frac{-\rho C_D A v^2}{2}\hat{\vec{v}}=\frac{-\rho C_D Av}{2}\vec{v}$$
 
 #### Power to Overcome Drag
 We can find the power required to overcome the drag force by the dot product of drag and the velocity of the object. And since the drag force is always oriented the same way as velocity, we can say:

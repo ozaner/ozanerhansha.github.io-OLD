@@ -67,11 +67,11 @@ Now consider the concept of love. It seems impossible to define it objectively r
 - Sure, but what's an emotion?
   - A state of mind.
 - But what is *"the mind"*?
-  - The mind arises from the brain processing the information blasted into it via our senses.
+  - Well, the mind arises from the brain processing the information blasted into it via our senses.
 - What is the brain made up of, and what comprises its state?
   - The brain is comprised of trillions of specialized cells called neurons. These neurons connect to form large *neural networks* and communicate via electrical activity and chemicals known as neurotransmitters.
 
-And further neurons are comprised of different organelle and so on until we reach atoms and ultimately the fundamental particles of the universe.
+And further, neurons are comprised of different organelle and so on until we reach atoms and ultimately the fundamental particles of the universe.
 
 This relation between the most fundamental (and very well defined) concepts in our universe, like elementary particles, to the most hazy and abstract ones, like emotions, is what will allow us the bridge the between poorly defined and well defined in a somewhat, admittedly, crude way.
 
@@ -114,6 +114,8 @@ $$\begin{align*}
 \end{align*}$$
 
 In the example above $B_1, B_2, B_3$ and so on are all different possible human brains that are thinking about cats.
+
+*Labeling the graphs with subscript $1,2,3,\cdots$ is misleading because such a set is most likely not countable.*
 
 ## How does this Definition even Help?
 Remember when I said formally defining concepts allows us to make formal statements about them? Well that was only partially true. While this 'set of all particle configuration' definition is more formal than your standard notion of jealousy, it's not exactly helpful in trying to understand the nature of emotion of people's interactions with each other.
