@@ -15,15 +15,33 @@ Where $a_{i\in\mathbb{N}_n}(x)$, $b(x)$, and $y$ are differentiable functions of
 
 <!--more-->
 
+#### Explicit or Implicit (All ODEs)
+
 #### Homogeneity
-When $b(x)$ (which is called the **constant term** despite it not necessarily being a constant) equals $0$, the linear differential equation is considered **homogeneous**.
+When $b(x)$ (which is called the **constant term** despite it not necessarily being a constant) equals $0$, the linear differential equation is dubbed **homogeneous**.
+
+This distinction is important because the methods used to solve homogeneous LDE's are simpler than non-homogeneous ones.
+
+#### Particular vs. General Solutions (All ODEs)
+n initial conditions, general, particular
+
+#### Superposition of Solutions
+A useful property to know about LDEs is that for any number of its solutions, a linear combination (i.e a superposition) of them is also a solution:
+
+$$y(x)=C_1y_1(x)+C_2y_2(x)+\cdots+C_ny_n(x)$$
+
+Where $y_{i\in\mathbb{N}_n}(x)$ are solutions to an LDE and $C_{i\in\mathbb{N}_n}$ are real (or even complex) valued constants.
 
 <!-- ## Linear Differential Operator -->
 
 <!-- ## Vector Space -->
 
 ## First Order Solution
-First order LDE's are usually written in **explicit form**, meaning the $\dfrac{\mathrm{d}y}{\mathrm{d}x}$ term is isolated from all other variables & constants:
+
+MODIFY BELOW
+
+#### Explicit Form
+The following derivations will assume the first order LDE's are written in **explicit form**, meaning the $\dfrac{\mathrm{d}y}{\mathrm{d}x}$ term is isolated from all other variables & constants:
 
 $$a_0(x)y+a_1(x)\dfrac{\mathrm{d}y}{\mathrm{d}x}=b(x)$$
 
@@ -38,38 +56,55 @@ A first order homogeneous LDE is one in which the constant term $g(x)$ is equal 
 
 $$\dfrac{\mathrm{d}y}{\mathrm{d}x}=f(x)y$$
 
-Dividing both sides by $y$, we find:
+If we divide both sides by $y$:
 
 $$\frac{\mathrm{d}y\big/\mathrm{d}x}{y}=f(x)$$
 
-Notice that the left hand side is the derivative of $\ln y$. So, if we integrate both sides we find:
+We notice that the left hand side is the derivative of $\ln y$. So if we integrate both sides, we get:
 
 $$\begin{align}
-\int\left(\frac{\mathrm{d}y\big/\mathrm{d}x}{y}\right)\mathrm{d}t=\int f(x)\ \mathrm{d}t\\
-\ln y+C=\int_0^x f(x)\ \mathrm{d}t
+\int\left(\frac{\mathrm{d}y\big/\mathrm{d}x}{y}\right)\mathrm{d}x=\int f(x)\ \mathrm{d}x\\
+\ln y+C=\int_0^x f(x)\ \mathrm{d}x
 \end{align}$$
 
-Notice that we only need one constant of integration for both integrals. As such, we can denote the lack of the constant in the right hand side's integral by making it an definite integral from $0$ to $x$. Now exponentiating $e$ to both sides gives us our final answer:
+Now exponentiating $e$ to both sides gives us our final answer:
 
 $$\begin{align}
-e^{\ln y+C}=e^{\int_0^x f(x)\ \mathrm{d}t}\\
-e^{\ln y}e^C=e^{\int_0^x f(x)\ \mathrm{d}t}\\
-ye^C=e^{\int_0^x f(x)\ \mathrm{d}t}\\
-y=\frac{1}{e^C}e^{\int_0^x f(x)\ \mathrm{d}t}\\
+e^{\ln y+C}=e^{\int f(x)\ \mathrm{d}x}\\
+e^{\ln y}e^C=e^{\int f(x)\ \mathrm{d}x}\\
+ye^C=e^{\int f(x)\ \mathrm{d}x}\\
+y=\frac{e^{\int f(x)\ \mathrm{d}x}}{e^C}\\
 \end{align}$$
 
 Noticing that $\frac{1}{e^C}$ is just an arbitrary constant, we can simply relabel it $C$ giving us our final answer:
 
-$$\boxed{y=Ce^{\int_0^x f(x)\ \mathrm{d}t}}$$
+$$\boxed{y=Ce^{\int f(x)\ \mathrm{d}x}}$$
 
-The above equation is the solution to any given first order homogeneous LDE. To solve for the constant $C$ one would need to be given an **initial condition** (i.e some pair $(x,y)$ on the function).
+MODIFY BELOW
 
-### General Case
+The above equation is the **general solution** to any given first order homogeneous LDE. To arrive at a **particular solution**, that is solve for the constant $C$, one would need to be given an **initial condition** (i.e some pair $(x,y)$ on the function).
+
+### Non-Homogeneous Case
+While the above solution assumes the LDE is homogeneous, we can derive a general solution for non-homogeneous first order LDEs. These equations are of the form:
+
+$$\dfrac{\mathrm{d}y}{\mathrm{d}x}=f(x)y+g(x)$$
 
 ## Second Order Solution
 
-## Examples
+### Homogeneous w/ Constant Coefficients
 
+<details><summary><strong>Proof</strong></summary>
+</details>
+
+#### Real Roots
+#### Complex Roots
+#### Multiplicity of Roots
+
+### Non-Homogeneous Case
+
+## Higher Order LDEs
+
+## Examples
 <details><summary><h3 class="inline">Current through RL Circuit (Charging)</h3></summary>
 A real world example of a first order LDE with constant coefficients can be found in considering the current of an RL circuit, which is given by Kirchhoff's loop law:
 
@@ -96,7 +131,7 @@ Ie^{Rt/L}&=\frac{L}{R}\cdot\frac{\mathcal{E}}{L}e^{Rt/L}+C\\
 &=\frac{\mathcal{E}}{R}e^{Rt/L}+C
 \end{align}$$
 
-Solving for $I$ we find:
+Now we can just solve for $I$:
 
 $$I=\frac{\frac{\mathcal{E}}{R}e^{Rt/L}+C}{e^{Rt/L}}$$
 
@@ -147,7 +182,7 @@ $$\int\left(\frac{\mathrm{d}I\big/\mathrm{d}t}{I}\right)dt=-\int\left(\frac{R}{L
 
 $$\ln |I|=-\frac{R}{L}t+C$$
 
-Exponentiating both sides with $e$ we find:
+Exponentiating both sides with $e$ we get:
 
 $$I=e^{-Rt/L+C}$$
 

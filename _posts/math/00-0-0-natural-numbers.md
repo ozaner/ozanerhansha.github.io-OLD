@@ -51,7 +51,7 @@ So how do we prove the existence of the entire infinite set of natural numbers a
 
 $$\exists S\left(\emptyset\in S\land\forall x\in S\left(\left(x\cup\{x\}\right)\in S\right)\right)$$
 
-In English, the above statement asserts that there exists a set $S$ that contains the empty set $\emptyset$ as well as contains the successor (i.e $x\cup\{x\}$) to every one of its members. Notice that since we can always take the successor of another number, this set is *necessarily* infinite. Indeed all infinite sets in ZFC originate from this set $S$ which, while we don't know its exact composition, is by definition at least a superset of (if not equal to) the natural numbers: $\mathbb{N}\subseteq S$. Via the axiom of subset, we can thus guarantee the existence of the natural numbers.
+In English, the above statement asserts that there exists a set $S$ that contains the empty set $\emptyset$ as well as contains the successor (i.e $x\cup\\{x\\}$) to every one of its members. Notice that since we can always take the successor of another number, this set is *necessarily* infinite. Indeed all infinite sets in ZFC originate from this set $S$ which, while we don't know its exact composition, is by definition at least a superset of (if not equal to) the natural numbers: $\mathbb{N}\subseteq S$. Via the axiom of subset, we can thus guarantee the existence of the natural numbers.
 
 ## Notation
 The set of natural numbers is denoted by the double struck capital letter $\mathbb{N}$. But there are variations on the set that do/don't include $0$ as well as ones that include all natural numbers up to and including $n$:
