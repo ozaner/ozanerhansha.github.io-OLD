@@ -5,19 +5,18 @@ date: 2018-05-20
 tags: computer-science
 ---
 ## 3D Game Development
-**Inheritance System**: All objects are types and these types exist on an inheritance tree. (a particular object could be an instance of zombie which is a child of hostile AI, which is a child of AI, etc.)
+**Inheritance System**: All objects are types and these types exist on an inheritance tree. (ex. a particular object could be an instance of `zombie` which is a child of `hostileAI`, which is a child of `AI`, etc.)
 
-**Component System**: All objects have individual components that add functionality. (i.e movement component, hostile Ai component, health component, etc.)
+**Component System**: All objects have individual components that add functionality. (ex. `movement` component, `hostileAI` component, `health` component, etc.)
 
 *Unity uses a component system, but technically you can consider the component system as a generalization of the inheritance system. As such you could force yourself to use inheritance in Unity.*
 
 <!--more-->
 
 **The Three Transforms**: The camera used in the scene view as well as objects can all be transformed in 3 basic ways:
-  * **Translation**: Translating an object means moving it across in 3D space.
-  * **Rotation**: Rotating an object means rotating about an axis. If an object is at (0,0,0) then the object would rotate in place.
-  * **Scaling**: Scaling an object means increasing or decreasing its size. You can either do this equally on all 3 axes (growing or shrinking the object) or scale each axis separately (stretching and squishing the object).
-  * **Rect Tool**: In 2D, transformations are simple enough that the above three can be combined into a single tool. Thus when making 2D unity games, the *Rect Tool* is all you'll need.
+  * **Translation**: Translating an object means moving it across in 3D space. This corresponds to dragging the camera with the mouse.
+  * **Rotation**: Rotating an object means rotating about an axis. If an object is at (0,0,0) then the object would rotate in place. This corresponds to **orbiting** a point with the camera with the middle mouse button.
+  * **Scaling**: Scaling an object means increasing or decreasing its size. You can either do this equally on all 3 axes (growing or shrinking the object) or scale each axis separately (stretching and squishing the object). This corresponds to **zooming** the camera with the scroll wheel.
 
 Note That these transformations can all be done with respect to the global coordinate system or the objects own local coordinate system.
 
@@ -28,14 +27,14 @@ Note That these transformations can all be done with respect to the global coord
   * **Directional Light**: A directional light source emanates light uniformly everywhere in a scene. As such its position doesn't matter only the direction it is facing. This is analogous to the sun. (the sun is just a point light very far away, giving it the effect of a directional light). Typically, there is only one directional light per scene.
   * **Spot Light**: These lights are similar to point lights except they only emanate in a limited cone before their light is cut short. They're usually used to highlight an area of the scene rather than provide light to see your surroundings.
 
-**Free Look**: Free look is the player's ability to move their mouse, joypad, control stick, etc. around and freely view the 3D world their character inhabits. For computer games this is referred to as *mouse-look*. (The N64 for example, didn't even have a full analog stick dedicated to the camera. It instead use a set of  directional buttons known as the c-buttons or camera buttons)
+**Free Look**: Free look is the player's ability to move their mouse, joypad, control stick, etc. around and freely view the 3D world their character inhabits. For computer games this is referred to as **mouse-look**. (The N64 for example, didn't even have a full analog stick dedicated to the camera. It instead use a set of  directional buttons known as the c-buttons or camera buttons)
 
-**Euler Angles vs. Quaternions**: When representing rotations in 3D space we can either use a set of 3 angles (1 for the rotation about each axis) or a single 4D number known as a quaternion. The quaternions $\mathbb{H}$ are a 4D generalization of the 2D complex numbers that are very apt in describing natural 3D rotations (similar to how the complex numbers are apt in describing 2D rotations).
+**Euler Angles vs. Quaternions**: When representing rotations in 3D space we can either use a set of 3 angles (1 for the rotation about each axis) or a single **quaternion**. The quaternions $\mathbb{H}$ are a 4D generalization of the 2D complex numbers, and are very apt in describing 3D rotations (similar to how the complex numbers are apt in describing 2D rotations).
 
 **Frame Rate Dependent Code**:
-All scripts have an update method that run at every pass of the object. If that update code happens to, for example, move the player, the player's speed would be dependent on the speed of the computer running the game. To remedy this we have to take into account the *frame rate* of the game and make sure that every update is spread out over a single frame rather than done all at once.
+Code that corresponds to some object or event in a game may run at every iteration of the game loop. If that code happens to, for example, move the player, the player's speed would be dependent on the speed of the computer running the game (the faster the loops, the more times the player would be moved). To remedy this we have to take into account the *frame rate* of the game and make sure that every update is spread out over a single frame rather than done all at once.
 
-**Raycasting**: Raycasting is when a ray (an imaginary line that extends out form a point) is sent out at some angle and the location of the point it first intersects with, if it hits at all, is recorded. A first person shooter, for example, would use raycasting to tell whether a fired bullet hit an enemy or wall. In this case the ray would be perpendicular to the middle of the player's screen.
+**Raycasting**: Raycasting is when a ray (an imaginary line that extends out from a point) is sent out at some angle and the location of the point it first intersects with, if it hits at all, is recorded. A first person shooter, for example, would use raycasting to tell whether a fired bullet hit an enemy or wall. In this case the ray would be perpendicular to the middle of the player's screen (i.e where the crosshairs are).
 
 **Mouse Picking**: Mouse picking is finding the spot a mouse clicked on in 3D space. Doing this requires casting a ray from the user's point of view and seeing where it first collides.
 
@@ -55,6 +54,8 @@ All scripts have an update method that run at every pass of the object. If that 
   * **Game View & the Toolbar**: The game view (also in the middle of the screen) actually runs the game when you press play in the toolbar (at the top of the screen). It's important tot note that the game view actually updates in real time with changes in code/scene, so you can rapidly prototype.
   * **Project**: Located at the bottom of the screen, the project tab shows all the assets, scenes, and scripts for the current project. It's basically a file explorer. You can right click to create new scripts, scenes, and objects in this tab.
   * **Console**: This outputs whatever was programmed to be outputted there by the scripts that are currently running in the scene. Usually used for debugging or to output errors encountered while running the script.
+
+**Rect Tool**: In 2D, transformations are simple enough that the above three can be combined into a single tool. Thus when making 2D unity games, the *Rect Tool* is all you'll need.
 
 **Coroutines**: ???
 
