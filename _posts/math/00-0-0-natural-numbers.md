@@ -225,19 +225,39 @@ $$a\le b\iff(\exists c\in\mathbb{N})\ a+c=b$$
 
 $$\le\equiv\{(a,b)\in\mathbb{N}^2\mid(\exists c\in\mathbb{N})\ a+c=b\}$$ -->
 
-The naturals along with this binary relation form a totally ordered set $(\mathbb{N},\le)$ that also happens to be well-ordered. Its order type is the ordinal number $\omega$, the first infinite ordinal.
+The naturals along with this binary relation form a totally ordered set $(\mathbb{N},\le)$ that also happens to be well-ordered. Its order type is $\omega$, the first infinite ordinal.
 
 #### Ordered Structures
-In conjunction with any (barring one) of the algebraic structures mentioned above, the $\le$ relation forms an ordered magma/monoid/semiring. This is because they satisfy the following properties:
+In conjunction with some of the algebraic structures mentioned above, the $\le$ relation forms an ordered algebraic structure. To be able to be ordered, the structure's operation must preserve order.
 
-$$a\le b\iff a+c\le b+c$$
+For addition we can create the ordered monoid $(\mathbb{N},+,\le)$ because:
 
-For addition we can create the ordered monoid $(\mathbb{N},+,\le)$.
+$$a\le b\iff (\forall c\in\mathbb{N})\ a+c\le b+c$$
 
-$$a\le b\iff a\ \dot-\ c\le b\ \dot-\ c$$
+For multiplication we can create the ordered monoid $(\mathbb{N}^* ,\times,\le)$ and the ordered semiring $(\mathbb{N},+,\times,\le)$ because:
 
-For truncated subtraction we can create the ordered magma $(\mathbb{N},\dot-,\le)$ and the ordered CMM $(\mathbb{N},+,\dot-,\le)$.
+$$a\le b\iff (\forall c\in\mathbb{N})\ a\times c\le b\times c$$
 
-$$a\le b\iff a\times c\le b\times c$$
+Note that we cannot order the magmas $(\mathbb{N},\times)$ and $(\mathbb{N},\dot-)$ because they do not preserve the ordering in all cases:
 
-For multiplication we can create the ordered monoid $(\mathbb{N}^* ,\times,\le)$ and the ordered semiring $(\mathbb{N},+,\times,\le)$. Note that we cannot order the magma $(\mathbb{N},\times)$ because, due to $1\times 0=0$, it does not satisfy the above property.
+<details><summary><strong>Proof of $(\mathbb{N},\times)$</strong></summary>
+$$\begin{align}
+10\le5&\iff \ 10\times 0\le 5\times 0\\
+F&\iff \ 0\le 0\\
+F&\iff \ T\\
+\therefore\ &\hline{a\le b\nLeftrightarrow (\forall c\in\mathbb{N})\ a\times c\le b\times c}\\
+\end{align}$$
+</details>
+
+<details><summary><strong>Proof of $(\mathbb{N},\dot-)$</strong></summary>
+$$\begin{align}
+10\le5&\iff \ 10\ \dot-\ 500\le 5\ \dot-\ 500\\
+F&\iff \ 0\le 0\\
+F&\iff \ T\\
+\therefore\ &\hline{a\le b\nLeftrightarrow (\forall c\in\mathbb{N})\ a\ \dot-\ c\le b\ \dot-\ c}\\
+\end{align}$$
+</details>
+
+<!-- $$a\le b\iff (\forall c\in\mathbb{N})\ a\ \dot-\ c\le b\ \dot-\ c$$
+
+For truncated subtraction we can create the ordered magma $(\mathbb{N},\dot-,\le)$ and the ordered CMM $(\mathbb{N},+,\dot-,\le)$. -->
