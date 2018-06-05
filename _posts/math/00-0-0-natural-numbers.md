@@ -148,7 +148,7 @@ $$\begin{align}
 In conjunction with the commutative monoid on the naturals $(\mathbb{N},+)$, this operator is referred to as a **monus** and forms a CMM, commutative monoid with monus: $(\mathbb{N},+,\dot-)$.
 
 ### Multiplication
-We can define the multiplication of natural numbers in terms of repeated addition:
+We can define the multiplication of natural numbers in terms of repeated addition such that it forms a commutative monoid $(\mathbb{N},\times)$:
 
 $$a\times b=c\iff \underbrace{a+a+\cdots+a}_{b\text{ copies}}=c$$
 
@@ -177,7 +177,7 @@ $$\begin{align}
 </details>
 <p></p>
 
-The naturals and multiplication form a commutative magma $(\mathbb{N},\times)$. However, if we exclude $0$, the naturals can form a commutative monoid $(\mathbb{N}^* ,\times)$ with identity $1$. This is because $1\times 0=0$, which destroys $1$'s identity property.
+<!-- The naturals and multiplication form a commutative magma $(\mathbb{N},\times)$. However, if we exclude $0$, the naturals can form a commutative monoid $(\mathbb{N}^* ,\times)$ with identity $1$. This is because $1\times 0=0$, which destroys $1$'s identity property. -->
 
 Note that, like with addition, this monoid is **cancellative**:
 
@@ -228,17 +228,19 @@ $$\le\equiv\{(a,b)\in\mathbb{N}^2\mid(\exists c\in\mathbb{N})\ a+c=b\}$$ -->
 The naturals along with this binary relation form a totally ordered set $(\mathbb{N},\le)$ that also happens to be well-ordered. Its order type is $\omega$, the first infinite ordinal.
 
 #### Ordered Structures
-In conjunction with some of the algebraic structures mentioned above, the $\le$ relation forms an ordered algebraic structure. To be able to be ordered, the structure's operation must preserve order.
+In conjunction with some of the algebraic structures mentioned above, the $\le$ relation forms an ordered algebraic structure. To be able to be ordered, the structure's operation must preserve order (which is similar to the cancellative property).
 
 For addition we can create the ordered monoid $(\mathbb{N},+,\le)$ because:
 
 $$a\le b\iff (\forall c\in\mathbb{N})\ a+c\le b+c$$
 
-For multiplication we can create the ordered monoid $(\mathbb{N}^* ,\times,\le)$ and the ordered semiring $(\mathbb{N},+,\times,\le)$ because:
+For multiplication, if we remove $0$ from the naturals, we can create the ordered monoid $(\mathbb{N}^* ,\times,\le)$ because:
 
 $$a\le b\iff (\forall c\in\mathbb{N})\ a\times c\le b\times c$$
 
-Note that we cannot order the magmas $(\mathbb{N},\times)$ and $(\mathbb{N},\dot-)$ because they do not preserve the ordering in all cases:
+Combining these two ordered monoids, we can further create the ordered semiring $(\mathbb{N},+,\times,\le)$
+
+Note that we cannot order the monoid $(\mathbb{N},\times)$ and the magma $(\mathbb{N},\dot-)$ because they do not preserve the ordering in all cases:
 
 <details><summary><strong>Proof of $(\mathbb{N},\times)$</strong></summary>
 $$\begin{align}
