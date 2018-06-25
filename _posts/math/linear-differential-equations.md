@@ -17,20 +17,20 @@ Where $a_{i\in\mathbb{N}_n}(x)$, $b(x)$, and $y$ are differentiable functions of
 
 #### Explicit or Implicit (All ODEs)
 
+#### Particular vs. General Solutions (All ODEs)
+n initial conditions, general, particular
+
 #### Homogeneity
 When $b(x)$ (which is called the **constant term** despite it not necessarily being a constant) equals $0$, the linear differential equation is dubbed **homogeneous**.
 
 This distinction is important because the methods used to solve homogeneous LDE's are simpler than non-homogeneous ones.
 
-#### Particular vs. General Solutions (All ODEs)
-n initial conditions, general, particular
-
 #### Superposition of Solutions
-A useful property to know about LDEs is that for any number of its solutions, a linear combination (i.e a superposition) of them is also a solution:
+A useful property of homogeneous LDEs is that for any number of its solutions, a linear combination (i.e a superposition) of them is also a solution:
 
 $$y(x)=C_1y_1(x)+C_2y_2(x)+\cdots+C_ny_n(x)$$
 
-Where $y_{i\in\mathbb{N}_n}(x)$ are solutions to an LDE and $C_{i\in\mathbb{N}_n}$ are real (or even complex) valued constants.
+Where $y_{i\in\mathbb{N}_n}(x)$ are solutions to a homogeneous LDE and $C_{i\in\mathbb{N}_n}$ are real (or even complex) valued constants.
 
 <!-- ## Linear Differential Operator -->
 
@@ -89,6 +89,8 @@ While the above solution assumes the LDE is homogeneous, we can derive a general
 
 $$\dfrac{\mathrm{d}y}{\mathrm{d}x}=f(x)y+g(x)$$
 
+{and indeed if g(x0 is 0 we arrive t the homgenous solution)}
+
 ## Second Order Solution
 
 ### Homogeneous w/ Constant Coefficients
@@ -101,6 +103,8 @@ $$\dfrac{\mathrm{d}y}{\mathrm{d}x}=f(x)y+g(x)$$
 #### Multiplicity of Roots
 
 ### Non-Homogeneous Case
+
+{and indeed if g(x0 is 0 we arrive t the homgenous solution)}
 
 ## Higher Order LDEs
 

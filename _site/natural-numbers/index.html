@@ -192,6 +192,10 @@
           
         
       
+        
+          
+        
+      
 
       <style>
         p.small {
@@ -379,7 +383,7 @@ $$\begin{align}
 <p>In conjunction with the commutative monoid on the naturals $(\mathbb{N},+)$, this operator is referred to as a <strong>monus</strong> and forms a CMM, commutative monoid with monus: $(\mathbb{N},+,\dot-)$.</p>
 
 <h3 id="multiplication">Multiplication</h3>
-<p>We can define the multiplication of natural numbers in terms of repeated addition:</p>
+<p>We can define the multiplication of natural numbers in terms of repeated addition such that it forms a commutative monoid $(\mathbb{N},\times)$:</p>
 
 <script type="math/tex; mode=display">a\times b=c\iff \underbrace{a+a+\cdots+a}_{b\text{ copies}}=c</script>
 
@@ -408,7 +412,7 @@ $$\begin{align}
 </details>
 <p></p>
 
-<p>The naturals and multiplication form a commutative magma $(\mathbb{N},\times)$. However, if we exclude $0$, the naturals can form a commutative monoid $(\mathbb{N}^* ,\times)$ with identity $1$. This is because $1\times 0=0$, which destroys $1$’s identity property.</p>
+<!-- The naturals and multiplication form a commutative magma $(\mathbb{N},\times)$. However, if we exclude $0$, the naturals can form a commutative monoid $(\mathbb{N}^* ,\times)$ with identity $1$. This is because $1\times 0=0$, which destroys $1$'s identity property. -->
 
 <p>Note that, like with addition, this monoid is <strong>cancellative</strong>:</p>
 
@@ -457,28 +461,59 @@ $$\div_E\equiv\{(a,b,q,r)\in\mathbb{N}^4\mid a=b\times q+r \land r<b\}$$ -->
 
 $$\le\equiv\{(a,b)\in\mathbb{N}^2\mid(\exists c\in\mathbb{N})\ a+c=b\}$$ -->
 
-<p>The naturals along with this binary relation form a totally ordered set $(\mathbb{N},\le)$ that also happens to be well-ordered. Its order type is the ordinal number $\omega$, the first infinite ordinal.</p>
+<p>The naturals along with this binary relation form a totally ordered set $(\mathbb{N},\le)$ that also happens to be well-ordered. Its order type is $\omega$, the first infinite ordinal.</p>
 
 <h4 id="ordered-structures">Ordered Structures</h4>
-<p>In conjunction with any (barring one) of the algebraic structures mentioned above, the $\le$ relation forms an ordered magma/monoid/semiring. This is because they satisfy the following properties:</p>
+<p>In conjunction with some of the algebraic structures mentioned above, the $\le$ relation forms an ordered algebraic structure. To be able to be ordered, the structure’s operation must preserve order (which is similar to the cancellative property).</p>
 
-<script type="math/tex; mode=display">a\le b\iff a+c\le b+c</script>
+<p>For addition we can create the ordered monoid $(\mathbb{N},+,\le)$ because:</p>
 
-<p>For addition we can create the ordered monoid $(\mathbb{N},+,\le)$.</p>
+<script type="math/tex; mode=display">a\le b\iff (\forall c\in\mathbb{N})\ a+c\le b+c</script>
 
-<script type="math/tex; mode=display">a\le b\iff a\ \dot-\ c\le b\ \dot-\ c</script>
+<p>For multiplication, if we remove $0$ from the naturals, we can create the ordered monoid $(\mathbb{N}^* ,\times,\le)$ because:</p>
 
-<p>For truncated subtraction we can create the ordered magma $(\mathbb{N},\dot-,\le)$ and the ordered CMM $(\mathbb{N},+,\dot-,\le)$.</p>
+<script type="math/tex; mode=display">a\le b\iff (\forall c\in\mathbb{N})\ a\times c\le b\times c</script>
 
-<script type="math/tex; mode=display">a\le b\iff a\times c\le b\times c</script>
+<p>Combining these two ordered monoids, we can further create the ordered semiring $(\mathbb{N},+,\times,\le)$</p>
 
-<p>For multiplication we can create the ordered monoid $(\mathbb{N}^* ,\times,\le)$ and the ordered semiring $(\mathbb{N},+,\times,\le)$. Note that we cannot order the magma $(\mathbb{N},\times)$ because, due to $1\times 0=0$, it does not satisfy the above property.</p>
+<p>Note that we cannot order the monoid $(\mathbb{N},\times)$ and the magma $(\mathbb{N},\dot-)$ because they do not preserve the ordering in all cases:</p>
+
+<details><summary><strong>Proof of $(\mathbb{N},\times)$</strong></summary>
+$$\begin{align}
+10\le5&amp;\iff \ 10\times 0\le 5\times 0\\
+F&amp;\iff \ 0\le 0\\
+F&amp;\iff \ T\\
+\therefore\ &amp;\hline{a\le b\nLeftrightarrow (\forall c\in\mathbb{N})\ a\times c\le b\times c}\\
+\end{align}$$
+</details>
+
+<details><summary><strong>Proof of $(\mathbb{N},\dot-)$</strong></summary>
+$$\begin{align}
+10\le5&amp;\iff \ 10\ \dot-\ 500\le 5\ \dot-\ 500\\
+F&amp;\iff \ 0\le 0\\
+F&amp;\iff \ T\\
+\therefore\ &amp;\hline{a\le b\nLeftrightarrow (\forall c\in\mathbb{N})\ a\ \dot-\ c\le b\ \dot-\ c}\\
+\end{align}$$
+</details>
+
+<!-- $$a\le b\iff (\forall c\in\mathbb{N})\ a\ \dot-\ c\le b\ \dot-\ c$$
+
+For truncated subtraction we can create the ordered magma $(\mathbb{N},\dot-,\le)$ and the ordered CMM $(\mathbb{N},+,\dot-,\le)$. -->
 
 </div>
 
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/hello-world/">
+            On the Origin of "Hello, World!"
+            <small>25 Jun 2018</small>
+          </a>
+        </h3>
+      </li>
     
       <li>
         <h3>
@@ -494,15 +529,6 @@ $$\le\equiv\{(a,b)\in\mathbb{N}^2\mid(\exists c\in\mathbb{N})\ a+c=b\}$$ -->
           <a href="/parity-sequences/">
             Parity Sequences
             <small>10 May 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/cartesian-product/">
-            Cartesian Product
-            <small>30 Apr 2018</small>
           </a>
         </h3>
       </li>

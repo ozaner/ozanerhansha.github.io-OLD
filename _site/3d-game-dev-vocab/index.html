@@ -192,6 +192,10 @@
           
         
       
+        
+          
+        
+      
 
       <style>
         p.small {
@@ -229,9 +233,9 @@
   
 ]</span>
   <h2 id="3d-game-development">3D Game Development</h2>
-<p><strong>Inheritance System</strong>: All objects are types and these types exist on an inheritance tree. (a particular object could be an instance of zombie which is a child of hostile AI, which is a child of AI, etc.)</p>
+<p><strong>Inheritance System</strong>: All objects are types and these types exist on an inheritance tree. (ex. a particular object could be an instance of <code class="highlighter-rouge">zombie</code> which is a child of <code class="highlighter-rouge">hostileAI</code>, which is a child of <code class="highlighter-rouge">AI</code>, etc.)</p>
 
-<p><strong>Component System</strong>: All objects have individual components that add functionality. (i.e movement component, hostile Ai component, health component, etc.)</p>
+<p><strong>Component System</strong>: All objects have individual components that add functionality. (ex. <code class="highlighter-rouge">movement</code> component, <code class="highlighter-rouge">hostileAI</code> component, <code class="highlighter-rouge">health</code> component, etc.)</p>
 
 <p><em>Unity uses a component system, but technically you can consider the component system as a generalization of the inheritance system. As such you could force yourself to use inheritance in Unity.</em></p>
 
@@ -239,10 +243,9 @@
 
 <p><strong>The Three Transforms</strong>: The camera used in the scene view as well as objects can all be transformed in 3 basic ways:</p>
 <ul>
-  <li><strong>Translation</strong>: Translating an object means moving it across in 3D space.</li>
-  <li><strong>Rotation</strong>: Rotating an object means rotating about an axis. If an object is at (0,0,0) then the object would rotate in place.</li>
-  <li><strong>Scaling</strong>: Scaling an object means increasing or decreasing its size. You can either do this equally on all 3 axes (growing or shrinking the object) or scale each axis separately (stretching and squishing the object).</li>
-  <li><strong>Rect Tool</strong>: In 2D, transformations are simple enough that the above three can be combined into a single tool. Thus when making 2D unity games, the <em>Rect Tool</em> is all you’ll need.</li>
+  <li><strong>Translation</strong>: Translating an object means moving it across in 3D space. This corresponds to dragging the camera with the mouse.</li>
+  <li><strong>Rotation</strong>: Rotating an object means rotating about an axis. If an object is at (0,0,0) then the object would rotate in place. This corresponds to <strong>orbiting</strong> a point with the camera with the middle mouse button.</li>
+  <li><strong>Scaling</strong>: Scaling an object means increasing or decreasing its size. You can either do this equally on all 3 axes (growing or shrinking the object) or scale each axis separately (stretching and squishing the object). This corresponds to <strong>zooming</strong> the camera with the scroll wheel.</li>
 </ul>
 
 <p>Note That these transformations can all be done with respect to the global coordinate system or the objects own local coordinate system.</p>
@@ -256,14 +259,17 @@
   <li><strong>Spot Light</strong>: These lights are similar to point lights except they only emanate in a limited cone before their light is cut short. They’re usually used to highlight an area of the scene rather than provide light to see your surroundings.</li>
 </ul>
 
-<p><strong>Free Look</strong>: Free look is the player’s ability to move their mouse, joypad, control stick, etc. around and freely view the 3D world their character inhabits. For computer games this is referred to as <em>mouse-look</em>. (The N64 for example, didn’t even have a full analog stick dedicated to the camera. It instead use a set of  directional buttons known as the c-buttons or camera buttons)</p>
+<p><strong>Free Look</strong>: Free look is the player’s ability to move their mouse, joypad, control stick, etc. around and freely view the 3D world their character inhabits. For computer games this is referred to as <strong>mouse-look</strong>. (The N64, for example, didn’t even have a full analog stick dedicated to the camera. It instead use a set of  directional buttons known as the c-buttons or camera buttons)</p>
 
-<p><strong>Euler Angles vs. Quaternions</strong>: When representing rotations in 3D space we can either use a set of 3 angles (1 for the rotation about each axis) or a single 4D number known as a quaternion. The quaternions $\mathbb{H}$ are a 4D generalization of the 2D complex numbers that are very apt in describing natural 3D rotations (similar to how the complex numbers are apt in describing 2D rotations).</p>
+<p><strong>Euler Angles vs. Quaternions</strong>: When representing rotations in 3D space we can either use a set of 3 angles (1 for the rotation about each axis) or a single <strong>quaternion</strong>. The quaternions $\mathbb{H}$ are a 4D generalization of the 2D complex numbers $\mathbb{C}$. Just like how the complex numbers are useful in describing rotations in 2-space, quaternions are apt in describing rotations in 3-space.</p>
+
+<p><strong>Game Loop</strong>
+Code that corresponds to some object or event in a game has to run at every iteration of the game loop to check for updated conditions. For example, the code that moves the player has to check if the user is holding down the up key many times a second to ensure the player only moves while the key is held down.</p>
 
 <p><strong>Frame Rate Dependent Code</strong>:
-All scripts have an update method that run at every pass of the object. If that update code happens to, for example, move the player, the player’s speed would be dependent on the speed of the computer running the game. To remedy this we have to take into account the <em>frame rate</em> of the game and make sure that every update is spread out over a single frame rather than done all at once.</p>
+A problem arises however. When that code is run to move the player, the player’s speed would be dependent on the speed of the computer running the game (the faster the loops, the more times the player would be moved per cycle). To remedy this we have to take into account the game’s <em>frame rate</em>: how many updates of the screen there are per second.</p>
 
-<p><strong>Raycasting</strong>: Raycasting is when a ray (an imaginary line that extends out form a point) is sent out at some angle and the location of the point it first intersects with, if it hits at all, is recorded. A first person shooter, for example, would use raycasting to tell whether a fired bullet hit an enemy or wall. In this case the ray would be perpendicular to the middle of the player’s screen.</p>
+<p><strong>Raycasting</strong>: Raycasting is when a ray (an imaginary line that extends out from a point) is sent out at some angle and the location of the point it first intersects with, if it hits at all, is recorded. A first person shooter, for example, would use raycasting to tell whether a fired bullet hit an enemy or wall. In this case the ray would be perpendicular to the middle of the player’s screen (i.e where the crosshairs are).</p>
 
 <p><strong>Mouse Picking</strong>: Mouse picking is finding the spot a mouse clicked on in 3D space. Doing this requires casting a ray from the user’s point of view and seeing where it first collides.</p>
 
@@ -288,6 +294,8 @@ All scripts have an update method that run at every pass of the object. If that 
   <li><strong>Console</strong>: This outputs whatever was programmed to be outputted there by the scripts that are currently running in the scene. Usually used for debugging or to output errors encountered while running the script.</li>
 </ul>
 
+<p><strong>Rect Tool</strong>: In 2D, transformations are simple enough that the above three can be combined into a single tool. Thus when making 2D unity games, the <em>Rect Tool</em> is all you’ll need.</p>
+
 <p><strong>Coroutines</strong>: ???</p>
 
 <p><strong>Prefabs</strong>: ???</p>
@@ -297,6 +305,15 @@ All scripts have an update method that run at every pass of the object. If that 
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/hello-world/">
+            On the Origin of "Hello, World!"
+            <small>25 Jun 2018</small>
+          </a>
+        </h3>
+      </li>
     
       <li>
         <h3>
@@ -312,15 +329,6 @@ All scripts have an update method that run at every pass of the object. If that 
           <a href="/parity-sequences/">
             Parity Sequences
             <small>10 May 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/cartesian-product/">
-            Cartesian Product
-            <small>30 Apr 2018</small>
           </a>
         </h3>
       </li>

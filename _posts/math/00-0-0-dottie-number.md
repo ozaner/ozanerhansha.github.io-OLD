@@ -10,7 +10,7 @@ $$\cos x=x$$
 
 ![graph](https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Dottie_number.svg/800px-Dottie_number.svg.png?style=centerme){:width="440px"}
 
-The above is what's known as a transcendental equation. Equations like these usually return transcendental numbers and indeed $\textbf{d}$ is transcendental. It's decimal expansion is as follows:
+The above is what's known as a transcendental equation. Equations like these *usually* return transcendental numbers and indeed $\textbf{d}$ is transcendental. It's decimal expansion is as follows:
 
 $$\textbf{d}=0.7390851332151606...$$
 
@@ -25,7 +25,7 @@ $\textbf{d}$ is what's called a fixed point of $\cos x$, because the cosine func
 
 $$\cos \textbf{d} = \textbf{d} \implies \forall n\in\mathbb{N}\  \left(\underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n}\ \textbf{d}=\textbf{d}\right)$$
 
-$\textbf{d}$ is the $\cos$ function's only real fixed point, but there exists infinitely many solutions to $\cos z=z$ for the complex numbers. Those solutions, however, are not attractors.
+$\textbf{d}$ is the $\cos$ function's only *real* fixed point, but there exists infinitely many solutions to $\cos z=z$ for the complex numbers. Those solutions, however, are not attractors.
 
 ### Universal Attractor
 What's interesting about $\textbf{d}$ is that it's not just the real fixed point of $\cos$ but also its **universal fixed point attractor**. That is to say, if you take the cosine of any real number and repeatedly take the cosine of the result, you will always approach $\textbf{d}$:
@@ -142,8 +142,7 @@ Where $a_n$ is a sequence of rational numbers found by solving the above equatio
 
     $$g\left(x\right)=\sum_{n=0}^{\infty}g^{\left(n\right)}\left(c\right)\frac{\left(x-c\right)^n}{n!}$$
 
-    - $g^{\left(n\right)}\left(x\right)$ is the $n$th derivative of $g\left(x\right)$
-    - $c$ is the point we are constructing the Taylor series about. Since we are letting $n\to\infty$ the choice of constant won't affect the outcome.
+    Where $g^{\left(n\right)}\left(x\right)$ is the $n$th derivative of $g\left(x\right)$ and $c$ is the point we are constructing the Taylor series about. Since we are letting $n\to\infty$ the choice of constant won't affect the outcome.
   </p>
 
   <!-- Fixed Point -->
@@ -191,7 +190,7 @@ Where $a_n$ is a sequence of rational numbers found by solving the above equatio
     g'\left(x\right)=\frac{1}{f'\left(g\left(x\right)\right)}
     \end{align}$$
 
-    We can use the chain and product rules repeatedly to find the $n$th derivative of $g$. The second derivative, for example, can be computed by differentiated both sides of the above equation:
+    We can use the chain and product rules repeatedly to find the $n$th derivative of $g$. The second derivative, for example, can be computed by differentiating both sides of the above equation:
 
     $$\begin{align}
     f'\left(g\left(x\right)\right)g'\left(x\right)=1\\
@@ -200,7 +199,7 @@ Where $a_n$ is a sequence of rational numbers found by solving the above equatio
     g''(x) = \frac{-f''(g(x))g'(x)^2}{f'(g(x))}
     \end{align}$$
 
-    <i>Repeated use of the chain rule can be generalized via the <a href="https://en.wikipedia.org/wiki/Faà_di_Bruno%27s_formula">Faà di Bruno's formula.</a></i>
+    <i>Repeated use of the chain rule can be generalized via <a href="https://en.wikipedia.org/wiki/Faà_di_Bruno%27s_formula">Faà di Bruno's formula.</a></i>
   </p>
 
   <h4>Solving the Taylor Series</h4>
@@ -269,7 +268,7 @@ Where $a_n$ is a sequence of rational numbers found by solving the above equatio
     Where $a_n$ is a sequence of rational numbers.
     <p></p>
 
-    <i>As a side note, to prove this we assumed that $g$ was infinitely differentiable which is required to created a Taylor series for it. This is in fact true, but it just wasn't proved above.</i>
+    <i>As a side note, to prove this we assumed that $g$ is infinitely differentiable and that $0$ fell in its interval of convergence, two things necessary to create a Taylor series for it and plug $0$ into it. These two facts are indeed true, they just weren't proved above.</i>
   </p>
 </details>
 

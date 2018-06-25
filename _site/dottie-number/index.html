@@ -192,6 +192,10 @@
           
         
       
+        
+          
+        
+      
 
       <style>
         p.small {
@@ -234,7 +238,7 @@
 
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Dottie_number.svg/800px-Dottie_number.svg.png?style=centerme" alt="graph" width="440px" /></p>
 
-<p>The above is what’s known as a transcendental equation. Equations like these usually return transcendental numbers and indeed $\textbf{d}$ is transcendental. It’s decimal expansion is as follows:</p>
+<p>The above is what’s known as a transcendental equation. Equations like these <em>usually</em> return transcendental numbers and indeed $\textbf{d}$ is transcendental. It’s decimal expansion is as follows:</p>
 
 <script type="math/tex; mode=display">\textbf{d}=0.7390851332151606...</script>
 
@@ -249,7 +253,7 @@
 
 <script type="math/tex; mode=display">\cos \textbf{d} = \textbf{d} \implies \forall n\in\mathbb{N}\  \left(\underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n}\ \textbf{d}=\textbf{d}\right)</script>
 
-<p>$\textbf{d}$ is the $\cos$ function’s only real fixed point, but there exists infinitely many solutions to $\cos z=z$ for the complex numbers. Those solutions, however, are not attractors.</p>
+<p>$\textbf{d}$ is the $\cos$ function’s only <em>real</em> fixed point, but there exists infinitely many solutions to $\cos z=z$ for the complex numbers. Those solutions, however, are not attractors.</p>
 
 <h3 id="universal-attractor">Universal Attractor</h3>
 <p>What’s interesting about $\textbf{d}$ is that it’s not just the real fixed point of $\cos$ but also its <strong>universal fixed point attractor</strong>. That is to say, if you take the cosine of any real number and repeatedly take the cosine of the result, you will always approach $\textbf{d}$:</p>
@@ -366,8 +370,7 @@ $$\begin{align}
 
     $$g\left(x\right)=\sum_{n=0}^{\infty}g^{\left(n\right)}\left(c\right)\frac{\left(x-c\right)^n}{n!}$$
 
-    - $g^{\left(n\right)}\left(x\right)$ is the $n$th derivative of $g\left(x\right)$
-    - $c$ is the point we are constructing the Taylor series about. Since we are letting $n\to\infty$ the choice of constant won't affect the outcome.
+    Where $g^{\left(n\right)}\left(x\right)$ is the $n$th derivative of $g\left(x\right)$ and $c$ is the point we are constructing the Taylor series about. Since we are letting $n\to\infty$ the choice of constant won't affect the outcome.
   </p>
 
   <!-- Fixed Point -->
@@ -415,7 +418,7 @@ $$\begin{align}
     g'\left(x\right)=\frac{1}{f'\left(g\left(x\right)\right)}
     \end{align}$$
 
-    We can use the chain and product rules repeatedly to find the $n$th derivative of $g$. The second derivative, for example, can be computed by differentiated both sides of the above equation:
+    We can use the chain and product rules repeatedly to find the $n$th derivative of $g$. The second derivative, for example, can be computed by differentiating both sides of the above equation:
 
     $$\begin{align}
     f'\left(g\left(x\right)\right)g'\left(x\right)=1\\
@@ -424,7 +427,7 @@ $$\begin{align}
     g''(x) = \frac{-f''(g(x))g'(x)^2}{f'(g(x))}
     \end{align}$$
 
-    <i>Repeated use of the chain rule can be generalized via the <a href="https://en.wikipedia.org/wiki/Faà_di_Bruno%27s_formula">Faà di Bruno's formula.</a></i>
+    <i>Repeated use of the chain rule can be generalized via <a href="https://en.wikipedia.org/wiki/Faà_di_Bruno%27s_formula">Faà di Bruno's formula.</a></i>
   </p>
 
   <h4>Solving the Taylor Series</h4>
@@ -493,7 +496,7 @@ $$\begin{align}
     Where $a_n$ is a sequence of rational numbers.
     <p></p>
 
-    <i>As a side note, to prove this we assumed that $g$ was infinitely differentiable which is required to created a Taylor series for it. This is in fact true, but it just wasn't proved above.</i>
+    <i>As a side note, to prove this we assumed that $g$ is infinitely differentiable and that $0$ fell in its interval of convergence, two things necessary to create a Taylor series for it and plug $0$ into it. These two facts are indeed true, they just weren't proved above.</i>
   </p>
 </details>
 
@@ -555,6 +558,15 @@ $$\begin{align}
     
       <li>
         <h3>
+          <a href="/hello-world/">
+            On the Origin of "Hello, World!"
+            <small>25 Jun 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/natural-numbers/">
             Natural Numbers
             <small>25 May 2018</small>
@@ -567,15 +579,6 @@ $$\begin{align}
           <a href="/3d-game-dev-vocab/">
             3D Game Development Vocab + Unity
             <small>20 May 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/parity-sequences/">
-            Parity Sequences
-            <small>10 May 2018</small>
           </a>
         </h3>
       </li>

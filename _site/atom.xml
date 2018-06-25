@@ -4,13 +4,141 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-06-03T15:20:59-04:00</updated>
+ <updated>2018-06-25T16:23:29-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>On the Origin of "Hello, World!"</title>
+   <link href="http://localhost:4000/hello-world/"/>
+   <updated>2018-06-25T00:00:00-04:00</updated>
+   <id>http://localhost:4000/hello-world</id>
+   <content type="html">&lt;!-- - [What is &quot;Hello, World!&quot;?](#what-is-hello-world)
+- [History](#history)
+  - [A Tutorial Introduction to the Language B](#a-tutorial-introduction-to-the-language-b)
+  - [Programming in C: A Tutorial](#programming-in-c-a-tutorial)
+  - [The C Programming Language](#the-c-programming-language)
+  - [Side note on BCPL](#side-note-on-bcpl)
+- [Examples](#examples) --&gt;
+
+&lt;h2 id=&quot;what-is-hello-world&quot;&gt;What is “Hello, World!”?&lt;/h2&gt;
+&lt;p&gt;When learning to program for the first time, oftentimes the first thing students are instructed to do after setting up their programming environment is to write a program that outputs the string &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;Hello, World!&quot;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;It is has become an almost sacred tradition among teachers of computer science to introduce the topic of programming with this example. As such, “Hello World!” is often the first program most people write.&lt;/p&gt;
+
+&lt;p&gt;“Hello World!” programs are also written by experienced programmers as well in order to make sure their newly installed programming environment/language was set up correctly.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;history&quot;&gt;History&lt;/h2&gt;
+&lt;p&gt;Why and how outputting the string “Hello, World!” became the quintessential beginner program is a matter of interest for both computer scientists and historians alike due to the prevalence of this practice amongst computer scientists today.&lt;/p&gt;
+
+&lt;p&gt;The example was created and first used by Professor Brian Kernighan in documenting both the B and C programming languages during his time at Bell Labs. Below, I give those 3 instances in which it appears.&lt;/p&gt;
+
+&lt;h4 id=&quot;a-tutorial-introduction-to-the-language-b&quot;&gt;A Tutorial Introduction to the Language B&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;B&lt;/strong&gt; is a programming language developed at Bell Labs around 1969 and is a simplified successor to &lt;strong&gt;BCPL&lt;/strong&gt;. It was in 1972 that Kernighan was tasked with writing a manual for using B that was to be used internally at Bell Labs. This memorandum, &lt;a href=&quot;https://www.bell-labs.com/usr/dmr/www/bintro.html&quot;&gt;&lt;em&gt;A Tutorial Introduction to the Language B&lt;/em&gt;&lt;/a&gt;, is the first documented instance of “Hello, World!” in all of programming cannon.&lt;/p&gt;
+
+&lt;p&gt;The program appears in section &lt;em&gt;7 – External Variables&lt;/em&gt; in the following form to demonstrate the piecing together of several &lt;code class=&quot;highlighter-rouge&quot;&gt;char&lt;/code&gt; variables:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-b&quot;&gt;main( ) {
+  extrn a, b, c;
+  putchar(a); putchar(b); putchar(c); putchar(’!*n’);
+}
+
+a ’hell’;
+b ’o, w’;
+c ’orld’;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It appears again in the next section &lt;em&gt;8 – Functions&lt;/em&gt; to demonstrate the composition of functions:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-b&quot;&gt;main( ) {
+  extrn a,b,c,d;
+  put2char(a,b) ;
+  put2char(c,d) ;
+}
+
+put2char(x,y) {
+  putchar(x);
+  putchar(y);
+}
+
+a ’hell’; b ’o, w’; c ’orld’; d ’!*n’;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;programming-in-c-a-tutorial&quot;&gt;Programming in C: A Tutorial&lt;/h4&gt;
+&lt;p&gt;The next instance of “Hello, World!” appeared in another internal memorandum at Bell Labs titled &lt;a href=&quot;https://www.bell-labs.com/usr/dmr/www/ctut.pdf&quot;&gt;&lt;em&gt;Programming in C: A Tutorial&lt;/em&gt;&lt;/a&gt;. The document was again authored by Prof. Kernighan and was for the programming language &lt;strong&gt;C&lt;/strong&gt;, developed from 1969 to 1973 by Dennis Ritchie.&lt;/p&gt;
+
+&lt;p&gt;The program is the first code seen in the document, appearing in section &lt;em&gt;2 – A Simple C Program&lt;/em&gt;:&lt;/p&gt;
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hello, world&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;the-c-programming-language&quot;&gt;The C Programming Language&lt;/h4&gt;
+&lt;p&gt;While the above two instances of “Hello, World!” were the first, it wasn’t until Kernighan and Ritchie published the famous &lt;em&gt;The C Programming Language&lt;/em&gt; in 1978 that the example program would catch on. Indeed the book, often abbreviated K&amp;amp;R for its authors, remains a cornerstone of programming literature even today. It should be no surprise then, that the practice of using “Hello, World!” as a test program for beginners would originate from it.&lt;/p&gt;
+
+&lt;h4 id=&quot;side-note-on-bcpl&quot;&gt;Side note on BCPL&lt;/h4&gt;
+&lt;p&gt;Several sources on the internet claim that Prof. Kernighan first wrote the “Hello, World!” program in his documentation of the Basic Combined Programming Language (BCPL) at Bell Labs before he wrote it for the B tutorial. This however is untrue. Unsure myself of whether the first documented use of “Hello, World!” was in BCPL or B, I emailed Prof. Kernighan and he confirmed it:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;I have never written a line of BCPL, so I definitely never wrote a hello world example for BCPL documentation. As best I can recall, the original example was for the internal B manual that I wrote at Bell Labs…&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;examples&quot;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;Below are 4 examples of “Hello, World!” programs in Java, Python, C++, and Brainfuck respectively. You can find many more examples for different languages at the &lt;a href=&quot;http://helloworldcollection.de&quot;&gt;Hello World Collection&lt;/a&gt; website.&lt;/p&gt;
+
+&lt;h4 id=&quot;java&quot;&gt;Java&lt;/h4&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;HelloWorld&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello, World!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Java is a class based, object oriented language. Because of this we must first define a &lt;code class=&quot;highlighter-rouge&quot;&gt;HelloWorld&lt;/code&gt; object class with a &lt;code class=&quot;highlighter-rouge&quot;&gt;main()&lt;/code&gt; method. Here we can call the &lt;code class=&quot;highlighter-rouge&quot;&gt;println()&lt;/code&gt; method to output the string &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;Hello, World!&quot;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;python&quot;&gt;Python&lt;/h4&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello, World!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Python is a scripting language so programs are simply a set of commands run from top to bottom. As such, it’s “Hello, World!” program contains no boilerplate code and is simply a &lt;code class=&quot;highlighter-rouge&quot;&gt;print()&lt;/code&gt; statement.&lt;/p&gt;
+
+&lt;h4 id=&quot;c&quot;&gt;C++&lt;/h4&gt;
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Hello, World!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;All C++ programs start by executing the &lt;code class=&quot;highlighter-rouge&quot;&gt;main()&lt;/code&gt; function. Here we can print out the desired string to the &lt;em&gt;standard character output device&lt;/em&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;std::cout&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;brainfuck&quot;&gt;Brainfuck&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-brainfuck&quot;&gt;++++++++[&amp;gt;++++[&amp;gt;++&amp;gt;+++&amp;gt;+++&amp;gt;+&amp;lt;&amp;lt;&amp;lt;&amp;lt;-]&amp;gt;+&amp;gt;+&amp;gt;-&amp;gt;&amp;gt;+[&amp;lt;]&amp;lt;-]&amp;gt;&amp;gt;.&amp;gt;---.
++++++++..+++.&amp;gt;&amp;gt;.&amp;lt;-.&amp;lt;.+++.------.--------.&amp;gt;&amp;gt;+.&amp;gt;++.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;See &lt;a href=&quot;https://en.wikipedia.org/wiki/Brainfuck#Hello_World!&quot;&gt;here&lt;/a&gt; for a commented version of this program.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Brainfuck is an esoteric programming language whose sole purpose is to be obfuscated and difficult to program in. As such, writing a “Hello World!” program in it (and other esoteric languages) is a show of programmatical prowess rather than inexperience.&lt;/p&gt;
+
+&lt;!-- #### C#
+~~~ C#
+using System;
+
+internal static class HelloWorld {
+    private static void Main() {
+        Console.WriteLine(&quot;Hello, world!&quot;);
+    }
+}
+~~~
+
+#### Prolog
+~~~ Prolog
+main:- write('Hello, world!'),nl.
+~~~ --&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Natural Numbers</title>
@@ -165,7 +293,7 @@ $$\begin{align}
 &lt;p&gt;In conjunction with the commutative monoid on the naturals $(\mathbb{N},+)$, this operator is referred to as a &lt;strong&gt;monus&lt;/strong&gt; and forms a CMM, commutative monoid with monus: $(\mathbb{N},+,\dot-)$.&lt;/p&gt;
 
 &lt;h3 id=&quot;multiplication&quot;&gt;Multiplication&lt;/h3&gt;
-&lt;p&gt;We can define the multiplication of natural numbers in terms of repeated addition:&lt;/p&gt;
+&lt;p&gt;We can define the multiplication of natural numbers in terms of repeated addition such that it forms a commutative monoid $(\mathbb{N},\times)$:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;a\times b=c\iff \underbrace{a+a+\cdots+a}_{b\text{ copies}}=c&lt;/script&gt;
 
@@ -194,7 +322,7 @@ $$\begin{align}
 &lt;/details&gt;
 &lt;p&gt;&lt;/p&gt;
 
-&lt;p&gt;The naturals and multiplication form a commutative magma $(\mathbb{N},\times)$. However, if we exclude $0$, the naturals can form a commutative monoid $(\mathbb{N}^* ,\times)$ with identity $1$. This is because $1\times 0=0$, which destroys $1$’s identity property.&lt;/p&gt;
+&lt;!-- The naturals and multiplication form a commutative magma $(\mathbb{N},\times)$. However, if we exclude $0$, the naturals can form a commutative monoid $(\mathbb{N}^* ,\times)$ with identity $1$. This is because $1\times 0=0$, which destroys $1$'s identity property. --&gt;
 
 &lt;p&gt;Note that, like with addition, this monoid is &lt;strong&gt;cancellative&lt;/strong&gt;:&lt;/p&gt;
 
@@ -243,22 +371,44 @@ $$\div_E\equiv\{(a,b,q,r)\in\mathbb{N}^4\mid a=b\times q+r \land r&lt;b\}$$ --&g
 
 $$\le\equiv\{(a,b)\in\mathbb{N}^2\mid(\exists c\in\mathbb{N})\ a+c=b\}$$ --&gt;
 
-&lt;p&gt;The naturals along with this binary relation form a totally ordered set $(\mathbb{N},\le)$ that also happens to be well-ordered. Its order type is the ordinal number $\omega$, the first infinite ordinal.&lt;/p&gt;
+&lt;p&gt;The naturals along with this binary relation form a totally ordered set $(\mathbb{N},\le)$ that also happens to be well-ordered. Its order type is $\omega$, the first infinite ordinal.&lt;/p&gt;
 
 &lt;h4 id=&quot;ordered-structures&quot;&gt;Ordered Structures&lt;/h4&gt;
-&lt;p&gt;In conjunction with any (barring one) of the algebraic structures mentioned above, the $\le$ relation forms an ordered magma/monoid/semiring. This is because they satisfy the following properties:&lt;/p&gt;
+&lt;p&gt;In conjunction with some of the algebraic structures mentioned above, the $\le$ relation forms an ordered algebraic structure. To be able to be ordered, the structure’s operation must preserve order (which is similar to the cancellative property).&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;a\le b\iff a+c\le b+c&lt;/script&gt;
+&lt;p&gt;For addition we can create the ordered monoid $(\mathbb{N},+,\le)$ because:&lt;/p&gt;
 
-&lt;p&gt;For addition we can create the ordered monoid $(\mathbb{N},+,\le)$.&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;a\le b\iff (\forall c\in\mathbb{N})\ a+c\le b+c&lt;/script&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;a\le b\iff a\ \dot-\ c\le b\ \dot-\ c&lt;/script&gt;
+&lt;p&gt;For multiplication, if we remove $0$ from the naturals, we can create the ordered monoid $(\mathbb{N}^* ,\times,\le)$ because:&lt;/p&gt;
 
-&lt;p&gt;For truncated subtraction we can create the ordered magma $(\mathbb{N},\dot-,\le)$ and the ordered CMM $(\mathbb{N},+,\dot-,\le)$.&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;a\le b\iff (\forall c\in\mathbb{N})\ a\times c\le b\times c&lt;/script&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;a\le b\iff a\times c\le b\times c&lt;/script&gt;
+&lt;p&gt;Combining these two ordered monoids, we can further create the ordered semiring $(\mathbb{N},+,\times,\le)$&lt;/p&gt;
 
-&lt;p&gt;For multiplication we can create the ordered monoid $(\mathbb{N}^* ,\times,\le)$ and the ordered semiring $(\mathbb{N},+,\times,\le)$. Note that we cannot order the magma $(\mathbb{N},\times)$ because, due to $1\times 0=0$, it does not satisfy the above property.&lt;/p&gt;
+&lt;p&gt;Note that we cannot order the monoid $(\mathbb{N},\times)$ and the magma $(\mathbb{N},\dot-)$ because they do not preserve the ordering in all cases:&lt;/p&gt;
+
+&lt;details&gt;&lt;summary&gt;&lt;strong&gt;Proof of $(\mathbb{N},\times)$&lt;/strong&gt;&lt;/summary&gt;
+$$\begin{align}
+10\le5&amp;amp;\iff \ 10\times 0\le 5\times 0\\
+F&amp;amp;\iff \ 0\le 0\\
+F&amp;amp;\iff \ T\\
+\therefore\ &amp;amp;\hline{a\le b\nLeftrightarrow (\forall c\in\mathbb{N})\ a\times c\le b\times c}\\
+\end{align}$$
+&lt;/details&gt;
+
+&lt;details&gt;&lt;summary&gt;&lt;strong&gt;Proof of $(\mathbb{N},\dot-)$&lt;/strong&gt;&lt;/summary&gt;
+$$\begin{align}
+10\le5&amp;amp;\iff \ 10\ \dot-\ 500\le 5\ \dot-\ 500\\
+F&amp;amp;\iff \ 0\le 0\\
+F&amp;amp;\iff \ T\\
+\therefore\ &amp;amp;\hline{a\le b\nLeftrightarrow (\forall c\in\mathbb{N})\ a\ \dot-\ c\le b\ \dot-\ c}\\
+\end{align}$$
+&lt;/details&gt;
+
+&lt;!-- $$a\le b\iff (\forall c\in\mathbb{N})\ a\ \dot-\ c\le b\ \dot-\ c$$
+
+For truncated subtraction we can create the ordered magma $(\mathbb{N},\dot-,\le)$ and the ordered CMM $(\mathbb{N},+,\dot-,\le)$. --&gt;
 </content>
  </entry>
  
@@ -268,9 +418,9 @@ $$\le\equiv\{(a,b)\in\mathbb{N}^2\mid(\exists c\in\mathbb{N})\ a+c=b\}$$ --&gt;
    <updated>2018-05-20T00:00:00-04:00</updated>
    <id>http://localhost:4000/3d-game-dev-vocab</id>
    <content type="html">&lt;h2 id=&quot;3d-game-development&quot;&gt;3D Game Development&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Inheritance System&lt;/strong&gt;: All objects are types and these types exist on an inheritance tree. (a particular object could be an instance of zombie which is a child of hostile AI, which is a child of AI, etc.)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Inheritance System&lt;/strong&gt;: All objects are types and these types exist on an inheritance tree. (ex. a particular object could be an instance of &lt;code class=&quot;highlighter-rouge&quot;&gt;zombie&lt;/code&gt; which is a child of &lt;code class=&quot;highlighter-rouge&quot;&gt;hostileAI&lt;/code&gt;, which is a child of &lt;code class=&quot;highlighter-rouge&quot;&gt;AI&lt;/code&gt;, etc.)&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Component System&lt;/strong&gt;: All objects have individual components that add functionality. (i.e movement component, hostile Ai component, health component, etc.)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Component System&lt;/strong&gt;: All objects have individual components that add functionality. (ex. &lt;code class=&quot;highlighter-rouge&quot;&gt;movement&lt;/code&gt; component, &lt;code class=&quot;highlighter-rouge&quot;&gt;hostileAI&lt;/code&gt; component, &lt;code class=&quot;highlighter-rouge&quot;&gt;health&lt;/code&gt; component, etc.)&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Unity uses a component system, but technically you can consider the component system as a generalization of the inheritance system. As such you could force yourself to use inheritance in Unity.&lt;/em&gt;&lt;/p&gt;
 
@@ -278,10 +428,9 @@ $$\le\equiv\{(a,b)\in\mathbb{N}^2\mid(\exists c\in\mathbb{N})\ a+c=b\}$$ --&gt;
 
 &lt;p&gt;&lt;strong&gt;The Three Transforms&lt;/strong&gt;: The camera used in the scene view as well as objects can all be transformed in 3 basic ways:&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Translation&lt;/strong&gt;: Translating an object means moving it across in 3D space.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Rotation&lt;/strong&gt;: Rotating an object means rotating about an axis. If an object is at (0,0,0) then the object would rotate in place.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Scaling&lt;/strong&gt;: Scaling an object means increasing or decreasing its size. You can either do this equally on all 3 axes (growing or shrinking the object) or scale each axis separately (stretching and squishing the object).&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Rect Tool&lt;/strong&gt;: In 2D, transformations are simple enough that the above three can be combined into a single tool. Thus when making 2D unity games, the &lt;em&gt;Rect Tool&lt;/em&gt; is all you’ll need.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Translation&lt;/strong&gt;: Translating an object means moving it across in 3D space. This corresponds to dragging the camera with the mouse.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Rotation&lt;/strong&gt;: Rotating an object means rotating about an axis. If an object is at (0,0,0) then the object would rotate in place. This corresponds to &lt;strong&gt;orbiting&lt;/strong&gt; a point with the camera with the middle mouse button.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Scaling&lt;/strong&gt;: Scaling an object means increasing or decreasing its size. You can either do this equally on all 3 axes (growing or shrinking the object) or scale each axis separately (stretching and squishing the object). This corresponds to &lt;strong&gt;zooming&lt;/strong&gt; the camera with the scroll wheel.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Note That these transformations can all be done with respect to the global coordinate system or the objects own local coordinate system.&lt;/p&gt;
@@ -295,14 +444,17 @@ $$\le\equiv\{(a,b)\in\mathbb{N}^2\mid(\exists c\in\mathbb{N})\ a+c=b\}$$ --&gt;
   &lt;li&gt;&lt;strong&gt;Spot Light&lt;/strong&gt;: These lights are similar to point lights except they only emanate in a limited cone before their light is cut short. They’re usually used to highlight an area of the scene rather than provide light to see your surroundings.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;Free Look&lt;/strong&gt;: Free look is the player’s ability to move their mouse, joypad, control stick, etc. around and freely view the 3D world their character inhabits. For computer games this is referred to as &lt;em&gt;mouse-look&lt;/em&gt;. (The N64 for example, didn’t even have a full analog stick dedicated to the camera. It instead use a set of  directional buttons known as the c-buttons or camera buttons)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Free Look&lt;/strong&gt;: Free look is the player’s ability to move their mouse, joypad, control stick, etc. around and freely view the 3D world their character inhabits. For computer games this is referred to as &lt;strong&gt;mouse-look&lt;/strong&gt;. (The N64, for example, didn’t even have a full analog stick dedicated to the camera. It instead use a set of  directional buttons known as the c-buttons or camera buttons)&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Euler Angles vs. Quaternions&lt;/strong&gt;: When representing rotations in 3D space we can either use a set of 3 angles (1 for the rotation about each axis) or a single 4D number known as a quaternion. The quaternions $\mathbb{H}$ are a 4D generalization of the 2D complex numbers that are very apt in describing natural 3D rotations (similar to how the complex numbers are apt in describing 2D rotations).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Euler Angles vs. Quaternions&lt;/strong&gt;: When representing rotations in 3D space we can either use a set of 3 angles (1 for the rotation about each axis) or a single &lt;strong&gt;quaternion&lt;/strong&gt;. The quaternions $\mathbb{H}$ are a 4D generalization of the 2D complex numbers $\mathbb{C}$. Just like how the complex numbers are useful in describing rotations in 2-space, quaternions are apt in describing rotations in 3-space.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Game Loop&lt;/strong&gt;
+Code that corresponds to some object or event in a game has to run at every iteration of the game loop to check for updated conditions. For example, the code that moves the player has to check if the user is holding down the up key many times a second to ensure the player only moves while the key is held down.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Frame Rate Dependent Code&lt;/strong&gt;:
-All scripts have an update method that run at every pass of the object. If that update code happens to, for example, move the player, the player’s speed would be dependent on the speed of the computer running the game. To remedy this we have to take into account the &lt;em&gt;frame rate&lt;/em&gt; of the game and make sure that every update is spread out over a single frame rather than done all at once.&lt;/p&gt;
+A problem arises however. When that code is run to move the player, the player’s speed would be dependent on the speed of the computer running the game (the faster the loops, the more times the player would be moved per cycle). To remedy this we have to take into account the game’s &lt;em&gt;frame rate&lt;/em&gt;: how many updates of the screen there are per second.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Raycasting&lt;/strong&gt;: Raycasting is when a ray (an imaginary line that extends out form a point) is sent out at some angle and the location of the point it first intersects with, if it hits at all, is recorded. A first person shooter, for example, would use raycasting to tell whether a fired bullet hit an enemy or wall. In this case the ray would be perpendicular to the middle of the player’s screen.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Raycasting&lt;/strong&gt;: Raycasting is when a ray (an imaginary line that extends out from a point) is sent out at some angle and the location of the point it first intersects with, if it hits at all, is recorded. A first person shooter, for example, would use raycasting to tell whether a fired bullet hit an enemy or wall. In this case the ray would be perpendicular to the middle of the player’s screen (i.e where the crosshairs are).&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Mouse Picking&lt;/strong&gt;: Mouse picking is finding the spot a mouse clicked on in 3D space. Doing this requires casting a ray from the user’s point of view and seeing where it first collides.&lt;/p&gt;
 
@@ -326,6 +478,8 @@ All scripts have an update method that run at every pass of the object. If that 
   &lt;li&gt;&lt;strong&gt;Project&lt;/strong&gt;: Located at the bottom of the screen, the project tab shows all the assets, scenes, and scripts for the current project. It’s basically a file explorer. You can right click to create new scripts, scenes, and objects in this tab.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Console&lt;/strong&gt;: This outputs whatever was programmed to be outputted there by the scripts that are currently running in the scene. Usually used for debugging or to output errors encountered while running the script.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Rect Tool&lt;/strong&gt;: In 2D, transformations are simple enough that the above three can be combined into a single tool. Thus when making 2D unity games, the &lt;em&gt;Rect Tool&lt;/em&gt; is all you’ll need.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Coroutines&lt;/strong&gt;: ???&lt;/p&gt;
 
@@ -1010,7 +1164,7 @@ $$\begin{align}
 
 &lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Dottie_number.svg/800px-Dottie_number.svg.png?style=centerme&quot; alt=&quot;graph&quot; width=&quot;440px&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;The above is what’s known as a transcendental equation. Equations like these usually return transcendental numbers and indeed $\textbf{d}$ is transcendental. It’s decimal expansion is as follows:&lt;/p&gt;
+&lt;p&gt;The above is what’s known as a transcendental equation. Equations like these &lt;em&gt;usually&lt;/em&gt; return transcendental numbers and indeed $\textbf{d}$ is transcendental. It’s decimal expansion is as follows:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\textbf{d}=0.7390851332151606...&lt;/script&gt;
 
@@ -1025,7 +1179,7 @@ $$\begin{align}
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\cos \textbf{d} = \textbf{d} \implies \forall n\in\mathbb{N}\  \left(\underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n}\ \textbf{d}=\textbf{d}\right)&lt;/script&gt;
 
-&lt;p&gt;$\textbf{d}$ is the $\cos$ function’s only real fixed point, but there exists infinitely many solutions to $\cos z=z$ for the complex numbers. Those solutions, however, are not attractors.&lt;/p&gt;
+&lt;p&gt;$\textbf{d}$ is the $\cos$ function’s only &lt;em&gt;real&lt;/em&gt; fixed point, but there exists infinitely many solutions to $\cos z=z$ for the complex numbers. Those solutions, however, are not attractors.&lt;/p&gt;
 
 &lt;h3 id=&quot;universal-attractor&quot;&gt;Universal Attractor&lt;/h3&gt;
 &lt;p&gt;What’s interesting about $\textbf{d}$ is that it’s not just the real fixed point of $\cos$ but also its &lt;strong&gt;universal fixed point attractor&lt;/strong&gt;. That is to say, if you take the cosine of any real number and repeatedly take the cosine of the result, you will always approach $\textbf{d}$:&lt;/p&gt;
@@ -1142,8 +1296,7 @@ $$\begin{align}
 
     $$g\left(x\right)=\sum_{n=0}^{\infty}g^{\left(n\right)}\left(c\right)\frac{\left(x-c\right)^n}{n!}$$
 
-    - $g^{\left(n\right)}\left(x\right)$ is the $n$th derivative of $g\left(x\right)$
-    - $c$ is the point we are constructing the Taylor series about. Since we are letting $n\to\infty$ the choice of constant won't affect the outcome.
+    Where $g^{\left(n\right)}\left(x\right)$ is the $n$th derivative of $g\left(x\right)$ and $c$ is the point we are constructing the Taylor series about. Since we are letting $n\to\infty$ the choice of constant won't affect the outcome.
   &lt;/p&gt;
 
   &lt;!-- Fixed Point --&gt;
@@ -1191,7 +1344,7 @@ $$\begin{align}
     g'\left(x\right)=\frac{1}{f'\left(g\left(x\right)\right)}
     \end{align}$$
 
-    We can use the chain and product rules repeatedly to find the $n$th derivative of $g$. The second derivative, for example, can be computed by differentiated both sides of the above equation:
+    We can use the chain and product rules repeatedly to find the $n$th derivative of $g$. The second derivative, for example, can be computed by differentiating both sides of the above equation:
 
     $$\begin{align}
     f'\left(g\left(x\right)\right)g'\left(x\right)=1\\
@@ -1200,7 +1353,7 @@ $$\begin{align}
     g''(x) = \frac{-f''(g(x))g'(x)^2}{f'(g(x))}
     \end{align}$$
 
-    &lt;i&gt;Repeated use of the chain rule can be generalized via the &lt;a href=&quot;https://en.wikipedia.org/wiki/Faà_di_Bruno%27s_formula&quot;&gt;Faà di Bruno's formula.&lt;/a&gt;&lt;/i&gt;
+    &lt;i&gt;Repeated use of the chain rule can be generalized via &lt;a href=&quot;https://en.wikipedia.org/wiki/Faà_di_Bruno%27s_formula&quot;&gt;Faà di Bruno's formula.&lt;/a&gt;&lt;/i&gt;
   &lt;/p&gt;
 
   &lt;h4&gt;Solving the Taylor Series&lt;/h4&gt;
@@ -1269,7 +1422,7 @@ $$\begin{align}
     Where $a_n$ is a sequence of rational numbers.
     &lt;p&gt;&lt;/p&gt;
 
-    &lt;i&gt;As a side note, to prove this we assumed that $g$ was infinitely differentiable which is required to created a Taylor series for it. This is in fact true, but it just wasn't proved above.&lt;/i&gt;
+    &lt;i&gt;As a side note, to prove this we assumed that $g$ is infinitely differentiable and that $0$ fell in its interval of convergence, two things necessary to create a Taylor series for it and plug $0$ into it. These two facts are indeed true, they just weren't proved above.&lt;/i&gt;
   &lt;/p&gt;
 &lt;/details&gt;
 
