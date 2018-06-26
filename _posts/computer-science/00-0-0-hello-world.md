@@ -85,7 +85,7 @@ It then appears again in the same section but split up to demonstarte the use of
 main()
 {
     printf("hello, ");
-    printf("world\n");
+    printf("world");
     printf("\n");
 }
 ~~~
