@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-06-25T16:23:29-04:00</updated>
+ <updated>2018-06-25T23:59:39-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -26,20 +26,18 @@
 - [Examples](#examples) --&gt;
 
 &lt;h2 id=&quot;what-is-hello-world&quot;&gt;What is “Hello, World!”?&lt;/h2&gt;
-&lt;p&gt;When learning to program for the first time, oftentimes the first thing students are instructed to do after setting up their programming environment is to write a program that outputs the string &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;Hello, World!&quot;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;When learning to program for the first time, students are often instructed to write a program that outputs the string &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;Hello, World!&quot;&lt;/code&gt; in order to test out their programming environment.&lt;/p&gt;
 
-&lt;p&gt;It is has become an almost sacred tradition among teachers of computer science to introduce the topic of programming with this example. As such, “Hello World!” is often the first program most people write.&lt;/p&gt;
-
-&lt;p&gt;“Hello World!” programs are also written by experienced programmers as well in order to make sure their newly installed programming environment/language was set up correctly.&lt;/p&gt;
+&lt;p&gt;Over the years, introducing the topic of programming with this example has become a tradition amongst computer science teachers. As such, “Hello, World!” is often the first program most people write.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
 &lt;h2 id=&quot;history&quot;&gt;History&lt;/h2&gt;
 &lt;p&gt;Why and how outputting the string “Hello, World!” became the quintessential beginner program is a matter of interest for both computer scientists and historians alike due to the prevalence of this practice amongst computer scientists today.&lt;/p&gt;
 
-&lt;p&gt;The example was created and first used by Professor Brian Kernighan in documenting both the B and C programming languages during his time at Bell Labs. Below, I give those 3 instances in which it appears.&lt;/p&gt;
+&lt;p&gt;In summary, this program was created and first used by Professor Brian Kernighan when documenting both the B and C programming languages during his time at Bell Labs. Below I give the 3 instances in which it appears in his work.&lt;/p&gt;
 
-&lt;h4 id=&quot;a-tutorial-introduction-to-the-language-b&quot;&gt;A Tutorial Introduction to the Language B&lt;/h4&gt;
+&lt;h3 id=&quot;a-tutorial-introduction-to-the-language-b&quot;&gt;A Tutorial Introduction to the Language B&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;B&lt;/strong&gt; is a programming language developed at Bell Labs around 1969 and is a simplified successor to &lt;strong&gt;BCPL&lt;/strong&gt;. It was in 1972 that Kernighan was tasked with writing a manual for using B that was to be used internally at Bell Labs. This memorandum, &lt;a href=&quot;https://www.bell-labs.com/usr/dmr/www/bintro.html&quot;&gt;&lt;em&gt;A Tutorial Introduction to the Language B&lt;/em&gt;&lt;/a&gt;, is the first documented instance of “Hello, World!” in all of programming cannon.&lt;/p&gt;
 
 &lt;p&gt;The program appears in section &lt;em&gt;7 – External Variables&lt;/em&gt; in the following form to demonstrate the piecing together of several &lt;code class=&quot;highlighter-rouge&quot;&gt;char&lt;/code&gt; variables:&lt;/p&gt;
@@ -68,7 +66,7 @@ put2char(x,y) {
 a ’hell’; b ’o, w’; c ’orld’; d ’!*n’;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&quot;programming-in-c-a-tutorial&quot;&gt;Programming in C: A Tutorial&lt;/h4&gt;
+&lt;h3 id=&quot;programming-in-c-a-tutorial&quot;&gt;Programming in C: A Tutorial&lt;/h3&gt;
 &lt;p&gt;The next instance of “Hello, World!” appeared in another internal memorandum at Bell Labs titled &lt;a href=&quot;https://www.bell-labs.com/usr/dmr/www/ctut.pdf&quot;&gt;&lt;em&gt;Programming in C: A Tutorial&lt;/em&gt;&lt;/a&gt;. The document was again authored by Prof. Kernighan and was for the programming language &lt;strong&gt;C&lt;/strong&gt;, developed from 1969 to 1973 by Dennis Ritchie.&lt;/p&gt;
 
 &lt;p&gt;The program is the first code seen in the document, appearing in section &lt;em&gt;2 – A Simple C Program&lt;/em&gt;:&lt;/p&gt;
@@ -77,8 +75,31 @@ a ’hell’; b ’o, w’; c ’orld’; d ’!*n’;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h4 id=&quot;the-c-programming-language&quot;&gt;The C Programming Language&lt;/h4&gt;
-&lt;p&gt;While the above two instances of “Hello, World!” were the first, it wasn’t until Kernighan and Ritchie published the famous &lt;em&gt;The C Programming Language&lt;/em&gt; in 1978 that the example program would catch on. Indeed the book, often abbreviated K&amp;amp;R for its authors, remains a cornerstone of programming literature even today. It should be no surprise then, that the practice of using “Hello, World!” as a test program for beginners would originate from it.&lt;/p&gt;
+&lt;h3 id=&quot;the-c-programming-language&quot;&gt;The C Programming Language&lt;/h3&gt;
+&lt;p&gt;While the above two instances of “Hello, World!” were the first, it wasn’t until Kernighan and Ritchie published their famous book &lt;em&gt;The C Programming Language&lt;/em&gt; in 1978 that the example program would catch on. It first appears in section &lt;em&gt;1.1 – Getting Started&lt;/em&gt;:&lt;/p&gt;
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hello, world&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;include&lt;/code&gt; statement in the first line was added to the second edition of the book and is not present in the first.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;It then appears again in the same section but split up to demonstarte the use of the &lt;code class=&quot;highlighter-rouge&quot;&gt;\n&lt;/code&gt; escape sequence:&lt;/p&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hello, &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;world&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;Again, the first edition doesn’t include the &lt;code class=&quot;highlighter-rouge&quot;&gt;include&lt;/code&gt; statement.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Indeed the book, often abbreviated K&amp;amp;R for its authors, remains a cornerstone of programming literature even today. It should be no surprise then, that the practice of using “Hello, World!” as a test program for beginners would originate from it.&lt;/p&gt;
 
 &lt;h4 id=&quot;side-note-on-bcpl&quot;&gt;Side note on BCPL&lt;/h4&gt;
 &lt;p&gt;Several sources on the internet claim that Prof. Kernighan first wrote the “Hello, World!” program in his documentation of the Basic Combined Programming Language (BCPL) at Bell Labs before he wrote it for the B tutorial. This however is untrue. Unsure myself of whether the first documented use of “Hello, World!” was in BCPL or B, I emailed Prof. Kernighan and he confirmed it:&lt;/p&gt;

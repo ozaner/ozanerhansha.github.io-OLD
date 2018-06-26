@@ -241,20 +241,18 @@
 - [Examples](#examples) -->
 
 <h2 id="what-is-hello-world">What is “Hello, World!”?</h2>
-<p>When learning to program for the first time, oftentimes the first thing students are instructed to do after setting up their programming environment is to write a program that outputs the string <code class="highlighter-rouge">"Hello, World!"</code>.</p>
+<p>When learning to program for the first time, students are often instructed to write a program that outputs the string <code class="highlighter-rouge">"Hello, World!"</code> in order to test out their programming environment.</p>
 
-<p>It is has become an almost sacred tradition among teachers of computer science to introduce the topic of programming with this example. As such, “Hello World!” is often the first program most people write.</p>
-
-<p>“Hello World!” programs are also written by experienced programmers as well in order to make sure their newly installed programming environment/language was set up correctly.</p>
+<p>Over the years, introducing the topic of programming with this example has become a tradition amongst computer science teachers. As such, “Hello, World!” is often the first program most people write.</p>
 
 <!--more-->
 
 <h2 id="history">History</h2>
 <p>Why and how outputting the string “Hello, World!” became the quintessential beginner program is a matter of interest for both computer scientists and historians alike due to the prevalence of this practice amongst computer scientists today.</p>
 
-<p>The example was created and first used by Professor Brian Kernighan in documenting both the B and C programming languages during his time at Bell Labs. Below, I give those 3 instances in which it appears.</p>
+<p>In summary, this program was created and first used by Professor Brian Kernighan when documenting both the B and C programming languages during his time at Bell Labs. Below I give the 3 instances in which it appears in his work.</p>
 
-<h4 id="a-tutorial-introduction-to-the-language-b">A Tutorial Introduction to the Language B</h4>
+<h3 id="a-tutorial-introduction-to-the-language-b">A Tutorial Introduction to the Language B</h3>
 <p><strong>B</strong> is a programming language developed at Bell Labs around 1969 and is a simplified successor to <strong>BCPL</strong>. It was in 1972 that Kernighan was tasked with writing a manual for using B that was to be used internally at Bell Labs. This memorandum, <a href="https://www.bell-labs.com/usr/dmr/www/bintro.html"><em>A Tutorial Introduction to the Language B</em></a>, is the first documented instance of “Hello, World!” in all of programming cannon.</p>
 
 <p>The program appears in section <em>7 – External Variables</em> in the following form to demonstrate the piecing together of several <code class="highlighter-rouge">char</code> variables:</p>
@@ -283,7 +281,7 @@ put2char(x,y) {
 a ’hell’; b ’o, w’; c ’orld’; d ’!*n’;
 </code></pre>
 
-<h4 id="programming-in-c-a-tutorial">Programming in C: A Tutorial</h4>
+<h3 id="programming-in-c-a-tutorial">Programming in C: A Tutorial</h3>
 <p>The next instance of “Hello, World!” appeared in another internal memorandum at Bell Labs titled <a href="https://www.bell-labs.com/usr/dmr/www/ctut.pdf"><em>Programming in C: A Tutorial</em></a>. The document was again authored by Prof. Kernighan and was for the programming language <strong>C</strong>, developed from 1969 to 1973 by Dennis Ritchie.</p>
 
 <p>The program is the first code seen in the document, appearing in section <em>2 – A Simple C Program</em>:</p>
@@ -292,8 +290,31 @@ a ’hell’; b ’o, w’; c ’orld’; d ’!*n’;
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h4 id="the-c-programming-language">The C Programming Language</h4>
-<p>While the above two instances of “Hello, World!” were the first, it wasn’t until Kernighan and Ritchie published the famous <em>The C Programming Language</em> in 1978 that the example program would catch on. Indeed the book, often abbreviated K&amp;R for its authors, remains a cornerstone of programming literature even today. It should be no surprise then, that the practice of using “Hello, World!” as a test program for beginners would originate from it.</p>
+<h3 id="the-c-programming-language">The C Programming Language</h3>
+<p>While the above two instances of “Hello, World!” were the first, it wasn’t until Kernighan and Ritchie published their famous book <em>The C Programming Language</em> in 1978 that the example program would catch on. It first appears in section <em>1.1 – Getting Started</em>:</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+</span>
+<span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"hello, world</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><em>The <code class="highlighter-rouge">include</code> statement in the first line was added to the second edition of the book and is not present in the first.</em></p>
+
+<p>It then appears again in the same section but split up to demonstarte the use of the <code class="highlighter-rouge">\n</code> escape sequence:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+</span>
+<span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"hello, "</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"world</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><em>Again, the first edition doesn’t include the <code class="highlighter-rouge">include</code> statement.</em></p>
+
+<p>Indeed the book, often abbreviated K&amp;R for its authors, remains a cornerstone of programming literature even today. It should be no surprise then, that the practice of using “Hello, World!” as a test program for beginners would originate from it.</p>
 
 <h4 id="side-note-on-bcpl">Side note on BCPL</h4>
 <p>Several sources on the internet claim that Prof. Kernighan first wrote the “Hello, World!” program in his documentation of the Basic Combined Programming Language (BCPL) at Bell Labs before he wrote it for the B tutorial. This however is untrue. Unsure myself of whether the first documented use of “Hello, World!” was in BCPL or B, I emailed Prof. Kernighan and he confirmed it:</p>

@@ -17,3 +17,11 @@ You fire up your PC to try and find the lottery numbers but, unfortunately, your
 Even more unfortunately, it turns out such a simulation would require far more computing power than your supercomputer would allow. But you have a brilliant idea. The super computer, with its limited power, can simulate things a year or two into the future
 
 ## Simulation of the Simulator
+
+
+
+
+
+basically show that the assumptions are false given that predicting th future can lead to a causailty loop, also say that sure quantum effects are the easiest scapegoat but there might be a more fundemntal physical restriction to even approximating the future due to causaility.
+
+Also machines are just particles so they shouldn't be unsimualtable in the same way plants or rocks are not unsimulatable
