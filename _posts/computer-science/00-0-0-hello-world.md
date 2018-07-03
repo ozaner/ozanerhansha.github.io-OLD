@@ -13,16 +13,16 @@ tags: computer-science
 - [Examples](#examples) -->
 
 ## What is "Hello, World!"?
-When learning to program for the first time, students are often instructed to write a program that outputs the string `"Hello, World!"` in order to test out their programming environment.
+When learning to program for the first time, students are often instructed to write a program that outputs the string `"Hello, World!"` in order to verify that their programming environment is set up correctly.
 
-Over the years, introducing the topic of programming with this example has become a tradition amongst computer science teachers. As such, "Hello, World!" is often the first program most people write.
+Since the first "Hello, World!" program was written in 1972, it has become a tradition amongst computer science teachers and professors to introduce the topic of programming with this example. As such, "Hello, World!" is often the first program most people write.
 
 <!--more-->
 
 ## History
-Why and how outputting the string "Hello, World!" became the quintessential beginner program is a matter of interest for both computer scientists and historians alike due to the prevalence of this practice amongst computer scientists today.
+Why and how outputting the string "Hello, World!" became the quintessential beginner program is a matter of interest for both computer scientists and historians alike due to the prevalence of this practice in computer science education today.
 
-In summary, this program was created and first used by Professor Brian Kernighan when documenting both the B and C programming languages during his time at Bell Labs. Below I give the 3 instances in which it appears in his work.
+The program was created by Professor Brian Kernighan during his time at Bell Labs. He used them in his documentation of the B and C programming languages. Below, I detail the first 3 appearances of the example:
 
 ### A Tutorial Introduction to the Language B
 **B** is a programming language developed at Bell Labs around 1969 and is a simplified successor to **BCPL**. It was in 1972 that Kernighan was tasked with writing a manual for using B that was to be used internally at Bell Labs. This memorandum, [*A Tutorial Introduction to the Language B*](https://www.bell-labs.com/usr/dmr/www/bintro.html), is the first documented instance of "Hello, World!" in all of programming cannon.
