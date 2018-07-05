@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Letter Case and Computing
-date: 2018-06-30
+date: 2018-07-5
 tags: computer-science
 ---
 ## What is Letter Case?
