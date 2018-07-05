@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-07-05T12:09:46-04:00</updated>
+ <updated>2018-07-05T12:10:31-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -21,6 +21,8 @@
 &lt;p&gt;Letter case refers to whether a letter is &lt;strong&gt;uppercase&lt;/strong&gt;/capitalized (&lt;em&gt;A&lt;/em&gt;) or &lt;strong&gt;lowercase&lt;/strong&gt; (&lt;em&gt;a&lt;/em&gt;). There are different styles of writing words and sentences with different conventions of where to capitalize letters and where not to.&lt;/p&gt;
 
 &lt;p&gt;The topic of letter case is a detailed one, involving the history and linguistics of different languages, their grammars, and of printed word itself. This post will touch upon letter case styles in general writing, but will mostly focus on the use of case styles on the internet, in programming, and computing in general. Specifically in English.&lt;/p&gt;
+
+&lt;!--more--&gt;
 
 &lt;h2 id=&quot;writingtyping&quot;&gt;Writing/Typing&lt;/h2&gt;
 &lt;h3 id=&quot;this-is-sentence-case&quot;&gt;This is sentence case.&lt;/h3&gt;

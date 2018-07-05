@@ -9,6 +9,8 @@ Letter case refers to whether a letter is **uppercase**/capitalized (*A*) or **l
 
 The topic of letter case is a detailed one, involving the history and linguistics of different languages, their grammars, and of printed word itself. This post will touch upon letter case styles in general writing, but will mostly focus on the use of case styles on the internet, in programming, and computing in general. Specifically in English.
 
+<!--more-->
+
 ## Writing/Typing
 ### This is sentence case.
 This is the standard letter case used in the English language. The beginning of sentences are capitalized along with proper nouns (i.e names, places, days of the week, etc.). Each sentence ends with some punctuation (ex *.*, *?*, *!*).
