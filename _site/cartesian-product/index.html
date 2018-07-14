@@ -236,12 +236,12 @@
   
 ]</span>
   <h2 id="definition">Definition</h2>
-<p>The Cartesian product $\times$ is an operation on two sets, $A$ and $B$, that returns the set of all <a href="/n-tuples">ordered pairs</a> with their first element from $A$ and their second from $B$.</p>
+<p>The Cartesian product $\times$ is an operation on two sets, call them $A$ and $B$, that returns the set of all <a href="/n-tuples">ordered pairs</a> with their first element from $A$ and their second from $B$.</p>
 
 <script type="math/tex; mode=display">A\times B=\{(a,b)\mid a\in A \land b\in B\}</script>
 
 <h4 id="existence-in-zfc">Existence in ZFC</h4>
-<p>We can show that, utilizing the <a href="/n-tuples#definition">Kuratowski definition</a> of ordered pairs, that the Cartesian product of two sets is merely a subset of the following:</p>
+<p>We can show that, utilizing the <a href="/n-tuples#definition">Kuratowski definition</a> of ordered pairs, the Cartesian product of two sets is merely a subset of the following:</p>
 
 <script type="math/tex; mode=display">A\times B \in \mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)</script>
 
@@ -275,7 +275,7 @@ A\times B\times C&amp;=(A \times B)\times C\\
 
 <script type="math/tex; mode=display">\underbrace{S\times S \times \cdots \times S}_{n\text{ sets}}=S^n</script>
 
-<h2 id="order-properties">Order Properties</h2>
+<h2 id="rules-of-replacement">Rules of replacement</h2>
 <h4 id="non-commutative">Non-Commutative</h4>
 <p>The Cartesian product is a non-commutative operator:</p>
 
@@ -320,12 +320,7 @@ If $A$ and $B$ are memebers of some universal set $U$, then their absolute compl
 $$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right)\cup\left(A\times B^C\right)$$
 </details>
 
-<h2 id="cardinal-multiplication">Cardinal Multiplication</h2>
-<p>Cartesian products are used to define the product of two cardinal numbers:</p>
-
-<script type="math/tex; mode=display">\left|X\right|\cdot\left|Y\right|=\left|X\times Y\right|</script>
-
-<h2 id="some-uses">Some Uses</h2>
+<h2 id="uses">Uses</h2>
 <h4 id="functions-and-relations">Functions and Relations</h4>
 <p>Relations, and thus functions and operations, from a set $A$ to a set $B$ are defined as subsets of the Cartesian product $A\times B$. For example the less than or equal to relation $\le$ on the integers can be defined as so:</p>
 
@@ -334,6 +329,11 @@ $$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right
 <p><em>We can formalize this definition to set theory by comparing the cardinality of the sets represented by the naturals and further the integers.</em></p>
 
 <p>And so, because $10$ is less than $12$, the ordered pair $(10,12)\in\le$. We can write this more conventionally as $10\le12$.</p>
+
+<h4 id="cardinal-multiplication">Cardinal Multiplication</h4>
+<p>Cartesian products are used to define the product of two cardinal numbers:</p>
+
+<script type="math/tex; mode=display">\left|X\right|\cdot\left|Y\right|=\left|X\times Y\right|</script>
 
 <h4 id="coordinates">Coordinates</h4>
 <p>Every point in $2$-space represents an element of the Cartesian product of the Reals with themselves (i.e $\mathbb{R}^2$). This can be generalized for $n$-space with every point being an element of $\mathbb{R}^n$:</p>
@@ -356,9 +356,18 @@ $$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right
     
       <li>
         <h3>
+          <a href="/classical-computation-in-linear-algebra/">
+            Classical Computation in Linear Algebra
+            <small>14 Jul 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/letter-case/">
             Letter Case and Computing
-            <small>30 Jun 2018</small>
+            <small>05 Jul 2018</small>
           </a>
         </h3>
       </li>
@@ -368,15 +377,6 @@ $$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right
           <a href="/hello-world/">
             On the Origin of "Hello, World!"
             <small>25 Jun 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/natural-numbers/">
-            Natural Numbers
-            <small>25 May 2018</small>
           </a>
         </h3>
       </li>

@@ -41,11 +41,11 @@ And in general, an $n$-tuple for $n>2$ is defined as:
 
 $$(x_1,x_2,\cdots,x_{n-1},x_n)=((x_1,x_2,\cdots,x_{n-1}),x_n)$$
 
-*The above definition lacks a notion of a $0$ and $1$-tuple. I can't find a use for them that justifies their complication to the definition of $n$-tuple, so I excluded them. But see [this](https://en.wikipedia.org/wiki/Tuple#Tuples_as_nested_sets) for a different definition of $n$-tuples that uses the null-tuple as a base case rather than ordered pairs.*
+*While the above definition is standard, it lacks a notion of a $0$ and $1$-tuple. See [this](https://en.wikipedia.org/wiki/Tuple#Tuples_as_nested_sets) for a different definition of $n$-tuples that uses the null-tuple as a base case rather than ordered pairs. I can't find a use for them that justifies their complication to the definition of $n$-tuple, so I excluded them.*
 
 *Alternatively, $n$-tuples can also be defined as functions with domains over some finite interval of the positive integers. In this sense, they would be equivalent to finite sequences.*
 
-Whatever definition is used, all that matters is that the equality of two $n$-tuples be defined as below:
+Whatever definition is used, all that matters is that two $n$-tuples are equivalent *only* when the elements at each of their indices are equivalent. This is their defining property.
 
 #### Existence in ZFC
 The existence of an ordered pair of elements in ZFC can be proved using the axiom of pairing twice over. Once to prove that $ \\{ a \\} $ and $ \\{ a,b \\} $ exist and again to pair them with each other.

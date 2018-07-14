@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-07-05T12:10:31-04:00</updated>
+ <updated>2018-07-14T02:37:40-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -13,9 +13,127 @@
 
  
  <entry>
+   <title>Classical Computation in Linear Algebra</title>
+   <link href="http://localhost:4000/classical-computation-in-linear-algebra/"/>
+   <updated>2018-07-14T00:00:00-04:00</updated>
+   <id>http://localhost:4000/classical-computation-in-linear-algebra</id>
+   <content type="html">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;While computation is usually formulated using logical connectives like $\wedge,\vee, \neg$ along with the binary digits $0$ and $1$, there is another way to formulate binary computation: linear algebra. We can represent $0$ and $1$ as vectors and logical gates as transformations on those vectors.&lt;/p&gt;
+
+&lt;p&gt;While this may at first seem to only be a novel construction, reformulating computation in terms of linear algebra is precisely what opens the door to quantum computation, which is essentially a more general form of what is shown below.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;0-and-1-states&quot;&gt;0 and 1 states&lt;/h2&gt;
+&lt;p&gt;We represent $0$ and $1$ as two orthonormal vectors:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;|0\rangle = \begin{pmatrix}
+                  1 \\
+                  0 \\
+                \end{pmatrix}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;|1\rangle = \begin{pmatrix}
+                  0 \\
+                  1 \\
+                \end{pmatrix}&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;Notice my use of bra-ket notation above. This is the standard notation used in quantum mechanics, and thus quantum computing. As such I used it here for consistency as well as to denote the difference between the state $|1\rangle$ and the number $1$.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;an-example&quot;&gt;An Example&lt;/h4&gt;
+&lt;p&gt;As an example, let’s use the &lt;code class=&quot;highlighter-rouge&quot;&gt;NOT&lt;/code&gt; operator on the $|1\rangle$ bit:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{pmatrix}
+    0 &amp; 1 \\
+    1 &amp; 0
+  \end{pmatrix}
+  \begin{pmatrix}
+    0 \\
+    1 \\
+  \end{pmatrix}=
+  \begin{pmatrix}
+    1 \\
+    0 \\
+  \end{pmatrix} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;or in symbolic notation, where $X$ represents the &lt;code class=&quot;highlighter-rouge&quot;&gt;NOT&lt;/code&gt; gate:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;X|1\rangle=|0\rangle&lt;/script&gt;
+
+&lt;h2 id=&quot;unitary-gates&quot;&gt;Unitary Gates&lt;/h2&gt;
+&lt;p&gt;Since a bit has only $2$ possible input states and $2$ possible output states, there are exactly $2^2=4$ unary logical gates. We can represent them as matrices in the following way:&lt;/p&gt;
+
+&lt;h4 id=&quot;identity&quot;&gt;Identity&lt;/h4&gt;
+&lt;p&gt;The identity gate takes an input and returns it as is (i.e $f(x)=x$). To represent it we simply use the $2 \times 2$ identity matrix:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+I_2 = \begin{pmatrix}
+    1 &amp; 0 \\
+    0 &amp; 1
+  \end{pmatrix} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;And indeed, if we apply the gate to both $|0\rangle$ and $|1\rangle$ we find:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;I_2|0\rangle=|0\rangle&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;I_2|1\rangle=|1\rangle&lt;/script&gt;
+
+&lt;h4 id=&quot;negation&quot;&gt;Negation&lt;/h4&gt;
+&lt;p&gt;The negation gate takes an input and flips it (i.e $f(x)=\neg x$). We can represent it with the following matrix:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+X = \begin{pmatrix}
+    0 &amp; 1 \\
+    1 &amp; 0
+  \end{pmatrix} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Applying the gate to both $|0\rangle$ and $|1\rangle$ we find:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;X|0\rangle=|1\rangle&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;X|1\rangle=|0\rangle&lt;/script&gt;
+
+&lt;h4 id=&quot;constant-0&quot;&gt;Constant 0&lt;/h4&gt;
+&lt;p&gt;Outputs $0$ regardless of input (i.e $f(x)=0$). We can represent it with the following matrix:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+C_0 = \begin{pmatrix}
+    1 &amp; 1 \\
+    0 &amp; 0
+  \end{pmatrix} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Applying the gate to both $|0\rangle$ and $|1\rangle$ we find:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;C_0|0\rangle=|0\rangle&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;C_0|1\rangle=|0\rangle&lt;/script&gt;
+
+&lt;h4 id=&quot;constant-1&quot;&gt;Constant 1&lt;/h4&gt;
+&lt;p&gt;Outputs $1$ regardless of input (i.e $f(x)=1$). We can represent it with the following matrix:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+C_1 = \begin{pmatrix}
+    0 &amp; 0 \\
+    1 &amp; 1
+  \end{pmatrix} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Applying the gate to both $|0\rangle$ and $|1\rangle$ we find:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;C_1|0\rangle=|1\rangle&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;C_1|1\rangle=|1\rangle&lt;/script&gt;
+
+&lt;h2 id=&quot;binary-gates&quot;&gt;Binary Gates&lt;/h2&gt;
+&lt;p&gt;We can now introduce gates that take in&lt;/p&gt;
+
+&lt;h4 id=&quot;cnot&quot;&gt;CNOT&lt;/h4&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Letter Case and Computing</title>
    <link href="http://localhost:4000/letter-case/"/>
-   <updated>2018-06-30T00:00:00-04:00</updated>
+   <updated>2018-07-05T00:00:00-04:00</updated>
    <id>http://localhost:4000/letter-case</id>
    <content type="html">&lt;h2 id=&quot;what-is-letter-case&quot;&gt;What is Letter Case?&lt;/h2&gt;
 &lt;p&gt;Letter case refers to whether a letter is &lt;strong&gt;uppercase&lt;/strong&gt;/capitalized (&lt;em&gt;A&lt;/em&gt;) or &lt;strong&gt;lowercase&lt;/strong&gt; (&lt;em&gt;a&lt;/em&gt;). There are different styles of writing words and sentences with different conventions of where to capitalize letters and where not to.&lt;/p&gt;
@@ -25,136 +143,142 @@
 &lt;!--more--&gt;
 
 &lt;h2 id=&quot;writingtyping&quot;&gt;Writing/Typing&lt;/h2&gt;
-&lt;h3 id=&quot;this-is-sentence-case&quot;&gt;This is sentence case.&lt;/h3&gt;
-&lt;p&gt;This is the standard letter case used in the English language. The beginning of sentences are capitalized along with proper nouns (i.e names, places, days of the week, etc.). Each sentence ends with some punctuation (ex &lt;em&gt;.&lt;/em&gt;, &lt;em&gt;?&lt;/em&gt;, &lt;em&gt;!&lt;/em&gt;).&lt;/p&gt;
+&lt;!-- ### This is sentence case. --&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;This is sentence case.&lt;/h3&gt;&lt;/summary&gt;
+This is the standard letter case used in the English language. The beginning of sentences are capitalized along with proper nouns (i.e names, places, days of the week, etc.). Each sentence ends with some punctuation (ex &lt;i&gt;.&lt;/i&gt;, &lt;i&gt;?&lt;/i&gt;, &lt;i&gt;!&lt;/i&gt;).
 
-&lt;p&gt;Here’s an example:&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;The quick brown fox jumps over the lazy dog.&lt;/p&gt;
-&lt;/blockquote&gt;
+Here's an example:
+&lt;!-- &gt; The quick brown fox jumps over the lazy dog. --&gt;
+&lt;blockquote&gt;The quick brown fox jumps over the lazy dog.&lt;/blockquote&gt;
 
-&lt;p&gt;You’d see this case when reading anything somewhat formal, like emails, a person’s/company’s website, text documents, academic papers, etc.&lt;/p&gt;
+You'd see this case when reading anything somewhat formal, like emails, a person's/company's website, text documents, academic papers, etc.
 
-&lt;h3 id=&quot;this-is-title-case&quot;&gt;This is Title Case&lt;/h3&gt;
-&lt;p&gt;This is the case used when typing out titles. Title case has all words capitalized barring a limited subset that are deemed &lt;em&gt;common&lt;/em&gt; (unless they are the first word, in which case they are capitalized). That includes words like &lt;em&gt;or&lt;/em&gt;, &lt;em&gt;but&lt;/em&gt;, &lt;em&gt;if&lt;/em&gt;, &lt;em&gt;the&lt;/em&gt;, &lt;em&gt;in&lt;/em&gt;, etc.&lt;/p&gt;
+&lt;/details&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;!-- ### This is Title Case --&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;This is Title Case&lt;/h3&gt;&lt;/summary&gt;
+This is the case used when typing out titles. Title case has all words capitalized barring a limited subset that are deemed &lt;i&gt;common&lt;/i&gt; (unless they are the first word, in which case they are capitalized). That includes words like &lt;i&gt;or&lt;/i&gt;, &lt;i&gt;but&lt;/i&gt;, &lt;i&gt;if&lt;/i&gt;, &lt;i&gt;the&lt;/i&gt;, &lt;i&gt;in&lt;/i&gt;, etc.
 
-&lt;p&gt;Here’s an example:&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;The Quick Brown Fox Jumps over the Lazy Dog&lt;/p&gt;
-&lt;/blockquote&gt;
+Here's an example:
+&lt;!-- &gt; The Quick Brown Fox Jumps over the Lazy Dog --&gt;
+&lt;blockquote&gt;The Quick Brown Fox Jumps over the Lazy Dog&lt;/blockquote&gt;
 
-&lt;p&gt;Academic papers, emails (think subject line), music, videogames and just about any media or document has a title. Its important to note that there is no agreement on what exactly the subset of words not capitalized in title case is. That said, all titles more or less follow the same pattern of capitalization.&lt;/p&gt;
+Academic papers, emails (think subject line), music, videogames and just about any media or document has a title. Its important to note that there is no agreement on what exactly the subset of words not capitalized in title case is. That said, all titles more or less follow the same pattern of capitalization.
+&lt;/details&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;!-- ### ALL CAPS --&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;ALL CAPS&lt;/h3&gt;&lt;/summary&gt;
+Writing in all uppercase letter, or all caps as it is more commonly known, is taken to convey yelling when typed out, especially when texting or commenting on the internet. That said, all caps is also used in titles and headlines in order to make the text stand out more.
 
-&lt;h3 id=&quot;all-caps&quot;&gt;ALL CAPS&lt;/h3&gt;
-&lt;p&gt;Writing in all uppercase letter, or all caps as it is more commonly known, is taken to convey yelling when typed out, especially when texting or commenting on the internet. That said, all caps is also used in titles and headlines in order to make the text stand out more.&lt;/p&gt;
+Here's what it looks like:
 
-&lt;p&gt;Here’s what it looks like:&lt;/p&gt;
+&lt;!-- &gt; THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG! --&gt;
+&lt;blockquote&gt;THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG!&lt;/blockquote&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG!&lt;/p&gt;
-&lt;/blockquote&gt;
+Typing in all caps can be done by holding down the &lt;code&gt;SHIFT&lt;/code&gt; key while typing or, more commonly, by simply turning on the &lt;code&gt;CAPS LOCK&lt;/code&gt; key. Smartphone keyboards also have similar functionality with caps lock being activated by double tapping the shift key, for example. Acronyms are written in all caps (NATO, USA, ASAP) unless the acronym has had enough usage to become a fully fledged word like &lt;i&gt;radar&lt;/i&gt; (&lt;b&gt;ra&lt;/b&gt;dio &lt;b&gt;d&lt;/b&gt;etection &lt;b&gt;a&lt;/b&gt;nd &lt;b&gt;r&lt;/b&gt;anging) or &lt;i&gt;laser&lt;/i&gt; (&lt;b&gt;l&lt;/b&gt;ight &lt;b&gt;a&lt;/b&gt;mplification by &lt;b&gt;s&lt;/b&gt;timulated &lt;b&gt;e&lt;/b&gt;mission of &lt;b&gt;r&lt;/b&gt;adiation)
+&lt;/details&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;!-- ### all lowercase --&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;all lowercase&lt;/h3&gt;&lt;/summary&gt;
+All lowercase is typically used when writing something informally and quickly, such as a text message or an internet comment (if the commenter isn't particularly concerned with the comment's presentation). This is because the message is not worth the extra effort of pressing the &lt;code&gt;SHIFT&lt;/code&gt; key (especially on smartphone keyboards). File extensions are also conventionally all lowercase.
 
-&lt;p&gt;Typing in all caps can be done by holding down the &lt;code class=&quot;highlighter-rouge&quot;&gt;SHIFT&lt;/code&gt; key while typing or, more commonly, by simply turning on the &lt;code class=&quot;highlighter-rouge&quot;&gt;CAPS LOCK&lt;/code&gt; key. Smartphone keyboards also have similar functionality with caps lock being activated by double tapping the shift key, for example. Acronyms are written in all caps (NATO, USA, ASAP) unless the acronym has had enough usage to become a fully fledged word like &lt;em&gt;radar&lt;/em&gt; (&lt;strong&gt;ra&lt;/strong&gt;dio &lt;strong&gt;d&lt;/strong&gt;etection &lt;strong&gt;a&lt;/strong&gt;nd &lt;strong&gt;r&lt;/strong&gt;anging) or &lt;em&gt;laser&lt;/em&gt; (&lt;strong&gt;l&lt;/strong&gt;ight &lt;strong&gt;a&lt;/strong&gt;mplification by &lt;strong&gt;s&lt;/strong&gt;timulated &lt;strong&gt;e&lt;/strong&gt;mission of &lt;strong&gt;r&lt;/strong&gt;adiation)&lt;/p&gt;
+Here's what it looks like:
 
-&lt;h3 id=&quot;all-lowercase&quot;&gt;all lowercase&lt;/h3&gt;
-&lt;p&gt;All lowercase is typically used when writing something informally and quickly, such as a text message or an internet comment (if the commenter isn’t particularly concerned with the comment’s presentation). This is because the message is not worth the extra effort of pressing the &lt;code class=&quot;highlighter-rouge&quot;&gt;SHIFT&lt;/code&gt; key (especially on smartphone keyboards). File extensions are also conventionally all lowercase.&lt;/p&gt;
+&lt;!-- &gt; the quick brown fox jumps over the lazy dog --&gt;
+&lt;blockquote&gt;the quick brown fox jumps over the lazy dog&lt;/blockquote&gt;
 
-&lt;p&gt;Here’s what it looks like:&lt;/p&gt;
+Since the use of all lowercase is one of convenience, text written in it is not usually punctuated unless necessary to convey intent. (you hate him. vs. you hate him?)
 
-&lt;blockquote&gt;
-  &lt;p&gt;the quick brown fox jumps over the lazy dog&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Since the use of all lowercase is one of convenience, text written in it is not usually punctuated unless necessary to convey intent. (you hate him. vs. you hate him?)&lt;/p&gt;
-
-&lt;p&gt;That said, this case may soon die out as some mobile keyboards, for example Google’s GBoard for Android, automatically capitalize the first letter in sentences as well as in proper nouns. This essentially makes typing in sentence case the default.&lt;/p&gt;
+That said, this case may soon die out as some mobile keyboards, for example Google's GBoard for Android, automatically capitalize the first letter in sentences as well as in proper nouns. This essentially makes typing in sentence case the default.
+&lt;/details&gt;
 
 &lt;h2 id=&quot;computingprogramming&quot;&gt;Computing/Programming&lt;/h2&gt;
 &lt;p&gt;For many languages, it is best practice to use different type cases to differentiate variables, methods, classes, functions, and other identifiers from each other, as well as provide useful metadata on said identifiers. Their use in languages is almost never mandatory and instead serve to promote readability and uniformity in code.&lt;/p&gt;
 
-&lt;p&gt;Virtually all programming languages do not allow whitespace in identifier names. As such, the three main programming type cases do not make use of spaces and instead use other means of &lt;strong&gt;delimiting&lt;/strong&gt;, or telling apart, words. It is also important to note that these naming conventions don’t just utilize different type cases for different identifiers, but also uppercase and lowercase variations of those type cases.&lt;/p&gt;
+&lt;p&gt;Virtually all programming languages do not allow whitespace in identifier names. As such, the three main programming type cases do not make use of spaces and instead use other means of &lt;b&gt;delimiting&lt;/b&gt;, or telling apart, words. It is also important to note that these naming conventions don’t just utilize different type cases for different identifiers, but also uppercase and lowercase variations of those type cases.&lt;/p&gt;
 
-&lt;h3 id=&quot;camelcase&quot;&gt;CamelCase&lt;/h3&gt;
-&lt;p&gt;Camel case has the first letter of every word in the phrase/identifier capitalized. And so capitalization serves as camel case’s delimiter. Lower camel case has the first letter of the first word in the identifier lowercased while upper camel case does not:&lt;/p&gt;
+&lt;!-- ### CamelCase --&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;CamelCase&lt;/h3&gt;&lt;/summary&gt;
+Camel case has the first letter of every word in the phrase/identifier capitalized. And so capitalization serves as camel case's delimiter. Lower camel case has the first letter of the first word in the identifier lowercased while upper camel case does not:
 
-&lt;blockquote&gt;
-  &lt;p&gt;UpperCamelCase&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;!-- &gt;UpperCamelCase --&gt;
+&lt;blockquote&gt;UpperCamelCase&lt;/blockquote&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;lowerCamelCase&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;!-- &gt;lowerCamelCase --&gt;
+&lt;blockquote&gt;lowerCamelCase&lt;/blockquote&gt;
 
-&lt;p&gt;Used in&lt;/p&gt;
+Used in
 &lt;ul&gt;
   &lt;li&gt;Class names in Java (upper)&lt;/li&gt;
   &lt;li&gt;Class names in Python (upper)&lt;/li&gt;
   &lt;li&gt;Method names in Java (lower)&lt;/li&gt;
   &lt;li&gt;Variables names in Java (lower)&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/details&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;!-- ### snake_case --&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;snake_case&lt;/h3&gt;&lt;/summary&gt;
+Snake case delimits words using underscores ( _ ). And like the others, There are uppercase and lowercase variants:
+&lt;!-- &gt;UPPER_SNAKE_CASE --&gt;
+&lt;blockquote&gt;UPPER_SNAKE_CASE&lt;/blockquote&gt;
 
-&lt;h3 id=&quot;snake_case&quot;&gt;snake_case&lt;/h3&gt;
-&lt;p&gt;Snake case delimits words using underscores ( _ ). And like the others, There are uppercase and lowercase variants:&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Upper_Snake_Case&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;!-- &gt;lower_snake_case --&gt;
+&lt;blockquote&gt;lower_snake_case&lt;/blockquote&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;lower_snake_case&lt;/p&gt;
-&lt;/blockquote&gt;
+This case is commonly used for naming attributes on computers, like files or usernames, where space characters cannot be processed. Snake case is essentially the default type case used when spaces are unavailable.
 
-&lt;p&gt;Unlike camel case, snake case is not delimited by the capitalization of letters. As such it is possible to make use of a third variant with all capital letters:&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;CAPITAL_SNAKE_CASE&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;This case is commonly used for naming attributes on computers, like files or usernames, where space characters cannot be processed. Snake case is essentially the default type case used when spaces are unavailable.&lt;/p&gt;
-
-&lt;p&gt;Used in&lt;/p&gt;
+Used in
 &lt;ul&gt;
   &lt;li&gt;Constants in Java (upper)&lt;/li&gt;
   &lt;li&gt;Constants in Python (upper)&lt;/li&gt;
   &lt;li&gt;Variables in Python (lower)&lt;/li&gt;
   &lt;li&gt;Functions and classes in the C &amp;amp; C++ Standard Library (lower)&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/details&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;!-- ### kebab-case &amp; Train-Case --&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;kebab-case &amp;amp; Train-Case&lt;/h3&gt;&lt;/summary&gt;
+Kebab case is similar to snake case, as well as used in similar situations, with its only difference being the use of hyphens (-) to delimit words rather than underscores:
+&lt;!-- &gt;UPPER-KEBAB-CASE --&gt;
+&lt;blockquote&gt;UPPER-KEBAB-CASE&lt;/blockquote&gt;
 
-&lt;h3 id=&quot;kebab-case--train-case&quot;&gt;kebab-case &amp;amp; Train-Case&lt;/h3&gt;
-&lt;p&gt;Kebab case is similar to snake case, as well as used in similar situations, with its only difference being the use of hyphens (-) to delimit words rather than underscores:&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Upper-Kebab-Case&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;!-- &gt;lower-kebab-case --&gt;
+&lt;blockquote&gt;lower-kebab-case&lt;/blockquote&gt;
 
-&lt;p&gt;&lt;em&gt;Upper kebab case is also known as train case&lt;/em&gt;&lt;/p&gt;
+There's also a third variation similar to camel case called train case where the first letter of each word capitalized:
 
-&lt;blockquote&gt;
-  &lt;p&gt;lower-kebab-case&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;!-- &gt;Train-Case --&gt;
+&lt;blockquote&gt;Train-Case&lt;/blockquote&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;CAPITAL-KEBAB-CASE&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Used in&lt;/p&gt;
+Used in
 &lt;ul&gt;
   &lt;li&gt;CSS Classes (lower)&lt;/li&gt;
   &lt;li&gt;URLs (lower)&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/details&gt;
 
 &lt;h2 id=&quot;other&quot;&gt;Other&lt;/h2&gt;
-&lt;h3 id=&quot;studlycaps&quot;&gt;StUdLyCaPs&lt;/h3&gt;
-&lt;p&gt;Studly caps has letters randomly capitalized and may or may not include spaces to delimit words. Its use is associated with sarcasm and parodying other type cases.&lt;/p&gt;
+&lt;!-- ### StUdLyCaPs --&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;StUdLyCaPs&lt;/h3&gt;&lt;/summary&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;tHeqUIckBrOwNFOxjuMpsOvERtHeLazYdOg&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;!-- &gt;tHeqUIckBrOwNFOxjuMpsOvERtHeLazYdOg --&gt;
+&lt;blockquote&gt;tHeqUIckBrOwNFOxjuMpsOvERtHeLazYdOg&lt;/blockquote&gt;
 
-&lt;p&gt;Below is variation of Studly caps where spaces are used to delimit words. This makes the message more readable while still retaining its sarcastic tone:&lt;/p&gt;
+A variation on Studly caps is one where spaces are included to delimit words. This makes the message more readable while still retaining its sarcastic tone:
 
-&lt;blockquote&gt;
-  &lt;p&gt;tHe qUIck BrOwN FOx juMps OvER tHe lAzYdOg&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;!-- &gt;tHe qUIck BrOwN FOx juMps OvER tHe lAzYdOg --&gt;
+&lt;blockquote&gt;tHe qUIck BrOwN FOx juMps OvER tHe lAzYdOg&lt;/blockquote&gt;
 
-&lt;p&gt;Indeed this is the same case used in the &lt;a href=&quot;http://knowyourmeme.com/memes/mocking-spongebob&quot;&gt;mocking Spongebob meme&lt;/a&gt; that was popular around 2017.&lt;/p&gt;
+As you can see, the spaces make the text a but more readable. Indeed this is the same case used in the &lt;a href=&quot;http://knowyourmeme.com/memes/mocking-spongebob&quot;&gt;mocking Spongebob meme&lt;/a&gt; that was popular around 2017.
+&lt;/details&gt;
 </content>
  </entry>
  
@@ -835,12 +959,12 @@ F_n&amp;=F_{n-2}+F_{n-1}\\
    <updated>2018-04-30T00:00:00-04:00</updated>
    <id>http://localhost:4000/cartesian-product</id>
    <content type="html">&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
-&lt;p&gt;The Cartesian product $\times$ is an operation on two sets, $A$ and $B$, that returns the set of all &lt;a href=&quot;/n-tuples&quot;&gt;ordered pairs&lt;/a&gt; with their first element from $A$ and their second from $B$.&lt;/p&gt;
+&lt;p&gt;The Cartesian product $\times$ is an operation on two sets, call them $A$ and $B$, that returns the set of all &lt;a href=&quot;/n-tuples&quot;&gt;ordered pairs&lt;/a&gt; with their first element from $A$ and their second from $B$.&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;A\times B=\{(a,b)\mid a\in A \land b\in B\}&lt;/script&gt;
 
 &lt;h4 id=&quot;existence-in-zfc&quot;&gt;Existence in ZFC&lt;/h4&gt;
-&lt;p&gt;We can show that, utilizing the &lt;a href=&quot;/n-tuples#definition&quot;&gt;Kuratowski definition&lt;/a&gt; of ordered pairs, that the Cartesian product of two sets is merely a subset of the following:&lt;/p&gt;
+&lt;p&gt;We can show that, utilizing the &lt;a href=&quot;/n-tuples#definition&quot;&gt;Kuratowski definition&lt;/a&gt; of ordered pairs, the Cartesian product of two sets is merely a subset of the following:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;A\times B \in \mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)&lt;/script&gt;
 
@@ -874,7 +998,7 @@ A\times B\times C&amp;amp;=(A \times B)\times C\\
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\underbrace{S\times S \times \cdots \times S}_{n\text{ sets}}=S^n&lt;/script&gt;
 
-&lt;h2 id=&quot;order-properties&quot;&gt;Order Properties&lt;/h2&gt;
+&lt;h2 id=&quot;rules-of-replacement&quot;&gt;Rules of replacement&lt;/h2&gt;
 &lt;h4 id=&quot;non-commutative&quot;&gt;Non-Commutative&lt;/h4&gt;
 &lt;p&gt;The Cartesian product is a non-commutative operator:&lt;/p&gt;
 
@@ -919,12 +1043,7 @@ If $A$ and $B$ are memebers of some universal set $U$, then their absolute compl
 $$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right)\cup\left(A\times B^C\right)$$
 &lt;/details&gt;
 
-&lt;h2 id=&quot;cardinal-multiplication&quot;&gt;Cardinal Multiplication&lt;/h2&gt;
-&lt;p&gt;Cartesian products are used to define the product of two cardinal numbers:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\left|X\right|\cdot\left|Y\right|=\left|X\times Y\right|&lt;/script&gt;
-
-&lt;h2 id=&quot;some-uses&quot;&gt;Some Uses&lt;/h2&gt;
+&lt;h2 id=&quot;uses&quot;&gt;Uses&lt;/h2&gt;
 &lt;h4 id=&quot;functions-and-relations&quot;&gt;Functions and Relations&lt;/h4&gt;
 &lt;p&gt;Relations, and thus functions and operations, from a set $A$ to a set $B$ are defined as subsets of the Cartesian product $A\times B$. For example the less than or equal to relation $\le$ on the integers can be defined as so:&lt;/p&gt;
 
@@ -933,6 +1052,11 @@ $$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right
 &lt;p&gt;&lt;em&gt;We can formalize this definition to set theory by comparing the cardinality of the sets represented by the naturals and further the integers.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;And so, because $10$ is less than $12$, the ordered pair $(10,12)\in\le$. We can write this more conventionally as $10\le12$.&lt;/p&gt;
+
+&lt;h4 id=&quot;cardinal-multiplication&quot;&gt;Cardinal Multiplication&lt;/h4&gt;
+&lt;p&gt;Cartesian products are used to define the product of two cardinal numbers:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\left|X\right|\cdot\left|Y\right|=\left|X\times Y\right|&lt;/script&gt;
 
 &lt;h4 id=&quot;coordinates&quot;&gt;Coordinates&lt;/h4&gt;
 &lt;p&gt;Every point in $2$-space represents an element of the Cartesian product of the Reals with themselves (i.e $\mathbb{R}^2$). This can be generalized for $n$-space with every point being an element of $\mathbb{R}^n$:&lt;/p&gt;
@@ -1060,11 +1184,11 @@ $$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;(x_1,x_2,\cdots,x_{n-1},x_n)=((x_1,x_2,\cdots,x_{n-1}),x_n)&lt;/script&gt;
 
-&lt;p&gt;&lt;em&gt;The above definition lacks a notion of a $0$ and $1$-tuple. I can’t find a use for them that justifies their complication to the definition of $n$-tuple, so I excluded them. But see &lt;a href=&quot;https://en.wikipedia.org/wiki/Tuple#Tuples_as_nested_sets&quot;&gt;this&lt;/a&gt; for a different definition of $n$-tuples that uses the null-tuple as a base case rather than ordered pairs.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;While the above definition is standard, it lacks a notion of a $0$ and $1$-tuple. See &lt;a href=&quot;https://en.wikipedia.org/wiki/Tuple#Tuples_as_nested_sets&quot;&gt;this&lt;/a&gt; for a different definition of $n$-tuples that uses the null-tuple as a base case rather than ordered pairs. I can’t find a use for them that justifies their complication to the definition of $n$-tuple, so I excluded them.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Alternatively, $n$-tuples can also be defined as functions with domains over some finite interval of the positive integers. In this sense, they would be equivalent to finite sequences.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;Whatever definition is used, all that matters is that the equality of two $n$-tuples be defined as below:&lt;/p&gt;
+&lt;p&gt;Whatever definition is used, all that matters is that two $n$-tuples are equivalent &lt;em&gt;only&lt;/em&gt; when the elements at each of their indices are equivalent. This is their defining property.&lt;/p&gt;
 
 &lt;h4 id=&quot;existence-in-zfc&quot;&gt;Existence in ZFC&lt;/h4&gt;
 &lt;p&gt;The existence of an ordered pair of elements in ZFC can be proved using the axiom of pairing twice over. Once to prove that $ \{ a \} $ and $ \{ a,b \} $ exist and again to pair them with each other.&lt;/p&gt;

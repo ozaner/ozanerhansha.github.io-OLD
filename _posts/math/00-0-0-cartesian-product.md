@@ -5,12 +5,12 @@ date: 2018-04-30
 tags: math set-theory
 ---
 ## Definition
-The Cartesian product $\times$ is an operation on two sets, $A$ and $B$, that returns the set of all [ordered pairs](/n-tuples) with their first element from $A$ and their second from $B$.
+The Cartesian product $\times$ is an operation on two sets, call them $A$ and $B$, that returns the set of all [ordered pairs](/n-tuples) with their first element from $A$ and their second from $B$.
 
 $$A\times B=\{(a,b)\mid a\in A \land b\in B\}$$
 
 #### Existence in ZFC
-We can show that, utilizing the [Kuratowski definition](/n-tuples#definition) of ordered pairs, that the Cartesian product of two sets is merely a subset of the following:
+We can show that, utilizing the [Kuratowski definition](/n-tuples#definition) of ordered pairs, the Cartesian product of two sets is merely a subset of the following:
 
 $$A\times B \in \mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)$$
 
@@ -44,7 +44,7 @@ When referring to the repeated Cartesian product of the same set $S$, we can use
 
  $$\underbrace{S\times S \times \cdots \times S}_{n\text{ sets}}=S^n$$
 
-## Order Properties
+## Rules of replacement
 #### Non-Commutative
 The Cartesian product is a non-commutative operator:
 
@@ -89,12 +89,7 @@ If $A$ and $B$ are memebers of some universal set $U$, then their absolute compl
 $$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right)\cup\left(A\times B^C\right)$$
 </details>
 
-## Cardinal Multiplication
-Cartesian products are used to define the product of two cardinal numbers:
-
-$$\left|X\right|\cdot\left|Y\right|=\left|X\times Y\right|$$
-
-## Some Uses
+## Uses
 #### Functions and Relations
 Relations, and thus functions and operations, from a set $A$ to a set $B$ are defined as subsets of the Cartesian product $A\times B$. For example the less than or equal to relation $\le$ on the integers can be defined as so:
 
@@ -103,6 +98,11 @@ $$\le\equiv\{\cdots,\left(1,2\right),\left(-14,0\right),\left(5,5\right),\left(1
 *We can formalize this definition to set theory by comparing the cardinality of the sets represented by the naturals and further the integers.*
 
 And so, because $10$ is less than $12$, the ordered pair $(10,12)\in\le$. We can write this more conventionally as $10\le12$.
+
+#### Cardinal Multiplication
+Cartesian products are used to define the product of two cardinal numbers:
+
+$$\left|X\right|\cdot\left|Y\right|=\left|X\times Y\right|$$
 
 #### Coordinates
 Every point in $2$-space represents an element of the Cartesian product of the Reals with themselves (i.e $\mathbb{R}^2$). This can be generalized for $n$-space with every point being an element of $\mathbb{R}^n$:

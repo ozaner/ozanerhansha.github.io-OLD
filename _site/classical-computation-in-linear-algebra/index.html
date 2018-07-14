@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <title>
     
-      Binary Prefixes &middot; Ozaner
+      Classical Computation in Linear Algebra &middot; Ozaner
     
   </title>
 
@@ -224,132 +224,133 @@
 
     <div class="content container">
       <div class="post">
-  <h1 class="post-title">Binary Prefixes</h1>
-  <span class="post-date">05 Jan 2018</span>
+  <h1 class="post-title">Classical Computation in Linear Algebra</h1>
+  <span class="post-date">14 Jul 2018</span>
   <span>[
   
     
     <a href="/tag/computer-science"><code class="highligher-rouge"><nobr>computer-science</nobr></code>&nbsp;</a>
   
+    
+    <a href="/tag/math"><code class="highligher-rouge"><nobr>math</nobr></code>&nbsp;</a>
+  
 ]</span>
-  <h2 id="decimal-prefixes">Decimal Prefixes</h2>
-<p>When dealing with very large or very small amounts, it is common to append, or rather <em>pre</em>pend, one of the SI (metric system) prefixes to whatever unit is being used. For example, the average human weighs $62000\text{g}$ but because that number is cumbersome to use, we usually append <em>kilo-</em> (the SI prefix meaning a thousand) to the gram unit and say $62\text{kg}$ instead.</p>
+  <h2 id="introduction">Introduction</h2>
+<p>While computation is usually formulated using logical connectives like $\wedge,\vee, \neg$ along with the binary digits $0$ and $1$, there is another way to formulate binary computation: linear algebra. We can represent $0$ and $1$ as vectors and logical gates as transformations on those vectors.</p>
 
-<p>This system works just fine for all sorts of units of measure like mass, length, energy, etc. But when it’s applied to units of information, specifically binary ones like bits and bytes, a problem arises…</p>
+<p>While this may at first seem to only be a novel construction, reformulating computation in terms of linear algebra is precisely what opens the door to quantum computation, which is essentially a more general form of what is shown below.</p>
 
 <!--more-->
 
-<h2 id="binary-prefixes">Binary Prefixes</h2>
-<p>You may have bought a hard drive or even a new phone and found that there is a discrepancy between the amount of storage shown on the package and the maximum amount displayed when you look in the settings.</p>
+<h2 id="0-and-1-states">0 and 1 states</h2>
+<p>We represent $0$ and $1$ as two orthonormal vectors:</p>
 
-<p>So what causes this disparity?</p>
+<script type="math/tex; mode=display">|0\rangle = \begin{pmatrix}
+                  1 \\
+                  0 \\
+                \end{pmatrix}</script>
 
-<p>The difference between a GB (gigabyte) and a GiB (gibibyte).</p>
+<script type="math/tex; mode=display">|1\rangle = \begin{pmatrix}
+                  0 \\
+                  1 \\
+                \end{pmatrix}</script>
 
-<p>Historically when a computer scientist wrote kB, for example, they didn’t mean $1000$ bytes. They meant $1024$ bytes. This is because computers operate in binary which is based of powers of two. In the kilobyte’s case, $2^{10} = 1024$ which is almost $1000$. This made it a close enough approximation of memory in a computer which was based on powers of $2$.</p>
+<p><em>Notice my use of bra-ket notation above. This is the standard notation used in quantum mechanics, and thus quantum computing. As such I used it here for consistency as well as to denote the difference between the state $|1\rangle$ and the number $1$.</em></p>
 
-<p>This changed around 1998 when the International Electrotechnical Commission (IEC) and other regulatory organizations created a new set of prefixes to be used as binary prefixes. The US National Institute of Standards and Technology (NIST) followed suit and required that the SI prefixes only be used in the decimal sense. Below is a table of the metric prefixes vs the binary ones.</p>
+<h4 id="an-example">An Example</h4>
+<p>As an example, let’s use the <code class="highlighter-rouge">NOT</code> operator on the $|1\rangle$ bit:</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Decimal Prefix (SI)</th>
-      <th>Value</th>
-      <th>Value (1000)</th>
-      <th>Binary Prefix (IEC)</th>
-      <th>Value</th>
-      <th>Value (1024)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>kilo (k)</td>
-      <td>10<sup>3</sup></td>
-      <td>1000</td>
-      <td>kibi (ki)</td>
-      <td>2<sup>10</sup></td>
-      <td>1024</td>
-    </tr>
-    <tr>
-      <td>mega (M)</td>
-      <td>10<sup>6</sup></td>
-      <td>1000<sup>2</sup></td>
-      <td>mebi (Mi)</td>
-      <td>2<sup>20</sup></td>
-      <td>1024<sup>2</sup></td>
-    </tr>
-    <tr>
-      <td>giga (G)</td>
-      <td>10<sup>9</sup></td>
-      <td>1000<sup>3</sup></td>
-      <td>gibi (Gi)</td>
-      <td>2<sup>30</sup></td>
-      <td>1024<sup>3</sup></td>
-    </tr>
-    <tr>
-      <td>tera (T)</td>
-      <td>10<sup>12</sup></td>
-      <td>1000<sup>4</sup></td>
-      <td>tebi (Ti)</td>
-      <td>2<sup>40</sup></td>
-      <td>1024<sup>4</sup></td>
-    </tr>
-    <tr>
-      <td>peta (P)</td>
-      <td>10<sup>15</sup></td>
-      <td>1000<sup>5</sup></td>
-      <td>pebi (Pi)</td>
-      <td>2<sup>50</sup></td>
-      <td>1024<sup>5</sup></td>
-    </tr>
-    <tr>
-      <td>exa (E)</td>
-      <td>10<sup>18</sup></td>
-      <td>1000<sup>6</sup></td>
-      <td>exbi (Ei)</td>
-      <td>2<sup>60</sup></td>
-      <td>1024<sup>6</sup></td>
-    </tr>
-    <tr>
-      <td>zetta (Z)</td>
-      <td>10<sup>21</sup></td>
-      <td>1000<sup>7</sup></td>
-      <td>zebi (Zi)</td>
-      <td>2<sup>70</sup></td>
-      <td>1024<sup>7</sup></td>
-    </tr>
-    <tr>
-      <td>yotta (Y)</td>
-      <td>10<sup>24</sup></td>
-      <td>1000<sup>8</sup></td>
-      <td>yobi (Yi)</td>
-      <td>2<sup>80</sup></td>
-      <td>1024<sup>8</sup></td>
-    </tr>
-  </tbody>
-</table>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{pmatrix}
+    0 & 1 \\
+    1 & 0
+  \end{pmatrix}
+  \begin{pmatrix}
+    0 \\
+    1 \\
+  \end{pmatrix}=
+  \begin{pmatrix}
+    1 \\
+    0 \\
+  \end{pmatrix} %]]></script>
 
-<p>So problem solved, right? Well no. Most people have never heard of a kibibyte (kiB), mebibyte (MiB), or gibibyte (Gib) and probably never will. Hardware manufacturers know this and, rather than deal with the consumer’s perception of information storage, opt to just use the closest decimal prefix.</p>
+<p>or in symbolic notation, where $X$ represents the <code class="highlighter-rouge">NOT</code> gate:</p>
 
-<p>That said, there are a growing number of software and hardware applications that make use of binary prefixes.</p>
+<script type="math/tex; mode=display">X|1\rangle=|0\rangle</script>
 
-<p><img src="https://imgs.xkcd.com/comics/kilobyte.png?style=centerme" alt="xkcd" /></p>
-<center><i>Relevant xckd</i></center>
+<h2 id="unitary-gates">Unitary Gates</h2>
+<p>Since a bit has only $2$ possible input states and $2$ possible output states, there are exactly $2^2=4$ unary logical gates. We can represent them as matrices in the following way:</p>
+
+<h4 id="identity">Identity</h4>
+<p>The identity gate takes an input and returns it as is (i.e $f(x)=x$). To represent it we simply use the $2 \times 2$ identity matrix:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+I_2 = \begin{pmatrix}
+    1 & 0 \\
+    0 & 1
+  \end{pmatrix} %]]></script>
+
+<p>And indeed, if we apply the gate to both $|0\rangle$ and $|1\rangle$ we find:</p>
+
+<script type="math/tex; mode=display">I_2|0\rangle=|0\rangle</script>
+
+<script type="math/tex; mode=display">I_2|1\rangle=|1\rangle</script>
+
+<h4 id="negation">Negation</h4>
+<p>The negation gate takes an input and flips it (i.e $f(x)=\neg x$). We can represent it with the following matrix:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+X = \begin{pmatrix}
+    0 & 1 \\
+    1 & 0
+  \end{pmatrix} %]]></script>
+
+<p>Applying the gate to both $|0\rangle$ and $|1\rangle$ we find:</p>
+
+<script type="math/tex; mode=display">X|0\rangle=|1\rangle</script>
+
+<script type="math/tex; mode=display">X|1\rangle=|0\rangle</script>
+
+<h4 id="constant-0">Constant 0</h4>
+<p>Outputs $0$ regardless of input (i.e $f(x)=0$). We can represent it with the following matrix:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+C_0 = \begin{pmatrix}
+    1 & 1 \\
+    0 & 0
+  \end{pmatrix} %]]></script>
+
+<p>Applying the gate to both $|0\rangle$ and $|1\rangle$ we find:</p>
+
+<script type="math/tex; mode=display">C_0|0\rangle=|0\rangle</script>
+
+<script type="math/tex; mode=display">C_0|1\rangle=|0\rangle</script>
+
+<h4 id="constant-1">Constant 1</h4>
+<p>Outputs $1$ regardless of input (i.e $f(x)=1$). We can represent it with the following matrix:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+C_1 = \begin{pmatrix}
+    0 & 0 \\
+    1 & 1
+  \end{pmatrix} %]]></script>
+
+<p>Applying the gate to both $|0\rangle$ and $|1\rangle$ we find:</p>
+
+<script type="math/tex; mode=display">C_1|0\rangle=|1\rangle</script>
+
+<script type="math/tex; mode=display">C_1|1\rangle=|1\rangle</script>
+
+<h2 id="binary-gates">Binary Gates</h2>
+<p>We can now introduce gates that take in</p>
+
+<h4 id="cnot">CNOT</h4>
 
 </div>
 
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/classical-computation-in-linear-algebra/">
-            Classical Computation in Linear Algebra
-            <small>14 Jul 2018</small>
-          </a>
-        </h3>
-      </li>
     
       <li>
         <h3>
@@ -365,6 +366,15 @@
           <a href="/hello-world/">
             On the Origin of "Hello, World!"
             <small>25 Jun 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/natural-numbers/">
+            Natural Numbers
+            <small>25 May 2018</small>
           </a>
         </h3>
       </li>

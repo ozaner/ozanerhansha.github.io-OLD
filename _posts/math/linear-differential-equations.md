@@ -32,6 +32,8 @@ $$y(x)=C_1y_1(x)+C_2y_2(x)+\cdots+C_ny_n(x)$$
 
 Where $y_{i\in\mathbb{N}_n}(x)$ are solutions to a homogeneous LDE and $C_{i\in\mathbb{N}_n}$ are real (or even complex) valued constants.
 
+This means that the solutions of an LDE form a vector space 
+
 <!-- ## Linear Differential Operator -->
 
 <!-- ## Vector Space -->
