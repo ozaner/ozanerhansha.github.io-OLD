@@ -4,131 +4,13 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-07-14T02:37:40-04:00</updated>
+ <updated>2018-07-14T02:39:44-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
    <email></email>
  </author>
 
- 
- <entry>
-   <title>Classical Computation in Linear Algebra</title>
-   <link href="http://localhost:4000/classical-computation-in-linear-algebra/"/>
-   <updated>2018-07-14T00:00:00-04:00</updated>
-   <id>http://localhost:4000/classical-computation-in-linear-algebra</id>
-   <content type="html">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;While computation is usually formulated using logical connectives like $\wedge,\vee, \neg$ along with the binary digits $0$ and $1$, there is another way to formulate binary computation: linear algebra. We can represent $0$ and $1$ as vectors and logical gates as transformations on those vectors.&lt;/p&gt;
-
-&lt;p&gt;While this may at first seem to only be a novel construction, reformulating computation in terms of linear algebra is precisely what opens the door to quantum computation, which is essentially a more general form of what is shown below.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;0-and-1-states&quot;&gt;0 and 1 states&lt;/h2&gt;
-&lt;p&gt;We represent $0$ and $1$ as two orthonormal vectors:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;|0\rangle = \begin{pmatrix}
-                  1 \\
-                  0 \\
-                \end{pmatrix}&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;|1\rangle = \begin{pmatrix}
-                  0 \\
-                  1 \\
-                \end{pmatrix}&lt;/script&gt;
-
-&lt;p&gt;&lt;em&gt;Notice my use of bra-ket notation above. This is the standard notation used in quantum mechanics, and thus quantum computing. As such I used it here for consistency as well as to denote the difference between the state $|1\rangle$ and the number $1$.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;an-example&quot;&gt;An Example&lt;/h4&gt;
-&lt;p&gt;As an example, let’s use the &lt;code class=&quot;highlighter-rouge&quot;&gt;NOT&lt;/code&gt; operator on the $|1\rangle$ bit:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{pmatrix}
-    0 &amp; 1 \\
-    1 &amp; 0
-  \end{pmatrix}
-  \begin{pmatrix}
-    0 \\
-    1 \\
-  \end{pmatrix}=
-  \begin{pmatrix}
-    1 \\
-    0 \\
-  \end{pmatrix} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;or in symbolic notation, where $X$ represents the &lt;code class=&quot;highlighter-rouge&quot;&gt;NOT&lt;/code&gt; gate:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;X|1\rangle=|0\rangle&lt;/script&gt;
-
-&lt;h2 id=&quot;unitary-gates&quot;&gt;Unitary Gates&lt;/h2&gt;
-&lt;p&gt;Since a bit has only $2$ possible input states and $2$ possible output states, there are exactly $2^2=4$ unary logical gates. We can represent them as matrices in the following way:&lt;/p&gt;
-
-&lt;h4 id=&quot;identity&quot;&gt;Identity&lt;/h4&gt;
-&lt;p&gt;The identity gate takes an input and returns it as is (i.e $f(x)=x$). To represent it we simply use the $2 \times 2$ identity matrix:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-I_2 = \begin{pmatrix}
-    1 &amp; 0 \\
-    0 &amp; 1
-  \end{pmatrix} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;And indeed, if we apply the gate to both $|0\rangle$ and $|1\rangle$ we find:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;I_2|0\rangle=|0\rangle&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;I_2|1\rangle=|1\rangle&lt;/script&gt;
-
-&lt;h4 id=&quot;negation&quot;&gt;Negation&lt;/h4&gt;
-&lt;p&gt;The negation gate takes an input and flips it (i.e $f(x)=\neg x$). We can represent it with the following matrix:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-X = \begin{pmatrix}
-    0 &amp; 1 \\
-    1 &amp; 0
-  \end{pmatrix} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;Applying the gate to both $|0\rangle$ and $|1\rangle$ we find:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;X|0\rangle=|1\rangle&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;X|1\rangle=|0\rangle&lt;/script&gt;
-
-&lt;h4 id=&quot;constant-0&quot;&gt;Constant 0&lt;/h4&gt;
-&lt;p&gt;Outputs $0$ regardless of input (i.e $f(x)=0$). We can represent it with the following matrix:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-C_0 = \begin{pmatrix}
-    1 &amp; 1 \\
-    0 &amp; 0
-  \end{pmatrix} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;Applying the gate to both $|0\rangle$ and $|1\rangle$ we find:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;C_0|0\rangle=|0\rangle&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;C_0|1\rangle=|0\rangle&lt;/script&gt;
-
-&lt;h4 id=&quot;constant-1&quot;&gt;Constant 1&lt;/h4&gt;
-&lt;p&gt;Outputs $1$ regardless of input (i.e $f(x)=1$). We can represent it with the following matrix:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-C_1 = \begin{pmatrix}
-    0 &amp; 0 \\
-    1 &amp; 1
-  \end{pmatrix} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;Applying the gate to both $|0\rangle$ and $|1\rangle$ we find:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;C_1|0\rangle=|1\rangle&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;C_1|1\rangle=|1\rangle&lt;/script&gt;
-
-&lt;h2 id=&quot;binary-gates&quot;&gt;Binary Gates&lt;/h2&gt;
-&lt;p&gt;We can now introduce gates that take in&lt;/p&gt;
-
-&lt;h4 id=&quot;cnot&quot;&gt;CNOT&lt;/h4&gt;
-</content>
- </entry>
  
  <entry>
    <title>Letter Case and Computing</title>
