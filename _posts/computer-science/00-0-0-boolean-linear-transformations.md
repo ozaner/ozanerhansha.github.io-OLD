@@ -30,7 +30,7 @@ $$
                 \end{pmatrix}
 $$
 
-*Notice my use of bra-ket notation above. This is the standard notation used in quantum mechanics, and thus quantum computing. As such, I used it here for consistency as well as to denote the difference between the state $\|0\rangle$ and the number $0$.*
+*Notice my use of bra-ket notation above. This is the standard notation used in quantum mechanics, and thus quantum computing. As such, I'll be using it here for consistency as well as to denote the difference between the state $\|0\rangle$ and the number $0$.*
 
 #### An Example
 As an example, let's use the `NOT` operator on the $\|1\rangle$ bit:
@@ -306,13 +306,13 @@ We can represent this algebraically as $S=X\oplus Y$ and $C=X\wedge Y$, where $S
 
 Remember, however, that a bit string is represented as the tensor product of its component bits. As such, we must find the tensor product of the matrices represented by the logical operations:
 
-$$
-  S=\text{XOR}(A\otimes B)
+<!-- $$
+  S=\text{XOR}(X\otimes Y)
 $$
 
 $$
-  C=\text{AND}(A\otimes B)
-$$
+  C=\text{AND}(X\otimes Y)
+$$ -->
 
 <!-- <details>
 <summary>Explicit Form</summary>
