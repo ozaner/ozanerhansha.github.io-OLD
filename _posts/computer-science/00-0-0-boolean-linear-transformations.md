@@ -1,13 +1,15 @@
 ---
 layout: post
-title: Classical Computation in Linear Algebra
-date: 2018-07-17
+title: Boolean Logic as Linear Transformations
+date: 2018-07-18
 tags: computer-science math
 ---
 ## Introduction
-While computation is usually formulated using logical connectives like $\wedge,\vee, \neg$ along with the binary digits $0$ and $1$, there is another way to formulate binary computation: linear algebra. We can represent $0$ and $1$ as vectors and logical gates as transformations on those vectors.
+Computation is usually formulated via boolean logic, which in turn makes use of logical connectives like $\wedge,\vee, \neg$ along with the binary digits $0$ and $1$, representing false and true respectively.
 
-While this may at first seem to only be a novel construction, reformulating computation in terms of linear algebra is precisely what opens the door to quantum computation, which is essentially a more general form of what is shown below.
+There is, however an alternative: linear algebra. By representing $0$ and $1$ as vectors and logical operations/gates as transformations on those vectors, we can define computation on the language of linear algebra.
+
+While this may at first seem to only be a novel construction, reformulating computation in terms of linear algebra is precisely what opens the door to quantum computing, which is essentially a more general form of what's shown below.
 
 <!--more-->
 
@@ -28,7 +30,7 @@ $$
                 \end{pmatrix}
 $$
 
-*Notice my use of bra-ket notation above. This is the standard notation used in quantum mechanics, and thus quantum computing. As such I used it here for consistency as well as to denote the difference between the state $\|1\rangle$ and the number $1$.*
+*Notice my use of bra-ket notation above. This is the standard notation used in quantum mechanics, and thus quantum computing. As such, I used it here for consistency as well as to denote the difference between the state $\|0\rangle$ and the number $0$.*
 
 #### An Example
 As an example, let's use the `NOT` operator on the $\|1\rangle$ bit:
@@ -272,8 +274,8 @@ $$\text{IFF}|11\rangle=|1\rangle$$
 
 
 <details>
-<summary><h4 class="inline">Implication (If)</h4></summary>
-Material implication is a statement of one variable's dependence on another (i.e $f(x,y)=x\implies y$). It's more commonly referred to as an <code>If</code> statement in computer science.
+<summary><h4 class="inline">Implication (IF)</h4></summary>
+Material implication is a statement of one variable's dependence on another (i.e $f(x,y)=x\implies y$). It's more commonly referred to as an <code>IF</code> statement in computer science.
 
 $$
   \text{IF} = \begin{pmatrix}
@@ -284,87 +286,53 @@ $$
 
 Applying the gate to all two bit states we find:
 
-$$\text{If}|00\rangle=|1\rangle$$
+$$\text{IF}|00\rangle=|1\rangle$$
 
-$$\text{If}|01\rangle=|0\rangle$$
+$$\text{IF}|01\rangle=|0\rangle$$
 
-$$\text{If}|10\rangle=|1\rangle$$
+$$\text{IF}|10\rangle=|1\rangle$$
 
-$$\text{If}|11\rangle=|1\rangle$$
+$$\text{IF}|11\rangle=|1\rangle$$
 </details><p></p>
 
 ## Putting it Together
-We can now appreciate this new formulation of computation for what it is, an isomorphism from logical connectives to matrix multiplication. Indeed the composition of different logical operations has now been equivalently stated as the multiplication of several matrices.
+We can now appreciate this new formulation of binary computation for what it is, an isomorphism from booleans to vectors, logical connectives to matrices, and function composition to matrix multiplication.
 
 Here's an example, the half-adder:
 
-![half-adder](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Half_Adder.svg/180px-Half_Adder.svg.png?style=centerme)
+![half-adder](/assets/comp_sci/half_adder.png?style=centerme)
 
-We can represent this algebraically as $S=(\neg A\wedge B)\vee (A\wedge\neg B)$ and $C=A\wedge B$, where $S$ is the *sum* bit and $C$ is the *carry* bit.
+We can represent this algebraically as $S=X\oplus Y$ and $C=X\wedge Y$, where $S$ is the *sum* bit and $C$ is the *carry* bit.
 
-Remember, however, that a bit string is represented as the tensor product of its component bits. As such, we must find the tensor product of the matrices represented by the logical operations, starting from within the parenthesis and working our way out:
+Remember, however, that a bit string is represented as the tensor product of its component bits. As such, we must find the tensor product of the matrices represented by the logical operations:
 
 $$
-  S=\text{OR}(\text{AND}((\text{NOT}\ A)\otimes B)\otimes \text{AND}(A\otimes(\text{NOT}\ B)))
+  S=\text{XOR}(A\otimes B)
 $$
 
 $$
   C=\text{AND}(A\otimes B)
 $$
 
-<details>
+<!-- <details>
 <summary>Explicit Form</summary>
 
 $$
-  S_1 =
-  \begin{pmatrix}
-    1 & 1 & 1 & 0 \\
-    0 & 0 & 0 & 1
-  \end{pmatrix}
-  \left(
-  \begin{pmatrix}
-    0 & 1 \\
-    1 & 0
-  \end{pmatrix}
-  \begin{pmatrix}
-    a \\
-    b \\
-  \end{pmatrix}
-  \otimes
-  \begin{pmatrix}
-    c \\
-    d \\
-  \end{pmatrix}
-  \right)
-$$
-
-$$
-  S_2=\begin{pmatrix}
-    1 & 1 & 1 & 0 \\
-    0 & 0 & 0 & 1
-  \end{pmatrix}
-  \left(
-  \begin{pmatrix}
-    a \\
-    b \\
-  \end{pmatrix}
-  \otimes
-  \begin{pmatrix}
-    0 & 1 \\
-    1 & 0
-  \end{pmatrix}
-  \begin{pmatrix}
-    c \\
-    d \\
-  \end{pmatrix}
-  \right)
-$$
-
-$$
 S=\begin{pmatrix}
-  1 & 0 & 0 & 0 \\
-  0 & 1 & 1 & 1
-\end{pmatrix}\left(S_1 \otimes S_2\right)
+  1 & 0 & 0 & 1 \\
+  0 & 1 & 1 & 0
+\end{pmatrix}
+\left(
+\begin{pmatrix}
+  a \\
+  b \\
+\end{pmatrix}
+\otimes
+\begin{pmatrix}
+  c \\
+  d \\
+\end{pmatrix}
+\right)
 $$
 
 $$
@@ -385,9 +353,18 @@ $$
   \right)
 $$
 
+</details><p></p> -->
+
+
+<details>
+<summary>"Proof"</summary>
+
+<a href="../html-link.htm"><img src="/assets/comp_sci/half_adder_proof.jpg" style="centerme" title="White flower" alt="half adder proof"></a>
+
 </details><p></p>
 
-While we could multiply through all the matrices and solve a system of equations to find out what matrix represents the half-adder, there is a way to bypass all this. Just like how we constructed the unary and binary logic gates, we can simply construct a **truth table**, that is check the output of the half adder for every possible input ($4$ in this case) and simply construct the matrix from that. Doing this we arrive at the following:
+#### Shortcut
+While we could multiply through all the matrices and solve for what the matrix representation of a given boolean circuit is, there is a way to bypass all this. Just like how we constructed the unary and binary logic gates, we can simply construct a **truth table** of what inputs give what outputs. We then construct the matrix from this, setting the $i$th column as the output of the half-adder given the input $i$. Doing this we arrive at the following:
 
 $$\text{Half-Adder}=
 \begin{pmatrix}
@@ -397,9 +374,9 @@ $$\text{Half-Adder}=
   0 & 0 & 0 & 0
 \end{pmatrix}$$
 
-<!-- <details> -->
-<!-- <summary><h3 class="inline">CNOT and Quantum Computing</h3></summary> -->
-### Sidenote: CNOT
+<details>
+<summary><h3 class="inline">CNOT and Quantum Computing</h3></summary>
+<!-- ### Sidenote: CNOT -->
 As a final example, and lead in into quantum computing, I'll describe a binary gate that outputs two bits rather than one: the controlled NOT or <code>CNOT</code> gate.
 
 Its function is pretty simple: the gate acts as a NOT gate on the second bit, but only if the first bit is $1$. If this first bit, dubbed the <b>control bit</b>, is $0$ then the second bit, dubbed the <b>target bit</b>, won't be affected at all. The first, unchanged, bit and the second, possibly negated, bit are then outputted. Its matrix looks like this:
@@ -422,4 +399,4 @@ $$\text{CNOT}|10\rangle=|11\rangle$$
 $$\text{CNOT}|11\rangle=|10\rangle$$
 
 While the gate may not seem particularly interesting (and indeed it isn't as far as classical computing is concerned) its real power shows when the control bit is in a superposition of both $|0\rangle$ and $|1\rangle$, ala quantum computing.
-<!-- </details><p></p> -->
+</details><p></p>

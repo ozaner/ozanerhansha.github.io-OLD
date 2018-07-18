@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <title>
     
-      Classical Computation in Linear Algebra &middot; Ozaner
+      Boolean Logic as Linear Transformations &middot; Ozaner
     
   </title>
 
@@ -224,8 +224,8 @@
 
     <div class="content container">
       <div class="post">
-  <h1 class="post-title">Classical Computation in Linear Algebra</h1>
-  <span class="post-date">17 Jul 2018</span>
+  <h1 class="post-title">Boolean Logic as Linear Transformations</h1>
+  <span class="post-date">18 Jul 2018</span>
   <span>[
   
     
@@ -236,9 +236,11 @@
   
 ]</span>
   <h2 id="introduction">Introduction</h2>
-<p>While computation is usually formulated using logical connectives like $\wedge,\vee, \neg$ along with the binary digits $0$ and $1$, there is another way to formulate binary computation: linear algebra. We can represent $0$ and $1$ as vectors and logical gates as transformations on those vectors.</p>
+<p>Computation is usually formulated via boolean logic, which in turn makes use of logical connectives like $\wedge,\vee, \neg$ along with the binary digits $0$ and $1$, representing false and true respectively.</p>
 
-<p>While this may at first seem to only be a novel construction, reformulating computation in terms of linear algebra is precisely what opens the door to quantum computation, which is essentially a more general form of what is shown below.</p>
+<p>There is, however an alternative: linear algebra. By representing $0$ and $1$ as vectors and logical operations/gates as transformations on those vectors, we can define computation on the language of linear algebra.</p>
+
+<p>While this may at first seem to only be a novel construction, reformulating computation in terms of linear algebra is precisely what opens the door to quantum computing, which is essentially a more general form of what’s shown below.</p>
 
 <!--more-->
 
@@ -255,7 +257,7 @@
                   1 \\
                 \end{pmatrix}</script>
 
-<p><em>Notice my use of bra-ket notation above. This is the standard notation used in quantum mechanics, and thus quantum computing. As such I used it here for consistency as well as to denote the difference between the state $|1\rangle$ and the number $1$.</em></p>
+<p><em>Notice my use of bra-ket notation above. This is the standard notation used in quantum mechanics, and thus quantum computing. As such, I used it here for consistency as well as to denote the difference between the state $|0\rangle$ and the number $0$.</em></p>
 
 <h4 id="an-example">An Example</h4>
 <p>As an example, let’s use the <code class="highlighter-rouge">NOT</code> operator on the $|1\rangle$ bit:</p>
@@ -394,7 +396,7 @@ $$C_1|1\rangle=|1\rangle$$
 
 <script type="math/tex; mode=display">|1\rangle\otimes|0\rangle=|10\rangle</script>
 
-<p>Notice that $10_2=2$ and that the only $1$ in the $|10\rangle$ vector is at the $2$nd index (indexing starts at $0$). Indeed, it holds true in general that the vector representation of $n$ bits will be a $2^n$ dimensional vector with $0$’s everywhere except for a $1$ at the $i$th index, where $i$ is the value of bit string:</p>
+<p>Notice that $10_2=2$ and that the only $1$ in the $|10\rangle$ vector is at the $2$nd index (indexing starts at $0$). Indeed, it holds true in general that the vector representation of $n$ bits will be a $2^n$ dimensional vector with $0$’s everywhere except for a $1$ at the $i$th index, where $i$ is the value of the bit string:</p>
 
 <script type="math/tex; mode=display">|a\rangle\otimes|b\rangle\otimes|c\rangle\otimes\cdots=|abc\cdots\rangle</script>
 
@@ -403,7 +405,7 @@ $$C_1|1\rangle=|1\rangle$$
 <h2 id="binary-gates">Binary Gates</h2>
 <p>Now that we can represent bit strings as vectors, it is possible construct operations that take in $2$ bits and output $1$ bit. While there are technically $2^{2^2}=16$ possible binary bit operations, we’ll only construct the more useful ones like <code class="highlighter-rouge">AND</code>, <code class="highlighter-rouge">OR</code>, <code class="highlighter-rouge">XOR</code>, etc.</p>
 
-<p>You’ll notice that the $i$th column of a binary gate matrix is either the $|1\rangle$ or $|1\rangle$ vectors depending on what the gate outputs given the binary form of $i$ (so the $2$nd index corresponds to the input $10_2$). Since these gates only have $2^2=4$ possible inputs, there are $4$ corresponding columns in their matrix representation.</p>
+<p>You’ll notice that the $i$th column of a binary gate matrix is either the $|0\rangle$ or $|1\rangle$ vector depending on what the gate outputs given the binary form of $i$ (so the $2$nd index corresponds to the input $10_2$). Since these gates only have $2^2=4$ possible inputs, there are $4$ corresponding columns in their matrix representation.</p>
 
 <details>
 <summary><h4 class="inline">OR</h4></summary>
@@ -500,7 +502,7 @@ $$\text{IFF}|11\rangle=|1\rangle$$
 <p></p>
 
 <details>
-<summary><h4 class="inline">Implication (If)</h4></summary>
+<summary><h4 class="inline">Implication (IF)</h4></summary>
 Material implication is a statement of one variable's dependence on another (i.e $f(x,y)=x\implies y$). It's more commonly referred to as an <code>IF</code> statement in computer science.
 
 $$
@@ -523,79 +525,45 @@ $$\text{IF}|11\rangle=|1\rangle$$
 <p></p>
 
 <h2 id="putting-it-together">Putting it Together</h2>
-<p>We can now appreciate this new formulation of computation for what it is, an isomorphism from logical connectives to matrix multiplication. Indeed the composition of different logical operations has now been equivalently stated as the multiplication of several matrices.</p>
+<p>We can now appreciate this new formulation of binary computation for what it is, an isomorphism from booleans to vectors, logical connectives to matrices, and function composition to matrix multiplication.</p>
 
 <p>Here’s an example, the half-adder:</p>
 
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Half_Adder.svg/180px-Half_Adder.svg.png?style=centerme" alt="half-adder" /></p>
+<p><img src="/assets/comp_sci/half_adder.png?style=centerme" alt="half-adder" /></p>
 
-<p>We can represent this algebraically as $S=(\neg A\wedge B)\vee (A\wedge\neg B)$ and $C=A\wedge B$, where $S$ is the <em>sum</em> bit and $C$ is the <em>carry</em> bit.</p>
+<p>We can represent this algebraically as $S=X\oplus Y$ and $C=X\wedge Y$, where $S$ is the <em>sum</em> bit and $C$ is the <em>carry</em> bit.</p>
 
-<p>Remember, however, that a bit string are represented as the tensor product of its component bits. As such, we must find the tensor product of the matrices represented by the logical operations, starting from within the parenthesis and working our way out:</p>
+<p>Remember, however, that a bit string is represented as the tensor product of its component bits. As such, we must find the tensor product of the matrices represented by the logical operations:</p>
 
-<script type="math/tex; mode=display">S=\text{OR}(\text{AND}((\text{NOT}\ A)\otimes B)\otimes \text{AND}(A\otimes(\text{NOT}\ B)))</script>
+<script type="math/tex; mode=display">S=\text{XOR}(A\otimes B)</script>
 
 <script type="math/tex; mode=display">C=\text{AND}(A\otimes B)</script>
 
-<details>
+<!-- <details>
 <summary>Explicit Form</summary>
 
 $$
-  S_1 =
-  \begin{pmatrix}
-    1 &amp; 1 &amp; 1 &amp; 0 \\
-    0 &amp; 0 &amp; 0 &amp; 1
-  \end{pmatrix}
-  \left(
-  \begin{pmatrix}
-    0 &amp; 1 \\
-    1 &amp; 0
-  \end{pmatrix}
-  \begin{pmatrix}
-    a \\
-    b \\
-  \end{pmatrix}
-  \otimes
-  \begin{pmatrix}
-    c \\
-    d \\
-  \end{pmatrix}
-  \right)
-$$
-
-$$
-  S_2=\begin{pmatrix}
-    1 &amp; 1 &amp; 1 &amp; 0 \\
-    0 &amp; 0 &amp; 0 &amp; 1
-  \end{pmatrix}
-  \left(
-  \begin{pmatrix}
-    a \\
-    b \\
-  \end{pmatrix}
-  \otimes
-  \begin{pmatrix}
-    0 &amp; 1 \\
-    1 &amp; 0
-  \end{pmatrix}
-  \begin{pmatrix}
-    c \\
-    d \\
-  \end{pmatrix}
-  \right)
-$$
-
-$$
 S=\begin{pmatrix}
-  1 &amp; 0 &amp; 0 &amp; 0 \\
-  0 &amp; 1 &amp; 1 &amp; 1
-\end{pmatrix}\left(S_1 \otimes S_2\right)
+  1 & 0 & 0 & 1 \\
+  0 & 1 & 1 & 0
+\end{pmatrix}
+\left(
+\begin{pmatrix}
+  a \\
+  b \\
+\end{pmatrix}
+\otimes
+\begin{pmatrix}
+  c \\
+  d \\
+\end{pmatrix}
+\right)
 $$
 
 $$
   C = \begin{pmatrix}
-    1 &amp; 1 &amp; 1 &amp; 0 \\
-    0 &amp; 0 &amp; 0 &amp; 1
+    1 & 1 & 1 & 0 \\
+    0 & 0 & 0 & 1
   \end{pmatrix}
   \left(
   \begin{pmatrix}
@@ -610,10 +578,18 @@ $$
   \right)
 $$
 
+</details><p></p> -->
+
+<details>
+<summary>"Proof"</summary>
+
+<a href="../html-link.htm"><img src="/assets/comp_sci/half_adder_proof.jpg" style="centerme" title="White flower" alt="half adder proof" /></a>
+
 </details>
 <p></p>
 
-<p>While we could multiply through all the matrices and solve a system of equations to find out what matrix represents the half-adder, there is a way to bypass all this. Just like how we constructed the unary and binary logic gates, we can simply construct a <strong>truth table</strong>, that is check the output of the half adder for every possible input ($4$ in this case) and simply construct the matrix from that. Doing this we arrive at the following:</p>
+<h4 id="shortcut">Shortcut</h4>
+<p>While we could multiply through all the matrices and solve for what the matrix representation of a given boolean circuit is, there is a way to bypass all this. Just like how we constructed the unary and binary logic gates, we can simply construct a <strong>truth table</strong> of what inputs give what outputs. We then construct the matrix from this, setting the $i$th column as the output of the half-adder given the input $i$. Doing this we arrive at the following:</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \text{Half-Adder}=
@@ -624,31 +600,33 @@ $$
   0 & 0 & 0 & 0
 \end{pmatrix} %]]></script>
 
-<!-- <details> -->
-<!-- <summary><h3 class="inline">CNOT and Quantum Computing</h3></summary> -->
-<h3 id="sidenote-cnot">Sidenote: CNOT</h3>
-<p>As a final example, and lead in into quantum computing, I’ll describe a binary gate that outputs two bits rather than one: the controlled NOT or <code>CNOT</code> gate.</p>
+<details>
+<summary><h3 class="inline">CNOT and Quantum Computing</h3></summary>
+<!-- ### Sidenote: CNOT -->
+As a final example, and lead in into quantum computing, I'll describe a binary gate that outputs two bits rather than one: the controlled NOT or <code>CNOT</code> gate.
 
-<p>Its function is pretty simple: the gate acts as a NOT gate on the second bit, but only if the first bit is $1$. If this first bit, dubbed the <b>control bit</b>, is $0$ then the second bit, dubbed the <b>target bit</b>, won’t be affected at all. The first, unchanged, bit and the second, possibly negated, bit are then outputted. Its matrix looks like this:</p>
+Its function is pretty simple: the gate acts as a NOT gate on the second bit, but only if the first bit is $1$. If this first bit, dubbed the <b>control bit</b>, is $0$ then the second bit, dubbed the <b>target bit</b>, won't be affected at all. The first, unchanged, bit and the second, possibly negated, bit are then outputted. Its matrix looks like this:
 
-<script type="math/tex; mode=display">% <![CDATA[
-\text{CNOT} = \begin{pmatrix}
-    1 & 0 & 0 & 0 \\
-    0 & 1 & 0 & 0 \\
-    0 & 0 & 0 & 1 \\
-    0 & 0 & 1 & 0
-  \end{pmatrix} %]]></script>
+$$
+  \text{CNOT} = \begin{pmatrix}
+    1 &amp; 0 &amp; 0 &amp; 0 \\
+    0 &amp; 1 &amp; 0 &amp; 0 \\
+    0 &amp; 0 &amp; 0 &amp; 1 \\
+    0 &amp; 0 &amp; 1 &amp; 0
+  \end{pmatrix}
+$$
 
-<script type="math/tex; mode=display">\text{CNOT}|00\rangle=|00\rangle</script>
+$$\text{CNOT}|00\rangle=|00\rangle$$
 
-<script type="math/tex; mode=display">\text{CNOT}|01\rangle=|01\rangle</script>
+$$\text{CNOT}|01\rangle=|01\rangle$$
 
-<script type="math/tex; mode=display">\text{CNOT}|10\rangle=|11\rangle</script>
+$$\text{CNOT}|10\rangle=|11\rangle$$
 
-<script type="math/tex; mode=display">\text{CNOT}|11\rangle=|10\rangle</script>
+$$\text{CNOT}|11\rangle=|10\rangle$$
 
-<p>While the gate may not seem particularly interesting (and indeed it isn’t as far as classical computing is concerned) its real power shows when the control bit is in a superposition of both $|0\rangle$ and $|1\rangle$, ala quantum computing.
-<!-- </details><p></p> --></p>
+While the gate may not seem particularly interesting (and indeed it isn't as far as classical computing is concerned) its real power shows when the control bit is in a superposition of both $|0\rangle$ and $|1\rangle$, ala quantum computing.
+</details>
+<p></p>
 
 </div>
 
