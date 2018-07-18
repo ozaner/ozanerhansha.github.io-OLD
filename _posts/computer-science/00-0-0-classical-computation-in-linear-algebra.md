@@ -166,7 +166,7 @@ It can also be written out symbolically as:
 
 $$|1\rangle\otimes|0\rangle=|10\rangle$$
 
-Notice that $10_2=2$ and that the only $1$ in the $\|10\rangle$ vector is at the $2$nd index (indexing starts at $0$). Indeed, it holds true in general that the vector representation of $n$ bits will be a $2^n$ dimensional vector with $0$'s everywhere except for a $1$ at the $i$th index, where $i$ is the value of bit string:
+Notice that $10_2=2$ and that the only $1$ in the $\|10\rangle$ vector is at the $2$nd index (indexing starts at $0$). Indeed, it holds true in general that the vector representation of $n$ bits will be a $2^n$ dimensional vector with $0$'s everywhere except for a $1$ at the $i$th index, where $i$ is the value of the bit string:
 
 $$|a\rangle\otimes|b\rangle\otimes|c\rangle\otimes\cdots=|abc\cdots\rangle$$
 
@@ -175,7 +175,7 @@ $$|a\rangle\otimes|b\rangle\otimes|c\rangle\otimes\cdots=|abc\cdots\rangle$$
 ## Binary Gates
 Now that we can represent bit strings as vectors, it is possible construct operations that take in $2$ bits and output $1$ bit. While there are technically $2^{2^2}=16$ possible binary bit operations, we'll only construct the more useful ones like `AND`, `OR`, `XOR`, etc.
 
-You'll notice that the $i$th column of a binary gate matrix is either the $\|1\rangle$ or $\|1\rangle$ vectors depending on what the gate outputs given the binary form of $i$ (so the $2$nd index corresponds to the input $10_2$). Since these gates only have $2^2=4$ possible inputs, there are $4$ corresponding columns in their matrix representation.
+You'll notice that the $i$th column of a binary gate matrix is either the $\|0\rangle$ or $\|1\rangle$ vector depending on what the gate outputs given the binary form of $i$ (so the $2$nd index corresponds to the input $10_2$). Since these gates only have $2^2=4$ possible inputs, there are $4$ corresponding columns in their matrix representation.
 
 <details>
 <summary><h4 class="inline">OR</h4></summary>
