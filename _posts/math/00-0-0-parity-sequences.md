@@ -59,12 +59,9 @@ $$\left(+,-,+,-,+,-,\cdots\right)=\left(0,1,0,1,0,1,\cdots\right)$$
 
 Another point to make is that $[n]\not=\left(+,-,+,-,+,-,\cdots\right)$ but in fact is an element of it:
 
-$$\begin{align}
-[n]&\in\left(+,-,+,-,+,-,\cdots\right)\\
-&\in\left(0,1,0,1,0,1,\cdots\right)\\
-\end{align}$$
+$$\left(+,-,+,-,+,-,\cdots\right)=\left(0,1,0,1,0,1,\cdots\right)\in[n]$$
 
-We only say $[n]=\left(+,-,+,-,+,-,\cdots\right)$ as a shorthand. And again, we can do this because a parity sequence is uniquely defined by the parity of the elements (integers) of any one of its members (integer sequences).
+We only write $[n]=\left(+,-,+,-,+,-,\cdots\right)$ as a shorthand. And again, we can do this because a parity sequence is uniquely defined by the parity of the elements (integers) of any one of its members (integer sequences), meaning there are no ambiguities.
 
 ## Parity Swap
 A useful property to take note of when constructing these sequences is that adding $1$ to a sequence flips the parity of each element in the sequence. After performing this **parity swap** on a parity sequence $P$, we call the resulting parity sequence $\bar{P}$:

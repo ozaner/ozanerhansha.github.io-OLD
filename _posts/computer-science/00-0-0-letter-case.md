@@ -40,7 +40,7 @@ Academic papers, emails (think subject line), music, videogames and just about a
 <!-- ### ALL CAPS -->
 <details>
 <summary><h3 class="inline">ALL CAPS</h3></summary>
-Writing in all uppercase letter, or all caps as it is more commonly known, is taken to convey yelling when typed out, especially when texting or commenting on the internet. That said, all caps is also used in titles and headlines in order to make the text stand out more.
+Writing in all uppercase letters, or <b>all caps</b> as it's more commonly known, is taken to convey yelling when typed out, especially when texting or commenting on the internet. That said, all caps is also used in titles and headlines in order to make the text stand out more.
 
 Here's what it looks like:
 
