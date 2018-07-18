@@ -273,7 +273,7 @@ $$\text{IFF}|11\rangle=|1\rangle$$
 
 <details>
 <summary><h4 class="inline">Implication (If)</h4></summary>
-Material implication is a statement of one variable's dependence on another (i.e $f(x,y)=x\implies y$). It's more commonly referred to as an <code>IF</code> statement in computer science.
+Material implication is a statement of one variable's dependence on another (i.e $f(x,y)=x\implies y$). It's more commonly referred to as an <code>If</code> statement in computer science.
 
 $$
   \text{IF} = \begin{pmatrix}
@@ -302,7 +302,7 @@ Here's an example, the half-adder:
 
 We can represent this algebraically as $S=(\neg A\wedge B)\vee (A\wedge\neg B)$ and $C=A\wedge B$, where $S$ is the *sum* bit and $C$ is the *carry* bit.
 
-Remember, however, that a bit string are represented as the tensor product of its component bits. As such, we must find the tensor product of the matrices represented by the logical operations, starting from within the parenthesis and working our way out:
+Remember, however, that a bit string is represented as the tensor product of its component bits. As such, we must find the tensor product of the matrices represented by the logical operations, starting from within the parenthesis and working our way out:
 
 $$
   S=\text{OR}(\text{AND}((\text{NOT}\ A)\otimes B)\otimes \text{AND}(A\otimes(\text{NOT}\ B)))
