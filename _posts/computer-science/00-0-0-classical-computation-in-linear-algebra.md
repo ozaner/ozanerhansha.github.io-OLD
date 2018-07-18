@@ -284,13 +284,13 @@ $$
 
 Applying the gate to all two bit states we find:
 
-$$\text{IF}|00\rangle=|1\rangle$$
+$$\text{If}|00\rangle=|1\rangle$$
 
-$$\text{IF}|01\rangle=|0\rangle$$
+$$\text{If}|01\rangle=|0\rangle$$
 
-$$\text{IF}|10\rangle=|1\rangle$$
+$$\text{If}|10\rangle=|1\rangle$$
 
-$$\text{IF}|11\rangle=|1\rangle$$
+$$\text{If}|11\rangle=|1\rangle$$
 </details><p></p>
 
 ## Putting it Together
