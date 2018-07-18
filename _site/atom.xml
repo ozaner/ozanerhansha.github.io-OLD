@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-07-18T15:23:57-04:00</updated>
+ <updated>2018-07-18T15:25:26-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -20,9 +20,9 @@
    <content type="html">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Computation is usually formulated via boolean logic, which in turn makes use of logical connectives like $\wedge,\vee, \neg$ along with the binary digits $0$ and $1$, representing false and true respectively.&lt;/p&gt;
 
-&lt;p&gt;There is, however, an alternative: linear algebra. By representing $0$ and $1$ as vectors and logical operations/gates as transformations on those vectors, we can define computation on the language of linear algebra.&lt;/p&gt;
+&lt;p&gt;There is, however, an alternative: linear algebra. By representing $0$ and $1$ as vectors and logical operations/gates as transformations on those vectors, we can define computation in the language of linear algebra.&lt;/p&gt;
 
-&lt;p&gt;While this may at first seem to only be a novel construction, reformulating computation in terms of linear algebra is precisely what opens the door to quantum computing, which is essentially a more general form of what’s shown below.&lt;/p&gt;
+&lt;p&gt;While at first this may seem to be nothing but a novel construction, reformulating computation in terms of linear algebra is precisely what opens the door to quantum computing, which is essentially a more general form of what’s shown below.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
