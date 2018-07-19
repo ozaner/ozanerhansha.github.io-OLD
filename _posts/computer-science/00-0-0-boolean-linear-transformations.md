@@ -172,7 +172,7 @@ Notice that $10_2=2$ and that the only $1$ in the $\|10\rangle$ vector is at the
 
 $$|a\rangle\otimes|b\rangle\otimes|c\rangle\otimes\cdots=|abc\cdots\rangle$$
 
-*As a side note, the tensor product of two rank $2$ tensors (vectors) $a$ and $b$ is equivalent to $ab^\top$.*
+<!-- *As a side note, the tensor product of two rank $2$ tensors (vectors) $a$ and $b$ is equivalent to $ab^\top$.* -->
 
 ## Binary Gates
 Now that we can represent bit strings as vectors, it is possible construct operations that take in $2$ bits and output $1$ bit. While there are technically $2^{2^2}=16$ possible binary bit operations, we'll only construct the more useful ones like `AND`, `OR`, `XOR`, etc.
