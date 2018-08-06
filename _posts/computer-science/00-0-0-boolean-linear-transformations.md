@@ -69,7 +69,7 @@ $$
   \end{pmatrix}
 $$
 
-And indeed, if we apply the gate to both $\|0\rangle$ and $\|1\rangle$ we find:
+And indeed, if we apply the gate to both $|0\rangle$ and $|1\rangle$ we find:
 
 $$I_2|0\rangle=|0\rangle$$
 
@@ -88,7 +88,7 @@ $$
   \end{pmatrix}
 $$
 
-Applying the gate to both $\|0\rangle$ and $\|1\rangle$ we find:
+Applying the gate to both $|0\rangle$ and $|1\rangle$ we find:
 
 $$X|0\rangle=|1\rangle$$
 
@@ -107,7 +107,7 @@ $$
   \end{pmatrix}
 $$
 
-Applying the gate to both $\|0\rangle$ and $\|1\rangle$ we find:
+Applying the gate to both $|0\rangle$ and $|1\rangle$ we find:
 
 $$C_0|0\rangle=|0\rangle$$
 
@@ -126,7 +126,7 @@ $$
   \end{pmatrix}
 $$
 
-Applying the gate to both $\|0\rangle$ and $\|1\rangle$ we find:
+Applying the gate to both $|0\rangle$ and $|1\rangle$ we find:
 
 $$C_1|0\rangle=|1\rangle$$
 
@@ -176,8 +176,6 @@ $$|a\rangle\otimes|b\rangle\otimes|c\rangle\otimes\cdots=|abc\cdots\rangle$$
 
 ## Binary Gates
 Now that we can represent bit strings as vectors, it is possible construct operations that take in $2$ bits and output $1$ bit. While there are technically $2^{2^2}=16$ possible binary bit operations, we'll only construct the more useful ones like `AND`, `OR`, `XOR`, etc.
-
-You'll notice that the $i$th column of a binary gate matrix is either the $\|0\rangle$ or $\|1\rangle$ vector depending on what the gate outputs given the binary form of $i$ (so the $2$nd index corresponds to the input $10_2$). Since these gates only have $2^2=4$ possible inputs, there are $4$ corresponding columns in their matrix representation.
 
 <details>
 <summary><h4 class="inline">OR</h4></summary>
@@ -295,6 +293,8 @@ $$\text{IF}|10\rangle=|1\rangle$$
 $$\text{IF}|11\rangle=|1\rangle$$
 </details><p></p>
 
+You'll notice that the $i$th column of a binary gate matrix is either the $\|0\rangle$ or $\|1\rangle$ vector depending on what the gate outputs given the binary form of $i$ (ex. the $2$nd index corresponds to the input $10_2$). Since these gates only have $2^2=4$ possible inputs, there are $4$ corresponding columns in their matrix representation.
+
 ## Putting it Together
 We can now appreciate this new formulation of binary computation for what it is, an isomorphism from booleans to vectors, logical connectives to matrices, and function composition to matrix multiplication.
 
@@ -359,7 +359,7 @@ $$
 <details>
 <summary>"Proof"</summary>
 
-<a href="../html-link.htm"><img src="/assets/comp_sci/half_adder_proof.jpg" style="centerme" title="White flower" alt="half adder proof"></a>
+<img src="/assets/comp_sci/half_adder_proof.jpg" style="centerme" alt="half adder proof">
 
 </details><p></p>
 

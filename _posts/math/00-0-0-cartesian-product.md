@@ -12,12 +12,24 @@ $$A\times B=\{(a,b)\mid a\in A \land b\in B\}$$
 #### Existence in ZFC
 We can show that, utilizing the [Kuratowski definition](/n-tuples#definition) of ordered pairs, the Cartesian product of two sets is merely a subset of the following:
 
-$$A\times B \in \mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)$$
+$$A\times B \subset \mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)$$
 
-<details><summary>Proof</summary>Ill do it later...</details>
+<details><summary>Proof</summary>
+First, note that $A\cup B$ is guaranteed by the axiom of union and that its power set is guaranteed by the axiom of power set.
+
+Next, notice that, among many other elements, the power set of $A\cup B$ contains:
+<!-- \left(\forall a\in A,\forall b\in B\right) -->
+$$\{a\},\{b\},\{a,b\}\in\mathcal{P}\left(A\cup B\right)$$
+
+where $a$ and $b$ are some element in $A$ and $B$ respectively. Now if we take the power set again we'll see that the result contains, among other things, the elements:
+
+$$\{\{a\},\{a,b\}\}\in\mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)$$
+
+for all $a$ and $b$ in $A$ and $B$. Now invoke the axiom of subset to choose only those elements that fit the description and we are done!
+</details>
 <p></p>
 
-$A\cup B$ is guaranteed by the axiom of union, and its repeated power sets are guaranteed by the axiom of power set. This coupled with the fact that the Cartesian product is only a subset of the above expression implies that it must exist.
+<!-- $A\cup B$ is guaranteed by the axiom of union, and its repeated power sets are guaranteed by the axiom of power set. This coupled with the fact that the Cartesian product is only a subset of the above expression implies that it must exist. -->
 
 <!--more-->
 
@@ -43,6 +55,15 @@ A\times B\times C&=(A \times B)\times C\\
 When referring to the repeated Cartesian product of the same set $S$, we can use an abbreviated notation:
 
  $$\underbrace{S\times S \times \cdots \times S}_{n\text{ sets}}=S^n$$
+
+#### Arity
+The arity of a Cartesian product is the number $n$ of sets that are being multiplied.
+
+When $n$ is infinite the product is **infinitary** as opposed to **finitary** for finite $n$.
+
+$$\underbrace{\text{binary},\text{trinary},\cdots,n\text{-ary}}_{\text{finitary}}\cdots;\underbrace{\aleph_0\text{-ary},\aleph_1\text{-ary},\cdots}_{\text{infinitary}}$$
+
+All the definitions used above apply only to finite $n$. There *are* valid notions of infinitary Cartesian products, but they are beyond the scope of this post.
 
 ## Rules of replacement
 #### Non-Commutative
@@ -89,9 +110,9 @@ If $A$ and $B$ are memebers of some universal set $U$, then their absolute compl
 $$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right)\cup\left(A\times B^C\right)$$
 </details>
 
-## Uses
+## Examples
 #### Functions and Relations
-Relations, and thus functions and operations, from a set $A$ to a set $B$ are defined as subsets of the Cartesian product $A\times B$. For example the less than or equal to relation $\le$ on the integers can be defined as so:
+[Relations](\relations), and thus functions and operations, from a set $A$ to a set $B$ are defined as subsets of the Cartesian product $A\times B$. For example, the less than or equal to relation $\le$ on the integers can be defined as so:
 
 $$\le\equiv\{\cdots,\left(1,2\right),\left(-14,0\right),\left(5,5\right),\left(12,13\right),\cdots\}$$
 
@@ -115,4 +136,4 @@ $$\mathbb{R}^n=\{(x_1,x_2,\cdots,x_n)\mid \forall k\in\mathbb{N}_n^* :   x_k\in\
 
 Points in $3$-space are necessary in describing the [position](/position) of objects and particles in space and thus set up the study of [motion](\kinematics), the causes of that motion and, ultimately, the rest of physics.
 
-Moreover, $2$-space (and less frequently $3$-space) is useful in plotting and making inferences from data, as well as visualizing functions over numbers.
+Moreover, $2$-space (and less frequently $3$-space) is used in plotting and making inferences from data as well as visualizing functions over an interval of numbers.
