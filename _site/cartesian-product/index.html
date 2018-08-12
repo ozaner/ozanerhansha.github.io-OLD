@@ -243,12 +243,24 @@
 <h4 id="existence-in-zfc">Existence in ZFC</h4>
 <p>We can show that, utilizing the <a href="/n-tuples#definition">Kuratowski definition</a> of ordered pairs, the Cartesian product of two sets is merely a subset of the following:</p>
 
-<script type="math/tex; mode=display">A\times B \in \mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)</script>
+<script type="math/tex; mode=display">A\times B \subset \mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)</script>
 
-<details><summary>Proof</summary>Ill do it later...</details>
+<details><summary>Proof</summary>
+First, note that $A\cup B$ is guaranteed by the axiom of union and that its power set is guaranteed by the axiom of power set.
+
+Next, notice that, among many other elements, the power set of $A\cup B$ contains:
+<!-- \left(\forall a\in A,\forall b\in B\right) -->
+$$\{a\},\{b\},\{a,b\}\in\mathcal{P}\left(A\cup B\right)$$
+
+where $a$ and $b$ are some element in $A$ and $B$ respectively. Now if we take the power set again we'll see that the result contains, among other things, the elements:
+
+$$\{\{a\},\{a,b\}\}\in\mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)$$
+
+for all $a$ and $b$ in $A$ and $B$. Now invoke the axiom of subset to choose only those elements that fit the description and we are done!
+</details>
 <p></p>
 
-<p>$A\cup B$ is guaranteed by the axiom of union, and its repeated power sets are guaranteed by the axiom of power set. This coupled with the fact that the Cartesian product is only a subset of the above expression implies that it must exist.</p>
+<!-- $A\cup B$ is guaranteed by the axiom of union, and its repeated power sets are guaranteed by the axiom of power set. This coupled with the fact that the Cartesian product is only a subset of the above expression implies that it must exist. -->
 
 <!--more-->
 
@@ -274,6 +286,15 @@ A\times B\times C&amp;=(A \times B)\times C\\
 <p>When referring to the repeated Cartesian product of the same set $S$, we can use an abbreviated notation:</p>
 
 <script type="math/tex; mode=display">\underbrace{S\times S \times \cdots \times S}_{n\text{ sets}}=S^n</script>
+
+<h4 id="arity">Arity</h4>
+<p>The arity of a Cartesian product is the number $n$ of sets that are being multiplied.</p>
+
+<p>When $n$ is infinite the product is <strong>infinitary</strong> as opposed to <strong>finitary</strong> for finite $n$.</p>
+
+<script type="math/tex; mode=display">\underbrace{\text{binary},\text{trinary},\cdots,n\text{-ary}}_{\text{finitary}}\cdots;\underbrace{\aleph_0\text{-ary},\aleph_1\text{-ary},\cdots}_{\text{infinitary}}</script>
+
+<p>All the definitions used above apply only to finite $n$. There <em>are</em> valid notions of infinitary Cartesian products, but they are beyond the scope of this post.</p>
 
 <h2 id="rules-of-replacement">Rules of replacement</h2>
 <h4 id="non-commutative">Non-Commutative</h4>
@@ -320,9 +341,9 @@ If $A$ and $B$ are memebers of some universal set $U$, then their absolute compl
 $$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right)\cup\left(A\times B^C\right)$$
 </details>
 
-<h2 id="uses">Uses</h2>
+<h2 id="examples">Examples</h2>
 <h4 id="functions-and-relations">Functions and Relations</h4>
-<p>Relations, and thus functions and operations, from a set $A$ to a set $B$ are defined as subsets of the Cartesian product $A\times B$. For example the less than or equal to relation $\le$ on the integers can be defined as so:</p>
+<p><a href="\relations">Relations</a>, and thus functions and operations, from a set $A$ to a set $B$ are defined as subsets of the Cartesian product $A\times B$. For example, the less than or equal to relation $\le$ on the integers can be defined as so:</p>
 
 <script type="math/tex; mode=display">\le\equiv\{\cdots,\left(1,2\right),\left(-14,0\right),\left(5,5\right),\left(12,13\right),\cdots\}</script>
 
@@ -346,13 +367,22 @@ $$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right
 
 <p>Points in $3$-space are necessary in describing the <a href="/position">position</a> of objects and particles in space and thus set up the study of <a href="\kinematics">motion</a>, the causes of that motion and, ultimately, the rest of physics.</p>
 
-<p>Moreover, $2$-space (and less frequently $3$-space) is useful in plotting and making inferences from data, as well as visualizing functions over numbers.</p>
+<p>Moreover, $2$-space (and less frequently $3$-space) is used in plotting and making inferences from data as well as visualizing functions over an interval of numbers.</p>
 
 </div>
 
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/relations/">
+            Relations
+            <small>12 Aug 2018</small>
+          </a>
+        </h3>
+      </li>
     
       <li>
         <h3>
@@ -368,15 +398,6 @@ $$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right
           <a href="/letter-case/">
             Letter Case and Computing
             <small>05 Jul 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/hello-world/">
-            On the Origin of "Hello, World!"
-            <small>25 Jun 2018</small>
           </a>
         </h3>
       </li>

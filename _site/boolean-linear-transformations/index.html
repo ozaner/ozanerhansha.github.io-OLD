@@ -295,7 +295,7 @@ $$
   \end{pmatrix}
 $$
 
-And indeed, if we apply the gate to both $\|0\rangle$ and $\|1\rangle$ we find:
+And indeed, if we apply the gate to both $|0\rangle$ and $|1\rangle$ we find:
 
 $$I_2|0\rangle=|0\rangle$$
 
@@ -315,7 +315,7 @@ $$
   \end{pmatrix}
 $$
 
-Applying the gate to both $\|0\rangle$ and $\|1\rangle$ we find:
+Applying the gate to both $|0\rangle$ and $|1\rangle$ we find:
 
 $$X|0\rangle=|1\rangle$$
 
@@ -335,7 +335,7 @@ $$
   \end{pmatrix}
 $$
 
-Applying the gate to both $\|0\rangle$ and $\|1\rangle$ we find:
+Applying the gate to both $|0\rangle$ and $|1\rangle$ we find:
 
 $$C_0|0\rangle=|0\rangle$$
 
@@ -355,7 +355,7 @@ $$
   \end{pmatrix}
 $$
 
-Applying the gate to both $\|0\rangle$ and $\|1\rangle$ we find:
+Applying the gate to both $|0\rangle$ and $|1\rangle$ we find:
 
 $$C_1|0\rangle=|1\rangle$$
 
@@ -400,12 +400,10 @@ $$C_1|1\rangle=|1\rangle$$
 
 <script type="math/tex; mode=display">|a\rangle\otimes|b\rangle\otimes|c\rangle\otimes\cdots=|abc\cdots\rangle</script>
 
-<p><em>As a side note, the tensor product of two rank $2$ tensors (vectors) $a$ and $b$ is equivalent to $ab^\top$.</em></p>
+<!-- *As a side note, the tensor product of two rank $2$ tensors (vectors) $a$ and $b$ is equivalent to $ab^\top$.* -->
 
 <h2 id="binary-gates">Binary Gates</h2>
 <p>Now that we can represent bit strings as vectors, it is possible construct operations that take in $2$ bits and output $1$ bit. While there are technically $2^{2^2}=16$ possible binary bit operations, we’ll only construct the more useful ones like <code class="highlighter-rouge">AND</code>, <code class="highlighter-rouge">OR</code>, <code class="highlighter-rouge">XOR</code>, etc.</p>
-
-<p>You’ll notice that the $i$th column of a binary gate matrix is either the $|0\rangle$ or $|1\rangle$ vector depending on what the gate outputs given the binary form of $i$ (so the $2$nd index corresponds to the input $10_2$). Since these gates only have $2^2=4$ possible inputs, there are $4$ corresponding columns in their matrix representation.</p>
 
 <details>
 <summary><h4 class="inline">OR</h4></summary>
@@ -524,6 +522,8 @@ $$\text{IF}|11\rangle=|1\rangle$$
 </details>
 <p></p>
 
+<p>You’ll notice that the $i$th column of a binary gate matrix is either the $|0\rangle$ or $|1\rangle$ vector depending on what the gate outputs given the binary form of $i$ (ex. the $2$nd index corresponds to the input $10_2$). Since these gates only have $2^2=4$ possible inputs, there are $4$ corresponding columns in their matrix representation.</p>
+
 <h2 id="putting-it-together">Putting it Together</h2>
 <p>We can now appreciate this new formulation of binary computation for what it is, an isomorphism from booleans to vectors, logical connectives to matrices, and function composition to matrix multiplication.</p>
 
@@ -535,9 +535,13 @@ $$\text{IF}|11\rangle=|1\rangle$$
 
 <p>Remember, however, that a bit string is represented as the tensor product of its component bits. As such, we must find the tensor product of the matrices represented by the logical operations:</p>
 
-<script type="math/tex; mode=display">S=\text{XOR}(A\otimes B)</script>
+<!-- $$
+  S=\text{XOR}(X\otimes Y)
+$$
 
-<script type="math/tex; mode=display">C=\text{AND}(A\otimes B)</script>
+$$
+  C=\text{AND}(X\otimes Y)
+$$ -->
 
 <!-- <details>
 <summary>Explicit Form</summary>
@@ -583,7 +587,7 @@ $$
 <details>
 <summary>"Proof"</summary>
 
-<a href="../html-link.htm"><img src="/assets/comp_sci/half_adder_proof.jpg" style="centerme" title="White flower" alt="half adder proof" /></a>
+<img src="/assets/comp_sci/half_adder_proof.jpg" style="centerme" alt="half adder proof" />
 
 </details>
 <p></p>
@@ -636,6 +640,15 @@ While the gate may not seem particularly interesting (and indeed it isn't as far
     
       <li>
         <h3>
+          <a href="/relations/">
+            Relations
+            <small>12 Aug 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/letter-case/">
             Letter Case and Computing
             <small>05 Jul 2018</small>
@@ -648,15 +661,6 @@ While the gate may not seem particularly interesting (and indeed it isn't as far
           <a href="/hello-world/">
             On the Origin of "Hello, World!"
             <small>25 Jun 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/natural-numbers/">
-            Natural Numbers
-            <small>25 May 2018</small>
           </a>
         </h3>
       </li>

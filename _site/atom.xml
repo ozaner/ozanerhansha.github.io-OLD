@@ -4,13 +4,221 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-07-18T15:41:40-04:00</updated>
+ <updated>2018-08-12T11:21:08-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Relations</title>
+   <link href="http://localhost:4000/relations/"/>
+   <updated>2018-08-12T00:00:00-04:00</updated>
+   <id>http://localhost:4000/relations</id>
+   <content type="html">&lt;!-- ## What is a Relation?
+Relations are used to correlate elements of different sets in some way. They are a more general form of a function, which can only relate elements to a single output.
+
+#### Example
+Say I had a set of tops $T$, pants $P$, and shoes $S$. I could define another set $R$ that is a collection of all the combinations of clothing that go together (a set of ordered triplets). This set would be called a relation, because it *relates* pieces of clothing that go well together by virtue of that combination being an element of $R$. --&gt;
+
+&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
+&lt;p&gt;A &lt;strong&gt;relation&lt;/strong&gt; $R$ on a set of sets $S_1,S_2,S_3,\cdots$ is a subset of their &lt;a href=&quot;/cartesian-product&quot;&gt;&lt;strong&gt;cartesian product&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;R\subset S_1\times S_2\times S_3\times \cdots&lt;/script&gt;
+
+&lt;p&gt;Relations are used to establish $n$-way relationships between elements of the same or different sets (ex. there is a two way relationship between $2$ and $5$ in that $2&amp;lt;5$).&lt;/p&gt;
+
+&lt;h4 id=&quot;arity&quot;&gt;Arity&lt;/h4&gt;
+&lt;p&gt;The arity of a relation is the number of sets it is a relation on (i.e the &lt;a href=&quot;/cartesian-product#arity&quot;&gt;arity of the cartesian product&lt;/a&gt; it is a subset of). Thus, a relation on $2$ sets is a &lt;em&gt;bi&lt;/em&gt;nary relation, $3$ sets makes a &lt;em&gt;tri&lt;/em&gt;nary relation and, in general, $n$ sets make an $n$-ary relation.&lt;/p&gt;
+
+&lt;p&gt;When $n$ is infinite the relation is &lt;strong&gt;infinitary&lt;/strong&gt; as opposed to &lt;strong&gt;finitary&lt;/strong&gt; for finite $n$.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h4 id=&quot;existence-in-zfc&quot;&gt;Existence in ZFC&lt;/h4&gt;
+&lt;p&gt;We &lt;a href=&quot;/cartesian-product#existence-in-zfc&quot;&gt;proved that cartesian products existed&lt;/a&gt; in another post and so, because relations are subsets of cartesian products, we only need to invoke the axiom of subset to prove their existence.&lt;/p&gt;
+
+&lt;h2 id=&quot;notation&quot;&gt;Notation&lt;/h2&gt;
+&lt;p&gt;Relations are common mathematical objects and thus have special notation regarding their use:&lt;/p&gt;
+
+&lt;h4 id=&quot;n-ary-relations&quot;&gt;$n$-ary Relations&lt;/h4&gt;
+&lt;p&gt;For $n$-ary relations it is common to write:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;Rabcd\cdots \equiv (a,b,c,d,\cdots)\in R&lt;/script&gt;
+
+&lt;p&gt;where $R$ is the relation in question and $(a,b,c,d,\cdots)$ are elements of the cartesian product $R$ is a subset of.&lt;/p&gt;
+
+&lt;h4 id=&quot;binary-relations&quot;&gt;Binary Relations&lt;/h4&gt;
+&lt;p&gt;While you can write $Rab$ for binary relations, it is more common to write:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;aRb\equiv (a,b)\in R&lt;/script&gt;
+
+&lt;p&gt;This notation is used for almost all common relations like $5&amp;gt;3$ or $ABC \cong ADC$.&lt;/p&gt;
+
+&lt;h2 id=&quot;properties-of-binary-relations&quot;&gt;Properties of Binary Relations&lt;/h2&gt;
+&lt;p&gt;The most common type of relations are binary. This is in part due to the fact that many higher arity relations can be broken up into a collection of binary relations.&lt;/p&gt;
+
+&lt;!-- This is in part because many relations can be [*curried*](https://en.wikipedia.org/wiki/Currying) into several different binary relations --&gt;
+
+&lt;p&gt;A binary relation on two different sets $A$ and $B$ is called &lt;em&gt;heterogenous&lt;/em&gt; when $A\not=B$ and &lt;em&gt;homogenous&lt;/em&gt; when $A=B$. Homogenous relations are also called &lt;strong&gt;relations on a set&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Below is a list of common classifications of binary relations based on what properties they satisfy. In all the definitions below, we will assume $R\subset A\times B$ and $a\in A, b\in B$:&lt;/p&gt;
+
+&lt;h3 id=&quot;uniqueness-properties&quot;&gt;Uniqueness Properties&lt;/h3&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Injective&lt;/h4&gt;&lt;/summary&gt;
+A relation is called injective if for all $b$ on the right side, the $a$ on the left side is unique in the expression $aRb$. More formally, $R$ is injective if:
+
+$$(\forall a_1,a_2\in A, \forall b\in B)\ a_1Rb\wedge a_2Rb\implies a_1=a_2$$
+
+Because of this property, injective relations are also called &lt;b&gt;left-unique&lt;/b&gt;.
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Functional&lt;/h4&gt;&lt;/summary&gt;
+A relation is functional if for all $a$ on the left side, the $b$ on the right is unique. Relations that fulfill this property are called &lt;b&gt;functions&lt;/b&gt; and are said to have a unique output $b$ for a given input $a$. Formally this means:
+
+$$(\forall a\in A, \forall b_1,b_2\in B)\ aRb_1\wedge aRb_2\implies b_1=b_2$$
+
+Similar to injective relations, a functional relation is also called &lt;b&gt;right-unique&lt;/b&gt;.
+&lt;/details&gt;
+
+&lt;!-- &lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;One-to-One&lt;/h4&gt;&lt;/summary&gt;
+One-to-One functions are relations that are both functional and injective. These functions map every element in their domain to a unique element in the range. These are also called &lt;b&gt;injective functions&lt;/b&gt; because being functional is implied in the classification 'function'.
+&lt;/details&gt; --&gt;
+
+&lt;h3 id=&quot;totality-properties&quot;&gt;Totality Properties&lt;/h3&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Left-Total&lt;/h4&gt;&lt;/summary&gt;
+A left-total relation means that for every element in $A$ there is at least one element in $B$ that it is related to:
+
+$$(\forall a\in A,\exists b\in B)\ aRb$$
+
+Note that all functions are automatically left-total, but not all left-total relations are functions.
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Surjective&lt;/h4&gt;&lt;/summary&gt;
+A relation is surjective every element in $B$ is related to at least one element in $A$:
+
+$$(\exists a\in A,\forall b\in B)\ aRb$$
+
+Similar to left-total relations, surjective relations are also called &lt;b&gt;right-total&lt;/b&gt;. When a function is both injective and surjective it forms a bijection.
+&lt;/details&gt;
+
+&lt;h3 id=&quot;other-properties&quot;&gt;Other Properties&lt;/h3&gt;
+&lt;p&gt;The following properties only apply to homogenous relations (i.e $R\subset X\times X$).&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Reflexive and Irreflexive&lt;/h4&gt;&lt;/summary&gt;
+A relation is reflexive if all elements relate to themselves:
+
+$$(\forall x\in X)\ xRx$$
+
+Some example of this are the less than or equal to $\le$ and the divides $\mid$ relations. Relations that don't relate &lt;i&gt;any&lt;/i&gt; element to themselves are called &lt;b&gt;irreflexive&lt;/b&gt;:
+
+$$(\forall x\in X)\ \neg(xRx)$$
+
+An example of this is the $lt$ relation.
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Symmetric&lt;/h4&gt;&lt;/summary&gt;
+A relation is symmetric if $xRy$ means $yRx$ as well:
+
+$$(\forall x,y\in X)\ xRy \implies yRx$$
+
+Some examples of this include the proportionality $\propto$ of functions and similarity $\sim$ of geometric objects.
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Anti-Symmetric&lt;/h4&gt;&lt;/summary&gt;
+A relation is anti-symmetric if when $xRy$ and $yRx$ are both true, then $x=y$:
+
+$$(\forall x,y\in X)\ xRy\wedge yRx \implies x=y$$
+
+Some examples of this include the $\le$ relation,  
+
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Transitive&lt;/h4&gt;&lt;/summary&gt;
+A relation is transitive if $xRy$ and $yRz$ means $xRz$:
+
+$$(\forall x,y,z\in X)\ xRy \wedge yRz\implies xRz$$
+
+Relations like $\le$ and similarity $\sim$ are transitive.
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Trichotomous&lt;/h4&gt;&lt;/summary&gt;
+A relation is trichotomus if for any two element in $X$ either $xRy$, $yRx$, or $x=y$ holds. But only 1 of those three options:
+
+$$(\forall x,y\in X)\ (xRy \oplus yRx \oplus x=y) \wedge \neg(xRy \wedge yRx \wedge x=y)$$
+
+The most common example of this is as a property of the real numbers under the $\lt$ or $\gt$ relations. In other words, any real number is either greater than, lesser than, &lt;i&gt;xor&lt;/i&gt; equal to any other number.
+&lt;/details&gt;
+
+&lt;h2 id=&quot;calculus-of-relations&quot;&gt;Calculus of Relations&lt;/h2&gt;
+&lt;p&gt;This is a list of different operations and transformations on one or more sets.&lt;/p&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Union and Intersection&lt;/h4&gt;&lt;/summary&gt;
+The union of two relations that are on the same sets is equivalent to 'adding/or-ing' them together. For example, the union of the $\lt$ and the $=$ relations is $\le$. Intersection has similar behavior except it displays an 'and' effect.
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Complement&lt;/h4&gt;&lt;/summary&gt;
+The complement of a relation $R\subset A\times B$ is simply all the of the ordered pairs in $A\times B$ that are &lt;i&gt;not&lt;/i&gt; in $R$. We can think of this as the ordinary complement of the relation denoted $R^\complement$ where $A\times B$ is the universal set:
+
+$$R^\complement=\{(a,b)\in A\times B\mid (a,b)\not\in R\}$$
+
+For example, the complement of less than or equal to is greater than: $\le^\complement=\gt$. The complement of &quot;is a parent of&quot; is &quot;is not a parent of&quot;.
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Logical Negation of a Relation&lt;/h4&gt;&lt;/summary&gt;
+Notice that negating a relation is equivalent to asserting its complement (assuming both elements being related are in the universal set). Put more formally, if $a\in A$ and $b\in B$:
+
+$$\neg(aRb)\equiv aR^\complement b$$
+
+It is this negating property that allows us to replace statements like $\neg(a\le b)$ with  $a\gt b$.
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Composition&lt;/h4&gt;&lt;/summary&gt;
+The composition of two relations $R\subset A\times B$ and $S\subset B\times C$ is a sort of 'product' denoted $S\circ R\subset A\times C$:
+
+$$S\circ R=\{(a,c)\in A\times C\mid\exists b:(a,b)\in R\wedge(b,c)\in S\}$$
+
+&lt;i&gt;Notice that relation composition is associative: $X\circ (Y\circ Z)=(X\circ Y)\circ Z$&lt;/i&gt;&lt;p&gt;&lt;/p&gt;
+
+An intuitive example of this can be found in kinship relations. The composition &quot;is parent of&quot; $\circ$ &quot;is father of&quot; returns the new relation &quot;is grandfather of&quot;.
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Converse&lt;/h4&gt;&lt;/summary&gt;
+The converse of a relation $R$ is denoted $R^\top$ and is simply the opposite of $R$. In other words, if $(x,y)$ is in a relation then $(y,x)$ is in its converse. Formally, for a relation $R\subset A\circ B$:
+
+$$R^\top=\{(b,a)\in B\times A\mid (a,b)\in R\}$$
+
+&lt;i&gt;Note that this means that the converse is idempotent: $(R^\top)^\top=R$. It also respects composition: $(R\circ L)^\top=L^\top\circ R^\top$.&lt;/i&gt;&lt;p&gt;&lt;/p&gt;
+
+For example, the converse of the greater than relation $\ge^\top$ is $\le$. Similarly, the converse of the relation &quot;is a child of&quot; is &quot;is a parent of&quot;.
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Inverse&lt;/h4&gt;&lt;/summary&gt;
+Some relations are &lt;i&gt;invertible&lt;/i&gt; meaning that for a relation $R$ there exists another relation $X$ such that $X\circ R=I$, called &lt;b&gt;left-invertible&lt;/b&gt;, or if there exists a relation $Y$ such that $R\circ Y=I$, called &lt;b&gt;right-invertible&lt;/b&gt;. When both the left and right inverses concincide, the inverse $R^{-1}$ is simply equivalent to the converse $R^\top$. &lt;p&gt;&lt;/p&gt;
+
+For example, the composition &quot;is child of&quot; $\circ$ &quot;is parent of&quot; returns the identity relation (i.e &quot;is you&quot;). As such, they are inverses of each other.
+&lt;/details&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Boolean Logic as Linear Transformations</title>
@@ -77,7 +285,7 @@ $$
   \end{pmatrix}
 $$
 
-And indeed, if we apply the gate to both $\|0\rangle$ and $\|1\rangle$ we find:
+And indeed, if we apply the gate to both $|0\rangle$ and $|1\rangle$ we find:
 
 $$I_2|0\rangle=|0\rangle$$
 
@@ -97,7 +305,7 @@ $$
   \end{pmatrix}
 $$
 
-Applying the gate to both $\|0\rangle$ and $\|1\rangle$ we find:
+Applying the gate to both $|0\rangle$ and $|1\rangle$ we find:
 
 $$X|0\rangle=|1\rangle$$
 
@@ -117,7 +325,7 @@ $$
   \end{pmatrix}
 $$
 
-Applying the gate to both $\|0\rangle$ and $\|1\rangle$ we find:
+Applying the gate to both $|0\rangle$ and $|1\rangle$ we find:
 
 $$C_0|0\rangle=|0\rangle$$
 
@@ -137,7 +345,7 @@ $$
   \end{pmatrix}
 $$
 
-Applying the gate to both $\|0\rangle$ and $\|1\rangle$ we find:
+Applying the gate to both $|0\rangle$ and $|1\rangle$ we find:
 
 $$C_1|0\rangle=|1\rangle$$
 
@@ -182,12 +390,10 @@ $$C_1|1\rangle=|1\rangle$$
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;|a\rangle\otimes|b\rangle\otimes|c\rangle\otimes\cdots=|abc\cdots\rangle&lt;/script&gt;
 
-&lt;p&gt;&lt;em&gt;As a side note, the tensor product of two rank $2$ tensors (vectors) $a$ and $b$ is equivalent to $ab^\top$.&lt;/em&gt;&lt;/p&gt;
+&lt;!-- *As a side note, the tensor product of two rank $2$ tensors (vectors) $a$ and $b$ is equivalent to $ab^\top$.* --&gt;
 
 &lt;h2 id=&quot;binary-gates&quot;&gt;Binary Gates&lt;/h2&gt;
 &lt;p&gt;Now that we can represent bit strings as vectors, it is possible construct operations that take in $2$ bits and output $1$ bit. While there are technically $2^{2^2}=16$ possible binary bit operations, we’ll only construct the more useful ones like &lt;code class=&quot;highlighter-rouge&quot;&gt;AND&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;OR&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;XOR&lt;/code&gt;, etc.&lt;/p&gt;
-
-&lt;p&gt;You’ll notice that the $i$th column of a binary gate matrix is either the $|0\rangle$ or $|1\rangle$ vector depending on what the gate outputs given the binary form of $i$ (so the $2$nd index corresponds to the input $10_2$). Since these gates only have $2^2=4$ possible inputs, there are $4$ corresponding columns in their matrix representation.&lt;/p&gt;
 
 &lt;details&gt;
 &lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;OR&lt;/h4&gt;&lt;/summary&gt;
@@ -306,6 +512,8 @@ $$\text{IF}|11\rangle=|1\rangle$$
 &lt;/details&gt;
 &lt;p&gt;&lt;/p&gt;
 
+&lt;p&gt;You’ll notice that the $i$th column of a binary gate matrix is either the $|0\rangle$ or $|1\rangle$ vector depending on what the gate outputs given the binary form of $i$ (ex. the $2$nd index corresponds to the input $10_2$). Since these gates only have $2^2=4$ possible inputs, there are $4$ corresponding columns in their matrix representation.&lt;/p&gt;
+
 &lt;h2 id=&quot;putting-it-together&quot;&gt;Putting it Together&lt;/h2&gt;
 &lt;p&gt;We can now appreciate this new formulation of binary computation for what it is, an isomorphism from booleans to vectors, logical connectives to matrices, and function composition to matrix multiplication.&lt;/p&gt;
 
@@ -317,9 +525,13 @@ $$\text{IF}|11\rangle=|1\rangle$$
 
 &lt;p&gt;Remember, however, that a bit string is represented as the tensor product of its component bits. As such, we must find the tensor product of the matrices represented by the logical operations:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;S=\text{XOR}(A\otimes B)&lt;/script&gt;
+&lt;!-- $$
+  S=\text{XOR}(X\otimes Y)
+$$
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;C=\text{AND}(A\otimes B)&lt;/script&gt;
+$$
+  C=\text{AND}(X\otimes Y)
+$$ --&gt;
 
 &lt;!-- &lt;details&gt;
 &lt;summary&gt;Explicit Form&lt;/summary&gt;
@@ -365,7 +577,7 @@ $$
 &lt;details&gt;
 &lt;summary&gt;&quot;Proof&quot;&lt;/summary&gt;
 
-&lt;a href=&quot;../html-link.htm&quot;&gt;&lt;img src=&quot;/assets/comp_sci/half_adder_proof.jpg&quot; style=&quot;centerme&quot; title=&quot;White flower&quot; alt=&quot;half adder proof&quot; /&gt;&lt;/a&gt;
+&lt;img src=&quot;/assets/comp_sci/half_adder_proof.jpg&quot; style=&quot;centerme&quot; alt=&quot;half adder proof&quot; /&gt;
 
 &lt;/details&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -986,81 +1198,6 @@ For truncated subtraction we can create the ordered magma $(\mathbb{N},\dot-,\le
  </entry>
  
  <entry>
-   <title>3D Game Development Vocab + Unity</title>
-   <link href="http://localhost:4000/3d-game-dev-vocab/"/>
-   <updated>2018-05-20T00:00:00-04:00</updated>
-   <id>http://localhost:4000/3d-game-dev-vocab</id>
-   <content type="html">&lt;h2 id=&quot;3d-game-development&quot;&gt;3D Game Development&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Inheritance System&lt;/strong&gt;: All objects are types and these types exist on an inheritance tree. (ex. a particular object could be an instance of &lt;code class=&quot;highlighter-rouge&quot;&gt;zombie&lt;/code&gt; which is a child of &lt;code class=&quot;highlighter-rouge&quot;&gt;hostileAI&lt;/code&gt;, which is a child of &lt;code class=&quot;highlighter-rouge&quot;&gt;AI&lt;/code&gt;, etc.)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Component System&lt;/strong&gt;: All objects have individual components that add functionality. (ex. &lt;code class=&quot;highlighter-rouge&quot;&gt;movement&lt;/code&gt; component, &lt;code class=&quot;highlighter-rouge&quot;&gt;hostileAI&lt;/code&gt; component, &lt;code class=&quot;highlighter-rouge&quot;&gt;health&lt;/code&gt; component, etc.)&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Unity uses a component system, but technically you can consider the component system as a generalization of the inheritance system. As such you could force yourself to use inheritance in Unity.&lt;/em&gt;&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;&lt;strong&gt;The Three Transforms&lt;/strong&gt;: The camera used in the scene view as well as objects can all be transformed in 3 basic ways:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Translation&lt;/strong&gt;: Translating an object means moving it across in 3D space. This corresponds to dragging the camera with the mouse.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Rotation&lt;/strong&gt;: Rotating an object means rotating about an axis. If an object is at (0,0,0) then the object would rotate in place. This corresponds to &lt;strong&gt;orbiting&lt;/strong&gt; a point with the camera with the middle mouse button.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Scaling&lt;/strong&gt;: Scaling an object means increasing or decreasing its size. You can either do this equally on all 3 axes (growing or shrinking the object) or scale each axis separately (stretching and squishing the object). This corresponds to &lt;strong&gt;zooming&lt;/strong&gt; the camera with the scroll wheel.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Note That these transformations can all be done with respect to the global coordinate system or the objects own local coordinate system.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Left-Handed vs. Right-Handed Coordinate Systems&lt;/strong&gt;: When manipulating objects in 3D space, it is important to be consistent in what axes we use. &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/b/b2/3D_Cartesian_Coodinate_Handedness.jpg?style=centerme&quot; alt=&quot;hands&quot; width=&quot;400px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;3 Types of Light Sources&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Point Light&lt;/strong&gt;: These sources emanate light in all directions around a single point. The farther away you are from this source, the dimmer it will be (the light rays are not as bunched up so to speak). It is analogous to a light bulb.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Directional Light&lt;/strong&gt;: A directional light source emanates light uniformly everywhere in a scene. As such its position doesn’t matter only the direction it is facing. This is analogous to the sun. (the sun is just a point light very far away, giving it the effect of a directional light). Typically, there is only one directional light per scene.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Spot Light&lt;/strong&gt;: These lights are similar to point lights except they only emanate in a limited cone before their light is cut short. They’re usually used to highlight an area of the scene rather than provide light to see your surroundings.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Free Look&lt;/strong&gt;: Free look is the player’s ability to move their mouse, joypad, control stick, etc. around and freely view the 3D world their character inhabits. For computer games this is referred to as &lt;strong&gt;mouse-look&lt;/strong&gt;. (The N64, for example, didn’t even have a full analog stick dedicated to the camera. It instead use a set of  directional buttons known as the c-buttons or camera buttons)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Euler Angles vs. Quaternions&lt;/strong&gt;: When representing rotations in 3D space we can either use a set of 3 angles (1 for the rotation about each axis) or a single &lt;strong&gt;quaternion&lt;/strong&gt;. The quaternions $\mathbb{H}$ are a 4D generalization of the 2D complex numbers $\mathbb{C}$. Just like how the complex numbers are useful in describing rotations in 2-space, quaternions are apt in describing rotations in 3-space.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Game Loop&lt;/strong&gt;
-Code that corresponds to some object or event in a game has to run at every iteration of the game loop to check for updated conditions. For example, the code that moves the player has to check if the user is holding down the up key many times a second to ensure the player only moves while the key is held down.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Frame Rate Dependent Code&lt;/strong&gt;:
-A problem arises however. When that code is run to move the player, the player’s speed would be dependent on the speed of the computer running the game (the faster the loops, the more times the player would be moved per cycle). To remedy this we have to take into account the game’s &lt;em&gt;frame rate&lt;/em&gt;: how many updates of the screen there are per second.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Raycasting&lt;/strong&gt;: Raycasting is when a ray (an imaginary line that extends out from a point) is sent out at some angle and the location of the point it first intersects with, if it hits at all, is recorded. A first person shooter, for example, would use raycasting to tell whether a fired bullet hit an enemy or wall. In this case the ray would be perpendicular to the middle of the player’s screen (i.e where the crosshairs are).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Mouse Picking&lt;/strong&gt;: Mouse picking is finding the spot a mouse clicked on in 3D space. Doing this requires casting a ray from the user’s point of view and seeing where it first collides.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Rendering&lt;/strong&gt;: Computing the 2D array of pixels that corresponds to the current camera angle and 3D world it is viewing. This array is what is drawn onto the screen. (3D world -&amp;gt; 2D screen)&lt;/p&gt;
-
-&lt;h2 id=&quot;unity-game-development&quot;&gt;Unity Game Development&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Core Parts of a Unity Game&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Scenes&lt;/strong&gt;: All levels/areas/worlds are known as scenes in Unity. All games, 2D and 3D, are the result of the interactions between the objects in the current scene.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Objects&lt;/strong&gt;: Objects (they are instances of &lt;code class=&quot;highlighter-rouge&quot;&gt;GameObject&lt;/code&gt; in code) are the things the scene is made up of. All things in a scene are objects (the player, weapons, tools, cars, buildings, scenery, the floor, cameras, light sources) and so all Unity games are made of these. Even when implementing a component with non-tangible functionality (like a global timer) these can be added to an empty object (because all components and scripts must be part of an object).&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Components&lt;/strong&gt;: These are the things that give objects functionality. Unity comes prepackaged with general components for objects (cameras, collision, light sources, sound sources, etc.). By default all objects must have a position component (even if they are an empty object that do not physically exist in the scene). Scripts are the custom components that the developer adds to objects in order to create functionality in a game.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Scripts&lt;/strong&gt;: Scripts are custom components that can be added to Unity objects. Unity allows for scripting in C# and JavaScript (although due to the difference in programming websites and 3D games, JavaScript is often called UnityScript when being used for Unity.) These scripts are at the core of programming a Unity game. Some basic things you might need to create scripts for are movement, UI, AI, collision behavior, etc.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;The Unity Editor&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Hierarchy&lt;/strong&gt;: This tab (by default on the left) shows a text list of all the objects in the current scene. Note that objects can be linked together (by dragging them on top of each other in the hierarchy tab) in order to group them together.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Scene View&lt;/strong&gt;: The scene view (in the middle of the screen) shows the current scene and all the objects within it. You can navigate the scene and transform objects in it with the mouse and keyboard. (&lt;code class=&quot;highlighter-rouge&quot;&gt;W&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;E&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;R&lt;/code&gt; are the transformations, and &lt;code class=&quot;highlighter-rouge&quot;&gt;CTRL&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;ALT&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;SHIFT&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;MOUSE 1&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;MOUSE 2&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;MOUSE 3&lt;/code&gt; move the camera around)&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Inspector&lt;/strong&gt;: When you click on an object in the scene view or hierarchy, all its properties (i.e the properties of its components) appear in the inspector tab (by default on the right). Here you can modify the different parameters of a component (the location of the object, what camera angle the object is using, the maximum speed of the objects movement, etc.)&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Game View &amp;amp; the Toolbar&lt;/strong&gt;: The game view (also in the middle of the screen) actually runs the game when you press play in the toolbar (at the top of the screen). It’s important tot note that the game view actually updates in real time with changes in code/scene, so you can rapidly prototype.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Project&lt;/strong&gt;: Located at the bottom of the screen, the project tab shows all the assets, scenes, and scripts for the current project. It’s basically a file explorer. You can right click to create new scripts, scenes, and objects in this tab.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Console&lt;/strong&gt;: This outputs whatever was programmed to be outputted there by the scripts that are currently running in the scene. Usually used for debugging or to output errors encountered while running the script.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Rect Tool&lt;/strong&gt;: In 2D, transformations are simple enough that the above three can be combined into a single tool. Thus when making 2D unity games, the &lt;em&gt;Rect Tool&lt;/em&gt; is all you’ll need.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Coroutines&lt;/strong&gt;: ???&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Prefabs&lt;/strong&gt;: ???&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
    <title>Parity Sequences</title>
    <link href="http://localhost:4000/parity-sequences/"/>
    <updated>2018-05-10T00:00:00-04:00</updated>
@@ -1171,7 +1308,7 @@ a\sim b&amp;\equiv (a,b)\in \sim\\
 &lt;p&gt;Remember, parity equivalence is only defined on the integers (rational and real numbers don’t have parity) so the above result only holds for integer $n$.&lt;/p&gt;
 
 &lt;h2 id=&quot;examples-of-parity-sequences&quot;&gt;Examples of Parity Sequences&lt;/h2&gt;
-&lt;p&gt;All examples start indexing at 0 (the most rational way to index lists).&lt;/p&gt;
+&lt;!-- All examples start indexing at 0 (the most rational way to index lists). --&gt;
 &lt;h4 id=&quot;base-case-parity-sequences&quot;&gt;Base Case Parity Sequences&lt;/h4&gt;
 &lt;p&gt;The two most simple parity sequences are simply the natural numbers:&lt;/p&gt;
 
@@ -1244,12 +1381,24 @@ F_n&amp;=F_{n-2}+F_{n-1}\\
 &lt;h4 id=&quot;existence-in-zfc&quot;&gt;Existence in ZFC&lt;/h4&gt;
 &lt;p&gt;We can show that, utilizing the &lt;a href=&quot;/n-tuples#definition&quot;&gt;Kuratowski definition&lt;/a&gt; of ordered pairs, the Cartesian product of two sets is merely a subset of the following:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;A\times B \in \mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;A\times B \subset \mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)&lt;/script&gt;
 
-&lt;details&gt;&lt;summary&gt;Proof&lt;/summary&gt;Ill do it later...&lt;/details&gt;
+&lt;details&gt;&lt;summary&gt;Proof&lt;/summary&gt;
+First, note that $A\cup B$ is guaranteed by the axiom of union and that its power set is guaranteed by the axiom of power set.
+
+Next, notice that, among many other elements, the power set of $A\cup B$ contains:
+&lt;!-- \left(\forall a\in A,\forall b\in B\right) --&gt;
+$$\{a\},\{b\},\{a,b\}\in\mathcal{P}\left(A\cup B\right)$$
+
+where $a$ and $b$ are some element in $A$ and $B$ respectively. Now if we take the power set again we'll see that the result contains, among other things, the elements:
+
+$$\{\{a\},\{a,b\}\}\in\mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)$$
+
+for all $a$ and $b$ in $A$ and $B$. Now invoke the axiom of subset to choose only those elements that fit the description and we are done!
+&lt;/details&gt;
 &lt;p&gt;&lt;/p&gt;
 
-&lt;p&gt;$A\cup B$ is guaranteed by the axiom of union, and its repeated power sets are guaranteed by the axiom of power set. This coupled with the fact that the Cartesian product is only a subset of the above expression implies that it must exist.&lt;/p&gt;
+&lt;!-- $A\cup B$ is guaranteed by the axiom of union, and its repeated power sets are guaranteed by the axiom of power set. This coupled with the fact that the Cartesian product is only a subset of the above expression implies that it must exist. --&gt;
 
 &lt;!--more--&gt;
 
@@ -1275,6 +1424,15 @@ A\times B\times C&amp;amp;=(A \times B)\times C\\
 &lt;p&gt;When referring to the repeated Cartesian product of the same set $S$, we can use an abbreviated notation:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\underbrace{S\times S \times \cdots \times S}_{n\text{ sets}}=S^n&lt;/script&gt;
+
+&lt;h4 id=&quot;arity&quot;&gt;Arity&lt;/h4&gt;
+&lt;p&gt;The arity of a Cartesian product is the number $n$ of sets that are being multiplied.&lt;/p&gt;
+
+&lt;p&gt;When $n$ is infinite the product is &lt;strong&gt;infinitary&lt;/strong&gt; as opposed to &lt;strong&gt;finitary&lt;/strong&gt; for finite $n$.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\underbrace{\text{binary},\text{trinary},\cdots,n\text{-ary}}_{\text{finitary}}\cdots;\underbrace{\aleph_0\text{-ary},\aleph_1\text{-ary},\cdots}_{\text{infinitary}}&lt;/script&gt;
+
+&lt;p&gt;All the definitions used above apply only to finite $n$. There &lt;em&gt;are&lt;/em&gt; valid notions of infinitary Cartesian products, but they are beyond the scope of this post.&lt;/p&gt;
 
 &lt;h2 id=&quot;rules-of-replacement&quot;&gt;Rules of replacement&lt;/h2&gt;
 &lt;h4 id=&quot;non-commutative&quot;&gt;Non-Commutative&lt;/h4&gt;
@@ -1321,9 +1479,9 @@ If $A$ and $B$ are memebers of some universal set $U$, then their absolute compl
 $$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right)\cup\left(A\times B^C\right)$$
 &lt;/details&gt;
 
-&lt;h2 id=&quot;uses&quot;&gt;Uses&lt;/h2&gt;
+&lt;h2 id=&quot;examples&quot;&gt;Examples&lt;/h2&gt;
 &lt;h4 id=&quot;functions-and-relations&quot;&gt;Functions and Relations&lt;/h4&gt;
-&lt;p&gt;Relations, and thus functions and operations, from a set $A$ to a set $B$ are defined as subsets of the Cartesian product $A\times B$. For example the less than or equal to relation $\le$ on the integers can be defined as so:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;\relations&quot;&gt;Relations&lt;/a&gt;, and thus functions and operations, from a set $A$ to a set $B$ are defined as subsets of the Cartesian product $A\times B$. For example, the less than or equal to relation $\le$ on the integers can be defined as so:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\le\equiv\{\cdots,\left(1,2\right),\left(-14,0\right),\left(5,5\right),\left(12,13\right),\cdots\}&lt;/script&gt;
 
@@ -1347,7 +1505,7 @@ $$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right
 
 &lt;p&gt;Points in $3$-space are necessary in describing the &lt;a href=&quot;/position&quot;&gt;position&lt;/a&gt; of objects and particles in space and thus set up the study of &lt;a href=&quot;\kinematics&quot;&gt;motion&lt;/a&gt;, the causes of that motion and, ultimately, the rest of physics.&lt;/p&gt;
 
-&lt;p&gt;Moreover, $2$-space (and less frequently $3$-space) is useful in plotting and making inferences from data, as well as visualizing functions over numbers.&lt;/p&gt;
+&lt;p&gt;Moreover, $2$-space (and less frequently $3$-space) is used in plotting and making inferences from data as well as visualizing functions over an interval of numbers.&lt;/p&gt;
 </content>
  </entry>
  
@@ -2069,7 +2227,7 @@ $$\begin{align}
 
 &lt;p&gt;Moreover is a picture of a cat a cat? It certainly represents the notion of a cat, but it doesn’t exactly have genetic material. Plus, there is no formal way to tell whether a given picture is of a cat or not. No formula, no physical law of cats. We can tell a cat, real or drawn, from another animal using our &lt;em&gt;intuition&lt;/em&gt;, whatever that is.&lt;/p&gt;
 
-&lt;p&gt;“But it’s easy” you might say, “just look for a tail, 4 legs, pointy ears and some fur.” What about hairless cats? a cat drawn with no tail? a cat who’s ears are down, etc. There are so many exceptions that it’s a miracle we are even able to tell cat from dog!&lt;/p&gt;
+&lt;p&gt;“But it’s easy” you might say, “just look for a tail, 4 legs, pointy ears and some fur.” What about hairless cats? a cat drawn with no tail? a cat who’s ears are down, etc. There are so many exceptions that it’s a miracle we are even able to tell cat from houseplant!&lt;/p&gt;
 
 &lt;h4 id=&quot;whats-wrong-with-being-poorly-defined&quot;&gt;What’s Wrong with being Poorly Defined?&lt;/h4&gt;
 &lt;p&gt;Why is this a problem? Well, without a concrete definition, the statements we can make about a concept are limited and just as hazy as the definition.&lt;/p&gt;
@@ -2090,13 +2248,13 @@ $$\begin{align}
 &lt;h2 id=&quot;well-defined-concepts&quot;&gt;Well Defined Concepts&lt;/h2&gt;
 &lt;p&gt;To formally deal with any idea or concept, it has to be well defined. By making our definitions more concrete we can make more precise statements about these ideas. This is how math and science are born.&lt;/p&gt;
 
-&lt;p&gt;Take the atom. An atom is a collection of protons, neutrons and electrons which are further composed of elementary particles, all of which are governed by an exact set of equations (i.e quantum mechanics).&lt;/p&gt;
+&lt;p&gt;Take the atom. An atom is a collection of protons, neutrons, and electrons which are further composed of elementary particles, all of which are governed by an exact set of equations (i.e quantum mechanics).&lt;/p&gt;
 
 &lt;p&gt;A Cesium atom, for example, is thus completely mathematically defined. Everything about it is encapsulated in it’s wave function, no need to look at the natural world to understand it.&lt;/p&gt;
 
 &lt;p&gt;This applies to all atoms, and thus all molecules, and further anything in the universe made of matter, like humans. This shouldn’t come as a surprise. After all, we know that math is the bedrock of science and thus of formal knowledge as a whole.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Of course, modeling even molecules (much less humans) as quantum wave functions is pretty much out of our reach computationally. As such the claim that quantum wave functions can model all aspects of our lives is solely a theoretical one.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Of course, modeling even molecules (much less humans) as quantum wave functions is pretty much out of our reach computationally. As such, the claim that quantum wave functions can model all aspects of our lives is solely a theoretical one.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/philosophy/metaphysical-nightmare/chain_of_abstraction.png?style=centerme&quot; alt=&quot;chain of abstraction&quot; /&gt;&lt;/p&gt;
 
@@ -2108,7 +2266,7 @@ $$\begin{align}
 &lt;center&gt;&lt;i&gt;Relevant xckd&lt;/i&gt;&lt;/center&gt;
 
 &lt;h2 id=&quot;bridging-the-gap&quot;&gt;Bridging the Gap&lt;/h2&gt;
-&lt;p&gt;Now consider the concept of love. It seems impossible to define it objectively right? Sure, it’s an evolutionary aid to sexual reproduction, but that’s far from concrete and certainly ignores our own experience of it.&lt;/p&gt;
+&lt;p&gt;Now consider the concept of love. It seems impossible to define it objectively right? Sure it’s an evolutionary aid to sexual reproduction, but that’s far from concrete and certainly ignores our own experience of it.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;We must first ask ourselves “what is love?”
@@ -2138,7 +2296,7 @@ $$\begin{align}
 &lt;p&gt;This relation between the most fundamental (and very well defined) concepts in our universe, like elementary particles, to the most hazy and abstract ones, like emotions, is what will allow us the bridge the between poorly defined and well defined in a somewhat, admittedly, crude way.&lt;/p&gt;
 
 &lt;h4 id=&quot;brain-graphs&quot;&gt;Brain Graphs&lt;/h4&gt;
-&lt;p&gt;Consider the human brain. It is simply a collection of interconnected neurons, no? We can represent that neural network as graph. This graph will contain a bunch (billions) of nodes, each representing a neuron, and even more (trillions) of vertices between those nodes, representing connections.&lt;/p&gt;
+&lt;p&gt;Consider the human brain. It is simply a collection of interconnected neurons, no? We can represent that neural network as graph. This graph will contain a bunch (billions) of nodes, each representing a neuron, and even more (trillions) of edges between those nodes, representing connections.&lt;/p&gt;
 
 &lt;p&gt;Making our definition a bit more concrete, we can define any brain, in a single instant, as a graph of it’s neurons:&lt;/p&gt;
 
@@ -2160,7 +2318,7 @@ $$\begin{align}
 &lt;ul&gt;
   &lt;li&gt;$B(t)$ is a function of the graph of a brain over time.&lt;/li&gt;
   &lt;li&gt;$N$ is the same as before (assuming the neurons in the brain stay constant during this thought)&lt;/li&gt;
-  &lt;li&gt;$C$ is the a function of the set of all connections between members of $N$ (neurons) over time.&lt;/li&gt;
+  &lt;li&gt;$C$ is the function of the set of all connections between members of $N$ (neurons) over time.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;set-of-all-of-brain-graph-functions&quot;&gt;Set of all of Brain Graph Functions&lt;/h4&gt;
@@ -2187,12 +2345,12 @@ $$\begin{align}
 &lt;p&gt;&lt;em&gt;Labeling the graphs with subscript $1,2,3,\cdots$ is misleading because such a set is most likely not countable.&lt;/em&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;how-does-this-definition-even-help&quot;&gt;How does this Definition even Help?&lt;/h2&gt;
-&lt;p&gt;Remember when I said formally defining concepts allows us to make formal statements about them? Well that was only partially true. While this ‘set of all particle configuration’ definition is more formal than your standard notion of jealousy, it’s not exactly helpful in trying to understand the nature of emotion of people’s interactions with each other.&lt;/p&gt;
+&lt;p&gt;Remember when I said formally defining concepts allows us to make formal statements about them? Well that was only partially true. While this ‘set of all possible particle configurations’ definition is more formal than your standard notion of jealousy, it’s not exactly helpful in trying to understand the nature of emotion of people’s interactions with each other.&lt;/p&gt;
 
 &lt;p&gt;So then what’s the real point? The real point is purely a semantic one. A scientist/philosopher might like to associate some physical meaning to ideas like emotion or creativity. Thus, we can be rest assured that everything imaginable can be considered physical in some sense. Even if that physicality is purely expressed as your brain thinking about said concept, it’s still just particles following the same physical laws.&lt;/p&gt;
 
 &lt;h4 id=&quot;an-aside&quot;&gt;An Aside&lt;/h4&gt;
-&lt;p&gt;The idea I presented above is, of course, ridiculous and riddled with problems. It is just meant to serve as a rough idea of how one might formalize the notion of an “idea” or “concept” when , at first, it may seem that it only exists in our minds. Indeed these concepts do only exist in our minds, but our minds are purely physical (unless you’re a &lt;a href=&quot;https://plato.stanford.edu/entries/dualism/&quot;&gt;duelist&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;The idea I presented above is, of course, ridiculous and riddled with problems. It is just meant to serve as a rough idea of how one might formalize the notion of an “idea” or “concept” when, at first, it may seem that it only exists in our minds. Indeed these concepts do only exist in our minds, but our minds are purely physical (unless you’re a &lt;a href=&quot;https://plato.stanford.edu/entries/dualism/&quot;&gt;duelist&lt;/a&gt;).&lt;/p&gt;
 
 &lt;p&gt;One such problem I would like to somewhat address is the apparent circularity of saying “the notion of cat is encompassed by the set of all brains that are thinking of the concept of cat.” This isn’t as bad as it sounds because it should really be phrased as “the notion of cat is encompassed by the set of all brains that are thinking of &lt;strong&gt;what we consider&lt;/strong&gt; the concept of cat.” This definition draws on our own subjective ideas of cats to objectively define them. (In this case &lt;em&gt;our&lt;/em&gt; might represent an average of all human opinions or something of the sort.)&lt;/p&gt;
 

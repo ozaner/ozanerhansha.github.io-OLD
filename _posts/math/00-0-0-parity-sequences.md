@@ -108,7 +108,7 @@ $$\begin{align}
 Remember, parity equivalence is only defined on the integers (rational and real numbers don't have parity) so the above result only holds for integer $n$.
 
 ## Examples of Parity Sequences
-All examples start indexing at 0 (the most rational way to index lists).
+<!-- All examples start indexing at 0 (the most rational way to index lists). -->
 #### Base Case Parity Sequences
 The two most simple parity sequences are simply the natural numbers:
 
