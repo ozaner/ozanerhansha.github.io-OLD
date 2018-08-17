@@ -30,7 +30,7 @@ Notice that the set of functions from $S$ to $\mathbb{R}$ forms a vector space w
 - $\mathbb{Z,N}$: Unlike the complex, real, and rational numbers, the integers and natural numbers do not form fields because they do not have inverses under multiplication. As such, proportionality loses the reflexive property because the constant $k^{-1}$ does not exist for any integer. Proportionality can still be used, just not as an equivalence relation.
 
 ## Generalized Definition
-We can generalize this definition to not just other fields but any other set of functions that form a vector space with said field. Given a vector space with vectors $V$, an underlying field $F$, and a valid scalar multiplication $\cdot$, we can define the following equivalence relation:
+We can generalize this definition to not just the set of real-valued functions, but any vector space. Given a vector space with vectors $V$, an underlying field $F$, and a valid scalar multiplication $\cdot$, we can define the following equivalence relation:
 
 $$\propto_V\equiv\{(\mathbf{x},\mathbf{y})\in V^2\mid\exists k\in F:k\mathbf{x}=\mathbf{y}\}$$
 

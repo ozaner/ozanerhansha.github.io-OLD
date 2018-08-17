@@ -18,7 +18,7 @@ So what causes this disparity?
 
 The difference between a GB (gigabyte) and a GiB (gibibyte).
 
-Historically when a computer scientist wrote kB, for example, they didn’t mean $1000$ bytes. They meant $1024$ bytes. This is because computers operate in binary which is based of powers of two. In the kilobyte’s case, $2^{10} = 1024$ which is almost $1000$. This made it a close enough approximation of memory in a computer which was based on powers of $2$.
+Historically when a computer scientist wrote kB, for example, they didn’t mean $1000$ bytes. They meant $1024$ bytes. This is because computers operate in binary which is based on powers of two. In the kilobyte’s case, $2^{10} = 1024$ which is almost $1000$. This made it a close enough approximation of memory in a computer which was based on powers of $2$.
 
 This changed around 1998 when the International Electrotechnical Commission (IEC) and other regulatory organizations created a new set of prefixes to be used as binary prefixes. The US National Institute of Standards and Technology (NIST) followed suit and required that the SI prefixes only be used in the decimal sense. Below is a table of the metric prefixes vs the binary ones.
 

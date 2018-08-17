@@ -4,13 +4,108 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-08-12T13:01:40-04:00</updated>
+ <updated>2018-08-17T16:17:32-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Proportionality</title>
+   <link href="http://localhost:4000/proportionality/"/>
+   <updated>2018-08-17T00:00:00-04:00</updated>
+   <id>http://localhost:4000/proportionality</id>
+   <content type="html">&lt;h2 id=&quot;a-review-of-proportionality&quot;&gt;A Review of Proportionality&lt;/h2&gt;
+&lt;p&gt;Recall that two expressions, which we can consider &lt;strong&gt;functions&lt;/strong&gt;, are proportional if there exists some constant that when multiplied by one of the functions makes them equivalent. This relationship is usually denoted $y\propto x$ or equivalently as $y=kx$ where $k$ is some &lt;strong&gt;proportionality constant&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;For example, a circle’s circumference $C$ is proportional to it’s diameter $d$. We can write this as $C\propto d$ and even further, with the knowledge that the constant between them is $\pi$, we can write $C=\pi d$&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h4 id=&quot;finer-points-and-motivation&quot;&gt;Finer Points and Motivation&lt;/h4&gt;
+&lt;p&gt;Notice that proportionality satisfies the three criterion for an equivalence relation: reflexivity, symmetry, and transitivity (we’ll prove this later). By imagining proportionality as a relation (or as we’ll see a family of relations) on the set of real/complex valued functions, we can begin to formally define it.&lt;/p&gt;
+
+&lt;h2 id=&quot;definition-on-mathbbrs&quot;&gt;Definition on $\mathbb{R}^S$&lt;/h2&gt;
+&lt;p&gt;Proportionality is a family of equivalence relations on the set(s) of real valued functions (i.e the set of functions $f:S\to\mathbb{R}$ where $S$ is an arbitrary set):&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\propto_{\mathbb{R}^S}\equiv\{(x,y)\in(\mathbb{R}^S)^2\mid\exists k\in \mathbb{R}:kx=y\}&lt;/script&gt;
+
+&lt;p&gt;And because $x\propto_{\mathbb{R}^S}y$ is shorthand for $(x,y)\in\propto_{\mathbb{R}^S}$ we can say:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;x\propto_{\mathbb{R}^S}y\equiv(\exists k\in \mathbb{R})\ kx=y&lt;/script&gt;
+
+&lt;p&gt;Notice that the set of functions from $S$ to $\mathbb{R}$ forms a vector space with its underlying field being the real numbers. Every choice of $S$ produces a different proportionality relation, hence it being a family. The notation $\propto_{\mathbb{R}^S}$ was chosen instead of $\propto_S$ in order to match the more general definition of proportionality given below.&lt;/p&gt;
+
+&lt;h4 id=&quot;other-number-systems&quot;&gt;Other Number Systems&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;$\mathbb{C,Q}$: Note that the above definition works just as well with both complex and rational valued functions and scalars. This is because, like the real numbers, they both form fields with inverse elements.&lt;/li&gt;
+  &lt;li&gt;$\mathbb{Z,N}$: Unlike the complex, real, and rational numbers, the integers and natural numbers do not form fields because they do not have inverses under multiplication. As such, proportionality loses the reflexive property because the constant $k^{-1}$ does not exist for any integer. Proportionality can still be used, just not as an equivalence relation.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;generalized-definition&quot;&gt;Generalized Definition&lt;/h2&gt;
+&lt;p&gt;We can generalize this definition to not just the set of real-valued functions, but any vector space. Given a vector space with vectors $V$, an underlying field $F$, and a valid scalar multiplication $\cdot$, we can define the following equivalence relation:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\propto_V\equiv\{(\mathbf{x},\mathbf{y})\in V^2\mid\exists k\in F:k\mathbf{x}=\mathbf{y}\}&lt;/script&gt;
+
+&lt;p&gt;And because $x\propto_Vy$ is shorthand for $(x,y)\in\propto_V$ we can say:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbf{x}\propto_V \mathbf{y}\equiv(\exists k\in F)\ k\mathbf{x}=\mathbf{y}&lt;/script&gt;
+
+&lt;h4 id=&quot;notation&quot;&gt;Notation&lt;/h4&gt;
+&lt;p&gt;When the context is clear, we can omit the subscript denoteing what vector space the relation is acting upon and just write $\propto$. This is usually the case when relating two functions, real valued or otherwise, since proportionality is most commonly used in fields like physics where the domain of discourse is very clear.&lt;/p&gt;
+
+&lt;h2 id=&quot;proof-of-of-equivalence-relation&quot;&gt;Proof of of Equivalence Relation&lt;/h2&gt;
+&lt;p&gt;Using the general definition above, we will prove $\propto$ forms an equivalence relation by showing it has the reflexive, symmetric, and transitive.&lt;/p&gt;
+
+&lt;h4 id=&quot;reflexivity&quot;&gt;Reflexivity&lt;/h4&gt;
+&lt;p&gt;Proportionality is reflexive, i.e $\mathbf{v}\propto \mathbf{v}$ for all $\mathbf{v}\in V$, because every vector space has an identity scalar that when multiplied by any of its vectors, produces that same vector.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;(\exists e\in F)(\forall \mathbf{v}\in V)\ e\mathbf{v}=\mathbf{v}&lt;/script&gt;
+
+&lt;p&gt;This is enough to prove reflexivity because if $\mathbf{x}=\mathbf{y}$ then the definition becomes:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbf{x}\propto_V \mathbf{x}\equiv(\exists k\in F)\ k\mathbf{x}=\mathbf{x}&lt;/script&gt;
+
+&lt;p&gt;and there will always exist a $k\in F$, that satisfies $k\mathbf{x}=\mathbf{x}$ and it will always be the identity scalar $e$ (aka the number $1$ in the case of the complex/real/etc. numbers).&lt;/p&gt;
+
+&lt;h4 id=&quot;symmetry&quot;&gt;Symmetry&lt;/h4&gt;
+&lt;p&gt;Proportionality is symmetric, i.e $\mathbf{u}\propto \mathbf{v}\implies \mathbf{v}\propto \mathbf{u}$ for all $\mathbf{u},\mathbf{v}\in V$, because every scalar in a vector space has a multiplicative inverse:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;(\forall s\in F)(\exists s^{-1}\in F)\ ss^{-1}=e&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;Where $e$ is the identity scalar. Also note that the field’s multiplication is commutative.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;So assuming two vectors are proportional $\mathbf{x}\propto_V \mathbf{y}$ there must exist some $k\in F$ that satisfies $k\mathbf{x}=\mathbf{y}$. If we multiply both sides by $k^{-1}$, which too must exist as we’ve stated, we are left with:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+k\mathbf{x}=\mathbf{y}\equiv&amp; k^{-1}k\mathbf{x}=k^{-1}\mathbf{y}\\
+&amp;e\mathbf{x}=k^{-1}\mathbf{y}\\
+&amp;k^{-1}\mathbf{y}=\mathbf{x}
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Notice that, because $k^{-1}\in F$, this is precisely the definition of $\mathbf{y}\propto \mathbf{x}$. And so we have shown that for any two vectors in $V$ that if $\mathbf{x}\propto \mathbf{y}$ then $\mathbf{y}\propto \mathbf{x}$. And that if the proportionality constant of $\mathbf{x}\propto \mathbf{y}$ is $k$ then the constant between $\mathbf{y}\propto \mathbf{x}$ is $k^{-1}$.&lt;/p&gt;
+
+&lt;h4 id=&quot;transitivity&quot;&gt;Transitivity&lt;/h4&gt;
+&lt;p&gt;Finally, proportionality is transitive which means that $\mathbb{u}\propto\mathbb{v}\wedge\mathbb{v}\propto\mathbb{w}\implies\mathbb{u}\propto\mathbb{w}$. This can be shown by noting:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\mathbb{u}\propto\mathbb{v}\iff k_1\mathbb{u}=\mathbb{v}&lt;/script&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\mathbb{v}\propto\mathbb{w}\iff k_2\mathbb{v}=\mathbb{w}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;So if we have $\mathbb{u}\propto\mathbb{v}\wedge\mathbb{v}\propto\mathbb{w}$ then we also know there exists two constants $k_1$ and $k_2$ that correspond to each. Now we can simply substitute $k_1\mathbb{u}$ in for $\mathbb{v}$ in the following way:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+k_1\mathbb{u}&amp;=\mathbb{v}\\
+k_2\mathbb{v}&amp;=\mathbb{w}\\
+k_2k_1\mathbb{u}&amp;=\mathbb{w}\\
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Because field multiplication is associative, the scalar $k_2k_1$ is the proportionality constant between $\mathbb{u}$ and $\mathbb{w}$ implying that $\mathbb{u}\propto\mathbb{w}$. And thus we have proved the transitivity of the proportional relation.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Relations</title>
@@ -221,14 +316,14 @@ For example, the composition &quot;is child of&quot; $\circ$ &quot;is parent of&
  </entry>
  
  <entry>
-   <title>Boolean Logic as Linear Transformations</title>
+   <title>Boolean Logic as Matrix Multiplication</title>
    <link href="http://localhost:4000/boolean-linear-transformations/"/>
    <updated>2018-07-18T00:00:00-04:00</updated>
    <id>http://localhost:4000/boolean-linear-transformations</id>
    <content type="html">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Computation is usually formulated via boolean logic, which in turn makes use of logical connectives like $\wedge,\vee, \neg$ along with the binary digits $0$ and $1$, representing false and true respectively.&lt;/p&gt;
 
-&lt;p&gt;There is, however, an alternative: linear algebra. By representing $0$ and $1$ as vectors and logical operations/gates as transformations on those vectors, we can define computation in the language of linear algebra.&lt;/p&gt;
+&lt;p&gt;There is, however, an alternative: linear algebra. By representing $0$ and $1$ as vectors and logical operations/gates as matrices, we can define computation in the language of linear algebra.&lt;/p&gt;
 
 &lt;p&gt;While at first this may seem to be nothing but a novel construction, reformulating computation in terms of linear algebra is precisely what opens the door to quantum computing, which is essentially a more general form of what’s shown below.&lt;/p&gt;
 
@@ -762,16 +857,16 @@ Used in
 &lt;!-- ### StUdLyCaPs --&gt;
 &lt;details&gt;
 &lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;StUdLyCaPs&lt;/h3&gt;&lt;/summary&gt;
-
+Studly caps is meant to be a joking letter case used to convey sarcasm. It has roots in mocking the seemingly random capitalization of products and services that was popular during the mid 1990s to early 2000s. A sort of in-joke amongst people on the internet at the time.
 &lt;!-- &gt;tHeqUIckBrOwNFOxjuMpsOvERtHeLazYdOg --&gt;
 &lt;blockquote&gt;tHeqUIckBrOwNFOxjuMpsOvERtHeLazYdOg&lt;/blockquote&gt;
 
 A variation on Studly caps is one where spaces are included to delimit words. This makes the message more readable while still retaining its sarcastic tone:
 
 &lt;!-- &gt;tHe qUIck BrOwN FOx juMps OvER tHe lAzYdOg --&gt;
-&lt;blockquote&gt;tHe qUIck BrOwN FOx juMps OvER tHe lAzYdOg&lt;/blockquote&gt;
+&lt;blockquote&gt;tHe qUIck BrOwN FOx juMps OvER tHe lAzY dOg&lt;/blockquote&gt;
 
-As you can see, the spaces make the text a but more readable. Indeed this is the same case used in the &lt;a href=&quot;http://knowyourmeme.com/memes/mocking-spongebob&quot;&gt;mocking Spongebob meme&lt;/a&gt; that was popular around 2017.
+Indeed this is the same case used in the &lt;a href=&quot;http://knowyourmeme.com/memes/mocking-spongebob&quot;&gt;mocking Spongebob meme&lt;/a&gt; that was popular around 2017.
 &lt;/details&gt;
 </content>
  </entry>
@@ -887,7 +982,7 @@ a ’hell’; b ’o, w’; c ’orld’; d ’!*n’;
 &lt;h4 id=&quot;python&quot;&gt;Python&lt;/h4&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello, World!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Python is a scripting language so programs are simply a set of commands run from top to bottom. As such, it’s “Hello, World!” program contains no boilerplate code and is simply a &lt;code class=&quot;highlighter-rouge&quot;&gt;print()&lt;/code&gt; statement.&lt;/p&gt;
+&lt;p&gt;Python is a scripting language so programs are simply a set of commands run from top to bottom. As such, its “Hello, World!” program contains no boilerplate code and is simply a &lt;code class=&quot;highlighter-rouge&quot;&gt;print()&lt;/code&gt; statement.&lt;/p&gt;
 
 &lt;h4 id=&quot;c&quot;&gt;C++&lt;/h4&gt;
 &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;
@@ -964,7 +1059,7 @@ n&amp;\equiv\{0,1,2,3,\cdots,n-1\}\\
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{align}
-1&amp;=S(0)\\
+1&amp;\equiv S(0)\\
 &amp;=0\cup\{0\}\\
 &amp;=\{0\}\\
 &amp;=\{\emptyset\}
@@ -995,11 +1090,12 @@ n&amp;\equiv\{0,1,2,3,\cdots,n-1\}\\
 &lt;p&gt;The last one in particular, the set of all non-zero natural numbers up to $n$, can be written as the integer interval $[1\ldotp\ldotp n]$ to avoid confusion.&lt;/p&gt;
 
 &lt;h2 id=&quot;structure-on-the-naturals&quot;&gt;Structure on the Naturals&lt;/h2&gt;
-&lt;h3 id=&quot;addition&quot;&gt;Addition&lt;/h3&gt;
-&lt;p&gt;Using the successor function and two rules, we can &lt;em&gt;inductively&lt;/em&gt; define an operation $+$ such that it forms a commutative monoid $(\mathbb{N},+)$ with identity $0$ on the naturals:&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;Addition&lt;/h3&gt;&lt;/summary&gt;
+Using the successor function and two rules, we can &lt;i&gt;inductively&lt;/i&gt; define an operation $+$ such that it forms a commutative monoid $(\mathbb{N},+)$ with identity $0$ on the naturals:
 
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;a+0=0 \tag{1}&lt;/script&gt;
-&lt;script type=&quot;math/tex&quot;&gt;a+S(b)=S(a+b) \tag{2}&lt;/script&gt;&lt;/p&gt;
+$$a+0=0 \tag{1}$$
+$$a+S(b)=S(a+b) \tag{2}$$
 
 &lt;details&gt;&lt;summary&gt;&lt;strong&gt;Example&lt;/strong&gt;&lt;/summary&gt;
 
@@ -1015,40 +1111,41 @@ $$\begin{align}
 &lt;/details&gt;
 &lt;p&gt;&lt;/p&gt;
 
-&lt;p&gt;This monoid is also &lt;strong&gt;cancellative&lt;/strong&gt;, meaning that an equation is still true even if we add or remove the same number on both sides:&lt;/p&gt;
+This monoid is also &lt;b&gt;cancellative&lt;/b&gt;, meaning that an equation is still true even if we add or remove the same number on both sides:
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;a+c=b+c\implies a=b&lt;/script&gt;
+$$a+c=b+c\implies a=b$$
 
-&lt;p&gt;It is from the addition operation $+$ (and successor function $S(n)$) that we can define all the other operations/relations on the naturals.&lt;/p&gt;
+It is from the addition operation $+$ (and successor function $S(n)$) that we can define all the other operations/relations on the naturals.
+&lt;/details&gt;
 
-&lt;h3 id=&quot;subtraction&quot;&gt;Subtraction&lt;/h3&gt;
-&lt;p&gt;We can define subtraction in terms of addition as so:&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;Subtraction&lt;/h3&gt;&lt;/summary&gt;
+We can define subtraction in terms of addition as so:
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;a-b=c\iff a=b+c&lt;/script&gt;
+$$a-b=c\iff a=b+c$$
 
 &lt;!-- The set that represents this binary operation would be constructed like this:
 
 $$-\equiv\{(a,b,c)\in\mathbb{N}^3\mid a=b+c\}$$ --&gt;
 
-&lt;p&gt;But note that the difference between two natural numbers $a-b$ exists only if $a\ge b$. As such, subtraction is not defined for any two natural numbers and so is not closed. Moreover, subtraction isn’t associative: $(a-b)-c\not=a-(b-c)$.&lt;/p&gt;
+But note that the difference between two natural numbers $a-b$ exists only if $a\ge b$. As such, subtraction is not defined for any two natural numbers and so is not closed. Moreover, subtraction isn't associative: $(a-b)-c\not=a-(b-c)$.
 
-&lt;h4 id=&quot;truncated-subtraction&quot;&gt;Truncated Subtraction&lt;/h4&gt;
-&lt;p&gt;It is possible, however, to define a meaningful notion of subtraction on the naturals called &lt;strong&gt;truncated subtraction&lt;/strong&gt; denoted $\dot-$, such that it forms a magma $(\mathbb{N},\dot-)$.&lt;/p&gt;
+&lt;h4&gt;Truncated Subtraction&lt;/h4&gt;
+However, it is possible to define a meaningful notion of subtraction on the naturals. It's called &lt;b&gt;truncated subtraction&lt;/b&gt;, denoted $\dot-$, and forms the magma $(\mathbb{N},\dot-)$.
 
-&lt;p&gt;Using the definition of subtraction above, we can define truncated subtraction as:&lt;/p&gt;
+Using the definition of subtraction above, we can define truncated subtraction as:
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-a\ \dot- \ b=
+$$a\ \dot- \ b=
 \begin{cases}
-    0,&amp; a&lt;b\\
-    a-b,&amp; a\ge b
-\end{cases} %]]&gt;&lt;/script&gt;
+    0,&amp;amp; a&amp;lt;b\\
+    a-b,&amp;amp; a\ge b
+\end{cases}$$
 
-&lt;p&gt;If we want to define it purely in terms of natural arithmetic, we can &lt;em&gt;inductively&lt;/em&gt; define $\dot-$ similar to how we defined $+$:&lt;/p&gt;
+If we want to define it purely in terms of natural arithmetic, we can &lt;i&gt;inductively&lt;/i&gt; define $\dot-$ similar to how we defined $+$:
 
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;a\ \dot- \ 0=a \tag{1}&lt;/script&gt;
-&lt;script type=&quot;math/tex&quot;&gt;0\ \dot- \ a=0 \tag{2}&lt;/script&gt;
-&lt;script type=&quot;math/tex&quot;&gt;S(a)\ \dot- \ S(b)=a\ \dot- \ b \tag{3}&lt;/script&gt;&lt;/p&gt;
+$$a\ \dot- \ 0=a \tag{1}$$
+$$0\ \dot- \ a=0 \tag{2}$$
+$$S(a)\ \dot- \ S(b)=a\ \dot- \ b \tag{3}$$
 
 &lt;details&gt;&lt;summary&gt;&lt;strong&gt;Examples&lt;/strong&gt;&lt;/summary&gt;
 When $a&amp;gt;b$
@@ -1075,21 +1172,23 @@ $$\begin{align}
 &lt;/details&gt;
 &lt;p&gt;&lt;/p&gt;
 
-&lt;p&gt;In conjunction with the commutative monoid on the naturals $(\mathbb{N},+)$, this operator is referred to as a &lt;strong&gt;monus&lt;/strong&gt; and forms a CMM, commutative monoid with monus: $(\mathbb{N},+,\dot-)$.&lt;/p&gt;
+In conjunction with the commutative monoid on the naturals $(\mathbb{N},+)$, this operator is referred to as a &lt;b&gt;monus&lt;/b&gt; and forms a CMM, commutative monoid with monus: $(\mathbb{N},+,\dot-)$.
+&lt;/details&gt;
 
-&lt;h3 id=&quot;multiplication&quot;&gt;Multiplication&lt;/h3&gt;
-&lt;p&gt;We can define the multiplication of natural numbers in terms of repeated addition such that it forms a commutative monoid $(\mathbb{N},\times)$:&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;Multiplication&lt;/h3&gt;&lt;/summary&gt;
+We can define the multiplication of natural numbers in terms of repeated addition such that it forms a commutative monoid $(\mathbb{N},\times)$:
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;a\times b=c\iff \underbrace{a+a+\cdots+a}_{b\text{ copies}}=c&lt;/script&gt;
+$$a\times b=c\iff \underbrace{a+a+\cdots+a}_{b\text{ copies}}=c$$
 
 &lt;!-- The set that represents this binary operation would be constructed like this:
 
 $$\times\equiv\{(a,b,c)\in\mathbb{N}^3\mid\underbrace{a+a+\cdots+a}_{b\text{ copies}}=c\}$$ --&gt;
 
-&lt;p&gt;We can also &lt;em&gt;inductively&lt;/em&gt; define $\times$ with 2 rules:&lt;/p&gt;
+We can also &lt;i&gt;inductively&lt;/i&gt; define $\times$ with 2 rules:
 
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;a\times 0=0 \tag{1}&lt;/script&gt;
-&lt;script type=&quot;math/tex&quot;&gt;a\times S(b)=(a\times b) + a \tag{2}&lt;/script&gt;&lt;/p&gt;
+$$a\times 0=0 \tag{1}$$
+$$a\times S(b)=(a\times b) + a \tag{2}$$
 
 &lt;details&gt;&lt;summary&gt;&lt;strong&gt;Example&lt;/strong&gt;&lt;/summary&gt;
 $$\begin{align}
@@ -1107,71 +1206,74 @@ $$\begin{align}
 &lt;/details&gt;
 &lt;p&gt;&lt;/p&gt;
 
-&lt;!-- The naturals and multiplication form a commutative magma $(\mathbb{N},\times)$. However, if we exclude $0$, the naturals can form a commutative monoid $(\mathbb{N}^* ,\times)$ with identity $1$. This is because $1\times 0=0$, which destroys $1$'s identity property. --&gt;
+Like with addition, this monoid is almost &lt;i&gt;cancellative&lt;/i&gt;:
 
-&lt;p&gt;Note that, like with addition, this monoid is &lt;strong&gt;cancellative&lt;/strong&gt;:&lt;/p&gt;
+$$a\times c=b\times c\implies a=b$$
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;a\times c=b\times c\implies a=b&lt;/script&gt;
+However it is not fully due to the fact that the above only holds true when $a,b,c\not=0$.
 
-&lt;h4 id=&quot;commutative-semiring&quot;&gt;Commutative Semiring&lt;/h4&gt;
-&lt;p&gt;Even further, if we combine the $\times$ operator with the monoid  $(\mathbb{N},+)$ and the fact that it is distributive over $+$:&lt;/p&gt;
+&lt;h4&gt;Commutative Semiring&lt;/h4&gt;
+Even further, if we combine the $\times$ operator with the monoid  $(\mathbb{N},+)$ and the fact that it is distributive over $+$:
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;a\times(b+c)=(a\times b)+(a\times c)&lt;/script&gt;
+$$a\times(b+c)=(a\times b)+(a\times c)$$
 
-&lt;p&gt;we obtain the commutative semiring $(\mathbb{N},+,\times)$. It is &lt;em&gt;semi&lt;/em&gt; because the $+$ operator has no inverse operation, which is necessary for a full ring.&lt;/p&gt;
+we obtain the commutative semiring $(\mathbb{N},+,\times)$. It is &lt;i&gt;semi&lt;/i&gt; because the $+$ operator has no inverse operation, which is necessary for a full ring.
+&lt;/details&gt;
 
-&lt;h3 id=&quot;division&quot;&gt;Division&lt;/h3&gt;
-&lt;p&gt;We can define the division of natural numbers in terms of multiplication:&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;Division&lt;/h3&gt;&lt;/summary&gt;
+We can define the division of natural numbers in terms of multiplication:
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;a\div b=c\iff a=b\times c&lt;/script&gt;
+$$a\div b=c\iff a=b\times c$$
 
 &lt;!-- The set that represents this binary operation would be constructed like this:
 
 $$\div\equiv\{(a,b,c)\in\mathbb{N}^3\mid a=b\times c\}$$ --&gt;
 
-&lt;p&gt;However, like subtraction, division isn’t defined for all the naturals and so isn’t closed (and certainly isn’t associative).&lt;/p&gt;
+However, like subtraction, division isn't defined for all the naturals and so isn't closed (and certainly isn't associative).
 
-&lt;h4 id=&quot;euclidean-division&quot;&gt;Euclidean Division&lt;/h4&gt;
-&lt;p&gt;But, like truncated subtraction, it is possible to define a meaningful division operation on the naturals in terms of $+$ and $\times$. This operation is known as &lt;strong&gt;Euclidean division&lt;/strong&gt; (which I’ll denote $\div_E$). It divides two natural numbers $a$ and $b$ and returns a &lt;strong&gt;quotient&lt;/strong&gt; $q$ and a &lt;strong&gt;remainder&lt;/strong&gt; $r$:&lt;/p&gt;
+&lt;h4&gt;Euclidean Division&lt;/h4&gt;
+But, like truncated subtraction, it is possible to define a meaningful division operation on the naturals in terms of $+$ and $\times$. This operation is known as &lt;b&gt;Euclidean division&lt;/b&gt; (which I'll denote $\div_E$). It divides two natural numbers $a$ and $b$ and returns a &lt;b&gt;quotient&lt;/b&gt; $q$ and a &lt;b&gt;remainder&lt;/b&gt; $r$:
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-a\div_E b=(q,r)\iff (a=b\times q+r) \land (r&lt;b) %]]&gt;&lt;/script&gt;
+$$a\div_E b=(q,r)\iff (a=b\times q+r) \land (r&amp;lt;b)$$
 
-&lt;p&gt;For every pair of naturals there is a &lt;em&gt;unique&lt;/em&gt; pair of resultants. As such, you can consider $\div_E$ as a function that maps two naturals to two other naturals:&lt;/p&gt;
+For every pair of naturals there is a &lt;i&gt;unique&lt;/i&gt; pair of resultants. As such, you can consider $\div_E$ as a function that maps two naturals to two other naturals:
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\div_E:\mathbb{N}^2\to\mathbb{N}^2&lt;/script&gt;
+$$\div_E:\mathbb{N}^2\to\mathbb{N}^2$$
 
 &lt;!-- The set that represents this binary operation would be constructed like this:
 
 $$\div_E\equiv\{(a,b,q,r)\in\mathbb{N}^4\mid a=b\times q+r \land r&lt;b\}$$ --&gt;
 
 &lt;!-- We can *inductively* define division with 2 rules: --&gt;
+&lt;/details&gt;
 
-&lt;h3 id=&quot;order&quot;&gt;Order&lt;/h3&gt;
-&lt;p&gt;We can define a total order $\le$ on the natural numbers as so:&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;Order&lt;/h3&gt;&lt;/summary&gt;
+We can define a total order $\le$ on the natural numbers as so:
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;a\le b\iff(\exists c\in\mathbb{N})\ a+c=b&lt;/script&gt;
+$$a\le b\iff(\exists c\in\mathbb{N})\ a+c=b$$
 
 &lt;!-- The set that represents this binary relation would be constructed like this:
 
 $$\le\equiv\{(a,b)\in\mathbb{N}^2\mid(\exists c\in\mathbb{N})\ a+c=b\}$$ --&gt;
 
-&lt;p&gt;The naturals along with this binary relation form a totally ordered set $(\mathbb{N},\le)$ that also happens to be well-ordered. Its order type is $\omega$, the first infinite ordinal.&lt;/p&gt;
+The naturals along with this binary relation form a totally ordered set $(\mathbb{N},\le)$ that also happens to be well-ordered. Its order type is $\omega$, the first infinite ordinal.
 
-&lt;h4 id=&quot;ordered-structures&quot;&gt;Ordered Structures&lt;/h4&gt;
-&lt;p&gt;In conjunction with some of the algebraic structures mentioned above, the $\le$ relation forms an ordered algebraic structure. To be able to be ordered, the structure’s operation must preserve order (which is similar to the cancellative property).&lt;/p&gt;
+&lt;h4&gt;Ordered Structures&lt;/h4&gt;
+In conjunction with some of the algebraic structures mentioned above, the $\le$ relation forms an ordered algebraic structure. To be able to be ordered, the structure's operation must preserve order (which is similar to the cancellative property).
 
-&lt;p&gt;For addition we can create the ordered monoid $(\mathbb{N},+,\le)$ because:&lt;/p&gt;
+For addition we can create the ordered monoid $(\mathbb{N},+,\le)$ because:
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;a\le b\iff (\forall c\in\mathbb{N})\ a+c\le b+c&lt;/script&gt;
+$$a\le b\iff (\forall c\in\mathbb{N})\ a+c\le b+c$$
 
-&lt;p&gt;For multiplication, if we remove $0$ from the naturals, we can create the ordered monoid $(\mathbb{N}^* ,\times,\le)$ because:&lt;/p&gt;
+For multiplication, if we remove $0$ from the naturals, we can create the ordered monoid $(\mathbb{N}^* ,\times,\le)$ because:
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;a\le b\iff (\forall c\in\mathbb{N})\ a\times c\le b\times c&lt;/script&gt;
+$$a\le b\iff (\forall c\in\mathbb{N})\ a\times c\le b\times c$$
 
-&lt;p&gt;Combining these two ordered monoids, we can further create the ordered semiring $(\mathbb{N},+,\times,\le)$&lt;/p&gt;
+Combining these two ordered monoids, we can further create the ordered semiring $(\mathbb{N},+,\times,\le)$
 
-&lt;p&gt;Note that we cannot order the monoid $(\mathbb{N},\times)$ and the magma $(\mathbb{N},\dot-)$ because they do not preserve the ordering in all cases:&lt;/p&gt;
+Note that we cannot order the monoid $(\mathbb{N},\times)$ and the magma $(\mathbb{N},\dot-)$ because they do not preserve the ordering in all cases:
 
 &lt;details&gt;&lt;summary&gt;&lt;strong&gt;Proof of $(\mathbb{N},\times)$&lt;/strong&gt;&lt;/summary&gt;
 $$\begin{align}
@@ -1194,6 +1296,7 @@ F&amp;amp;\iff \ T\\
 &lt;!-- $$a\le b\iff (\forall c\in\mathbb{N})\ a\ \dot-\ c\le b\ \dot-\ c$$
 
 For truncated subtraction we can create the ordered magma $(\mathbb{N},\dot-,\le)$ and the ordered CMM $(\mathbb{N},+,\dot-,\le)$. --&gt;
+&lt;/details&gt;
 </content>
  </entry>
  
@@ -1209,7 +1312,7 @@ Thought about this when we had to find Taylor series' for certain sinusoidal fun
 
 first publish date: 2018-03-03--&gt;
 
-&lt;p&gt;While toying around with infinite alternating series, I become interested in the idea of alternation beyond the simple $+,-,+,-$ like that of the power series of $\sin x$. This is where &lt;strong&gt;parity sequences&lt;/strong&gt; come in.&lt;/p&gt;
+&lt;p&gt;While toying around with infinite alternating series, I became interested in the idea of alternation beyond the simple $+,-,+,-$ like that of the power series of $\sin x$. This is where &lt;strong&gt;parity sequences&lt;/strong&gt; come in.&lt;/p&gt;
 
 &lt;p&gt;A parity sequence is a pattern of alternating even and odd numbers. Only the parity of the numbers is important, not the actual values themselves. As such, we can represent the parity sequence of a sequence as a list of “$+$” for even and “$-$” for odd numbers. Below I formally define the notion of a parity sequence, and some of their properties (at least the ones I could think of off the top of my head).&lt;/p&gt;
 
@@ -2813,13 +2916,13 @@ $$\boxed{\left \| \vec{v} \right \|^2 = 2\vec{a}\cdot(\vec{x}-\vec{x}_0)+\left \
 &amp;amp;\vec{v}=\vec{a}t+\vec{v}_0 \tag{\(\vec{x}\) independent Eq.}\\
 &amp;amp;{\vec{a}}t=\vec{v}-\vec{v}_0\\
 &amp;amp;\vec{x}=\frac{\vec{v_0}+\vec{v}}{2}t+\vec{x}_0 \tag{\(\vec{a}\) independent Eq.}\\
-&amp;amp;2(\vec{x}-\vec{x}_0)=(\vec{v}+\vec{v}_0)t\\
+&amp;amp;2(\vec{x}-\vec{x}_0)=t(\vec{v}+\vec{v}_0)\\
 \end{align}$$
 
 $$\begin{align}
-2\vec{a}\cdot(\vec{x}-\vec{x}_0)&amp;amp;=(\vec{v}+\vec{v}_0)\cdot\vec{a}t\\
-&amp;amp;=(\vec{v}+\vec{v}_0)\cdot(\vec{v}-\vec{v}_0) \tag{foil dot product}\\
-&amp;amp;=\vec{v} \cdot \vec{v} - \vec{v}_0 \cdot \vec{v}_0\\
+2\vec{a}\cdot(\vec{x}-\vec{x}_0)&amp;amp;=\vec{a}t\cdot (\vec{v}+\vec{v}_0)\\
+&amp;amp;=(\vec{v}-\vec{v}_0)\cdot(\vec{v}+\vec{v}_0) \\
+&amp;amp;=\vec{v} \cdot \vec{v} - \vec{v}_0 \cdot \vec{v}_0 \tag{foil dot product}\\
 &amp;amp;=\left \| \vec{v} \right \|^2-\left \| \vec{v}_0 \right \|^2\\
 \end{align}$$&lt;/p&gt;
 
@@ -2830,7 +2933,7 @@ $$\begin{align}
 &lt;p&gt;There are a couple of things we can do to clean up this set of 4 equations before we display them all together.&lt;/p&gt;
 
 &lt;h4 id=&quot;displacement-vs-position&quot;&gt;Displacement vs. Position&lt;/h4&gt;
-&lt;p&gt;While these equations describe the movement of an object in terms of its initial and current position, $\vec{x}_0$ and $\vec{x}$ respectively, it is common to think about kinematics in terms of &lt;strong&gt;displacement&lt;/strong&gt; or change in distance instead. The change in distance $\Delta\vec{x}$ is denoted:&lt;/p&gt;
+&lt;p&gt;While these equations describe the movement of an object in terms of its initial and current position, $\vec{x}_0$ and $\vec{x}$ respectively, it is common to think about kinematics in terms of &lt;strong&gt;displacement&lt;/strong&gt;, or change in distance, $\Delta\vec{x}$ instead:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\Delta\vec{x}=\vec{x}-\vec{x}_0&lt;/script&gt;
 
@@ -2854,7 +2957,7 @@ $$\begin{align}
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\boxed{\overline{\vec{v}}=\frac{\vec{v_0}+\vec{v}}{2}}&lt;/script&gt;
 
 &lt;h4 id=&quot;dot-product&quot;&gt;Dot Product&lt;/h4&gt;
-&lt;p&gt;When deriving the time independent kinematic equation, we used the dot product when manipulating the expressions $(\vec{v}+\vec{v}_0)\cdot \vec{a}$ and $(\vec{v}+\vec{v}_0)\cdot(\vec{v}-\vec{v}_0)$. We were justified in doing so because the dot product is both commutative and distributive.&lt;/p&gt;
+&lt;p&gt;When deriving the time independent kinematic equation, we used the dot product when manipulating the expressions $\vec{a}t\cdot(\vec{v}+\vec{v}_0)$ and $(\vec{v}-\vec{v}_0)\cdot(\vec{v}+\vec{v}_0)$. We were justified in doing so because the dot product is both commutative and distributive.&lt;/p&gt;
 
 &lt;p&gt;The dot product of a vector with itself is that vector’s &lt;strong&gt;squared norm&lt;/strong&gt; and is often denoted as such:&lt;/p&gt;
 
@@ -2875,7 +2978,7 @@ $$\begin{align}
 It is important to note that the kinematic equations apply to all systems of 3 variables $x, \frac{dx}{dt}$, and $\frac{d^2x}{dt^2}$ as long as $$\frac{d^2x}{dt^2}$$ is constant. For example, $x$ could represent the  --&gt;
 
 &lt;h3 id=&quot;graphing&quot;&gt;Graphing&lt;/h3&gt;
-&lt;p&gt;When the position, velocity and acceleration functions are graphed with respect to time, their graphs are related by the kinematic equations.&lt;/p&gt;
+&lt;p&gt;When the position, velocity, and acceleration functions are graphed with respect to time, their graphs are related by the kinematic equations.&lt;/p&gt;
 
 &lt;h4 id=&quot;general-info&quot;&gt;General Info&lt;/h4&gt;
 &lt;p&gt;For any graph of $\vec{x}(t)$&lt;/p&gt;
@@ -2896,29 +2999,26 @@ It is important to note that the kinematic equations apply to all systems of 3 v
   &lt;li&gt;Area under a region of the curve from $[a,b]$ is the object’s change in velocity during $[a,b]$.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;an-object-at-rest&quot;&gt;An Object at Rest&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/physics/kinematics/kinematics_at_rest.png?style=centerme&quot; alt=&quot;graphs&quot; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;$\vec{x}(t) = c$, where c is a constant.&lt;/li&gt;
-  &lt;li&gt;$\vec{v}(t)=0$&lt;/li&gt;
-  &lt;li&gt;$\vec{a}(t)=0$&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4 id=&quot;graph-shapes&quot;&gt;Graph Shapes&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/physics/kinematics/kinematics.png?style=centerme&quot; alt=&quot;graphs&quot; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;an-object-with-constant-velocity&quot;&gt;An Object with Constant Velocity&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/physics/kinematics/kinematics_const_vel.png?style=centerme&quot; alt=&quot;graphs&quot; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;$\vec{x}(t)$ is linear.&lt;/li&gt;
-  &lt;li&gt;$\vec{v}(t) = c$, where c is a constant.&lt;/li&gt;
-  &lt;li&gt;$\vec{a}(t)=0$&lt;/li&gt;
-&lt;/ul&gt;
+&lt;!-- #### An Object at Rest
+![graphs](/assets/physics/kinematics/kinematics_at_rest.png?style=centerme)
+- $\vec{x}(t) = c$, where c is a constant.
+- $\vec{v}(t)=0$
+- $\vec{a}(t)=0$
 
-&lt;h4 id=&quot;an-object-with-constant-acceleraion&quot;&gt;An Object with Constant Acceleraion&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/physics/kinematics/kinematics_const_accel.png?style=centerme&quot; alt=&quot;graphs&quot; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;$\vec{x}(t)$ is quadratic.&lt;/li&gt;
-  &lt;li&gt;$\vec{v}(t)$ is linear.&lt;/li&gt;
-  &lt;li&gt;$\vec{a}(t) = c$, where c is a constant.&lt;/li&gt;
-&lt;/ul&gt;
+#### An Object with Constant Velocity
+![graphs](/assets/physics/kinematics/kinematics_const_vel.png?style=centerme)
+- $\vec{x}(t)$ is linear.
+- $\vec{v}(t) = c$, where c is a constant.
+- $\vec{a}(t)=0$
+
+#### An Object with Constant Acceleraion
+![graphs](/assets/physics/kinematics/kinematics_const_accel.png?style=centerme)
+- $\vec{x}(t)$ is quadratic.
+- $\vec{v}(t)$ is linear.
+- $\vec{a}(t) = c$, where c is a constant. --&gt;
 </content>
  </entry>
  
@@ -3276,7 +3376,7 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
 
 &lt;p&gt;This is obviously inefficient and I’m sure there are better ways of representing the file as a png while simultaneously taking advantage of all 4 channels, effectively saving 25% more space for each pixel. One way to do this might have to do with the dimensions of the image. There is no reason for the image to be a square.&lt;/p&gt;
 
-&lt;p&gt;I haven’t don anything about this because, in its current state, the algorithm is better suited to exploring the representations of the data it encodes rather than efficiently compressing them in image form. Having the alpha channel available would make the resulting images (and information they represent) harder to visualize.&lt;/p&gt;
+&lt;p&gt;I haven’t done anything about this because, in its current state, the algorithm is better suited to exploring the representations of the data it encodes rather than efficiently compressing them in image form. Having the alpha channel available would make the resulting images (and information they represent) harder to visualize.&lt;/p&gt;
 
 &lt;h2 id=&quot;properties-of-png-representations&quot;&gt;Properties of PNG Representations&lt;/h2&gt;
 &lt;p&gt;FileToPNG doesn’t do any sort of encrypting or compression of the file’s data (as of yet). As such, the PNG representation it spits out can give us an unfiltered look at the file’s structure.&lt;/p&gt;
@@ -3415,7 +3515,7 @@ Also while Minkowski Spacetime is generally considered a vector space, if the se
     &lt;span class=&quot;n&quot;&gt;point_array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;point_array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;All that’s left is to split up the subjects (the list of feature vectors) into training and testing sets. Testing using the same data as the network was trained on encourages the network to memorize the data rather than generalize the dataset make meaningful predictions.&lt;/p&gt;
+&lt;p&gt;All that’s left is to split up the subjects (the list of feature vectors) into training and testing sets. Testing using the same data the network was trained on encourages the network to memorize the data rather than generalize the dataset and make meaningful predictions.&lt;/p&gt;
 
 &lt;p&gt;Of the 569 subjects, the first 400 will be used to train the network while the remaining 169 will be used to test the network’s accuracy:&lt;/p&gt;
 
@@ -3660,7 +3760,7 @@ Created on Jun 6, 2017
 
 &lt;p&gt;The difference between a GB (gigabyte) and a GiB (gibibyte).&lt;/p&gt;
 
-&lt;p&gt;Historically when a computer scientist wrote kB, for example, they didn’t mean $1000$ bytes. They meant $1024$ bytes. This is because computers operate in binary which is based of powers of two. In the kilobyte’s case, $2^{10} = 1024$ which is almost $1000$. This made it a close enough approximation of memory in a computer which was based on powers of $2$.&lt;/p&gt;
+&lt;p&gt;Historically when a computer scientist wrote kB, for example, they didn’t mean $1000$ bytes. They meant $1024$ bytes. This is because computers operate in binary which is based on powers of two. In the kilobyte’s case, $2^{10} = 1024$ which is almost $1000$. This made it a close enough approximation of memory in a computer which was based on powers of $2$.&lt;/p&gt;
 
 &lt;p&gt;This changed around 1998 when the International Electrotechnical Commission (IEC) and other regulatory organizations created a new set of prefixes to be used as binary prefixes. The US National Institute of Standards and Technology (NIST) followed suit and required that the SI prefixes only be used in the decimal sense. Below is a table of the metric prefixes vs the binary ones.&lt;/p&gt;
 

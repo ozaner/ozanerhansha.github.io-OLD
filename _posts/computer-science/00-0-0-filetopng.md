@@ -36,7 +36,7 @@ You may notice that while .png files have 4 color channels (red, green, blue and
 
 This is obviously inefficient and I'm sure there are better ways of representing the file as a png while simultaneously taking advantage of all 4 channels, effectively saving 25% more space for each pixel. One way to do this might have to do with the dimensions of the image. There is no reason for the image to be a square.
 
-I haven't don anything about this because, in its current state, the algorithm is better suited to exploring the representations of the data it encodes rather than efficiently compressing them in image form. Having the alpha channel available would make the resulting images (and information they represent) harder to visualize.
+I haven't done anything about this because, in its current state, the algorithm is better suited to exploring the representations of the data it encodes rather than efficiently compressing them in image form. Having the alpha channel available would make the resulting images (and information they represent) harder to visualize.
 
 ## Properties of PNG Representations
 FileToPNG doesn't do any sort of encrypting or compression of the file's data (as of yet). As such, the PNG representation it spits out can give us an unfiltered look at the file's structure.

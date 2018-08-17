@@ -36,7 +36,7 @@ $$S(n)=n\cup\{n\}$$
 For example, we define the number $1$ to be the successor, or number that comes after, $0$. Since $0=\emptyset$ we can say:
 
 $$\begin{align}
-1&=S(0)\\
+1&\equiv S(0)\\
 &=0\cup\{0\}\\
 &=\{0\}\\
 &=\{\emptyset\}
@@ -66,8 +66,9 @@ $$\begin{alignat*}{2}
 The last one in particular, the set of all non-zero natural numbers up to $n$, can be written as the integer interval $[1\ldotp\ldotp n]$ to avoid confusion.
 
 ## Structure on the Naturals
-### Addition
-Using the successor function and two rules, we can *inductively* define an operation $+$ such that it forms a commutative monoid $(\mathbb{N},+)$ with identity $0$ on the naturals:
+<details>
+<summary><h3 class="inline">Addition</h3></summary>
+Using the successor function and two rules, we can <i>inductively</i> define an operation $+$ such that it forms a commutative monoid $(\mathbb{N},+)$ with identity $0$ on the naturals:
 
 $$a+0=0 \tag{1}$$
 $$a+S(b)=S(a+b) \tag{2}$$
@@ -86,13 +87,15 @@ $$\begin{align}
 </details>
 <p></p>
 
-This monoid is also **cancellative**, meaning that an equation is still true even if we add or remove the same number on both sides:
+This monoid is also <b>cancellative</b>, meaning that an equation is still true even if we add or remove the same number on both sides:
 
 $$a+c=b+c\implies a=b$$
 
 It is from the addition operation $+$ (and successor function $S(n)$) that we can define all the other operations/relations on the naturals.
+</details>
 
-### Subtraction
+<details>
+<summary><h3 class="inline">Subtraction</h3></summary>
 We can define subtraction in terms of addition as so:
 
 $$a-b=c\iff a=b+c$$
@@ -103,8 +106,8 @@ $$-\equiv\{(a,b,c)\in\mathbb{N}^3\mid a=b+c\}$$ -->
 
 But note that the difference between two natural numbers $a-b$ exists only if $a\ge b$. As such, subtraction is not defined for any two natural numbers and so is not closed. Moreover, subtraction isn't associative: $(a-b)-c\not=a-(b-c)$.
 
-#### Truncated Subtraction
-It is possible, however, to define a meaningful notion of subtraction on the naturals called **truncated subtraction** denoted $\dot-$, such that it forms a magma $(\mathbb{N},\dot-)$.
+<h4>Truncated Subtraction</h4>
+However, it is possible to define a meaningful notion of subtraction on the naturals. It's called <b>truncated subtraction</b>, denoted $\dot-$, and forms the magma $(\mathbb{N},\dot-)$.
 
 Using the definition of subtraction above, we can define truncated subtraction as:
 
@@ -114,7 +117,7 @@ $$a\ \dot- \ b=
     a-b,& a\ge b
 \end{cases}$$
 
-If we want to define it purely in terms of natural arithmetic, we can *inductively* define $\dot-$ similar to how we defined $+$:
+If we want to define it purely in terms of natural arithmetic, we can <i>inductively</i> define $\dot-$ similar to how we defined $+$:
 
 $$a\ \dot- \ 0=a \tag{1}$$
 $$0\ \dot- \ a=0 \tag{2}$$
@@ -145,9 +148,11 @@ $$\begin{align}
 </details>
 <p></p>
 
-In conjunction with the commutative monoid on the naturals $(\mathbb{N},+)$, this operator is referred to as a **monus** and forms a CMM, commutative monoid with monus: $(\mathbb{N},+,\dot-)$.
+In conjunction with the commutative monoid on the naturals $(\mathbb{N},+)$, this operator is referred to as a <b>monus</b> and forms a CMM, commutative monoid with monus: $(\mathbb{N},+,\dot-)$.
+</details>
 
-### Multiplication
+<details>
+<summary><h3 class="inline">Multiplication</h3></summary>
 We can define the multiplication of natural numbers in terms of repeated addition such that it forms a commutative monoid $(\mathbb{N},\times)$:
 
 $$a\times b=c\iff \underbrace{a+a+\cdots+a}_{b\text{ copies}}=c$$
@@ -156,7 +161,7 @@ $$a\times b=c\iff \underbrace{a+a+\cdots+a}_{b\text{ copies}}=c$$
 
 $$\times\equiv\{(a,b,c)\in\mathbb{N}^3\mid\underbrace{a+a+\cdots+a}_{b\text{ copies}}=c\}$$ -->
 
-We can also *inductively* define $\times$ with 2 rules:
+We can also <i>inductively</i> define $\times$ with 2 rules:
 
 $$a\times 0=0 \tag{1}$$
 $$a\times S(b)=(a\times b) + a \tag{2}$$
@@ -177,20 +182,22 @@ $$\begin{align}
 </details>
 <p></p>
 
-<!-- The naturals and multiplication form a commutative magma $(\mathbb{N},\times)$. However, if we exclude $0$, the naturals can form a commutative monoid $(\mathbb{N}^* ,\times)$ with identity $1$. This is because $1\times 0=0$, which destroys $1$'s identity property. -->
-
-Note that, like with addition, this monoid is **cancellative**:
+Like with addition, this monoid is almost <i>cancellative</i>:
 
 $$a\times c=b\times c\implies a=b$$
 
-#### Commutative Semiring
+However it is not fully due to the fact that the above only holds true when $a,b,c\not=0$.
+
+<h4>Commutative Semiring</h4>
 Even further, if we combine the $\times$ operator with the monoid  $(\mathbb{N},+)$ and the fact that it is distributive over $+$:
 
 $$a\times(b+c)=(a\times b)+(a\times c)$$
 
-we obtain the commutative semiring $(\mathbb{N},+,\times)$. It is *semi* because the $+$ operator has no inverse operation, which is necessary for a full ring.
+we obtain the commutative semiring $(\mathbb{N},+,\times)$. It is <i>semi</i> because the $+$ operator has no inverse operation, which is necessary for a full ring.
+</details>
 
-### Division
+<details>
+<summary><h3 class="inline">Division</h3></summary>
 We can define the division of natural numbers in terms of multiplication:
 
 $$a\div b=c\iff a=b\times c$$
@@ -201,12 +208,12 @@ $$\div\equiv\{(a,b,c)\in\mathbb{N}^3\mid a=b\times c\}$$ -->
 
 However, like subtraction, division isn't defined for all the naturals and so isn't closed (and certainly isn't associative).
 
-#### Euclidean Division
-But, like truncated subtraction, it is possible to define a meaningful division operation on the naturals in terms of $+$ and $\times$. This operation is known as **Euclidean division** (which I'll denote $\div_E$). It divides two natural numbers $a$ and $b$ and returns a **quotient** $q$ and a **remainder** $r$:
+<h4>Euclidean Division</h4>
+But, like truncated subtraction, it is possible to define a meaningful division operation on the naturals in terms of $+$ and $\times$. This operation is known as <b>Euclidean division</b> (which I'll denote $\div_E$). It divides two natural numbers $a$ and $b$ and returns a <b>quotient</b> $q$ and a <b>remainder</b> $r$:
 
 $$a\div_E b=(q,r)\iff (a=b\times q+r) \land (r<b)$$
 
-For every pair of naturals there is a *unique* pair of resultants. As such, you can consider $\div_E$ as a function that maps two naturals to two other naturals:
+For every pair of naturals there is a <i>unique</i> pair of resultants. As such, you can consider $\div_E$ as a function that maps two naturals to two other naturals:
 
 $$\div_E:\mathbb{N}^2\to\mathbb{N}^2$$
 
@@ -215,8 +222,10 @@ $$\div_E:\mathbb{N}^2\to\mathbb{N}^2$$
 $$\div_E\equiv\{(a,b,q,r)\in\mathbb{N}^4\mid a=b\times q+r \land r<b\}$$ -->
 
 <!-- We can *inductively* define division with 2 rules: -->
+</details>
 
-### Order
+<details>
+<summary><h3 class="inline">Order</h3></summary>
 We can define a total order $\le$ on the natural numbers as so:
 
 $$a\le b\iff(\exists c\in\mathbb{N})\ a+c=b$$
@@ -227,7 +236,7 @@ $$\le\equiv\{(a,b)\in\mathbb{N}^2\mid(\exists c\in\mathbb{N})\ a+c=b\}$$ -->
 
 The naturals along with this binary relation form a totally ordered set $(\mathbb{N},\le)$ that also happens to be well-ordered. Its order type is $\omega$, the first infinite ordinal.
 
-#### Ordered Structures
+<h4>Ordered Structures</h4>
 In conjunction with some of the algebraic structures mentioned above, the $\le$ relation forms an ordered algebraic structure. To be able to be ordered, the structure's operation must preserve order (which is similar to the cancellative property).
 
 For addition we can create the ordered monoid $(\mathbb{N},+,\le)$ because:
@@ -263,3 +272,4 @@ F&\iff \ T\\
 <!-- $$a\le b\iff (\forall c\in\mathbb{N})\ a\ \dot-\ c\le b\ \dot-\ c$$
 
 For truncated subtraction we can create the ordered magma $(\mathbb{N},\dot-,\le)$ and the ordered CMM $(\mathbb{N},+,\dot-,\le)$. -->
+</details>

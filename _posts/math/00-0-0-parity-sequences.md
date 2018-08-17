@@ -11,7 +11,7 @@ Thought about this when we had to find Taylor series' for certain sinusoidal fun
 
 first publish date: 2018-03-03-->
 
-While toying around with infinite alternating series, I become interested in the idea of alternation beyond the simple $+,-,+,-$ like that of the power series of $\sin x$. This is where **parity sequences** come in.
+While toying around with infinite alternating series, I became interested in the idea of alternation beyond the simple $+,-,+,-$ like that of the power series of $\sin x$. This is where **parity sequences** come in.
 
 A parity sequence is a pattern of alternating even and odd numbers. Only the parity of the numbers is important, not the actual values themselves. As such, we can represent the parity sequence of a sequence as a list of "$+$" for even and "$-$" for odd numbers. Below I formally define the notion of a parity sequence, and some of their properties (at least the ones I could think of off the top of my head).
 

@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Boolean Logic as Linear Transformations
+title: Boolean Logic as Matrix Multiplication
 date: 2018-07-18
 tags: computer-science math
 ---
 ## Introduction
 Computation is usually formulated via boolean logic, which in turn makes use of logical connectives like $\wedge,\vee, \neg$ along with the binary digits $0$ and $1$, representing false and true respectively.
 
-There is, however, an alternative: linear algebra. By representing $0$ and $1$ as vectors and logical operations/gates as transformations on those vectors, we can define computation in the language of linear algebra.
+There is, however, an alternative: linear algebra. By representing $0$ and $1$ as vectors and logical operations/gates as matrices, we can define computation in the language of linear algebra.
 
 While at first this may seem to be nothing but a novel construction, reformulating computation in terms of linear algebra is precisely what opens the door to quantum computing, which is essentially a more general form of what's shown below.
 

@@ -115,7 +115,7 @@ Java is a class based, object oriented language. Because of this we must first d
 ~~~ python
 print("Hello, World!")
 ~~~
-Python is a scripting language so programs are simply a set of commands run from top to bottom. As such, it's "Hello, World!" program contains no boilerplate code and is simply a `print()` statement.
+Python is a scripting language so programs are simply a set of commands run from top to bottom. As such, its "Hello, World!" program contains no boilerplate code and is simply a `print()` statement.
 
 #### C++
 ~~~ c++

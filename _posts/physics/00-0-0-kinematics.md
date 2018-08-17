@@ -122,13 +122,13 @@ $$\boxed{\left \| \vec{v} \right \|^2 = 2\vec{a}\cdot(\vec{x}-\vec{x}_0)+\left \
 &\vec{v}=\vec{a}t+\vec{v}_0 \tag{\(\vec{x}\) independent Eq.}\\
 &{\vec{a}}t=\vec{v}-\vec{v}_0\\
 &\vec{x}=\frac{\vec{v_0}+\vec{v}}{2}t+\vec{x}_0 \tag{\(\vec{a}\) independent Eq.}\\
-&2(\vec{x}-\vec{x}_0)=(\vec{v}+\vec{v}_0)t\\
+&2(\vec{x}-\vec{x}_0)=t(\vec{v}+\vec{v}_0)\\
 \end{align}$$
 
 $$\begin{align}
-2\vec{a}\cdot(\vec{x}-\vec{x}_0)&=(\vec{v}+\vec{v}_0)\cdot\vec{a}t\\
-&=(\vec{v}+\vec{v}_0)\cdot(\vec{v}-\vec{v}_0) \tag{foil dot product}\\
-&=\vec{v} \cdot \vec{v} - \vec{v}_0 \cdot \vec{v}_0\\
+2\vec{a}\cdot(\vec{x}-\vec{x}_0)&=\vec{a}t\cdot (\vec{v}+\vec{v}_0)\\
+&=(\vec{v}-\vec{v}_0)\cdot(\vec{v}+\vec{v}_0) \\
+&=\vec{v} \cdot \vec{v} - \vec{v}_0 \cdot \vec{v}_0 \tag{foil dot product}\\
 &=\left \| \vec{v} \right \|^2-\left \| \vec{v}_0 \right \|^2\\
 \end{align}$$</p>
 
@@ -139,7 +139,7 @@ $$\begin{align}
 There are a couple of things we can do to clean up this set of 4 equations before we display them all together.
 
 #### Displacement vs. Position
-While these equations describe the movement of an object in terms of its initial and current position, $\vec{x}_0$ and $\vec{x}$ respectively, it is common to think about kinematics in terms of **displacement** or change in distance instead. The change in distance $\Delta\vec{x}$ is denoted:
+While these equations describe the movement of an object in terms of its initial and current position, $\vec{x}_0$ and $\vec{x}$ respectively, it is common to think about kinematics in terms of **displacement**, or change in distance, $\Delta\vec{x}$ instead:
 
 $$\Delta\vec{x}=\vec{x}-\vec{x}_0$$
 
@@ -163,7 +163,7 @@ If we look at the acceleration independent equation, we can see it contains the 
 $$\boxed{\overline{\vec{v}}=\frac{\vec{v_0}+\vec{v}}{2}}$$
 
 #### Dot Product
-When deriving the time independent kinematic equation, we used the dot product when manipulating the expressions $(\vec{v}+\vec{v}_0)\cdot \vec{a}$ and $(\vec{v}+\vec{v}_0)\cdot(\vec{v}-\vec{v}_0)$. We were justified in doing so because the dot product is both commutative and distributive.
+When deriving the time independent kinematic equation, we used the dot product when manipulating the expressions $\vec{a}t\cdot(\vec{v}+\vec{v}_0)$ and $(\vec{v}-\vec{v}_0)\cdot(\vec{v}+\vec{v}_0)$. We were justified in doing so because the dot product is both commutative and distributive.
 
 The dot product of a vector with itself is that vector's **squared norm** and is often denoted as such:
 
@@ -183,7 +183,7 @@ $$\begin{gather}
 It is important to note that the kinematic equations apply to all systems of 3 variables $x, \frac{dx}{dt}$, and $\frac{d^2x}{dt^2}$ as long as $$\frac{d^2x}{dt^2}$$ is constant. For example, $x$ could represent the  -->
 
 ### Graphing
-When the position, velocity and acceleration functions are graphed with respect to time, their graphs are related by the kinematic equations.
+When the position, velocity, and acceleration functions are graphed with respect to time, their graphs are related by the kinematic equations.
 
 #### General Info
 For any graph of $\vec{x}(t)$
@@ -198,7 +198,10 @@ For any graph of $\vec{v}(t)$
 For any graph of $\vec{a}(t)$
 - Area under a region of the curve from $[a,b]$ is the object's change in velocity during $[a,b]$.
 
-#### An Object at Rest
+#### Graph Shapes
+![graphs](/assets/physics/kinematics/kinematics.png?style=centerme)
+
+<!-- #### An Object at Rest
 ![graphs](/assets/physics/kinematics/kinematics_at_rest.png?style=centerme)
 - $\vec{x}(t) = c$, where c is a constant.
 - $\vec{v}(t)=0$
@@ -214,4 +217,4 @@ For any graph of $\vec{a}(t)$
 ![graphs](/assets/physics/kinematics/kinematics_const_accel.png?style=centerme)
 - $\vec{x}(t)$ is quadratic.
 - $\vec{v}(t)$ is linear.
-- $\vec{a}(t) = c$, where c is a constant.
+- $\vec{a}(t) = c$, where c is a constant. -->

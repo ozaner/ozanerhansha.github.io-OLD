@@ -137,14 +137,14 @@ Used in
 <!-- ### StUdLyCaPs -->
 <details>
 <summary><h3 class="inline">StUdLyCaPs</h3></summary>
-
+Studly caps is meant to be a joking letter case used to convey sarcasm. It has roots in mocking the seemingly random capitalization of products and services that was popular during the mid 1990s to early 2000s. A sort of in-joke amongst people on the internet at the time.
 <!-- >tHeqUIckBrOwNFOxjuMpsOvERtHeLazYdOg -->
 <blockquote>tHeqUIckBrOwNFOxjuMpsOvERtHeLazYdOg</blockquote>
 
 A variation on Studly caps is one where spaces are included to delimit words. This makes the message more readable while still retaining its sarcastic tone:
 
 <!-- >tHe qUIck BrOwN FOx juMps OvER tHe lAzYdOg -->
-<blockquote>tHe qUIck BrOwN FOx juMps OvER tHe lAzYdOg</blockquote>
+<blockquote>tHe qUIck BrOwN FOx juMps OvER tHe lAzY dOg</blockquote>
 
-As you can see, the spaces make the text a but more readable. Indeed this is the same case used in the <a href="http://knowyourmeme.com/memes/mocking-spongebob">mocking Spongebob meme</a> that was popular around 2017.
+Indeed this is the same case used in the <a href="http://knowyourmeme.com/memes/mocking-spongebob">mocking Spongebob meme</a> that was popular around 2017.
 </details>

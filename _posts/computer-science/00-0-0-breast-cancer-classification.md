@@ -85,7 +85,7 @@ for point in string_points:
     point_array = np.append(point_array, [temp], axis=0)
 ~~~
 
-All that's left is to split up the subjects (the list of feature vectors) into training and testing sets. Testing using the same data as the network was trained on encourages the network to memorize the data rather than generalize the dataset make meaningful predictions.
+All that's left is to split up the subjects (the list of feature vectors) into training and testing sets. Testing using the same data the network was trained on encourages the network to memorize the data rather than generalize the dataset and make meaningful predictions.
 
 Of the 569 subjects, the first 400 will be used to train the network while the remaining 169 will be used to test the network's accuracy:
 

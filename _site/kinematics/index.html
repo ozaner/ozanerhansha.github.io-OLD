@@ -356,13 +356,13 @@ $$\boxed{\left \| \vec{v} \right \|^2 = 2\vec{a}\cdot(\vec{x}-\vec{x}_0)+\left \
 &amp;\vec{v}=\vec{a}t+\vec{v}_0 \tag{\(\vec{x}\) independent Eq.}\\
 &amp;{\vec{a}}t=\vec{v}-\vec{v}_0\\
 &amp;\vec{x}=\frac{\vec{v_0}+\vec{v}}{2}t+\vec{x}_0 \tag{\(\vec{a}\) independent Eq.}\\
-&amp;2(\vec{x}-\vec{x}_0)=(\vec{v}+\vec{v}_0)t\\
+&amp;2(\vec{x}-\vec{x}_0)=t(\vec{v}+\vec{v}_0)\\
 \end{align}$$
 
 $$\begin{align}
-2\vec{a}\cdot(\vec{x}-\vec{x}_0)&amp;=(\vec{v}+\vec{v}_0)\cdot\vec{a}t\\
-&amp;=(\vec{v}+\vec{v}_0)\cdot(\vec{v}-\vec{v}_0) \tag{foil dot product}\\
-&amp;=\vec{v} \cdot \vec{v} - \vec{v}_0 \cdot \vec{v}_0\\
+2\vec{a}\cdot(\vec{x}-\vec{x}_0)&amp;=\vec{a}t\cdot (\vec{v}+\vec{v}_0)\\
+&amp;=(\vec{v}-\vec{v}_0)\cdot(\vec{v}+\vec{v}_0) \\
+&amp;=\vec{v} \cdot \vec{v} - \vec{v}_0 \cdot \vec{v}_0 \tag{foil dot product}\\
 &amp;=\left \| \vec{v} \right \|^2-\left \| \vec{v}_0 \right \|^2\\
 \end{align}$$</p>
 
@@ -373,7 +373,7 @@ $$\begin{align}
 <p>There are a couple of things we can do to clean up this set of 4 equations before we display them all together.</p>
 
 <h4 id="displacement-vs-position">Displacement vs. Position</h4>
-<p>While these equations describe the movement of an object in terms of its initial and current position, $\vec{x}_0$ and $\vec{x}$ respectively, it is common to think about kinematics in terms of <strong>displacement</strong> or change in distance instead. The change in distance $\Delta\vec{x}$ is denoted:</p>
+<p>While these equations describe the movement of an object in terms of its initial and current position, $\vec{x}_0$ and $\vec{x}$ respectively, it is common to think about kinematics in terms of <strong>displacement</strong>, or change in distance, $\Delta\vec{x}$ instead:</p>
 
 <script type="math/tex; mode=display">\Delta\vec{x}=\vec{x}-\vec{x}_0</script>
 
@@ -397,7 +397,7 @@ $$\begin{align}
 <script type="math/tex; mode=display">\boxed{\overline{\vec{v}}=\frac{\vec{v_0}+\vec{v}}{2}}</script>
 
 <h4 id="dot-product">Dot Product</h4>
-<p>When deriving the time independent kinematic equation, we used the dot product when manipulating the expressions $(\vec{v}+\vec{v}_0)\cdot \vec{a}$ and $(\vec{v}+\vec{v}_0)\cdot(\vec{v}-\vec{v}_0)$. We were justified in doing so because the dot product is both commutative and distributive.</p>
+<p>When deriving the time independent kinematic equation, we used the dot product when manipulating the expressions $\vec{a}t\cdot(\vec{v}+\vec{v}_0)$ and $(\vec{v}-\vec{v}_0)\cdot(\vec{v}+\vec{v}_0)$. We were justified in doing so because the dot product is both commutative and distributive.</p>
 
 <p>The dot product of a vector with itself is that vector’s <strong>squared norm</strong> and is often denoted as such:</p>
 
@@ -418,7 +418,7 @@ $$\begin{align}
 It is important to note that the kinematic equations apply to all systems of 3 variables $x, \frac{dx}{dt}$, and $\frac{d^2x}{dt^2}$ as long as $$\frac{d^2x}{dt^2}$$ is constant. For example, $x$ could represent the  -->
 
 <h3 id="graphing">Graphing</h3>
-<p>When the position, velocity and acceleration functions are graphed with respect to time, their graphs are related by the kinematic equations.</p>
+<p>When the position, velocity, and acceleration functions are graphed with respect to time, their graphs are related by the kinematic equations.</p>
 
 <h4 id="general-info">General Info</h4>
 <p>For any graph of $\vec{x}(t)$</p>
@@ -439,35 +439,41 @@ It is important to note that the kinematic equations apply to all systems of 3 v
   <li>Area under a region of the curve from $[a,b]$ is the object’s change in velocity during $[a,b]$.</li>
 </ul>
 
-<h4 id="an-object-at-rest">An Object at Rest</h4>
-<p><img src="/assets/physics/kinematics/kinematics_at_rest.png?style=centerme" alt="graphs" /></p>
-<ul>
-  <li>$\vec{x}(t) = c$, where c is a constant.</li>
-  <li>$\vec{v}(t)=0$</li>
-  <li>$\vec{a}(t)=0$</li>
-</ul>
+<h4 id="graph-shapes">Graph Shapes</h4>
+<p><img src="/assets/physics/kinematics/kinematics.png?style=centerme" alt="graphs" /></p>
 
-<h4 id="an-object-with-constant-velocity">An Object with Constant Velocity</h4>
-<p><img src="/assets/physics/kinematics/kinematics_const_vel.png?style=centerme" alt="graphs" /></p>
-<ul>
-  <li>$\vec{x}(t)$ is linear.</li>
-  <li>$\vec{v}(t) = c$, where c is a constant.</li>
-  <li>$\vec{a}(t)=0$</li>
-</ul>
+<!-- #### An Object at Rest
+![graphs](/assets/physics/kinematics/kinematics_at_rest.png?style=centerme)
+- $\vec{x}(t) = c$, where c is a constant.
+- $\vec{v}(t)=0$
+- $\vec{a}(t)=0$
 
-<h4 id="an-object-with-constant-acceleraion">An Object with Constant Acceleraion</h4>
-<p><img src="/assets/physics/kinematics/kinematics_const_accel.png?style=centerme" alt="graphs" /></p>
-<ul>
-  <li>$\vec{x}(t)$ is quadratic.</li>
-  <li>$\vec{v}(t)$ is linear.</li>
-  <li>$\vec{a}(t) = c$, where c is a constant.</li>
-</ul>
+#### An Object with Constant Velocity
+![graphs](/assets/physics/kinematics/kinematics_const_vel.png?style=centerme)
+- $\vec{x}(t)$ is linear.
+- $\vec{v}(t) = c$, where c is a constant.
+- $\vec{a}(t)=0$
+
+#### An Object with Constant Acceleraion
+![graphs](/assets/physics/kinematics/kinematics_const_accel.png?style=centerme)
+- $\vec{x}(t)$ is quadratic.
+- $\vec{v}(t)$ is linear.
+- $\vec{a}(t) = c$, where c is a constant. -->
 
 </div>
 
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/proportionality/">
+            Proportionality
+            <small>17 Aug 2018</small>
+          </a>
+        </h3>
+      </li>
     
       <li>
         <h3>
@@ -481,17 +487,8 @@ It is important to note that the kinematic equations apply to all systems of 3 v
       <li>
         <h3>
           <a href="/boolean-linear-transformations/">
-            Boolean Logic as Linear Transformations
+            Boolean Logic as Matrix Multiplication
             <small>18 Jul 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/letter-case/">
-            Letter Case and Computing
-            <small>05 Jul 2018</small>
           </a>
         </h3>
       </li>

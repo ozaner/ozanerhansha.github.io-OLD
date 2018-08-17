@@ -269,7 +269,7 @@ n&\equiv\{0,1,2,3,\cdots,n-1\}\\
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
-1&=S(0)\\
+1&\equiv S(0)\\
 &=0\cup\{0\}\\
 &=\{0\}\\
 &=\{\emptyset\}
@@ -300,11 +300,12 @@ n&\equiv\{0,1,2,3,\cdots,n-1\}\\
 <p>The last one in particular, the set of all non-zero natural numbers up to $n$, can be written as the integer interval $[1\ldotp\ldotp n]$ to avoid confusion.</p>
 
 <h2 id="structure-on-the-naturals">Structure on the Naturals</h2>
-<h3 id="addition">Addition</h3>
-<p>Using the successor function and two rules, we can <em>inductively</em> define an operation $+$ such that it forms a commutative monoid $(\mathbb{N},+)$ with identity $0$ on the naturals:</p>
+<details>
+<summary><h3 class="inline">Addition</h3></summary>
+Using the successor function and two rules, we can <i>inductively</i> define an operation $+$ such that it forms a commutative monoid $(\mathbb{N},+)$ with identity $0$ on the naturals:
 
-<p><script type="math/tex">a+0=0 \tag{1}</script>
-<script type="math/tex">a+S(b)=S(a+b) \tag{2}</script></p>
+$$a+0=0 \tag{1}$$
+$$a+S(b)=S(a+b) \tag{2}$$
 
 <details><summary><strong>Example</strong></summary>
 
@@ -320,40 +321,41 @@ $$\begin{align}
 </details>
 <p></p>
 
-<p>This monoid is also <strong>cancellative</strong>, meaning that an equation is still true even if we add or remove the same number on both sides:</p>
+This monoid is also <b>cancellative</b>, meaning that an equation is still true even if we add or remove the same number on both sides:
 
-<script type="math/tex; mode=display">a+c=b+c\implies a=b</script>
+$$a+c=b+c\implies a=b$$
 
-<p>It is from the addition operation $+$ (and successor function $S(n)$) that we can define all the other operations/relations on the naturals.</p>
+It is from the addition operation $+$ (and successor function $S(n)$) that we can define all the other operations/relations on the naturals.
+</details>
 
-<h3 id="subtraction">Subtraction</h3>
-<p>We can define subtraction in terms of addition as so:</p>
+<details>
+<summary><h3 class="inline">Subtraction</h3></summary>
+We can define subtraction in terms of addition as so:
 
-<script type="math/tex; mode=display">a-b=c\iff a=b+c</script>
+$$a-b=c\iff a=b+c$$
 
 <!-- The set that represents this binary operation would be constructed like this:
 
 $$-\equiv\{(a,b,c)\in\mathbb{N}^3\mid a=b+c\}$$ -->
 
-<p>But note that the difference between two natural numbers $a-b$ exists only if $a\ge b$. As such, subtraction is not defined for any two natural numbers and so is not closed. Moreover, subtraction isn’t associative: $(a-b)-c\not=a-(b-c)$.</p>
+But note that the difference between two natural numbers $a-b$ exists only if $a\ge b$. As such, subtraction is not defined for any two natural numbers and so is not closed. Moreover, subtraction isn't associative: $(a-b)-c\not=a-(b-c)$.
 
-<h4 id="truncated-subtraction">Truncated Subtraction</h4>
-<p>It is possible, however, to define a meaningful notion of subtraction on the naturals called <strong>truncated subtraction</strong> denoted $\dot-$, such that it forms a magma $(\mathbb{N},\dot-)$.</p>
+<h4>Truncated Subtraction</h4>
+However, it is possible to define a meaningful notion of subtraction on the naturals. It's called <b>truncated subtraction</b>, denoted $\dot-$, and forms the magma $(\mathbb{N},\dot-)$.
 
-<p>Using the definition of subtraction above, we can define truncated subtraction as:</p>
+Using the definition of subtraction above, we can define truncated subtraction as:
 
-<script type="math/tex; mode=display">% <![CDATA[
-a\ \dot- \ b=
+$$a\ \dot- \ b=
 \begin{cases}
-    0,& a<b\\
-    a-b,& a\ge b
-\end{cases} %]]></script>
+    0,&amp; a&lt;b\\
+    a-b,&amp; a\ge b
+\end{cases}$$
 
-<p>If we want to define it purely in terms of natural arithmetic, we can <em>inductively</em> define $\dot-$ similar to how we defined $+$:</p>
+If we want to define it purely in terms of natural arithmetic, we can <i>inductively</i> define $\dot-$ similar to how we defined $+$:
 
-<p><script type="math/tex">a\ \dot- \ 0=a \tag{1}</script>
-<script type="math/tex">0\ \dot- \ a=0 \tag{2}</script>
-<script type="math/tex">S(a)\ \dot- \ S(b)=a\ \dot- \ b \tag{3}</script></p>
+$$a\ \dot- \ 0=a \tag{1}$$
+$$0\ \dot- \ a=0 \tag{2}$$
+$$S(a)\ \dot- \ S(b)=a\ \dot- \ b \tag{3}$$
 
 <details><summary><strong>Examples</strong></summary>
 When $a&gt;b$
@@ -380,21 +382,23 @@ $$\begin{align}
 </details>
 <p></p>
 
-<p>In conjunction with the commutative monoid on the naturals $(\mathbb{N},+)$, this operator is referred to as a <strong>monus</strong> and forms a CMM, commutative monoid with monus: $(\mathbb{N},+,\dot-)$.</p>
+In conjunction with the commutative monoid on the naturals $(\mathbb{N},+)$, this operator is referred to as a <b>monus</b> and forms a CMM, commutative monoid with monus: $(\mathbb{N},+,\dot-)$.
+</details>
 
-<h3 id="multiplication">Multiplication</h3>
-<p>We can define the multiplication of natural numbers in terms of repeated addition such that it forms a commutative monoid $(\mathbb{N},\times)$:</p>
+<details>
+<summary><h3 class="inline">Multiplication</h3></summary>
+We can define the multiplication of natural numbers in terms of repeated addition such that it forms a commutative monoid $(\mathbb{N},\times)$:
 
-<script type="math/tex; mode=display">a\times b=c\iff \underbrace{a+a+\cdots+a}_{b\text{ copies}}=c</script>
+$$a\times b=c\iff \underbrace{a+a+\cdots+a}_{b\text{ copies}}=c$$
 
 <!-- The set that represents this binary operation would be constructed like this:
 
 $$\times\equiv\{(a,b,c)\in\mathbb{N}^3\mid\underbrace{a+a+\cdots+a}_{b\text{ copies}}=c\}$$ -->
 
-<p>We can also <em>inductively</em> define $\times$ with 2 rules:</p>
+We can also <i>inductively</i> define $\times$ with 2 rules:
 
-<p><script type="math/tex">a\times 0=0 \tag{1}</script>
-<script type="math/tex">a\times S(b)=(a\times b) + a \tag{2}</script></p>
+$$a\times 0=0 \tag{1}$$
+$$a\times S(b)=(a\times b) + a \tag{2}$$
 
 <details><summary><strong>Example</strong></summary>
 $$\begin{align}
@@ -412,71 +416,74 @@ $$\begin{align}
 </details>
 <p></p>
 
-<!-- The naturals and multiplication form a commutative magma $(\mathbb{N},\times)$. However, if we exclude $0$, the naturals can form a commutative monoid $(\mathbb{N}^* ,\times)$ with identity $1$. This is because $1\times 0=0$, which destroys $1$'s identity property. -->
+Like with addition, this monoid is almost <i>cancellative</i>:
 
-<p>Note that, like with addition, this monoid is <strong>cancellative</strong>:</p>
+$$a\times c=b\times c\implies a=b$$
 
-<script type="math/tex; mode=display">a\times c=b\times c\implies a=b</script>
+However it is not fully due to the fact that the above only holds true when $a,b,c\not=0$.
 
-<h4 id="commutative-semiring">Commutative Semiring</h4>
-<p>Even further, if we combine the $\times$ operator with the monoid  $(\mathbb{N},+)$ and the fact that it is distributive over $+$:</p>
+<h4>Commutative Semiring</h4>
+Even further, if we combine the $\times$ operator with the monoid  $(\mathbb{N},+)$ and the fact that it is distributive over $+$:
 
-<script type="math/tex; mode=display">a\times(b+c)=(a\times b)+(a\times c)</script>
+$$a\times(b+c)=(a\times b)+(a\times c)$$
 
-<p>we obtain the commutative semiring $(\mathbb{N},+,\times)$. It is <em>semi</em> because the $+$ operator has no inverse operation, which is necessary for a full ring.</p>
+we obtain the commutative semiring $(\mathbb{N},+,\times)$. It is <i>semi</i> because the $+$ operator has no inverse operation, which is necessary for a full ring.
+</details>
 
-<h3 id="division">Division</h3>
-<p>We can define the division of natural numbers in terms of multiplication:</p>
+<details>
+<summary><h3 class="inline">Division</h3></summary>
+We can define the division of natural numbers in terms of multiplication:
 
-<script type="math/tex; mode=display">a\div b=c\iff a=b\times c</script>
+$$a\div b=c\iff a=b\times c$$
 
 <!-- The set that represents this binary operation would be constructed like this:
 
 $$\div\equiv\{(a,b,c)\in\mathbb{N}^3\mid a=b\times c\}$$ -->
 
-<p>However, like subtraction, division isn’t defined for all the naturals and so isn’t closed (and certainly isn’t associative).</p>
+However, like subtraction, division isn't defined for all the naturals and so isn't closed (and certainly isn't associative).
 
-<h4 id="euclidean-division">Euclidean Division</h4>
-<p>But, like truncated subtraction, it is possible to define a meaningful division operation on the naturals in terms of $+$ and $\times$. This operation is known as <strong>Euclidean division</strong> (which I’ll denote $\div_E$). It divides two natural numbers $a$ and $b$ and returns a <strong>quotient</strong> $q$ and a <strong>remainder</strong> $r$:</p>
+<h4>Euclidean Division</h4>
+But, like truncated subtraction, it is possible to define a meaningful division operation on the naturals in terms of $+$ and $\times$. This operation is known as <b>Euclidean division</b> (which I'll denote $\div_E$). It divides two natural numbers $a$ and $b$ and returns a <b>quotient</b> $q$ and a <b>remainder</b> $r$:
 
-<script type="math/tex; mode=display">% <![CDATA[
-a\div_E b=(q,r)\iff (a=b\times q+r) \land (r<b) %]]></script>
+$$a\div_E b=(q,r)\iff (a=b\times q+r) \land (r&lt;b)$$
 
-<p>For every pair of naturals there is a <em>unique</em> pair of resultants. As such, you can consider $\div_E$ as a function that maps two naturals to two other naturals:</p>
+For every pair of naturals there is a <i>unique</i> pair of resultants. As such, you can consider $\div_E$ as a function that maps two naturals to two other naturals:
 
-<script type="math/tex; mode=display">\div_E:\mathbb{N}^2\to\mathbb{N}^2</script>
+$$\div_E:\mathbb{N}^2\to\mathbb{N}^2$$
 
 <!-- The set that represents this binary operation would be constructed like this:
 
 $$\div_E\equiv\{(a,b,q,r)\in\mathbb{N}^4\mid a=b\times q+r \land r<b\}$$ -->
 
 <!-- We can *inductively* define division with 2 rules: -->
+</details>
 
-<h3 id="order">Order</h3>
-<p>We can define a total order $\le$ on the natural numbers as so:</p>
+<details>
+<summary><h3 class="inline">Order</h3></summary>
+We can define a total order $\le$ on the natural numbers as so:
 
-<script type="math/tex; mode=display">a\le b\iff(\exists c\in\mathbb{N})\ a+c=b</script>
+$$a\le b\iff(\exists c\in\mathbb{N})\ a+c=b$$
 
 <!-- The set that represents this binary relation would be constructed like this:
 
 $$\le\equiv\{(a,b)\in\mathbb{N}^2\mid(\exists c\in\mathbb{N})\ a+c=b\}$$ -->
 
-<p>The naturals along with this binary relation form a totally ordered set $(\mathbb{N},\le)$ that also happens to be well-ordered. Its order type is $\omega$, the first infinite ordinal.</p>
+The naturals along with this binary relation form a totally ordered set $(\mathbb{N},\le)$ that also happens to be well-ordered. Its order type is $\omega$, the first infinite ordinal.
 
-<h4 id="ordered-structures">Ordered Structures</h4>
-<p>In conjunction with some of the algebraic structures mentioned above, the $\le$ relation forms an ordered algebraic structure. To be able to be ordered, the structure’s operation must preserve order (which is similar to the cancellative property).</p>
+<h4>Ordered Structures</h4>
+In conjunction with some of the algebraic structures mentioned above, the $\le$ relation forms an ordered algebraic structure. To be able to be ordered, the structure's operation must preserve order (which is similar to the cancellative property).
 
-<p>For addition we can create the ordered monoid $(\mathbb{N},+,\le)$ because:</p>
+For addition we can create the ordered monoid $(\mathbb{N},+,\le)$ because:
 
-<script type="math/tex; mode=display">a\le b\iff (\forall c\in\mathbb{N})\ a+c\le b+c</script>
+$$a\le b\iff (\forall c\in\mathbb{N})\ a+c\le b+c$$
 
-<p>For multiplication, if we remove $0$ from the naturals, we can create the ordered monoid $(\mathbb{N}^* ,\times,\le)$ because:</p>
+For multiplication, if we remove $0$ from the naturals, we can create the ordered monoid $(\mathbb{N}^* ,\times,\le)$ because:
 
-<script type="math/tex; mode=display">a\le b\iff (\forall c\in\mathbb{N})\ a\times c\le b\times c</script>
+$$a\le b\iff (\forall c\in\mathbb{N})\ a\times c\le b\times c$$
 
-<p>Combining these two ordered monoids, we can further create the ordered semiring $(\mathbb{N},+,\times,\le)$</p>
+Combining these two ordered monoids, we can further create the ordered semiring $(\mathbb{N},+,\times,\le)$
 
-<p>Note that we cannot order the monoid $(\mathbb{N},\times)$ and the magma $(\mathbb{N},\dot-)$ because they do not preserve the ordering in all cases:</p>
+Note that we cannot order the monoid $(\mathbb{N},\times)$ and the magma $(\mathbb{N},\dot-)$ because they do not preserve the ordering in all cases:
 
 <details><summary><strong>Proof of $(\mathbb{N},\times)$</strong></summary>
 $$\begin{align}
@@ -499,12 +506,22 @@ F&amp;\iff \ T\\
 <!-- $$a\le b\iff (\forall c\in\mathbb{N})\ a\ \dot-\ c\le b\ \dot-\ c$$
 
 For truncated subtraction we can create the ordered magma $(\mathbb{N},\dot-,\le)$ and the ordered CMM $(\mathbb{N},+,\dot-,\le)$. -->
+</details>
 
 </div>
 
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/proportionality/">
+            Proportionality
+            <small>17 Aug 2018</small>
+          </a>
+        </h3>
+      </li>
     
       <li>
         <h3>
@@ -518,17 +535,8 @@ For truncated subtraction we can create the ordered magma $(\mathbb{N},\dot-,\le
       <li>
         <h3>
           <a href="/boolean-linear-transformations/">
-            Boolean Logic as Linear Transformations
+            Boolean Logic as Matrix Multiplication
             <small>18 Jul 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/letter-case/">
-            Letter Case and Computing
-            <small>05 Jul 2018</small>
           </a>
         </h3>
       </li>
