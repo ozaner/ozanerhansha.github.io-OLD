@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-08-12T11:21:08-04:00</updated>
+ <updated>2018-08-12T13:01:40-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -3217,6 +3217,23 @@ Quantum chromodynamics is the QFT of the strong nuclear force. This theory descr
 
 &lt;!-- #### Regarding Vector Spaces
 Also while Minkowski Spacetime is generally considered a vector space, if the set of values that the coordinates come from aren't frost he same Field of numbers (the space coordinates come from the real numbers and the time coordinate comes from the imaginary numbers) then it technically can't be considered a vector space. This is another blow to the imaginary time version of spacetime. --&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Escaping the Event Horizon</title>
+   <link href="http://localhost:4000/escape-a-black-hole/"/>
+   <updated>2018-01-17T00:00:00-05:00</updated>
+   <id>http://localhost:4000/escape-a-black-hole</id>
+   <content type="html">&lt;h2 id=&quot;what-are-you-talking-about&quot;&gt;What are you talking about?&lt;/h2&gt;
+&lt;p&gt;The event horizon of a black hole is often describes as &lt;em&gt;the point of no return&lt;/em&gt; where &lt;em&gt;not even light can escape its gravitational pull&lt;/em&gt;. While this is true, the picture is a bit more complicated than that. In truth no matter what direction you point yourself, once in the event horizon, all paths lead to the center of the black hole. In a black hole, time and space themselves are switched and thus the only way out is to go backwards in time, not space.&lt;/p&gt;
+
+&lt;p&gt;What? Total nonsense? Lets unpack this…&lt;/p&gt;
+
+&lt;h2 id=&quot;spacetime&quot;&gt;Spacetime&lt;/h2&gt;
+&lt;p&gt;The theory of general relativity posits that gravity is a result of the curvature of space.&lt;/p&gt;
+
+&lt;p&gt;Consider how fast we would have to travel to escape a black hole. Whatever that speed is (depending on the mass of the black hole you’d imagine) it has to be greater than the speed of light, right? Well yes it would but, as Einstein showed us in his theory of general relativity, going faster than the speed of light is equivalent to going back in time.&lt;/p&gt;
 </content>
  </entry>
  
