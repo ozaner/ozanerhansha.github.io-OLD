@@ -2,7 +2,7 @@
 layout: post
 title: Relations
 date: 2018-08-12
-tags: math set-theory
+tags: math set-theory relations
 ---
 <!-- ## What is a Relation?
 Relations are used to correlate elements of different sets in some way. They are a more general form of a function, which can only relate elements to a single output.

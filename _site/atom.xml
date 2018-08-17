@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-08-17T16:17:32-04:00</updated>
+ <updated>2018-08-17T18:27:37-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -56,8 +56,8 @@
 &lt;h4 id=&quot;notation&quot;&gt;Notation&lt;/h4&gt;
 &lt;p&gt;When the context is clear, we can omit the subscript denoteing what vector space the relation is acting upon and just write $\propto$. This is usually the case when relating two functions, real valued or otherwise, since proportionality is most commonly used in fields like physics where the domain of discourse is very clear.&lt;/p&gt;
 
-&lt;h2 id=&quot;proof-of-of-equivalence-relation&quot;&gt;Proof of of Equivalence Relation&lt;/h2&gt;
-&lt;p&gt;Using the general definition above, we will prove $\propto$ forms an equivalence relation by showing it has the reflexive, symmetric, and transitive.&lt;/p&gt;
+&lt;h2 id=&quot;proof-of-equivalence-relation&quot;&gt;Proof of Equivalence Relation&lt;/h2&gt;
+&lt;p&gt;Using the general definition above, we will prove $\propto$ forms an equivalence relation by showing it has the reflexive, symmetric, and transitive properties.&lt;/p&gt;
 
 &lt;h4 id=&quot;reflexivity&quot;&gt;Reflexivity&lt;/h4&gt;
 &lt;p&gt;Proportionality is reflexive, i.e $\mathbf{v}\propto \mathbf{v}$ for all $\mathbf{v}\in V$, because every vector space has an identity scalar that when multiplied by any of its vectors, produces that same vector.&lt;/p&gt;
@@ -81,18 +81,20 @@
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{align}
-k\mathbf{x}=\mathbf{y}\equiv&amp; k^{-1}k\mathbf{x}=k^{-1}\mathbf{y}\\
-&amp;e\mathbf{x}=k^{-1}\mathbf{y}\\
-&amp;k^{-1}\mathbf{y}=\mathbf{x}
+k\mathbf{x}&amp;=\mathbf{y}\\
+ k^{-1}k\mathbf{x}&amp;=k^{-1}\mathbf{y}\\
+e\mathbf{x}&amp;=k^{-1}\mathbf{y}\\
+\mathbf{x}&amp;=k^{-1}\mathbf{y}
 \end{align} %]]&gt;&lt;/script&gt;
 
 &lt;p&gt;Notice that, because $k^{-1}\in F$, this is precisely the definition of $\mathbf{y}\propto \mathbf{x}$. And so we have shown that for any two vectors in $V$ that if $\mathbf{x}\propto \mathbf{y}$ then $\mathbf{y}\propto \mathbf{x}$. And that if the proportionality constant of $\mathbf{x}\propto \mathbf{y}$ is $k$ then the constant between $\mathbf{y}\propto \mathbf{x}$ is $k^{-1}$.&lt;/p&gt;
 
 &lt;h4 id=&quot;transitivity&quot;&gt;Transitivity&lt;/h4&gt;
-&lt;p&gt;Finally, proportionality is transitive which means that $\mathbb{u}\propto\mathbb{v}\wedge\mathbb{v}\propto\mathbb{w}\implies\mathbb{u}\propto\mathbb{w}$. This can be shown by noting:&lt;/p&gt;
+&lt;p&gt;The last property to prove is transitivity. Proportionality being transitive means that $\mathbb{u}\propto\mathbb{v}\wedge\mathbb{v}\propto\mathbb{w}\implies\mathbb{u}\propto\mathbb{w}$. This can be shown by noting:&lt;/p&gt;
 
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\mathbb{u}\propto\mathbb{v}\iff k_1\mathbb{u}=\mathbb{v}&lt;/script&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\mathbb{v}\propto\mathbb{w}\iff k_2\mathbb{v}=\mathbb{w}&lt;/script&gt;&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbb{u}\propto\mathbb{v}\iff k_1\mathbb{u}=\mathbb{v}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbb{v}\propto\mathbb{w}\iff k_2\mathbb{v}=\mathbb{w}&lt;/script&gt;
 
 &lt;p&gt;So if we have $\mathbb{u}\propto\mathbb{v}\wedge\mathbb{v}\propto\mathbb{w}$ then we also know there exists two constants $k_1$ and $k_2$ that correspond to each. Now we can simply substitute $k_1\mathbb{u}$ in for $\mathbb{v}$ in the following way:&lt;/p&gt;
 

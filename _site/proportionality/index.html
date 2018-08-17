@@ -196,6 +196,10 @@
           
         
       
+        
+          
+        
+      
 
       <style>
         p.small {
@@ -230,6 +234,9 @@
   
     
     <a href="/tag/math"><code class="highligher-rouge"><nobr>math</nobr></code>&nbsp;</a>
+  
+    
+    <a href="/tag/relations"><code class="highligher-rouge"><nobr>relations</nobr></code>&nbsp;</a>
   
 ]</span>
   <h2 id="a-review-of-proportionality">A Review of Proportionality</h2>
@@ -271,8 +278,8 @@
 <h4 id="notation">Notation</h4>
 <p>When the context is clear, we can omit the subscript denoteing what vector space the relation is acting upon and just write $\propto$. This is usually the case when relating two functions, real valued or otherwise, since proportionality is most commonly used in fields like physics where the domain of discourse is very clear.</p>
 
-<h2 id="proof-of-of-equivalence-relation">Proof of of Equivalence Relation</h2>
-<p>Using the general definition above, we will prove $\propto$ forms an equivalence relation by showing it has the reflexive, symmetric, and transitive.</p>
+<h2 id="proof-of-equivalence-relation">Proof of Equivalence Relation</h2>
+<p>Using the general definition above, we will prove $\propto$ forms an equivalence relation by showing it has the reflexive, symmetric, and transitive properties.</p>
 
 <h4 id="reflexivity">Reflexivity</h4>
 <p>Proportionality is reflexive, i.e $\mathbf{v}\propto \mathbf{v}$ for all $\mathbf{v}\in V$, because every vector space has an identity scalar that when multiplied by any of its vectors, produces that same vector.</p>
@@ -296,18 +303,20 @@
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
-k\mathbf{x}=\mathbf{y}\equiv& k^{-1}k\mathbf{x}=k^{-1}\mathbf{y}\\
-&e\mathbf{x}=k^{-1}\mathbf{y}\\
-&k^{-1}\mathbf{y}=\mathbf{x}
+k\mathbf{x}&=\mathbf{y}\\
+ k^{-1}k\mathbf{x}&=k^{-1}\mathbf{y}\\
+e\mathbf{x}&=k^{-1}\mathbf{y}\\
+\mathbf{x}&=k^{-1}\mathbf{y}
 \end{align} %]]></script>
 
 <p>Notice that, because $k^{-1}\in F$, this is precisely the definition of $\mathbf{y}\propto \mathbf{x}$. And so we have shown that for any two vectors in $V$ that if $\mathbf{x}\propto \mathbf{y}$ then $\mathbf{y}\propto \mathbf{x}$. And that if the proportionality constant of $\mathbf{x}\propto \mathbf{y}$ is $k$ then the constant between $\mathbf{y}\propto \mathbf{x}$ is $k^{-1}$.</p>
 
 <h4 id="transitivity">Transitivity</h4>
-<p>Finally, proportionality is transitive which means that $\mathbb{u}\propto\mathbb{v}\wedge\mathbb{v}\propto\mathbb{w}\implies\mathbb{u}\propto\mathbb{w}$. This can be shown by noting:</p>
+<p>The last property to prove is transitivity. Proportionality being transitive means that $\mathbb{u}\propto\mathbb{v}\wedge\mathbb{v}\propto\mathbb{w}\implies\mathbb{u}\propto\mathbb{w}$. This can be shown by noting:</p>
 
-<p><script type="math/tex">\mathbb{u}\propto\mathbb{v}\iff k_1\mathbb{u}=\mathbb{v}</script>
-<script type="math/tex">\mathbb{v}\propto\mathbb{w}\iff k_2\mathbb{v}=\mathbb{w}</script></p>
+<script type="math/tex; mode=display">\mathbb{u}\propto\mathbb{v}\iff k_1\mathbb{u}=\mathbb{v}</script>
+
+<script type="math/tex; mode=display">\mathbb{v}\propto\mathbb{w}\iff k_2\mathbb{v}=\mathbb{w}</script>
 
 <p>So if we have $\mathbb{u}\propto\mathbb{v}\wedge\mathbb{v}\propto\mathbb{w}$ then we also know there exists two constants $k_1$ and $k_2$ that correspond to each. Now we can simply substitute $k_1\mathbb{u}$ in for $\mathbb{v}$ in the following way:</p>
 

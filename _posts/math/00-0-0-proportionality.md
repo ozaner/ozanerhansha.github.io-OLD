@@ -2,7 +2,7 @@
 layout: post
 title: Proportionality
 date: 2018-08-17
-tags: math
+tags: math relations
 ---
 ## A Review of Proportionality
 Recall that two expressions, which we can consider **functions**, are proportional if there exists some constant that when multiplied by one of the functions makes them equivalent. This relationship is usually denoted $y\propto x$ or equivalently as $y=kx$ where $k$ is some **proportionality constant**.
@@ -41,8 +41,8 @@ $$\mathbf{x}\propto_V \mathbf{y}\equiv(\exists k\in F)\ k\mathbf{x}=\mathbf{y}$$
 #### Notation
 When the context is clear, we can omit the subscript denoteing what vector space the relation is acting upon and just write $\propto$. This is usually the case when relating two functions, real valued or otherwise, since proportionality is most commonly used in fields like physics where the domain of discourse is very clear.
 
-## Proof of of Equivalence Relation
-Using the general definition above, we will prove $\propto$ forms an equivalence relation by showing it has the reflexive, symmetric, and transitive.
+## Proof of Equivalence Relation
+Using the general definition above, we will prove $\propto$ forms an equivalence relation by showing it has the reflexive, symmetric, and transitive properties.
 
 #### Reflexivity
 Proportionality is reflexive, i.e $\mathbf{v}\propto \mathbf{v}$ for all $\mathbf{v}\in V$, because every vector space has an identity scalar that when multiplied by any of its vectors, produces that same vector.
@@ -65,17 +65,19 @@ $$(\forall s\in F)(\exists s^{-1}\in F)\ ss^{-1}=e$$
 So assuming two vectors are proportional $\mathbf{x}\propto_V \mathbf{y}$ there must exist some $k\in F$ that satisfies $k\mathbf{x}=\mathbf{y}$. If we multiply both sides by $k^{-1}$, which too must exist as we've stated, we are left with:
 
 $$\begin{align}
-k\mathbf{x}=\mathbf{y}\equiv& k^{-1}k\mathbf{x}=k^{-1}\mathbf{y}\\
-&e\mathbf{x}=k^{-1}\mathbf{y}\\
-&k^{-1}\mathbf{y}=\mathbf{x}
+k\mathbf{x}&=\mathbf{y}\\
+ k^{-1}k\mathbf{x}&=k^{-1}\mathbf{y}\\
+e\mathbf{x}&=k^{-1}\mathbf{y}\\
+\mathbf{x}&=k^{-1}\mathbf{y}
 \end{align}$$
 
 Notice that, because $k^{-1}\in F$, this is precisely the definition of $\mathbf{y}\propto \mathbf{x}$. And so we have shown that for any two vectors in $V$ that if $\mathbf{x}\propto \mathbf{y}$ then $\mathbf{y}\propto \mathbf{x}$. And that if the proportionality constant of $\mathbf{x}\propto \mathbf{y}$ is $k$ then the constant between $\mathbf{y}\propto \mathbf{x}$ is $k^{-1}$.
 
 #### Transitivity
-Finally, proportionality is transitive which means that $\mathbb{u}\propto\mathbb{v}\wedge\mathbb{v}\propto\mathbb{w}\implies\mathbb{u}\propto\mathbb{w}$. This can be shown by noting:
+The last property to prove is transitivity. Proportionality being transitive means that $\mathbb{u}\propto\mathbb{v}\wedge\mathbb{v}\propto\mathbb{w}\implies\mathbb{u}\propto\mathbb{w}$. This can be shown by noting:
 
 $$\mathbb{u}\propto\mathbb{v}\iff k_1\mathbb{u}=\mathbb{v}$$
+
 $$\mathbb{v}\propto\mathbb{w}\iff k_2\mathbb{v}=\mathbb{w}$$
 
 So if we have $\mathbb{u}\propto\mathbb{v}\wedge\mathbb{v}\propto\mathbb{w}$ then we also know there exists two constants $k_1$ and $k_2$ that correspond to each. Now we can simply substitute $k_1\mathbb{u}$ in for $\mathbb{v}$ in the following way:

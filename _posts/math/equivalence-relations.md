@@ -2,7 +2,7 @@
 layout: post
 title: Equivalence Relations
 date: 2018-05-30
-tags: math set-theory
+tags: math relations
 ---
 
 ## Definition
