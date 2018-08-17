@@ -9,6 +9,8 @@ Recall that two expressions, which we can consider **functions**, are proportion
 
 For example, a circle's circumference $C$ is proportional to it's diameter $d$. We can write this as $C\propto d$ and even further, with the knowledge that the constant between them is $\pi$, we can write $C=\pi d$
 
+<!--more-->
+
 #### Finer Points and Motivation
 Notice that proportionality satisfies the three criterion for an equivalence relation: reflexivity, symmetry, and transitivity (we'll prove this later). By imagining proportionality as a relation (or as we'll see a family of relations) on the set of real/complex valued functions, we can begin to formally define it.
 
