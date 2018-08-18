@@ -13,7 +13,7 @@ Say I had a set of tops $T$, pants $P$, and shoes $S$. I could define another se
 ## Definition
 A **relation** $R$ on a set of sets $S_1,S_2,S_3,\cdots$ is a subset of their [**cartesian product**](/cartesian-product):
 
-$$R\subset S_1\times S_2\times S_3\times \cdots$$
+$$R\subseteq S_1\times S_2\times S_3\times \cdots$$
 
 Relations are used to establish $n$-way relationships between elements of the same or different sets (ex. there is a two way relationship between $2$ and $5$ in that $2<5$).
 
