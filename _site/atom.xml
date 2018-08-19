@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-08-17T18:27:37-04:00</updated>
+ <updated>2018-08-19T11:23:30-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -27,7 +27,7 @@
 &lt;h4 id=&quot;finer-points-and-motivation&quot;&gt;Finer Points and Motivation&lt;/h4&gt;
 &lt;p&gt;Notice that proportionality satisfies the three criterion for an equivalence relation: reflexivity, symmetry, and transitivity (we’ll prove this later). By imagining proportionality as a relation (or as we’ll see a family of relations) on the set of real/complex valued functions, we can begin to formally define it.&lt;/p&gt;
 
-&lt;h2 id=&quot;definition-on-mathbbrs&quot;&gt;Definition on $\mathbb{R}^S$&lt;/h2&gt;
+&lt;h2 id=&quot;definition-on-mathbbr-valued-functions&quot;&gt;Definition on $\mathbb{R}$-Valued Functions&lt;/h2&gt;
 &lt;p&gt;Proportionality is a family of equivalence relations on the set(s) of real valued functions (i.e the set of functions $f:S\to\mathbb{R}$ where $S$ is an arbitrary set):&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\propto_{\mathbb{R}^S}\equiv\{(x,y)\in(\mathbb{R}^S)^2\mid\exists k\in \mathbb{R}:kx=y\}&lt;/script&gt;
@@ -36,7 +36,9 @@
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;x\propto_{\mathbb{R}^S}y\equiv(\exists k\in \mathbb{R})\ kx=y&lt;/script&gt;
 
-&lt;p&gt;Notice that the set of functions from $S$ to $\mathbb{R}$ forms a vector space with its underlying field being the real numbers. Every choice of $S$ produces a different proportionality relation, hence it being a family. The notation $\propto_{\mathbb{R}^S}$ was chosen instead of $\propto_S$ in order to match the more general definition of proportionality given below.&lt;/p&gt;
+&lt;p&gt;Notice that the set of functions from $S$ to $\mathbb{R}$ forms a vector space with its underlying field being the real numbers. Every choice of $S$ produces a different proportionality relation, hence it being a family.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;The notation $\propto_{\mathbb{R}^S}$ was chosen instead of $\propto_S$ in order to match the more general definition of proportionality given below.&lt;/em&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;other-number-systems&quot;&gt;Other Number Systems&lt;/h4&gt;
 &lt;ul&gt;
@@ -59,53 +61,57 @@
 &lt;h2 id=&quot;proof-of-equivalence-relation&quot;&gt;Proof of Equivalence Relation&lt;/h2&gt;
 &lt;p&gt;Using the general definition above, we will prove $\propto$ forms an equivalence relation by showing it has the reflexive, symmetric, and transitive properties.&lt;/p&gt;
 
-&lt;h4 id=&quot;reflexivity&quot;&gt;Reflexivity&lt;/h4&gt;
-&lt;p&gt;Proportionality is reflexive, i.e $\mathbf{v}\propto \mathbf{v}$ for all $\mathbf{v}\in V$, because every vector space has an identity scalar that when multiplied by any of its vectors, produces that same vector.&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Reflexivity&lt;/strong&gt;&lt;/summary&gt;
+Proportionality is reflexive, i.e $\mathbf{v}\propto \mathbf{v}$ for all $\mathbf{v}\in V$, because every vector space has an identity scalar that when multiplied by any of its vectors, produces that same vector.
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;(\exists e\in F)(\forall \mathbf{v}\in V)\ e\mathbf{v}=\mathbf{v}&lt;/script&gt;
+$$(\exists e\in F)(\forall \mathbf{v}\in V)\ e\mathbf{v}=\mathbf{v}$$
 
-&lt;p&gt;This is enough to prove reflexivity because if $\mathbf{x}=\mathbf{y}$ then the definition becomes:&lt;/p&gt;
+This is enough to prove reflexivity because if $\mathbf{x}=\mathbf{y}$ then the definition becomes:
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbf{x}\propto_V \mathbf{x}\equiv(\exists k\in F)\ k\mathbf{x}=\mathbf{x}&lt;/script&gt;
+$$\mathbf{x}\propto_V \mathbf{x}\equiv(\exists k\in F)\ k\mathbf{x}=\mathbf{x}$$
 
-&lt;p&gt;and there will always exist a $k\in F$, that satisfies $k\mathbf{x}=\mathbf{x}$ and it will always be the identity scalar $e$ (aka the number $1$ in the case of the complex/real/etc. numbers).&lt;/p&gt;
+and there will always exist a $k\in F$, that satisfies $k\mathbf{x}=\mathbf{x}$ and it will always be the identity scalar $e$ (aka the number $1$ in the case of the complex/real/etc. numbers).
+&lt;/details&gt;
 
-&lt;h4 id=&quot;symmetry&quot;&gt;Symmetry&lt;/h4&gt;
-&lt;p&gt;Proportionality is symmetric, i.e $\mathbf{u}\propto \mathbf{v}\implies \mathbf{v}\propto \mathbf{u}$ for all $\mathbf{u},\mathbf{v}\in V$, because every scalar in a vector space has a multiplicative inverse:&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Symmetry&lt;/strong&gt;&lt;/summary&gt;
+Proportionality is symmetric, i.e $\mathbf{u}\propto \mathbf{v}\implies \mathbf{v}\propto \mathbf{u}$ for all $\mathbf{u},\mathbf{v}\in V$, because every scalar in a vector space has a multiplicative inverse:
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;(\forall s\in F)(\exists s^{-1}\in F)\ ss^{-1}=e&lt;/script&gt;
+$$(\forall s\in F)(\exists s^{-1}\in F)\ ss^{-1}=e$$
 
-&lt;p&gt;&lt;em&gt;Where $e$ is the identity scalar. Also note that the field’s multiplication is commutative.&lt;/em&gt;&lt;/p&gt;
+*Where $e$ is the identity scalar. Also note that the field's multiplication is commutative.*
 
-&lt;p&gt;So assuming two vectors are proportional $\mathbf{x}\propto_V \mathbf{y}$ there must exist some $k\in F$ that satisfies $k\mathbf{x}=\mathbf{y}$. If we multiply both sides by $k^{-1}$, which too must exist as we’ve stated, we are left with:&lt;/p&gt;
+So assuming two vectors are proportional $\mathbf{x}\propto_V \mathbf{y}$ there must exist some $k\in F$ that satisfies $k\mathbf{x}=\mathbf{y}$. If we multiply both sides by $k^{-1}$, which too must exist as we've stated, we are left with:
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align}
-k\mathbf{x}&amp;=\mathbf{y}\\
- k^{-1}k\mathbf{x}&amp;=k^{-1}\mathbf{y}\\
-e\mathbf{x}&amp;=k^{-1}\mathbf{y}\\
-\mathbf{x}&amp;=k^{-1}\mathbf{y}
-\end{align} %]]&gt;&lt;/script&gt;
+$$\begin{align}
+k\mathbf{x}&amp;amp;=\mathbf{y}\\
+ k^{-1}k\mathbf{x}&amp;amp;=k^{-1}\mathbf{y}\\
+e\mathbf{x}&amp;amp;=k^{-1}\mathbf{y}\\
+\mathbf{x}&amp;amp;=k^{-1}\mathbf{y}
+\end{align}$$
 
-&lt;p&gt;Notice that, because $k^{-1}\in F$, this is precisely the definition of $\mathbf{y}\propto \mathbf{x}$. And so we have shown that for any two vectors in $V$ that if $\mathbf{x}\propto \mathbf{y}$ then $\mathbf{y}\propto \mathbf{x}$. And that if the proportionality constant of $\mathbf{x}\propto \mathbf{y}$ is $k$ then the constant between $\mathbf{y}\propto \mathbf{x}$ is $k^{-1}$.&lt;/p&gt;
+Notice that, because $k^{-1}\in F$, this is precisely the definition of $\mathbf{y}\propto \mathbf{x}$. And so we have shown that for any two vectors in $V$ that if $\mathbf{x}\propto \mathbf{y}$ then $\mathbf{y}\propto \mathbf{x}$. And that if the proportionality constant of $\mathbf{x}\propto \mathbf{y}$ is $k$ then the constant between $\mathbf{y}\propto \mathbf{x}$ is $k^{-1}$.
+&lt;/details&gt;
 
-&lt;h4 id=&quot;transitivity&quot;&gt;Transitivity&lt;/h4&gt;
-&lt;p&gt;The last property to prove is transitivity. Proportionality being transitive means that $\mathbb{u}\propto\mathbb{v}\wedge\mathbb{v}\propto\mathbb{w}\implies\mathbb{u}\propto\mathbb{w}$. This can be shown by noting:&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Transitivity&lt;/strong&gt;&lt;/summary&gt;
+The last property to prove is transitivity. Proportionality being transitive means that $\mathbb{u}\propto\mathbb{v}\wedge\mathbb{v}\propto\mathbb{w}\implies\mathbb{u}\propto\mathbb{w}$. This can be shown by noting:
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbb{u}\propto\mathbb{v}\iff k_1\mathbb{u}=\mathbb{v}&lt;/script&gt;
+$$\mathbb{u}\propto\mathbb{v}\iff k_1\mathbb{u}=\mathbb{v}$$
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbb{v}\propto\mathbb{w}\iff k_2\mathbb{v}=\mathbb{w}&lt;/script&gt;
+$$\mathbb{v}\propto\mathbb{w}\iff k_2\mathbb{v}=\mathbb{w}$$
 
-&lt;p&gt;So if we have $\mathbb{u}\propto\mathbb{v}\wedge\mathbb{v}\propto\mathbb{w}$ then we also know there exists two constants $k_1$ and $k_2$ that correspond to each. Now we can simply substitute $k_1\mathbb{u}$ in for $\mathbb{v}$ in the following way:&lt;/p&gt;
+So if we have $\mathbb{u}\propto\mathbb{v}\wedge\mathbb{v}\propto\mathbb{w}$ then we also know there exists two constants $k_1$ and $k_2$ that correspond to each. Now we can simply substitute $k_1\mathbb{u}$ in for $\mathbb{v}$ in the following way:
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align}
-k_1\mathbb{u}&amp;=\mathbb{v}\\
-k_2\mathbb{v}&amp;=\mathbb{w}\\
-k_2k_1\mathbb{u}&amp;=\mathbb{w}\\
-\end{align} %]]&gt;&lt;/script&gt;
+$$\begin{align}
+k_1\mathbb{u}&amp;amp;=\mathbb{v}\\
+k_2\mathbb{v}&amp;amp;=\mathbb{w}\\
+k_2k_1\mathbb{u}&amp;amp;=\mathbb{w}\\
+\end{align}$$
 
-&lt;p&gt;Because field multiplication is associative, the scalar $k_2k_1$ is the proportionality constant between $\mathbb{u}$ and $\mathbb{w}$ implying that $\mathbb{u}\propto\mathbb{w}$. And thus we have proved the transitivity of the proportional relation.&lt;/p&gt;
+Because field multiplication is associative, the scalar $k_2k_1$ is the proportionality constant between $\mathbb{u}$ and $\mathbb{w}$ implying that $\mathbb{u}\propto\mathbb{w}$. And thus we have proved the transitivity of the proportional relation.
+&lt;/details&gt;
 </content>
  </entry>
  
@@ -123,7 +129,7 @@ Say I had a set of tops $T$, pants $P$, and shoes $S$. I could define another se
 &lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
 &lt;p&gt;A &lt;strong&gt;relation&lt;/strong&gt; $R$ on a set of sets $S_1,S_2,S_3,\cdots$ is a subset of their &lt;a href=&quot;/cartesian-product&quot;&gt;&lt;strong&gt;cartesian product&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;R\subset S_1\times S_2\times S_3\times \cdots&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;R\subseteq S_1\times S_2\times S_3\times \cdots&lt;/script&gt;
 
 &lt;p&gt;Relations are used to establish $n$-way relationships between elements of the same or different sets (ex. there is a two way relationship between $2$ and $5$ in that $2&amp;lt;5$).&lt;/p&gt;
 
@@ -166,7 +172,7 @@ Say I had a set of tops $T$, pants $P$, and shoes $S$. I could define another se
 &lt;h3 id=&quot;uniqueness-properties&quot;&gt;Uniqueness Properties&lt;/h3&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Injective&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;Injective&lt;/strong&gt;&lt;/summary&gt;
 A relation is called injective if for all $b$ on the right side, the $a$ on the left side is unique in the expression $aRb$. More formally, $R$ is injective if:
 
 $$(\forall a_1,a_2\in A, \forall b\in B)\ a_1Rb\wedge a_2Rb\implies a_1=a_2$$
@@ -175,7 +181,7 @@ Because of this property, injective relations are also called &lt;b&gt;left-uniq
 &lt;/details&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Functional&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;Functional&lt;/strong&gt;&lt;/summary&gt;
 A relation is functional if for all $a$ on the left side, the $b$ on the right is unique. Relations that fulfill this property are called &lt;b&gt;functions&lt;/b&gt; and are said to have a unique output $b$ for a given input $a$. Formally this means:
 
 $$(\forall a\in A, \forall b_1,b_2\in B)\ aRb_1\wedge aRb_2\implies b_1=b_2$$
@@ -184,14 +190,14 @@ Similar to injective relations, a functional relation is also called &lt;b&gt;ri
 &lt;/details&gt;
 
 &lt;!-- &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;One-to-One&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;One-to-One&lt;/strong&gt;&lt;/summary&gt;
 One-to-One functions are relations that are both functional and injective. These functions map every element in their domain to a unique element in the range. These are also called &lt;b&gt;injective functions&lt;/b&gt; because being functional is implied in the classification 'function'.
 &lt;/details&gt; --&gt;
 
 &lt;h3 id=&quot;totality-properties&quot;&gt;Totality Properties&lt;/h3&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Left-Total&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;Left-Total&lt;/strong&gt;&lt;/summary&gt;
 A left-total relation means that for every element in $A$ there is at least one element in $B$ that it is related to:
 
 $$(\forall a\in A,\exists b\in B)\ aRb$$
@@ -200,7 +206,7 @@ Note that all functions are automatically left-total, but not all left-total rel
 &lt;/details&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Surjective&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;Surjective&lt;/strong&gt;&lt;/summary&gt;
 A relation is surjective every element in $B$ is related to at least one element in $A$:
 
 $$(\exists a\in A,\forall b\in B)\ aRb$$
@@ -211,7 +217,7 @@ Similar to left-total relations, surjective relations are also called &lt;b&gt;r
 &lt;h3 id=&quot;other-properties&quot;&gt;Other Properties&lt;/h3&gt;
 &lt;p&gt;The following properties only apply to homogenous relations (i.e $R\subset X\times X$).&lt;/p&gt;
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Reflexive and Irreflexive&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;Reflexive and Irreflexive&lt;/strong&gt;&lt;/summary&gt;
 A relation is reflexive if all elements relate to themselves:
 
 $$(\forall x\in X)\ xRx$$
@@ -224,7 +230,7 @@ An example of this is the $lt$ relation.
 &lt;/details&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Symmetric&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;Symmetric&lt;/strong&gt;&lt;/summary&gt;
 A relation is symmetric if $xRy$ means $yRx$ as well:
 
 $$(\forall x,y\in X)\ xRy \implies yRx$$
@@ -233,7 +239,7 @@ Some examples of this include the proportionality $\propto$ of functions and sim
 &lt;/details&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Anti-Symmetric&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;Anti-Symmetric&lt;/strong&gt;&lt;/summary&gt;
 A relation is anti-symmetric if when $xRy$ and $yRx$ are both true, then $x=y$:
 
 $$(\forall x,y\in X)\ xRy\wedge yRx \implies x=y$$
@@ -243,7 +249,7 @@ Some examples of this include the $\le$ relation,
 &lt;/details&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Transitive&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;Transitive&lt;/strong&gt;&lt;/summary&gt;
 A relation is transitive if $xRy$ and $yRz$ means $xRz$:
 
 $$(\forall x,y,z\in X)\ xRy \wedge yRz\implies xRz$$
@@ -252,7 +258,7 @@ Relations like $\le$ and similarity $\sim$ are transitive.
 &lt;/details&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Trichotomous&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;Trichotomous&lt;/strong&gt;&lt;/summary&gt;
 A relation is trichotomus if for any two element in $X$ either $xRy$, $yRx$, or $x=y$ holds. But only 1 of those three options:
 
 $$(\forall x,y\in X)\ (xRy \oplus yRx \oplus x=y) \wedge \neg(xRy \wedge yRx \wedge x=y)$$
@@ -264,12 +270,12 @@ The most common example of this is as a property of the real numbers under the $
 &lt;p&gt;This is a list of different operations and transformations on one or more sets.&lt;/p&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Union and Intersection&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;Union and Intersection&lt;/strong&gt;&lt;/summary&gt;
 The union of two relations that are on the same sets is equivalent to 'adding/or-ing' them together. For example, the union of the $\lt$ and the $=$ relations is $\le$. Intersection has similar behavior except it displays an 'and' effect.
 &lt;/details&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Complement&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;Complement&lt;/strong&gt;&lt;/summary&gt;
 The complement of a relation $R\subset A\times B$ is simply all the of the ordered pairs in $A\times B$ that are &lt;i&gt;not&lt;/i&gt; in $R$. We can think of this as the ordinary complement of the relation denoted $R^\complement$ where $A\times B$ is the universal set:
 
 $$R^\complement=\{(a,b)\in A\times B\mid (a,b)\not\in R\}$$
@@ -278,7 +284,7 @@ For example, the complement of less than or equal to is greater than: $\le^\comp
 &lt;/details&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Logical Negation of a Relation&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;Logical Negation of a Relation&lt;/strong&gt;&lt;/summary&gt;
 Notice that negating a relation is equivalent to asserting its complement (assuming both elements being related are in the universal set). Put more formally, if $a\in A$ and $b\in B$:
 
 $$\neg(aRb)\equiv aR^\complement b$$
@@ -287,7 +293,7 @@ It is this negating property that allows us to replace statements like $\neg(a\l
 &lt;/details&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Composition&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;Composition&lt;/strong&gt;&lt;/summary&gt;
 The composition of two relations $R\subset A\times B$ and $S\subset B\times C$ is a sort of 'product' denoted $S\circ R\subset A\times C$:
 
 $$S\circ R=\{(a,c)\in A\times C\mid\exists b:(a,b)\in R\wedge(b,c)\in S\}$$
@@ -298,7 +304,7 @@ An intuitive example of this can be found in kinship relations. The composition 
 &lt;/details&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Converse&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;Converse&lt;/strong&gt;&lt;/summary&gt;
 The converse of a relation $R$ is denoted $R^\top$ and is simply the opposite of $R$. In other words, if $(x,y)$ is in a relation then $(y,x)$ is in its converse. Formally, for a relation $R\subset A\circ B$:
 
 $$R^\top=\{(b,a)\in B\times A\mid (a,b)\in R\}$$
@@ -309,7 +315,7 @@ For example, the converse of the greater than relation $\ge^\top$ is $\le$. Simi
 &lt;/details&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Inverse&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;Inverse&lt;/strong&gt;&lt;/summary&gt;
 Some relations are &lt;i&gt;invertible&lt;/i&gt; meaning that for a relation $R$ there exists another relation $X$ such that $X\circ R=I$, called &lt;b&gt;left-invertible&lt;/b&gt;, or if there exists a relation $Y$ such that $R\circ Y=I$, called &lt;b&gt;right-invertible&lt;/b&gt;. When both the left and right inverses concincide, the inverse $R^{-1}$ is simply equivalent to the converse $R^\top$. &lt;p&gt;&lt;/p&gt;
 
 For example, the composition &quot;is child of&quot; $\circ$ &quot;is parent of&quot; returns the identity relation (i.e &quot;is you&quot;). As such, they are inverses of each other.
@@ -319,9 +325,9 @@ For example, the composition &quot;is child of&quot; $\circ$ &quot;is parent of&
  
  <entry>
    <title>Boolean Logic as Matrix Multiplication</title>
-   <link href="http://localhost:4000/boolean-linear-transformations/"/>
+   <link href="http://localhost:4000/boolean-logic-matrix/"/>
    <updated>2018-07-18T00:00:00-04:00</updated>
-   <id>http://localhost:4000/boolean-linear-transformations</id>
+   <id>http://localhost:4000/boolean-logic-matrix</id>
    <content type="html">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Computation is usually formulated via boolean logic, which in turn makes use of logical connectives like $\wedge,\vee, \neg$ along with the binary digits $0$ and $1$, representing false and true respectively.&lt;/p&gt;
 
@@ -372,7 +378,7 @@ For example, the composition &quot;is child of&quot; $\circ$ &quot;is parent of&
 
 &lt;!-- #### Identity --&gt;
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Identity&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;Identity&lt;/strong&gt;&lt;/summary&gt;
 The identity gate takes an input and returns it as is (i.e $f(x)=x$). To represent it we simply use the $2 \times 2$ identity matrix:
 
 $$
@@ -388,11 +394,10 @@ $$I_2|0\rangle=|0\rangle$$
 
 $$I_2|1\rangle=|1\rangle$$
 &lt;/details&gt;
-&lt;p&gt;&lt;/p&gt;
 
 &lt;!-- #### Negation --&gt;
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Negation (NOT)&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;Negation (NOT)&lt;/strong&gt;&lt;/summary&gt;
 The negation gate takes an input and flips it (i.e $f(x)=\neg x$). We can represent it with the following matrix:
 
 $$
@@ -408,11 +413,10 @@ $$X|0\rangle=|1\rangle$$
 
 $$X|1\rangle=|0\rangle$$
 &lt;/details&gt;
-&lt;p&gt;&lt;/p&gt;
 
 &lt;!-- #### Constant 0 --&gt;
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Constant 0&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;Constant 0&lt;/strong&gt;&lt;/summary&gt;
 Outputs $0$ regardless of input (i.e $f(x)=0$). We can represent it with the following matrix:
 
 $$
@@ -428,11 +432,10 @@ $$C_0|0\rangle=|0\rangle$$
 
 $$C_0|1\rangle=|0\rangle$$
 &lt;/details&gt;
-&lt;p&gt;&lt;/p&gt;
 
 &lt;!-- #### Constant 1 --&gt;
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Constant 1&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;Constant 1&lt;/strong&gt;&lt;/summary&gt;
 Outputs $1$ regardless of input (i.e $f(x)=1$). We can represent it with the following matrix:
 
 $$
@@ -448,7 +451,6 @@ $$C_1|0\rangle=|1\rangle$$
 
 $$C_1|1\rangle=|1\rangle$$
 &lt;/details&gt;
-&lt;p&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;multiple-bits&quot;&gt;Multiple Bits&lt;/h2&gt;
 &lt;p&gt;Before we can introduce the matrices that correspond to binary operations, we need a way of representing multiple bits as a single vector. This is achieved via the &lt;strong&gt;tensor product&lt;/strong&gt; of the $|0\rangle$ and $|1\rangle$ vectors. For example, the two bit state $|10\rangle$ can be constructed as follows:&lt;/p&gt;
@@ -493,7 +495,7 @@ $$C_1|1\rangle=|1\rangle$$
 &lt;p&gt;Now that we can represent bit strings as vectors, it is possible construct operations that take in $2$ bits and output $1$ bit. While there are technically $2^{2^2}=16$ possible binary bit operations, we’ll only construct the more useful ones like &lt;code class=&quot;highlighter-rouge&quot;&gt;AND&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;OR&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;XOR&lt;/code&gt;, etc.&lt;/p&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;OR&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;OR&lt;/strong&gt;&lt;/summary&gt;
 The &lt;code&gt;OR&lt;/code&gt; gate represents logical disjunction (i.e $f(x,y)=x\vee y$) and is represented by the following matrix:
 
 $$
@@ -513,10 +515,9 @@ $$\text{OR}|10\rangle=|1\rangle$$
 
 $$\text{OR}|11\rangle=|1\rangle$$
 &lt;/details&gt;
-&lt;p&gt;&lt;/p&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;AND&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;AND&lt;/strong&gt;&lt;/summary&gt;
 The &lt;code&gt;AND&lt;/code&gt; gate represents logical conjunction (i.e $f(x,y)=x\wedge y$) and is represented by the following matrix:
 
 $$
@@ -536,10 +537,9 @@ $$\text{AND}|10\rangle=|0\rangle$$
 
 $$\text{AND}|11\rangle=|1\rangle$$
 &lt;/details&gt;
-&lt;p&gt;&lt;/p&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;XOR&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;XOR&lt;/strong&gt;&lt;/summary&gt;
 The &lt;code&gt;XOR&lt;/code&gt; gate represents exclusive disjunction (i.e $f(x,y)=x\oplus y$) and is represented by the following matrix:
 
 $$
@@ -559,10 +559,9 @@ $$\text{XOR}|10\rangle=|1\rangle$$
 
 $$\text{XOR}|11\rangle=|0\rangle$$
 &lt;/details&gt;
-&lt;p&gt;&lt;/p&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Equality (XNOR)&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;Equality (XNOR)&lt;/strong&gt;&lt;/summary&gt;
 Equality checks if two bits are equivalent (i.e $f(x,y)=x\iff y$) and is represented by the following matrix:
 
 $$
@@ -572,7 +571,7 @@ $$
   \end{pmatrix}
 $$
 
-&lt;i&gt;Notice that equality is equivalent to the negation of XOR, &lt;code&gt;XNOR&lt;/code&gt; (i.e $x\leftrightarrow y=\neg(x\oplus y)$) meaning all the $0$'s and $1$'s in the &lt;code&gt;XOR&lt;/code&gt; matrix are simply swapped to form the equality one.&lt;/i&gt;&lt;p&gt;&lt;/p&gt;
+&lt;i&gt;Notice that equality is equivalent to the negation of XOR, &lt;code&gt;XNOR&lt;/code&gt; (i.e $x\leftrightarrow y=\neg(x\oplus y)$) meaning all the $0$'s and $1$'s in the &lt;code&gt;XOR&lt;/code&gt; matrix are simply swapped to form the equality one.&lt;/i&gt;
 
 Applying the gate to all two bit states we find:
 
@@ -584,10 +583,9 @@ $$\text{IFF}|10\rangle=|0\rangle$$
 
 $$\text{IFF}|11\rangle=|1\rangle$$
 &lt;/details&gt;
-&lt;p&gt;&lt;/p&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Implication (IF)&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;Implication (IF)&lt;/strong&gt;&lt;/summary&gt;
 Material implication is a statement of one variable's dependence on another (i.e $f(x,y)=x\implies y$). It's more commonly referred to as an &lt;code&gt;IF&lt;/code&gt; statement in computer science.
 
 $$
@@ -669,7 +667,7 @@ $$
   \right)
 $$
 
-&lt;/details&gt;&lt;p&gt;&lt;/p&gt; --&gt;
+&lt;/details&gt; --&gt;
 
 &lt;details&gt;
 &lt;summary&gt;&quot;Proof&quot;&lt;/summary&gt;
@@ -677,7 +675,6 @@ $$
 &lt;img src=&quot;/assets/comp_sci/half_adder_proof.jpg&quot; style=&quot;centerme&quot; alt=&quot;half adder proof&quot; /&gt;
 
 &lt;/details&gt;
-&lt;p&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;shortcut&quot;&gt;Shortcut&lt;/h4&gt;
 &lt;p&gt;While we could multiply through all the matrices and solve for what the matrix representation of a given boolean circuit is, there is a way to bypass all this. Just like how we constructed the unary and binary logic gates, we can simply construct a &lt;strong&gt;truth table&lt;/strong&gt; of what inputs give what outputs. We then construct the matrix from this, setting the $i$th column as the output of the half-adder given the input $i$. Doing this we arrive at the following:&lt;/p&gt;
@@ -717,7 +714,6 @@ $$\text{CNOT}|11\rangle=|10\rangle$$
 
 While the gate may not seem particularly interesting (and indeed it isn't as far as classical computing is concerned) its real power shows when the control bit is in a superposition of both $|0\rangle$ and $|1\rangle$, ala quantum computing.
 &lt;/details&gt;
-&lt;p&gt;&lt;/p&gt;
 </content>
  </entry>
  
@@ -736,7 +732,7 @@ While the gate may not seem particularly interesting (and indeed it isn't as far
 &lt;h2 id=&quot;writingtyping&quot;&gt;Writing/Typing&lt;/h2&gt;
 &lt;!-- ### This is sentence case. --&gt;
 &lt;details&gt;
-&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;This is sentence case.&lt;/h3&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;This is sentence case.&lt;/strong&gt;&lt;/summary&gt;
 This is the standard letter case used in the English language. The beginning of sentences are capitalized along with proper nouns (i.e names, places, days of the week, etc.). Each sentence ends with some punctuation (ex &lt;i&gt;.&lt;/i&gt;, &lt;i&gt;?&lt;/i&gt;, &lt;i&gt;!&lt;/i&gt;).
 
 Here's an example:
@@ -746,10 +742,10 @@ Here's an example:
 You'd see this case when reading anything somewhat formal, like emails, a person's/company's website, text documents, academic papers, etc.
 
 &lt;/details&gt;
-&lt;p&gt;&lt;/p&gt;
+
 &lt;!-- ### This is Title Case --&gt;
 &lt;details&gt;
-&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;This is Title Case&lt;/h3&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;This is Title Case&lt;/strong&gt;&lt;/summary&gt;
 This is the case used when typing out titles. Title case has all words capitalized barring a limited subset that are deemed &lt;i&gt;common&lt;/i&gt; (unless they are the first word, in which case they are capitalized). That includes words like &lt;i&gt;or&lt;/i&gt;, &lt;i&gt;but&lt;/i&gt;, &lt;i&gt;if&lt;/i&gt;, &lt;i&gt;the&lt;/i&gt;, &lt;i&gt;in&lt;/i&gt;, etc.
 
 Here's an example:
@@ -758,10 +754,10 @@ Here's an example:
 
 Academic papers, emails (think subject line), music, videogames and just about any media or document has a title. Its important to note that there is no agreement on what exactly the subset of words not capitalized in title case is. That said, all titles more or less follow the same pattern of capitalization.
 &lt;/details&gt;
-&lt;p&gt;&lt;/p&gt;
+
 &lt;!-- ### ALL CAPS --&gt;
 &lt;details&gt;
-&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;ALL CAPS&lt;/h3&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;ALL CAPS&lt;/strong&gt;&lt;/summary&gt;
 Writing in all uppercase letters, or &lt;b&gt;all caps&lt;/b&gt; as it's more commonly known, is taken to convey yelling when typed out, especially when texting or commenting on the internet. That said, all caps is also used in titles and headlines in order to make the text stand out more.
 
 Here's what it looks like:
@@ -771,10 +767,10 @@ Here's what it looks like:
 
 Typing in all caps can be done by holding down the &lt;code&gt;SHIFT&lt;/code&gt; key while typing or, more commonly, by simply turning on the &lt;code&gt;CAPS LOCK&lt;/code&gt; key. Smartphone keyboards also have similar functionality with caps lock being activated by double tapping the shift key, for example. Acronyms are written in all caps (NATO, USA, ASAP) unless the acronym has had enough usage to become a fully fledged word like &lt;i&gt;radar&lt;/i&gt; (&lt;b&gt;ra&lt;/b&gt;dio &lt;b&gt;d&lt;/b&gt;etection &lt;b&gt;a&lt;/b&gt;nd &lt;b&gt;r&lt;/b&gt;anging) or &lt;i&gt;laser&lt;/i&gt; (&lt;b&gt;l&lt;/b&gt;ight &lt;b&gt;a&lt;/b&gt;mplification by &lt;b&gt;s&lt;/b&gt;timulated &lt;b&gt;e&lt;/b&gt;mission of &lt;b&gt;r&lt;/b&gt;adiation)
 &lt;/details&gt;
-&lt;p&gt;&lt;/p&gt;
+
 &lt;!-- ### all lowercase --&gt;
 &lt;details&gt;
-&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;all lowercase&lt;/h3&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;all lowercase&lt;/strong&gt;&lt;/summary&gt;
 All lowercase is typically used when writing something informally and quickly, such as a text message or an internet comment (if the commenter isn't particularly concerned with the comment's presentation). This is because the message is not worth the extra effort of pressing the &lt;code&gt;SHIFT&lt;/code&gt; key (especially on smartphone keyboards). File extensions are also conventionally all lowercase.
 
 Here's what it looks like:
@@ -794,7 +790,7 @@ That said, this case may soon die out as some mobile keyboards, for example Goog
 
 &lt;!-- ### CamelCase --&gt;
 &lt;details&gt;
-&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;CamelCase&lt;/h3&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;CamelCase&lt;/strong&gt;&lt;/summary&gt;
 Camel case has the first letter of every word in the phrase/identifier capitalized. And so capitalization serves as camel case's delimiter. Lower camel case has the first letter of the first word in the identifier lowercased while upper camel case does not:
 
 &lt;!-- &gt;UpperCamelCase --&gt;
@@ -811,10 +807,10 @@ Used in
   &lt;li&gt;Variables names in Java (lower)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/details&gt;
-&lt;p&gt;&lt;/p&gt;
+
 &lt;!-- ### snake_case --&gt;
 &lt;details&gt;
-&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;snake_case&lt;/h3&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;snake_case&lt;/strong&gt;&lt;/summary&gt;
 Snake case delimits words using underscores ( _ ). And like the others, There are uppercase and lowercase variants:
 &lt;!-- &gt;UPPER_SNAKE_CASE --&gt;
 &lt;blockquote&gt;UPPER_SNAKE_CASE&lt;/blockquote&gt;
@@ -832,10 +828,10 @@ Used in
   &lt;li&gt;Functions and classes in the C &amp;amp; C++ Standard Library (lower)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/details&gt;
-&lt;p&gt;&lt;/p&gt;
+
 &lt;!-- ### kebab-case &amp; Train-Case --&gt;
 &lt;details&gt;
-&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;kebab-case &amp;amp; Train-Case&lt;/h3&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;kebab-case &amp;amp; Train-Case&lt;/strong&gt;&lt;/summary&gt;
 Kebab case is similar to snake case, as well as used in similar situations, with its only difference being the use of hyphens (-) to delimit words rather than underscores:
 &lt;!-- &gt;UPPER-KEBAB-CASE --&gt;
 &lt;blockquote&gt;UPPER-KEBAB-CASE&lt;/blockquote&gt;
@@ -858,7 +854,7 @@ Used in
 &lt;h2 id=&quot;other&quot;&gt;Other&lt;/h2&gt;
 &lt;!-- ### StUdLyCaPs --&gt;
 &lt;details&gt;
-&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;StUdLyCaPs&lt;/h3&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;StUdLyCaPs&lt;/strong&gt;&lt;/summary&gt;
 Studly caps is meant to be a joking letter case used to convey sarcasm. It has roots in mocking the seemingly random capitalization of products and services that was popular during the mid 1990s to early 2000s. A sort of in-joke amongst people on the internet at the time.
 &lt;!-- &gt;tHeqUIckBrOwNFOxjuMpsOvERtHeLazYdOg --&gt;
 &lt;blockquote&gt;tHeqUIckBrOwNFOxjuMpsOvERtHeLazYdOg&lt;/blockquote&gt;
@@ -1076,7 +1072,7 @@ n&amp;\equiv\{0,1,2,3,\cdots,n-1\}\\
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\exists S\left(\emptyset\in S\land\forall x\in S\left(\left(x\cup\{x\}\right)\in S\right)\right)&lt;/script&gt;
 
-&lt;p&gt;In English, the above statement asserts that there exists a set $S$ that contains the empty set $\emptyset$ as well as contains the successor (i.e $x\cup\{x\}$) to every one of its members. Notice that since we can always take the successor of another number, this set is &lt;em&gt;necessarily&lt;/em&gt; infinite. Indeed all infinite sets in ZFC originate from this set $S$ which, while we don’t know its exact composition, is by definition at least a superset of (if not equal to) the natural numbers: $\mathbb{N}\subseteq S$. Via the axiom of subset, we can thus guarantee the existence of the natural numbers.&lt;/p&gt;
+&lt;p&gt;In English, the above statement asserts that there exists a set $S$ that contains the empty set $\emptyset$ as well as the successor (i.e $x\cup\{x\}$) to every one of its members. Notice that since we can always take the successor of another number, this set is &lt;em&gt;necessarily&lt;/em&gt; infinite. Indeed all infinite sets in ZFC originate from this set $S$ which, while we don’t know its exact composition, is by definition at least a superset of (if not equal to) the natural numbers: $\mathbb{N}\subseteq S$. Via the axiom of subset, we can thus guarantee the existence of the natural numbers.&lt;/p&gt;
 
 &lt;h2 id=&quot;notation&quot;&gt;Notation&lt;/h2&gt;
 &lt;p&gt;The set of natural numbers is denoted by the double struck capital letter $\mathbb{N}$. But there are variations on the set that do/don’t include $0$ as well as ones that include all natural numbers up to and including $n$:&lt;/p&gt;
@@ -1491,11 +1487,11 @@ F_n&amp;=F_{n-2}+F_{n-1}\\
 &lt;details&gt;&lt;summary&gt;Proof&lt;/summary&gt;
 First, note that $A\cup B$ is guaranteed by the axiom of union and that its power set is guaranteed by the axiom of power set.
 
-Next, notice that, among many other elements, the power set of $A\cup B$ contains:
+Next notice that, among many other elements, the power set of $A\cup B$ contains:
 &lt;!-- \left(\forall a\in A,\forall b\in B\right) --&gt;
-$$\{a\},\{b\},\{a,b\}\in\mathcal{P}\left(A\cup B\right)$$
+$$\{a\},\{a,b\}\in\mathcal{P}\left(A\cup B\right)$$
 
-where $a$ and $b$ are some element in $A$ and $B$ respectively. Now if we take the power set again we'll see that the result contains, among other things, the elements:
+where $a$ and $b$ are elements in $A$ and $B$ respectively. Now if we take the power set again we'll see that the result contains, among other things, the elements:
 
 $$\{\{a\},\{a,b\}\}\in\mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)$$
 
@@ -1645,7 +1641,7 @@ $$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right
 
 &lt;!-- HOW CAN CULPABILITY EXITTS WITHOUT FREE WILL --&gt;
 
-&lt;p&gt;Well someone has to be culpable. You have to draw the line in the sand somewhere. Why? Well it seems that punishment may not be dealt out to punish those who have evil intent but instead, to make an affirmation that the effects their intent caused are unwanted.&lt;/p&gt;
+&lt;p&gt;Well someone has to be culpable. You have to draw the line in the sand somewhere. Why? Well it seems that punishment may not be dealt out to punish those who have evil intent but, instead, to make an affirmation that the effects their intent caused are unwanted.&lt;/p&gt;
 
 &lt;p&gt;When a court decides that the pedestrian killer should serve 15 years in jail and the red light offender shouldn’t, they may very well be considering his intent, but they also consider the effects his intent has caused, whether it be in his control or not. A judiciary in a government, I’d say, serves to remove and make examples of those who do not follow the norms of society and who may pose danger to it. Whether or not they are more culpable then the next driver they still killed someone and so we make sure to discourage this behavior not because we care for their intent but because we care for their effects.&lt;/p&gt;
 
@@ -1777,7 +1773,7 @@ X=Y&amp;\equiv\forall k\in\mathbb{N}_n^ * \ (x_k=y_k)\\
 
   $$\bigcup \{x\}=\{a\mid \left(\exists b\in \{x\}\right)a\in b\}$$
 
-  Since there is only one element in ${b}$, namely $x$, there is only one set $b$ could be: $x$. So, we can say the following:
+  Since there is only one element in $\{x\}$, namely $x$, there is only one set $b$ could be: $x$. So, we can say the following:
 
   $$\bigcup \{x\}=\{a\mid a\in x\}$$
 
@@ -1894,9 +1890,9 @@ Why are is there a conditional definition of the $a$th element of an $n$-tuple? 
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;!:\mathbb{N}\rightarrow\mathbb{N}&lt;/script&gt;
 
-&lt;p&gt;&lt;em&gt;Using &lt;a href=&quot;https://en.wikipedia.org/wiki/Analytic_continuation&quot;&gt;analytic continuation&lt;/a&gt; the factorial function can be generalized to complex numbers. The resulting function is dubbed the $\Gamma(z)$ &lt;a href=&quot;https://en.wikipedia.org/wiki/Gamma_function&quot;&gt;gamma function&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Using &lt;a href=&quot;https://en.wikipedia.org/wiki/Analytic_continuation&quot;&gt;analytic continuation&lt;/a&gt;, the factorial function can be generalized to complex numbers. The resulting function is dubbed the $\Gamma(z)$ &lt;a href=&quot;https://en.wikipedia.org/wiki/Gamma_function&quot;&gt;gamma function&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;While there is much to discuss about the factorial function, this post concerns itself with two particular extensions of the factorial. Namely the superfactorial and the hyperfactorial.&lt;/p&gt;
+&lt;p&gt;While there is much to discuss about the factorial function, this post concerns itself with two particular variations of the factorial. Namely the superfactorial and the hyperfactorial.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
@@ -2452,10 +2448,10 @@ $$\begin{align}
 &lt;h2 id=&quot;how-does-this-definition-even-help&quot;&gt;How does this Definition even Help?&lt;/h2&gt;
 &lt;p&gt;Remember when I said formally defining concepts allows us to make formal statements about them? Well that was only partially true. While this ‘set of all possible particle configurations’ definition is more formal than your standard notion of jealousy, it’s not exactly helpful in trying to understand the nature of emotion of people’s interactions with each other.&lt;/p&gt;
 
-&lt;p&gt;So then what’s the real point? The real point is purely a semantic one. A scientist/philosopher might like to associate some physical meaning to ideas like emotion or creativity. Thus, we can be rest assured that everything imaginable can be considered physical in some sense. Even if that physicality is purely expressed as your brain thinking about said concept, it’s still just particles following the same physical laws.&lt;/p&gt;
+&lt;p&gt;So then what’s the real point? The real point is purely a semantic one. A scientist/philosopher might like to associate some physical meaning to ideas like emotion or creativity. Thus, we can assure ourselves that everything imaginable can be considered physical (and further mathematical) in some sense. Even if that physicality is purely expressed as your brain thinking about said concept, it’s still just particles following the same physical laws.&lt;/p&gt;
 
 &lt;h4 id=&quot;an-aside&quot;&gt;An Aside&lt;/h4&gt;
-&lt;p&gt;The idea I presented above is, of course, ridiculous and riddled with problems. It is just meant to serve as a rough idea of how one might formalize the notion of an “idea” or “concept” when, at first, it may seem that it only exists in our minds. Indeed these concepts do only exist in our minds, but our minds are purely physical (unless you’re a &lt;a href=&quot;https://plato.stanford.edu/entries/dualism/&quot;&gt;duelist&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;The idea I presented above is, of course, ridiculous and riddled with problems. It is just meant to serve as a rough idea of how one might formalize the notion of an “idea” or “concept” when, at first, it may seem that they can only exist in our minds. Indeed these concepts do only exist in our minds, but our minds are purely physical (unless you’re a &lt;a href=&quot;https://plato.stanford.edu/entries/dualism/&quot;&gt;duelist&lt;/a&gt;).&lt;/p&gt;
 
 &lt;p&gt;One such problem I would like to somewhat address is the apparent circularity of saying “the notion of cat is encompassed by the set of all brains that are thinking of the concept of cat.” This isn’t as bad as it sounds because it should really be phrased as “the notion of cat is encompassed by the set of all brains that are thinking of &lt;strong&gt;what we consider&lt;/strong&gt; the concept of cat.” This definition draws on our own subjective ideas of cats to objectively define them. (In this case &lt;em&gt;our&lt;/em&gt; might represent an average of all human opinions or something of the sort.)&lt;/p&gt;
 
@@ -2546,7 +2542,7 @@ v^2=\frac{2mg}{\rho C_DAv^2}
 - [Coefficient of Friction](#coefficient-of-friction) --&gt;
 
 &lt;h4 id=&quot;where-does-friction-come-from&quot;&gt;Where does Friction come from?&lt;/h4&gt;
-&lt;p&gt;The frictional force is not fundamental and is instead a useful abstraction of the complex electromagnetic interactions between two surfaces that come into contact with each other. The forces created by these interactions can, in a variety of cases, be thought of as a singular force that is proportional to the normal force.&lt;/p&gt;
+&lt;p&gt;The frictional force is not fundamental and is instead a useful abstraction of the complex electromagnetic interactions between two surfaces that come into contact with each other. The sum total of the forces created by these interactions can, in a variety of cases, be thought of as a singular force that is proportional to the normal force.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/physics/friction_between_surfaces.png?style=centerme&quot; alt=&quot;complexfriction&quot; width=&quot;450px&quot; /&gt;&lt;/p&gt;
 
@@ -2687,7 +2683,7 @@ N=mg\cos\theta \tag{force normal to the ramp}\\
    <link href="http://localhost:4000/classical-physics/"/>
    <updated>2018-03-24T00:00:00-04:00</updated>
    <id>http://localhost:4000/classical-physics</id>
-   <content type="html">&lt;p&gt;Classical physics refers to the branches of physics that were conceived of prior to quantum mechanics and Einsteinian relativity. These branches of physics are more than sufficient for non-relativistic speeds and non-quantum scales. Moreover, they serve as starting points for understanding and deriving modern physics.&lt;/p&gt;
+   <content type="html">&lt;p&gt;Classical physics refers to the branches of physics that were conceived of prior to quantum mechanics and Einsteinian relativity. These branches of physics are more than sufficient in describing phenomena at non-relativistic speeds and non-quantum scales. Moreover, they serve as starting points for understanding and deriving modern physics.&lt;/p&gt;
 
 &lt;h2 id=&quot;classical-mechanics&quot;&gt;Classical Mechanics&lt;/h2&gt;
 &lt;p&gt;Classical mechanics is the study of the motion of massive bodies. It is usually split into two main branches:&lt;/p&gt;
@@ -2739,7 +2735,7 @@ N=mg\cos\theta \tag{force normal to the ramp}\\
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;thermodynamics&quot;&gt;Thermodynamics&lt;/h2&gt;
-&lt;p&gt;Thermodynamics is the study of the workings d effects of heat, or &lt;strong&gt;thermal energy&lt;/strong&gt;, in a system. Some main topics include:&lt;/p&gt;
+&lt;p&gt;Thermodynamics is the study of the workings and effects of heat, or &lt;strong&gt;thermal energy&lt;/strong&gt;, in a system. Some main topics include:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;The 4 Laws of Thermodynamics&lt;/li&gt;
@@ -3069,7 +3065,7 @@ It is important to note that the kinematic equations apply to all systems of 3 v
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\psi:\mathbb{R^4}\rightarrow \mathbb{C}&lt;/script&gt;
 
-&lt;p&gt;The probability of observing a particle at position $x$ at time $t$ is given by $\left \vert \psi \right \vert^2$. This implies that, in the one dimensional case, for a given time $t$:&lt;/p&gt;
+&lt;p&gt;The probability of observing a particle at position $x$ at time $t$ is given by $\left \vert \psi \right \vert^2$. This implies that, in the one dimensional case, at a given time $t$:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\int_{-\infty}^{\infty}\left | \psi(x) \right |^2 dx=1&lt;/script&gt;
 
@@ -3319,23 +3315,6 @@ Quantum chromodynamics is the QFT of the strong nuclear force. This theory descr
 
 &lt;!-- #### Regarding Vector Spaces
 Also while Minkowski Spacetime is generally considered a vector space, if the set of values that the coordinates come from aren't frost he same Field of numbers (the space coordinates come from the real numbers and the time coordinate comes from the imaginary numbers) then it technically can't be considered a vector space. This is another blow to the imaginary time version of spacetime. --&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Escaping the Event Horizon</title>
-   <link href="http://localhost:4000/escape-a-black-hole/"/>
-   <updated>2018-01-17T00:00:00-05:00</updated>
-   <id>http://localhost:4000/escape-a-black-hole</id>
-   <content type="html">&lt;h2 id=&quot;what-are-you-talking-about&quot;&gt;What are you talking about?&lt;/h2&gt;
-&lt;p&gt;The event horizon of a black hole is often describes as &lt;em&gt;the point of no return&lt;/em&gt; where &lt;em&gt;not even light can escape its gravitational pull&lt;/em&gt;. While this is true, the picture is a bit more complicated than that. In truth no matter what direction you point yourself, once in the event horizon, all paths lead to the center of the black hole. In a black hole, time and space themselves are switched and thus the only way out is to go backwards in time, not space.&lt;/p&gt;
-
-&lt;p&gt;What? Total nonsense? Lets unpack this…&lt;/p&gt;
-
-&lt;h2 id=&quot;spacetime&quot;&gt;Spacetime&lt;/h2&gt;
-&lt;p&gt;The theory of general relativity posits that gravity is a result of the curvature of space.&lt;/p&gt;
-
-&lt;p&gt;Consider how fast we would have to travel to escape a black hole. Whatever that speed is (depending on the mass of the black hole you’d imagine) it has to be greater than the speed of light, right? Well yes it would but, as Einstein showed us in his theory of general relativity, going faster than the speed of light is equivalent to going back in time.&lt;/p&gt;
 </content>
  </entry>
  

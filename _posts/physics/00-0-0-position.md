@@ -44,7 +44,7 @@ In quantum mechanics, the state of a particle is given (and completely described
 
 $$\psi:\mathbb{R^4}\rightarrow \mathbb{C}$$
 
-The probability of observing a particle at position $x$ at time $t$ is given by $\left \vert \psi \right \vert^2$. This implies that, in the one dimensional case, for a given time $t$:
+The probability of observing a particle at position $x$ at time $t$ is given by $\left \vert \psi \right \vert^2$. This implies that, in the one dimensional case, at a given time $t$:
 
 $$\int_{-\infty}^{\infty}\left | \psi(x) \right |^2 dx=1$$
 

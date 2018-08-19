@@ -30,7 +30,7 @@ Well… I don’t know. Why is it that a 17 year old, a day before his birthday,
 
 <!-- HOW CAN CULPABILITY EXITTS WITHOUT FREE WILL -->
 
-Well someone has to be culpable. You have to draw the line in the sand somewhere. Why? Well it seems that punishment may not be dealt out to punish those who have evil intent but instead, to make an affirmation that the effects their intent caused are unwanted.
+Well someone has to be culpable. You have to draw the line in the sand somewhere. Why? Well it seems that punishment may not be dealt out to punish those who have evil intent but, instead, to make an affirmation that the effects their intent caused are unwanted.
 
 When a court decides that the pedestrian killer should serve 15 years in jail and the red light offender shouldn’t, they may very well be considering his intent, but they also consider the effects his intent has caused, whether it be in his control or not. A judiciary in a government, I’d say, serves to remove and make examples of those who do not follow the norms of society and who may pose danger to it. Whether or not they are more culpable then the next driver they still killed someone and so we make sure to discourage this behavior not because we care for their intent but because we care for their effects.
 

@@ -56,7 +56,7 @@ Below is a list of common classifications of binary relations based on what prop
 ### Uniqueness Properties
 
 <details>
-<summary><h4 class="inline">Injective</h4></summary>
+<summary><strong>Injective</strong></summary>
 A relation is called injective if for all $b$ on the right side, the $a$ on the left side is unique in the expression $aRb$. More formally, $R$ is injective if:
 
 $$(\forall a_1,a_2\in A, \forall b\in B)\ a_1Rb\wedge a_2Rb\implies a_1=a_2$$
@@ -65,7 +65,7 @@ Because of this property, injective relations are also called <b>left-unique</b>
 </details>
 
 <details>
-<summary><h4 class="inline">Functional</h4></summary>
+<summary><strong>Functional</strong></summary>
 A relation is functional if for all $a$ on the left side, the $b$ on the right is unique. Relations that fulfill this property are called <b>functions</b> and are said to have a unique output $b$ for a given input $a$. Formally this means:
 
 $$(\forall a\in A, \forall b_1,b_2\in B)\ aRb_1\wedge aRb_2\implies b_1=b_2$$
@@ -74,14 +74,14 @@ Similar to injective relations, a functional relation is also called <b>right-un
 </details>
 
 <!-- <details>
-<summary><h4 class="inline">One-to-One</h4></summary>
+<summary><strong>One-to-One</strong></summary>
 One-to-One functions are relations that are both functional and injective. These functions map every element in their domain to a unique element in the range. These are also called <b>injective functions</b> because being functional is implied in the classification 'function'.
 </details> -->
 
 ### Totality Properties
 
 <details>
-<summary><h4 class="inline">Left-Total</h4></summary>
+<summary><strong>Left-Total</strong></summary>
 A left-total relation means that for every element in $A$ there is at least one element in $B$ that it is related to:
 
 $$(\forall a\in A,\exists b\in B)\ aRb$$
@@ -90,7 +90,7 @@ Note that all functions are automatically left-total, but not all left-total rel
 </details>
 
 <details>
-<summary><h4 class="inline">Surjective</h4></summary>
+<summary><strong>Surjective</strong></summary>
 A relation is surjective every element in $B$ is related to at least one element in $A$:
 
 $$(\exists a\in A,\forall b\in B)\ aRb$$
@@ -101,7 +101,7 @@ Similar to left-total relations, surjective relations are also called <b>right-t
 ### Other Properties
 The following properties only apply to homogenous relations (i.e $R\subset X\times X$).
 <details>
-<summary><h4 class="inline">Reflexive and Irreflexive</h4></summary>
+<summary><strong>Reflexive and Irreflexive</strong></summary>
 A relation is reflexive if all elements relate to themselves:
 
 $$(\forall x\in X)\ xRx$$
@@ -114,7 +114,7 @@ An example of this is the $lt$ relation.
 </details>
 
 <details>
-<summary><h4 class="inline">Symmetric</h4></summary>
+<summary><strong>Symmetric</strong></summary>
 A relation is symmetric if $xRy$ means $yRx$ as well:
 
 $$(\forall x,y\in X)\ xRy \implies yRx$$
@@ -123,7 +123,7 @@ Some examples of this include the proportionality $\propto$ of functions and sim
 </details>
 
 <details>
-<summary><h4 class="inline">Anti-Symmetric</h4></summary>
+<summary><strong>Anti-Symmetric</strong></summary>
 A relation is anti-symmetric if when $xRy$ and $yRx$ are both true, then $x=y$:
 
 $$(\forall x,y\in X)\ xRy\wedge yRx \implies x=y$$
@@ -133,7 +133,7 @@ Some examples of this include the $\le$ relation,
 </details>
 
 <details>
-<summary><h4 class="inline">Transitive</h4></summary>
+<summary><strong>Transitive</strong></summary>
 A relation is transitive if $xRy$ and $yRz$ means $xRz$:
 
 $$(\forall x,y,z\in X)\ xRy \wedge yRz\implies xRz$$
@@ -142,7 +142,7 @@ Relations like $\le$ and similarity $\sim$ are transitive.
 </details>
 
 <details>
-<summary><h4 class="inline">Trichotomous</h4></summary>
+<summary><strong>Trichotomous</strong></summary>
 A relation is trichotomus if for any two element in $X$ either $xRy$, $yRx$, or $x=y$ holds. But only 1 of those three options:
 
 $$(\forall x,y\in X)\ (xRy \oplus yRx \oplus x=y) \wedge \neg(xRy \wedge yRx \wedge x=y)$$
@@ -154,12 +154,12 @@ The most common example of this is as a property of the real numbers under the $
 This is a list of different operations and transformations on one or more sets.
 
 <details>
-<summary><h4 class="inline">Union and Intersection</h4></summary>
+<summary><strong>Union and Intersection</strong></summary>
 The union of two relations that are on the same sets is equivalent to 'adding/or-ing' them together. For example, the union of the $\lt$ and the $=$ relations is $\le$. Intersection has similar behavior except it displays an 'and' effect.
 </details>
 
 <details>
-<summary><h4 class="inline">Complement</h4></summary>
+<summary><strong>Complement</strong></summary>
 The complement of a relation $R\subset A\times B$ is simply all the of the ordered pairs in $A\times B$ that are <i>not</i> in $R$. We can think of this as the ordinary complement of the relation denoted $R^\complement$ where $A\times B$ is the universal set:
 
 $$R^\complement=\{(a,b)\in A\times B\mid (a,b)\not\in R\}$$
@@ -168,7 +168,7 @@ For example, the complement of less than or equal to is greater than: $\le^\comp
 </details>
 
 <details>
-<summary><h4 class="inline">Logical Negation of a Relation</h4></summary>
+<summary><strong>Logical Negation of a Relation</strong></summary>
 Notice that negating a relation is equivalent to asserting its complement (assuming both elements being related are in the universal set). Put more formally, if $a\in A$ and $b\in B$:
 
 $$\neg(aRb)\equiv aR^\complement b$$
@@ -177,7 +177,7 @@ It is this negating property that allows us to replace statements like $\neg(a\l
 </details>
 
 <details>
-<summary><h4 class="inline">Composition</h4></summary>
+<summary><strong>Composition</strong></summary>
 The composition of two relations $R\subset A\times B$ and $S\subset B\times C$ is a sort of 'product' denoted $S\circ R\subset A\times C$:
 
 $$S\circ R=\{(a,c)\in A\times C\mid\exists b:(a,b)\in R\wedge(b,c)\in S\}$$
@@ -188,7 +188,7 @@ An intuitive example of this can be found in kinship relations. The composition 
 </details>
 
 <details>
-<summary><h4 class="inline">Converse</h4></summary>
+<summary><strong>Converse</strong></summary>
 The converse of a relation $R$ is denoted $R^\top$ and is simply the opposite of $R$. In other words, if $(x,y)$ is in a relation then $(y,x)$ is in its converse. Formally, for a relation $R\subset A\circ B$:
 
 $$R^\top=\{(b,a)\in B\times A\mid (a,b)\in R\}$$
@@ -199,7 +199,7 @@ For example, the converse of the greater than relation $\ge^\top$ is $\le$. Simi
 </details>
 
 <details>
-<summary><h4 class="inline">Inverse</h4></summary>
+<summary><strong>Inverse</strong></summary>
 Some relations are <i>invertible</i> meaning that for a relation $R$ there exists another relation $X$ such that $X\circ R=I$, called <b>left-invertible</b>, or if there exists a relation $Y$ such that $R\circ Y=I$, called <b>right-invertible</b>. When both the left and right inverses concincide, the inverse $R^{-1}$ is simply equivalent to the converse $R^\top$. <p></p>
 
 For example, the composition "is child of" $\circ$ "is parent of" returns the identity relation (i.e "is you"). As such, they are inverses of each other.

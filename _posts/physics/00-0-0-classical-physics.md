@@ -4,7 +4,7 @@ title: Classical Physics
 date: 2018-03-24
 tags: physics classical-mechanics
 ---
-Classical physics refers to the branches of physics that were conceived of prior to quantum mechanics and Einsteinian relativity. These branches of physics are more than sufficient for non-relativistic speeds and non-quantum scales. Moreover, they serve as starting points for understanding and deriving modern physics.
+Classical physics refers to the branches of physics that were conceived of prior to quantum mechanics and Einsteinian relativity. These branches of physics are more than sufficient in describing phenomena at non-relativistic speeds and non-quantum scales. Moreover, they serve as starting points for understanding and deriving modern physics.
 
 ## Classical Mechanics
 Classical mechanics is the study of the motion of massive bodies. It is usually split into two main branches:
@@ -40,7 +40,7 @@ Classical electromagnetism studies the properties and interactions of electric c
   - Resistance
 
 ## Thermodynamics
-Thermodynamics is the study of the workings d effects of heat, or **thermal energy**, in a system. Some main topics include:
+Thermodynamics is the study of the workings and effects of heat, or **thermal energy**, in a system. Some main topics include:
 
 - The 4 Laws of Thermodynamics
 - Entropy

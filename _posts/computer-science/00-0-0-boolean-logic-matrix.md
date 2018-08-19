@@ -59,7 +59,7 @@ Since a bit has only $2$ possible input states and $2$ possible output states, t
 
 <!-- #### Identity -->
 <details>
-<summary><h4 class="inline">Identity</h4></summary>
+<summary><strong>Identity</strong></summary>
 The identity gate takes an input and returns it as is (i.e $f(x)=x$). To represent it we simply use the $2 \times 2$ identity matrix:
 
 $$
@@ -74,11 +74,11 @@ And indeed, if we apply the gate to both $|0\rangle$ and $|1\rangle$ we find:
 $$I_2|0\rangle=|0\rangle$$
 
 $$I_2|1\rangle=|1\rangle$$
-</details><p></p>
+</details>
 
 <!-- #### Negation -->
 <details>
-<summary><h4 class="inline">Negation (NOT)</h4></summary>
+<summary><strong>Negation (NOT)</strong></summary>
 The negation gate takes an input and flips it (i.e $f(x)=\neg x$). We can represent it with the following matrix:
 
 $$
@@ -93,11 +93,11 @@ Applying the gate to both $|0\rangle$ and $|1\rangle$ we find:
 $$X|0\rangle=|1\rangle$$
 
 $$X|1\rangle=|0\rangle$$
-</details><p></p>
+</details>
 
 <!-- #### Constant 0 -->
 <details>
-<summary><h4 class="inline">Constant 0</h4></summary>
+<summary><strong>Constant 0</strong></summary>
 Outputs $0$ regardless of input (i.e $f(x)=0$). We can represent it with the following matrix:
 
 $$
@@ -112,11 +112,11 @@ Applying the gate to both $|0\rangle$ and $|1\rangle$ we find:
 $$C_0|0\rangle=|0\rangle$$
 
 $$C_0|1\rangle=|0\rangle$$
-</details><p></p>
+</details>
 
 <!-- #### Constant 1 -->
 <details>
-<summary><h4 class="inline">Constant 1</h4></summary>
+<summary><strong>Constant 1</strong></summary>
 Outputs $1$ regardless of input (i.e $f(x)=1$). We can represent it with the following matrix:
 
 $$
@@ -131,7 +131,7 @@ Applying the gate to both $|0\rangle$ and $|1\rangle$ we find:
 $$C_1|0\rangle=|1\rangle$$
 
 $$C_1|1\rangle=|1\rangle$$
-</details><p></p>
+</details>
 
 ## Multiple Bits
 Before we can introduce the matrices that correspond to binary operations, we need a way of representing multiple bits as a single vector. This is achieved via the **tensor product** of the $|0\rangle$ and $|1\rangle$ vectors. For example, the two bit state $|10\rangle$ can be constructed as follows:
@@ -178,7 +178,7 @@ $$|a\rangle\otimes|b\rangle\otimes|c\rangle\otimes\cdots=|abc\cdots\rangle$$
 Now that we can represent bit strings as vectors, it is possible construct operations that take in $2$ bits and output $1$ bit. While there are technically $2^{2^2}=16$ possible binary bit operations, we'll only construct the more useful ones like `AND`, `OR`, `XOR`, etc.
 
 <details>
-<summary><h4 class="inline">OR</h4></summary>
+<summary><strong>OR</strong></summary>
 The <code>OR</code> gate represents logical disjunction (i.e $f(x,y)=x\vee y$) and is represented by the following matrix:
 
 $$
@@ -197,11 +197,11 @@ $$\text{OR}|01\rangle=|1\rangle$$
 $$\text{OR}|10\rangle=|1\rangle$$
 
 $$\text{OR}|11\rangle=|1\rangle$$
-</details><p></p>
+</details>
 
 
 <details>
-<summary><h4 class="inline">AND</h4></summary>
+<summary><strong>AND</strong></summary>
 The <code>AND</code> gate represents logical conjunction (i.e $f(x,y)=x\wedge y$) and is represented by the following matrix:
 
 $$
@@ -220,11 +220,11 @@ $$\text{AND}|01\rangle=|0\rangle$$
 $$\text{AND}|10\rangle=|0\rangle$$
 
 $$\text{AND}|11\rangle=|1\rangle$$
-</details><p></p>
+</details>
 
 
 <details>
-<summary><h4 class="inline">XOR</h4></summary>
+<summary><strong>XOR</strong></summary>
 The <code>XOR</code> gate represents exclusive disjunction (i.e $f(x,y)=x\oplus y$) and is represented by the following matrix:
 
 $$
@@ -243,11 +243,11 @@ $$\text{XOR}|01\rangle=|1\rangle$$
 $$\text{XOR}|10\rangle=|1\rangle$$
 
 $$\text{XOR}|11\rangle=|0\rangle$$
-</details><p></p>
+</details>
 
 
 <details>
-<summary><h4 class="inline">Equality (XNOR)</h4></summary>
+<summary><strong>Equality (XNOR)</strong></summary>
 Equality checks if two bits are equivalent (i.e $f(x,y)=x\iff y$) and is represented by the following matrix:
 
 $$
@@ -257,7 +257,7 @@ $$
   \end{pmatrix}
 $$
 
-<i>Notice that equality is equivalent to the negation of XOR, <code>XNOR</code> (i.e $x\leftrightarrow y=\neg(x\oplus y)$) meaning all the $0$'s and $1$'s in the <code>XOR</code> matrix are simply swapped to form the equality one.</i><p></p>
+<i>Notice that equality is equivalent to the negation of XOR, <code>XNOR</code> (i.e $x\leftrightarrow y=\neg(x\oplus y)$) meaning all the $0$'s and $1$'s in the <code>XOR</code> matrix are simply swapped to form the equality one.</i>
 
 Applying the gate to all two bit states we find:
 
@@ -268,11 +268,11 @@ $$\text{IFF}|01\rangle=|0\rangle$$
 $$\text{IFF}|10\rangle=|0\rangle$$
 
 $$\text{IFF}|11\rangle=|1\rangle$$
-</details><p></p>
+</details>
 
 
 <details>
-<summary><h4 class="inline">Implication (IF)</h4></summary>
+<summary><strong>Implication (IF)</strong></summary>
 Material implication is a statement of one variable's dependence on another (i.e $f(x,y)=x\implies y$). It's more commonly referred to as an <code>IF</code> statement in computer science.
 
 $$
@@ -353,7 +353,7 @@ $$
   \right)
 $$
 
-</details><p></p> -->
+</details> -->
 
 
 <details>
@@ -361,7 +361,7 @@ $$
 
 <img src="/assets/comp_sci/half_adder_proof.jpg" style="centerme" alt="half adder proof">
 
-</details><p></p>
+</details>
 
 #### Shortcut
 While we could multiply through all the matrices and solve for what the matrix representation of a given boolean circuit is, there is a way to bypass all this. Just like how we constructed the unary and binary logic gates, we can simply construct a **truth table** of what inputs give what outputs. We then construct the matrix from this, setting the $i$th column as the output of the half-adder given the input $i$. Doing this we arrive at the following:
@@ -399,4 +399,4 @@ $$\text{CNOT}|10\rangle=|11\rangle$$
 $$\text{CNOT}|11\rangle=|10\rangle$$
 
 While the gate may not seem particularly interesting (and indeed it isn't as far as classical computing is concerned) its real power shows when the control bit is in a superposition of both $|0\rangle$ and $|1\rangle$, ala quantum computing.
-</details><p></p>
+</details>

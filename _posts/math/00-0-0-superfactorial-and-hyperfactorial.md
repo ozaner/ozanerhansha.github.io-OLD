@@ -17,9 +17,9 @@ The function is a mapping from the natural numbers to itself:
 
 $$!:\mathbb{N}\rightarrow\mathbb{N}$$
 
-*Using [analytic continuation](https://en.wikipedia.org/wiki/Analytic_continuation) the factorial function can be generalized to complex numbers. The resulting function is dubbed the $\Gamma(z)$ [gamma function](https://en.wikipedia.org/wiki/Gamma_function).*
+*Using [analytic continuation](https://en.wikipedia.org/wiki/Analytic_continuation), the factorial function can be generalized to complex numbers. The resulting function is dubbed the $\Gamma(z)$ [gamma function](https://en.wikipedia.org/wiki/Gamma_function).*
 
-While there is much to discuss about the factorial function, this post concerns itself with two particular extensions of the factorial. Namely the superfactorial and the hyperfactorial.
+While there is much to discuss about the factorial function, this post concerns itself with two particular variations of the factorial. Namely the superfactorial and the hyperfactorial.
 
 <!--more-->
 

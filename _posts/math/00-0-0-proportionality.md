@@ -14,7 +14,7 @@ For example, a circle's circumference $C$ is proportional to it's diameter $d$. 
 #### Finer Points and Motivation
 Notice that proportionality satisfies the three criterion for an equivalence relation: reflexivity, symmetry, and transitivity (we'll prove this later). By imagining proportionality as a relation (or as we'll see a family of relations) on the set of real/complex valued functions, we can begin to formally define it.
 
-## Definition on $\mathbb{R}^S$
+## Definition on $\mathbb{R}$-Valued Functions
 Proportionality is a family of equivalence relations on the set(s) of real valued functions (i.e the set of functions $f:S\to\mathbb{R}$ where $S$ is an arbitrary set):
 
 $$\propto_{\mathbb{R}^S}\equiv\{(x,y)\in(\mathbb{R}^S)^2\mid\exists k\in \mathbb{R}:kx=y\}$$
@@ -23,7 +23,9 @@ And because $x\propto_{\mathbb{R}^S}y$ is shorthand for $(x,y)\in\propto_{\mathb
 
 $$x\propto_{\mathbb{R}^S}y\equiv(\exists k\in \mathbb{R})\ kx=y$$
 
-Notice that the set of functions from $S$ to $\mathbb{R}$ forms a vector space with its underlying field being the real numbers. Every choice of $S$ produces a different proportionality relation, hence it being a family. The notation $\propto_{\mathbb{R}^S}$ was chosen instead of $\propto_S$ in order to match the more general definition of proportionality given below.
+Notice that the set of functions from $S$ to $\mathbb{R}$ forms a vector space with its underlying field being the real numbers. Every choice of $S$ produces a different proportionality relation, hence it being a family.
+
+*The notation $\propto_{\mathbb{R}^S}$ was chosen instead of $\propto_S$ in order to match the more general definition of proportionality given below.*
 
 #### Other Number Systems
 - $\mathbb{C,Q}$: Note that the above definition works just as well with both complex and rational valued functions and scalars. This is because, like the real numbers, they both form fields with inverse elements.
@@ -44,7 +46,8 @@ When the context is clear, we can omit the subscript denoteing what vector space
 ## Proof of Equivalence Relation
 Using the general definition above, we will prove $\propto$ forms an equivalence relation by showing it has the reflexive, symmetric, and transitive properties.
 
-#### Reflexivity
+<details>
+<summary><strong>Reflexivity</strong></summary>
 Proportionality is reflexive, i.e $\mathbf{v}\propto \mathbf{v}$ for all $\mathbf{v}\in V$, because every vector space has an identity scalar that when multiplied by any of its vectors, produces that same vector.
 
 $$(\exists e\in F)(\forall \mathbf{v}\in V)\ e\mathbf{v}=\mathbf{v}$$
@@ -54,8 +57,10 @@ This is enough to prove reflexivity because if $\mathbf{x}=\mathbf{y}$ then the 
 $$\mathbf{x}\propto_V \mathbf{x}\equiv(\exists k\in F)\ k\mathbf{x}=\mathbf{x}$$
 
 and there will always exist a $k\in F$, that satisfies $k\mathbf{x}=\mathbf{x}$ and it will always be the identity scalar $e$ (aka the number $1$ in the case of the complex/real/etc. numbers).
+</details>
 
-#### Symmetry
+<details>
+<summary><strong>Symmetry</strong></summary>
 Proportionality is symmetric, i.e $\mathbf{u}\propto \mathbf{v}\implies \mathbf{v}\propto \mathbf{u}$ for all $\mathbf{u},\mathbf{v}\in V$, because every scalar in a vector space has a multiplicative inverse:
 
 $$(\forall s\in F)(\exists s^{-1}\in F)\ ss^{-1}=e$$
@@ -72,8 +77,10 @@ e\mathbf{x}&=k^{-1}\mathbf{y}\\
 \end{align}$$
 
 Notice that, because $k^{-1}\in F$, this is precisely the definition of $\mathbf{y}\propto \mathbf{x}$. And so we have shown that for any two vectors in $V$ that if $\mathbf{x}\propto \mathbf{y}$ then $\mathbf{y}\propto \mathbf{x}$. And that if the proportionality constant of $\mathbf{x}\propto \mathbf{y}$ is $k$ then the constant between $\mathbf{y}\propto \mathbf{x}$ is $k^{-1}$.
+</details>
 
-#### Transitivity
+<details>
+<summary><strong>Transitivity</strong></summary>
 The last property to prove is transitivity. Proportionality being transitive means that $\mathbb{u}\propto\mathbb{v}\wedge\mathbb{v}\propto\mathbb{w}\implies\mathbb{u}\propto\mathbb{w}$. This can be shown by noting:
 
 $$\mathbb{u}\propto\mathbb{v}\iff k_1\mathbb{u}=\mathbb{v}$$
@@ -89,3 +96,4 @@ k_2k_1\mathbb{u}&=\mathbb{w}\\
 \end{align}$$
 
 Because field multiplication is associative, the scalar $k_2k_1$ is the proportionality constant between $\mathbb{u}$ and $\mathbb{w}$ implying that $\mathbb{u}\propto\mathbb{w}$. And thus we have proved the transitivity of the proportional relation.
+</details>

@@ -249,7 +249,7 @@
 <h4 id="finer-points-and-motivation">Finer Points and Motivation</h4>
 <p>Notice that proportionality satisfies the three criterion for an equivalence relation: reflexivity, symmetry, and transitivity (we’ll prove this later). By imagining proportionality as a relation (or as we’ll see a family of relations) on the set of real/complex valued functions, we can begin to formally define it.</p>
 
-<h2 id="definition-on-mathbbrs">Definition on $\mathbb{R}^S$</h2>
+<h2 id="definition-on-mathbbr-valued-functions">Definition on $\mathbb{R}$-Valued Functions</h2>
 <p>Proportionality is a family of equivalence relations on the set(s) of real valued functions (i.e the set of functions $f:S\to\mathbb{R}$ where $S$ is an arbitrary set):</p>
 
 <script type="math/tex; mode=display">\propto_{\mathbb{R}^S}\equiv\{(x,y)\in(\mathbb{R}^S)^2\mid\exists k\in \mathbb{R}:kx=y\}</script>
@@ -258,7 +258,9 @@
 
 <script type="math/tex; mode=display">x\propto_{\mathbb{R}^S}y\equiv(\exists k\in \mathbb{R})\ kx=y</script>
 
-<p>Notice that the set of functions from $S$ to $\mathbb{R}$ forms a vector space with its underlying field being the real numbers. Every choice of $S$ produces a different proportionality relation, hence it being a family. The notation $\propto_{\mathbb{R}^S}$ was chosen instead of $\propto_S$ in order to match the more general definition of proportionality given below.</p>
+<p>Notice that the set of functions from $S$ to $\mathbb{R}$ forms a vector space with its underlying field being the real numbers. Every choice of $S$ produces a different proportionality relation, hence it being a family.</p>
+
+<p><em>The notation $\propto_{\mathbb{R}^S}$ was chosen instead of $\propto_S$ in order to match the more general definition of proportionality given below.</em></p>
 
 <h4 id="other-number-systems">Other Number Systems</h4>
 <ul>
@@ -281,53 +283,57 @@
 <h2 id="proof-of-equivalence-relation">Proof of Equivalence Relation</h2>
 <p>Using the general definition above, we will prove $\propto$ forms an equivalence relation by showing it has the reflexive, symmetric, and transitive properties.</p>
 
-<h4 id="reflexivity">Reflexivity</h4>
-<p>Proportionality is reflexive, i.e $\mathbf{v}\propto \mathbf{v}$ for all $\mathbf{v}\in V$, because every vector space has an identity scalar that when multiplied by any of its vectors, produces that same vector.</p>
+<details>
+<summary><strong>Reflexivity</strong></summary>
+Proportionality is reflexive, i.e $\mathbf{v}\propto \mathbf{v}$ for all $\mathbf{v}\in V$, because every vector space has an identity scalar that when multiplied by any of its vectors, produces that same vector.
 
-<script type="math/tex; mode=display">(\exists e\in F)(\forall \mathbf{v}\in V)\ e\mathbf{v}=\mathbf{v}</script>
+$$(\exists e\in F)(\forall \mathbf{v}\in V)\ e\mathbf{v}=\mathbf{v}$$
 
-<p>This is enough to prove reflexivity because if $\mathbf{x}=\mathbf{y}$ then the definition becomes:</p>
+This is enough to prove reflexivity because if $\mathbf{x}=\mathbf{y}$ then the definition becomes:
 
-<script type="math/tex; mode=display">\mathbf{x}\propto_V \mathbf{x}\equiv(\exists k\in F)\ k\mathbf{x}=\mathbf{x}</script>
+$$\mathbf{x}\propto_V \mathbf{x}\equiv(\exists k\in F)\ k\mathbf{x}=\mathbf{x}$$
 
-<p>and there will always exist a $k\in F$, that satisfies $k\mathbf{x}=\mathbf{x}$ and it will always be the identity scalar $e$ (aka the number $1$ in the case of the complex/real/etc. numbers).</p>
+and there will always exist a $k\in F$, that satisfies $k\mathbf{x}=\mathbf{x}$ and it will always be the identity scalar $e$ (aka the number $1$ in the case of the complex/real/etc. numbers).
+</details>
 
-<h4 id="symmetry">Symmetry</h4>
-<p>Proportionality is symmetric, i.e $\mathbf{u}\propto \mathbf{v}\implies \mathbf{v}\propto \mathbf{u}$ for all $\mathbf{u},\mathbf{v}\in V$, because every scalar in a vector space has a multiplicative inverse:</p>
+<details>
+<summary><strong>Symmetry</strong></summary>
+Proportionality is symmetric, i.e $\mathbf{u}\propto \mathbf{v}\implies \mathbf{v}\propto \mathbf{u}$ for all $\mathbf{u},\mathbf{v}\in V$, because every scalar in a vector space has a multiplicative inverse:
 
-<script type="math/tex; mode=display">(\forall s\in F)(\exists s^{-1}\in F)\ ss^{-1}=e</script>
+$$(\forall s\in F)(\exists s^{-1}\in F)\ ss^{-1}=e$$
 
-<p><em>Where $e$ is the identity scalar. Also note that the field’s multiplication is commutative.</em></p>
+*Where $e$ is the identity scalar. Also note that the field's multiplication is commutative.*
 
-<p>So assuming two vectors are proportional $\mathbf{x}\propto_V \mathbf{y}$ there must exist some $k\in F$ that satisfies $k\mathbf{x}=\mathbf{y}$. If we multiply both sides by $k^{-1}$, which too must exist as we’ve stated, we are left with:</p>
+So assuming two vectors are proportional $\mathbf{x}\propto_V \mathbf{y}$ there must exist some $k\in F$ that satisfies $k\mathbf{x}=\mathbf{y}$. If we multiply both sides by $k^{-1}$, which too must exist as we've stated, we are left with:
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-k\mathbf{x}&=\mathbf{y}\\
- k^{-1}k\mathbf{x}&=k^{-1}\mathbf{y}\\
-e\mathbf{x}&=k^{-1}\mathbf{y}\\
-\mathbf{x}&=k^{-1}\mathbf{y}
-\end{align} %]]></script>
+$$\begin{align}
+k\mathbf{x}&amp;=\mathbf{y}\\
+ k^{-1}k\mathbf{x}&amp;=k^{-1}\mathbf{y}\\
+e\mathbf{x}&amp;=k^{-1}\mathbf{y}\\
+\mathbf{x}&amp;=k^{-1}\mathbf{y}
+\end{align}$$
 
-<p>Notice that, because $k^{-1}\in F$, this is precisely the definition of $\mathbf{y}\propto \mathbf{x}$. And so we have shown that for any two vectors in $V$ that if $\mathbf{x}\propto \mathbf{y}$ then $\mathbf{y}\propto \mathbf{x}$. And that if the proportionality constant of $\mathbf{x}\propto \mathbf{y}$ is $k$ then the constant between $\mathbf{y}\propto \mathbf{x}$ is $k^{-1}$.</p>
+Notice that, because $k^{-1}\in F$, this is precisely the definition of $\mathbf{y}\propto \mathbf{x}$. And so we have shown that for any two vectors in $V$ that if $\mathbf{x}\propto \mathbf{y}$ then $\mathbf{y}\propto \mathbf{x}$. And that if the proportionality constant of $\mathbf{x}\propto \mathbf{y}$ is $k$ then the constant between $\mathbf{y}\propto \mathbf{x}$ is $k^{-1}$.
+</details>
 
-<h4 id="transitivity">Transitivity</h4>
-<p>The last property to prove is transitivity. Proportionality being transitive means that $\mathbb{u}\propto\mathbb{v}\wedge\mathbb{v}\propto\mathbb{w}\implies\mathbb{u}\propto\mathbb{w}$. This can be shown by noting:</p>
+<details>
+<summary><strong>Transitivity</strong></summary>
+The last property to prove is transitivity. Proportionality being transitive means that $\mathbb{u}\propto\mathbb{v}\wedge\mathbb{v}\propto\mathbb{w}\implies\mathbb{u}\propto\mathbb{w}$. This can be shown by noting:
 
-<script type="math/tex; mode=display">\mathbb{u}\propto\mathbb{v}\iff k_1\mathbb{u}=\mathbb{v}</script>
+$$\mathbb{u}\propto\mathbb{v}\iff k_1\mathbb{u}=\mathbb{v}$$
 
-<script type="math/tex; mode=display">\mathbb{v}\propto\mathbb{w}\iff k_2\mathbb{v}=\mathbb{w}</script>
+$$\mathbb{v}\propto\mathbb{w}\iff k_2\mathbb{v}=\mathbb{w}$$
 
-<p>So if we have $\mathbb{u}\propto\mathbb{v}\wedge\mathbb{v}\propto\mathbb{w}$ then we also know there exists two constants $k_1$ and $k_2$ that correspond to each. Now we can simply substitute $k_1\mathbb{u}$ in for $\mathbb{v}$ in the following way:</p>
+So if we have $\mathbb{u}\propto\mathbb{v}\wedge\mathbb{v}\propto\mathbb{w}$ then we also know there exists two constants $k_1$ and $k_2$ that correspond to each. Now we can simply substitute $k_1\mathbb{u}$ in for $\mathbb{v}$ in the following way:
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-k_1\mathbb{u}&=\mathbb{v}\\
-k_2\mathbb{v}&=\mathbb{w}\\
-k_2k_1\mathbb{u}&=\mathbb{w}\\
-\end{align} %]]></script>
+$$\begin{align}
+k_1\mathbb{u}&amp;=\mathbb{v}\\
+k_2\mathbb{v}&amp;=\mathbb{w}\\
+k_2k_1\mathbb{u}&amp;=\mathbb{w}\\
+\end{align}$$
 
-<p>Because field multiplication is associative, the scalar $k_2k_1$ is the proportionality constant between $\mathbb{u}$ and $\mathbb{w}$ implying that $\mathbb{u}\propto\mathbb{w}$. And thus we have proved the transitivity of the proportional relation.</p>
+Because field multiplication is associative, the scalar $k_2k_1$ is the proportionality constant between $\mathbb{u}$ and $\mathbb{w}$ implying that $\mathbb{u}\propto\mathbb{w}$. And thus we have proved the transitivity of the proportional relation.
+</details>
 
 </div>
 
@@ -346,7 +352,7 @@ k_2k_1\mathbb{u}&=\mathbb{w}\\
     
       <li>
         <h3>
-          <a href="/boolean-linear-transformations/">
+          <a href="/boolean-logic-matrix/">
             Boolean Logic as Matrix Multiplication
             <small>18 Jul 2018</small>
           </a>

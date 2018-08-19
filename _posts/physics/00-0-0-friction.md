@@ -15,7 +15,7 @@ Dry Friction is a force that opposes the motion of two surfaces that slide again
 - [Coefficient of Friction](#coefficient-of-friction) -->
 
 #### Where does Friction come from?
-The frictional force is not fundamental and is instead a useful abstraction of the complex electromagnetic interactions between two surfaces that come into contact with each other. The forces created by these interactions can, in a variety of cases, be thought of as a singular force that is proportional to the normal force.
+The frictional force is not fundamental and is instead a useful abstraction of the complex electromagnetic interactions between two surfaces that come into contact with each other. The sum total of the forces created by these interactions can, in a variety of cases, be thought of as a singular force that is proportional to the normal force.
 
 ![complexfriction](/assets/physics/friction_between_surfaces.png?style=centerme){:width="450px"}
 

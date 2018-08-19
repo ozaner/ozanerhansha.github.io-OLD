@@ -91,7 +91,7 @@ $$\pi_1(P)=\bigcup\bigcap P=a$$
 
   $$\bigcup \{x\}=\{a\mid \left(\exists b\in \{x\}\right)a\in b\}$$
 
-  Since there is only one element in ${b}$, namely $x$, there is only one set $b$ could be: $x$. So, we can say the following:
+  Since there is only one element in $\{x\}$, namely $x$, there is only one set $b$ could be: $x$. So, we can say the following:
 
   $$\bigcup \{x\}=\{a\mid a\in x\}$$
 

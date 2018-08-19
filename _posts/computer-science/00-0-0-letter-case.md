@@ -14,7 +14,7 @@ The topic of letter case is a detailed one, involving the history and linguistic
 ## Writing/Typing
 <!-- ### This is sentence case. -->
 <details>
-<summary><h3 class="inline">This is sentence case.</h3></summary>
+<summary><strong>This is sentence case.</strong></summary>
 This is the standard letter case used in the English language. The beginning of sentences are capitalized along with proper nouns (i.e names, places, days of the week, etc.). Each sentence ends with some punctuation (ex <i>.</i>, <i>?</i>, <i>!</i>).
 
 Here's an example:
@@ -24,10 +24,10 @@ Here's an example:
 You'd see this case when reading anything somewhat formal, like emails, a person's/company's website, text documents, academic papers, etc.
 
 </details>
-<p></p>
+
 <!-- ### This is Title Case -->
 <details>
-<summary><h3 class="inline">This is Title Case</h3></summary>
+<summary><strong>This is Title Case</strong></summary>
 This is the case used when typing out titles. Title case has all words capitalized barring a limited subset that are deemed <i>common</i> (unless they are the first word, in which case they are capitalized). That includes words like <i>or</i>, <i>but</i>, <i>if</i>, <i>the</i>, <i>in</i>, etc.
 
 Here's an example:
@@ -36,10 +36,10 @@ Here's an example:
 
 Academic papers, emails (think subject line), music, videogames and just about any media or document has a title. Its important to note that there is no agreement on what exactly the subset of words not capitalized in title case is. That said, all titles more or less follow the same pattern of capitalization.
 </details>
-<p></p>
+
 <!-- ### ALL CAPS -->
 <details>
-<summary><h3 class="inline">ALL CAPS</h3></summary>
+<summary><strong>ALL CAPS</strong></summary>
 Writing in all uppercase letters, or <b>all caps</b> as it's more commonly known, is taken to convey yelling when typed out, especially when texting or commenting on the internet. That said, all caps is also used in titles and headlines in order to make the text stand out more.
 
 Here's what it looks like:
@@ -49,10 +49,10 @@ Here's what it looks like:
 
 Typing in all caps can be done by holding down the <code>SHIFT</code> key while typing or, more commonly, by simply turning on the <code>CAPS LOCK</code> key. Smartphone keyboards also have similar functionality with caps lock being activated by double tapping the shift key, for example. Acronyms are written in all caps (NATO, USA, ASAP) unless the acronym has had enough usage to become a fully fledged word like <i>radar</i> (<b>ra</b>dio <b>d</b>etection <b>a</b>nd <b>r</b>anging) or <i>laser</i> (<b>l</b>ight <b>a</b>mplification by <b>s</b>timulated <b>e</b>mission of <b>r</b>adiation)
 </details>
-<p></p>
+
 <!-- ### all lowercase -->
 <details>
-<summary><h3 class="inline">all lowercase</h3></summary>
+<summary><strong>all lowercase</strong></summary>
 All lowercase is typically used when writing something informally and quickly, such as a text message or an internet comment (if the commenter isn't particularly concerned with the comment's presentation). This is because the message is not worth the extra effort of pressing the <code>SHIFT</code> key (especially on smartphone keyboards). File extensions are also conventionally all lowercase.
 
 Here's what it looks like:
@@ -72,7 +72,7 @@ Virtually all programming languages do not allow whitespace in identifier names.
 
 <!-- ### CamelCase -->
 <details>
-<summary><h3 class="inline">CamelCase</h3></summary>
+<summary><strong>CamelCase</strong></summary>
 Camel case has the first letter of every word in the phrase/identifier capitalized. And so capitalization serves as camel case's delimiter. Lower camel case has the first letter of the first word in the identifier lowercased while upper camel case does not:
 
 <!-- >UpperCamelCase -->
@@ -89,10 +89,10 @@ Used in
   <li>Variables names in Java (lower)</li>
 </ul>
 </details>
-<p></p>
+
 <!-- ### snake_case -->
 <details>
-<summary><h3 class="inline">snake_case</h3></summary>
+<summary><strong>snake_case</strong></summary>
 Snake case delimits words using underscores ( _ ). And like the others, There are uppercase and lowercase variants:
 <!-- >UPPER_SNAKE_CASE -->
 <blockquote>UPPER_SNAKE_CASE</blockquote>
@@ -110,10 +110,10 @@ Used in
   <li>Functions and classes in the C & C++ Standard Library (lower)</li>
 </ul>
 </details>
-<p></p>
+
 <!-- ### kebab-case & Train-Case -->
 <details>
-<summary><h3 class="inline">kebab-case & Train-Case</h3></summary>
+<summary><strong>kebab-case & Train-Case</strong></summary>
 Kebab case is similar to snake case, as well as used in similar situations, with its only difference being the use of hyphens (-) to delimit words rather than underscores:
 <!-- >UPPER-KEBAB-CASE -->
 <blockquote>UPPER-KEBAB-CASE</blockquote>
@@ -136,7 +136,7 @@ Used in
 ## Other
 <!-- ### StUdLyCaPs -->
 <details>
-<summary><h3 class="inline">StUdLyCaPs</h3></summary>
+<summary><strong>StUdLyCaPs</strong></summary>
 Studly caps is meant to be a joking letter case used to convey sarcasm. It has roots in mocking the seemingly random capitalization of products and services that was popular during the mid 1990s to early 2000s. A sort of in-joke amongst people on the internet at the time.
 <!-- >tHeqUIckBrOwNFOxjuMpsOvERtHeLazYdOg -->
 <blockquote>tHeqUIckBrOwNFOxjuMpsOvERtHeLazYdOg</blockquote>
