@@ -31,7 +31,7 @@ creating a family of equivalence relations, indexed by some real number $c$.
 - $n!\sim \sqrt{2\pi n}\left(\frac{n}{e}\right)^n$ (Stirling's approximation)
 
 ## Proof of Equivalence Relation
-To qualify as an equivalence relation, a given relation must satisfy the three properties given below:
+To qualify as an equivalence relation, a given [relation](\relations) must satisfy the three properties given below:
 
 <details>
 <summary><strong>Reflexivity</strong></summary>
@@ -87,7 +87,5 @@ Where asymptotically slower means $\lim\limits_{x\to \infty}{\frac{f(x)}{g(x)}}$
 
 <details>
 <summary><strong>Big $\Theta$ Notation</strong></summary>
-Big $\Theta$ notation and asymptotic equivalence are very similar, with the only difference being that the constants of the most significant terms must match up for $f(x)\sim g(x)$ but not for $f(x)\in \Theta(g(x))$. As such, we can define big $\Theta$ in a similar manner to asymptotic equivalence:
-
-$$f(x)\in \Theta(g(x))\equiv\exists c:\lim_{x\to\infty}{\frac{f(x)}{g(x)}}=c$$
+Big $\Theta$ notation and asymptotic equivalence are very similar, with the only difference being that the constants of the most significant terms must match up for $f(x)\sim g(x)$ but not for $f(x)\in \Theta(g(x))$.
 </details>

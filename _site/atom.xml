@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-08-27T00:36:12-04:00</updated>
+ <updated>2018-08-27T01:08:07-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -46,7 +46,7 @@
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;proof-of-equivalence-relation&quot;&gt;Proof of Equivalence Relation&lt;/h2&gt;
-&lt;p&gt;To qualify as an equivalence relation, a given relation must satisfy the three properties given below:&lt;/p&gt;
+&lt;p&gt;To qualify as an equivalence relation, a given &lt;a href=&quot;\relations&quot;&gt;relation&lt;/a&gt; must satisfy the three properties given below:&lt;/p&gt;
 
 &lt;details&gt;
 &lt;summary&gt;&lt;strong&gt;Reflexivity&lt;/strong&gt;&lt;/summary&gt;
@@ -102,9 +102,7 @@ Where asymptotically slower means $\lim\limits_{x\to \infty}{\frac{f(x)}{g(x)}}$
 
 &lt;details&gt;
 &lt;summary&gt;&lt;strong&gt;Big $\Theta$ Notation&lt;/strong&gt;&lt;/summary&gt;
-Big $\Theta$ notation and asymptotic equivalence are very similar, with the only difference being that the constants of the most significant terms must match up for $f(x)\sim g(x)$ but not for $f(x)\in \Theta(g(x))$. As such, we can define big $\Theta$ in a similar manner to asymptotic equivalence:
-
-$$f(x)\in \Theta(g(x))\equiv\exists c:\lim_{x\to\infty}{\frac{f(x)}{g(x)}}=c$$
+Big $\Theta$ notation and asymptotic equivalence are very similar, with the only difference being that the constants of the most significant terms must match up for $f(x)\sim g(x)$ but not for $f(x)\in \Theta(g(x))$.
 &lt;/details&gt;
 </content>
  </entry>
