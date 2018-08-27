@@ -65,27 +65,11 @@ I'll do this later, but this should be clear as asymptotic equivalence forms equ
 ## Relation to Algorithmic Complexity
 When dealing with the time and space complexity of algorithms, asymptotic analysis (either in the form defined above or via **Bachmann–Landau notation**) is used to compare the efficiency of different algorithms by stripping away unnecessary constants and minor terms that correspond to the different preconditions and runtime environments that these algorithms may run on.
 
-<details>
-<summary><strong>Big $O$ Notation</strong></summary>
-Big $O$ notation can be redefined in terms of asymptotic equivalence in the following way:
+In particular, the limit definitions of the Bachmann–Landau notation are very similar to that of asymptotic equivalence. In fact, we can phrase Big $O$, $\Omega$, and $\Theta$ notation in terms of asymptotic growth.
 
-$$f(x)\in O(g(x))\equiv \exists c:cg(x)\text{ grows asymptotically faster than } f(x)$$
+$$f(x)\in O(g(x))\equiv \exists c\not=0:cg(x)\text{ grows asymptotically faster than } f(x)$$
 
-Where asymptotically faster means $\lim\limits_{x\to \infty}{\frac{f(x)}{g(x)}}$ evaluates to something that is or grows larger than $1$ (like $5$, $x$, $x^3$, $x!$, etc.)
-<p></p>
-</details>
 
-<details>
-<summary><strong>Big $\Omega$ Notation</strong></summary>
-Similarly, big $\Omega$ notation can be characterized as:
+$$f(x)\in \Omega(g(x))\equiv \exists c\not=0:cg(x)\text{ grows asymptotically slower than } f(x)$$
 
-$$f(x)\in \Omega(g(x))\equiv \exists c:cg(x)\text{ grows asymptotically slower than } f(x)$$
-
-Where asymptotically slower means $\lim\limits_{x\to \infty}{\frac{f(x)}{g(x)}}$ evaluates to something that is or grows smaller than $1$ (like $.25$, $\frac{1}{x}$, $x^{-3}$, $\frac{1}{x!}$, etc.)
-<p></p>
-</details>
-
-<details>
-<summary><strong>Big $\Theta$ Notation</strong></summary>
-Big $\Theta$ notation and asymptotic equivalence are very similar, with the only difference being that the constants of the most significant terms must match up for $f(x)\sim g(x)$ but not for $f(x)\in \Theta(g(x))$.
-</details>
+$$f(x)\in \Omega(g(x))\equiv \exists c\not=0:cg(x) \sim f(x)$$

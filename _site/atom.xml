@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-08-27T01:08:07-04:00</updated>
+ <updated>2018-08-27T13:32:22-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -80,30 +80,13 @@ I'll do this later, but this should be clear as asymptotic equivalence forms equ
 &lt;h2 id=&quot;relation-to-algorithmic-complexity&quot;&gt;Relation to Algorithmic Complexity&lt;/h2&gt;
 &lt;p&gt;When dealing with the time and space complexity of algorithms, asymptotic analysis (either in the form defined above or via &lt;strong&gt;Bachmann–Landau notation&lt;/strong&gt;) is used to compare the efficiency of different algorithms by stripping away unnecessary constants and minor terms that correspond to the different preconditions and runtime environments that these algorithms may run on.&lt;/p&gt;
 
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Big $O$ Notation&lt;/strong&gt;&lt;/summary&gt;
-Big $O$ notation can be redefined in terms of asymptotic equivalence in the following way:
+&lt;p&gt;In particular, the limit definitions of the Bachmann–Landau notation are very similar to that of asymptotic equivalence. In fact, we can phrase Big $O$, $\Omega$, and $\Theta$ notation in terms of asymptotic growth.&lt;/p&gt;
 
-$$f(x)\in O(g(x))\equiv \exists c:cg(x)\text{ grows asymptotically faster than } f(x)$$
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x)\in O(g(x))\equiv \exists c\not=0:cg(x)\text{ grows asymptotically faster than } f(x)&lt;/script&gt;
 
-Where asymptotically faster means $\lim\limits_{x\to \infty}{\frac{f(x)}{g(x)}}$ evaluates to something that is or grows larger than $1$ (like $5$, $x$, $x^3$, $x!$, etc.)
-&lt;p&gt;&lt;/p&gt;
-&lt;/details&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x)\in \Omega(g(x))\equiv \exists c\not=0:cg(x)\text{ grows asymptotically slower than } f(x)&lt;/script&gt;
 
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Big $\Omega$ Notation&lt;/strong&gt;&lt;/summary&gt;
-Similarly, big $\Omega$ notation can be characterized as:
-
-$$f(x)\in \Omega(g(x))\equiv \exists c:cg(x)\text{ grows asymptotically slower than } f(x)$$
-
-Where asymptotically slower means $\lim\limits_{x\to \infty}{\frac{f(x)}{g(x)}}$ evaluates to something that is or grows smaller than $1$ (like $.25$, $\frac{1}{x}$, $x^{-3}$, $\frac{1}{x!}$, etc.)
-&lt;p&gt;&lt;/p&gt;
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Big $\Theta$ Notation&lt;/strong&gt;&lt;/summary&gt;
-Big $\Theta$ notation and asymptotic equivalence are very similar, with the only difference being that the constants of the most significant terms must match up for $f(x)\sim g(x)$ but not for $f(x)\in \Theta(g(x))$.
-&lt;/details&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x)\in \Omega(g(x))\equiv \exists c\not=0:cg(x) \sim f(x)&lt;/script&gt;
 </content>
  </entry>
  
