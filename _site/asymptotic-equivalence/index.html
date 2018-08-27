@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <title>
     
-      On Culpability &middot; Ozaner
+      Asymptotic Equivalence &middot; Ozaner
     
   </title>
 
@@ -232,66 +232,115 @@
 
     <div class="content container">
       <div class="post">
-  <h1 class="post-title">On Culpability</h1>
-  <span class="post-date">25 Apr 2018</span>
+  <h1 class="post-title">Asymptotic Equivalence</h1>
+  <span class="post-date">26 Aug 2018</span>
   <span>[
   
     
-    <a href="/tag/philosophy"><code class="highligher-rouge"><nobr>philosophy</nobr></code>&nbsp;</a>
+    <a href="/tag/math"><code class="highligher-rouge"><nobr>math</nobr></code>&nbsp;</a>
+  
+    
+    <a href="/tag/calculus"><code class="highligher-rouge"><nobr>calculus</nobr></code>&nbsp;</a>
+  
+    
+    <a href="/tag/relations"><code class="highligher-rouge"><nobr>relations</nobr></code>&nbsp;</a>
   
 ]</span>
-  <h3 id="scenario-1">Scenario 1</h3>
-<p>Consider a man driving home late after having a few too many drinks. While drunk he decides to run a red light. Nothing comes of it and he manages to arrive home safe and sound.</p>
+  <p>Asymptotic analysis is a way of describing the limiting behavior of functions. Two functions are <strong>asymptotically equivalent</strong> if they have the same limiting behavior, in a sense they are <em>proportional at infinity</em>.</p>
 
-<h3 id="scenario-2">Scenario 2</h3>
-<p>Now imagine this same man, under the same circumstances; a man who had just as many drinks, a man who decided to drive while inebriated at the same late hour.</p>
+<p>This boils down to whether or not the functions have the same <em>most significant term</em>, that is the term that grows the quickest as $x$ increases. For example in the function $x^3+5x^2+x$ this role falls on the $x^3$ term as the other terms become insignificant as $x\to\infty$.</p>
 
-<p>This time he still decides to run the red light but, unlike in the other situation, he blindsides a little girl walking across the street. He puts on the brakes as soon as he sees her but, his reaction time being delayed, runs over and kills her.</p>
+<p>Some important results in asymptotic analysis include the prime number theorem and Stirling’s approximation.</p>
 
 <!--more-->
 
-<h3 id="result">Result</h3>
-<p>Gruesome to be sure, but consider the repercussions of his actions in both cases. In one instance the man got home scot-free, with nothing more than a traffic ticket looming over his head.</p>
+<h2 id="definition">Definition</h2>
+<p>Asymptotic equivalence is an equivalence relation, denoted $\sim$, on the set of $\mathbb{R}$-valued functions (or $\mathbb{C}$, $\mathbb{Z}^+$, etc.) and is defined as such:</p>
 
-<p>In the other instance however, he was charged and convicted of manslaughter.</p>
+<script type="math/tex; mode=display">f(x)\sim g(x)\equiv\lim_{x\to\infty}{\frac{f(x)}{g(x)}}=1</script>
 
-<p>Both instances of the man made the same, poor decisions up to the point of the accident. And neither wanted to kill anybody that night. What then delineates these two situations? What makes the man a murderer in one situation and in the other just a drunk driver?</p>
+<p>The definition can also be extended to limits not just to infinity but any constant:</p>
 
-<p>Luck.</p>
+<script type="math/tex; mode=display">f(x)\sim g(x) \ \ (\text{as }x\to c)\equiv\lim_{x\to c}{\frac{f(x)}{g(x)}}=1</script>
 
-<h3 id="why">Why?</h3>
-<p>If you were to ask someone whether the one who ran the red-light with no consequence or the one who ran over a pedestrian was more guilty, you would have good reason to believe they would say the pedestrian killer. And even if we were to concede that, at least by intent, the two drunk men were equally culpable, it still just doesn’t sit right with us. How could it be that a murderer is just as evil as a reckless driver? Does it seem wrong that one be locked up for life and the other lose a star on their driver’s license?</p>
+<p>creating a family of equivalence relations, indexed by some real number $c$.</p>
 
-<p>Well… I don’t know. Why is it that a 17 year old, a day before his birthday, isn’t fully responsible for his actions but once he is 18 is considered independent by the law? How can anybody be culpable if they are a product of their parents, environment, genetics, etc? What is culpability?</p>
+<h4 id="examples">Examples</h4>
+<ul>
+  <li>$x^2\sim x^2+2x$ (most significant terms are same)</li>
+  <li>$4n!\sim 4n!+3n^2$ (most significant terms are same)</li>
+  <li>$2x^2\not\sim x^2$ (different constants on most significant terms)</li>
+  <li>$x^3\not\sim x^4$ (different most significant terms)</li>
+  <li>$n!\sim \sqrt{2\pi n}\left(\frac{n}{e}\right)^n$ (Stirling’s approximation)</li>
+</ul>
 
-<!-- HOW CAN CULPABILITY EXITTS WITHOUT FREE WILL -->
+<h2 id="proof-of-equivalence-relation">Proof of Equivalence Relation</h2>
+<p>To qualify as an equivalence relation, a given relation must satisfy the three properties given below:</p>
 
-<p>Well someone has to be culpable. You have to draw the line in the sand somewhere. Why? Well it seems that punishment may not be dealt out to punish those who have evil intent but, instead, to make an affirmation that the effects their intent caused are unwanted.</p>
+<details>
+<summary><strong>Reflexivity</strong></summary>
+Asymptotic equivalence is reflexive meaning that for all functions $f\sim f$. This is obvious as:
 
-<p>When a court decides that the pedestrian killer should serve 15 years in jail and the red light offender shouldn’t, they may very well be considering his intent, but they also consider the effects his intent has caused, whether it be in his control or not. A judiciary in a government, I’d say, serves to remove and make examples of those who do not follow the norms of society and who may pose danger to it. Whether or not they are more culpable then the next driver they still killed someone and so we make sure to discourage this behavior not because we care for their intent but because we care for their effects.</p>
+$$\forall f:\lim_{x\to\infty}{\frac{f(x)}{f(x)}}=1$$
 
-<p>“But wait”, many have objected, “punishing people for their actions in this way rather than offering support to correct their behavior is a misguided tactic in reducing these unwanted effects (stealing, murder, crime, etc.).” And indeed, these objectors may very well be right. So then is there another reason that such methods are employed if more effective ones exist? Is there something fundamental about punishing others for actions a society does not like? I think so.</p>
+<i>Assuming $f(x)$ doesn't approach $0$.</i>
+</details>
 
-<p>It boils down to our own feelings and behaviors. <em>‘Our’</em> meaning human. Of course it doesn’t feel right to punish the two men in the same way, whether we lock them both up or simply take a star from both of their licenses. We <em>FEEL</em> like they must be dealt with differently. It is ultimately our own instincts that drive our behavior as a society. The system of justice we have today is not the product not careful reasoning, but an ad-hoc solution. One begot from evolutionary processes. Processes that took time immemorial just to get a working solution, much less an optimal one…</p>
+<details>
+<summary><strong>Symmetry</strong></summary>
+Asymptotic equivalence is symmetric meaning that $f\sim g\implies g\sim f$. To prove this notice that the only term that "survives" after the limit is taken of both $f$ and $g$ is the most significant one:
 
-<!-- MORALITY TOO IS NOTHING BUT A FARCE TO COVER UP OUR INSTINCTS -->
+$$\lim_{x\to\infty}{\frac{f(x)}{g(x)}}=\frac{\lim\limits_{x\to \infty}{f(x)}}{\lim\limits_{x\to \infty}{g(x)}}=\frac{f_s(x)}{g_s(x)}$$
 
-<!-- EVOLTION IS A HIGYH LEVEL LOCAL OPTIMIZATION PROBLEM -->
+<i>Where $f_s$ and $g_s$ represent the most significant terms of $f$ and $g$ respectively.</i>
+
+Notice that $f(x)\sim g(x)$ is the same as saying $f_s/g_s=1$. And so we can deduce the following:
+
+$$\frac{f_s(x)}{g_s(x)}=1=\frac{g_s(x)}{f_s(x)}=\lim_{x\to\infty}{\frac{g(x)}{f(x)}}\equiv g(x)\sim f(x)$$
+
+Thus we have proved $f\sim g\implies g\sim f$.
+</details>
+
+<details>
+<summary><strong>Transitivity</strong></summary>
+I'll do this later, but this should be clear as asymptotic equivalence forms equivalence classes characterized by the most significant terms of functions.
+</details>
+
+<h2 id="relation-to-algorithmic-complexity">Relation to Algorithmic Complexity</h2>
+<p>When dealing with the time and space complexity of algorithms, asymptotic analysis (either in the form defined above or via <strong>Bachmann–Landau notation</strong>) is used to compare the efficiency of different algorithms by stripping away unnecessary constants and minor terms that correspond to the different preconditions and runtime environments that these algorithms may run on.</p>
+
+<details>
+<summary><strong>Big $O$ Notation</strong></summary>
+Big $O$ notation can be redefined in terms of asymptotic equivalence in the following way:
+
+$$f(x)\in O(g(x))\equiv \exists c:cg(x)\text{ grows asymptotically faster than } f(x)$$
+
+Where asymptotically faster means $\lim\limits_{x\to \infty}{\frac{f(x)}{g(x)}}$ evaluates to something that is or grows larger than $1$ (like $5$, $x$, $x^3$, $x!$, etc.)
+<p></p>
+</details>
+
+<details>
+<summary><strong>Big $\Omega$ Notation</strong></summary>
+Similarly, big $\Omega$ notation can be characterized as:
+
+$$f(x)\in \Omega(g(x))\equiv \exists c:cg(x)\text{ grows asymptotically slower than } f(x)$$
+
+Where asymptotically slower means $\lim\limits_{x\to \infty}{\frac{f(x)}{g(x)}}$ evaluates to something that is or grows smaller than $1$ (like $.25$, $\frac{1}{x}$, $x^{-3}$, $\frac{1}{x!}$, etc.)
+<p></p>
+</details>
+
+<details>
+<summary><strong>Big $\Theta$ Notation</strong></summary>
+Big $\Theta$ notation and asymptotic equivalence are very similar, with the only difference being that the constants of the most significant terms must match up for $f(x)\sim g(x)$ but not for $f(x)\in \Theta(g(x))$. As such, we can define big $\Theta$ in a similar manner to asymptotic equivalence:
+
+$$f(x)\in \Theta(g(x))\equiv\exists c:\lim_{x\to\infty}{\frac{f(x)}{g(x)}}=c$$
+</details>
 
 </div>
 
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/asymptotic-equivalence/">
-            Asymptotic Equivalence
-            <small>26 Aug 2018</small>
-          </a>
-        </h3>
-      </li>
     
       <li>
         <h3>
@@ -307,6 +356,15 @@
           <a href="/relations/">
             Relations
             <small>12 Aug 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/boolean-logic-in-linear-algebra/">
+            Boolean Logic in Linear Algebra
+            <small>18 Jul 2018</small>
           </a>
         </h3>
       </li>

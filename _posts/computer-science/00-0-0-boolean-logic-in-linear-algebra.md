@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Boolean Logic as Matrix Multiplication
+title: Boolean Logic in Linear Algebra
 date: 2018-07-18
-tags: computer-science math
+tags: computer-science math linear-algebra
 ---
 ## Introduction
 Computation is usually formulated via boolean logic, which in turn makes use of logical connectives like $\wedge,\vee, \neg$ along with the binary digits $0$ and $1$, representing false and true respectively.

@@ -119,7 +119,7 @@ A relation is symmetric if $xRy$ means $yRx$ as well:
 
 $$(\forall x,y\in X)\ xRy \implies yRx$$
 
-Some examples of this include the proportionality $\propto$ of functions and similarity $\sim$ of geometric objects.
+Some examples of this include the [proportionality](/proportionality) $\propto$ of functions and similarity $\sim$ of geometric objects.
 </details>
 
 <details>

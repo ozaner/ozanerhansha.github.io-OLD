@@ -65,7 +65,7 @@ Proportionality is symmetric, i.e $\mathbf{u}\propto \mathbf{v}\implies \mathbf{
 
 $$(\forall s\in F)(\exists s^{-1}\in F)\ ss^{-1}=e$$
 
-*Where $e$ is the identity scalar. Also note that the field's multiplication is commutative.*
+<i>Where $e$ is the identity scalar. Also note that a field's multiplication is commutative.</i><p></p>
 
 So assuming two vectors are proportional $\mathbf{x}\propto_V \mathbf{y}$ there must exist some $k\in F$ that satisfies $k\mathbf{x}=\mathbf{y}$. If we multiply both sides by $k^{-1}$, which too must exist as we've stated, we are left with:
 

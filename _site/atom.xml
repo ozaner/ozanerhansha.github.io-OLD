@@ -4,13 +4,110 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-08-19T11:23:30-04:00</updated>
+ <updated>2018-08-27T00:36:12-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Asymptotic Equivalence</title>
+   <link href="http://localhost:4000/asymptotic-equivalence/"/>
+   <updated>2018-08-26T00:00:00-04:00</updated>
+   <id>http://localhost:4000/asymptotic-equivalence</id>
+   <content type="html">&lt;p&gt;Asymptotic analysis is a way of describing the limiting behavior of functions. Two functions are &lt;strong&gt;asymptotically equivalent&lt;/strong&gt; if they have the same limiting behavior, in a sense they are &lt;em&gt;proportional at infinity&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;This boils down to whether or not the functions have the same &lt;em&gt;most significant term&lt;/em&gt;, that is the term that grows the quickest as $x$ increases. For example in the function $x^3+5x^2+x$ this role falls on the $x^3$ term as the other terms become insignificant as $x\to\infty$.&lt;/p&gt;
+
+&lt;p&gt;Some important results in asymptotic analysis include the prime number theorem and Stirling’s approximation.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
+&lt;p&gt;Asymptotic equivalence is an equivalence relation, denoted $\sim$, on the set of $\mathbb{R}$-valued functions (or $\mathbb{C}$, $\mathbb{Z}^+$, etc.) and is defined as such:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x)\sim g(x)\equiv\lim_{x\to\infty}{\frac{f(x)}{g(x)}}=1&lt;/script&gt;
+
+&lt;p&gt;The definition can also be extended to limits not just to infinity but any constant:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x)\sim g(x) \ \ (\text{as }x\to c)\equiv\lim_{x\to c}{\frac{f(x)}{g(x)}}=1&lt;/script&gt;
+
+&lt;p&gt;creating a family of equivalence relations, indexed by some real number $c$.&lt;/p&gt;
+
+&lt;h4 id=&quot;examples&quot;&gt;Examples&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;$x^2\sim x^2+2x$ (most significant terms are same)&lt;/li&gt;
+  &lt;li&gt;$4n!\sim 4n!+3n^2$ (most significant terms are same)&lt;/li&gt;
+  &lt;li&gt;$2x^2\not\sim x^2$ (different constants on most significant terms)&lt;/li&gt;
+  &lt;li&gt;$x^3\not\sim x^4$ (different most significant terms)&lt;/li&gt;
+  &lt;li&gt;$n!\sim \sqrt{2\pi n}\left(\frac{n}{e}\right)^n$ (Stirling’s approximation)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;proof-of-equivalence-relation&quot;&gt;Proof of Equivalence Relation&lt;/h2&gt;
+&lt;p&gt;To qualify as an equivalence relation, a given relation must satisfy the three properties given below:&lt;/p&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Reflexivity&lt;/strong&gt;&lt;/summary&gt;
+Asymptotic equivalence is reflexive meaning that for all functions $f\sim f$. This is obvious as:
+
+$$\forall f:\lim_{x\to\infty}{\frac{f(x)}{f(x)}}=1$$
+
+&lt;i&gt;Assuming $f(x)$ doesn't approach $0$.&lt;/i&gt;
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Symmetry&lt;/strong&gt;&lt;/summary&gt;
+Asymptotic equivalence is symmetric meaning that $f\sim g\implies g\sim f$. To prove this notice that the only term that &quot;survives&quot; after the limit is taken of both $f$ and $g$ is the most significant one:
+
+$$\lim_{x\to\infty}{\frac{f(x)}{g(x)}}=\frac{\lim\limits_{x\to \infty}{f(x)}}{\lim\limits_{x\to \infty}{g(x)}}=\frac{f_s(x)}{g_s(x)}$$
+
+&lt;i&gt;Where $f_s$ and $g_s$ represent the most significant terms of $f$ and $g$ respectively.&lt;/i&gt;
+
+Notice that $f(x)\sim g(x)$ is the same as saying $f_s/g_s=1$. And so we can deduce the following:
+
+$$\frac{f_s(x)}{g_s(x)}=1=\frac{g_s(x)}{f_s(x)}=\lim_{x\to\infty}{\frac{g(x)}{f(x)}}\equiv g(x)\sim f(x)$$
+
+Thus we have proved $f\sim g\implies g\sim f$.
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Transitivity&lt;/strong&gt;&lt;/summary&gt;
+I'll do this later, but this should be clear as asymptotic equivalence forms equivalence classes characterized by the most significant terms of functions.
+&lt;/details&gt;
+
+&lt;h2 id=&quot;relation-to-algorithmic-complexity&quot;&gt;Relation to Algorithmic Complexity&lt;/h2&gt;
+&lt;p&gt;When dealing with the time and space complexity of algorithms, asymptotic analysis (either in the form defined above or via &lt;strong&gt;Bachmann–Landau notation&lt;/strong&gt;) is used to compare the efficiency of different algorithms by stripping away unnecessary constants and minor terms that correspond to the different preconditions and runtime environments that these algorithms may run on.&lt;/p&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Big $O$ Notation&lt;/strong&gt;&lt;/summary&gt;
+Big $O$ notation can be redefined in terms of asymptotic equivalence in the following way:
+
+$$f(x)\in O(g(x))\equiv \exists c:cg(x)\text{ grows asymptotically faster than } f(x)$$
+
+Where asymptotically faster means $\lim\limits_{x\to \infty}{\frac{f(x)}{g(x)}}$ evaluates to something that is or grows larger than $1$ (like $5$, $x$, $x^3$, $x!$, etc.)
+&lt;p&gt;&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Big $\Omega$ Notation&lt;/strong&gt;&lt;/summary&gt;
+Similarly, big $\Omega$ notation can be characterized as:
+
+$$f(x)\in \Omega(g(x))\equiv \exists c:cg(x)\text{ grows asymptotically slower than } f(x)$$
+
+Where asymptotically slower means $\lim\limits_{x\to \infty}{\frac{f(x)}{g(x)}}$ evaluates to something that is or grows smaller than $1$ (like $.25$, $\frac{1}{x}$, $x^{-3}$, $\frac{1}{x!}$, etc.)
+&lt;p&gt;&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Big $\Theta$ Notation&lt;/strong&gt;&lt;/summary&gt;
+Big $\Theta$ notation and asymptotic equivalence are very similar, with the only difference being that the constants of the most significant terms must match up for $f(x)\sim g(x)$ but not for $f(x)\in \Theta(g(x))$. As such, we can define big $\Theta$ in a similar manner to asymptotic equivalence:
+
+$$f(x)\in \Theta(g(x))\equiv\exists c:\lim_{x\to\infty}{\frac{f(x)}{g(x)}}=c$$
+&lt;/details&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Proportionality</title>
@@ -80,7 +177,7 @@ Proportionality is symmetric, i.e $\mathbf{u}\propto \mathbf{v}\implies \mathbf{
 
 $$(\forall s\in F)(\exists s^{-1}\in F)\ ss^{-1}=e$$
 
-*Where $e$ is the identity scalar. Also note that the field's multiplication is commutative.*
+&lt;i&gt;Where $e$ is the identity scalar. Also note that a field's multiplication is commutative.&lt;/i&gt;&lt;p&gt;&lt;/p&gt;
 
 So assuming two vectors are proportional $\mathbf{x}\propto_V \mathbf{y}$ there must exist some $k\in F$ that satisfies $k\mathbf{x}=\mathbf{y}$. If we multiply both sides by $k^{-1}$, which too must exist as we've stated, we are left with:
 
@@ -235,7 +332,7 @@ A relation is symmetric if $xRy$ means $yRx$ as well:
 
 $$(\forall x,y\in X)\ xRy \implies yRx$$
 
-Some examples of this include the proportionality $\propto$ of functions and similarity $\sim$ of geometric objects.
+Some examples of this include the [proportionality](/proportionality) $\propto$ of functions and similarity $\sim$ of geometric objects.
 &lt;/details&gt;
 
 &lt;details&gt;
@@ -324,10 +421,10 @@ For example, the composition &quot;is child of&quot; $\circ$ &quot;is parent of&
  </entry>
  
  <entry>
-   <title>Boolean Logic as Matrix Multiplication</title>
-   <link href="http://localhost:4000/boolean-logic-matrix/"/>
+   <title>Boolean Logic in Linear Algebra</title>
+   <link href="http://localhost:4000/boolean-logic-in-linear-algebra/"/>
    <updated>2018-07-18T00:00:00-04:00</updated>
-   <id>http://localhost:4000/boolean-logic-matrix</id>
+   <id>http://localhost:4000/boolean-logic-in-linear-algebra</id>
    <content type="html">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Computation is usually formulated via boolean logic, which in turn makes use of logical connectives like $\wedge,\vee, \neg$ along with the binary digits $0$ and $1$, representing false and true respectively.&lt;/p&gt;
 
