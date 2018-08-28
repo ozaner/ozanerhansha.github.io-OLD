@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <title>
     
-      Linear Algebra Posts &middot; Ozaner
+      Iverson Bracket &middot; Ozaner
     
   </title>
 
@@ -236,67 +236,150 @@
 
     <div class="content container">
       <div class="post">
-<h1>Linear Algebra Posts</h1>
-<ul>
-
-  <li><a href="/boolean-logic-in-linear-algebra/">Boolean Logic in Linear Algebra</a> (18 Jul 2018)<br>
+  <h1 class="post-title">Iverson Bracket</h1>
+  <span class="post-date">27 Aug 2018</span>
+  <span>[
+  
     
-  </li>
+    <a href="/tag/math"><code class="highligher-rouge"><nobr>math</nobr></code>&nbsp;</a>
+  
+    
+    <a href="/tag/computer-science"><code class="highligher-rouge"><nobr>computer-science</nobr></code>&nbsp;</a>
+  
+]</span>
+  <p>The Iverson bracket is a notation that equals $1$ if a given proposition $P$ is true and $0$ if it’s false. That is to say:</p>
 
+<script type="math/tex; mode=display">% <![CDATA[
+[P]={\begin{cases}1&{P}\\0&{\neg P}\end{cases}} %]]></script>
+
+<p>The Iverson bracket can also be used with propositional functions:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+[P(x)]={\begin{cases}1&{P(x)}\\0&{\neg P(x)}\end{cases}} %]]></script>
+
+<p>Below I will attempt to formally define the propositional case and propositional function cases separately.</p>
+
+<!--more-->
+
+<h2 id="propositional-definition">Propositional Definition</h2>
+<p>We can think of the notation $[P]$ as being shorthand for the following:</p>
+
+<script type="math/tex; mode=display">[P]\equiv\bigcup\{x\in 2\mid(P\wedge x=1) \vee (\neg P\wedge x=0)\}</script>
+
+<p><em>Where $2=\{0,1\}$ as per its construction in the <a href="\natural-numbers">natural numbers</a>.</em></p>
+
+<p>The set builder notation above will end up being $\{0\}$ or $\{1\}$ depending on whether $P$ is true. The arbitrary union, denoted $\bigcup$, outside of the set ‘unwraps’ the singleton set so that we are left with just $0$ or $1$.</p>
+
+<p>This allows us to truly equate $[P]$ with some value in the set-theoretic sense.</p>
+
+<h2 id="propositional-function-definition">Propositional Function Definition</h2>
+<p>While we could simply use the same definition above and replace all instances of $P$ with $P(x)$, it would be more useful to define $[P(x)]$ as a full blown set-theoretic function.</p>
+
+<p>And indeed, assuming $x$ is an element of some domain $S$ (i.e $x\in S$), we can do just that. However, to aid in defining $[P(x)]$  we’ll call it $Q(x)$ for the time being:</p>
+
+<script type="math/tex; mode=display">Q\equiv\{(x,y)\mid(P(x)\wedge y=1)\vee(\neg P(x)\wedge y=0)\}</script>
+
+<details>
+<summary><strong>Proof of Function</strong></summary>
+We can see that $Q$ is a set of ordered pairs $(x,y)$ with $x\in S$ and $y\in 2$. This implies that $Q\subset S\times 2$. However, this only shows that $[P(x)]$ is a <a href="\relations">relation</a>.
+<p></p>
+
+To show that $Q$ is a function, we must show that it is right-unique. This should be clear as for any given $x$, $y=0\oplus y=1$. This is because both $P(x)$ and $\neg P(x)$ can't be true due to the law of the excluded middle.
+</details>
+<p></p>
+
+<p>And so $Q$ is a function $Q:S\to 2$. We can now say $Q(x)\equiv [P(x)]$, to return to our original notation.</p>
+
+<h2 id="properties">Properties</h2>
+<p>Below are some of the immediate properties of the Iverson bracket. We can think of these equalities as bridges between the first order logic notions of truth (true vs. false) and the arithmetic/computational notion of truth ($0$ vs. $1$).</p>
+
+<ul>
+  <li>$[P\wedge Q]=[P][Q]$</li>
+  <li>$[P\vee Q]=[P]+[Q]-[P][Q]$</li>
+  <li>$[\neg P]=1-[P]$</li>
 </ul>
+
+<h2 id="examples">Examples</h2>
+<p>Iverson brackets are, in many cases, a more natural way to express certain conditional functions or properties.</p>
+
+<details open="">
+<summary><strong>Kronecker Delta</strong></summary>
+The Iverson bracket generalizes the Kronecker delta function $\delta_{ij}$ to any proposition $P$ rather than the specific proposition $i=j$. We can express the Kronecker delta function in terms of the Iverson bracket as so:
+
+$$\delta_{ij}=[i=j]$$
+</details>
+
+<details open="">
+<summary><strong>Trichotomy of $\mathbb{R}$</strong></summary>
+Iverson brackets afford a much simpler way to convey the property of trichotomy, or any list of mutually exclusive conditions.
+
+$$[a&lt;b]+[a=b]+[a&gt;b]=1$$
+</details>
+
+<details>
+<summary><strong>Sign Function</strong></summary>
+$$\operatorname{sgn}(x)=[x&gt;0]-[x&lt;0]$$
+</details>
+
+<details>
+<summary><strong>Absolute Value</strong></summary>
+$$ {\begin{aligned}|x|&amp;=x\cdot \operatorname {sgn}(x)\\&amp;=x([x&gt;0]-[x&lt;0])\end{aligned}}$$
+</details>
+
+<details>
+<summary><strong>Heaviside Step Function</strong></summary>
+$$H(x)=[x&gt;0]$$
+</details>
+
+<details>
+<summary><strong>Min and Max</strong></summary>
+$$\min(x,y)=x[x\leq y]+y[x&gt;y]$$
+
+$$\max(x,y)=x[x&gt;y]+y[x\leq y]$$
+</details>
+
+<details>
+<summary><strong>Ceiling and Floor</strong></summary>
+$$\lceil x\rceil =\sum _{n}n\cdot [n-1&lt;x\leq n]$$
+
+$$\lfloor x\rfloor =\sum _{n}n\cdot [n\leq x&lt;n+1]$$
+</details>
+
 </div>
-<hr>
-<footer>
-  <h2>All Tags</h2>
 
-
-
-  
-  
-  <a href="/tag/math"><code class="highligher-rouge"><nobr>math</nobr></code></a>
-
-  
-  
-  <a href="/tag/computer-science"><code class="highligher-rouge"><nobr>computer-science</nobr></code></a>
-
-  
-  
-  <a href="/tag/physics"><code class="highligher-rouge"><nobr>physics</nobr></code></a>
-
-  
-  
-  <a href="/tag/classical-mechanics"><code class="highligher-rouge"><nobr>classical-mechanics</nobr></code></a>
-
-  
-  
-  <a href="/tag/set-theory"><code class="highligher-rouge"><nobr>set-theory</nobr></code></a>
-
-  
-  
-  <a href="/tag/relations"><code class="highligher-rouge"><nobr>relations</nobr></code></a>
-
-  
-  
-  <a href="/tag/projects"><code class="highligher-rouge"><nobr>projects</nobr></code></a>
-
-  
-  
-  <a href="/tag/philosophy"><code class="highligher-rouge"><nobr>philosophy</nobr></code></a>
-
-  
-  
-  <a href="/tag/machine-learning"><code class="highligher-rouge"><nobr>machine-learning</nobr></code></a>
-
-  
-  
-  <a href="/tag/linear-algebra"><code class="highligher-rouge"><nobr>linear-algebra</nobr></code></a>
-
-  
-  
-  <a href="/tag/calculus"><code class="highligher-rouge"><nobr>calculus</nobr></code></a>
-
-
-</footer>
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/asymptotic-equivalence/">
+            Asymptotic Equivalence
+            <small>26 Aug 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/proportionality/">
+            Proportionality
+            <small>17 Aug 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/relations/">
+            Relations
+            <small>12 Aug 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
 
     </div>
   </body>

@@ -4,13 +4,118 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-08-27T13:32:22-04:00</updated>
+ <updated>2018-08-27T23:30:56-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Iverson Bracket</title>
+   <link href="http://localhost:4000/iverson-bracket/"/>
+   <updated>2018-08-27T00:00:00-04:00</updated>
+   <id>http://localhost:4000/iverson-bracket</id>
+   <content type="html">&lt;p&gt;The Iverson bracket is a notation that equals $1$ if a given proposition $P$ is true and $0$ if it’s false. That is to say:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+[P]={\begin{cases}1&amp;{P}\\0&amp;{\neg P}\end{cases}} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;The Iverson bracket can also be used with propositional functions:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+[P(x)]={\begin{cases}1&amp;{P(x)}\\0&amp;{\neg P(x)}\end{cases}} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Below I will attempt to formally define the propositional case and propositional function cases separately.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;propositional-definition&quot;&gt;Propositional Definition&lt;/h2&gt;
+&lt;p&gt;We can think of the notation $[P]$ as being shorthand for the following:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;[P]\equiv\bigcup\{x\in 2\mid(P\wedge x=1) \vee (\neg P\wedge x=0)\}&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;Where $2=\{0,1\}$ as per its construction in the &lt;a href=&quot;\natural-numbers&quot;&gt;natural numbers&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The set builder notation above will end up being $\{0\}$ or $\{1\}$ depending on whether $P$ is true. The arbitrary union, denoted $\bigcup$, outside of the set ‘unwraps’ the singleton set so that we are left with just $0$ or $1$.&lt;/p&gt;
+
+&lt;p&gt;This allows us to truly equate $[P]$ with some value in the set-theoretic sense.&lt;/p&gt;
+
+&lt;h2 id=&quot;propositional-function-definition&quot;&gt;Propositional Function Definition&lt;/h2&gt;
+&lt;p&gt;While we could simply use the same definition above and replace all instances of $P$ with $P(x)$, it would be more useful to define $[P(x)]$ as a full blown set-theoretic function.&lt;/p&gt;
+
+&lt;p&gt;And indeed, assuming $x$ is an element of some domain $S$ (i.e $x\in S$), we can do just that. However, to aid in defining $[P(x)]$  we’ll call it $Q(x)$ for the time being:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;Q\equiv\{(x,y)\mid(P(x)\wedge y=1)\vee(\neg P(x)\wedge y=0)\}&lt;/script&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Proof of Function&lt;/strong&gt;&lt;/summary&gt;
+We can see that $Q$ is a set of ordered pairs $(x,y)$ with $x\in S$ and $y\in 2$. This implies that $Q\subset S\times 2$. However, this only shows that $[P(x)]$ is a &lt;a href=&quot;\relations&quot;&gt;relation&lt;/a&gt;.
+&lt;p&gt;&lt;/p&gt;
+
+To show that $Q$ is a function, we must show that it is right-unique. This should be clear as for any given $x$, $y=0\oplus y=1$. This is because both $P(x)$ and $\neg P(x)$ can't be true due to the law of the excluded middle.
+&lt;/details&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;And so $Q$ is a function $Q:S\to 2$. We can now say $Q(x)\equiv [P(x)]$, to return to our original notation.&lt;/p&gt;
+
+&lt;h2 id=&quot;properties&quot;&gt;Properties&lt;/h2&gt;
+&lt;p&gt;Below are some of the immediate properties of the Iverson bracket. We can think of these equalities as bridges between the first order logic notions of truth (true vs. false) and the arithmetic/computational notion of truth ($0$ vs. $1$).&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$[P\wedge Q]=[P][Q]$&lt;/li&gt;
+  &lt;li&gt;$[P\vee Q]=[P]+[Q]-[P][Q]$&lt;/li&gt;
+  &lt;li&gt;$[\neg P]=1-[P]$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;examples&quot;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;Iverson brackets are, in many cases, a more natural way to express certain conditional functions or properties.&lt;/p&gt;
+
+&lt;details open=&quot;&quot;&gt;
+&lt;summary&gt;&lt;strong&gt;Kronecker Delta&lt;/strong&gt;&lt;/summary&gt;
+The Iverson bracket generalizes the Kronecker delta function $\delta_{ij}$ to any proposition $P$ rather than the specific proposition $i=j$. We can express the Kronecker delta function in terms of the Iverson bracket as so:
+
+$$\delta_{ij}=[i=j]$$
+&lt;/details&gt;
+
+&lt;details open=&quot;&quot;&gt;
+&lt;summary&gt;&lt;strong&gt;Trichotomy of $\mathbb{R}$&lt;/strong&gt;&lt;/summary&gt;
+Iverson brackets afford a much simpler way to convey the property of trichotomy, or any list of mutually exclusive conditions.
+
+$$[a&amp;lt;b]+[a=b]+[a&amp;gt;b]=1$$
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Sign Function&lt;/strong&gt;&lt;/summary&gt;
+$$\operatorname{sgn}(x)=[x&amp;gt;0]-[x&amp;lt;0]$$
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Absolute Value&lt;/strong&gt;&lt;/summary&gt;
+$$ {\begin{aligned}|x|&amp;amp;=x\cdot \operatorname {sgn}(x)\\&amp;amp;=x([x&amp;gt;0]-[x&amp;lt;0])\end{aligned}}$$
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Heaviside Step Function&lt;/strong&gt;&lt;/summary&gt;
+$$H(x)=[x&amp;gt;0]$$
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Min and Max&lt;/strong&gt;&lt;/summary&gt;
+$$\min(x,y)=x[x\leq y]+y[x&amp;gt;y]$$
+
+$$\max(x,y)=x[x&amp;gt;y]+y[x\leq y]$$
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Ceiling and Floor&lt;/strong&gt;&lt;/summary&gt;
+$$\lceil x\rceil =\sum _{n}n\cdot [n-1&amp;lt;x\leq n]$$
+
+$$\lfloor x\rfloor =\sum _{n}n\cdot [n\leq x&amp;lt;n+1]$$
+&lt;/details&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Asymptotic Equivalence</title>
