@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-08-28T12:03:36-04:00</updated>
+ <updated>2018-08-28T12:06:58-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -27,7 +27,7 @@
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 [P(x)]={\begin{cases}1&amp;{P(x)}\\0&amp;{\neg P(x)}\end{cases}} %]]&gt;&lt;/script&gt;
 
-&lt;p&gt;Below I will attempt to formally define the propositional case and predicate cases separately.&lt;/p&gt;
+&lt;p&gt;Below I give two, separate, formal definitions of the Iverson bracket. One for the propositional case and one for the predicate cases.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
@@ -61,7 +61,7 @@ To show that $Q$ is a function, we must show that it is right-unique. This shoul
 &lt;p&gt;And so $Q$ is a function $Q:S\to 2$. We can now say $Q(x)\equiv [P(x)]$, to return to our original notation.&lt;/p&gt;
 
 &lt;h2 id=&quot;arithmetic-properties&quot;&gt;Arithmetic Properties&lt;/h2&gt;
-&lt;p&gt;Below are some of the immediate properties of the Iverson bracket. We can think of these equalities as bridges between the first order logic notions of truth (true vs. false) and the arithmetic/computational notion of truth ($0$ vs. $1$).&lt;/p&gt;
+&lt;p&gt;Below are some of the immediate properties of the Iverson bracket. We can think of these equalities as bridges between the first order logic notions of truth (true vs. false) and the arithmetic/computational notion of booleans ($0$ vs. $1$).&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;$[\neg P]=1-[P]$&lt;/li&gt;

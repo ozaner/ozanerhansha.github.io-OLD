@@ -12,7 +12,7 @@ The Iverson bracket can also be used with predicates:
 
 $$[P(x)]={\begin{cases}1&{P(x)}\\0&{\neg P(x)}\end{cases}}$$
 
-Below I will attempt to formally define the propositional case and predicate cases separately.
+Below I give two, separate, formal definitions of the Iverson bracket. One for the propositional case and one for the predicate cases.
 
 <!--more-->
 
@@ -46,7 +46,7 @@ To show that $Q$ is a function, we must show that it is right-unique. This shoul
 And so $Q$ is a function $Q:S\to 2$. We can now say $Q(x)\equiv [P(x)]$, to return to our original notation.
 
 ## Arithmetic Properties
-Below are some of the immediate properties of the Iverson bracket. We can think of these equalities as bridges between the first order logic notions of truth (true vs. false) and the arithmetic/computational notion of truth ($0$ vs. $1$).
+Below are some of the immediate properties of the Iverson bracket. We can think of these equalities as bridges between the first order logic notions of truth (true vs. false) and the arithmetic/computational notion of booleans ($0$ vs. $1$).
 
 - $[\neg P]=1-[P]$
 - $[P\wedge Q]=[P][Q]$
