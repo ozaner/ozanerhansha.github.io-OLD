@@ -4,15 +4,15 @@ title: Iverson Bracket
 date: 2018-08-27
 tags: math computer-science
 ---
-The Iverson bracket is a notation that equals $1$ if a given proposition $P$ is true and $0$ if it's false. That is to say:
+The Iverson bracket, denoted $[P]$, is a function that evaluates to $1$ if the given proposition $P$ is true and $0$ if it's false. That is to say:
 
 $$[P]={\begin{cases}1&{P}\\0&{\neg P}\end{cases}}$$
 
-The Iverson bracket can also be used with propositional functions:
+The Iverson bracket can also be used with predicates:
 
 $$[P(x)]={\begin{cases}1&{P(x)}\\0&{\neg P(x)}\end{cases}}$$
 
-Below I will attempt to formally define the propositional case and propositional function cases separately.
+Below I will attempt to formally define the propositional case and predicate cases separately.
 
 <!--more-->
 
@@ -25,9 +25,9 @@ $$[P]\equiv\bigcup\{x\in 2\mid(P\wedge x=1) \vee (\neg P\wedge x=0)\}$$
 
 The set builder notation above will end up being $\\{0\\}$ or $\\{1\\}$ depending on whether $P$ is true. The arbitrary union, denoted $\bigcup$, outside of the set 'unwraps' the singleton set so that we are left with just $0$ or $1$.
 
-This allows us to truly equate $[P]$ with some value in the set-theoretic sense.
+This allows us to truly equate $[P]$ with some value in the set-theoretic sense. Notice though, $[P]$ is not a function and is instead a shorthand for writing $0$ or $1$.
 
-## Propositional Function Definition
+## Predicate Definition
 While we could simply use the same definition above and replace all instances of $P$ with $P(x)$, it would be more useful to define $[P(x)]$ as a full blown set-theoretic function.
 
 And indeed, assuming $x$ is an element of some domain $S$ (i.e $x\in S$), we can do just that. However, to aid in defining $[P(x)]$  we'll call it $Q(x)$ for the time being:
@@ -45,12 +45,17 @@ To show that $Q$ is a function, we must show that it is right-unique. This shoul
 
 And so $Q$ is a function $Q:S\to 2$. We can now say $Q(x)\equiv [P(x)]$, to return to our original notation.
 
-## Properties
+## Arithmetic Properties
 Below are some of the immediate properties of the Iverson bracket. We can think of these equalities as bridges between the first order logic notions of truth (true vs. false) and the arithmetic/computational notion of truth ($0$ vs. $1$).
 
+- $[\neg P]=1-[P]$
 - $[P\wedge Q]=[P][Q]$
 - $[P\vee Q]=[P]+[Q]-[P][Q]$
-- $[\neg P]=1-[P]$
+- $[P\oplus Q]=([P]-[Q])^2$
+- $[P\rightarrow Q]=1-[P]-[Q]+[P][Q]$
+- $[P\equiv Q]=1-([P]-[Q])^2$
+
+*The last three can be solved via substitution of the first three and normal propositional calculus.*
 
 ## Examples
 Iverson brackets are, in many cases, a more natural way to express certain conditional functions or properties.
