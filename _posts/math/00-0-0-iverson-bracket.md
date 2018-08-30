@@ -25,12 +25,12 @@ $$[P]\equiv\bigcup\{x\in 2\mid(P\wedge x=1) \vee (\neg P\wedge x=0)\}$$
 
 The set builder notation above will end up being $\\{0\\}$ or $\\{1\\}$ depending on whether $P$ is true. The arbitrary union, denoted $\bigcup$, outside of the set 'unwraps' the singleton set so that we are left with just $0$ or $1$.
 
-This allows us to truly equate $[P]$ with some value in the set-theoretic sense. Notice though, $[P]$ is not a function and is instead a shorthand for writing $0$ or $1$.
+This allows us to truly equate $[P]$ with the values $0$ and $1$ in the set-theoretic sense.
 
 ## Predicate Definition
-While we could simply use the same definition above and replace all instances of $P$ with $P(x)$, it would be more useful to define $[P(x)]$ as a full blown set-theoretic function.
+While we could simply use the same definition above and replace all instances of $P$ with $P(x)$, it would instead be more useful to define $[P(x)]$ as a full blown set-theoretic function.
 
-And indeed, assuming $x$ is an element of some domain $S$ (i.e $x\in S$), we can do just that. However, to aid in defining $[P(x)]$  we'll call it $Q(x)$ for the time being:
+And indeed, assuming $x$ is an element of some domain $S$ (i.e $x\in S$), we can do just that. However, to aid in defining $[P(x)]$ we'll call it $Q(x)$ for the time being:
 
 $$Q\equiv\{(x,y)\mid(P(x)\wedge y=1)\vee(\neg P(x)\wedge y=0)\}$$
 
@@ -39,7 +39,7 @@ $$Q\equiv\{(x,y)\mid(P(x)\wedge y=1)\vee(\neg P(x)\wedge y=0)\}$$
 We can see that $Q$ is a set of ordered pairs $(x,y)$ with $x\in S$ and $y\in 2$. This implies that $Q\subset S\times 2$. However, this only shows that $[P(x)]$ is a <a href="\relations">relation</a>.
 <p></p>
 
-To show that $Q$ is a function, we must show that it is right-unique. This should be clear as for any given $x$, $y=0\oplus y=1$. This is because both $P(x)$ and $\neg P(x)$ can't be true due to the law of the excluded middle.
+To show that $Q$ is a function, we must show that it is right-unique. This should be clear as for any given $x$, $y=0\oplus y=1$. This is because $P(x)\oplus\neg P(x)$ due to the law of the excluded middle.
 </details>
 <p></p>
 
