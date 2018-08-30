@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-08-28T12:06:58-04:00</updated>
+ <updated>2018-08-28T12:14:51-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -1302,6 +1302,7 @@ This monoid is also &lt;b&gt;cancellative&lt;/b&gt;, meaning that an equation is
 $$a+c=b+c\implies a=b$$
 
 It is from the addition operation $+$ (and successor function $S(n)$) that we can define all the other operations/relations on the naturals.
+&lt;p&gt;&lt;/p&gt;
 &lt;/details&gt;
 
 &lt;details&gt;
@@ -1359,6 +1360,7 @@ $$\begin{align}
 &lt;p&gt;&lt;/p&gt;
 
 In conjunction with the commutative monoid on the naturals $(\mathbb{N},+)$, this operator is referred to as a &lt;b&gt;monus&lt;/b&gt; and forms a CMM, commutative monoid with monus: $(\mathbb{N},+,\dot-)$.
+&lt;p&gt;&lt;/p&gt;
 &lt;/details&gt;
 
 &lt;details&gt;
@@ -1404,6 +1406,7 @@ Even further, if we combine the $\times$ operator with the monoid  $(\mathbb{N},
 $$a\times(b+c)=(a\times b)+(a\times c)$$
 
 we obtain the commutative semiring $(\mathbb{N},+,\times)$. It is &lt;i&gt;semi&lt;/i&gt; because the $+$ operator has no inverse operation, which is necessary for a full ring.
+&lt;p&gt;&lt;/p&gt;
 &lt;/details&gt;
 
 &lt;details&gt;
@@ -1432,6 +1435,7 @@ $$\div_E:\mathbb{N}^2\to\mathbb{N}^2$$
 $$\div_E\equiv\{(a,b,q,r)\in\mathbb{N}^4\mid a=b\times q+r \land r&lt;b\}$$ --&gt;
 
 &lt;!-- We can *inductively* define division with 2 rules: --&gt;
+&lt;p&gt;&lt;/p&gt;
 &lt;/details&gt;
 
 &lt;details&gt;

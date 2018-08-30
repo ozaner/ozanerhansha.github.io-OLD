@@ -72,4 +72,4 @@ $$f(x)\in O(g(x))\equiv \exists c\not=0:cg(x)\text{ grows asymptotically faster 
 
 $$f(x)\in \Omega(g(x))\equiv \exists c\not=0:cg(x)\text{ grows asymptotically slower than } f(x)$$
 
-$$f(x)\in \Omega(g(x))\equiv \exists c\not=0:cg(x) \sim f(x)$$
+$$f(x)\in \Theta(g(x))\equiv \exists c\not=0:cg(x) \sim f(x)$$

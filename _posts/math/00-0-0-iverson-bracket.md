@@ -12,7 +12,7 @@ The Iverson bracket can also be used with predicates:
 
 $$[P(x)]={\begin{cases}1&{P(x)}\\0&{\neg P(x)}\end{cases}}$$
 
-Below I give two, separate, formal definitions of the Iverson bracket. One for the propositional case and one for the predicate cases.
+Below I give two formal definitions of the Iverson bracket. One for the propositional case and one for the predicate case.
 
 <!--more-->
 

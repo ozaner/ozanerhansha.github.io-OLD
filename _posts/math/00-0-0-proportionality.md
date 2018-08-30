@@ -41,7 +41,7 @@ And because $x\propto_Vy$ is shorthand for $(x,y)\in\propto_V$ we can say:
 $$\mathbf{x}\propto_V \mathbf{y}\equiv(\exists k\in F)\ k\mathbf{x}=\mathbf{y}$$
 
 #### Notation
-When the context is clear, we can omit the subscript denoteing what vector space the relation is acting upon and just write $\propto$. This is usually the case when relating two functions, real valued or otherwise, since proportionality is most commonly used in fields like physics where the domain of discourse is very clear.
+When the context is clear, we can omit the subscript denoting what vector space the relation is acting upon and just write $\propto$. This is usually the case when relating two functions, real valued or otherwise, since proportionality is most commonly used in fields like physics where the domain of discourse is very clear.
 
 ## Proof of Equivalence Relation
 Using the general definition above, we will prove $\propto$ forms an equivalence relation by showing it has the reflexive, symmetric, and transitive properties.
