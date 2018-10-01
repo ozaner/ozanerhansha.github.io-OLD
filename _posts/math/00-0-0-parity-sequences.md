@@ -46,7 +46,7 @@ $$n^2=\left(0,1,4,9,16,25,36,49,\cdots\right)$$
 
 $$[n^2]=\left(+,-,+,-,+,-,+,-,\cdots\right)$$
 
-*As a shorthand, I will refer to sequences, like the sequence $(n^2)_ {n\in\mathbb{N}}$ above, by simply their $n$th term starting at $n=0$. This should not introduce any ambiguities.*
+*As a shorthand I will refer to sequences, like the sequence $(n^2)_ {n\in\mathbb{N}}$ above, by simply their $n$th term starting at $n=0$. This should not introduce any ambiguities.*
 
 #### What are $+$ and $-$?
 If we want to formalize the $+$ $-$ notation we can define them as such:
@@ -92,7 +92,7 @@ When constructing things like Taylor Series', this is a useful property to have.
 
 Parity equivalence also allows us to simplify otherwise overly complicated sequences and expressions purely using algebra rather than writing the terms out and trying to spot the pattern. Here's an example:
 
-$$(-1)^{\sin \frac{n\pi}{2}}\left(\frac{n^2-2n}{3}\right)^n$$
+$$(-3)^{\sin \frac{n\pi}{2}}\left(\frac{n^2-2n}{3}\right)^n$$
 
 At first this expression seems a little intimidating. However, notice that $\sin \frac{n\pi}{2}$ and $n$ are parity equivalent:
 

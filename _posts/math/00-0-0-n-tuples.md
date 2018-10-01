@@ -142,7 +142,9 @@ For any element *other* than the first, we can use the following formula:
 
 $$\pi^n_a(P)=\pi_2\circ\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-a\text{ iterations}}(P)=x_a$$
 
-<details><summary>"Proof" & Intuition</summary>
+This should be fairly intuitive as the repeated $\pi_1$ serve to extract the desired nested tuple and once we reach the base case of the $2$-tuple, we either want the first $\pi_1$ or second $\pi_2$ term.
+
+<!-- <details><summary>"Proof" & Intuition</summary>
 Not really a proof, I just wrote down how to find the elements of $2,3,4,5$-tuples and found the pattern:
 
 $$\begin{align}
@@ -179,7 +181,7 @@ $$\begin{align}
 \end{align}$$
 
 Why are is there a conditional definition of the $a$th element of an $n$-tuple? What causes this asymmetry? Well it must be the fact that our base case in defining $n$-tuples was the ordered pair rather than some sort of $1$-tuple. Although it's possible that starting with a $1$-tuple wouldn't change this conditional...
-</details>
+</details> -->
 
 ## Some Uses
 #### [Cartesian Product](/cartesian-product)

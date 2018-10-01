@@ -17,7 +17,7 @@ Asymptotic equivalence is an equivalence relation, denoted $\sim$, on the set of
 
 $$f(x)\sim g(x)\equiv\lim_{x\to\infty}{\frac{f(x)}{g(x)}}=1$$
 
-The definition can also be extended to limits not just to infinity but any constant:
+This definition can also be extended to non infinite limits:
 
 $$f(x)\sim g(x) \ \ (\text{as }x\to c)\equiv\lim_{x\to c}{\frac{f(x)}{g(x)}}=1$$
 
@@ -65,11 +65,6 @@ I'll do this later, but this should be clear as asymptotic equivalence forms equ
 ## Relation to Algorithmic Complexity
 When dealing with the time and space complexity of algorithms, asymptotic analysis (either in the form defined above or via **Bachmann–Landau notation**) is used to compare the efficiency of different algorithms by stripping away unnecessary constants and minor terms that correspond to the different preconditions and runtime environments that these algorithms may run on.
 
-In particular, the limit definitions of the Bachmann–Landau notation are very similar to that of asymptotic equivalence. In fact, we can phrase Big $O$, $\Omega$, and $\Theta$ notation in terms of asymptotic growth.
-
-$$f(x)\in O(g(x))\equiv \exists c\not=0:cg(x)\text{ grows asymptotically faster than } f(x)$$
-
-
-$$f(x)\in \Omega(g(x))\equiv \exists c\not=0:cg(x)\text{ grows asymptotically slower than } f(x)$$
+In particular, asymptotic equivalence is a more [specific case](\asymptotic-notation#asymptotic-equivalence) of big $\Theta$ notation, however we can phrase it in the other direction:
 
 $$f(x)\in \Theta(g(x))\equiv \exists c\not=0:cg(x) \sim f(x)$$

@@ -144,6 +144,10 @@
       
         
           
+        
+      
+        
+          
             <a class="sidebar-nav-item" href="/notes/">Notes</a>
           
         
@@ -263,7 +267,7 @@
 
 <script type="math/tex; mode=display">f(x)\sim g(x)\equiv\lim_{x\to\infty}{\frac{f(x)}{g(x)}}=1</script>
 
-<p>The definition can also be extended to limits not just to infinity but any constant:</p>
+<p>This definition can also be extended to non infinite limits:</p>
 
 <script type="math/tex; mode=display">f(x)\sim g(x) \ \ (\text{as }x\to c)\equiv\lim_{x\to c}{\frac{f(x)}{g(x)}}=1</script>
 
@@ -313,19 +317,24 @@ I'll do this later, but this should be clear as asymptotic equivalence forms equ
 <h2 id="relation-to-algorithmic-complexity">Relation to Algorithmic Complexity</h2>
 <p>When dealing with the time and space complexity of algorithms, asymptotic analysis (either in the form defined above or via <strong>Bachmann–Landau notation</strong>) is used to compare the efficiency of different algorithms by stripping away unnecessary constants and minor terms that correspond to the different preconditions and runtime environments that these algorithms may run on.</p>
 
-<p>In particular, the limit definitions of the Bachmann–Landau notation are very similar to that of asymptotic equivalence. In fact, we can phrase Big $O$, $\Omega$, and $\Theta$ notation in terms of asymptotic growth.</p>
+<p>In particular, asymptotic equivalence is a more <a href="\asymptotic-notation#asymptotic-equivalence">specific case</a> of big $\Theta$ notation, however we can phrase it in the other direction:</p>
 
-<script type="math/tex; mode=display">f(x)\in O(g(x))\equiv \exists c\not=0:cg(x)\text{ grows asymptotically faster than } f(x)</script>
-
-<script type="math/tex; mode=display">f(x)\in \Omega(g(x))\equiv \exists c\not=0:cg(x)\text{ grows asymptotically slower than } f(x)</script>
-
-<script type="math/tex; mode=display">f(x)\in \Omega(g(x))\equiv \exists c\not=0:cg(x) \sim f(x)</script>
+<script type="math/tex; mode=display">f(x)\in \Theta(g(x))\equiv \exists c\not=0:cg(x) \sim f(x)</script>
 
 </div>
 
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/bachmann-landau-notation/">
+            Bachmann–Landau Notation
+            <small>21 Sep 2018</small>
+          </a>
+        </h3>
+      </li>
     
       <li>
         <h3>
@@ -341,15 +350,6 @@ I'll do this later, but this should be clear as asymptotic equivalence forms equ
           <a href="/proportionality/">
             Proportionality
             <small>17 Aug 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/relations/">
-            Relations
-            <small>12 Aug 2018</small>
           </a>
         </h3>
       </li>

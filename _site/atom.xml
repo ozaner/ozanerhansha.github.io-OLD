@@ -4,13 +4,277 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-08-28T12:14:51-04:00</updated>
+ <updated>2018-09-30T22:28:40-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Bachmann–Landau Notation</title>
+   <link href="http://localhost:4000/bachmann-landau-notation/"/>
+   <updated>2018-09-21T00:00:00-04:00</updated>
+   <id>http://localhost:4000/bachmann–landau-notation</id>
+   <content type="html">&lt;p&gt;&lt;strong&gt;Bachmann–Landau notation&lt;/strong&gt;, or asymptotic notation, is a collection of notations used to classify the limiting behavior of a particular function as its argument tends towards a particular value or infinity.&lt;/p&gt;
+
+&lt;p&gt;These notations, particularly big $O$, are most commonly used to classify and compare the computational complexity (both temporal and spatial) of different algorithms as a function of their input size.&lt;/p&gt;
+
+&lt;p&gt;Ideally, an algorithm will be on the order of a relatively slowly growing function (e.g $\log n$ grows slower than $n^2$) as they take less resources and thus are more feasible to compute.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;formal-definitions&quot;&gt;Formal Definitions&lt;/h2&gt;
+&lt;p&gt;There are 5 related notations that fall under the umbrella of Bachmann–Landau:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Notation&lt;/th&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Comparison&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;$f(n)\in o(g(n))$&lt;/td&gt;
+      &lt;td&gt;Little-$o$&lt;/td&gt;
+      &lt;td&gt;$\lt$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;$f(n)\in O(g(n))$&lt;/td&gt;
+      &lt;td&gt;Big-$O$&lt;/td&gt;
+      &lt;td&gt;$\le$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;$f(n)\in \Theta(g(n))$&lt;/td&gt;
+      &lt;td&gt;Big-$\Theta$&lt;/td&gt;
+      &lt;td&gt;$=$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;$f(n)\in \Omega(g(n))$&lt;/td&gt;
+      &lt;td&gt;Big-$\Omega$&lt;/td&gt;
+      &lt;td&gt;$\ge$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;$f(n)\in \omega(g(n))$&lt;/td&gt;
+      &lt;td&gt;Little-$\omega$&lt;/td&gt;
+      &lt;td&gt;$\gt$&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The comparison describes $f$’s behavior with respect to $g$ as $x\to c$ where $c$ could be a particular value or infinity. For the definitions we will assume $c$ is $\infty$ as that is the most common use case of asymptotic notation.&lt;/p&gt;
+
+&lt;p&gt;More concretely, this notation is based off $f$ being a member of some set defined by $g$. How these sets are defined for each notation is elaborated below via two similar (but not quite equivalent) formalizations of the concept:&lt;/p&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Growth Definitions&lt;/h4&gt;&lt;/summary&gt;
+A function $f(x)$ is big $O$ of $g(x)$, i.e $f(x)\in O(g(x))$, if the following holds:
+
+$$f(x)\in O(g(x))\equiv (\exists k,x_0)\ x\ge x_0\rightarrow f(x)\le kg(x)$$
+
+This means that there is some point such that for all $x$ after it, $f(x)$ is less than or equal to $g(x)$ up to some constant.
+
+The definitions for the other notations are similar:
+
+$$\begin{align}
+f(x)\in o(g(x))&amp;amp;\equiv \left(\forall k,\exists x_0\right) x\ge x_0&amp;amp;&amp;amp;\rightarrow f(x)\lt kg(x)\\
+f(x)\in O(g(x))&amp;amp;\equiv \left(\exists k,x_0\right) x\ge x_0&amp;amp;&amp;amp;\rightarrow f(x)\le kg(x)\\
+f(x)\in \Theta(g(x))&amp;amp;\equiv \left(\exists k_1,k_2,x_0\right) x\ge x_0&amp;amp;&amp;amp;\rightarrow k_1g(x)\le f(x)\le k_2g(x)\\
+f(x)\in \Omega(g(x))&amp;amp;\equiv \left(\exists k,x_0\right) x\ge x_0&amp;amp;&amp;amp;\rightarrow f(x)\ge kg(x)\\
+f(x)\in \omega(g(x))&amp;amp;\equiv \left(\forall k,\exists x_0\right) x\ge x_0&amp;amp;&amp;amp;\rightarrow f(x)\gt kg(x)
+\end{align}$$
+
+*Where $f,g:\mathbb{R}\to\mathbb{R}$ and $x,x_0,k,k_1,k_2\in\mathbb{R}.$*
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Limit Definitions&lt;/h4&gt;&lt;/summary&gt;
+We can also define asymptotic notation via limits. Doing so comes with added stipulations about limit existence and so on but if those conditions are met, we can define them as so:
+
+$$\begin{align}
+f(x)\in o(g(x))&amp;amp;\equiv \lim_{x\to\infty}\frac{f(x)}{g(x)}=0\\
+f(x)\in O(g(x))&amp;amp;\equiv \limsup_{x\to\infty}\left|\frac{f(x)}{g(x)}\right|\lt\infty\\
+f(x)\in \Theta(g(x))&amp;amp;\equiv (\exists k)\lim_{x\to\infty}\frac{f(x)}{g(x)}=k\\
+f(x)\in \Omega(g(x))&amp;amp;\equiv \liminf_{x\to\infty}\left|\frac{f(x)}{g(x)}\right|\gt 0\\
+f(x)\in \omega(g(x))&amp;amp;\equiv \lim_{x\to\infty}\left|\frac{f(x)}{g(x)}\right|=\infty
+\end{align}$$
+&lt;/details&gt;
+
+&lt;h2 id=&quot;big-o-vs-omega-vs-theta&quot;&gt;Big $O$ vs. $\Omega$ vs. $\Theta$&lt;/h2&gt;
+&lt;h3 id=&quot;big-o&quot;&gt;Big $O$&lt;/h3&gt;
+&lt;p&gt;Big $O$, the most used notation, describes what is called the &lt;strong&gt;upper-bound complexity&lt;/strong&gt; of an algorithm. Thus a function $f$ that is big $O$ of a function $g$ grows as fast or slower than $g$ (up to a constant). When a function $f$ is &lt;strong&gt;‘of the order’&lt;/strong&gt; $g$ this means that it is big $O$ of $g$ and not any other notation.&lt;/p&gt;
+
+&lt;h4 id=&quot;popularity&quot;&gt;Popularity&lt;/h4&gt;
+&lt;p&gt;While big $\Theta$ is the most descriptive of the 3 notations, it is not as popular as big $O$. Why is this? Well, it is in part due to laziness and convention.&lt;/p&gt;
+
+&lt;p&gt;However there is a more practical reason for this as well. Proving something is big $\Theta$ means proving it is both big $O$ and big $\Omega$ which may be much more difficult or even impossible compared to just proving one or the other.&lt;/p&gt;
+
+&lt;p&gt;As a result of this, it is generally expected that when someone states an algorithm is $O(g(x))$ that $g(x)$ is as small as they could make it. This makes it a tighter bound when possible but doesn’t enforce it incase such a bound is not possible to prove.&lt;/p&gt;
+
+&lt;h4 id=&quot;common-orders&quot;&gt;Common Orders&lt;/h4&gt;
+&lt;p&gt;Below is a table of common terminology for certain lower-bound complexity classes (from smallest to largest):&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Complexity Class&lt;/th&gt;
+      &lt;th&gt;Notation&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Constant&lt;/td&gt;
+      &lt;td&gt;$O(1)$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Logarithmic&lt;/td&gt;
+      &lt;td&gt;$O(\log n)$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Polylogarithmic&lt;/td&gt;
+      &lt;td&gt;$O((\log n)^k)$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Fractional Power&lt;/td&gt;
+      &lt;td&gt;$O(n^k)_{\ 0&amp;lt;k&amp;lt;1}$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Linear&lt;/td&gt;
+      &lt;td&gt;$O(n)$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Linearithmic&lt;/td&gt;
+      &lt;td&gt;$O(n\log n)$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Quadratic&lt;/td&gt;
+      &lt;td&gt;$O(n^2)$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Polynomial&lt;/td&gt;
+      &lt;td&gt;$O(n^k)_{\ k&amp;gt;1}$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Exponential&lt;/td&gt;
+      &lt;td&gt;$O(k^n)_{\ k&amp;gt;1}$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Factorial&lt;/td&gt;
+      &lt;td&gt;$O(n!)$&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;Big $\Omega$&lt;/h3&gt;&lt;/summary&gt;
+This contrasts with big $\Omega$ which describes the &lt;b&gt;lower-bound complexity&lt;/b&gt; of an algorithm. So a function $f$ that is big $\Omega$ of a function $g$ grows as fast or faster than $g$ (up to a constant).
+&lt;p&gt;&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;Big $\Theta$&lt;/h3&gt;&lt;/summary&gt;
+Big $\Theta$, on the other hand, is known as a &lt;bf&gt;tight bound&lt;/bf&gt; on the complexity of an algorithm and can be equivalently stated as:
+
+$$f(x)\in\Theta(g(x))\equiv f(x)\in O(g(x))\wedge f(x)\in\Omega(g(x))$$
+
+And so, following the pattern, a function $f$ that is big $\Theta$ of a function $g$ grows as fast as $g$ (up to a constant).
+
+&lt;h4&gt;Equivalence Relation&lt;/h4&gt;
+Note that, unlike big $O$ and $\Omega$, the relation $f(x)\in\Theta(g(x))$ forms an equivalence relation given some function $g$.
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Reflexivity&lt;/strong&gt;&lt;/summary&gt;
+I'll do this later.
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Symmetry&lt;/strong&gt;&lt;/summary&gt;
+I'll do this later.
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Transitivity&lt;/strong&gt;&lt;/summary&gt;
+I'll do this later.
+&lt;/details&gt;
+
+&lt;h4&gt;Asymptotic Equivalence&lt;/h4&gt;
+Another interesting point is that $f(x)\in\Theta(g(x))$ is actually a more general case of $f(x)\sim g(x)$ where $\sim$ is &lt;a href=&quot;\asymptotic-equivalence#relation-to-algorithmic-complexity&quot;&gt;asymptotic equivalence&lt;/a&gt;. This should come as no surprise. After all, $f$ and $g$ are asymptotically equal up to a constant, and so if that constant happened to be $1$ we would be left with asymptotic equivalence.
+&lt;/details&gt;
+
+&lt;h2 id=&quot;regarding-notation&quot;&gt;Regarding Notation&lt;/h2&gt;
+&lt;p&gt;The use of the Bachmann–Landau notations is, unfortunately, quite varied and oftentimes informal. As such, I will try to clear up some of the nuance packed into these notations.&lt;/p&gt;
+
+&lt;h4 id=&quot;terminology&quot;&gt;Terminology&lt;/h4&gt;
+&lt;p&gt;When someone refers to the complexity of an algorithm without context they are assumed to be referring to its temporal, rather than its spatial, complexity. Similarly, when the order of an algorithm (its big $O$) is given without context it is assumed to be the algorithm’s &lt;strong&gt;worst-case&lt;/strong&gt; complexity (as opposed to the best/average case).&lt;/p&gt;
+
+&lt;h4 id=&quot;equality-vs-membership&quot;&gt;Equality vs Membership&lt;/h4&gt;
+&lt;p&gt;While I’ve used the notation $f(x)\in O(g(x))$ throughout this post as well as in my other writing, it is more common to write:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x)=O(g(x))\equiv f(x)\in O(g(x))&lt;/script&gt;
+
+&lt;p&gt;This is an &lt;strong&gt;abuse of notation&lt;/strong&gt; and does not &lt;em&gt;really&lt;/em&gt; denote equality between the function $f$ and the class of functions on the order of $g$ and, as we’ll see below, this abuse can be taken to a much farther extreme…&lt;/p&gt;
+
+&lt;h4 id=&quot;equational-notation&quot;&gt;Equational Notation&lt;/h4&gt;
+&lt;p&gt;It is possible to use, for example, big $O$ notation in equations, extending the equality &lt;em&gt;analogy&lt;/em&gt; that is common practice. For instance:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;n^{O(1)}=O(e^n)&lt;/script&gt;
+
+&lt;p&gt;Is equivalent to the following, more formal, definition:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;(\exists f,g)\left(f\in O(1)\wedge g\in O(e^n)\right)n^{f(n)}=g(n)&lt;/script&gt;
+
+&lt;p&gt;And in general, the equation means that if all the big $O$’s on both sides were replaced with some function in that class, the equation is true. There just has to exist one set of functions that make the equation true.&lt;/p&gt;
+
+&lt;h4 id=&quot;n-vs-x&quot;&gt;$n$ vs. $x$&lt;/h4&gt;
+&lt;p&gt;Although I used the variable $x$ in the definitions given above, the variable $n$ is more common in Bachmann-Landau notation. This is because $x$ is conventionally used to denote a continuous valued, real variable, while $n$ is conventionally used to denote a discrete, integer valued variable. This jives with the fact that these Bachmann-Landau is mostly used in describing the computational complexity of algorithms expressed as functions of their, discrete sized, inputs (e.g there are no lists of size $2.5$).&lt;/p&gt;
+
+&lt;h4 id=&quot;limits-to-constants&quot;&gt;Limits to Constants&lt;/h4&gt;
+&lt;p&gt;The first paragraph mentioned that these notations applied to functions that approached infinity or any other value. Using big $O$ as an example we can make the following assumption:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x)\in O(g(x)) \ \ (\text{as }x\to \infty)\iff f(x)\in O(g(x))&lt;/script&gt;
+
+&lt;p&gt;For other constants, unless it is clear from the context, we should be explicit in what constant $x$ approaches. Using the limit definition as an example:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\limsup_{x\to c}\left|\frac{f(x)}{g(x)}\right|\lt\infty \iff f(x)\in O(g(x)) \ \ (\text{as }x\to c)&lt;/script&gt;
+
+&lt;p&gt;The formal definitions provided in the previous section assumed the infinity case simply because it is the most common.&lt;/p&gt;
+
+&lt;h2 id=&quot;properties&quot;&gt;Properties&lt;/h2&gt;
+&lt;p&gt;I am omitting the $(x)$ after the functions (which really should not be there at all but conventions) for readability:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$f_1\in O(g_1)\wedge f_2\in O(g_2)\rightarrow f_1+f_2\in O(g_1+g_2)$&lt;/li&gt;
+  &lt;li&gt;$f_1\in O(g_1)\wedge f_2\in O(g_2)\rightarrow f_1f_2\in O(g_1g_2)$&lt;/li&gt;
+  &lt;li&gt;$f\cdot O(g)\in O(fg)$&lt;/li&gt;
+  &lt;li&gt;$kf\in O(g)\rightarrow f\in O(g)$&lt;/li&gt;
+  &lt;li&gt;$O(kg)=O(g)$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Where $k$ is some constant&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;examples&quot;&gt;Examples&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;$5x^3\in O(x^3)$ Same most significant term (times a constant).&lt;/li&gt;
+  &lt;li&gt;$x^2\in O(x^3)$ Lower than most significant term.&lt;/li&gt;
+  &lt;li&gt;$2n^2\in O(n!+n)$ Lower than most significant term.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$x^3\not\in O(x^2)$ Can’t grow faster than function.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;$2x^2\in\Omega(x^2)$ Same most significant term (times a constant).&lt;/li&gt;
+  &lt;li&gt;$x^3\in\Omega(x)$ Greater than most significant term.&lt;/li&gt;
+  &lt;li&gt;$n!\in\Omega(3n^2+2n)$ Greater than most significant term.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$x^3\not\in\Omega(x^4)$ Can’t grow slower than function.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;$2x^2\in\Theta(x^2)$ Same most significant term (times a constant).&lt;/li&gt;
+  &lt;li&gt;$x^3\in\Theta(15x^3+4x^2)$ Same most significant term (times a constant).&lt;/li&gt;
+  &lt;li&gt;$n!\not\in\Theta(3n^2+2n)$ Most significant terms don’t match.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Iverson Bracket</title>
@@ -27,7 +291,7 @@
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 [P(x)]={\begin{cases}1&amp;{P(x)}\\0&amp;{\neg P(x)}\end{cases}} %]]&gt;&lt;/script&gt;
 
-&lt;p&gt;Below I give two, separate, formal definitions of the Iverson bracket. One for the propositional case and one for the predicate cases.&lt;/p&gt;
+&lt;p&gt;Below I give two formal definitions of the Iverson bracket. One for the propositional case and one for the predicate case.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
@@ -40,12 +304,12 @@
 
 &lt;p&gt;The set builder notation above will end up being $\{0\}$ or $\{1\}$ depending on whether $P$ is true. The arbitrary union, denoted $\bigcup$, outside of the set ‘unwraps’ the singleton set so that we are left with just $0$ or $1$.&lt;/p&gt;
 
-&lt;p&gt;This allows us to truly equate $[P]$ with some value in the set-theoretic sense. Notice though, $[P]$ is not a function and is instead a shorthand for writing $0$ or $1$.&lt;/p&gt;
+&lt;p&gt;This allows us to truly equate $[P]$ with the values $0$ and $1$ in the set-theoretic sense.&lt;/p&gt;
 
 &lt;h2 id=&quot;predicate-definition&quot;&gt;Predicate Definition&lt;/h2&gt;
-&lt;p&gt;While we could simply use the same definition above and replace all instances of $P$ with $P(x)$, it would be more useful to define $[P(x)]$ as a full blown set-theoretic function.&lt;/p&gt;
+&lt;p&gt;While we could simply use the same definition above and replace all instances of $P$ with $P(x)$, it would instead be more useful to define $[P(x)]$ as a full blown set-theoretic function.&lt;/p&gt;
 
-&lt;p&gt;And indeed, assuming $x$ is an element of some domain $S$ (i.e $x\in S$), we can do just that. However, to aid in defining $[P(x)]$  we’ll call it $Q(x)$ for the time being:&lt;/p&gt;
+&lt;p&gt;And indeed, assuming $x$ is an element of some domain $S$ (i.e $x\in S$), we can do just that. However, to aid in defining $[P(x)]$ we’ll call it $Q(x)$ for the time being:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;Q\equiv\{(x,y)\mid(P(x)\wedge y=1)\vee(\neg P(x)\wedge y=0)\}&lt;/script&gt;
 
@@ -54,7 +318,7 @@
 We can see that $Q$ is a set of ordered pairs $(x,y)$ with $x\in S$ and $y\in 2$. This implies that $Q\subset S\times 2$. However, this only shows that $[P(x)]$ is a &lt;a href=&quot;\relations&quot;&gt;relation&lt;/a&gt;.
 &lt;p&gt;&lt;/p&gt;
 
-To show that $Q$ is a function, we must show that it is right-unique. This should be clear as for any given $x$, $y=0\oplus y=1$. This is because both $P(x)$ and $\neg P(x)$ can't be true due to the law of the excluded middle.
+To show that $Q$ is a function, we must show that it is right-unique. This should be clear as for any given $x$, $y=0\oplus y=1$. This is because $P(x)\oplus\neg P(x)$ due to the law of the excluded middle.
 &lt;/details&gt;
 &lt;p&gt;&lt;/p&gt;
 
@@ -140,7 +404,7 @@ $$\lfloor x\rfloor =\sum _{n}n\cdot [n\leq x&amp;lt;n+1]$$
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x)\sim g(x)\equiv\lim_{x\to\infty}{\frac{f(x)}{g(x)}}=1&lt;/script&gt;
 
-&lt;p&gt;The definition can also be extended to limits not just to infinity but any constant:&lt;/p&gt;
+&lt;p&gt;This definition can also be extended to non infinite limits:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x)\sim g(x) \ \ (\text{as }x\to c)\equiv\lim_{x\to c}{\frac{f(x)}{g(x)}}=1&lt;/script&gt;
 
@@ -190,13 +454,9 @@ I'll do this later, but this should be clear as asymptotic equivalence forms equ
 &lt;h2 id=&quot;relation-to-algorithmic-complexity&quot;&gt;Relation to Algorithmic Complexity&lt;/h2&gt;
 &lt;p&gt;When dealing with the time and space complexity of algorithms, asymptotic analysis (either in the form defined above or via &lt;strong&gt;Bachmann–Landau notation&lt;/strong&gt;) is used to compare the efficiency of different algorithms by stripping away unnecessary constants and minor terms that correspond to the different preconditions and runtime environments that these algorithms may run on.&lt;/p&gt;
 
-&lt;p&gt;In particular, the limit definitions of the Bachmann–Landau notation are very similar to that of asymptotic equivalence. In fact, we can phrase Big $O$, $\Omega$, and $\Theta$ notation in terms of asymptotic growth.&lt;/p&gt;
+&lt;p&gt;In particular, asymptotic equivalence is a more &lt;a href=&quot;\asymptotic-notation#asymptotic-equivalence&quot;&gt;specific case&lt;/a&gt; of big $\Theta$ notation, however we can phrase it in the other direction:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x)\in O(g(x))\equiv \exists c\not=0:cg(x)\text{ grows asymptotically faster than } f(x)&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x)\in \Omega(g(x))\equiv \exists c\not=0:cg(x)\text{ grows asymptotically slower than } f(x)&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x)\in \Omega(g(x))\equiv \exists c\not=0:cg(x) \sim f(x)&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x)\in \Theta(g(x))\equiv \exists c\not=0:cg(x) \sim f(x)&lt;/script&gt;
 </content>
  </entry>
  
@@ -244,7 +504,7 @@ I'll do this later, but this should be clear as asymptotic equivalence forms equ
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbf{x}\propto_V \mathbf{y}\equiv(\exists k\in F)\ k\mathbf{x}=\mathbf{y}&lt;/script&gt;
 
 &lt;h4 id=&quot;notation&quot;&gt;Notation&lt;/h4&gt;
-&lt;p&gt;When the context is clear, we can omit the subscript denoteing what vector space the relation is acting upon and just write $\propto$. This is usually the case when relating two functions, real valued or otherwise, since proportionality is most commonly used in fields like physics where the domain of discourse is very clear.&lt;/p&gt;
+&lt;p&gt;When the context is clear, we can omit the subscript denoting what vector space the relation is acting upon and just write $\propto$. This is usually the case when relating two functions, real valued or otherwise, since proportionality is most commonly used in fields like physics where the domain of discourse is very clear.&lt;/p&gt;
 
 &lt;h2 id=&quot;proof-of-equivalence-relation&quot;&gt;Proof of Equivalence Relation&lt;/h2&gt;
 &lt;p&gt;Using the general definition above, we will prove $\propto$ forms an equivalence relation by showing it has the reflexive, symmetric, and transitive properties.&lt;/p&gt;
@@ -683,11 +943,11 @@ $$C_1|1\rangle=|1\rangle$$
 &lt;p&gt;Now that we can represent bit strings as vectors, it is possible construct operations that take in $2$ bits and output $1$ bit. While there are technically $2^{2^2}=16$ possible binary bit operations, we’ll only construct the more useful ones like &lt;code class=&quot;highlighter-rouge&quot;&gt;AND&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;OR&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;XOR&lt;/code&gt;, etc.&lt;/p&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;OR&lt;/strong&gt;&lt;/summary&gt;
-The &lt;code&gt;OR&lt;/code&gt; gate represents logical disjunction (i.e $f(x,y)=x\vee y$) and is represented by the following matrix:
+&lt;summary&gt;&lt;strong&gt;Disjunction ($\operatorname{OR}$)&lt;/strong&gt;&lt;/summary&gt;
+The $\operatorname{OR}$ gate represents logical disjunction (i.e $f(x,y)=x\vee y$) and is represented by the following matrix:
 
 $$
-  \text{OR} = \begin{pmatrix}
+  \operatorname{OR} = \begin{pmatrix}
     1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
     0 &amp;amp; 1 &amp;amp; 1 &amp;amp; 1
   \end{pmatrix}
@@ -695,21 +955,21 @@ $$
 
 Applying the gate to all two bit states we find:
 
-$$\text{OR}|00\rangle=|0\rangle$$
+$$\operatorname{OR}|00\rangle=|0\rangle$$
 
-$$\text{OR}|01\rangle=|1\rangle$$
+$$\operatorname{OR}|01\rangle=|1\rangle$$
 
-$$\text{OR}|10\rangle=|1\rangle$$
+$$\operatorname{OR}|10\rangle=|1\rangle$$
 
-$$\text{OR}|11\rangle=|1\rangle$$
+$$\operatorname{OR}|11\rangle=|1\rangle$$
 &lt;/details&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;AND&lt;/strong&gt;&lt;/summary&gt;
-The &lt;code&gt;AND&lt;/code&gt; gate represents logical conjunction (i.e $f(x,y)=x\wedge y$) and is represented by the following matrix:
+&lt;summary&gt;&lt;strong&gt;Conjunction ($\operatorname{AND}$)&lt;/strong&gt;&lt;/summary&gt;
+The $\operatorname{AND}$ gate represents logical conjunction (i.e $f(x,y)=x\wedge y$) and is represented by the following matrix:
 
 $$
-  \text{AND} = \begin{pmatrix}
+  \operatorname{AND} = \begin{pmatrix}
     1 &amp;amp; 1 &amp;amp; 1 &amp;amp; 0 \\
     0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1
   \end{pmatrix}
@@ -717,21 +977,21 @@ $$
 
 Applying the gate to all two bit states we find:
 
-$$\text{AND}|00\rangle=|0\rangle$$
+$$\operatorname{AND}|00\rangle=|0\rangle$$
 
-$$\text{AND}|01\rangle=|0\rangle$$
+$$\operatorname{AND}|01\rangle=|0\rangle$$
 
-$$\text{AND}|10\rangle=|0\rangle$$
+$$\operatorname{AND}|10\rangle=|0\rangle$$
 
-$$\text{AND}|11\rangle=|1\rangle$$
+$$\operatorname{AND}|11\rangle=|1\rangle$$
 &lt;/details&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;XOR&lt;/strong&gt;&lt;/summary&gt;
-The &lt;code&gt;XOR&lt;/code&gt; gate represents exclusive disjunction (i.e $f(x,y)=x\oplus y$) and is represented by the following matrix:
+&lt;summary&gt;&lt;strong&gt;Exclusive Disjunction ($\operatorname{XOR}$)&lt;/strong&gt;&lt;/summary&gt;
+The $\operatorname{XOR}$ gate represents exclusive disjunction (i.e $f(x,y)=x\oplus y$) and is represented by the following matrix:
 
 $$
-  \text{XOR} = \begin{pmatrix}
+  \operatorname{XOR} = \begin{pmatrix}
     1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 \\
     0 &amp;amp; 1 &amp;amp; 1 &amp;amp; 0
   \end{pmatrix}
@@ -739,45 +999,45 @@ $$
 
 Applying the gate to all two bit states we find:
 
-$$\text{XOR}|00\rangle=|0\rangle$$
+$$\operatorname{XOR}|00\rangle=|0\rangle$$
 
-$$\text{XOR}|01\rangle=|1\rangle$$
+$$\operatorname{XOR}|01\rangle=|1\rangle$$
 
-$$\text{XOR}|10\rangle=|1\rangle$$
+$$\operatorname{XOR}|10\rangle=|1\rangle$$
 
-$$\text{XOR}|11\rangle=|0\rangle$$
+$$\operatorname{XOR}|11\rangle=|0\rangle$$
 &lt;/details&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Equality (XNOR)&lt;/strong&gt;&lt;/summary&gt;
-Equality checks if two bits are equivalent (i.e $f(x,y)=x\iff y$) and is represented by the following matrix:
+&lt;summary&gt;&lt;strong&gt;Logical Equivalence ($\operatorname{IFF}$)&lt;/strong&gt;&lt;/summary&gt;
+Logical equivalence/biconditional checks if two bits are equal (i.e $f(x,y)=x\iff y$) and is represented by the following matrix:
 
 $$
-  \text{IFF} = \begin{pmatrix}
+  \operatorname{IFF} = \begin{pmatrix}
     1 &amp;amp; 1 &amp;amp; 1 &amp;amp; 0 \\
     0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1
   \end{pmatrix}
 $$
 
-&lt;i&gt;Notice that equality is equivalent to the negation of XOR, &lt;code&gt;XNOR&lt;/code&gt; (i.e $x\leftrightarrow y=\neg(x\oplus y)$) meaning all the $0$'s and $1$'s in the &lt;code&gt;XOR&lt;/code&gt; matrix are simply swapped to form the equality one.&lt;/i&gt;
+&lt;i&gt;Notice that logical equivalence the negation of &lt;code&gt;XOR&lt;/code&gt;, &lt;code&gt;XNOR&lt;/code&gt; (i.e $x\leftrightarrow y=\neg(x\oplus y)$) meaning all the $0$'s and $1$'s in the $\operatorname{XOR}$ matrix are simply swapped to form the equality one.&lt;/i&gt;
 
 Applying the gate to all two bit states we find:
 
-$$\text{IFF}|00\rangle=|1\rangle$$
+$$\operatorname{IFF}|00\rangle=|1\rangle$$
 
-$$\text{IFF}|01\rangle=|0\rangle$$
+$$\operatorname{IFF}|01\rangle=|0\rangle$$
 
-$$\text{IFF}|10\rangle=|0\rangle$$
+$$\operatorname{IFF}|10\rangle=|0\rangle$$
 
-$$\text{IFF}|11\rangle=|1\rangle$$
+$$\operatorname{IFF}|11\rangle=|1\rangle$$
 &lt;/details&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Implication (IF)&lt;/strong&gt;&lt;/summary&gt;
-Material implication is a statement of one variable's dependence on another (i.e $f(x,y)=x\implies y$). It's more commonly referred to as an &lt;code&gt;IF&lt;/code&gt; statement in computer science.
+&lt;summary&gt;&lt;strong&gt;Material Implication ($\operatorname{IF}$)&lt;/strong&gt;&lt;/summary&gt;
+Material implication is a statement of one variable's dependence on another (i.e $f(x,y)=x\implies y$). It's more commonly referred to as an $\operatorname{IF}$ statement in computer science (however this notion of implication is different from the purely logical one above).
 
 $$
-  \text{IF} = \begin{pmatrix}
+  \operatorname{IF} = \begin{pmatrix}
     0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 \\
     1 &amp;amp; 0 &amp;amp; 1 &amp;amp; 1
   \end{pmatrix}
@@ -785,82 +1045,186 @@ $$
 
 Applying the gate to all two bit states we find:
 
-$$\text{IF}|00\rangle=|1\rangle$$
+$$\operatorname{IF}|00\rangle=|1\rangle$$
 
-$$\text{IF}|01\rangle=|0\rangle$$
+$$\operatorname{IF}|01\rangle=|0\rangle$$
 
-$$\text{IF}|10\rangle=|1\rangle$$
+$$\operatorname{IF}|10\rangle=|1\rangle$$
 
-$$\text{IF}|11\rangle=|1\rangle$$
+$$\operatorname{IF}|11\rangle=|1\rangle$$
 &lt;/details&gt;
 &lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;You’ll notice that the $i$th column of a binary gate matrix is either the $|0\rangle$ or $|1\rangle$ vector depending on what the gate outputs given the binary form of $i$ (ex. the $2$nd index corresponds to the input $10_2$). Since these gates only have $2^2=4$ possible inputs, there are $4$ corresponding columns in their matrix representation.&lt;/p&gt;
 
 &lt;h2 id=&quot;putting-it-together&quot;&gt;Putting it Together&lt;/h2&gt;
-&lt;p&gt;We can now appreciate this new formulation of binary computation for what it is, an isomorphism from booleans to vectors, logical connectives to matrices, and function composition to matrix multiplication.&lt;/p&gt;
+&lt;p&gt;We can now appreciate this new formulation of binary computation for what it is, an isomorphism from Booleans to vectors, logical connectives to matrices, and function composition to matrix multiplication.&lt;/p&gt;
 
 &lt;p&gt;Here’s an example, the half-adder:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/comp_sci/half_adder.png?style=centerme&quot; alt=&quot;half-adder&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;We can represent this algebraically as $S=X\oplus Y$ and $C=X\wedge Y$, where $S$ is the &lt;em&gt;sum&lt;/em&gt; bit and $C$ is the &lt;em&gt;carry&lt;/em&gt; bit.&lt;/p&gt;
-
-&lt;p&gt;Remember, however, that a bit string is represented as the tensor product of its component bits. As such, we must find the tensor product of the matrices represented by the logical operations:&lt;/p&gt;
-
-&lt;!-- $$
-  S=\text{XOR}(X\otimes Y)
-$$
-
-$$
-  C=\text{AND}(X\otimes Y)
-$$ --&gt;
-
-&lt;!-- &lt;details&gt;
-&lt;summary&gt;Explicit Form&lt;/summary&gt;
-
-$$
-S=\begin{pmatrix}
-  1 &amp; 0 &amp; 0 &amp; 1 \\
-  0 &amp; 1 &amp; 1 &amp; 0
-\end{pmatrix}
-\left(
-\begin{pmatrix}
-  a \\
-  b \\
-\end{pmatrix}
-\otimes
-\begin{pmatrix}
-  c \\
-  d \\
-\end{pmatrix}
-\right)
-$$
-
-$$
-  C = \begin{pmatrix}
-    1 &amp; 1 &amp; 1 &amp; 0 \\
-    0 &amp; 0 &amp; 0 &amp; 1
-  \end{pmatrix}
-  \left(
-  \begin{pmatrix}
-    a \\
-    b \\
-  \end{pmatrix}
-  \otimes
-  \begin{pmatrix}
-    c \\
-    d \\
-  \end{pmatrix}
-  \right)
-$$
-
-&lt;/details&gt; --&gt;
+&lt;p&gt;We can represent the outputs of the half-adder symbolically as $S=X\oplus Y$ and $C=X\wedge Y$, where $S$ is the &lt;i&gt;sum&lt;/i&gt; bit and $C$ is the &lt;i&gt;carry&lt;/i&gt; bit. Below is a proof that derives the matrix representation of the half-adder:&lt;/p&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&quot;Proof&quot;&lt;/summary&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Proof&lt;/h4&gt;&lt;/summary&gt;
+To find the matrix that corresponds to sending two bits through a half adder, we must compute the tensor product of $X$ and $Y$ then compute and solve a series of tensor products:
 
-&lt;img src=&quot;/assets/comp_sci/half_adder_proof.jpg&quot; style=&quot;centerme&quot; alt=&quot;half adder proof&quot; /&gt;
+$$\begin{align}
+\text{Let } X&amp;amp;:=
+\begin{pmatrix}
+  a\\
+  b
+\end{pmatrix} \wedge X=|0\rangle \oplus X=|1\rangle\\
+\text{Let } Y&amp;amp;:=
+\begin{pmatrix}
+  c\\
+  d
+\end{pmatrix} \wedge Y=|0\rangle \oplus Y=|1\rangle
+\end{align}$$
+
+Notice that $X$ and $Y$ must be the $0$ or $1$ vectors. This condition is what allows us to solve for the gate. But before we do that let us find the tensor product of $X$ and $Y$ so that we may think of them as a 2 bit input:
+
+$$X\otimes Y=
+\begin{pmatrix}
+  a\\
+  b
+\end{pmatrix}\oplus
+\begin{pmatrix}
+  c\\
+  d
+\end{pmatrix}=
+\begin{pmatrix}
+  a\begin{pmatrix}
+    c \\
+    d \\
+  \end{pmatrix} \\
+  b\begin{pmatrix}
+    c \\
+    d \\
+  \end{pmatrix} \\
+\end{pmatrix}=
+\begin{pmatrix}
+  ac \\
+  ad \\
+  bc \\
+  bd \\
+\end{pmatrix}$$
+
+The output bits $S$ and $C$ can now be represented as the following equations:
+
+$$\begin{align}
+S&amp;amp;=\operatorname{XOR}(X\otimes Y)=
+\begin{pmatrix}
+  1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 \\
+  0 &amp;amp; 1 &amp;amp; 1 &amp;amp; 0
+\end{pmatrix}
+\begin{pmatrix}
+  ac \\
+  ad \\
+  bc \\
+  bd
+\end{pmatrix}=
+\begin{pmatrix}
+  ac+bd \\
+  ad+bc
+\end{pmatrix}\\
+
+C&amp;amp;=\operatorname{AND}(X\otimes Y)=
+\begin{pmatrix}
+  1 &amp;amp; 1 &amp;amp; 1 &amp;amp; 0 \\
+  0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1
+\end{pmatrix}
+\begin{pmatrix}
+  ac \\
+  ad \\
+  bc \\
+  bd \\
+\end{pmatrix}=
+\begin{pmatrix}
+  ac+ad+bc \\
+  bd
+\end{pmatrix}\\
+\end{align}$$
+
+Their tensor product, i.e the output of the half-adder given an input of $X\otimes Y$, is the following:
+
+$$\begin{align}
+S\otimes C&amp;amp;=
+\begin{pmatrix}
+  ac+bd \\
+  ad+bc
+\end{pmatrix}
+\begin{pmatrix}
+  ac+ad+bc \\
+  bd
+\end{pmatrix}\\
+&amp;amp;=\begin{pmatrix}
+  (ac)^2+a^2cd+abc^2+abcd+abd^2+b^2cd \\
+  abcd+bd^2\\
+  a^2cd+(ad)^2+abcd+abcd+(bc)^2\\
+  abd^2+b^2cd
+\end{pmatrix}
+\end{align}$$
+
+While this result may seem unwieldy, recall the stipulation on the vectors $X$ and $Y$ we made when we defined them: they must be each equal to $|0\rangle$ or $|1\rangle$. We can phrase this in terms of their components:
+
+$$\begin{align}
+(a=1\wedge b=0)&amp;amp;\vee(a=0\wedge b=1)\\
+(c=1\wedge d=0)&amp;amp;\vee(c=0\wedge d=1)
+\end{align}$$
+
+Because of this, we can simplify many of the expressions above (example $ab=0$ b.c either $a$ or $b$ is $0$) to form a more simpler vector:
+
+*We can also think of this finding non-contingent statements and simplifying them.*
+
+$$\begin{pmatrix}
+  (ac)^2+a^2cd+abc^2+abcd+abd^2+b^2cd \\
+  abcd+bd^2\\
+  a^2cd+(ad)^2+abcd+abcd+(bc)^2\\
+  abd^2+b^2cd
+\end{pmatrix}=\begin{pmatrix}
+  ac\\
+  bd\\
+  bc+ad\\
+  0
+\end{pmatrix}$$
+
+Now we are simply left with the following equation:
+
+$$\operatorname{Half-Adder}(X\otimes Y)=(S\otimes C)$$
+
+We can now solve for the $\operatorname{Half-Adder}$ matrix by explicitly writing out the above equation:
+
+$$
+\begin{pmatrix}
+  ? &amp;amp;? &amp;amp;? &amp;amp;?\\
+  ? &amp;amp;? &amp;amp;? &amp;amp;?\\
+  ? &amp;amp;? &amp;amp;? &amp;amp;?\\
+  ? &amp;amp;? &amp;amp;? &amp;amp;?
+\end{pmatrix}
+\begin{pmatrix}
+  ac \\
+  ad \\
+  bc \\
+  bd \\
+\end{pmatrix}
+=\begin{pmatrix}
+  ac\\
+  bd\\
+  bc+ad\\
+  0
+\end{pmatrix}$$
+
+From the rules of matrix multiplication, it is clear that the sole matrix that solves this equation is:
+
+$$
+\begin{pmatrix}
+  1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\
+  0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 \\
+  0 &amp;amp; 1 &amp;amp; 1 &amp;amp; 0 \\
+  0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0
+\end{pmatrix}$$
 
 &lt;/details&gt;
 
@@ -1538,7 +1902,7 @@ a\sim b&amp;\equiv (a,b)\in \sim\\
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;[n^2]=\left(+,-,+,-,+,-,+,-,\cdots\right)&lt;/script&gt;
 
-&lt;p&gt;&lt;em&gt;As a shorthand, I will refer to sequences, like the sequence $(n^2)_ {n\in\mathbb{N}}$ above, by simply their $n$th term starting at $n=0$. This should not introduce any ambiguities.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;As a shorthand I will refer to sequences, like the sequence $(n^2)_ {n\in\mathbb{N}}$ above, by simply their $n$th term starting at $n=0$. This should not introduce any ambiguities.&lt;/em&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;what-are--and--&quot;&gt;What are $+$ and $-$?&lt;/h4&gt;
 &lt;p&gt;If we want to formalize the $+$ $-$ notation we can define them as such:&lt;/p&gt;
@@ -1584,7 +1948,7 @@ a\sim b&amp;\equiv (a,b)\in \sim\\
 
 &lt;p&gt;Parity equivalence also allows us to simplify otherwise overly complicated sequences and expressions purely using algebra rather than writing the terms out and trying to spot the pattern. Here’s an example:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;(-1)^{\sin \frac{n\pi}{2}}\left(\frac{n^2-2n}{3}\right)^n&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;(-3)^{\sin \frac{n\pi}{2}}\left(\frac{n^2-2n}{3}\right)^n&lt;/script&gt;
 
 &lt;p&gt;At first this expression seems a little intimidating. However, notice that $\sin \frac{n\pi}{2}$ and $n$ are parity equivalent:&lt;/p&gt;
 
@@ -2016,24 +2380,26 @@ I'll do it later...
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\pi^n_a(P)=\pi_2\circ\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-a\text{ iterations}}(P)=x_a&lt;/script&gt;
 
-&lt;details&gt;&lt;summary&gt;&quot;Proof&quot; &amp;amp; Intuition&lt;/summary&gt;
+&lt;p&gt;This should be fairly intuitive as the repeated $\pi_1$ serve to extract the desired nested tuple and once we reach the base case of the $2$-tuple, we either want the first $\pi_1$ or second $\pi_2$ term.&lt;/p&gt;
+
+&lt;!-- &lt;details&gt;&lt;summary&gt;&quot;Proof&quot; &amp; Intuition&lt;/summary&gt;
 Not really a proof, I just wrote down how to find the elements of $2,3,4,5$-tuples and found the pattern:
 
 $$\begin{align}
-  &amp;amp;2\text{-tuple}\left\{
+  &amp;2\text{-tuple}\left\{
     \begin{array}{l}
       \pi^2_1=\pi_1(P)\\
       \pi^2_2=\pi_2(P)\\
     \end{array}
   \right.\\
-  &amp;amp;3\text{-tuple}\left\{
+  &amp;3\text{-tuple}\left\{
     \begin{array}{l}
       \pi^3_1=\pi_1\left(\pi_1\left(P\right)\right)\\
       \pi^3_2=\pi_2\left(\pi_1\left(P\right)\right)\\
       \pi^3_3=\pi_2\left(P\right)\\
     \end{array}
   \right.\\
-  &amp;amp;4\text{-tuple}\left\{
+  &amp;4\text{-tuple}\left\{
     \begin{array}{l}
       \pi^4_1=\pi_1\left(\pi_1\left(\pi_1\left(P\right)\right)\right)\\
       \pi^4_2=\pi_2\left(\pi_1\left(\pi_1\left(P\right)\right)\right)\\
@@ -2041,7 +2407,7 @@ $$\begin{align}
       \pi^4_4=\pi_2\left(P\right)\\
     \end{array}
   \right.\\
-  &amp;amp;5\text{-tuple}\left\{
+  &amp;5\text{-tuple}\left\{
     \begin{array}{l}
       \pi^5_1=\pi_1\left(\pi_1\left(\pi_1\left(\pi_1\left(P\right)\right)\right)\right)\\
       \pi^5_2=\pi_2\left(\pi_1\left(\pi_1\left(\pi_1\left(P\right)\right)\right)\right)\\
@@ -2053,7 +2419,7 @@ $$\begin{align}
 \end{align}$$
 
 Why are is there a conditional definition of the $a$th element of an $n$-tuple? What causes this asymmetry? Well it must be the fact that our base case in defining $n$-tuples was the ordered pair rather than some sort of $1$-tuple. Although it's possible that starting with a $1$-tuple wouldn't change this conditional...
-&lt;/details&gt;
+&lt;/details&gt; --&gt;
 
 &lt;h2 id=&quot;some-uses&quot;&gt;Some Uses&lt;/h2&gt;
 &lt;h4 id=&quot;cartesian-product&quot;&gt;&lt;a href=&quot;/cartesian-product&quot;&gt;Cartesian Product&lt;/a&gt;&lt;/h4&gt;

@@ -144,6 +144,10 @@
       
         
           
+        
+      
+        
+          
             <a class="sidebar-nav-item" href="/notes/">Notes</a>
           
         
@@ -241,6 +245,23 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="/boolean-logic-in-linear-algebra/">Boolean Logic in Linear Algebra</a>
+    </h1>
+    <span class="post-date">July 18, 2018</span>
+    <h2 id="introduction">Introduction</h2>
+<p>Computation is usually formulated via boolean logic, which in turn makes use of logical connectives like $\wedge,\vee, \neg$ along with the binary digits $0$ and $1$, representing false and true respectively.</p>
+
+<p>There is, however, an alternative: linear algebra. By representing $0$ and $1$ as vectors and logical operations/gates as matrices, we can define computation in the language of linear algebra.</p>
+
+<p>While at first this may seem to be nothing but a novel construction, reformulating computation in terms of linear algebra is precisely what opens the door to quantum computing, which is essentially a more general form of what’s shown below.</p>
+
+
+    <!--Adds Read more-->
+    <a href="/boolean-logic-in-linear-algebra/">Read more</a>
+    <hr>
+    
+  <div class="post">
+    <h1 class="post-title">
       <a href="/letter-case/">Letter Case and Computing</a>
     </h1>
     <span class="post-date">July 5, 2018</span>
@@ -319,43 +340,6 @@ first publish date: 2018-03-03-->
 
     <!--Adds Read more-->
     <a href="/parity-sequences/">Read more</a>
-    <hr>
-    
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/cartesian-product/">Cartesian Product</a>
-    </h1>
-    <span class="post-date">April 30, 2018</span>
-    <h2 id="definition">Definition</h2>
-<p>The Cartesian product $\times$ is an operation on two sets, call them $A$ and $B$, that returns the set of all <a href="/n-tuples">ordered pairs</a> with their first element from $A$ and their second from $B$.</p>
-
-<script type="math/tex; mode=display">A\times B=\{(a,b)\mid a\in A \land b\in B\}</script>
-
-<h4 id="existence-in-zfc">Existence in ZFC</h4>
-<p>We can show that, utilizing the <a href="/n-tuples#definition">Kuratowski definition</a> of ordered pairs, the Cartesian product of two sets is merely a subset of the following:</p>
-
-<script type="math/tex; mode=display">A\times B \subset \mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)</script>
-
-<details><summary>Proof</summary>
-First, note that $A\cup B$ is guaranteed by the axiom of union and that its power set is guaranteed by the axiom of power set.
-
-Next notice that, among many other elements, the power set of $A\cup B$ contains:
-<!-- \left(\forall a\in A,\forall b\in B\right) -->
-$$\{a\},\{a,b\}\in\mathcal{P}\left(A\cup B\right)$$
-
-where $a$ and $b$ are elements in $A$ and $B$ respectively. Now if we take the power set again we'll see that the result contains, among other things, the elements:
-
-$$\{\{a\},\{a,b\}\}\in\mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)$$
-
-for all $a$ and $b$ in $A$ and $B$. Now invoke the axiom of subset to choose only those elements that fit the description and we are done!
-</details>
-<p></p>
-
-<!-- $A\cup B$ is guaranteed by the axiom of union, and its repeated power sets are guaranteed by the axiom of power set. This coupled with the fact that the Cartesian product is only a subset of the above expression implies that it must exist. -->
-
-
-    <!--Adds Read more-->
-    <a href="/cartesian-product/">Read more</a>
     <hr>
     
   </div>

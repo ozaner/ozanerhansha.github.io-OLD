@@ -144,6 +144,10 @@
       
         
           
+        
+      
+        
+          
             <a class="sidebar-nav-item" href="/notes/">Notes</a>
           
         
@@ -239,6 +243,43 @@
 <br></br>
 <div class="posts">
   
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/cartesian-product/">Cartesian Product</a>
+    </h1>
+    <span class="post-date">April 30, 2018</span>
+    <h2 id="definition">Definition</h2>
+<p>The Cartesian product $\times$ is an operation on two sets, call them $A$ and $B$, that returns the set of all <a href="/n-tuples">ordered pairs</a> with their first element from $A$ and their second from $B$.</p>
+
+<script type="math/tex; mode=display">A\times B=\{(a,b)\mid a\in A \land b\in B\}</script>
+
+<h4 id="existence-in-zfc">Existence in ZFC</h4>
+<p>We can show that, utilizing the <a href="/n-tuples#definition">Kuratowski definition</a> of ordered pairs, the Cartesian product of two sets is merely a subset of the following:</p>
+
+<script type="math/tex; mode=display">A\times B \subset \mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)</script>
+
+<details><summary>Proof</summary>
+First, note that $A\cup B$ is guaranteed by the axiom of union and that its power set is guaranteed by the axiom of power set.
+
+Next notice that, among many other elements, the power set of $A\cup B$ contains:
+<!-- \left(\forall a\in A,\forall b\in B\right) -->
+$$\{a\},\{a,b\}\in\mathcal{P}\left(A\cup B\right)$$
+
+where $a$ and $b$ are elements in $A$ and $B$ respectively. Now if we take the power set again we'll see that the result contains, among other things, the elements:
+
+$$\{\{a\},\{a,b\}\}\in\mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)$$
+
+for all $a$ and $b$ in $A$ and $B$. Now invoke the axiom of subset to choose only those elements that fit the description and we are done!
+</details>
+<p></p>
+
+<!-- $A\cup B$ is guaranteed by the axiom of union, and its repeated power sets are guaranteed by the axiom of power set. This coupled with the fact that the Cartesian product is only a subset of the above expression implies that it must exist. -->
+
+
+    <!--Adds Read more-->
+    <a href="/cartesian-product/">Read more</a>
+    <hr>
+    
   <div class="post">
     <h1 class="post-title">
       <a href="/on-culpability/">On Culpability</a>
@@ -351,25 +392,6 @@
 
     <!--Adds Read more-->
     <a href="/dottie-number/">Read more</a>
-    <hr>
-    
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/metaphysical-nightmare/">On the Grounding of Ideas</a>
-    </h1>
-    <span class="post-date">April 9, 2018</span>
-    <h2 id="poorly-defined-concepts">Poorly Defined Concepts</h2>
-<p>What is jealousy? What is a cat? What does it mean to be free? What <em>are</em> you?</p>
-
-<p>These aren’t foreign questions to us. Jealousy is an emotion we feel when we envy someone for what they have, a cat is an animal with a tail and four paws, freedom is the state of being able to do what you please, and I am a human being with thoughts and emotions.</p>
-
-<p>But what is jealousy <em>really</em>? What’s a cat <em>really</em>? What does it <em>really</em> mean to be human?</p>
-
-<p>There is no formal definition of these concepts. We just know them when we see them. I know what jealousy feels like, I know what being human feels like (I hope), and I know a cat when I see it.</p>
-
-
-    <!--Adds Read more-->
-    <a href="/metaphysical-nightmare/">Read more</a>
     <hr>
     
   </div>

@@ -144,6 +144,10 @@
       
         
           
+        
+      
+        
+          
             <a class="sidebar-nav-item" href="/notes/">Notes</a>
           
         
@@ -411,24 +415,26 @@ I'll do it later...
 
 <script type="math/tex; mode=display">\pi^n_a(P)=\pi_2\circ\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-a\text{ iterations}}(P)=x_a</script>
 
-<details><summary>"Proof" &amp; Intuition</summary>
+<p>This should be fairly intuitive as the repeated $\pi_1$ serve to extract the desired nested tuple and once we reach the base case of the $2$-tuple, we either want the first $\pi_1$ or second $\pi_2$ term.</p>
+
+<!-- <details><summary>"Proof" & Intuition</summary>
 Not really a proof, I just wrote down how to find the elements of $2,3,4,5$-tuples and found the pattern:
 
 $$\begin{align}
-  &amp;2\text{-tuple}\left\{
+  &2\text{-tuple}\left\{
     \begin{array}{l}
       \pi^2_1=\pi_1(P)\\
       \pi^2_2=\pi_2(P)\\
     \end{array}
   \right.\\
-  &amp;3\text{-tuple}\left\{
+  &3\text{-tuple}\left\{
     \begin{array}{l}
       \pi^3_1=\pi_1\left(\pi_1\left(P\right)\right)\\
       \pi^3_2=\pi_2\left(\pi_1\left(P\right)\right)\\
       \pi^3_3=\pi_2\left(P\right)\\
     \end{array}
   \right.\\
-  &amp;4\text{-tuple}\left\{
+  &4\text{-tuple}\left\{
     \begin{array}{l}
       \pi^4_1=\pi_1\left(\pi_1\left(\pi_1\left(P\right)\right)\right)\\
       \pi^4_2=\pi_2\left(\pi_1\left(\pi_1\left(P\right)\right)\right)\\
@@ -436,7 +442,7 @@ $$\begin{align}
       \pi^4_4=\pi_2\left(P\right)\\
     \end{array}
   \right.\\
-  &amp;5\text{-tuple}\left\{
+  &5\text{-tuple}\left\{
     \begin{array}{l}
       \pi^5_1=\pi_1\left(\pi_1\left(\pi_1\left(\pi_1\left(P\right)\right)\right)\right)\\
       \pi^5_2=\pi_2\left(\pi_1\left(\pi_1\left(\pi_1\left(P\right)\right)\right)\right)\\
@@ -448,7 +454,7 @@ $$\begin{align}
 \end{align}$$
 
 Why are is there a conditional definition of the $a$th element of an $n$-tuple? What causes this asymmetry? Well it must be the fact that our base case in defining $n$-tuples was the ordered pair rather than some sort of $1$-tuple. Although it's possible that starting with a $1$-tuple wouldn't change this conditional...
-</details>
+</details> -->
 
 <h2 id="some-uses">Some Uses</h2>
 <h4 id="cartesian-product"><a href="/cartesian-product">Cartesian Product</a></h4>
@@ -465,6 +471,15 @@ Why are is there a conditional definition of the $a$th element of an $n$-tuple? 
     
       <li>
         <h3>
+          <a href="/bachmann-landau-notation/">
+            Bachmann–Landau Notation
+            <small>21 Sep 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/iverson-bracket/">
             Iverson Bracket
             <small>27 Aug 2018</small>
@@ -477,15 +492,6 @@ Why are is there a conditional definition of the $a$th element of an $n$-tuple? 
           <a href="/asymptotic-equivalence/">
             Asymptotic Equivalence
             <small>26 Aug 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/proportionality/">
-            Proportionality
-            <small>17 Aug 2018</small>
           </a>
         </h3>
       </li>
