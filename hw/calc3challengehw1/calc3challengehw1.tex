@@ -180,7 +180,7 @@ $$(\mathbf u_5\cdot\mathbf x_0)^2$$
 \textbf{Problem:} What is the value of the above expression?
 \\\\
 \textbf{Solution:} As we have shown in Exercise 2:
-$$\mathbf u_5\cdot\mathbf x_0=\frac{\sqrt 2}{2}(0,0,1,0,-1)\cdot(1,1,1,0,0)=0$$
+$$\mathbf u_5\cdot\mathbf x_0=\frac{\sqrt 2}{2}(0,0,1,0,-1)\cdot(1,1,1,0,0)=\frac{\sqrt 2}{2}$$
 
 \section*{Exercise 4}
 \subsection*{Part A}
@@ -291,19 +291,78 @@ $$((\mathbf x_0+s_0\mathbf u_1+t\mathbf u_2-u_0\mathbf v_3-v_0\mathbf v_4)\cdot\
 
 \textit{Where $u_0$ and $v_0$ are the same as in Exercise 5.}
 \\
-\textbf{Solution:} This problem can't be salvaged. What the heck am I supposed to do. The expression isn't dependent on $s$ and isn't true under both assumptions.
+\textbf{Solution:} \textit{\textcolor{red}{This problem can't be salvaged. The expression isn't dependent on $s$ and cannot even be true under both assumptions. I essentially made up another problem. I know there are typos but I cannot infer what they are since many are plausible.}}
 
-% Using the simplified expression we found above we can simply solve for $u_0$ (\textit{\textcolor{red}{due to the error i'll just assume $u_0=0$}}):
-%
-% $$\left(1-\frac{4}{3}u_0+3v\right)^2=0\rightarrow \boxed{v_0=\frac{-3}{4}}$$
+Using the simplified expression we found above we can simply solve for $u_0$ (\textit{\textcolor{red}{due to the error I'll just assume $u_0=0$}}):
+
+$$\left(1-\frac{4}{3}u_0+3v\right)^2=0\rightarrow \boxed{v_0=\frac{1}{3}}$$
 
 \section*{Exercise 8}
-\textbf{Problem:}
-\textbf{Solution:}
+\textbf{Problem:} Find the distance between the plane $P$ given in Exercise 1 and plane parameterized by the following:
+$$\mathbf x_2(u,v)=u\mathbf v_3+v\mathbf v_4$$
+
+\textbf{Solution:} Given the preamble on the challenge sheet preceding Exercise 3, we know that the sum of all the expressions in Exercises 3-7 is the expression for the distance between the planes that we must minimize. That sum is:
+
+$$\frac{\sqrt 2}{2}+2v^2+\frac{4}{9}u^2+\left(1+\frac{4}{3}u\right)^2+\left(1-\frac{4}{3}u+3v\right)^2$$
+
+After much tedious simplification, we are left to minimize the following quadratic polynomial over two variables:
+
+$$4u^2-8uv+6v+11v^2+2$$
+
+To minimize this we find the partial derivatives with respect to $u$ and $v$ and set the equal to 0:
+
+\begin{align*}
+  \frac{\partial}{\partial u}4u^2-8uv+6v+11v^2+2&=8u-8v\\
+  \frac{\partial}{\partial v}4u^2-8uv+6v+11v^2+2&=22v-8u+6\\
+\end{align*}
+
+Now we set them equal to 0 and solve the system of equations:
+
+\begin{gather*}
+  8u-8v=0\\
+  22v-8u+6=0
+\end{gather*}
+
+After solving the system we arrive at $u=\frac{-3}{7}$ and $v=\frac{-3}{7}$. Plugging this into our original quadratic we see that the distance between the planes is $\frac{5}{7}$. We can find the points that minimize this distance by simply plugging $u$ and $v$ into $\mathbf x_2$ and... \textit{\textcolor{red}{this is where I realized that the distance between two points on the planes is (given the botched questions) dependent only on the second plane. This means that any point on $P$ would suffice which makes no sense.}}
 
 \section*{Exercise 9}
-\textbf{Problem:}
+\subsection*{Part A}
+\textbf{Problem:} Apply the Gram-Schmidt algorithm to the vectors $\{\mathbf v_3, \mathbf v_4, \mathbf v_1, \mathbf v_2, \mathbf v_5\}$ in that order to produce the orthonormal set $\{\tilde{\mathbf u}_1, \tilde{\mathbf u}_2, \tilde{\mathbf u}_3, \tilde{\mathbf u}_4, \tilde{\mathbf u}_5\}$.
 \\\\
-\textbf{Solution:}
+\textbf{Solution:} The process was already shown in Exercise 1. I'll show the bare minimum of calculations here.
+
+For $\tilde{\mathbf u}_1$:
+$$\tilde{\mathbf u}_1=\frac{\mathbf v_3}{\|\mathbf v_3\|}=\frac{1}{2}(0,1,-1,1,-1)$$
+
+For $\tilde{\mathbf u}_2$:
+$$\mathbf w_2=\mathbf v_4-(\mathbf v_4\cdot\tilde{\mathbf u}_1)\tilde{\mathbf u}_1=(-1,0,-1,-2,-1)$$
+
+$$\tilde{\mathbf u}_2=\frac{\mathbf w_2}{\|\mathbf w_2\|}=\frac{\sqrt 7}{7}(-1,0,-1,-2,-1)$$
+
+For $\tilde{\mathbf u}_3$:
+$$\mathbf w_3=\mathbf v_1-(\mathbf v_1\cdot\tilde{\mathbf u}_1)\tilde{\mathbf u}_1-(\mathbf v_1\cdot\tilde{\mathbf u}_2)\tilde{\mathbf u}_2=\frac{1}{7}(2,1,2,-3,2)$$
+
+$$\tilde{\mathbf u}_3=\frac{\mathbf w_3}{\|\mathbf w_3\|}=\frac{\sqrt{70}}{70}(2,7,2,-3,2)$$
+
+For $\tilde{\mathbf u}_4$:
+$$\mathbf w_4=\mathbf v_2-(\mathbf v_2\cdot\tilde{\mathbf u}_1)\tilde{\mathbf u}_1-(\mathbf v_2\cdot\tilde{\mathbf u}_2)\tilde{\mathbf u}_2-(\mathbf v_2\cdot\tilde{\mathbf u}_3)\tilde{\mathbf u}_3=\frac{1}{5}(4,-1,-1,-1,-1)$$
+
+$$\tilde{\mathbf u}_4=\frac{\mathbf w_4}{\|\mathbf w_4\|}=\frac{\sqrt{5}}{10}(4,-1,-1,-1,-1)$$
+
+For $\tilde{\mathbf u}_5$:
+$$\mathbf w_5=\mathbf v_5-(\mathbf v_5\cdot\tilde{\mathbf u}_1)\tilde{\mathbf u}_1-(\mathbf v_5\cdot\tilde{\mathbf u}_2)\tilde{\mathbf u}_2-(\mathbf v_5\cdot\tilde{\mathbf u}_3)\tilde{\mathbf u}_3-(\mathbf v_5\cdot\tilde{\mathbf u}_4)\tilde{\mathbf u}_4=(0,0,1,0,-1)$$
+
+$$\tilde{\mathbf u}_5=\frac{\mathbf w_5}{\|\mathbf w_4\|}=\frac{\sqrt{2}}{2}(0,0,1,0,-1)$$
+
+\subsection*{Part B}
+\textbf{Problem:} Find a system of equations for $\operatorname{span}(\{\mathbf v_3,\mathbf v_4\})$.
+\\\\
+\textbf{Solution:} Using the orthonormal base we created in Part A, we can simply use all the vectors that are orthogonal to both $\mathbf v_3$ and $\mathbf v_4$ just like we did in Exercise 2. (i.e. need 3 orthogonal vectors in 5-space):
+
+\begin{align*}
+  \tilde{\mathbf u}_3\cdot(\mathbf x-\mathbf x_0) &= 0\\
+  \tilde{\mathbf u}_4\cdot(\mathbf x-\mathbf x_0) &= 0\\
+  \tilde{\mathbf u}_5\cdot(\mathbf x-\mathbf x_0) &= 0
+\end{align*}
 
 \end{document}

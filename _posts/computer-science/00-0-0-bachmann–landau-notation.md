@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Bachmann–Landau Notation
-date: 2018-09-21
+date: 2018-09-28
 tags: math computer-science
 ---
 **Bachmann–Landau notation**, or asymptotic notation, is a collection of notations used to classify the limiting behavior of a particular function as its argument tends towards a particular value or infinity.

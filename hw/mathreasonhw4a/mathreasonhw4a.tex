@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+\title{Intro to Math Reasoning HW 4a}
+\author{Ozaner Hansha}
+\date{October 3, 2018}
+\maketitle
+
+\section*{Problem 1}
+\textbf{Problem:} Consider the predicate $C(x,y)$ where $x$ and $y$ are real numbers. Let the sets $S_1$ and $S_2$:
+\begin{align*}
+S_1&=\{x\in\mathbb R\mid(\forall y\in\mathbb R)\ C(x,y)\}\\
+S_2&=\{x\in\mathbb R\mid(\forall y\in\mathbb R)\ \neg C(x,y)\}
+\end{align*}
+Can both $S_1$ and $S_2$ be nonempty?
+\\\\
+\textbf{Solution:} Yes, and to prove this it suffices to give a single example. Consider the following choice of $C(x,y)$:
+
+$$C(x,y)\equiv (\exists! k\in\mathbb R)\ kx=y$$
+
+Notice that this is just a more accurate way of saying $\frac{y}{x}$ is defined. We know that for all real numbers $x,y$ the statement is defined and thus the proposition is true \textit{except} when $x=0$ since $\frac{y}{0}$ is not defined for any $y$.
+
+So in this case $S_1=\{x\in\mathbb R\mid x\not=0\}$ and $S_2=\{0\}$ which are both nonempty.
+
+\section*{Problem 2}
+Consider the predicate $P(A,B,C)\equiv (C\setminus A=C\setminus B)\rightarrow A=B$.
+\subsection*{Part a}
+\textbf{Problem:} Is there an $A,B$ and $C$ such that $P(A,B,C)$ is true?
+\\\\
+\textbf{Solution:}
+
+\subsection*{Part b}
+\textbf{Problem:} Is there a unique $(A,B,C)$ such that $P(A,B,C)$ is true?
+\\\\
+\textbf{Solution:}
+
+\subsection*{Part c}
+\textbf{Problem:} Is there an $A,B$ and $C$ such that $P(A,B,C)$ is false?
+\\\\
+\textbf{Solution:}
+
+\section*{Problem 2}
+\subsection*{Part a}
+\textbf{Problem:}
+\\\\
+\textbf{Solution:}
+
+\subsection*{Part b}
+\textbf{Problem:}
+\\\\
+\textbf{Solution:}
+
+\subsection*{Part c}
+\textbf{Problem:}
+\\\\
+\textbf{Solution:}
+\end{document}

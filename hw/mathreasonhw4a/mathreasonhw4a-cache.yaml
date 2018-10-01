@@ -1,5 +1,5 @@
 version: 0.12.2
-filePath: calc3challengehw1.tex
+filePath: mathreasonhw4a.tex
 options:
   $BIBINPUTS:
     - $ROOTDIR
@@ -73,7 +73,7 @@ options:
     2.9\miktex\bin\x64;%ProgramFiles(x86)%\MiKTeX 2.9\miktex\bin;$PATH
 files:
   dicy-instance.yaml-ParsedYAML:
-    timeStamp: 2018-10-01T17:19:25.337Z
+    timeStamp: 2018-10-01T14:19:33.172Z
     jobNames: []
     value:
       severity: info
@@ -81,16 +81,16 @@ files:
   dicy.yaml-ParsedYAML:
     jobNames: []
     type: ParsedYAML
-  calc3challengehw1.yaml-ParsedYAML:
+  mathreasonhw4a.yaml-ParsedYAML:
     jobNames: []
     type: ParsedYAML
-  calc3challengehw1.tex-ParsedLaTeXMagic:
-    timeStamp: 2018-09-30T00:34:16.871Z
+  mathreasonhw4a.tex-ParsedLaTeXMagic:
+    timeStamp: 2018-10-01T14:19:33.365Z
     jobNames: []
     value: {}
     type: ParsedLaTeXMagic
   'C:\Users\Ozaner Hansha\AppData\Roaming\dicy\config.yaml-ParsedYAML':
-    timeStamp: 2018-09-30T00:34:16.866Z
+    timeStamp: 2018-10-01T14:19:33.353Z
     jobNames: []
     value:
       synctex: true
@@ -133,10 +133,10 @@ files:
         %SystemDrive%\texlive\2017\bin\win32;%SystemDrive%\texlive\2016\bin\win32;%SystemDrive%\texlive\2015\bin\win32;%ProgramFiles%\MiKTeX
         2.9\miktex\bin\x64;%ProgramFiles(x86)%\MiKTeX 2.9\miktex\bin;$PATH
     type: ParsedYAML
-  calc3challengehw1.tex:
-    timeStamp: 2018-10-01T17:27:01.022Z
+  mathreasonhw4a.tex:
+    timeStamp: 2018-10-01T15:46:07.313Z
     jobNames: []
-    hash: 329qZujNj1TfxEsad9tu9ABTf8u44wP4qPQYmClRJQY=
+    hash: ADi4a5Ed2Zz2dvstoxrS8ASjqYsa5vFtxdrSLqeR9eQ=
     type: LaTeX
     subType: article
   'C:\Users\Ozaner Hansha\AppData\Roaming\dicy\config.yaml':
@@ -146,8 +146,8 @@ files:
   x.y-Nil:
     jobNames: []
     type: Nil
-  calc3challengehw1.fls-ParsedFileListing:
-    timeStamp: 2018-10-01T17:19:29.223Z
+  mathreasonhw4a.fls-ParsedFileListing:
+    timeStamp: 2018-10-01T15:22:19.270Z
     jobNames: []
     value:
       messages: []
@@ -165,9 +165,6 @@ files:
         - 'c:\texlive\2018\texmf-dist\fonts\tfm\public\amsfonts\symbols\msbm7.tfm'
         - 'c:\texlive\2018\texmf-dist\fonts\tfm\public\cm\cmbx10.tfm'
         - 'c:\texlive\2018\texmf-dist\fonts\tfm\public\cm\cmbx12.tfm'
-        - 'c:\texlive\2018\texmf-dist\fonts\tfm\public\cm\cmbx5.tfm'
-        - 'c:\texlive\2018\texmf-dist\fonts\tfm\public\cm\cmbx7.tfm'
-        - 'c:\texlive\2018\texmf-dist\fonts\tfm\public\cm\cmbxti10.tfm'
         - 'c:\texlive\2018\texmf-dist\fonts\tfm\public\cm\cmex10.tfm'
         - 'c:\texlive\2018\texmf-dist\fonts\tfm\public\cm\cmmi12.tfm'
         - 'c:\texlive\2018\texmf-dist\fonts\tfm\public\cm\cmmi6.tfm'
@@ -182,22 +179,16 @@ files:
         - 'c:\texlive\2018\texmf-dist\fonts\tfm\public\cm\cmti10.tfm'
         - 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmbx10.pfb'
         - 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmbx12.pfb'
-        - 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmbx7.pfb'
-        - 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmbxti10.pfb'
-        - 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmex10.pfb'
         - 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmmi10.pfb'
         - 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmmi7.pfb'
         - 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmr10.pfb'
         - 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmr12.pfb'
         - 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmr17.pfb'
-        - 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmr5.pfb'
         - 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmr7.pfb'
         - 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmsy10.pfb'
-        - 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmsy7.pfb'
         - 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmti10.pfb'
         - >-
           c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\symbols\msbm10.pfb
-        - 'c:\texlive\2018\texmf-dist\tex\context\base\mkii\supp-pdf.mkii'
         - 'c:\texlive\2018\texmf-dist\tex\latex\amsfonts\amsfonts.sty'
         - 'c:\texlive\2018\texmf-dist\tex\latex\amsfonts\amssymb.sty'
         - 'c:\texlive\2018\texmf-dist\tex\latex\amsfonts\umsa.fd'
@@ -209,23 +200,20 @@ files:
         - 'c:\texlive\2018\texmf-dist\tex\latex\amsmath\amstext.sty'
         - 'c:\texlive\2018\texmf-dist\tex\latex\base\article.cls'
         - 'c:\texlive\2018\texmf-dist\tex\latex\base\size10.clo'
-        - 'c:\texlive\2018\texmf-dist\tex\latex\graphics-cfg\color.cfg'
-        - 'c:\texlive\2018\texmf-dist\tex\latex\graphics-def\pdftex.def'
-        - 'c:\texlive\2018\texmf-dist\tex\latex\xcolor\xcolor.sty'
         - 'c:\texlive\2018\texmf-dist\web2c\texmf.cnf'
         - 'c:\texlive\2018\texmf-var\fonts\map\pdftex\updmap\pdftex.map'
         - 'c:\texlive\2018\texmf-var\web2c\pdftex\pdflatex.fmt'
         - 'c:\texlive\2018\texmf.cnf'
-        - calc3challengehw1.aux
-        - calc3challengehw1.tex
+        - mathreasonhw4a.aux
+        - mathreasonhw4a.tex
       outputs:
-        - calc3challengehw1.aux
-        - calc3challengehw1.log
-        - calc3challengehw1.pdf
+        - mathreasonhw4a.aux
+        - mathreasonhw4a.log
+        - mathreasonhw4a.pdf
       calls: []
     type: ParsedFileListing
-  calc3challengehw1.log-ParsedLaTeXLog:
-    timeStamp: 2018-10-01T17:19:29.240Z
+  mathreasonhw4a.log-ParsedLaTeXLog:
+    timeStamp: 2018-10-01T15:22:41.464Z
     jobNames: []
     value:
       messages:
@@ -235,7 +223,7 @@ files:
           source:
             file: 'c:\texlive\2018\texmf-dist\tex\latex\amsmath\amsmath.sty'
           log:
-            file: calc3challengehw1.log
+            file: mathreasonhw4a.log
             range:
               start: 28
               end: 28
@@ -245,7 +233,7 @@ files:
           source:
             file: 'c:\texlive\2018\texmf-dist\tex\latex\amsmath\amstext.sty'
           log:
-            file: calc3challengehw1.log
+            file: mathreasonhw4a.log
             range:
               start: 32
               end: 32
@@ -255,7 +243,7 @@ files:
           source:
             file: 'c:\texlive\2018\texmf-dist\tex\latex\amsmath\amsbsy.sty'
           log:
-            file: calc3challengehw1.log
+            file: mathreasonhw4a.log
             range:
               start: 38
               end: 38
@@ -265,7 +253,7 @@ files:
           source:
             file: 'c:\texlive\2018\texmf-dist\tex\latex\amsmath\amsopn.sty'
           log:
-            file: calc3challengehw1.log
+            file: mathreasonhw4a.log
             range:
               start: 41
               end: 41
@@ -279,7 +267,7 @@ files:
               start: 213
               end: 213
           log:
-            file: calc3challengehw1.log
+            file: mathreasonhw4a.log
             range:
               start: 44
               end: 44
@@ -293,7 +281,7 @@ files:
               start: 375
               end: 375
           log:
-            file: calc3challengehw1.log
+            file: mathreasonhw4a.log
             range:
               start: 47
               end: 47
@@ -307,7 +295,7 @@ files:
               start: 472
               end: 472
           log:
-            file: calc3challengehw1.log
+            file: mathreasonhw4a.log
             range:
               start: 50
               end: 50
@@ -321,7 +309,7 @@ files:
               start: 475
               end: 475
           log:
-            file: calc3challengehw1.log
+            file: mathreasonhw4a.log
             range:
               start: 51
               end: 51
@@ -335,7 +323,7 @@ files:
               start: 596
               end: 596
           log:
-            file: calc3challengehw1.log
+            file: mathreasonhw4a.log
             range:
               start: 52
               end: 52
@@ -349,7 +337,7 @@ files:
               start: 712
               end: 712
           log:
-            file: calc3challengehw1.log
+            file: mathreasonhw4a.log
             range:
               start: 56
               end: 56
@@ -363,7 +351,7 @@ files:
               start: 713
               end: 713
           log:
-            file: calc3challengehw1.log
+            file: mathreasonhw4a.log
             range:
               start: 57
               end: 57
@@ -377,7 +365,7 @@ files:
               start: 2817
               end: 2817
           log:
-            file: calc3challengehw1.log
+            file: mathreasonhw4a.log
             range:
               start: 78
               end: 78
@@ -391,7 +379,7 @@ files:
               start: 2818
               end: 2818
           log:
-            file: calc3challengehw1.log
+            file: mathreasonhw4a.log
             range:
               start: 79
               end: 79
@@ -401,7 +389,7 @@ files:
           source:
             file: 'c:\texlive\2018\texmf-dist\tex\latex\amsfonts\amssymb.sty'
           log:
-            file: calc3challengehw1.log
+            file: mathreasonhw4a.log
             range:
               start: 81
               end: 81
@@ -411,7 +399,7 @@ files:
           source:
             file: 'c:\texlive\2018\texmf-dist\tex\latex\amsfonts\amsfonts.sty'
           log:
-            file: calc3challengehw1.log
+            file: mathreasonhw4a.log
             range:
               start: 83
               end: 83
@@ -427,305 +415,155 @@ files:
               start: 106
               end: 106
           log:
-            file: calc3challengehw1.log
+            file: mathreasonhw4a.log
             range:
               start: 86
               end: 87
-        - name: pdfTeX
-          severity: info
-          text: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
-          source:
-            file: 'c:\texlive\2018\texmf-dist\tex\latex\xcolor\xcolor.sty'
-          log:
-            file: calc3challengehw1.log
-            range:
-              start: 89
-              end: 89
         - severity: info
           name: pdfTeX
-          category: Package xcolor
-          text: 'Driver file: pdftex.def'
+          category: LaTeX Font
+          text: Checking defaults for OML/cmm/m/it ... okay
           source:
-            file: 'c:\texlive\2018\texmf-dist\tex\latex\xcolor\xcolor.sty'
+            file: mathreasonhw4a.tex
             range:
-              start: 225
-              end: 225
+              start: 5
+              end: 5
           log:
-            file: calc3challengehw1.log
+            file: mathreasonhw4a.log
             range:
               start: 93
-              end: 93
+              end: 94
         - severity: info
           name: pdfTeX
-          category: Package xcolor
-          text: Model `cmy' substituted by `cmy0'
+          category: LaTeX Font
+          text: Checking defaults for T1/cmr/m/n ... okay
           source:
-            file: 'c:\texlive\2018\texmf-dist\tex\latex\xcolor\xcolor.sty'
+            file: mathreasonhw4a.tex
             range:
-              start: 1348
-              end: 1348
+              start: 5
+              end: 5
           log:
-            file: calc3challengehw1.log
+            file: mathreasonhw4a.log
+            range:
+              start: 95
+              end: 96
+        - severity: info
+          name: pdfTeX
+          category: LaTeX Font
+          text: Checking defaults for OT1/cmr/m/n ... okay
+          source:
+            file: mathreasonhw4a.tex
+            range:
+              start: 5
+              end: 5
+          log:
+            file: mathreasonhw4a.log
             range:
               start: 97
-              end: 97
-        - severity: info
-          name: pdfTeX
-          category: Package xcolor
-          text: Model `hsb' substituted by `rgb'
-          source:
-            file: 'c:\texlive\2018\texmf-dist\tex\latex\xcolor\xcolor.sty'
-            range:
-              start: 1352
-              end: 1352
-          log:
-            file: calc3challengehw1.log
-            range:
-              start: 98
               end: 98
         - severity: info
           name: pdfTeX
-          category: Package xcolor
-          text: Model `RGB' extended
+          category: LaTeX Font
+          text: Checking defaults for OMS/cmsy/m/n ... okay
           source:
-            file: 'c:\texlive\2018\texmf-dist\tex\latex\xcolor\xcolor.sty'
+            file: mathreasonhw4a.tex
             range:
-              start: 1364
-              end: 1364
+              start: 5
+              end: 5
           log:
-            file: calc3challengehw1.log
+            file: mathreasonhw4a.log
             range:
               start: 99
-              end: 99
-        - severity: info
-          name: pdfTeX
-          category: Package xcolor
-          text: Model `HTML' substituted by `rgb'
-          source:
-            file: 'c:\texlive\2018\texmf-dist\tex\latex\xcolor\xcolor.sty'
-            range:
-              start: 1366
-              end: 1366
-          log:
-            file: calc3challengehw1.log
-            range:
-              start: 100
               end: 100
         - severity: info
           name: pdfTeX
-          category: Package xcolor
-          text: Model `Hsb' substituted by `hsb'
+          category: LaTeX Font
+          text: Checking defaults for OMX/cmex/m/n ... okay
           source:
-            file: 'c:\texlive\2018\texmf-dist\tex\latex\xcolor\xcolor.sty'
+            file: mathreasonhw4a.tex
             range:
-              start: 1367
-              end: 1367
+              start: 5
+              end: 5
           log:
-            file: calc3challengehw1.log
+            file: mathreasonhw4a.log
             range:
               start: 101
-              end: 101
-        - severity: info
-          name: pdfTeX
-          category: Package xcolor
-          text: Model `tHsb' substituted by `hsb'
-          source:
-            file: 'c:\texlive\2018\texmf-dist\tex\latex\xcolor\xcolor.sty'
-            range:
-              start: 1368
-              end: 1368
-          log:
-            file: calc3challengehw1.log
-            range:
-              start: 102
               end: 102
         - severity: info
           name: pdfTeX
-          category: Package xcolor
-          text: Model `HSB' substituted by `hsb'
+          category: LaTeX Font
+          text: Checking defaults for U/cmr/m/n ... okay
           source:
-            file: 'c:\texlive\2018\texmf-dist\tex\latex\xcolor\xcolor.sty'
+            file: mathreasonhw4a.tex
             range:
-              start: 1369
-              end: 1369
+              start: 5
+              end: 5
           log:
-            file: calc3challengehw1.log
+            file: mathreasonhw4a.log
             range:
               start: 103
-              end: 103
-        - severity: info
-          name: pdfTeX
-          category: Package xcolor
-          text: Model `Gray' substituted by `gray'
-          source:
-            file: 'c:\texlive\2018\texmf-dist\tex\latex\xcolor\xcolor.sty'
-            range:
-              start: 1370
-              end: 1370
-          log:
-            file: calc3challengehw1.log
-            range:
-              start: 104
               end: 104
         - severity: info
           name: pdfTeX
-          category: Package xcolor
-          text: Model `wave' substituted by `hsb'
+          category: LaTeX Font
+          text: Try loading font information for U+msa
           source:
-            file: 'c:\texlive\2018\texmf-dist\tex\latex\xcolor\xcolor.sty'
+            file: mathreasonhw4a.tex
             range:
-              start: 1371
-              end: 1371
+              start: 10
+              end: 10
           log:
-            file: calc3challengehw1.log
+            file: mathreasonhw4a.log
             range:
               start: 105
               end: 105
         - severity: info
           name: pdfTeX
           category: LaTeX Font
-          text: Checking defaults for OML/cmm/m/it ... okay
-          source:
-            file: calc3challengehw1.tex
-            range:
-              start: 6
-              end: 6
-          log:
-            file: calc3challengehw1.log
-            range:
-              start: 111
-              end: 112
-        - severity: info
-          name: pdfTeX
-          category: LaTeX Font
-          text: Checking defaults for T1/cmr/m/n ... okay
-          source:
-            file: calc3challengehw1.tex
-            range:
-              start: 6
-              end: 6
-          log:
-            file: calc3challengehw1.log
-            range:
-              start: 113
-              end: 114
-        - severity: info
-          name: pdfTeX
-          category: LaTeX Font
-          text: Checking defaults for OT1/cmr/m/n ... okay
-          source:
-            file: calc3challengehw1.tex
-            range:
-              start: 6
-              end: 6
-          log:
-            file: calc3challengehw1.log
-            range:
-              start: 115
-              end: 116
-        - severity: info
-          name: pdfTeX
-          category: LaTeX Font
-          text: Checking defaults for OMS/cmsy/m/n ... okay
-          source:
-            file: calc3challengehw1.tex
-            range:
-              start: 6
-              end: 6
-          log:
-            file: calc3challengehw1.log
-            range:
-              start: 117
-              end: 118
-        - severity: info
-          name: pdfTeX
-          category: LaTeX Font
-          text: Checking defaults for OMX/cmex/m/n ... okay
-          source:
-            file: calc3challengehw1.tex
-            range:
-              start: 6
-              end: 6
-          log:
-            file: calc3challengehw1.log
-            range:
-              start: 119
-              end: 120
-        - severity: info
-          name: pdfTeX
-          category: LaTeX Font
-          text: Checking defaults for U/cmr/m/n ... okay
-          source:
-            file: calc3challengehw1.tex
-            range:
-              start: 6
-              end: 6
-          log:
-            file: calc3challengehw1.log
-            range:
-              start: 121
-              end: 122
-        - severity: info
-          name: pdfTeX
-          category: LaTeX Font
-          text: Try loading font information for U+msa
-          source:
-            file: calc3challengehw1.tex
-            range:
-              start: 11
-              end: 11
-          log:
-            file: calc3challengehw1.log
-            range:
-              start: 137
-              end: 137
-        - severity: info
-          name: pdfTeX
-          category: LaTeX Font
           text: Try loading font information for U+msb
           source:
-            file: calc3challengehw1.tex
+            file: mathreasonhw4a.tex
             range:
-              start: 11
-              end: 11
+              start: 10
+              end: 10
           log:
-            file: calc3challengehw1.log
+            file: mathreasonhw4a.log
             range:
-              start: 141
-              end: 141
+              start: 109
+              end: 109
       inputs: []
       outputs:
-        - calc3challengehw1.pdf
+        - mathreasonhw4a.pdf
       calls: []
     type: ParsedLaTeXLog
-  calc3challengehw1.aux:
-    timeStamp: 2018-10-01T17:27:04.053Z
+  mathreasonhw4a.aux:
+    timeStamp: 2018-10-01T15:46:09.197Z
     jobNames: []
     hash: M0WgdaIvs7vARWeh5WYO0CQNU/WIH0WKIjTc1Cp40zU=
     type: LaTeXAuxilary
-  calc3challengehw1.fls:
-    timeStamp: 2018-10-01T17:27:04.289Z
+  mathreasonhw4a.fls:
+    timeStamp: 2018-10-01T15:46:09.328Z
     jobNames: []
-    hash: /G6Y4a4xlush2bsId2Si2lE3METOU4ozlZSGZHRpBso=
+    hash: i9W2z34jaS9WtIn9RsOKKpCMiwocOhz9/szSNCNdrBo=
     type: FileListing
-  calc3challengehw1.log:
-    timeStamp: 2018-10-01T17:27:04.278Z
+  mathreasonhw4a.log:
+    timeStamp: 2018-10-01T15:46:09.310Z
     jobNames: []
-    hash: UzD6Vk6rZJIX1GZuruqCwWuKcjXmbtIJDH5LGmU85IU=
+    hash: ESrUr3JwIU8aV5z3HObcPhFFzWvppv1AsUdajiYf4js=
     type: LaTeXLog
     subType: pdfTeX
-  calc3challengehw1.synctex.gz:
-    timeStamp: 2018-10-01T17:27:04.232Z
+  mathreasonhw4a.synctex.gz:
+    timeStamp: 2018-10-01T15:46:09.280Z
     jobNames: []
-    hash: OCEI3r9XsuMRm6jMlVyvO/Clm/Z4s3uKcrSmsJNe8gc=
+    hash: leL3sL0fI6LHJwirmGriv8L1PXXUeflRpFGpsZk12Zo=
     type: SyncTeX
-  calc3challengehw1.pdf:
-    timeStamp: 2018-10-01T17:27:04.205Z
+  mathreasonhw4a.pdf:
+    timeStamp: 2018-10-01T15:46:09.264Z
     jobNames: []
-    hash: xzmJYXDZWNr/uzldIlrzl2D7rCrnqi4U1/Jvilvci+k=
+    hash: yGAOmLSSIS8ZFxC2pyT9nE2WX/0goeFTuJuOS96r00o=
     type: PortableDocumentFormat
-  calc3challengehw1.aux-ParsedLaTeXAuxilary:
-    timeStamp: 2018-09-30T00:42:38.959Z
+  mathreasonhw4a.aux-ParsedLaTeXAuxilary:
+    timeStamp: 2018-10-01T15:40:29.657Z
     jobNames: []
     value:
       commands:
@@ -743,17 +581,11 @@ files:
   'c:\texlive\2018\texmf-dist\fonts\tfm\public\amsfonts\symbols\msam10.tfm':
     timeStamp: 2018-09-29T22:07:56.729Z
     jobNames: []
-  'c:\texlive\2018\texmf-dist\fonts\tfm\public\amsfonts\symbols\msam5.tfm':
-    timeStamp: 2018-09-29T22:07:56.735Z
-    jobNames: []
   'c:\texlive\2018\texmf-dist\fonts\tfm\public\amsfonts\symbols\msam7.tfm':
     timeStamp: 2018-09-29T22:07:56.745Z
     jobNames: []
   'c:\texlive\2018\texmf-dist\fonts\tfm\public\amsfonts\symbols\msbm10.tfm':
     timeStamp: 2018-09-29T22:07:56.759Z
-    jobNames: []
-  'c:\texlive\2018\texmf-dist\fonts\tfm\public\amsfonts\symbols\msbm5.tfm':
-    timeStamp: 2018-09-29T22:07:56.765Z
     jobNames: []
   'c:\texlive\2018\texmf-dist\fonts\tfm\public\amsfonts\symbols\msbm7.tfm':
     timeStamp: 2018-09-29T22:07:56.775Z
@@ -763,12 +595,6 @@ files:
     jobNames: []
   'c:\texlive\2018\texmf-dist\fonts\tfm\public\cm\cmbx12.tfm':
     timeStamp: 2018-09-29T22:24:23.182Z
-    jobNames: []
-  'c:\texlive\2018\texmf-dist\fonts\tfm\public\cm\cmbx5.tfm':
-    timeStamp: 2018-09-29T22:24:23.187Z
-    jobNames: []
-  'c:\texlive\2018\texmf-dist\fonts\tfm\public\cm\cmbx7.tfm':
-    timeStamp: 2018-09-29T22:24:23.197Z
     jobNames: []
   'c:\texlive\2018\texmf-dist\fonts\tfm\public\cm\cmex10.tfm':
     timeStamp: 2018-09-29T22:24:23.237Z
@@ -809,12 +635,6 @@ files:
   'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmbx12.pfb':
     timeStamp: 2018-09-29T22:07:56.824Z
     jobNames: []
-  'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmmi10.pfb':
-    timeStamp: 2018-09-29T22:07:57.259Z
-    jobNames: []
-  'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmmi7.pfb':
-    timeStamp: 2018-09-29T22:07:57.289Z
-    jobNames: []
   'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmr10.pfb':
     timeStamp: 2018-09-29T22:07:57.321Z
     jobNames: []
@@ -823,12 +643,6 @@ files:
     jobNames: []
   'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmr17.pfb':
     timeStamp: 2018-09-29T22:07:57.336Z
-    jobNames: []
-  'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmr7.pfb':
-    timeStamp: 2018-09-29T22:07:57.356Z
-    jobNames: []
-  'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmsy10.pfb':
-    timeStamp: 2018-09-29T22:07:57.526Z
     jobNames: []
   'c:\texlive\2018\texmf-dist\tex\latex\amsfonts\amsfonts.sty':
     timeStamp: 2018-09-29T22:07:58.155Z
@@ -885,46 +699,33 @@ files:
   'c:\texlive\2018\texmf.cnf':
     timeStamp: 2018-09-30T00:22:18.534Z
     jobNames: []
-  'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmbx7.pfb':
-    timeStamp: 2018-09-29T22:07:56.848Z
+  'c:\texlive\2018\texmf-dist\fonts\tfm\public\amsfonts\symbols\msam5.tfm':
+    timeStamp: 2018-09-29T22:07:56.735Z
+    jobNames: []
+  'c:\texlive\2018\texmf-dist\fonts\tfm\public\amsfonts\symbols\msbm5.tfm':
+    timeStamp: 2018-09-29T22:07:56.765Z
+    jobNames: []
+  'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmmi10.pfb':
+    timeStamp: 2018-09-29T22:07:57.259Z
+    jobNames: []
+  'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmr7.pfb':
+    timeStamp: 2018-09-29T22:07:57.356Z
+    jobNames: []
+  'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmsy10.pfb':
+    timeStamp: 2018-09-29T22:07:57.526Z
     jobNames: []
   'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\symbols\msbm10.pfb':
     timeStamp: 2018-09-29T22:07:58.100Z
     jobNames: []
-  'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmex10.pfb':
-    timeStamp: 2018-09-29T22:07:57.214Z
-    jobNames: []
-  'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmsy7.pfb':
-    timeStamp: 2018-09-29T22:07:57.547Z
-    jobNames: []
   'c:\texlive\2018\texmf-dist\fonts\tfm\public\cm\cmti10.tfm':
     timeStamp: 2018-09-29T22:24:23.535Z
+    jobNames: []
+  'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmmi7.pfb':
+    timeStamp: 2018-09-29T22:07:57.289Z
     jobNames: []
   'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmti10.pfb':
     timeStamp: 2018-09-29T22:07:57.598Z
     jobNames: []
-  'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmr5.pfb':
-    timeStamp: 2018-09-29T22:07:57.342Z
-    jobNames: []
-  'c:\texlive\2018\texmf-dist\fonts\tfm\public\cm\cmbxti10.tfm':
-    timeStamp: 2018-09-29T22:24:23.220Z
-    jobNames: []
-  'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmbxti10.pfb':
-    timeStamp: 2018-09-29T22:07:57.191Z
-    jobNames: []
-  'c:\texlive\2018\texmf-dist\tex\context\base\mkii\supp-pdf.mkii':
-    timeStamp: 2018-09-29T23:25:53.545Z
-    jobNames: []
-  'c:\texlive\2018\texmf-dist\tex\latex\graphics-cfg\color.cfg':
-    timeStamp: 2018-09-29T22:56:37.406Z
-    jobNames: []
-  'c:\texlive\2018\texmf-dist\tex\latex\graphics-def\pdftex.def':
-    timeStamp: 2018-09-29T22:56:37.893Z
-    jobNames: []
-  'c:\texlive\2018\texmf-dist\tex\latex\xcolor\xcolor.sty':
-    timeStamp: 2018-09-30T00:18:13.770Z
-    jobNames: []
-    type: LaTeXStyle
 rules:
   - name: ApplyOptions
     command: load
@@ -933,9 +734,9 @@ rules:
     inputs:
       - file: dicy.yaml-ParsedYAML
         type: default
-      - file: calc3challengehw1.yaml-ParsedYAML
+      - file: mathreasonhw4a.yaml-ParsedYAML
         type: default
-      - file: calc3challengehw1.tex-ParsedLaTeXMagic
+      - file: mathreasonhw4a.tex-ParsedLaTeXMagic
         type: default
       - file: dicy-instance.yaml-ParsedYAML
         type: default
@@ -961,9 +762,9 @@ rules:
     inputs:
       - file: dicy.yaml-ParsedYAML
         type: default
-      - file: calc3challengehw1.yaml-ParsedYAML
+      - file: mathreasonhw4a.yaml-ParsedYAML
         type: default
-      - file: calc3challengehw1.tex-ParsedLaTeXMagic
+      - file: mathreasonhw4a.tex-ParsedLaTeXMagic
         type: default
       - file: dicy-instance.yaml-ParsedYAML
         type: default
@@ -984,12 +785,12 @@ rules:
     command: load
     phase: execute
     parameters:
-      - calc3challengehw1.tex
+      - mathreasonhw4a.tex
     inputs:
-      - file: calc3challengehw1.tex
+      - file: mathreasonhw4a.tex
         type: default
     outputs:
-      - file: calc3challengehw1.tex-ParsedLaTeXMagic
+      - file: mathreasonhw4a.tex-ParsedLaTeXMagic
         type: default
   - name: AssignJobNames
     command: load
@@ -1007,15 +808,15 @@ rules:
     command: build
     phase: execute
     parameters:
-      - calc3challengehw1.tex
+      - mathreasonhw4a.tex
     inputs:
-      - file: calc3challengehw1.tex
+      - file: mathreasonhw4a.tex
         type: default
-      - file: calc3challengehw1.fls-ParsedFileListing
+      - file: mathreasonhw4a.fls-ParsedFileListing
         type: default
-      - file: calc3challengehw1.log-ParsedLaTeXLog
+      - file: mathreasonhw4a.log-ParsedLaTeXLog
         type: default
-      - file: calc3challengehw1.aux
+      - file: mathreasonhw4a.aux
         type: default
       - file: 'c:\texlive\2018\texmf-dist\fonts\map\fontname\texfonts.map'
         type: default
@@ -1026,24 +827,16 @@ rules:
       - file: >-
           c:\texlive\2018\texmf-dist\fonts\tfm\public\amsfonts\symbols\msam10.tfm
         type: default
-      - file: 'c:\texlive\2018\texmf-dist\fonts\tfm\public\amsfonts\symbols\msam5.tfm'
-        type: default
       - file: 'c:\texlive\2018\texmf-dist\fonts\tfm\public\amsfonts\symbols\msam7.tfm'
         type: default
       - file: >-
           c:\texlive\2018\texmf-dist\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
-        type: default
-      - file: 'c:\texlive\2018\texmf-dist\fonts\tfm\public\amsfonts\symbols\msbm5.tfm'
         type: default
       - file: 'c:\texlive\2018\texmf-dist\fonts\tfm\public\amsfonts\symbols\msbm7.tfm'
         type: default
       - file: 'c:\texlive\2018\texmf-dist\fonts\tfm\public\cm\cmbx10.tfm'
         type: default
       - file: 'c:\texlive\2018\texmf-dist\fonts\tfm\public\cm\cmbx12.tfm'
-        type: default
-      - file: 'c:\texlive\2018\texmf-dist\fonts\tfm\public\cm\cmbx5.tfm'
-        type: default
-      - file: 'c:\texlive\2018\texmf-dist\fonts\tfm\public\cm\cmbx7.tfm'
         type: default
       - file: 'c:\texlive\2018\texmf-dist\fonts\tfm\public\cm\cmex10.tfm'
         type: default
@@ -1071,19 +864,11 @@ rules:
         type: default
       - file: 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmbx12.pfb'
         type: default
-      - file: 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmmi10.pfb'
-        type: default
-      - file: 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmmi7.pfb'
-        type: default
       - file: 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmr10.pfb'
         type: default
       - file: 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmr12.pfb'
         type: default
       - file: 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmr17.pfb'
-        type: default
-      - file: 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmr7.pfb'
-        type: default
-      - file: 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmsy10.pfb'
         type: default
       - file: 'c:\texlive\2018\texmf-dist\tex\latex\amsfonts\amsfonts.sty'
         type: default
@@ -1115,76 +900,68 @@ rules:
         type: default
       - file: 'c:\texlive\2018\texmf.cnf'
         type: default
-      - file: 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmbx7.pfb'
+      - file: 'c:\texlive\2018\texmf-dist\fonts\tfm\public\amsfonts\symbols\msam5.tfm'
+        type: default
+      - file: 'c:\texlive\2018\texmf-dist\fonts\tfm\public\amsfonts\symbols\msbm5.tfm'
+        type: default
+      - file: 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmmi10.pfb'
+        type: default
+      - file: 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmr7.pfb'
+        type: default
+      - file: 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmsy10.pfb'
         type: default
       - file: >-
           c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\symbols\msbm10.pfb
         type: default
-      - file: 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmex10.pfb'
-        type: default
-      - file: 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmsy7.pfb'
-        type: default
       - file: 'c:\texlive\2018\texmf-dist\fonts\tfm\public\cm\cmti10.tfm'
+        type: default
+      - file: 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmmi7.pfb'
         type: default
       - file: 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmti10.pfb'
         type: default
-      - file: 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmr5.pfb'
-        type: default
-      - file: 'c:\texlive\2018\texmf-dist\fonts\tfm\public\cm\cmbxti10.tfm'
-        type: default
-      - file: 'c:\texlive\2018\texmf-dist\fonts\type1\public\amsfonts\cm\cmbxti10.pfb'
-        type: default
-      - file: 'c:\texlive\2018\texmf-dist\tex\context\base\mkii\supp-pdf.mkii'
-        type: default
-      - file: 'c:\texlive\2018\texmf-dist\tex\latex\graphics-cfg\color.cfg'
-        type: default
-      - file: 'c:\texlive\2018\texmf-dist\tex\latex\graphics-def\pdftex.def'
-        type: default
-      - file: 'c:\texlive\2018\texmf-dist\tex\latex\xcolor\xcolor.sty'
-        type: default
     outputs:
-      - file: calc3challengehw1.aux
+      - file: mathreasonhw4a.aux
         type: default
-      - file: calc3challengehw1.fls
+      - file: mathreasonhw4a.fls
         type: default
-      - file: calc3challengehw1.log
+      - file: mathreasonhw4a.log
         type: default
-      - file: calc3challengehw1.synctex.gz
+      - file: mathreasonhw4a.synctex.gz
         type: target
-      - file: calc3challengehw1.pdf
+      - file: mathreasonhw4a.pdf
         type: target
   - name: ParseLaTeXAuxilary
     command: build
     phase: execute
     parameters:
-      - calc3challengehw1.aux
+      - mathreasonhw4a.aux
     inputs:
-      - file: calc3challengehw1.aux
+      - file: mathreasonhw4a.aux
         type: default
     outputs:
-      - file: calc3challengehw1.aux-ParsedLaTeXAuxilary
+      - file: mathreasonhw4a.aux-ParsedLaTeXAuxilary
         type: default
   - name: ParseFileListing
     command: build
     phase: execute
     parameters:
-      - calc3challengehw1.fls
+      - mathreasonhw4a.fls
     inputs:
-      - file: calc3challengehw1.fls
+      - file: mathreasonhw4a.fls
         type: default
     outputs:
-      - file: calc3challengehw1.fls-ParsedFileListing
+      - file: mathreasonhw4a.fls-ParsedFileListing
         type: default
   - name: ParseLaTeXLog
     command: build
     phase: execute
     parameters:
-      - calc3challengehw1.log
+      - mathreasonhw4a.log
     inputs:
-      - file: calc3challengehw1.log
+      - file: mathreasonhw4a.log
         type: default
     outputs:
-      - file: calc3challengehw1.log-ParsedLaTeXLog
+      - file: mathreasonhw4a.log-ParsedLaTeXLog
         type: default
   - name: LogProducedTargets
     command: build
@@ -1196,9 +973,9 @@ rules:
     command: build
     phase: finalize
     parameters:
-      - calc3challengehw1.tex
+      - mathreasonhw4a.tex
     inputs:
-      - file: calc3challengehw1.tex
+      - file: mathreasonhw4a.tex
         type: default
     outputs: []
   - name: FindLogFiles
@@ -1211,21 +988,21 @@ rules:
     command: log
     phase: execute
     parameters:
-      - calc3challengehw1.log-ParsedLaTeXLog
+      - mathreasonhw4a.log-ParsedLaTeXLog
     inputs:
-      - file: calc3challengehw1.log-ParsedLaTeXLog
+      - file: mathreasonhw4a.log-ParsedLaTeXLog
         type: default
     outputs: []
   - name: ParseLaTeXLog
     command: log
     phase: execute
     parameters:
-      - calc3challengehw1.log
+      - mathreasonhw4a.log
     inputs:
-      - file: calc3challengehw1.log
+      - file: mathreasonhw4a.log
         type: default
     outputs:
-      - file: calc3challengehw1.log-ParsedLaTeXLog
+      - file: mathreasonhw4a.log-ParsedLaTeXLog
         type: default
   - name: SaveCache
     command: save
