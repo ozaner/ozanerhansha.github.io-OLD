@@ -4,7 +4,7 @@ title: Bachmann–Landau Notation
 date: 2018-09-28
 tags: math computer-science
 ---
-**Bachmann–Landau notation**, or asymptotic notation, is a collection of notations used to classify the limiting behavior of a particular function as its argument tends towards a particular value or infinity.
+**Bachmann–Landau notation** is a collection of notations used to  classify the limiting behavior of a particular function as its argument tends towards a particular value or infinity. It, along with [asymptotic equivalence](\asymptotic-equivalence), make up the primary relations of **asymptotics**.
 
 These notations, particularly big $O$, are most commonly used to classify and compare the computational complexity (both temporal and spatial) of different algorithms as a function of their input size.
 
@@ -135,23 +135,30 @@ While I've used the notation $f(x)\in O(g(x))$ throughout this post as well as i
 
 $$f(x)=O(g(x))\equiv f(x)\in O(g(x))$$
 
-This is an **abuse of notation** and does not *really* denote equality between the function $f$ and the class of functions on the order of $g$ and, as we'll see below, this abuse can be taken to a much farther extreme...
+This is an **abuse of notation** and does not *really* denote equality between the function $f$ and the class of functions on the order of $g$. It is merely a shorthand and, as we'll see below, this abuse can be taken to a much farther extreme...
 
-#### Equational Notation
-It is possible to use, for example, big $O$ notation in equations, extending the equality *analogy* that is common practice. For instance:
+<details>
+<summary><h4 class="inline">Equational Notation</h4></summary>
+It is possible to use, for example, big $O$ notation in equations, extending the equality <i>analogy</i> that is common practice. For instance:
 
 $$n^{O(1)}=O(e^n)$$
 
-Is equivalent to the following, more formal, definition:
+Is equivalent to the following, more formal, proposition:
 
 $$(\exists f,g)\left(f\in O(1)\wedge g\in O(e^n)\right)n^{f(n)}=g(n)$$
 
 And in general, the equation means that if all the big $O$'s on both sides were replaced with some function in that class, the equation is true. There just has to exist one set of functions that make the equation true.
+<p></p>
+</details>
 
-#### $n$ vs. $x$
-Although I used the variable $x$ in the definitions given above, the variable $n$ is more common in Bachmann-Landau notation. This is because $x$ is conventionally used to denote a continuous valued, real variable, while $n$ is conventionally used to denote a discrete, integer valued variable. This jives with the fact that these Bachmann-Landau is mostly used in describing the computational complexity of algorithms expressed as functions of their, discrete sized, inputs (e.g there are no lists of size $2.5$).
+<details>
+<summary><h4 class="inline">$n$ vs. $x$</h4></summary>
+Although I used the variable $x$ in the definitions given above, the variable $n$ is more common in Bachmann-Landau notation. This is because $x$ is conventionally used to denote a continuous valued, real variable, while $n$ is conventionally used to denote a discrete, integer valued variable. This jives with the fact that these notations are mostly used in describing the computational complexity of algorithms expressed as functions of their, discrete sized, inputs (e.g there are no lists of size $2.5$ and even further to the point, we cannot subdivide the bit).
+<p></p>
+</details>
 
-#### Limits to Constants
+<details>
+<summary><h4 class="inline">Limits to Constants</h4></summary>
 The first paragraph mentioned that these notations applied to functions that approached infinity or any other value. Using big $O$ as an example we can make the following assumption:
 
 $$f(x)\in O(g(x)) \ \ (\text{as }x\to \infty)\iff f(x)\in O(g(x))$$
@@ -161,9 +168,10 @@ For other constants, unless it is clear from the context, we should be explicit 
 $$\limsup_{x\to c}\left|\frac{f(x)}{g(x)}\right|\lt\infty \iff f(x)\in O(g(x)) \ \ (\text{as }x\to c)$$
 
 The formal definitions provided in the previous section assumed the infinity case simply because it is the most common.
+</details>
 
 ## Properties
-I am omitting the $(x)$ after the functions (which really should not be there at all but conventions) for readability:
+I am omitting the $(x)$ after the functions (which, strictly speaking, shouldn't have been present in the first place) for readability:
 
 - $f_1\in O(g_1)\wedge f_2\in O(g_2)\rightarrow f_1+f_2\in O(g_1+g_2)$
 - $f_1\in O(g_1)\wedge f_2\in O(g_2)\rightarrow f_1f_2\in O(g_1g_2)$

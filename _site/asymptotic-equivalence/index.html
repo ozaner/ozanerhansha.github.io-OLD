@@ -241,7 +241,7 @@
     <div class="content container">
       <div class="post">
   <h1 class="post-title">Asymptotic Equivalence</h1>
-  <span class="post-date">26 Aug 2018</span>
+  <span class="post-date">August 26, 2018</span>
   <span>[
   
     
@@ -254,9 +254,9 @@
     <a href="/tag/relations"><code class="highligher-rouge"><nobr>relations</nobr></code>&nbsp;</a>
   
 ]</span>
-  <p>Asymptotic analysis is a way of describing the limiting behavior of functions. Two functions are <strong>asymptotically equivalent</strong> if they have the same limiting behavior, in a sense they are <em>proportional at infinity</em>.</p>
+  <p>Asymptotic equivalence (along with <a href="\bachmann-landau-notation">Bachmann-Landau notation</a>) is a key relation in asymptotic analysis, or <strong>asymptotics</strong>, the study of the limiting behavior of functions. Two functions are <strong>asymptotically equivalent</strong> if they have the same limiting behavior. That is, in a sense, they are <em>equivalent at infinity</em>.</p>
 
-<p>This boils down to whether or not the functions have the same <em>most significant term</em>, that is the term that grows the quickest as $x$ increases. For example in the function $x^3+5x^2+x$ this role falls on the $x^3$ term as the other terms become insignificant as $x\to\infty$.</p>
+<p>This equivalence boils down to whether or not the functions have the same <em>most significant term</em>, that is the term that grows the quickest as $x$ increases. For example in the function $x^3+5x^2+x$ this role falls on the $x^3$ term as the other terms become insignificant (i.e tend to 0) as $x\to\infty$.</p>
 
 <p>Some important results in asymptotic analysis include the prime number theorem and Stirling’s approximation.</p>
 
@@ -289,7 +289,7 @@
 <summary><strong>Reflexivity</strong></summary>
 Asymptotic equivalence is reflexive meaning that for all functions $f\sim f$. This is obvious as:
 
-$$\forall f:\lim_{x\to\infty}{\frac{f(x)}{f(x)}}=1$$
+$$\forall f:\lim_{x\to\infty}{\frac{f(x)}{f(x)}}=1\equiv f(x)\sim f(x)$$
 
 <i>Assuming $f(x)$ doesn't approach $0$.</i>
 </details>
@@ -329,6 +329,15 @@ I'll do this later, but this should be clear as asymptotic equivalence forms equ
     
       <li>
         <h3>
+          <a href="/asymptotic-notation/">
+            Asymptotic Notation
+            <small>05 Oct 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/bachmann-landau-notation/">
             Bachmann–Landau Notation
             <small>28 Sep 2018</small>
@@ -341,15 +350,6 @@ I'll do this later, but this should be clear as asymptotic equivalence forms equ
           <a href="/iverson-bracket/">
             Iverson Bracket
             <small>27 Aug 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/proportionality/">
-            Proportionality
-            <small>17 Aug 2018</small>
           </a>
         </h3>
       </li>

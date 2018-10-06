@@ -241,7 +241,7 @@
     <div class="content container">
       <div class="post">
   <h1 class="post-title">Bachmann–Landau Notation</h1>
-  <span class="post-date">28 Sep 2018</span>
+  <span class="post-date">September 28, 2018</span>
   <span>[
   
     
@@ -251,7 +251,7 @@
     <a href="/tag/computer-science"><code class="highligher-rouge"><nobr>computer-science</nobr></code>&nbsp;</a>
   
 ]</span>
-  <p><strong>Bachmann–Landau notation</strong>, or asymptotic notation, is a collection of notations used to classify the limiting behavior of a particular function as its argument tends towards a particular value or infinity.</p>
+  <p><strong>Bachmann–Landau notation</strong> is a collection of notations used to  classify the limiting behavior of a particular function as its argument tends towards a particular value or infinity. It, along with <a href="\asymptotic-equivalence">asymptotic equivalence</a>, make up the primary relations of <strong>asymptotics</strong>.</p>
 
 <p>These notations, particularly big $O$, are most commonly used to classify and compare the computational complexity (both temporal and spatial) of different algorithms as a function of their input size.</p>
 
@@ -449,35 +449,43 @@ Another interesting point is that $f(x)\in\Theta(g(x))$ is actually a more gener
 
 <script type="math/tex; mode=display">f(x)=O(g(x))\equiv f(x)\in O(g(x))</script>
 
-<p>This is an <strong>abuse of notation</strong> and does not <em>really</em> denote equality between the function $f$ and the class of functions on the order of $g$ and, as we’ll see below, this abuse can be taken to a much farther extreme…</p>
+<p>This is an <strong>abuse of notation</strong> and does not <em>really</em> denote equality between the function $f$ and the class of functions on the order of $g$. It is merely a shorthand and, as we’ll see below, this abuse can be taken to a much farther extreme…</p>
 
-<h4 id="equational-notation">Equational Notation</h4>
-<p>It is possible to use, for example, big $O$ notation in equations, extending the equality <em>analogy</em> that is common practice. For instance:</p>
+<details>
+<summary><h4 class="inline">Equational Notation</h4></summary>
+It is possible to use, for example, big $O$ notation in equations, extending the equality <i>analogy</i> that is common practice. For instance:
 
-<script type="math/tex; mode=display">n^{O(1)}=O(e^n)</script>
+$$n^{O(1)}=O(e^n)$$
 
-<p>Is equivalent to the following, more formal, definition:</p>
+Is equivalent to the following, more formal, proposition:
 
-<script type="math/tex; mode=display">(\exists f,g)\left(f\in O(1)\wedge g\in O(e^n)\right)n^{f(n)}=g(n)</script>
+$$(\exists f,g)\left(f\in O(1)\wedge g\in O(e^n)\right)n^{f(n)}=g(n)$$
 
-<p>And in general, the equation means that if all the big $O$’s on both sides were replaced with some function in that class, the equation is true. There just has to exist one set of functions that make the equation true.</p>
+And in general, the equation means that if all the big $O$'s on both sides were replaced with some function in that class, the equation is true. There just has to exist one set of functions that make the equation true.
+<p></p>
+</details>
 
-<h4 id="n-vs-x">$n$ vs. $x$</h4>
-<p>Although I used the variable $x$ in the definitions given above, the variable $n$ is more common in Bachmann-Landau notation. This is because $x$ is conventionally used to denote a continuous valued, real variable, while $n$ is conventionally used to denote a discrete, integer valued variable. This jives with the fact that these Bachmann-Landau is mostly used in describing the computational complexity of algorithms expressed as functions of their, discrete sized, inputs (e.g there are no lists of size $2.5$).</p>
+<details>
+<summary><h4 class="inline">$n$ vs. $x$</h4></summary>
+Although I used the variable $x$ in the definitions given above, the variable $n$ is more common in Bachmann-Landau notation. This is because $x$ is conventionally used to denote a continuous valued, real variable, while $n$ is conventionally used to denote a discrete, integer valued variable. This jives with the fact that these notations are mostly used in describing the computational complexity of algorithms expressed as functions of their, discrete sized, inputs (e.g there are no lists of size $2.5$ and even further to the point, we cannot subdivide the bit).
+<p></p>
+</details>
 
-<h4 id="limits-to-constants">Limits to Constants</h4>
-<p>The first paragraph mentioned that these notations applied to functions that approached infinity or any other value. Using big $O$ as an example we can make the following assumption:</p>
+<details>
+<summary><h4 class="inline">Limits to Constants</h4></summary>
+The first paragraph mentioned that these notations applied to functions that approached infinity or any other value. Using big $O$ as an example we can make the following assumption:
 
-<script type="math/tex; mode=display">f(x)\in O(g(x)) \ \ (\text{as }x\to \infty)\iff f(x)\in O(g(x))</script>
+$$f(x)\in O(g(x)) \ \ (\text{as }x\to \infty)\iff f(x)\in O(g(x))$$
 
-<p>For other constants, unless it is clear from the context, we should be explicit in what constant $x$ approaches. Using the limit definition as an example:</p>
+For other constants, unless it is clear from the context, we should be explicit in what constant $x$ approaches. Using the limit definition as an example:
 
-<script type="math/tex; mode=display">\limsup_{x\to c}\left|\frac{f(x)}{g(x)}\right|\lt\infty \iff f(x)\in O(g(x)) \ \ (\text{as }x\to c)</script>
+$$\limsup_{x\to c}\left|\frac{f(x)}{g(x)}\right|\lt\infty \iff f(x)\in O(g(x)) \ \ (\text{as }x\to c)$$
 
-<p>The formal definitions provided in the previous section assumed the infinity case simply because it is the most common.</p>
+The formal definitions provided in the previous section assumed the infinity case simply because it is the most common.
+</details>
 
 <h2 id="properties">Properties</h2>
-<p>I am omitting the $(x)$ after the functions (which really should not be there at all but conventions) for readability:</p>
+<p>I am omitting the $(x)$ after the functions (which, strictly speaking, shouldn’t have been present in the first place) for readability:</p>
 
 <ul>
   <li>$f_1\in O(g_1)\wedge f_2\in O(g_2)\rightarrow f_1+f_2\in O(g_1+g_2)$</li>
@@ -516,6 +524,15 @@ Another interesting point is that $f(x)\in\Theta(g(x))$ is actually a more gener
     
       <li>
         <h3>
+          <a href="/asymptotic-notation/">
+            Asymptotic Notation
+            <small>05 Oct 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/iverson-bracket/">
             Iverson Bracket
             <small>27 Aug 2018</small>
@@ -528,15 +545,6 @@ Another interesting point is that $f(x)\in\Theta(g(x))$ is actually a more gener
           <a href="/asymptotic-equivalence/">
             Asymptotic Equivalence
             <small>26 Aug 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/proportionality/">
-            Proportionality
-            <small>17 Aug 2018</small>
           </a>
         </h3>
       </li>

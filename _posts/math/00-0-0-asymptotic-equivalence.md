@@ -4,9 +4,9 @@ title: Asymptotic Equivalence
 date: 2018-08-26
 tags: math calculus relations
 ---
-Asymptotic analysis is a way of describing the limiting behavior of functions. Two functions are **asymptotically equivalent** if they have the same limiting behavior, in a sense they are *proportional at infinity*.
+Asymptotic equivalence (along with [Bachmann-Landau notation](\bachmann-landau-notation)) is a key relation in asymptotic analysis, or **asymptotics**, the study of the limiting behavior of functions. Two functions are **asymptotically equivalent** if they have the same limiting behavior. That is, in a sense, they are *equivalent at infinity*.
 
-This boils down to whether or not the functions have the same *most significant term*, that is the term that grows the quickest as $x$ increases. For example in the function $x^3+5x^2+x$ this role falls on the $x^3$ term as the other terms become insignificant as $x\to\infty$.
+This equivalence boils down to whether or not the functions have the same *most significant term*, that is the term that grows the quickest as $x$ increases. For example in the function $x^3+5x^2+x$ this role falls on the $x^3$ term as the other terms become insignificant (i.e tend to 0) as $x\to\infty$.
 
 Some important results in asymptotic analysis include the prime number theorem and Stirling's approximation.
 
@@ -37,7 +37,7 @@ To qualify as an equivalence relation, a given [relation](\relations) must satis
 <summary><strong>Reflexivity</strong></summary>
 Asymptotic equivalence is reflexive meaning that for all functions $f\sim f$. This is obvious as:
 
-$$\forall f:\lim_{x\to\infty}{\frac{f(x)}{f(x)}}=1$$
+$$\forall f:\lim_{x\to\infty}{\frac{f(x)}{f(x)}}=1\equiv f(x)\sim f(x)$$
 
 <i>Assuming $f(x)$ doesn't approach $0$.</i>
 </details>
