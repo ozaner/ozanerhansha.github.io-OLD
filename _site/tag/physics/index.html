@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <title>
     
-      Asymptotic Equivalence &middot; Ozaner
+      Physics Posts &middot; Ozaner
     
   </title>
 
@@ -240,122 +240,87 @@
 
     <div class="content container">
       <div class="post">
-  <h1 class="post-title">Asymptotic Equivalence</h1>
-  <span class="post-date">August 26, 2018</span>
-  <span>[
-  
-    
-    <a href="/tag/math"><code class="highligher-rouge"><nobr>math</nobr></code>&nbsp;</a>
-  
-    
-    <a href="/tag/calculus"><code class="highligher-rouge"><nobr>calculus</nobr></code>&nbsp;</a>
-  
-    
-    <a href="/tag/relations"><code class="highligher-rouge"><nobr>relations</nobr></code>&nbsp;</a>
-  
-]</span>
-  <p>Asymptotic equivalence (along with <a href="\bachmann-landau-notation">Bachmann-Landau notation</a>) is a key relation in asymptotic analysis, or <strong>asymptotics</strong>, the study of the limiting behavior of functions. Two functions are <strong>asymptotically equivalent</strong> if they have the same limiting behavior. That is, in a sense, they are <em>equivalent at infinity</em>.</p>
-
-<p>This equivalence boils down to whether or not the functions have the same <em>most significant term</em>, that is the term that grows the quickest as $x$ increases. For example in the function $x^3+5x^2+x$ this role falls on the $x^3$ term as the other terms become insignificant (i.e tend to 0) as $x\to\infty$.</p>
-
-<p>Some important results in asymptotic analysis include the prime number theorem and Stirling’s approximation.</p>
-
-<!--more-->
-
-<h2 id="definition">Definition</h2>
-<p>Asymptotic equivalence is an equivalence relation, denoted $\sim$, on the set of $\mathbb{R}$-valued functions (or $\mathbb{C}$, $\mathbb{Z}^+$, etc.) and is defined as such:</p>
-
-<script type="math/tex; mode=display">f(x)\sim g(x)\equiv\lim_{x\to\infty}{\frac{f(x)}{g(x)}}=1</script>
-
-<p>This definition can also be extended to non infinite limits:</p>
-
-<script type="math/tex; mode=display">f(x)\sim g(x) \ \ (\text{as }x\to c)\equiv\lim_{x\to c}{\frac{f(x)}{g(x)}}=1</script>
-
-<p>creating a family of equivalence relations, indexed by some real number $c$.</p>
-
-<h4 id="examples">Examples</h4>
+<h1>Physics Posts</h1>
 <ul>
-  <li>$x^2\sim x^2+2x$ (most significant terms are same)</li>
-  <li>$4n!\sim 4n!+3n^2$ (most significant terms are same)</li>
-  <li>$2x^2\not\sim x^2$ (different constants on most significant terms)</li>
-  <li>$x^3\not\sim x^4$ (different most significant terms)</li>
-  <li>$n!\sim \sqrt{2\pi n}\left(\frac{n}{e}\right)^n$ (Stirling’s approximation)</li>
+
+  <li><a href="/drag-force/">Drag Force</a> (27 Mar 2018)<br>
+    
+  </li>
+
+  <li><a href="/friction/">Friction</a> (26 Mar 2018)<br>
+    
+  </li>
+
+  <li><a href="/classical-physics/">Classical Physics</a> (24 Mar 2018)<br>
+    
+  </li>
+
+  <li><a href="/kinematics/">Kinematics</a> (17 Mar 2018)<br>
+    
+  </li>
+
+  <li><a href="/position/">Position</a> (15 Mar 2018)<br>
+    
+  </li>
+
+  <li><a href="/physics/">Physics</a> (14 Mar 2018)<br>
+    
+  </li>
+
+  <li><a href="/minkowski-spacetime/">Minkowski Spacetime</a> (23 Jan 2018)<br>
+    
+  </li>
+
 </ul>
-
-<h2 id="proof-of-equivalence-relation">Proof of Equivalence Relation</h2>
-<p>To qualify as an equivalence relation, a given <a href="\relations">relation</a> must satisfy the three properties given below:</p>
-
-<details>
-<summary><strong>Reflexivity</strong></summary>
-Asymptotic equivalence is reflexive meaning that for all functions $f\sim f$. This is obvious as:
-
-$$\forall f:\lim_{x\to\infty}{\frac{f(x)}{f(x)}}=1\equiv f(x)\sim f(x)$$
-
-<i>Assuming $f(x)$ doesn't approach $0$.</i>
-</details>
-
-<details>
-<summary><strong>Symmetry</strong></summary>
-Asymptotic equivalence is symmetric meaning that $f\sim g\implies g\sim f$. To prove this notice that the only term that "survives" after the limit is taken of both $f$ and $g$ is the most significant one:
-
-$$\lim_{x\to\infty}{\frac{f(x)}{g(x)}}=\frac{\lim\limits_{x\to \infty}{f(x)}}{\lim\limits_{x\to \infty}{g(x)}}=\frac{f_s(x)}{g_s(x)}$$
-
-<i>Where $f_s$ and $g_s$ represent the most significant terms of $f$ and $g$ respectively.</i>
-
-Notice that $f(x)\sim g(x)$ is the same as saying $f_s/g_s=1$. And so we can deduce the following:
-
-$$\frac{f_s(x)}{g_s(x)}=1=\frac{g_s(x)}{f_s(x)}=\lim_{x\to\infty}{\frac{g(x)}{f(x)}}\equiv g(x)\sim f(x)$$
-
-Thus we have proved $f\sim g\implies g\sim f$.
-</details>
-
-<details>
-<summary><strong>Transitivity</strong></summary>
-I'll do this later, but this should be clear as asymptotic equivalence forms equivalence classes characterized by the most significant terms of functions.
-</details>
-
-<h2 id="relation-to-algorithmic-complexity">Relation to Algorithmic Complexity</h2>
-<p>When dealing with the time and space complexity of algorithms, asymptotic analysis (either in the form defined above or via <strong>Bachmann–Landau notation</strong>) is used to compare the efficiency of different algorithms by stripping away unnecessary constants and minor terms that correspond to the different preconditions and runtime environments that these algorithms may run on.</p>
-
-<p>In particular, asymptotic equivalence is a more <a href="\asymptotic-notation#asymptotic-equivalence">specific case</a> of big $\Theta$ notation, however we can phrase it in the other direction:</p>
-
-<script type="math/tex; mode=display">f(x)\in \Theta(g(x))\equiv \exists c\not=0:cg(x) \sim f(x)</script>
-
 </div>
+<hr>
+<footer>
+  <h2>All Tags</h2>
 
-<div class="related">
-  <h2>Related Posts</h2>
-  <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/asymptotic-notation/">
-            Asymptotic Notation
-            <small>05 Oct 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/bachmann-landau-notation/">
-            Bachmann–Landau Notation
-            <small>28 Sep 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/iverson-bracket/">
-            Iverson Bracket
-            <small>27 Aug 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-  </ul>
-</div>
+
+
+  
+  
+  <a href="/tag/math"><code class="highligher-rouge"><nobr>math</nobr></code></a>
+
+  
+  
+  <a href="/tag/computer-science"><code class="highligher-rouge"><nobr>computer-science</nobr></code></a>
+
+  
+  
+  <a href="/tag/physics"><code class="highligher-rouge"><nobr>physics</nobr></code></a>
+
+  
+  
+  <a href="/tag/classical-mechanics"><code class="highligher-rouge"><nobr>classical-mechanics</nobr></code></a>
+
+  
+  
+  <a href="/tag/set-theory"><code class="highligher-rouge"><nobr>set-theory</nobr></code></a>
+
+  
+  
+  <a href="/tag/relations"><code class="highligher-rouge"><nobr>relations</nobr></code></a>
+
+  
+  
+  <a href="/tag/projects"><code class="highligher-rouge"><nobr>projects</nobr></code></a>
+
+  
+  
+  <a href="/tag/philosophy"><code class="highligher-rouge"><nobr>philosophy</nobr></code></a>
+
+  
+  
+  <a href="/tag/machine-learning"><code class="highligher-rouge"><nobr>machine-learning</nobr></code></a>
+
+  
+  
+  <a href="/tag/linear-algebra"><code class="highligher-rouge"><nobr>linear-algebra</nobr></code></a>
+
+
+</footer>
 
     </div>
   </body>

@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-10-05T14:06:10-04:00</updated>
+ <updated>2018-10-07T14:04:04-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -15,17 +15,11 @@
  <entry>
    <title>Asymptotic Notation</title>
    <link href="http://localhost:4000/asymptotic-notation/"/>
-   <updated>2018-10-05T00:00:00-04:00</updated>
+   <updated>2018-10-07T00:00:00-04:00</updated>
    <id>http://localhost:4000/asymptotic-notation</id>
    <content type="html">&lt;p&gt;The notation used to describe the &lt;strong&gt;asymptotics&lt;/strong&gt;, or limiting behavior, of functions consists of a set of 6 relations. These different relations allow us to compare the growth of different functions as they approach some constant or, in most cases, infinity.&lt;/p&gt;
 
-&lt;p&gt;In the infinite case, these relations usually boil down to the functions’ &lt;em&gt;most significant term&lt;/em&gt;. That is, the term that grows the quickest as a function of their input. For example, in the function $x^3+5x^2+x$ this role falls on the $x^3$ term as the other terms become insignificant (i.e tend to 0) as $x\to\infty$.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;These notations, particularly big $O$, are most commonly used to classify and compare the computational complexity (both temporal and spatial) of different algorithms as a function of their input size. Ideally, an algorithm will be on the order of a relatively slowly growing function (e.g $\log n$ grows slower than $n^2$) as they take less resources and thus are more feasible to compute.&lt;/p&gt;
-
-&lt;p&gt;They are also used in the approximation of functions that would be infeasible, or even impossible, to calculate otherwise.&lt;/p&gt;
+&lt;p&gt;In the infinite case, these relations usually boil down to the functions’ &lt;em&gt;most significant term&lt;/em&gt;. That is, the term that grows the quickest as $x$ increases. For example, in the function $x^3+5x^2+x$ this role falls on the $x^3$ term as the other terms become insignificant (i.e tend to 0) as $x\to\infty$.&lt;/p&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -42,17 +36,17 @@
       &lt;td style=&quot;text-align: center&quot;&gt;$f\prec g$&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;Big-$O$&lt;/td&gt;
+      &lt;td&gt;big $O$&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;$f(n)\in O(g(n))$&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;$f\preceq g$&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;Big-$\Theta$&lt;/td&gt;
+      &lt;td&gt;big $\Theta$&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;$f(n)\in \Theta(g(n))$&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;$f\asymp g$&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;Big-$\Omega$&lt;/td&gt;
+      &lt;td&gt;big $\Omega$&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;$f(n)\in \Omega(g(n))$&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;$f\succeq g$&lt;/td&gt;
     &lt;/tr&gt;
@@ -69,10 +63,16 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h2 id=&quot;formal-definitions&quot;&gt;Formal Definitions&lt;/h2&gt;
-&lt;p&gt;We can formalize this notation by considering either how the values of the function grow after some sufficiently large value $x_0$ or by the limit of their ratio as $x$ approaches infinity. Both notions are given below:&lt;/p&gt;
+&lt;!--more--&gt;
 
-&lt;p&gt;&lt;em&gt;Note that these two different definitions are similar but not equivalent. Also note that asymptotic equivalence only has a limit definitoin.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;These notations, particularly big $O$, are most commonly used to classify and compare the computational complexity (both temporal and spatial) of different algorithms as a function of their input size by stripping away unnecessary constants and minor terms that correspond to the different preconditions and runtime environments that these algorithms may run on. Ideally, an algorithm will be on the order of a relatively slowly growing function (e.g $\log n$ grows slower than $n^2$) as they take less resources and thus are more feasible to compute.&lt;/p&gt;
+
+&lt;p&gt;They are also used in the approximation of functions that would be infeasible, or even impossible, to calculate otherwise.&lt;/p&gt;
+
+&lt;h2 id=&quot;formal-definitions&quot;&gt;Formal Definitions&lt;/h2&gt;
+&lt;p&gt;More concretely, this notation is based off $f$ being a member of some set defined by $g$. How these sets are defined for each notation is elaborated below via two similar (but not quite equivalent) formalizations of the concept. One where we consider how the values of the function grow after some sufficiently large value $x_0$, and one by comparing the limit of their ratio as $x$ approaches infinity. Both notions are given below:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Note that asymptotic equivalence only has a limit definition.&lt;/em&gt;&lt;/p&gt;
 
 &lt;details&gt;
 &lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;Growth Definitions&lt;/h3&gt;&lt;/summary&gt;
@@ -92,7 +92,7 @@ f(x)\in \Omega(g(x))&amp;amp;\equiv \left(\exists k,x_0\right) x\ge x_0&amp;amp;
 f(x)\in \omega(g(x))&amp;amp;\equiv \left(\forall k,\exists x_0\right) x\ge x_0&amp;amp;&amp;amp;\rightarrow f(x)\gt kg(x)
 \end{align}$$
 
-&lt;i&gt;Where $f,g:\mathbb{R}\to\mathbb{R}$ and $x,x_0,k,k_1,k_2\in\mathbb{R}.$&lt;/i&gt;
+&lt;i&gt;Where $f,g:\mathbb{R}\to\mathbb{R}$ and $x,x_0\in\mathbb{R}$ and $k,k_1,k_2\in\mathbb{R}\setminus\{0\}$&lt;/i&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;/details&gt;
 
@@ -112,7 +112,7 @@ f(x)\succ g(x)&amp;amp;\equiv \lim_{x\to\infty}\left|\frac{f(x)}{g(x)}\right|=\i
 &lt;/details&gt;
 
 &lt;h4 id=&quot;asymptotic-with-respect-to-constants&quot;&gt;Asymptotic with respect to Constants&lt;/h4&gt;
-&lt;p&gt;Notice that while the limit definitions above use limits to infinity and the growth definitions used a similar notion, asymptotic notation can be generalized to limits to any constant and not just infinity. For example, with big-$O$ this looks like:&lt;/p&gt;
+&lt;p&gt;Notice that while the limit definitions above use limits to infinity and the growth definitions used a similar notion, asymptotic notation can be generalized to limits to any constant and not just infinity. For example, with big $O$ this looks like:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x)\in O(g(x)) \ \ (\text{as }x\to c)&lt;/script&gt;
 
@@ -122,19 +122,40 @@ f(x)\succ g(x)&amp;amp;\equiv \lim_{x\to\infty}\left|\frac{f(x)}{g(x)}\right|=\i
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x)\in O(g(x)) \ \ (\text{as }x\to\infty)\iff f(x)\in O(g(x))&lt;/script&gt;
 
-&lt;h2 id=&quot;big-o-vs-omega-vs-theta&quot;&gt;Big $O$ vs. $\Omega$ vs. $\Theta$&lt;/h2&gt;
-&lt;h3 id=&quot;big-o&quot;&gt;Big $O$&lt;/h3&gt;
-&lt;p&gt;Big $O$, the most used notation, describes what is called the &lt;strong&gt;upper-bound complexity&lt;/strong&gt; of an algorithm. Thus a function $f$ that is big $O$ of a function $g$ grows as fast or slower than $g$ (up to a constant). When a function $f$ is &lt;strong&gt;‘of the order’&lt;/strong&gt; $g$ this means that it is big $O$ of $g$ and not any other notation.&lt;/p&gt;
+&lt;h2 id=&quot;notation-and-terminology&quot;&gt;Notation and Terminology&lt;/h2&gt;
+&lt;p&gt;The use of asymptotic notation is, unfortunately, quite varied and oftentimes informal. As such, I will try to clear up some of the nuance packed into these notations.&lt;/p&gt;
 
-&lt;h4 id=&quot;popularity&quot;&gt;Popularity&lt;/h4&gt;
-&lt;p&gt;While big $\Theta$ is the most descriptive of the 3 notations, it is not as popular as big $O$. Why is this? Well, it is in part due to laziness and convention.&lt;/p&gt;
+&lt;h4 id=&quot;membership-vs-equality&quot;&gt;Membership vs Equality&lt;/h4&gt;
+&lt;p&gt;The set membership notation $f(x)\in O(g(x))$ implies that there is a set of functions that are big $O$ of $g$ and that $f$ is one of those functions. The same reasoning applies to the other notations.&lt;/p&gt;
 
-&lt;p&gt;However there is a more practical reason for this as well. Proving something is big $\Theta$ means proving it is both big $O$ and big $\Omega$ which may be much more difficult or even impossible compared to just proving one or the other.&lt;/p&gt;
+&lt;p&gt;That said it is very common to instead write:&lt;/p&gt;
 
-&lt;p&gt;As a result of this, it is generally expected that when someone states an algorithm is $O(g(x))$ that $g(x)$ is as small as they could make it. This makes it a tighter bound when possible but doesn’t enforce it incase such a bound is not possible to prove.&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x)=O(g(x))&lt;/script&gt;
+
+&lt;p&gt;This is an &lt;strong&gt;abuse of notation&lt;/strong&gt; and does not &lt;em&gt;really&lt;/em&gt; denote equality between the function $f$ and the class of functions on the order of $g$. It is merely a shorthand and, as we’ll see below, this abuse can be taken to a much farther extreme…&lt;/p&gt;
+
+&lt;h4 id=&quot;equational-notation&quot;&gt;Equational Notation&lt;/h4&gt;
+&lt;p&gt;It is possible to use, for example, big $O$ notation in equations, extending the equality &lt;em&gt;analogy&lt;/em&gt; that is common practice. For instance:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;n^{O(1)}=O(e^n)&lt;/script&gt;
+
+&lt;p&gt;Is equivalent to the following, more formal, proposition:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;(\exists f,g)\left(f\in O(1)\wedge g\in O(e^n)\right)n^{f(n)}=g(n)&lt;/script&gt;
+
+&lt;p&gt;And in general, the equation means that if all the big $O$’s on both sides were replaced with some function in that class, the equation is true. There just has to exist one set of functions that make the equation true.&lt;/p&gt;
+
+&lt;h4 id=&quot;computational-complexity&quot;&gt;Computational Complexity&lt;/h4&gt;
+&lt;p&gt;When someone refers to the complexity of an algorithm without context they are assumed to be referring to its temporal, rather than its spatial, complexity. Similarly, when the order of an algorithm (its big $O$) is given without context it is assumed to be the algorithm’s &lt;strong&gt;worst-case&lt;/strong&gt; complexity (as opposed to the best/average case).&lt;/p&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;$n$ vs. $x$&lt;/h4&gt;&lt;/summary&gt;
+Although I used the variable $x$ in the definitions given above, the variable $n$ is also very common. This is because $x$ is conventionally used to denote a continuous valued, real variable, while $n$ is conventionally used to denote a discrete, integer valued variable. This jives with the fact that these notations are often used in describing the computational complexity of algorithms expressed as functions of their, discrete sized, inputs (e.g there are no lists of size $2.5$ and even further to the point, we cannot subdivide the bit).
+&lt;p&gt;&lt;/p&gt;
+&lt;/details&gt;
 
 &lt;h4 id=&quot;common-orders&quot;&gt;Common Orders&lt;/h4&gt;
-&lt;p&gt;Below is a table of common terminology for certain lower-bound complexity classes (from smallest to largest):&lt;/p&gt;
+&lt;p&gt;Below is a table of common terminology for certain lower-bound complexity classes from slowest to fastest growth:&lt;/p&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -187,378 +208,158 @@ f(x)\succ g(x)&amp;amp;\equiv \lim_{x\to\infty}\left|\frac{f(x)}{g(x)}\right|=\i
   &lt;/tbody&gt;
 &lt;/table&gt;
 
+&lt;p&gt;While the terminology $f$ is &lt;strong&gt;‘on the order’&lt;/strong&gt; $g$ is loose, if the particular notation is not specified it can be assumed to be referring to big $O$.&lt;/p&gt;
+
+&lt;!-- ## Big $O$ and little $o$ --&gt;
 &lt;details&gt;
-&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;Big $\Omega$&lt;/h3&gt;&lt;/summary&gt;
-This contrasts with big $\Omega$ which describes the &lt;b&gt;lower-bound complexity&lt;/b&gt; of an algorithm. So a function $f$ that is big $\Omega$ of a function $g$ grows as fast or faster than $g$ (up to a constant).
-&lt;p&gt;&lt;/p&gt;
+&lt;summary&gt;&lt;h2 class=&quot;inline&quot;&gt;Big $O$ and little $o$&lt;/h2&gt;&lt;/summary&gt;
+Big $O$, one of the most used notations, gives an upper-bound on the asymptotic growth of a function. Thus a function $f$ that is big $O$ of a function $g$ grows as fast or slower than $g$ (up to a constant). In the context of algorithms, this is its &lt;b&gt;upper-bound complexity&lt;/b&gt;. Little-$o$ is a stronger version of this where $f$ grows strictly slower than $g$.
+
+&lt;!-- #### Popularity --&gt;
+&lt;h4&gt;Popularity&lt;/h4&gt;
+While big $\Theta$ is the most descriptive of the 3 notations, it is not as popular as big $O$. Why is this? Well, it is in part due to laziness and convention.&lt;p&gt;&lt;/p&gt;
+
+However there is a more practical reason for this as well. Proving something is big $\Theta$ means proving it is both big $O$ and big $\Omega$ which may be much more difficult or even impossible compared to just proving one or the other.&lt;p&gt;&lt;/p&gt;
+
+As a result of this, it is generally expected that when someone states an algorithm is $O(g(x))$ that $g(x)$ is as small as they could make it. This makes it a tighter bound when possible but doesn't enforce it incase such a bound is not possible to prove.
+
+&lt;!-- #### Properties --&gt;
+&lt;h4&gt;Properties&lt;/h4&gt;
+I am omitting the $(x)$ after the functions (which, strictly speaking, shouldn't have been present in the first place) for readability:
+
+&lt;ul&gt;
+  &lt;li&gt;$f_1\in O(g_1)\wedge f_2\in O(g_2)\rightarrow f_1+f_2\in O(g_1+g_2)$&lt;/li&gt;
+  &lt;li&gt;$f_1\in O(g_1)\wedge f_2\in O(g_2)\rightarrow f_1f_2\in O(g_1g_2)$&lt;/li&gt;
+  &lt;li&gt;$fO(g)\in O(fg)$&lt;/li&gt;
+  &lt;li&gt;$f\in O(g)\rightarrow kf\in O(g)$&lt;/li&gt;
+  &lt;li&gt;$O(g)=O(kg)$&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;
+
+&lt;i&gt;Where $f,g$ are functions and $k$ is some non-zero constant&lt;/i&gt;
+
+&lt;!-- #### Examples --&gt;
+&lt;h4&gt;Examples&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;$5x^3+2\in O(x^3)$ Same most significant term (times a constant).&lt;/li&gt;
+  &lt;li&gt;$x^2\in O(x^3)$ Lower than most significant term.&lt;/li&gt;
+  &lt;li&gt;$2n^2\in O(n!+n)$ Lower than most significant term.&lt;/li&gt;
+  &lt;li&gt;$x^3\not\in O(x^2)$ Can't grow faster than function.&lt;/li&gt;
+  &lt;li&gt;$x^2\not\in o(x^2)$ Must be strictly smaller.&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;
 &lt;/details&gt;
 
+&lt;!-- ## Big $\Omega$ and little $\omega$ --&gt;
 &lt;details&gt;
-&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;Big $\Theta$&lt;/h3&gt;&lt;/summary&gt;
-Big $\Theta$, on the other hand, is known as a &lt;bf&gt;tight bound&lt;/bf&gt; on the complexity of an algorithm and can be equivalently stated as:
+&lt;summary&gt;&lt;h2 class=&quot;inline&quot;&gt;Big $\Omega$ and little $\omega$&lt;/h2&gt;&lt;/summary&gt;
+Big $\Omega$ gives a lower-bound on the asymptotic growth of a function. Thus a function $f$ that is big $O$ of a function $g$ grows as fast or faster than $g$ (up to a constant). In the context of algorithms, this is its &lt;b&gt;lower-bound complexity&lt;/b&gt;. Little-$\omega$ is a stronger version of this where $f$ grows strictly faster than $g$.
+
+&lt;!-- #### Properties --&gt;
+&lt;h4&gt;Properties&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;$f_1\in\Omega(g_1)\wedge f_2\in\Omega(g_2)\rightarrow f_1+f_2\in\Omega(g_1+g_2)$&lt;/li&gt;
+  &lt;li&gt;$f_1\in\Omega(g_1)\wedge f_2\in\Omega(g_2)\rightarrow f_1f_2\in\Omega(g_1g_2)$&lt;/li&gt;
+  &lt;li&gt;$f\Omega(g)\in\Omega(fg)$&lt;/li&gt;
+  &lt;li&gt;$f\in\Omega(g)\rightarrow kf\in\Omega(g)$&lt;/li&gt;
+  &lt;li&gt;$\Omega(g)=\Omega(kg)$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- #### Examples --&gt;
+&lt;h4&gt;Examples&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;$2x^2+2x\in\Omega(x^2)$ Same most significant term (times a constant).&lt;/li&gt;
+  &lt;li&gt;$x^3\in\Omega(x)$ Greater than most significant term.&lt;/li&gt;
+  &lt;li&gt;$n!\in\Omega(3n^2+2n)$ Greater than most significant term.&lt;/li&gt;
+  &lt;li&gt;$x^3\not\in\Omega(x^4)$ Can't grow slower than function.&lt;/li&gt;
+  &lt;li&gt;$x^2\not\in\omega(x^2)$ Must be strictly bigger.&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;!-- ## Big $\Theta$ --&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;h2 class=&quot;inline&quot;&gt;Big $\Theta$&lt;/h2&gt;&lt;/summary&gt;
+Big $\Theta$ forms a &lt;b&gt;tight bound&lt;/b&gt; on the asymptotic growth of a function. It is the combination of both big $O$ and big $\Omega$:
 
 $$f(x)\in\Theta(g(x))\equiv f(x)\in O(g(x))\wedge f(x)\in\Omega(g(x))$$
 
 And so, following the pattern, a function $f$ that is big $\Theta$ of a function $g$ grows as fast as $g$ (up to a constant).
 
+&lt;!-- #### Properties --&gt;
+&lt;h4&gt;Properties&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;$f_1\in\Theta(g_1)\wedge f_2\in\Theta(g_2)\rightarrow f_1+f_2\in\Theta(g_1+g_2)$&lt;/li&gt;
+  &lt;li&gt;$f_1\in\Theta(g_1)\wedge f_2\in\Theta(g_2)\rightarrow f_1f_2\in\Theta(g_1g_2)$&lt;/li&gt;
+  &lt;li&gt;$f\Theta(g)\in\Theta(fg)$&lt;/li&gt;
+  &lt;li&gt;$f\in\Theta(g)\rightarrow kf\in\Theta(g)$&lt;/li&gt;
+  &lt;li&gt;$\Theta(g)=\Theta(kg)$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- #### Equivalence Relation --&gt;
 &lt;h4&gt;Equivalence Relation&lt;/h4&gt;
-Note that, unlike big $O$ and $\Omega$, the relation $f(x)\in\Theta(g(x))$ forms an equivalence relation given some function $g$.
+Note that on top of the properties given above $f(x)\in\Theta(g(x))$, or more clearly $f\asymp g$, forms an equivalence &lt;a href=&quot;\relations&quot;&gt;relation&lt;/a&gt; over the set of all functions with some defined limit:
 
 &lt;details&gt;
 &lt;summary&gt;&lt;strong&gt;Reflexivity&lt;/strong&gt;&lt;/summary&gt;
-I'll do this later.
+Asymptotic equivalence is reflexive meaning that for all functions $f\sim f$. This is obvious:
+
+$$\forall f:\lim_{x\to\infty}{\frac{f(x)}{f(x)}}=k\rightarrow f\asymp f$$
+
+&lt;i&gt;Assuming $f(x)$ doesn't approach $0$.&lt;/i&gt;
 &lt;/details&gt;
 
 &lt;details&gt;
 &lt;summary&gt;&lt;strong&gt;Symmetry&lt;/strong&gt;&lt;/summary&gt;
-I'll do this later.
+Asymptotic equivalence is symmetric meaning that $f\asymp g\rightarrow g\asymp f$. This is because for any field, there is a multiplicative inverse for any element. So, by switching the functions in the limit (i.e reversing the relations) the constant on the other side should also be inversed:\exists k^{-1}
+
+$$\forall f\ \forall k:\lim_{x\to\infty}{\frac{f(x)}{g(x)}}=k\rightarrow \lim_{x\to\infty}{\frac{g(x)}{f(x)}}=\frac{1}{k}\equiv g\asymp f$$
 &lt;/details&gt;
 
 &lt;details&gt;
 &lt;summary&gt;&lt;strong&gt;Transitivity&lt;/strong&gt;&lt;/summary&gt;
-I'll do this later.
+I'll do this later, but this should be clear as big $\Theta$ forms equivalence classes characterized by the most significant terms of functions.
 &lt;/details&gt;
 
-&lt;h4&gt;Asymptotic Equivalence&lt;/h4&gt;
-Another interesting point is that $f(x)\in\Theta(g(x))$ is actually a more general case of $f(x)\sim g(x)$ where $\sim$ is &lt;a href=&quot;\asymptotic-equivalence#relation-to-algorithmic-complexity&quot;&gt;asymptotic equivalence&lt;/a&gt;. This should come as no surprise. After all, $f$ and $g$ are asymptotically equal up to a constant, and so if that constant happened to be $1$ we would be left with asymptotic equivalence.
-&lt;/details&gt;
-
-&lt;h2 id=&quot;regarding-notation&quot;&gt;Regarding Notation&lt;/h2&gt;
-&lt;p&gt;The use of the Bachmann–Landau notations is, unfortunately, quite varied and oftentimes informal. As such, I will try to clear up some of the nuance packed into these notations.&lt;/p&gt;
-
-&lt;h4 id=&quot;terminology&quot;&gt;Terminology&lt;/h4&gt;
-&lt;p&gt;When someone refers to the complexity of an algorithm without context they are assumed to be referring to its temporal, rather than its spatial, complexity. Similarly, when the order of an algorithm (its big $O$) is given without context it is assumed to be the algorithm’s &lt;strong&gt;worst-case&lt;/strong&gt; complexity (as opposed to the best/average case).&lt;/p&gt;
-
-&lt;h4 id=&quot;equality-vs-membership&quot;&gt;Equality vs Membership&lt;/h4&gt;
-&lt;p&gt;While I’ve used the notation $f(x)\in O(g(x))$ throughout this post as well as in my other writing, it is more common to write:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x)=O(g(x))\equiv f(x)\in O(g(x))&lt;/script&gt;
-
-&lt;p&gt;This is an &lt;strong&gt;abuse of notation&lt;/strong&gt; and does not &lt;em&gt;really&lt;/em&gt; denote equality between the function $f$ and the class of functions on the order of $g$. It is merely a shorthand and, as we’ll see below, this abuse can be taken to a much farther extreme…&lt;/p&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Equational Notation&lt;/h4&gt;&lt;/summary&gt;
-It is possible to use, for example, big $O$ notation in equations, extending the equality &lt;i&gt;analogy&lt;/i&gt; that is common practice. For instance:
-
-$$n^{O(1)}=O(e^n)$$
-
-Is equivalent to the following, more formal, proposition:
-
-$$(\exists f,g)\left(f\in O(1)\wedge g\in O(e^n)\right)n^{f(n)}=g(n)$$
-
-And in general, the equation means that if all the big $O$'s on both sides were replaced with some function in that class, the equation is true. There just has to exist one set of functions that make the equation true.
-&lt;p&gt;&lt;/p&gt;
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;$n$ vs. $x$&lt;/h4&gt;&lt;/summary&gt;
-Although I used the variable $x$ in the definitions given above, the variable $n$ is more common in Bachmann-Landau notation. This is because $x$ is conventionally used to denote a continuous valued, real variable, while $n$ is conventionally used to denote a discrete, integer valued variable. This jives with the fact that these notations are mostly used in describing the computational complexity of algorithms expressed as functions of their, discrete sized, inputs (e.g there are no lists of size $2.5$ and even further to the point, we cannot subdivide the bit).
-&lt;p&gt;&lt;/p&gt;
-&lt;/details&gt;
-
-&lt;h2 id=&quot;properties&quot;&gt;Properties&lt;/h2&gt;
-&lt;p&gt;I am omitting the $(x)$ after the functions (which, strictly speaking, shouldn’t have been present in the first place) for readability:&lt;/p&gt;
-
+&lt;!-- #### Examples --&gt;
+&lt;h4&gt;Examples&lt;/h4&gt;
 &lt;ul&gt;
-  &lt;li&gt;$f_1\in O(g_1)\wedge f_2\in O(g_2)\rightarrow f_1+f_2\in O(g_1+g_2)$&lt;/li&gt;
-  &lt;li&gt;$f_1\in O(g_1)\wedge f_2\in O(g_2)\rightarrow f_1f_2\in O(g_1g_2)$&lt;/li&gt;
-  &lt;li&gt;$f\cdot O(g)\in O(fg)$&lt;/li&gt;
-  &lt;li&gt;$kf\in O(g)\rightarrow f\in O(g)$&lt;/li&gt;
-  &lt;li&gt;$O(kg)=O(g)$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;em&gt;Where $k$ is some constant&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;examples&quot;&gt;Examples&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;$5x^3\in O(x^3)$ Same most significant term (times a constant).&lt;/li&gt;
-  &lt;li&gt;$x^2\in O(x^3)$ Lower than most significant term.&lt;/li&gt;
-  &lt;li&gt;$2n^2\in O(n!+n)$ Lower than most significant term.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$x^3\not\in O(x^2)$ Can’t grow faster than function.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;$2x^2\in\Omega(x^2)$ Same most significant term (times a constant).&lt;/li&gt;
-  &lt;li&gt;$x^3\in\Omega(x)$ Greater than most significant term.&lt;/li&gt;
-  &lt;li&gt;$n!\in\Omega(3n^2+2n)$ Greater than most significant term.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$x^3\not\in\Omega(x^4)$ Can’t grow slower than function.&lt;/p&gt;
-  &lt;/li&gt;
   &lt;li&gt;$2x^2\in\Theta(x^2)$ Same most significant term (times a constant).&lt;/li&gt;
   &lt;li&gt;$x^3\in\Theta(15x^3+4x^2)$ Same most significant term (times a constant).&lt;/li&gt;
-  &lt;li&gt;$n!\not\in\Theta(3n^2+2n)$ Most significant terms don’t match.&lt;/li&gt;
-&lt;/ul&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Bachmann–Landau Notation</title>
-   <link href="http://localhost:4000/bachmann-landau-notation/"/>
-   <updated>2018-09-28T00:00:00-04:00</updated>
-   <id>http://localhost:4000/bachmann–landau-notation</id>
-   <content type="html">&lt;p&gt;&lt;strong&gt;Bachmann–Landau notation&lt;/strong&gt; is a collection of notations used to  classify the limiting behavior of a particular function as its argument tends towards a particular value or infinity. It, along with &lt;a href=&quot;\asymptotic-equivalence&quot;&gt;asymptotic equivalence&lt;/a&gt;, make up the primary relations of &lt;strong&gt;asymptotics&lt;/strong&gt;.&lt;/p&gt;
+  &lt;li&gt;$n!\not\in\Theta(3n^2+2n)$ Most significant terms don't match.&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;
+&lt;/details&gt;
 
-&lt;p&gt;These notations, particularly big $O$, are most commonly used to classify and compare the computational complexity (both temporal and spatial) of different algorithms as a function of their input size.&lt;/p&gt;
-
-&lt;p&gt;Ideally, an algorithm will be on the order of a relatively slowly growing function (e.g $\log n$ grows slower than $n^2$) as they take less resources and thus are more feasible to compute.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;formal-definitions&quot;&gt;Formal Definitions&lt;/h2&gt;
-&lt;p&gt;There are 5 related notations that fall under the umbrella of Bachmann–Landau:&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Notation&lt;/th&gt;
-      &lt;th&gt;Name&lt;/th&gt;
-      &lt;th&gt;Comparison&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;$f(n)\in o(g(n))$&lt;/td&gt;
-      &lt;td&gt;Little-$o$&lt;/td&gt;
-      &lt;td&gt;$\lt$&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;$f(n)\in O(g(n))$&lt;/td&gt;
-      &lt;td&gt;Big-$O$&lt;/td&gt;
-      &lt;td&gt;$\le$&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;$f(n)\in \Theta(g(n))$&lt;/td&gt;
-      &lt;td&gt;Big-$\Theta$&lt;/td&gt;
-      &lt;td&gt;$=$&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;$f(n)\in \Omega(g(n))$&lt;/td&gt;
-      &lt;td&gt;Big-$\Omega$&lt;/td&gt;
-      &lt;td&gt;$\ge$&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;$f(n)\in \omega(g(n))$&lt;/td&gt;
-      &lt;td&gt;Little-$\omega$&lt;/td&gt;
-      &lt;td&gt;$\gt$&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;The comparison describes $f$’s behavior with respect to $g$ as $x\to c$ where $c$ could be a particular value or infinity. For the definitions we will assume $c$ is $\infty$ as that is the most common use case of asymptotic notation.&lt;/p&gt;
-
-&lt;p&gt;More concretely, this notation is based off $f$ being a member of some set defined by $g$. How these sets are defined for each notation is elaborated below via two similar (but not quite equivalent) formalizations of the concept:&lt;/p&gt;
-
+&lt;!-- ## Asymptotic Equivalence --&gt;
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Growth Definitions&lt;/h4&gt;&lt;/summary&gt;
-A function $f(x)$ is big $O$ of $g(x)$, i.e $f(x)\in O(g(x))$, if the following holds:
-
-$$f(x)\in O(g(x))\equiv (\exists k,x_0)\ x\ge x_0\rightarrow f(x)\le kg(x)$$
-
-This means that there is some point such that for all $x$ after it, $f(x)$ is less than or equal to $g(x)$ up to some constant.
-
-The definitions for the other notations are similar:
+&lt;summary&gt;&lt;h2 class=&quot;inline&quot;&gt;Asymptotic Equivalence&lt;/h2&gt;&lt;/summary&gt;
+&lt;!-- #### Stronger Big $\Theta$ --&gt;
+&lt;h4&gt;Stronger Big $\Theta$&lt;/h4&gt;
+Another interesting point is that $f(x)\sim g(x)$ is just a more specific case of $f(x)\asymp g(x)$. This should come as no surprise. After all, in big $\Theta$ the functions $f$ and $g$ are asymptotically equal up to a constant, and so if that constant happened to be 1 we would be left with asymptotic equivalence:
 
 $$\begin{align}
-f(x)\in o(g(x))&amp;amp;\equiv \left(\forall k,\exists x_0\right) x\ge x_0&amp;amp;&amp;amp;\rightarrow f(x)\lt kg(x)\\
-f(x)\in O(g(x))&amp;amp;\equiv \left(\exists k,x_0\right) x\ge x_0&amp;amp;&amp;amp;\rightarrow f(x)\le kg(x)\\
-f(x)\in \Theta(g(x))&amp;amp;\equiv \left(\exists k_1,k_2,x_0\right) x\ge x_0&amp;amp;&amp;amp;\rightarrow k_1g(x)\le f(x)\le k_2g(x)\\
-f(x)\in \Omega(g(x))&amp;amp;\equiv \left(\exists k,x_0\right) x\ge x_0&amp;amp;&amp;amp;\rightarrow f(x)\ge kg(x)\\
-f(x)\in \omega(g(x))&amp;amp;\equiv \left(\forall k,\exists x_0\right) x\ge x_0&amp;amp;&amp;amp;\rightarrow f(x)\gt kg(x)
+&amp;amp;f(x)\asymp g(x)\equiv (\exists k)\lim_{x\to\infty}\frac{f(x)}{g(x)}=k\\
+&amp;amp;k=1\\
+\therefore\ &amp;amp;f(x)\sim g(x)\equiv \lim_{x\to\infty}\frac{f(x)}{g(x)}=1\\
 \end{align}$$
 
-*Where $f,g:\mathbb{R}\to\mathbb{R}$ and $x,x_0,k,k_1,k_2\in\mathbb{R}.$*
-&lt;/details&gt;
+And since this is a special case of big $\Theta$, it also forms an equivalence relation.
 
-&lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Limit Definitions&lt;/h4&gt;&lt;/summary&gt;
-We can also define asymptotic notation via limits. Doing so comes with added stipulations about limit existence and so on but if those conditions are met, we can define them as so:
-
-$$\begin{align}
-f(x)\in o(g(x))&amp;amp;\equiv \lim_{x\to\infty}\frac{f(x)}{g(x)}=0\\
-f(x)\in O(g(x))&amp;amp;\equiv \limsup_{x\to\infty}\left|\frac{f(x)}{g(x)}\right|\lt\infty\\
-f(x)\in \Theta(g(x))&amp;amp;\equiv (\exists k)\lim_{x\to\infty}\frac{f(x)}{g(x)}=k\\
-f(x)\in \Omega(g(x))&amp;amp;\equiv \liminf_{x\to\infty}\left|\frac{f(x)}{g(x)}\right|\gt 0\\
-f(x)\in \omega(g(x))&amp;amp;\equiv \lim_{x\to\infty}\left|\frac{f(x)}{g(x)}\right|=\infty
-\end{align}$$
-&lt;/details&gt;
-
-&lt;h2 id=&quot;big-o-vs-omega-vs-theta&quot;&gt;Big $O$ vs. $\Omega$ vs. $\Theta$&lt;/h2&gt;
-&lt;h3 id=&quot;big-o&quot;&gt;Big $O$&lt;/h3&gt;
-&lt;p&gt;Big $O$, the most used notation, describes what is called the &lt;strong&gt;upper-bound complexity&lt;/strong&gt; of an algorithm. Thus a function $f$ that is big $O$ of a function $g$ grows as fast or slower than $g$ (up to a constant). When a function $f$ is &lt;strong&gt;‘of the order’&lt;/strong&gt; $g$ this means that it is big $O$ of $g$ and not any other notation.&lt;/p&gt;
-
-&lt;h4 id=&quot;popularity&quot;&gt;Popularity&lt;/h4&gt;
-&lt;p&gt;While big $\Theta$ is the most descriptive of the 3 notations, it is not as popular as big $O$. Why is this? Well, it is in part due to laziness and convention.&lt;/p&gt;
-
-&lt;p&gt;However there is a more practical reason for this as well. Proving something is big $\Theta$ means proving it is both big $O$ and big $\Omega$ which may be much more difficult or even impossible compared to just proving one or the other.&lt;/p&gt;
-
-&lt;p&gt;As a result of this, it is generally expected that when someone states an algorithm is $O(g(x))$ that $g(x)$ is as small as they could make it. This makes it a tighter bound when possible but doesn’t enforce it incase such a bound is not possible to prove.&lt;/p&gt;
-
-&lt;h4 id=&quot;common-orders&quot;&gt;Common Orders&lt;/h4&gt;
-&lt;p&gt;Below is a table of common terminology for certain lower-bound complexity classes (from smallest to largest):&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Complexity Class&lt;/th&gt;
-      &lt;th&gt;Notation&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Constant&lt;/td&gt;
-      &lt;td&gt;$O(1)$&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Logarithmic&lt;/td&gt;
-      &lt;td&gt;$O(\log n)$&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Polylogarithmic&lt;/td&gt;
-      &lt;td&gt;$O((\log n)^k)$&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Fractional Power&lt;/td&gt;
-      &lt;td&gt;$O(n^k)_{\ 0&amp;lt;k&amp;lt;1}$&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Linear&lt;/td&gt;
-      &lt;td&gt;$O(n)$&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Linearithmic&lt;/td&gt;
-      &lt;td&gt;$O(n\log n)$&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Quadratic&lt;/td&gt;
-      &lt;td&gt;$O(n^2)$&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Polynomial&lt;/td&gt;
-      &lt;td&gt;$O(n^k)_{\ k&amp;gt;1}$&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Exponential&lt;/td&gt;
-      &lt;td&gt;$O(k^n)_{\ k&amp;gt;1}$&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Factorial&lt;/td&gt;
-      &lt;td&gt;$O(n!)$&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;Big $\Omega$&lt;/h3&gt;&lt;/summary&gt;
-This contrasts with big $\Omega$ which describes the &lt;b&gt;lower-bound complexity&lt;/b&gt; of an algorithm. So a function $f$ that is big $\Omega$ of a function $g$ grows as fast or faster than $g$ (up to a constant).
-&lt;p&gt;&lt;/p&gt;
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;Big $\Theta$&lt;/h3&gt;&lt;/summary&gt;
-Big $\Theta$, on the other hand, is known as a &lt;bf&gt;tight bound&lt;/bf&gt; on the complexity of an algorithm and can be equivalently stated as:
-
-$$f(x)\in\Theta(g(x))\equiv f(x)\in O(g(x))\wedge f(x)\in\Omega(g(x))$$
-
-And so, following the pattern, a function $f$ that is big $\Theta$ of a function $g$ grows as fast as $g$ (up to a constant).
-
-&lt;h4&gt;Equivalence Relation&lt;/h4&gt;
-Note that, unlike big $O$ and $\Omega$, the relation $f(x)\in\Theta(g(x))$ forms an equivalence relation given some function $g$.
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Reflexivity&lt;/strong&gt;&lt;/summary&gt;
-I'll do this later.
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Symmetry&lt;/strong&gt;&lt;/summary&gt;
-I'll do this later.
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Transitivity&lt;/strong&gt;&lt;/summary&gt;
-I'll do this later.
-&lt;/details&gt;
-
-&lt;h4&gt;Asymptotic Equivalence&lt;/h4&gt;
-Another interesting point is that $f(x)\in\Theta(g(x))$ is actually a more general case of $f(x)\sim g(x)$ where $\sim$ is &lt;a href=&quot;\asymptotic-equivalence#relation-to-algorithmic-complexity&quot;&gt;asymptotic equivalence&lt;/a&gt;. This should come as no surprise. After all, $f$ and $g$ are asymptotically equal up to a constant, and so if that constant happened to be $1$ we would be left with asymptotic equivalence.
-&lt;/details&gt;
-
-&lt;h2 id=&quot;regarding-notation&quot;&gt;Regarding Notation&lt;/h2&gt;
-&lt;p&gt;The use of the Bachmann–Landau notations is, unfortunately, quite varied and oftentimes informal. As such, I will try to clear up some of the nuance packed into these notations.&lt;/p&gt;
-
-&lt;h4 id=&quot;terminology&quot;&gt;Terminology&lt;/h4&gt;
-&lt;p&gt;When someone refers to the complexity of an algorithm without context they are assumed to be referring to its temporal, rather than its spatial, complexity. Similarly, when the order of an algorithm (its big $O$) is given without context it is assumed to be the algorithm’s &lt;strong&gt;worst-case&lt;/strong&gt; complexity (as opposed to the best/average case).&lt;/p&gt;
-
-&lt;h4 id=&quot;equality-vs-membership&quot;&gt;Equality vs Membership&lt;/h4&gt;
-&lt;p&gt;While I’ve used the notation $f(x)\in O(g(x))$ throughout this post as well as in my other writing, it is more common to write:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x)=O(g(x))\equiv f(x)\in O(g(x))&lt;/script&gt;
-
-&lt;p&gt;This is an &lt;strong&gt;abuse of notation&lt;/strong&gt; and does not &lt;em&gt;really&lt;/em&gt; denote equality between the function $f$ and the class of functions on the order of $g$. It is merely a shorthand and, as we’ll see below, this abuse can be taken to a much farther extreme…&lt;/p&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Equational Notation&lt;/h4&gt;&lt;/summary&gt;
-It is possible to use, for example, big $O$ notation in equations, extending the equality &lt;i&gt;analogy&lt;/i&gt; that is common practice. For instance:
-
-$$n^{O(1)}=O(e^n)$$
-
-Is equivalent to the following, more formal, proposition:
-
-$$(\exists f,g)\left(f\in O(1)\wedge g\in O(e^n)\right)n^{f(n)}=g(n)$$
-
-And in general, the equation means that if all the big $O$'s on both sides were replaced with some function in that class, the equation is true. There just has to exist one set of functions that make the equation true.
-&lt;p&gt;&lt;/p&gt;
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;$n$ vs. $x$&lt;/h4&gt;&lt;/summary&gt;
-Although I used the variable $x$ in the definitions given above, the variable $n$ is more common in Bachmann-Landau notation. This is because $x$ is conventionally used to denote a continuous valued, real variable, while $n$ is conventionally used to denote a discrete, integer valued variable. This jives with the fact that these notations are mostly used in describing the computational complexity of algorithms expressed as functions of their, discrete sized, inputs (e.g there are no lists of size $2.5$ and even further to the point, we cannot subdivide the bit).
-&lt;p&gt;&lt;/p&gt;
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Limits to Constants&lt;/h4&gt;&lt;/summary&gt;
-The first paragraph mentioned that these notations applied to functions that approached infinity or any other value. Using big $O$ as an example we can make the following assumption:
-
-$$f(x)\in O(g(x)) \ \ (\text{as }x\to \infty)\iff f(x)\in O(g(x))$$
-
-For other constants, unless it is clear from the context, we should be explicit in what constant $x$ approaches. Using the limit definition as an example:
-
-$$\limsup_{x\to c}\left|\frac{f(x)}{g(x)}\right|\lt\infty \iff f(x)\in O(g(x)) \ \ (\text{as }x\to c)$$
-
-The formal definitions provided in the previous section assumed the infinity case simply because it is the most common.
-&lt;/details&gt;
-
-&lt;h2 id=&quot;properties&quot;&gt;Properties&lt;/h2&gt;
-&lt;p&gt;I am omitting the $(x)$ after the functions (which, strictly speaking, shouldn’t have been present in the first place) for readability:&lt;/p&gt;
+&lt;!-- #### Examples --&gt;
+&lt;h4&gt;Examples&lt;/h4&gt;
+Due to a technique called asymptotic expansion, there are some very interesting, and important, examples of asymptotic equivalence. For example:
 
 &lt;ul&gt;
-  &lt;li&gt;$f_1\in O(g_1)\wedge f_2\in O(g_2)\rightarrow f_1+f_2\in O(g_1+g_2)$&lt;/li&gt;
-  &lt;li&gt;$f_1\in O(g_1)\wedge f_2\in O(g_2)\rightarrow f_1f_2\in O(g_1g_2)$&lt;/li&gt;
-  &lt;li&gt;$f\cdot O(g)\in O(fg)$&lt;/li&gt;
-  &lt;li&gt;$kf\in O(g)\rightarrow f\in O(g)$&lt;/li&gt;
-  &lt;li&gt;$O(kg)=O(g)$&lt;/li&gt;
-&lt;/ul&gt;
+  &lt;li&gt;$n!\sim \sqrt{2\pi n}\left(\frac{n}{e}\right)^n$ (Stirling's approximation)&lt;/li&gt;
+  &lt;li&gt;$\pi(n)\sim\frac{n}{\log n}$ (prime number theorem)&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Where $k$ is some constant&lt;/em&gt;&lt;/p&gt;
+Here are some more accessible examples:
 
-&lt;h2 id=&quot;examples&quot;&gt;Examples&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;$5x^3\in O(x^3)$ Same most significant term (times a constant).&lt;/li&gt;
-  &lt;li&gt;$x^2\in O(x^3)$ Lower than most significant term.&lt;/li&gt;
-  &lt;li&gt;$2n^2\in O(n!+n)$ Lower than most significant term.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$x^3\not\in O(x^2)$ Can’t grow faster than function.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;$2x^2\in\Omega(x^2)$ Same most significant term (times a constant).&lt;/li&gt;
-  &lt;li&gt;$x^3\in\Omega(x)$ Greater than most significant term.&lt;/li&gt;
-  &lt;li&gt;$n!\in\Omega(3n^2+2n)$ Greater than most significant term.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;$x^3\not\in\Omega(x^4)$ Can’t grow slower than function.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;$2x^2\in\Theta(x^2)$ Same most significant term (times a constant).&lt;/li&gt;
-  &lt;li&gt;$x^3\in\Theta(15x^3+4x^2)$ Same most significant term (times a constant).&lt;/li&gt;
-  &lt;li&gt;$n!\not\in\Theta(3n^2+2n)$ Most significant terms don’t match.&lt;/li&gt;
-&lt;/ul&gt;
+  &lt;li&gt;$x^2\sim x^2+2x$ (most significant terms are same)&lt;/li&gt;
+  &lt;li&gt;$4n!\sim 4n!+3n^2$ (most significant terms are same)&lt;/li&gt;
+  &lt;li&gt;$2x^2\not\sim x^2$ (different constants on most significant terms)&lt;/li&gt;
+  &lt;li&gt;$x^3\not\sim x^4$ (different most significant terms)&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;
+&lt;/details&gt;
 </content>
  </entry>
  
@@ -669,80 +470,6 @@ $$\lceil x\rceil =\sum _{n}n\cdot [n-1&amp;lt;x\leq n]$$
 
 $$\lfloor x\rfloor =\sum _{n}n\cdot [n\leq x&amp;lt;n+1]$$
 &lt;/details&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Asymptotic Equivalence</title>
-   <link href="http://localhost:4000/asymptotic-equivalence/"/>
-   <updated>2018-08-26T00:00:00-04:00</updated>
-   <id>http://localhost:4000/asymptotic-equivalence</id>
-   <content type="html">&lt;p&gt;Asymptotic equivalence (along with &lt;a href=&quot;\bachmann-landau-notation&quot;&gt;Bachmann-Landau notation&lt;/a&gt;) is a key relation in asymptotic analysis, or &lt;strong&gt;asymptotics&lt;/strong&gt;, the study of the limiting behavior of functions. Two functions are &lt;strong&gt;asymptotically equivalent&lt;/strong&gt; if they have the same limiting behavior. That is, in a sense, they are &lt;em&gt;equivalent at infinity&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;This equivalence boils down to whether or not the functions have the same &lt;em&gt;most significant term&lt;/em&gt;, that is the term that grows the quickest as $x$ increases. For example in the function $x^3+5x^2+x$ this role falls on the $x^3$ term as the other terms become insignificant (i.e tend to 0) as $x\to\infty$.&lt;/p&gt;
-
-&lt;p&gt;Some important results in asymptotic analysis include the prime number theorem and Stirling’s approximation.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
-&lt;p&gt;Asymptotic equivalence is an equivalence relation, denoted $\sim$, on the set of $\mathbb{R}$-valued functions (or $\mathbb{C}$, $\mathbb{Z}^+$, etc.) and is defined as such:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x)\sim g(x)\equiv\lim_{x\to\infty}{\frac{f(x)}{g(x)}}=1&lt;/script&gt;
-
-&lt;p&gt;This definition can also be extended to non infinite limits:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x)\sim g(x) \ \ (\text{as }x\to c)\equiv\lim_{x\to c}{\frac{f(x)}{g(x)}}=1&lt;/script&gt;
-
-&lt;p&gt;creating a family of equivalence relations, indexed by some real number $c$.&lt;/p&gt;
-
-&lt;h4 id=&quot;examples&quot;&gt;Examples&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;$x^2\sim x^2+2x$ (most significant terms are same)&lt;/li&gt;
-  &lt;li&gt;$4n!\sim 4n!+3n^2$ (most significant terms are same)&lt;/li&gt;
-  &lt;li&gt;$2x^2\not\sim x^2$ (different constants on most significant terms)&lt;/li&gt;
-  &lt;li&gt;$x^3\not\sim x^4$ (different most significant terms)&lt;/li&gt;
-  &lt;li&gt;$n!\sim \sqrt{2\pi n}\left(\frac{n}{e}\right)^n$ (Stirling’s approximation)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;proof-of-equivalence-relation&quot;&gt;Proof of Equivalence Relation&lt;/h2&gt;
-&lt;p&gt;To qualify as an equivalence relation, a given &lt;a href=&quot;\relations&quot;&gt;relation&lt;/a&gt; must satisfy the three properties given below:&lt;/p&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Reflexivity&lt;/strong&gt;&lt;/summary&gt;
-Asymptotic equivalence is reflexive meaning that for all functions $f\sim f$. This is obvious as:
-
-$$\forall f:\lim_{x\to\infty}{\frac{f(x)}{f(x)}}=1\equiv f(x)\sim f(x)$$
-
-&lt;i&gt;Assuming $f(x)$ doesn't approach $0$.&lt;/i&gt;
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Symmetry&lt;/strong&gt;&lt;/summary&gt;
-Asymptotic equivalence is symmetric meaning that $f\sim g\implies g\sim f$. To prove this notice that the only term that &quot;survives&quot; after the limit is taken of both $f$ and $g$ is the most significant one:
-
-$$\lim_{x\to\infty}{\frac{f(x)}{g(x)}}=\frac{\lim\limits_{x\to \infty}{f(x)}}{\lim\limits_{x\to \infty}{g(x)}}=\frac{f_s(x)}{g_s(x)}$$
-
-&lt;i&gt;Where $f_s$ and $g_s$ represent the most significant terms of $f$ and $g$ respectively.&lt;/i&gt;
-
-Notice that $f(x)\sim g(x)$ is the same as saying $f_s/g_s=1$. And so we can deduce the following:
-
-$$\frac{f_s(x)}{g_s(x)}=1=\frac{g_s(x)}{f_s(x)}=\lim_{x\to\infty}{\frac{g(x)}{f(x)}}\equiv g(x)\sim f(x)$$
-
-Thus we have proved $f\sim g\implies g\sim f$.
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Transitivity&lt;/strong&gt;&lt;/summary&gt;
-I'll do this later, but this should be clear as asymptotic equivalence forms equivalence classes characterized by the most significant terms of functions.
-&lt;/details&gt;
-
-&lt;h2 id=&quot;relation-to-algorithmic-complexity&quot;&gt;Relation to Algorithmic Complexity&lt;/h2&gt;
-&lt;p&gt;When dealing with the time and space complexity of algorithms, asymptotic analysis (either in the form defined above or via &lt;strong&gt;Bachmann–Landau notation&lt;/strong&gt;) is used to compare the efficiency of different algorithms by stripping away unnecessary constants and minor terms that correspond to the different preconditions and runtime environments that these algorithms may run on.&lt;/p&gt;
-
-&lt;p&gt;In particular, asymptotic equivalence is a more &lt;a href=&quot;\asymptotic-notation#asymptotic-equivalence&quot;&gt;specific case&lt;/a&gt; of big $\Theta$ notation, however we can phrase it in the other direction:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x)\in \Theta(g(x))\equiv \exists c\not=0:cg(x) \sim f(x)&lt;/script&gt;
 </content>
  </entry>
  

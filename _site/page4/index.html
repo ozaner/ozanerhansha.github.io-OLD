@@ -245,47 +245,6 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/dottie-number/">The Dottie Number</a>
-    </h1>
-    <span class="post-date">April 16, 2018</span>
-    <p>The Dottie number, which I will denote as $\textbf{d}$, is the only real solution to the following equation:</p>
-
-<script type="math/tex; mode=display">\cos x=x</script>
-
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Dottie_number.svg/800px-Dottie_number.svg.png?style=centerme" alt="graph" width="440px" /></p>
-
-<p>The above is what’s known as a transcendental equation. Equations like these <em>usually</em> return transcendental numbers and indeed $\textbf{d}$ is transcendental. It’s decimal expansion is as follows:</p>
-
-<script type="math/tex; mode=display">\textbf{d}=0.7390851332151606...</script>
-
-<p><em>The Dottie number is sequence <a href="https://oeis.org/A003957">A003957</a> in the OEIS.</em></p>
-
-
-    <!--Adds Read more-->
-    <a href="/dottie-number/">Read more</a>
-    <hr>
-    
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/metaphysical-nightmare/">On the Grounding of Ideas</a>
-    </h1>
-    <span class="post-date">April 9, 2018</span>
-    <h2 id="poorly-defined-concepts">Poorly Defined Concepts</h2>
-<p>What is jealousy? What is a cat? What does it mean to be free? What <em>are</em> you?</p>
-
-<p>These aren’t foreign questions to us. Jealousy is an emotion we feel when we envy someone for what they have, a cat is an animal with a tail and four paws, freedom is the state of being able to do what you please, and I am a human being with thoughts and emotions.</p>
-
-<p>But what is jealousy <em>really</em>? What’s a cat <em>really</em>? What does it <em>really</em> mean to be human?</p>
-
-<p>There is no formal definition of these concepts. We just know them when we see them. I know what jealousy feels like, I know what being human feels like (I hope), and I know a cat when I see it.</p>
-
-
-    <!--Adds Read more-->
-    <a href="/metaphysical-nightmare/">Read more</a>
-    <hr>
-    
-  <div class="post">
-    <h1 class="post-title">
       <a href="/drag-force/">Drag Force</a>
     </h1>
     <span class="post-date">March 27, 2018</span>
@@ -375,6 +334,50 @@ $\renewcommand{\vec}[1]{\mathbf{#1}}$</p>
 
     <!--Adds Read more-->
     <a href="/classical-physics/">Read more</a>
+    <hr>
+    
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/reinforcement-learning-pong/">Playing Atari Pong with Reinforcement Learning</a>
+    </h1>
+    <span class="post-date">March 18, 2018</span>
+    <h2 id="background">Background</h2>
+<p>In 2013 the relatively new AI startup DeepMind released their paper <a href="https://arxiv.org/pdf/1312.5602.pdf"><em>Playing Atari with Deep Reinforcement Learning</em></a> detailing an artificial neural network that was able to play, not 1, but 7 Atari games with human and even super-human level proficiency. What made this paper so astounding was the fact that it was a single, general purpose neural network (a <strong>general artificial intelligence</strong> if you will) that could be trained to play all these games rather than 7 separate ones.</p>
+
+<p>If this wasn’t enough, in 2015 they blew the machine learning community, and everyone else considering the news coverage, away with their paper <a href="https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf"><em>Human-level control through deep reinforcement learning</em></a> in which they construct what they call a <strong>Deep Q Network</strong> (DQN) to play <em>42</em> different Atari games, all of varying complexity, with performance that exceeded a professional human player.<a href="https://deepmind.com/research/dqn/"><sup>1</sup></a></p>
+
+
+    <!--Adds Read more-->
+    <a href="/reinforcement-learning-pong/">Read more</a>
+    <hr>
+    
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/kinematics/">Kinematics</a>
+    </h1>
+    <span class="post-date">March 17, 2018</span>
+    <!-- Make vectors bold rather than arrow headed -->
+<p>$\renewcommand{\vec}[1]{\mathbf{#1}}$
+Translational Kinematics describes the motion of objects through space over time. Using an object’s <a href="/position">position</a>, velocity and acceleration vectors, it is possible to predict where it will be in the future and where it was in the past. Where an object gets that velocity/acceleration is what dynamics seeks to explain.</p>
+
+<h3 id="variable-acceleration">Variable Acceleration</h3>
+<p>To calculate the motion of an object with continuous acceleration, simply refer to the definitions of velocity and acceleration:</p>
+
+<script type="math/tex; mode=display">\begin{align}
+\vec{v}=\frac{d\vec{x}}{dt}\\
+\vec{a}=\frac{d\vec{v}}{dt}
+\end{align}</script>
+
+<p>Integrating these equations we get:</p>
+
+<script type="math/tex; mode=display">\begin{align}
+\vec{x}=\int\vec{v} \,dt+\vec{x}_0\\
+\vec{v}=\int\vec{a} \,dt+\vec{v}_0
+\end{align}</script>
+
+
+    <!--Adds Read more-->
+    <a href="/kinematics/">Read more</a>
     <hr>
     
   </div>

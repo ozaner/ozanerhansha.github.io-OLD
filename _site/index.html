@@ -247,30 +247,56 @@
     <h1 class="post-title">
       <a href="/asymptotic-notation/">Asymptotic Notation</a>
     </h1>
-    <span class="post-date">October 5, 2018</span>
+    <span class="post-date">October 7, 2018</span>
     <p>The notation used to describe the <strong>asymptotics</strong>, or limiting behavior, of functions consists of a set of 6 relations. These different relations allow us to compare the growth of different functions as they approach some constant or, in most cases, infinity.</p>
 
-<p>In the infinite case, these relations usually boil down to the functions’ <em>most significant term</em>. That is, the term that grows the quickest as a function of their input. For example, in the function $x^3+5x^2+x$ this role falls on the $x^3$ term as the other terms become insignificant (i.e tend to 0) as $x\to\infty$.</p>
+<p>In the infinite case, these relations usually boil down to the functions’ <em>most significant term</em>. That is, the term that grows the quickest as $x$ increases. For example, in the function $x^3+5x^2+x$ this role falls on the $x^3$ term as the other terms become insignificant (i.e tend to 0) as $x\to\infty$.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th style="text-align: center">Set Membership<br />Notation</th>
+      <th style="text-align: center">Comparitive<br />Notation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Little-$o$</td>
+      <td style="text-align: center">$f(n)\in o(g(n))$</td>
+      <td style="text-align: center">$f\prec g$</td>
+    </tr>
+    <tr>
+      <td>big $O$</td>
+      <td style="text-align: center">$f(n)\in O(g(n))$</td>
+      <td style="text-align: center">$f\preceq g$</td>
+    </tr>
+    <tr>
+      <td>big $\Theta$</td>
+      <td style="text-align: center">$f(n)\in \Theta(g(n))$</td>
+      <td style="text-align: center">$f\asymp g$</td>
+    </tr>
+    <tr>
+      <td>big $\Omega$</td>
+      <td style="text-align: center">$f(n)\in \Omega(g(n))$</td>
+      <td style="text-align: center">$f\succeq g$</td>
+    </tr>
+    <tr>
+      <td>Little-$\omega$</td>
+      <td style="text-align: center">$f(n)\in \omega(g(n))$</td>
+      <td style="text-align: center">$f\succ g$</td>
+    </tr>
+    <tr>
+      <td>Asymptotic<br />Equivalence</td>
+      <td style="text-align: center">N/A</td>
+      <td style="text-align: center">$f\sim g$</td>
+    </tr>
+  </tbody>
+</table>
 
 
     <!--Adds Read more-->
     <a href="/asymptotic-notation/">Read more</a>
-    <hr>
-    
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/bachmann-landau-notation/">Bachmann–Landau Notation</a>
-    </h1>
-    <span class="post-date">September 28, 2018</span>
-    <p><strong>Bachmann–Landau notation</strong> is a collection of notations used to  classify the limiting behavior of a particular function as its argument tends towards a particular value or infinity. It, along with <a href="\asymptotic-equivalence">asymptotic equivalence</a>, make up the primary relations of <strong>asymptotics</strong>.</p>
-
-<p>These notations, particularly big $O$, are most commonly used to classify and compare the computational complexity (both temporal and spatial) of different algorithms as a function of their input size.</p>
-
-<p>Ideally, an algorithm will be on the order of a relatively slowly growing function (e.g $\log n$ grows slower than $n^2$) as they take less resources and thus are more feasible to compute.</p>
-
-
-    <!--Adds Read more-->
-    <a href="/bachmann-landau-notation/">Read more</a>
     <hr>
     
   <div class="post">
@@ -297,22 +323,6 @@
     
   <div class="post">
     <h1 class="post-title">
-      <a href="/asymptotic-equivalence/">Asymptotic Equivalence</a>
-    </h1>
-    <span class="post-date">August 26, 2018</span>
-    <p>Asymptotic equivalence (along with <a href="\bachmann-landau-notation">Bachmann-Landau notation</a>) is a key relation in asymptotic analysis, or <strong>asymptotics</strong>, the study of the limiting behavior of functions. Two functions are <strong>asymptotically equivalent</strong> if they have the same limiting behavior. That is, in a sense, they are <em>equivalent at infinity</em>.</p>
-
-<p>This equivalence boils down to whether or not the functions have the same <em>most significant term</em>, that is the term that grows the quickest as $x$ increases. For example in the function $x^3+5x^2+x$ this role falls on the $x^3$ term as the other terms become insignificant (i.e tend to 0) as $x\to\infty$.</p>
-
-<p>Some important results in asymptotic analysis include the prime number theorem and Stirling’s approximation.</p>
-
-
-    <!--Adds Read more-->
-    <a href="/asymptotic-equivalence/">Read more</a>
-    <hr>
-    
-  <div class="post">
-    <h1 class="post-title">
       <a href="/proportionality/">Proportionality</a>
     </h1>
     <span class="post-date">August 17, 2018</span>
@@ -324,6 +334,51 @@
 
     <!--Adds Read more-->
     <a href="/proportionality/">Read more</a>
+    <hr>
+    
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/relations/">Relations</a>
+    </h1>
+    <span class="post-date">August 12, 2018</span>
+    <!-- ## What is a Relation?
+Relations are used to correlate elements of different sets in some way. They are a more general form of a function, which can only relate elements to a single output.
+
+#### Example
+Say I had a set of tops $T$, pants $P$, and shoes $S$. I could define another set $R$ that is a collection of all the combinations of clothing that go together (a set of ordered triplets). This set would be called a relation, because it *relates* pieces of clothing that go well together by virtue of that combination being an element of $R$. -->
+
+<h2 id="definition">Definition</h2>
+<p>A <strong>relation</strong> $R$ on a set of sets $S_1,S_2,S_3,\cdots$ is a subset of their <a href="/cartesian-product"><strong>cartesian product</strong></a>:</p>
+
+<script type="math/tex; mode=display">R\subseteq S_1\times S_2\times S_3\times \cdots</script>
+
+<p>Relations are used to establish $n$-way relationships between elements of the same or different sets (ex. there is a two way relationship between $2$ and $5$ in that $2&lt;5$).</p>
+
+<h4 id="arity">Arity</h4>
+<p>The arity of a relation is the number of sets it is a relation on (i.e the <a href="/cartesian-product#arity">arity of the cartesian product</a> it is a subset of). Thus, a relation on $2$ sets is a <em>bi</em>nary relation, $3$ sets makes a <em>tri</em>nary relation and, in general, $n$ sets make an $n$-ary relation.</p>
+
+<p>When $n$ is infinite the relation is <strong>infinitary</strong> as opposed to <strong>finitary</strong> for finite $n$.</p>
+
+
+    <!--Adds Read more-->
+    <a href="/relations/">Read more</a>
+    <hr>
+    
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/boolean-logic-in-linear-algebra/">Boolean Logic in Linear Algebra</a>
+    </h1>
+    <span class="post-date">July 18, 2018</span>
+    <h2 id="introduction">Introduction</h2>
+<p>Computation is usually formulated via boolean logic, which in turn makes use of logical connectives like $\wedge,\vee, \neg$ along with the binary digits $0$ and $1$, representing false and true respectively.</p>
+
+<p>There is, however, an alternative: linear algebra. By representing $0$ and $1$ as vectors and logical operations/gates as matrices, we can define computation in the language of linear algebra.</p>
+
+<p>While at first this may seem to be nothing but a novel construction, reformulating computation in terms of linear algebra is precisely what opens the door to quantum computing, which is essentially a more general form of what’s shown below.</p>
+
+
+    <!--Adds Read more-->
+    <a href="/boolean-logic-in-linear-algebra/">Read more</a>
     <hr>
     
   </div>

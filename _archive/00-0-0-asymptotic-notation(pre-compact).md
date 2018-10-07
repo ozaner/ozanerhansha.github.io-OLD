@@ -2,7 +2,7 @@
 layout: post
 title: Asymptotic Notation
 date: 2018-10-07
-tags: math computer-science relations
+tags: math computer-science
 ---
 The notation used to describe the **asymptotics**, or limiting behavior, of functions consists of a set of 6 relations. These different relations allow us to compare the growth of different functions as they approach some constant or, in most cases, infinity.
 
@@ -126,92 +126,69 @@ Below is a table of common terminology for certain lower-bound complexity classe
 
 While the terminology $f$ is **'on the order'** $g$ is loose, if the particular notation is not specified it can be assumed to be referring to big $O$.
 
-<!-- ## Big $O$ and little $o$ -->
-<details>
-<summary><h2 class="inline">Big $O$ and little $o$</h2></summary>
-Big $O$, one of the most used notations, gives an upper-bound on the asymptotic growth of a function. Thus a function $f$ that is big $O$ of a function $g$ grows as fast or slower than $g$ (up to a constant). In the context of algorithms, this is its <b>upper-bound complexity</b>. Little-$o$ is a stronger version of this where $f$ grows strictly slower than $g$.
+## Big $O$ and little $o$
+Big $O$, one of the most used notations, gives an upper-bound on the asymptotic growth of a function. Thus a function $f$ that is big $O$ of a function $g$ grows as fast or slower than $g$ (up to a constant). In the context of algorithms, this is its **upper-bound complexity**. Little-$o$ is a stronger version of this where $f$ grows strictly slower than $g$.
 
-<!-- #### Popularity -->
-<h4>Popularity</h4>
-While big $\Theta$ is the most descriptive of the 3 notations, it is not as popular as big $O$. Why is this? Well, it is in part due to laziness and convention.<p></p>
+#### Popularity
+While big $\Theta$ is the most descriptive of the 3 notations, it is not as popular as big $O$. Why is this? Well, it is in part due to laziness and convention.
 
-However there is a more practical reason for this as well. Proving something is big $\Theta$ means proving it is both big $O$ and big $\Omega$ which may be much more difficult or even impossible compared to just proving one or the other.<p></p>
+However there is a more practical reason for this as well. Proving something is big $\Theta$ means proving it is both big $O$ and big $\Omega$ which may be much more difficult or even impossible compared to just proving one or the other.
 
 As a result of this, it is generally expected that when someone states an algorithm is $O(g(x))$ that $g(x)$ is as small as they could make it. This makes it a tighter bound when possible but doesn't enforce it incase such a bound is not possible to prove.
 
-<!-- #### Properties -->
-<h4>Properties</h4>
+#### Properties
 I am omitting the $(x)$ after the functions (which, strictly speaking, shouldn't have been present in the first place) for readability:
 
-<ul>
-  <li>$f_1\in O(g_1)\wedge f_2\in O(g_2)\rightarrow f_1+f_2\in O(g_1+g_2)$</li>
-  <li>$f_1\in O(g_1)\wedge f_2\in O(g_2)\rightarrow f_1f_2\in O(g_1g_2)$</li>
-  <li>$fO(g)\in O(fg)$</li>
-  <li>$f\in O(g)\rightarrow kf\in O(g)$</li>
-  <li>$O(g)=O(kg)$</li>
-</ul><p></p>
+- $f_1\in O(g_1)\wedge f_2\in O(g_2)\rightarrow f_1+f_2\in O(g_1+g_2)$
+- $f_1\in O(g_1)\wedge f_2\in O(g_2)\rightarrow f_1f_2\in O(g_1g_2)$
+- $fO(g)\in O(fg)$
+- $f\in O(g)\rightarrow kf\in O(g)$
+- $O(g)=O(kg)$
 
-<i>Where $f,g$ are functions and $k$ is some non-zero constant</i>
+*Where $f,g$ are functions and $k$ is some non-zero constant*
 
-<!-- #### Examples -->
-<h4>Examples</h4>
-<ul>
-  <li>$5x^3+2\in O(x^3)$ Same most significant term (times a constant).</li>
-  <li>$x^2\in O(x^3)$ Lower than most significant term.</li>
-  <li>$2n^2\in O(n!+n)$ Lower than most significant term.</li>
-  <li>$x^3\not\in O(x^2)$ Can't grow faster than function.</li>
-  <li>$x^2\not\in o(x^2)$ Must be strictly smaller.</li>
-</ul><p></p>
-</details>
+#### Examples
+- $5x^3+2\in O(x^3)$ Same most significant term (times a constant).
+- $x^2\in O(x^3)$ Lower than most significant term.
+- $2n^2\in O(n!+n)$ Lower than most significant term.
+- $x^3\not\in O(x^2)$ Can't grow faster than function.
+- $x^2\not\in o(x^2)$ Must be strictly smaller.
 
-<!-- ## Big $\Omega$ and little $\omega$ -->
-<details>
-<summary><h2 class="inline">Big $\Omega$ and little $\omega$</h2></summary>
-Big $\Omega$ gives a lower-bound on the asymptotic growth of a function. Thus a function $f$ that is big $O$ of a function $g$ grows as fast or faster than $g$ (up to a constant). In the context of algorithms, this is its <b>lower-bound complexity</b>. Little-$\omega$ is a stronger version of this where $f$ grows strictly faster than $g$.
+## Big $\Omega$ and little $\omega$
+Big $\Omega$ gives a lower-bound on the asymptotic growth of a function. Thus a function $f$ that is big $O$ of a function $g$ grows as fast or faster than $g$ (up to a constant). In the context of algorithms, this is its **lower-bound complexity**. Little-$\omega$ is a stronger version of this where $f$ grows strictly faster than $g$.
 
-<!-- #### Properties -->
-<h4>Properties</h4>
-<ul>
-  <li>$f_1\in\Omega(g_1)\wedge f_2\in\Omega(g_2)\rightarrow f_1+f_2\in\Omega(g_1+g_2)$</li>
-  <li>$f_1\in\Omega(g_1)\wedge f_2\in\Omega(g_2)\rightarrow f_1f_2\in\Omega(g_1g_2)$</li>
-  <li>$f\Omega(g)\in\Omega(fg)$</li>
-  <li>$f\in\Omega(g)\rightarrow kf\in\Omega(g)$</li>
-  <li>$\Omega(g)=\Omega(kg)$</li>
-</ul>
+#### Properties
+- $f_1\in\Omega(g_1)\wedge f_2\in\Omega(g_2)\rightarrow f_1+f_2\in\Omega(g_1+g_2)$
+- $f_1\in\Omega(g_1)\wedge f_2\in\Omega(g_2)\rightarrow f_1f_2\in\Omega(g_1g_2)$
+- $f\Omega(g)\in\Omega(fg)$
+- $f\in\Omega(g)\rightarrow kf\in\Omega(g)$
+- $\Omega(g)=\Omega(kg)$
 
-<!-- #### Examples -->
-<h4>Examples</h4>
-<ul>
-  <li>$2x^2+2x\in\Omega(x^2)$ Same most significant term (times a constant).</li>
-  <li>$x^3\in\Omega(x)$ Greater than most significant term.</li>
-  <li>$n!\in\Omega(3n^2+2n)$ Greater than most significant term.</li>
-  <li>$x^3\not\in\Omega(x^4)$ Can't grow slower than function.</li>
-  <li>$x^2\not\in\omega(x^2)$ Must be strictly bigger.</li>
-</ul><p></p>
-</details>
+#### Examples
+- $2x^2+2x\in\Omega(x^2)$ Same most significant term (times a constant).
+- $x^3\in\Omega(x)$ Greater than most significant term.
+- $n!\in\Omega(3n^2+2n)$ Greater than most significant term.
+- $x^3\not\in\Omega(x^4)$ Can't grow slower than function.
+- $x^2\not\in\omega(x^2)$ Must be strictly bigger.
 
-<!-- ## Big $\Theta$ -->
-<details>
-<summary><h2 class="inline">Big $\Theta$</h2></summary>
-Big $\Theta$ forms a <b>tight bound</b> on the asymptotic growth of a function. It is the combination of both big $O$ and big $\Omega$:
+## Big $\Theta$
+Big $\Theta$ gives a lower-bound on the asymptotic growth of a function. Thus a function $f$ that is big $O$ of a function $g$ grows as fast or faster than $g$ (up to a constant). In the context of algorithms, this is its **lower-bound complexity**. Little-$\omega$ is a stronger version of this where $f$ grows strictly faster than $g$.
+
+Big $\Theta$ forms a **tight bound** on the asymptotic growth of a function. It is the combination of both big $O$ and big $\Omega$:
 
 $$f(x)\in\Theta(g(x))\equiv f(x)\in O(g(x))\wedge f(x)\in\Omega(g(x))$$
 
 And so, following the pattern, a function $f$ that is big $\Theta$ of a function $g$ grows as fast as $g$ (up to a constant).
 
-<!-- #### Properties -->
-<h4>Properties</h4>
-<ul>
-  <li>$f_1\in\Theta(g_1)\wedge f_2\in\Theta(g_2)\rightarrow f_1+f_2\in\Theta(g_1+g_2)$</li>
-  <li>$f_1\in\Theta(g_1)\wedge f_2\in\Theta(g_2)\rightarrow f_1f_2\in\Theta(g_1g_2)$</li>
-  <li>$f\Theta(g)\in\Theta(fg)$</li>
-  <li>$f\in\Theta(g)\rightarrow kf\in\Theta(g)$</li>
-  <li>$\Theta(g)=\Theta(kg)$</li>
-</ul>
+#### Properties
+- $f_1\in\Theta(g_1)\wedge f_2\in\Theta(g_2)\rightarrow f_1+f_2\in\Theta(g_1+g_2)$
+- $f_1\in\Theta(g_1)\wedge f_2\in\Theta(g_2)\rightarrow f_1f_2\in\Theta(g_1g_2)$
+- $f\Theta(g)\in\Theta(fg)$
+- $f\in\Theta(g)\rightarrow kf\in\Theta(g)$
+- $\Theta(g)=\Theta(kg)$
 
-<!-- #### Equivalence Relation -->
-<h4>Equivalence Relation</h4>
-Note that on top of the properties given above $f(x)\in\Theta(g(x))$, or more clearly $f\asymp g$, forms an equivalence <a href="\relations">relation</a> over the set of all functions with some defined limit:
+#### Equivalence Relation
+Note that on top of the properties given above $f(x)\in\Theta(g(x))$, or more clearly $f\asymp g$, forms an equivalence [relation](\relations) over the set of all functions with some defined limit:
 
 <details>
 <summary><strong>Reflexivity</strong></summary>
@@ -234,20 +211,13 @@ $$\forall f\ \forall k:\lim_{x\to\infty}{\frac{f(x)}{g(x)}}=k\rightarrow \lim_{x
 I'll do this later, but this should be clear as big $\Theta$ forms equivalence classes characterized by the most significant terms of functions.
 </details>
 
-<!-- #### Examples -->
-<h4>Examples</h4>
-<ul>
-  <li>$2x^2\in\Theta(x^2)$ Same most significant term (times a constant).</li>
-  <li>$x^3\in\Theta(15x^3+4x^2)$ Same most significant term (times a constant).</li>
-  <li>$n!\not\in\Theta(3n^2+2n)$ Most significant terms don't match.</li>
-</ul><p></p>
-</details>
+#### Examples
+- $2x^2\in\Theta(x^2)$ Same most significant term (times a constant).
+- $x^3\in\Theta(15x^3+4x^2)$ Same most significant term (times a constant).
+- $n!\not\in\Theta(3n^2+2n)$ Most significant terms don't match.
 
-<!-- ## Asymptotic Equivalence -->
-<details>
-<summary><h2 class="inline">Asymptotic Equivalence</h2></summary>
-<!-- #### Stronger Big $\Theta$ -->
-<h4>Stronger Big $\Theta$</h4>
+## Asymptotic Equivalence
+#### Stronger Big $\Theta$
 Another interesting point is that $f(x)\sim g(x)$ is just a more specific case of $f(x)\asymp g(x)$. This should come as no surprise. After all, in big $\Theta$ the functions $f$ and $g$ are asymptotically equal up to a constant, and so if that constant happened to be 1 we would be left with asymptotic equivalence:
 
 $$\begin{align}
@@ -258,21 +228,15 @@ $$\begin{align}
 
 And since this is a special case of big $\Theta$, it also forms an equivalence relation.
 
-<!-- #### Examples -->
-<h4>Examples</h4>
+#### Examples
 Due to a technique called asymptotic expansion, there are some very interesting, and important, examples of asymptotic equivalence. For example:
 
-<ul>
-  <li>$n!\sim \sqrt{2\pi n}\left(\frac{n}{e}\right)^n$ (Stirling's approximation)</li>
-  <li>$\pi(n)\sim\frac{n}{\log n}$ (prime number theorem)</li>
-</ul><p></p>
+- $n!\sim \sqrt{2\pi n}\left(\frac{n}{e}\right)^n$ (Stirling's approximation)
+- $\pi(n)\sim\frac{n}{\log n}$ (prime number theorem)
 
-Here are some more accessible examples:
+Here are some more accessible examples.
 
-<ul>
-  <li>$x^2\sim x^2+2x$ (most significant terms are same)</li>
-  <li>$4n!\sim 4n!+3n^2$ (most significant terms are same)</li>
-  <li>$2x^2\not\sim x^2$ (different constants on most significant terms)</li>
-  <li>$x^3\not\sim x^4$ (different most significant terms)</li>
-</ul><p></p>
-</details>
+- $x^2\sim x^2+2x$ (most significant terms are same)
+- $4n!\sim 4n!+3n^2$ (most significant terms are same)
+- $2x^2\not\sim x^2$ (different constants on most significant terms)
+- $x^3\not\sim x^4$ (different most significant terms)
