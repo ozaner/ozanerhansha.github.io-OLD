@@ -46,7 +46,7 @@ f(x)\in \Omega(g(x))&\equiv \left(\exists k,x_0\right) x\ge x_0&&\rightarrow f(x
 f(x)\in \omega(g(x))&\equiv \left(\forall k,\exists x_0\right) x\ge x_0&&\rightarrow f(x)\gt kg(x)
 \end{align}$$
 
-<i>Where $f,g:\mathbb{R}\to\mathbb{R}$ and $x,x_0,k,k_1,k_2\in\mathbb{R}.$</i>
+<i>Where $f,g:\mathbb{R}\to\mathbb{R}$ and $x,x_0\in\mathbb{R}$ and $k,k_1,k_2\in\mathbb{R}\setminus\{0\}$</i>
 <p></p>
 </details>
 
@@ -229,7 +229,7 @@ $$\begin{align}
 And since this is a special case of big $\Theta$, it also forms an equivalence relation.
 
 #### Examples
-Due to a technique called asymptotic expansion, there are much more interesting, and important, examples of asymptotic equivalence than for the other relations. For example:
+Due to a technique called asymptotic expansion, there are some very interesting, and important, examples of asymptotic equivalence. For example:
 
 - $n!\sim \sqrt{2\pi n}\left(\frac{n}{e}\right)^n$ (Stirling's approximation)
 - $\pi(n)\sim\frac{n}{\log n}$ (prime number theorem)
