@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Asymptotic Notation
-date: 2018-10-05
+date: 2018-10-07
 tags: math computer-science
 ---
 The notation used to describe the **asymptotics**, or limiting behavior, of functions consists of a set of 6 relations. These different relations allow us to compare the growth of different functions as they approach some constant or, in most cases, infinity.
@@ -10,7 +10,7 @@ In the infinite case, these relations usually boil down to the functions' *most 
 
 <!--more-->
 
-These notations, particularly big $O$, are most commonly used to classify and compare the computational complexity (both temporal and spatial) of different algorithms as a function of their input size. Ideally, an algorithm will be on the order of a relatively slowly growing function (e.g $\log n$ grows slower than $n^2$) as they take less resources and thus are more feasible to compute.
+These notations, particularly big $O$, are most commonly used to classify and compare the computational complexity (both temporal and spatial) of different algorithms as a function of their input size by stripping away unnecessary constants and minor terms that correspond to the different preconditions and runtime environments that these algorithms may run on. Ideally, an algorithm will be on the order of a relatively slowly growing function (e.g $\log n$ grows slower than $n^2$) as they take less resources and thus are more feasible to compute.
 
 They are also used in the approximation of functions that would be infeasible, or even impossible, to calculate otherwise.
 
@@ -76,19 +76,40 @@ That said, the $x\to\infty$ case is so much more common that when no approached 
 
 $$f(x)\in O(g(x)) \ \ (\text{as }x\to\infty)\iff f(x)\in O(g(x))$$
 
-## Big $O$ vs. $\Omega$ vs. $\Theta$
-### Big $O$
-Big $O$, the most used notation, describes what is called the **upper-bound complexity** of an algorithm. Thus a function $f$ that is big $O$ of a function $g$ grows as fast or slower than $g$ (up to a constant). When a function $f$ is **'of the order'** $g$ this means that it is big $O$ of $g$ and not any other notation.
+## Notation and Terminology
+The use of asymptotic notation is, unfortunately, quite varied and oftentimes informal. As such, I will try to clear up some of the nuance packed into these notations.
 
-#### Popularity
-While big $\Theta$ is the most descriptive of the 3 notations, it is not as popular as big $O$. Why is this? Well, it is in part due to laziness and convention.
+#### Membership vs Equality
+The set membership notation $f(x)\in O(g(x))$ implies that there is a set of functions that are big-$O$ of $g$ and that $f$ is one of those functions. The same reasoning applies to the other notations.
 
-However there is a more practical reason for this as well. Proving something is big $\Theta$ means proving it is both big $O$ and big $\Omega$ which may be much more difficult or even impossible compared to just proving one or the other.
+That said, while I've used this notation throughout this post as well as in my other writing, it is more common to write:
 
-As a result of this, it is generally expected that when someone states an algorithm is $O(g(x))$ that $g(x)$ is as small as they could make it. This makes it a tighter bound when possible but doesn't enforce it incase such a bound is not possible to prove.
+$$f(x)=O(g(x))$$
+
+This is an **abuse of notation** and does not *really* denote equality between the function $f$ and the class of functions on the order of $g$. It is merely a shorthand and, as we'll see below, this abuse can be taken to a much farther extreme...
+
+#### Computational Complexity
+When someone refers to the complexity of an algorithm without context they are assumed to be referring to its temporal, rather than its spatial, complexity. Similarly, when the order of an algorithm (its big $O$) is given without context it is assumed to be the algorithm's **worst-case** complexity (as opposed to the best/average case).
+
+<details>
+<summary><h4 class="inline">$n$ vs. $x$</h4></summary>
+Although I used the variable $x$ in the definitions given above, the variable $n$ is more common in Bachmann-Landau notation. This is because $x$ is conventionally used to denote a continuous valued, real variable, while $n$ is conventionally used to denote a discrete, integer valued variable. This jives with the fact that these notations are mostly used in describing the computational complexity of algorithms expressed as functions of their, discrete sized, inputs (e.g there are no lists of size $2.5$ and even further to the point, we cannot subdivide the bit).
+<p></p>
+</details>
+
+#### Equational Notation
+It is possible to use, for example, big $O$ notation in equations, extending the equality *analogy* that is common practice. For instance:
+
+$$n^{O(1)}=O(e^n)$$
+
+Is equivalent to the following, more formal, proposition:
+
+$$(\exists f,g)\left(f\in O(1)\wedge g\in O(e^n)\right)n^{f(n)}=g(n)$$
+
+And in general, the equation means that if all the big $O$'s on both sides were replaced with some function in that class, the equation is true. There just has to exist one set of functions that make the equation true.
 
 #### Common Orders
-Below is a table of common terminology for certain lower-bound complexity classes (from smallest to largest):
+Below is a table of common terminology for certain lower-bound complexity classes from slowest to fastest growth:
 
 | Complexity Class | Notation           |
 |------------------|--------------------|
@@ -103,76 +124,65 @@ Below is a table of common terminology for certain lower-bound complexity classe
 | Exponential      | $O(k^n)_{\ k>1}$   |
 | Factorial        | $O(n!)$            |
 
-<details>
-<summary><h3 class="inline">Big $\Omega$</h3></summary>
-This contrasts with big $\Omega$ which describes the <b>lower-bound complexity</b> of an algorithm. So a function $f$ that is big $\Omega$ of a function $g$ grows as fast or faster than $g$ (up to a constant).
-<p></p>
-</details>
+While the terminology $f$ is **'of the order'** $g$ is loose, if the particular notation is not specified it can be assumed to be referring to big $O$.
 
-<details>
-<summary><h3 class="inline">Big $\Theta$</h3></summary>
-Big $\Theta$, on the other hand, is known as a <bf>tight bound</bf> on the complexity of an algorithm and can be equivalently stated as:
+## Big $O$ and little $o$
+Big $O$, one of the most used notations, gives an upper-bound on the asymptotic growth of a function. Thus a function $f$ that is big $O$ of a function $g$ grows as fast or slower than $g$ (up to a constant). In the context of algorithms, this is its **upper-bound complexity**. Little-$o$ is a stronger version of this where $f$ grows strictly slower than $g$.
+
+#### Popularity
+While big $\Theta$ is the most descriptive of the 3 notations, it is not as popular as big $O$. Why is this? Well, it is in part due to laziness and convention.
+
+However there is a more practical reason for this as well. Proving something is big $\Theta$ means proving it is both big $O$ and big $\Omega$ which may be much more difficult or even impossible compared to just proving one or the other.
+
+As a result of this, it is generally expected that when someone states an algorithm is $O(g(x))$ that $g(x)$ is as small as they could make it. This makes it a tighter bound when possible but doesn't enforce it incase such a bound is not possible to prove.
+
+#### Properties
+I am omitting the $(x)$ after the functions (which, strictly speaking, shouldn't have been present in the first place) for readability:
+
+- $f_1\in O(g_1)\wedge f_2\in O(g_2)\rightarrow f_1+f_2\in O(g_1+g_2)$
+- $f_1\in O(g_1)\wedge f_2\in O(g_2)\rightarrow f_1f_2\in O(g_1g_2)$
+- $fO(g)\in O(fg)$
+- $kf\in O(g)\rightarrow f\in O(g)$
+- $O(kg)=O(g)$
+
+*Where $f,g$ are functions and $k$ is some constant*
+
+#### Examples
+- $5x^3\in O(x^3)$ Same most significant term (times a constant).
+- $x^2\in O(x^3)$ Lower than most significant term.
+- $2n^2\in O(n!+n)$ Lower than most significant term.
+- $x^3\not\in O(x^2)$ Can't grow faster than function.
+- - $x^2\not\in o(x^2)$ Little $o$ is strictly smaller.
+
+## Big $\Omega$ and little $\omega$
+Big $\Omega$ gives a lower-bound on the asymptotic growth of a function. Thus a function $f$ that is big $O$ of a function $g$ grows as fast or faster than $g$ (up to a constant). In the context of algorithms, this is its **lower-bound complexity**. Little-$\omega$ is a stronger version of this where $f$ grows strictly faster than $g$.
+
+#### Properties
+I am omitting the $(x)$ after the functions (which, strictly speaking, shouldn't have been present in the first place) for readability:
+
+- $f_1\in\Omega(g_1)\wedge f_2\in\Omega(g_2)\rightarrow f_1+f_2\in O(g_1+g_2)$
+- $f_1\in\Omega(g_1)\wedge f_2\in\Omega(g_2)\rightarrow f_1f_2\in O(g_1g_2)$
+- $f\Omega(g)\in\Omega(fg)$
+- $kf\in\Omega(g)\rightarrow f\in\Omega(g)$
+- $\Omega(kg)=\Omega(g)$
+
+#### Examples
+- $2x^2\in\Omega(x^2)$ Same most significant term (times a constant).
+- $x^3\in\Omega(x)$ Greater than most significant term.
+- $n!\in\Omega(3n^2+2n)$ Greater than most significant term.
+- $x^3\not\in\Omega(x^4)$ Can't grow slower than function.
+- $x^2\not\in\omega(x^2)$ Little $\omega$ is strictly bigger.
+
+## Big $\Theta$
+Big $\Theta$ gives a lower-bound on the asymptotic growth of a function. Thus a function $f$ that is big $O$ of a function $g$ grows as fast or faster than $g$ (up to a constant). In the context of algorithms, this is its **lower-bound complexity**. Little-$\omega$ is a stronger version of this where $f$ grows strictly faster than $g$.
+
+Big $\Theta$ forms a **tight bound** on the asymptotic growth of a function. It is the combination of both big-$O$ and big-$\Omega$:
 
 $$f(x)\in\Theta(g(x))\equiv f(x)\in O(g(x))\wedge f(x)\in\Omega(g(x))$$
 
 And so, following the pattern, a function $f$ that is big $\Theta$ of a function $g$ grows as fast as $g$ (up to a constant).
 
-<h4>Equivalence Relation</h4>
-Note that, unlike big $O$ and $\Omega$, the relation $f(x)\in\Theta(g(x))$ forms an equivalence relation given some function $g$.
-
-<details>
-<summary><strong>Reflexivity</strong></summary>
-I'll do this later.
-</details>
-
-<details>
-<summary><strong>Symmetry</strong></summary>
-I'll do this later.
-</details>
-
-<details>
-<summary><strong>Transitivity</strong></summary>
-I'll do this later.
-</details>
-
-<h4>Asymptotic Equivalence</h4>
-Another interesting point is that $f(x)\in\Theta(g(x))$ is actually a more general case of $f(x)\sim g(x)$ where $\sim$ is <a href="\asymptotic-equivalence#relation-to-algorithmic-complexity">asymptotic equivalence</a>. This should come as no surprise. After all, $f$ and $g$ are asymptotically equal up to a constant, and so if that constant happened to be $1$ we would be left with asymptotic equivalence.
-</details>
-
-## Regarding Notation
-The use of the Bachmann–Landau notations is, unfortunately, quite varied and oftentimes informal. As such, I will try to clear up some of the nuance packed into these notations.
-
-#### Terminology
-When someone refers to the complexity of an algorithm without context they are assumed to be referring to its temporal, rather than its spatial, complexity. Similarly, when the order of an algorithm (its big $O$) is given without context it is assumed to be the algorithm's **worst-case** complexity (as opposed to the best/average case).
-
-#### Equality vs Membership
-While I've used the notation $f(x)\in O(g(x))$ throughout this post as well as in my other writing, it is more common to write:
-
-$$f(x)=O(g(x))\equiv f(x)\in O(g(x))$$
-
-This is an **abuse of notation** and does not *really* denote equality between the function $f$ and the class of functions on the order of $g$. It is merely a shorthand and, as we'll see below, this abuse can be taken to a much farther extreme...
-
-<details>
-<summary><h4 class="inline">Equational Notation</h4></summary>
-It is possible to use, for example, big $O$ notation in equations, extending the equality <i>analogy</i> that is common practice. For instance:
-
-$$n^{O(1)}=O(e^n)$$
-
-Is equivalent to the following, more formal, proposition:
-
-$$(\exists f,g)\left(f\in O(1)\wedge g\in O(e^n)\right)n^{f(n)}=g(n)$$
-
-And in general, the equation means that if all the big $O$'s on both sides were replaced with some function in that class, the equation is true. There just has to exist one set of functions that make the equation true.
-<p></p>
-</details>
-
-<details>
-<summary><h4 class="inline">$n$ vs. $x$</h4></summary>
-Although I used the variable $x$ in the definitions given above, the variable $n$ is more common in Bachmann-Landau notation. This is because $x$ is conventionally used to denote a continuous valued, real variable, while $n$ is conventionally used to denote a discrete, integer valued variable. This jives with the fact that these notations are mostly used in describing the computational complexity of algorithms expressed as functions of their, discrete sized, inputs (e.g there are no lists of size $2.5$ and even further to the point, we cannot subdivide the bit).
-<p></p>
-</details>
-
-## Properties
+<!-- #### Properties
 I am omitting the $(x)$ after the functions (which, strictly speaking, shouldn't have been present in the first place) for readability:
 
 - $f_1\in O(g_1)\wedge f_2\in O(g_2)\rightarrow f_1+f_2\in O(g_1+g_2)$
@@ -180,20 +190,38 @@ I am omitting the $(x)$ after the functions (which, strictly speaking, shouldn't
 - $f\cdot O(g)\in O(fg)$
 - $kf\in O(g)\rightarrow f\in O(g)$
 - $O(kg)=O(g)$
+ -->
 
-*Where $k$ is some constant*
+ #### Equivalence Relation
+ Note that, unlike big $O$ and $\Omega$, the relation $f(x)\in\Theta(g(x))$ forms an equivalence relation given some function $g$.
 
-## Examples
-- $5x^3\in O(x^3)$ Same most significant term (times a constant).
-- $x^2\in O(x^3)$ Lower than most significant term.
-- $2n^2\in O(n!+n)$ Lower than most significant term.
-- $x^3\not\in O(x^2)$ Can't grow faster than function.
+ <details>
+ <summary><strong>Reflexivity</strong></summary>
+ I'll do this later.
+ </details>
 
-- $2x^2\in\Omega(x^2)$ Same most significant term (times a constant).
-- $x^3\in\Omega(x)$ Greater than most significant term.
-- $n!\in\Omega(3n^2+2n)$ Greater than most significant term.
-- $x^3\not\in\Omega(x^4)$ Can't grow slower than function.
+ <details>
+ <summary><strong>Symmetry</strong></summary>
+ I'll do this later.
+ </details>
 
+ <details>
+ <summary><strong>Transitivity</strong></summary>
+ I'll do this later.
+ </details>
+
+#### Examples
 - $2x^2\in\Theta(x^2)$ Same most significant term (times a constant).
 - $x^3\in\Theta(15x^3+4x^2)$ Same most significant term (times a constant).
 - $n!\not\in\Theta(3n^2+2n)$ Most significant terms don't match.
+
+## Asymptotic Equivalence
+Another interesting point is that $f(x)\sim g(x)$ is just a more specific case of $f(x)\asymp g(x)$. This should come as no surprise. After all, in big-$\Theta$ the functions $f$ and $g$ are asymptotically equal up to a constant, and so if that constant happened to be 1 we would be left with asymptotic equivalence:
+
+$$\begin{align}
+&f(x)\asymp g(x)\equiv (\exists k)\lim_{x\to\infty}\frac{f(x)}{g(x)}=k\\
+&k=1\\
+\therefore\ &f(x)\sim g(x)\equiv \lim_{x\to\infty}\frac{f(x)}{g(x)}=1\\
+\end{align}$$
+
+And since this is a special case of big-$\Theta$, it also forms an equivalence relation.
