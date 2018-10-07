@@ -6,7 +6,7 @@ tags: math computer-science
 ---
 The notation used to describe the **asymptotics**, or limiting behavior, of functions consists of a set of 6 relations. These different relations allow us to compare the growth of different functions as they approach some constant or, in most cases, infinity.
 
-In the infinite case, these relations usually boil down to the functions' *most significant term*. That is, the term that grows the quickest as a function of their input. For example, in the function $x^3+5x^2+x$ this role falls on the $x^3$ term as the other terms become insignificant (i.e tend to 0) as $x\to\infty$.
+In the infinite case, these relations usually boil down to the functions' *most significant term*. That is, the term that grows the quickest as $x$ increases. For example, in the function $x^3+5x^2+x$ this role falls on the $x^3$ term as the other terms become insignificant (i.e tend to 0) as $x\to\infty$.
 
 <!--more-->
 
@@ -17,16 +17,16 @@ They are also used in the approximation of functions that would be infeasible, o
 | Name | Set Membership<br>Notation | Comparitive<br>Notation |
 |-|:-:|:-:|
 | Little-$o$ | $f(n)\in o(g(n))$ | $f\prec g$ |
-| Big-$O$ | $f(n)\in O(g(n))$ | $f\preceq g$ |
-| Big-$\Theta$ | $f(n)\in \Theta(g(n))$ | $f\asymp g$ |
-| Big-$\Omega$ | $f(n)\in \Omega(g(n))$ | $f\succeq g$ |
+| big $O$ | $f(n)\in O(g(n))$ | $f\preceq g$ |
+| big $\Theta$ | $f(n)\in \Theta(g(n))$ | $f\asymp g$ |
+| big $\Omega$ | $f(n)\in \Omega(g(n))$ | $f\succeq g$ |
 | Little-$\omega$ | $f(n)\in \omega(g(n))$ | $f\succ g$ |
 | Asymptotic<br>Equivalence | N/A | $f\sim g$ |
 
 ## Formal Definitions
-We can formalize this notation by considering either how the values of the function grow after some sufficiently large value $x_0$ or by the limit of their ratio as $x$ approaches infinity. Both notions are given below:
+More concretely, this notation is based off $f$ being a member of some set defined by $g$. How these sets are defined for each notation is elaborated below via two similar (but not quite equivalent) formalizations of the concept. One where we consider how the values of the function grow after some sufficiently large value $x_0$, and one by comparing the limit of their ratio as $x$ approaches infinity. Both notions are given below:
 
-*Note that these two different definitions are similar but not equivalent. Also note that asymptotic equivalence only has a limit definitoin.*
+*Note that asymptotic equivalence only has a limit definition.*
 
 <details>
 <summary><h3 class="inline">Growth Definitions</h3></summary>
@@ -66,7 +66,7 @@ f(x)\succ g(x)&\equiv \lim_{x\to\infty}\left|\frac{f(x)}{g(x)}\right|=\infty
 </details>
 
 #### Asymptotic with respect to Constants
-Notice that while the limit definitions above use limits to infinity and the growth definitions used a similar notion, asymptotic notation can be generalized to limits to any constant and not just infinity. For example, with big-$O$ this looks like:
+Notice that while the limit definitions above use limits to infinity and the growth definitions used a similar notion, asymptotic notation can be generalized to limits to any constant and not just infinity. For example, with big $O$ this looks like:
 
 $$f(x)\in O(g(x)) \ \ (\text{as }x\to c)$$
 
@@ -80,22 +80,13 @@ $$f(x)\in O(g(x)) \ \ (\text{as }x\to\infty)\iff f(x)\in O(g(x))$$
 The use of asymptotic notation is, unfortunately, quite varied and oftentimes informal. As such, I will try to clear up some of the nuance packed into these notations.
 
 #### Membership vs Equality
-The set membership notation $f(x)\in O(g(x))$ implies that there is a set of functions that are big-$O$ of $g$ and that $f$ is one of those functions. The same reasoning applies to the other notations.
+The set membership notation $f(x)\in O(g(x))$ implies that there is a set of functions that are big $O$ of $g$ and that $f$ is one of those functions. The same reasoning applies to the other notations.
 
-That said, while I've used this notation throughout this post as well as in my other writing, it is more common to write:
+That said it is very common to instead write:
 
 $$f(x)=O(g(x))$$
 
 This is an **abuse of notation** and does not *really* denote equality between the function $f$ and the class of functions on the order of $g$. It is merely a shorthand and, as we'll see below, this abuse can be taken to a much farther extreme...
-
-#### Computational Complexity
-When someone refers to the complexity of an algorithm without context they are assumed to be referring to its temporal, rather than its spatial, complexity. Similarly, when the order of an algorithm (its big $O$) is given without context it is assumed to be the algorithm's **worst-case** complexity (as opposed to the best/average case).
-
-<details>
-<summary><h4 class="inline">$n$ vs. $x$</h4></summary>
-Although I used the variable $x$ in the definitions given above, the variable $n$ is more common in Bachmann-Landau notation. This is because $x$ is conventionally used to denote a continuous valued, real variable, while $n$ is conventionally used to denote a discrete, integer valued variable. This jives with the fact that these notations are mostly used in describing the computational complexity of algorithms expressed as functions of their, discrete sized, inputs (e.g there are no lists of size $2.5$ and even further to the point, we cannot subdivide the bit).
-<p></p>
-</details>
 
 #### Equational Notation
 It is possible to use, for example, big $O$ notation in equations, extending the equality *analogy* that is common practice. For instance:
@@ -107,6 +98,15 @@ Is equivalent to the following, more formal, proposition:
 $$(\exists f,g)\left(f\in O(1)\wedge g\in O(e^n)\right)n^{f(n)}=g(n)$$
 
 And in general, the equation means that if all the big $O$'s on both sides were replaced with some function in that class, the equation is true. There just has to exist one set of functions that make the equation true.
+
+#### Computational Complexity
+When someone refers to the complexity of an algorithm without context they are assumed to be referring to its temporal, rather than its spatial, complexity. Similarly, when the order of an algorithm (its big $O$) is given without context it is assumed to be the algorithm's **worst-case** complexity (as opposed to the best/average case).
+
+<details>
+<summary><h4 class="inline">$n$ vs. $x$</h4></summary>
+Although I used the variable $x$ in the definitions given above, the variable $n$ is more common in Bachmann-Landau notation. This is because $x$ is conventionally used to denote a continuous valued, real variable, while $n$ is conventionally used to denote a discrete, integer valued variable. This jives with the fact that these notations are mostly used in describing the computational complexity of algorithms expressed as functions of their, discrete sized, inputs (e.g there are no lists of size $2.5$ and even further to the point, we cannot subdivide the bit).
+<p></p>
+</details>
 
 #### Common Orders
 Below is a table of common terminology for certain lower-bound complexity classes from slowest to fastest growth:
@@ -124,7 +124,7 @@ Below is a table of common terminology for certain lower-bound complexity classe
 | Exponential      | $O(k^n)_{\ k>1}$   |
 | Factorial        | $O(n!)$            |
 
-While the terminology $f$ is **'of the order'** $g$ is loose, if the particular notation is not specified it can be assumed to be referring to big $O$.
+While the terminology $f$ is **'on the order'** $g$ is loose, if the particular notation is not specified it can be assumed to be referring to big $O$.
 
 ## Big $O$ and little $o$
 Big $O$, one of the most used notations, gives an upper-bound on the asymptotic growth of a function. Thus a function $f$ that is big $O$ of a function $g$ grows as fast or slower than $g$ (up to a constant). In the context of algorithms, this is its **upper-bound complexity**. Little-$o$ is a stronger version of this where $f$ grows strictly slower than $g$.
@@ -142,72 +142,73 @@ I am omitting the $(x)$ after the functions (which, strictly speaking, shouldn't
 - $f_1\in O(g_1)\wedge f_2\in O(g_2)\rightarrow f_1+f_2\in O(g_1+g_2)$
 - $f_1\in O(g_1)\wedge f_2\in O(g_2)\rightarrow f_1f_2\in O(g_1g_2)$
 - $fO(g)\in O(fg)$
-- $kf\in O(g)\rightarrow f\in O(g)$
-- $O(kg)=O(g)$
+- $f\in O(g)\rightarrow kf\in O(g)$
+- $O(g)=O(kg)$
 
-*Where $f,g$ are functions and $k$ is some constant*
+*Where $f,g$ are functions and $k$ is some non-zero constant*
 
 #### Examples
-- $5x^3\in O(x^3)$ Same most significant term (times a constant).
+- $5x^3+2\in O(x^3)$ Same most significant term (times a constant).
 - $x^2\in O(x^3)$ Lower than most significant term.
 - $2n^2\in O(n!+n)$ Lower than most significant term.
 - $x^3\not\in O(x^2)$ Can't grow faster than function.
-- - $x^2\not\in o(x^2)$ Little $o$ is strictly smaller.
+- $x^2\not\in o(x^2)$ Must be strictly smaller.
 
 ## Big $\Omega$ and little $\omega$
 Big $\Omega$ gives a lower-bound on the asymptotic growth of a function. Thus a function $f$ that is big $O$ of a function $g$ grows as fast or faster than $g$ (up to a constant). In the context of algorithms, this is its **lower-bound complexity**. Little-$\omega$ is a stronger version of this where $f$ grows strictly faster than $g$.
 
 #### Properties
-I am omitting the $(x)$ after the functions (which, strictly speaking, shouldn't have been present in the first place) for readability:
-
-- $f_1\in\Omega(g_1)\wedge f_2\in\Omega(g_2)\rightarrow f_1+f_2\in O(g_1+g_2)$
-- $f_1\in\Omega(g_1)\wedge f_2\in\Omega(g_2)\rightarrow f_1f_2\in O(g_1g_2)$
+- $f_1\in\Omega(g_1)\wedge f_2\in\Omega(g_2)\rightarrow f_1+f_2\in\Omega(g_1+g_2)$
+- $f_1\in\Omega(g_1)\wedge f_2\in\Omega(g_2)\rightarrow f_1f_2\in\Omega(g_1g_2)$
 - $f\Omega(g)\in\Omega(fg)$
-- $kf\in\Omega(g)\rightarrow f\in\Omega(g)$
-- $\Omega(kg)=\Omega(g)$
+- $f\in\Omega(g)\rightarrow kf\in\Omega(g)$
+- $\Omega(g)=\Omega(kg)$
 
 #### Examples
-- $2x^2\in\Omega(x^2)$ Same most significant term (times a constant).
+- $2x^2+2x\in\Omega(x^2)$ Same most significant term (times a constant).
 - $x^3\in\Omega(x)$ Greater than most significant term.
 - $n!\in\Omega(3n^2+2n)$ Greater than most significant term.
 - $x^3\not\in\Omega(x^4)$ Can't grow slower than function.
-- $x^2\not\in\omega(x^2)$ Little $\omega$ is strictly bigger.
+- $x^2\not\in\omega(x^2)$ Must be strictly bigger.
 
 ## Big $\Theta$
 Big $\Theta$ gives a lower-bound on the asymptotic growth of a function. Thus a function $f$ that is big $O$ of a function $g$ grows as fast or faster than $g$ (up to a constant). In the context of algorithms, this is its **lower-bound complexity**. Little-$\omega$ is a stronger version of this where $f$ grows strictly faster than $g$.
 
-Big $\Theta$ forms a **tight bound** on the asymptotic growth of a function. It is the combination of both big-$O$ and big-$\Omega$:
+Big $\Theta$ forms a **tight bound** on the asymptotic growth of a function. It is the combination of both big $O$ and big $\Omega$:
 
 $$f(x)\in\Theta(g(x))\equiv f(x)\in O(g(x))\wedge f(x)\in\Omega(g(x))$$
 
 And so, following the pattern, a function $f$ that is big $\Theta$ of a function $g$ grows as fast as $g$ (up to a constant).
 
-<!-- #### Properties
-I am omitting the $(x)$ after the functions (which, strictly speaking, shouldn't have been present in the first place) for readability:
-
-- $f_1\in O(g_1)\wedge f_2\in O(g_2)\rightarrow f_1+f_2\in O(g_1+g_2)$
-- $f_1\in O(g_1)\wedge f_2\in O(g_2)\rightarrow f_1f_2\in O(g_1g_2)$
-- $f\cdot O(g)\in O(fg)$
-- $kf\in O(g)\rightarrow f\in O(g)$
-- $O(kg)=O(g)$
- -->
+#### Properties
+- $f_1\in\Theta(g_1)\wedge f_2\in\Theta(g_2)\rightarrow f_1+f_2\in\Theta(g_1+g_2)$
+- $f_1\in\Theta(g_1)\wedge f_2\in\Theta(g_2)\rightarrow f_1f_2\in\Theta(g_1g_2)$
+- $f\Theta(g)\in\Theta(fg)$
+- $f\in\Theta(g)\rightarrow kf\in\Theta(g)$
+- $\Theta(g)=\Theta(kg)$
 
  #### Equivalence Relation
- Note that, unlike big $O$ and $\Omega$, the relation $f(x)\in\Theta(g(x))$ forms an equivalence relation given some function $g$.
+ Note that, on top of the properties that $f(x)\in\Theta(g(x))$, or more clearly $f\asymp g$, has it forms an equivalence [relation](\relations) over the set of all functions with some defined limit.
 
  <details>
  <summary><strong>Reflexivity</strong></summary>
- I'll do this later.
+ Asymptotic equivalence is reflexive meaning that for all functions $f\sim f$. This is obvious:
+
+ $$\forall f:\lim_{x\to\infty}{\frac{f(x)}{f(x)}}=k\rightarrow f\asymp f$$
+
+ <i>Assuming $f(x)$ doesn't approach $0$.</i>
  </details>
 
  <details>
  <summary><strong>Symmetry</strong></summary>
- I'll do this later.
+ Asymptotic equivalence is symmetric meaning that $f\asymp g\rightarrow g\asymp f$. This is because for any field, there is a multiplicative inverse for any element. So, by switching the functions in the limit (i.e reversing the relations) the constant on the other side should also be inversed:\exists k^{-1}
+
+ $$\forall f\ \forall k:\lim_{x\to\infty}{\frac{f(x)}{g(x)}}=k\rightarrow \lim_{x\to\infty}{\frac{g(x)}{f(x)}}=\frac{1}{k}\equiv g\asymp f$$
  </details>
 
- <details>
+ <details open>
  <summary><strong>Transitivity</strong></summary>
- I'll do this later.
+ I'll do this later, but this should be clear as big $\Theta$ forms equivalence classes characterized by the most significant terms of functions.
  </details>
 
 #### Examples
@@ -216,7 +217,8 @@ I am omitting the $(x)$ after the functions (which, strictly speaking, shouldn't
 - $n!\not\in\Theta(3n^2+2n)$ Most significant terms don't match.
 
 ## Asymptotic Equivalence
-Another interesting point is that $f(x)\sim g(x)$ is just a more specific case of $f(x)\asymp g(x)$. This should come as no surprise. After all, in big-$\Theta$ the functions $f$ and $g$ are asymptotically equal up to a constant, and so if that constant happened to be 1 we would be left with asymptotic equivalence:
+#### Stronger Big $\Theta$
+Another interesting point is that $f(x)\sim g(x)$ is just a more specific case of $f(x)\asymp g(x)$. This should come as no surprise. After all, in big $\Theta$ the functions $f$ and $g$ are asymptotically equal up to a constant, and so if that constant happened to be 1 we would be left with asymptotic equivalence:
 
 $$\begin{align}
 &f(x)\asymp g(x)\equiv (\exists k)\lim_{x\to\infty}\frac{f(x)}{g(x)}=k\\
@@ -224,4 +226,17 @@ $$\begin{align}
 \therefore\ &f(x)\sim g(x)\equiv \lim_{x\to\infty}\frac{f(x)}{g(x)}=1\\
 \end{align}$$
 
-And since this is a special case of big-$\Theta$, it also forms an equivalence relation.
+And since this is a special case of big $\Theta$, it also forms an equivalence relation.
+
+#### Examples
+Due to a technique called asymptotic expansion, there are much more interesting, and important, examples of asymptotic equivalence than for the other relations. For example:
+
+- $n!\sim \sqrt{2\pi n}\left(\frac{n}{e}\right)^n$ (Stirling's approximation)
+- $\pi(n)\sim\frac{n}{\log n}$ (prime number theorem)
+
+Here are some more accessible examples.
+
+- $x^2\sim x^2+2x$ (most significant terms are same)
+- $4n!\sim 4n!+3n^2$ (most significant terms are same)
+- $2x^2\not\sim x^2$ (different constants on most significant terms)
+- $x^3\not\sim x^4$ (different most significant terms)
