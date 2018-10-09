@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-10-09T19:04:59-04:00</updated>
+ <updated>2018-10-09T19:52:37-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -91,10 +91,11 @@ Either way, the average case complexity of sequential search is $O(n)$
 
 &lt;p&gt;&lt;em&gt;A way to implement this might be to move the most recently searched target to the front of the list.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;In this probabilistic case, the formula for computing the average running time is weighted:
-&lt;script type=&quot;math/tex&quot;&gt;\frac{p_0s_0+p_1s_1+\cdots+p_ns_n}{n}=\frac{\sum_{i\in n}p_is_i}{n}&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;In this probabilistic case, the formula for computing the average running time is weighted:&lt;/p&gt;
 
-&lt;p&gt;&lt;i&gt;Where $\sum_{i\in n} p_i=1$.&lt;/i&gt;&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{p_0s_0+p_1s_1+\cdots+p_ns_n}{n}=\frac{\sum_{i\in n}p_is_i}{n}&lt;/script&gt;
+
+&lt;p&gt;&lt;i&gt;Where $\sum_{i\in n} p_i=1$.&lt;/i&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;What this probability distribution is will determine the average case complexity of this variation on sequential search.&lt;/p&gt;
 
@@ -109,7 +110,7 @@ Either way, the average case complexity of sequential search is $O(n)$
   &lt;li&gt;Return $L_i=T$ &lt;strong&gt;END&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;The obvious counterpoint to this is that, because the list is ordered, there are now faster search algorithms that can be used on it, such as quicksort.&lt;/p&gt;
+&lt;p&gt;Of course, because we have stipulated that the list be ordered, there are now faster search algorithms that can be used on it, such as quicksort. This obviates the use of sequential sort.&lt;/p&gt;
 </content>
  </entry>
  

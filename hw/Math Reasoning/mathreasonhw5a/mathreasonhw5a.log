@@ -1,12 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.9.29)  9 OCT 2018 15:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.8.15)  9 OCT 2018 19:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **mathreasonhw5a.tex
-
-(c:/Users/Ozaner Hansha/Google Drive/Workspace/ozanerhansha.github.io/hw/Math R
-easoning/mathreasonhw5a/mathreasonhw5a.tex
+(./mathreasonhw5a.tex
 LaTeX2e <2018-04-01> patch level 5
 (c:/texlive/2018/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
@@ -27,10 +25,11 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 ) (c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2017/09/02 v2.17a AMS math features
 \@mathmargin=\skip43
+
 For additional information on amsmath, use the `?' option.
 (c:/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
-(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty
+ (c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks14
 \ex@=\dimen103
@@ -79,15 +78,13 @@ LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 ) (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
-(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+ (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-))
-(c:/Users/Ozaner Hansha/Google Drive/Workspace/ozanerhansha.github.io/hw/Math R
-easoning/mathreasonhw5a/mathreasonhw5a.aux)
+)) (./mathreasonhw5a.aux)
 \openout1 = `mathreasonhw5a.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
@@ -103,11 +100,11 @@ LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Try loading font information for U+msa on input line 10.
-(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 10.
-(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
+ (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 Underfull \hbox (badness 10000) in paragraph at lines 14--17
@@ -126,27 +123,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--43
 
 [1
 
-{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-(c:/Users/Ozaner Hansha/Google Drive/Workspace/ozanerhansha.github.io/hw/Math R
-easoning/mathreasonhw5a/mathreasonhw5a.aux) ) 
+{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] (./mathreasonhw5a.aux) ) 
 Here is how much of TeX's memory you used:
- 1138 strings out of 492639
- 13352 string characters out of 6133088
- 75178 words of memory out of 5000000
- 5063 multiletter control sequences out of 15000+600000
+ 1137 strings out of 492642
+ 12642 string characters out of 6133162
+ 75044 words of memory out of 5000000
+ 5061 multiletter control sequences out of 15000+600000
  11196 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  27i,8n,27p,230b,197s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2018/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmbx12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmex10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-mi10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><
-c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive
-/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2018/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2018/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsy7.pfb>
+<c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
 Output written on mathreasonhw5a.pdf (2 pages, 100604 bytes).
 PDF statistics:
  51 PDF objects out of 1000 (max. 8388607)

@@ -78,9 +78,10 @@ Note that if we knew what frequency with which certain targets are searched for,
 *A way to implement this might be to move the most recently searched target to the front of the list.*
 
 In this probabilistic case, the formula for computing the average running time is weighted:
+
 $$\frac{p_0s_0+p_1s_1+\cdots+p_ns_n}{n}=\frac{\sum_{i\in n}p_is_i}{n}$$
 
-<i>Where $\sum_{i\in n} p_i=1$.</i><p></p>
+<i>Where $\sum_{i\in n} p_i=1$.</i><br>
 
 What this probability distribution is will determine the average case complexity of this variation on sequential search.
 
@@ -93,4 +94,4 @@ Given a list $L$ of length $n$ with the $i$th element denoted $L_i$ the target v
 3. Increment index $i:=i+1$ and goto step 2
 4. Return $L_i=T$ **END**
 
-The obvious counterpoint to this is that, because the list is ordered, there are now faster search algorithms that can be used on it, such as quicksort.
+Of course, because we have stipulated that the list be ordered, there are now faster search algorithms that can be used on it, such as quicksort. This obviates the use of sequential sort.

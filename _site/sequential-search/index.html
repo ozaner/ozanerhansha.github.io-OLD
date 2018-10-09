@@ -329,10 +329,11 @@ Either way, the average case complexity of sequential search is $O(n)$
 
 <p><em>A way to implement this might be to move the most recently searched target to the front of the list.</em></p>
 
-<p>In this probabilistic case, the formula for computing the average running time is weighted:
-<script type="math/tex">\frac{p_0s_0+p_1s_1+\cdots+p_ns_n}{n}=\frac{\sum_{i\in n}p_is_i}{n}</script></p>
+<p>In this probabilistic case, the formula for computing the average running time is weighted:</p>
 
-<p><i>Where $\sum_{i\in n} p_i=1$.</i>&lt;p&gt;&lt;/p&gt;</p>
+<script type="math/tex; mode=display">\frac{p_0s_0+p_1s_1+\cdots+p_ns_n}{n}=\frac{\sum_{i\in n}p_is_i}{n}</script>
+
+<p><i>Where $\sum_{i\in n} p_i=1$.</i><br /></p>
 
 <p>What this probability distribution is will determine the average case complexity of this variation on sequential search.</p>
 
@@ -347,7 +348,7 @@ Either way, the average case complexity of sequential search is $O(n)$
   <li>Return $L_i=T$ <strong>END</strong></li>
 </ol>
 
-<p>The obvious counterpoint to this is that, because the list is ordered, there are now faster search algorithms that can be used on it, such as quicksort.</p>
+<p>Of course, because we have stipulated that the list be ordered, there are now faster search algorithms that can be used on it, such as quicksort. This obviates the use of sequential sort.</p>
 
 </div>
 
