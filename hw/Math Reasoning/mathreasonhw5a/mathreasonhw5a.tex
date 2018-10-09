@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+\title{Intro to Math Reasoning HW 5a}
+\author{Ozaner Hansha}
+\date{October 10, 2018}
+\maketitle
+
+\section*{Problem 1}
+\textbf{Problem:} Prove that for all indexed collections of sets $(A_\alpha)_{\alpha\in J}$ and for all $\beta\in J$:
+$$\left(\bigcap_{a\in J}A_a\right)\subseteq A_\beta$$
+\\\\
+\textbf{Solution:} The definition of $\left(\bigcap_{a\in J}A_a\right)$ is the following:
+
+$$\left(\bigcap_{a\in J}A_a\right)\equiv\{x\mid(\forall\alpha\in J)\ x\in A_\alpha\}$$
+
+This is equivalent to the following:
+
+$$x\in\left(\bigcap_{a\in J}A_a\right)\equiv (\forall\alpha\in J)\ x\in A_\alpha$$
+
+Now, because $\beta\in J$ we can make the following statement:
+
+$$(\forall\alpha\in J)\ x\in A_\alpha\implies x\in A_\beta$$
+
+That's it, we have established that if an element is in $\left(\bigcap_{a\in J}A_a\right)$ then it is an element of $A_\beta$.
+
+\section*{Problem 2}
+\textbf{Problem:} Prove that for all sets $A,B,C,D$ that if $A$ is disjoint from $B$ and $C$ is disjoint from $D$, then $A\cap B$ is disjoint from $C\cap D$
+\\\\
+\textbf{Solution:} Here are the definitions of $A\cap B$ and $C\cap D$:
+\begin{align*}
+  A\cap B\equiv\{x\mid x\in A\wedge x\in B\}\\
+  C\cap D\equiv\{x\mid x\in C\wedge x\in D\}
+\end{align*}
+
+\section*{Problem 2}
+\textbf{Problem:}
+\\\\
+\textbf{Solution:}
+
+\end{document}

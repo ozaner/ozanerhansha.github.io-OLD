@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-10-09T01:28:17-04:00</updated>
+ <updated>2018-10-09T19:04:59-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -15,7 +15,7 @@
  <entry>
    <title>Sequential Search</title>
    <link href="http://localhost:4000/sequential-search/"/>
-   <updated>2018-10-08T00:00:00-04:00</updated>
+   <updated>2018-10-09T00:00:00-04:00</updated>
    <id>http://localhost:4000/sequential-search</id>
    <content type="html">&lt;p&gt;&lt;strong&gt;Sequential search&lt;/strong&gt;, or linear search, is a search algorithm usually implemented on lists. It is one of the most intuitive (some might say naïve) approaches to search: simply look at all entries until the element is found.&lt;/p&gt;
 
@@ -28,9 +28,9 @@
 &lt;p&gt;Given a list $L$ of length $n$ with the $i$th element denoted $L_i$ and the target value denoted $T$:&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;Set variable $i:=0$&lt;/li&gt;
-  &lt;li&gt;If $L_i=T$, return true. END&lt;/li&gt;
+  &lt;li&gt;If $L_i=T$, return true &lt;strong&gt;END&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;Increment index $i:=i+1$&lt;/li&gt;
-  &lt;li&gt;If $i&amp;lt;n$, goto step 2; Else return false. END&lt;/li&gt;
+  &lt;li&gt;If $i&amp;lt;n$, goto step 2; Else return false &lt;strong&gt;END&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h3 id=&quot;python&quot;&gt;Python&lt;/h3&gt;
@@ -72,7 +72,11 @@ In sequential search, we have to perform $i$ comparisons to search for the $(i-1
 
 $$\frac{1+2+\cdots+n}{n}=\frac{n(n+1)}{2}\cdot\frac{1}{n}=\frac{n+1}{2}$$
 
-Thus the average case complexity of sequential search is $O(n)$
+But this assumes the target only appears once on the list. In general, it could appear $k$ times (randomly strewn about) in which case there is a more general average case:
+
+$$\frac{n+1}{k+1}$$
+
+Either way, the average case complexity of sequential search is $O(n)$
 &lt;p&gt;&lt;/p&gt;
 
 &lt;i&gt;Note that this analysis assumes each element has an equal probability of being the target. This assumption is removed in one of the variations of sequential search shown below.&lt;/i&gt;
@@ -83,8 +87,29 @@ Thus the average case complexity of sequential search is $O(n)$
 
 &lt;h2 id=&quot;variations&quot;&gt;Variations&lt;/h2&gt;
 &lt;h4 id=&quot;probabilistic-search&quot;&gt;Probabilistic Search&lt;/h4&gt;
+&lt;p&gt;Note that if we knew what frequency with which certain targets are searched for, we could rearrange the list such that things more often search are near the beginning. This would reduce the overall running average running time.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;A way to implement this might be to move the most recently searched target to the front of the list.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In this probabilistic case, the formula for computing the average running time is weighted:
+&lt;script type=&quot;math/tex&quot;&gt;\frac{p_0s_0+p_1s_1+\cdots+p_ns_n}{n}=\frac{\sum_{i\in n}p_is_i}{n}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;i&gt;Where $\sum_{i\in n} p_i=1$.&lt;/i&gt;&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;What this probability distribution is will determine the average case complexity of this variation on sequential search.&lt;/p&gt;
 
 &lt;h4 id=&quot;ordered-search&quot;&gt;Ordered Search&lt;/h4&gt;
+&lt;p&gt;Another assumption we can remove is that the list is unordered, that is the arrangement of the list has no specific meaning and can even be changed on the fly. If we instead assume that the list &lt;em&gt;is&lt;/em&gt; ordered we can improve the number of comparisons linear search takes. This is because we can stop checking once we have passed a value greater than the target. Here is some pseudocode:&lt;/p&gt;
+
+&lt;p&gt;Given a list $L$ of length $n$ with the $i$th element denoted $L_i$ the target value denoted $T$ and $L_0\le L_1\le \cdots\le L_n$:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Set variable $i:=0$&lt;/li&gt;
+  &lt;li&gt;If $L_i\ge T$, goto step 4&lt;/li&gt;
+  &lt;li&gt;Increment index $i:=i+1$ and goto step 2&lt;/li&gt;
+  &lt;li&gt;Return $L_i=T$ &lt;strong&gt;END&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The obvious counterpoint to this is that, because the list is ordered, there are now faster search algorithms that can be used on it, such as quicksort.&lt;/p&gt;
 </content>
  </entry>
  

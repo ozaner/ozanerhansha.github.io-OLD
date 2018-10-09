@@ -2,7 +2,7 @@
 layout: post
 title: Boolean Logic in Linear Algebra
 date: 2018-07-18
-tags: computer-science math linear-algebra
+tags: computer-science math linear-algebra logic
 ---
 ## Introduction
 Computation is usually formulated via boolean logic, which in turn makes use of logical connectives like $\wedge,\vee, \neg$ along with the binary digits $0$ and $1$, representing false and true respectively.

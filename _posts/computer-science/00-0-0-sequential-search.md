@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Sequential Search
-date: 2018-10-08
+date: 2018-10-09
 tags: computer-science algorithms
 ---
 **Sequential search**, or linear search, is a search algorithm usually implemented on lists. It is one of the most intuitive (some might say naïve) approaches to search: simply look at all entries until the element is found.
@@ -14,9 +14,9 @@ Given a **target** value, the algorithm iterates through every entry on the list
 ### Pseudocode
 Given a list $L$ of length $n$ with the $i$th element denoted $L_i$ and the target value denoted $T$:
 1. Set variable $i:=0$
-2. If $L_i=T$, return true. END
+2. If $L_i=T$, return true **END**
 3. Increment index $i:=i+1$
-4. If $i<n$, goto step 2; Else return false. END
+4. If $i<n$, goto step 2; Else return false **END**
 
 ### Python
 ````python
@@ -58,7 +58,11 @@ In sequential search, we have to perform $i$ comparisons to search for the $(i-1
 
 $$\frac{1+2+\cdots+n}{n}=\frac{n(n+1)}{2}\cdot\frac{1}{n}=\frac{n+1}{2}$$
 
-Thus the average case complexity of sequential search is $O(n)$
+But this assumes the target only appears once on the list. In general, it could appear $k$ times (randomly strewn about) in which case there is a more general average case:
+
+$$\frac{n+1}{k+1}$$
+
+Either way, the average case complexity of sequential search is $O(n)$
 <p></p>
 
 <i>Note that this analysis assumes each element has an equal probability of being the target. This assumption is removed in one of the variations of sequential search shown below.</i>
@@ -69,5 +73,24 @@ The algorithm is iterative, meaning the only space needed is the single variable
 
 ## Variations
 #### Probabilistic Search
+Note that if we knew what frequency with which certain targets are searched for, we could rearrange the list such that things more often search are near the beginning. This would reduce the overall running average running time.
+
+*A way to implement this might be to move the most recently searched target to the front of the list.*
+
+In this probabilistic case, the formula for computing the average running time is weighted:
+$$\frac{p_0s_0+p_1s_1+\cdots+p_ns_n}{n}=\frac{\sum_{i\in n}p_is_i}{n}$$
+
+<i>Where $\sum_{i\in n} p_i=1$.</i><p></p>
+
+What this probability distribution is will determine the average case complexity of this variation on sequential search.
 
 #### Ordered Search
+Another assumption we can remove is that the list is unordered, that is the arrangement of the list has no specific meaning and can even be changed on the fly. If we instead assume that the list *is* ordered we can improve the number of comparisons linear search takes. This is because we can stop checking once we have passed a value greater than the target. Here is some pseudocode:
+
+Given a list $L$ of length $n$ with the $i$th element denoted $L_i$ the target value denoted $T$ and $L_0\le L_1\le \cdots\le L_n$:
+1. Set variable $i:=0$
+2. If $L_i\ge T$, goto step 4
+3. Increment index $i:=i+1$ and goto step 2
+4. Return $L_i=T$ **END**
+
+The obvious counterpoint to this is that, because the list is ordered, there are now faster search algorithms that can be used on it, such as quicksort.
