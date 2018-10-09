@@ -4,13 +4,89 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-10-07T14:04:04-04:00</updated>
+ <updated>2018-10-09T01:28:17-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Sequential Search</title>
+   <link href="http://localhost:4000/sequential-search/"/>
+   <updated>2018-10-08T00:00:00-04:00</updated>
+   <id>http://localhost:4000/sequential-search</id>
+   <content type="html">&lt;p&gt;&lt;strong&gt;Sequential search&lt;/strong&gt;, or linear search, is a search algorithm usually implemented on lists. It is one of the most intuitive (some might say naïve) approaches to search: simply look at all entries until the element is found.&lt;/p&gt;
+
+&lt;p&gt;Given a &lt;strong&gt;target&lt;/strong&gt; value, the algorithm iterates through every entry on the list and compares it to the target. If they match then it is a &lt;strong&gt;successful search&lt;/strong&gt; and the algorithm returns true. If the end of the list is reached and no match was found, it is an &lt;strong&gt;unsuccessful search&lt;/strong&gt; and the algorithm returns false.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;implementation&quot;&gt;Implementation&lt;/h2&gt;
+&lt;h3 id=&quot;pseudocode&quot;&gt;Pseudocode&lt;/h3&gt;
+&lt;p&gt;Given a list $L$ of length $n$ with the $i$th element denoted $L_i$ and the target value denoted $T$:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Set variable $i:=0$&lt;/li&gt;
+  &lt;li&gt;If $L_i=T$, return true. END&lt;/li&gt;
+  &lt;li&gt;Increment index $i:=i+1$&lt;/li&gt;
+  &lt;li&gt;If $i&amp;lt;n$, goto step 2; Else return false. END&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;python&quot;&gt;Python&lt;/h3&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;p&gt;Sequential search is very rarely used in practice due to better alternatives such as binary search and hash tables. That said, sequential search has the advantage of being both simple to implement and detached from any particular data structure.&lt;/p&gt;
+
+&lt;p&gt;As a result, sequential search is commonly implement in data structures such as unordered lists as they cannot leverage any better alternatives.&lt;/p&gt;
+
+&lt;h2 id=&quot;analysis&quot;&gt;Analysis&lt;/h2&gt;
+&lt;h3 id=&quot;time-complexity&quot;&gt;Time Complexity&lt;/h3&gt;
+&lt;p&gt;The basic and dominant operation of sequential search (and search algorithms in general) is comparison. Thus we can measure the running time of this algorithm by counting the number of comparisons made by it given a list of size $n$.&lt;/p&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Best Case&lt;/strong&gt;&lt;br /&gt;&lt;/summary&gt;
+The best case of sequential search is if the first element of the list is the target. In this case it takes only 1 comparison to return the successful search. Thus the best case complexity is $O(1)$.
+&lt;p&gt;&lt;/p&gt;&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Worst Case&lt;/strong&gt;&lt;br /&gt;&lt;/summary&gt;
+The worst case of sequential search is if either the last element was the target or if the target was not even in the list. Both cases would take $n$ comparisons, with $n$ being the size of the list in question. Thus the worst case complexity is $O(n)$.
+&lt;p&gt;&lt;/p&gt;&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Average Case&lt;/strong&gt;&lt;br /&gt;&lt;/summary&gt;
+The average case complexity of a search algorithm is the sum of the times it takes to search for each element divided by the number of elements. More formally:
+
+$$\frac{s_0+s_1+\cdots+s_n}{n}=\frac{\sum_{i\in n}s_i}{n}$$
+
+&lt;i&gt;Where $s_i$ is the time it takes to search for the $i$th element. And $n$ is a &lt;a href=&quot;\natural-numbers&quot;&gt;natural number&lt;/a&gt;.&lt;/i&gt;&lt;p&gt;&lt;/p&gt;
+
+In sequential search, we have to perform $i$ comparisons to search for the $(i-1)$th element (the $-1$ is because we index starting at $0$). Because of this we can write:
+
+$$\frac{1+2+\cdots+n}{n}=\frac{n(n+1)}{2}\cdot\frac{1}{n}=\frac{n+1}{2}$$
+
+Thus the average case complexity of sequential search is $O(n)$
+&lt;p&gt;&lt;/p&gt;
+
+&lt;i&gt;Note that this analysis assumes each element has an equal probability of being the target. This assumption is removed in one of the variations of sequential search shown below.&lt;/i&gt;
+&lt;/details&gt;
+
+&lt;h3 id=&quot;space-complexity&quot;&gt;Space Complexity&lt;/h3&gt;
+&lt;p&gt;The algorithm is iterative, meaning the only space needed is the single variable that keeps track of the index of the current element being checked. As such sequential search always has a constant spatial complexity $O(1)$.&lt;/p&gt;
+
+&lt;h2 id=&quot;variations&quot;&gt;Variations&lt;/h2&gt;
+&lt;h4 id=&quot;probabilistic-search&quot;&gt;Probabilistic Search&lt;/h4&gt;
+
+&lt;h4 id=&quot;ordered-search&quot;&gt;Ordered Search&lt;/h4&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Asymptotic Notation</title>
@@ -36,17 +112,17 @@
       &lt;td style=&quot;text-align: center&quot;&gt;$f\prec g$&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;big $O$&lt;/td&gt;
+      &lt;td&gt;Big $O$&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;$f(n)\in O(g(n))$&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;$f\preceq g$&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;big $\Theta$&lt;/td&gt;
+      &lt;td&gt;Big $\Theta$&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;$f(n)\in \Theta(g(n))$&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;$f\asymp g$&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;big $\Omega$&lt;/td&gt;
+      &lt;td&gt;Big $\Omega$&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;$f(n)\in \Omega(g(n))$&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;$f\succeq g$&lt;/td&gt;
     &lt;/tr&gt;
@@ -66,6 +142,8 @@
 &lt;!--more--&gt;
 
 &lt;p&gt;These notations, particularly big $O$, are most commonly used to classify and compare the computational complexity (both temporal and spatial) of different algorithms as a function of their input size by stripping away unnecessary constants and minor terms that correspond to the different preconditions and runtime environments that these algorithms may run on. Ideally, an algorithm will be on the order of a relatively slowly growing function (e.g $\log n$ grows slower than $n^2$) as they take less resources and thus are more feasible to compute.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/comp_sci/comp-complexity.png?style=centerme&quot; alt=&quot;image&quot; width=&quot;400px&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;They are also used in the approximation of functions that would be infeasible, or even impossible, to calculate otherwise.&lt;/p&gt;
 
@@ -122,10 +200,162 @@ f(x)\succ g(x)&amp;amp;\equiv \lim_{x\to\infty}\left|\frac{f(x)}{g(x)}\right|=\i
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x)\in O(g(x)) \ \ (\text{as }x\to\infty)\iff f(x)\in O(g(x))&lt;/script&gt;
 
+&lt;h2 id=&quot;oothetaomegaomega-and-sim&quot;&gt;$o,O,\Theta,\Omega,\omega$ and $\sim$&lt;/h2&gt;
+&lt;!-- ## Big $O$ and little $o$ --&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;Big $O$ and little $o$&lt;/h3&gt;&lt;/summary&gt;
+Big $O$, one of the most used notations, gives an upper-bound on the asymptotic growth of a function. Thus a function $f$ that is big $O$ of a function $g$ grows as fast or slower than $g$ (up to a constant). In the context of algorithms, this is its &lt;b&gt;upper-bound complexity&lt;/b&gt;. Little-$o$ is a stronger version of this where $f$ grows strictly slower than $g$.
+
+&lt;!-- #### Popularity --&gt;
+&lt;h4&gt;Popularity&lt;/h4&gt;
+While big $\Theta$ is the most descriptive of the 3 notations, it is not as popular as big $O$. Why is this? Well, it is in part due to laziness and convention.&lt;p&gt;&lt;/p&gt;
+
+However there is a more practical reason for this as well. Proving something is big $\Theta$ means proving it is both big $O$ and big $\Omega$ which may be much more difficult or even impossible compared to just proving one or the other.&lt;p&gt;&lt;/p&gt;
+
+As a result of this, it is generally expected that when someone states an algorithm is $O(g(x))$ that $g(x)$ is as small as they could make it. This makes it a tighter bound when possible but doesn't enforce it incase such a bound is not possible to prove.
+
+&lt;!-- #### Properties --&gt;
+&lt;h4&gt;Properties&lt;/h4&gt;
+I am omitting the $(x)$ after the functions (which, strictly speaking, shouldn't have been present in the first place) for readability:
+
+&lt;ul&gt;
+  &lt;li&gt;$f_1\in O(g_1)\wedge f_2\in O(g_2)\rightarrow f_1+f_2\in O(g_1+g_2)$&lt;/li&gt;
+  &lt;li&gt;$f_1\in O(g_1)\wedge f_2\in O(g_2)\rightarrow f_1f_2\in O(g_1g_2)$&lt;/li&gt;
+  &lt;li&gt;$fO(g)\in O(fg)$&lt;/li&gt;
+  &lt;li&gt;$f\in O(g)\rightarrow kf\in O(g)$&lt;/li&gt;
+  &lt;li&gt;$O(g)=O(kg)$&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;
+
+&lt;i&gt;Where $f,g$ are functions and $k$ is some non-zero constant&lt;/i&gt;
+
+&lt;!-- #### Examples --&gt;
+&lt;h4&gt;Examples&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;$5x^3+2\in O(x^3)$ Same most significant term (times a constant).&lt;/li&gt;
+  &lt;li&gt;$x^2\in O(x^3)$ Lower than most significant term.&lt;/li&gt;
+  &lt;li&gt;$2n^2\in O(n!+n)$ Lower than most significant term.&lt;/li&gt;
+  &lt;li&gt;$x^3\not\in O(x^2)$ Can't grow faster than function.&lt;/li&gt;
+  &lt;li&gt;$x^2\not\in o(x^2)$ Must be strictly smaller.&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;!-- ## Big $\Omega$ and little $\omega$ --&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;Big $\Omega$ and little $\omega$&lt;/h3&gt;&lt;/summary&gt;
+Big $\Omega$ gives a lower-bound on the asymptotic growth of a function. Thus a function $f$ that is big $O$ of a function $g$ grows as fast or faster than $g$ (up to a constant). In the context of algorithms, this is its &lt;b&gt;lower-bound complexity&lt;/b&gt;. Little-$\omega$ is a stronger version of this where $f$ grows strictly faster than $g$.
+
+&lt;!-- #### Properties --&gt;
+&lt;h4&gt;Properties&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;$f_1\in\Omega(g_1)\wedge f_2\in\Omega(g_2)\rightarrow f_1+f_2\in\Omega(g_1+g_2)$&lt;/li&gt;
+  &lt;li&gt;$f_1\in\Omega(g_1)\wedge f_2\in\Omega(g_2)\rightarrow f_1f_2\in\Omega(g_1g_2)$&lt;/li&gt;
+  &lt;li&gt;$f\Omega(g)\in\Omega(fg)$&lt;/li&gt;
+  &lt;li&gt;$f\in\Omega(g)\rightarrow kf\in\Omega(g)$&lt;/li&gt;
+  &lt;li&gt;$\Omega(g)=\Omega(kg)$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- #### Examples --&gt;
+&lt;h4&gt;Examples&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;$2x^2+2x\in\Omega(x^2)$ Same most significant term (times a constant).&lt;/li&gt;
+  &lt;li&gt;$x^3\in\Omega(x)$ Greater than most significant term.&lt;/li&gt;
+  &lt;li&gt;$n!\in\Omega(3n^2+2n)$ Greater than most significant term.&lt;/li&gt;
+  &lt;li&gt;$x^3\not\in\Omega(x^4)$ Can't grow slower than function.&lt;/li&gt;
+  &lt;li&gt;$x^2\not\in\omega(x^2)$ Must be strictly bigger.&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;!-- ## Big $\Theta$ --&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;Big $\Theta$&lt;/h3&gt;&lt;/summary&gt;
+Big $\Theta$ forms a &lt;b&gt;tight bound&lt;/b&gt; on the asymptotic growth of a function. It is the combination of both big $O$ and big $\Omega$:
+
+$$f(x)\in\Theta(g(x))\equiv f(x)\in O(g(x))\wedge f(x)\in\Omega(g(x))$$
+
+And so, following the pattern, a function $f$ that is big $\Theta$ of a function $g$ grows as fast as $g$ (up to a constant).
+
+&lt;!-- #### Properties --&gt;
+&lt;h4&gt;Properties&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;$f_1\in\Theta(g_1)\wedge f_2\in\Theta(g_2)\rightarrow f_1+f_2\in\Theta(g_1+g_2)$&lt;/li&gt;
+  &lt;li&gt;$f_1\in\Theta(g_1)\wedge f_2\in\Theta(g_2)\rightarrow f_1f_2\in\Theta(g_1g_2)$&lt;/li&gt;
+  &lt;li&gt;$f\Theta(g)\in\Theta(fg)$&lt;/li&gt;
+  &lt;li&gt;$f\in\Theta(g)\rightarrow kf\in\Theta(g)$&lt;/li&gt;
+  &lt;li&gt;$\Theta(g)=\Theta(kg)$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- #### Equivalence Relation --&gt;
+&lt;h4&gt;Equivalence Relation&lt;/h4&gt;
+Note that on top of the properties given above $f(x)\in\Theta(g(x))$, or more clearly $f\asymp g$, forms an equivalence &lt;a href=&quot;\relations&quot;&gt;relation&lt;/a&gt; over the set of all functions with some defined limit:
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Reflexivity&lt;/strong&gt;&lt;/summary&gt;
+Asymptotic equivalence is reflexive meaning that for all functions $f\sim f$. This is obvious:
+
+$$\forall f:\lim_{x\to\infty}{\frac{f(x)}{f(x)}}=k\rightarrow f\asymp f$$
+
+&lt;i&gt;Assuming $f(x)$ doesn't approach $0$.&lt;/i&gt;
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Symmetry&lt;/strong&gt;&lt;/summary&gt;
+Asymptotic equivalence is symmetric meaning that $f\asymp g\rightarrow g\asymp f$. This is because for any field, there is a multiplicative inverse for any element. So, by switching the functions in the limit (i.e reversing the relations) the constant on the other side should also be inversed:\exists k^{-1}
+
+$$\forall f\ \forall k:\lim_{x\to\infty}{\frac{f(x)}{g(x)}}=k\rightarrow \lim_{x\to\infty}{\frac{g(x)}{f(x)}}=\frac{1}{k}\equiv g\asymp f$$
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;strong&gt;Transitivity&lt;/strong&gt;&lt;/summary&gt;
+I'll do this later, but this should be clear as big $\Theta$ forms equivalence classes characterized by the most significant terms of functions.
+&lt;/details&gt;
+
+&lt;!-- #### Examples --&gt;
+&lt;h4&gt;Examples&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;$2x^2\in\Theta(x^2)$ Same most significant term (times a constant).&lt;/li&gt;
+  &lt;li&gt;$x^3\in\Theta(15x^3+4x^2)$ Same most significant term (times a constant).&lt;/li&gt;
+  &lt;li&gt;$n!\not\in\Theta(3n^2+2n)$ Most significant terms don't match.&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;!-- ## Asymptotic Equivalence --&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;Asymptotic Equivalence $\sim$&lt;/h3&gt;&lt;/summary&gt;
+&lt;!-- #### Stronger Big $\Theta$ --&gt;
+&lt;h4&gt;Stronger Big $\Theta$&lt;/h4&gt;
+Another interesting point is that $f(x)\sim g(x)$ is just a more specific case of $f(x)\asymp g(x)$. This should come as no surprise. After all, in big $\Theta$ the functions $f$ and $g$ are asymptotically equal up to a constant, and so if that constant happened to be 1 we would be left with asymptotic equivalence:
+
+$$\begin{align}
+&amp;amp;f(x)\asymp g(x)\equiv (\exists k)\lim_{x\to\infty}\frac{f(x)}{g(x)}=k\\
+&amp;amp;k=1\\
+\therefore\ &amp;amp;f(x)\sim g(x)\equiv \lim_{x\to\infty}\frac{f(x)}{g(x)}=1\\
+\end{align}$$
+
+And since this is a special case of big $\Theta$, it also forms an equivalence relation.
+
+&lt;!-- #### Examples --&gt;
+&lt;h4&gt;Examples&lt;/h4&gt;
+Due to a technique called asymptotic expansion, there are some very interesting, and important, examples of asymptotic equivalence. For example:
+
+&lt;ul&gt;
+  &lt;li&gt;$n!\sim \sqrt{2\pi n}\left(\frac{n}{e}\right)^n$ (Stirling's approximation)&lt;/li&gt;
+  &lt;li&gt;$\pi(n)\sim\frac{n}{\log n}$ (prime number theorem)&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;
+
+Here are some more accessible examples:
+
+&lt;ul&gt;
+  &lt;li&gt;$x^2\sim x^2+2x$ (most significant terms are same)&lt;/li&gt;
+  &lt;li&gt;$4n!\sim 4n!+3n^2$ (most significant terms are same)&lt;/li&gt;
+  &lt;li&gt;$2x^2\not\sim x^2$ (different constants on most significant terms)&lt;/li&gt;
+  &lt;li&gt;$x^3\not\sim x^4$ (different most significant terms)&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;
+&lt;/details&gt;
+
 &lt;h2 id=&quot;notation-and-terminology&quot;&gt;Notation and Terminology&lt;/h2&gt;
 &lt;p&gt;The use of asymptotic notation is, unfortunately, quite varied and oftentimes informal. As such, I will try to clear up some of the nuance packed into these notations.&lt;/p&gt;
 
-&lt;h4 id=&quot;membership-vs-equality&quot;&gt;Membership vs Equality&lt;/h4&gt;
+&lt;h3 id=&quot;membership-vs-equality&quot;&gt;Membership vs Equality&lt;/h3&gt;
 &lt;p&gt;The set membership notation $f(x)\in O(g(x))$ implies that there is a set of functions that are big $O$ of $g$ and that $f$ is one of those functions. The same reasoning applies to the other notations.&lt;/p&gt;
 
 &lt;p&gt;That said it is very common to instead write:&lt;/p&gt;
@@ -134,18 +364,22 @@ f(x)\succ g(x)&amp;amp;\equiv \lim_{x\to\infty}\left|\frac{f(x)}{g(x)}\right|=\i
 
 &lt;p&gt;This is an &lt;strong&gt;abuse of notation&lt;/strong&gt; and does not &lt;em&gt;really&lt;/em&gt; denote equality between the function $f$ and the class of functions on the order of $g$. It is merely a shorthand and, as we’ll see below, this abuse can be taken to a much farther extreme…&lt;/p&gt;
 
-&lt;h4 id=&quot;equational-notation&quot;&gt;Equational Notation&lt;/h4&gt;
-&lt;p&gt;It is possible to use, for example, big $O$ notation in equations, extending the equality &lt;em&gt;analogy&lt;/em&gt; that is common practice. For instance:&lt;/p&gt;
+&lt;!-- #### Equational Notation --&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Equational Notation&lt;/h4&gt;&lt;/summary&gt;
+It is possible to use asymptotic notation in equations, extending the equality &lt;i&gt;analogy&lt;/i&gt; that is common practice. For instance:
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;n^{O(1)}=O(e^n)&lt;/script&gt;
+$$n^{O(1)}=O(e^n)$$
 
-&lt;p&gt;Is equivalent to the following, more formal, proposition:&lt;/p&gt;
+Is equivalent to the following, more formal, proposition:
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;(\exists f,g)\left(f\in O(1)\wedge g\in O(e^n)\right)n^{f(n)}=g(n)&lt;/script&gt;
+$$(\exists f,g)\left(f\in O(1)\wedge g\in O(e^n)\right)n^{f(n)}=g(n)$$
 
-&lt;p&gt;And in general, the equation means that if all the big $O$’s on both sides were replaced with some function in that class, the equation is true. There just has to exist one set of functions that make the equation true.&lt;/p&gt;
+And in general, the equation means that if all the big $O$'s on both sides were replaced with some function in that class, the equation is true. There just has to exist one set of functions that make the equation true.
+&lt;p&gt;&lt;/p&gt;
+&lt;/details&gt;
 
-&lt;h4 id=&quot;computational-complexity&quot;&gt;Computational Complexity&lt;/h4&gt;
+&lt;h3 id=&quot;computational-complexity&quot;&gt;Computational Complexity&lt;/h3&gt;
 &lt;p&gt;When someone refers to the complexity of an algorithm without context they are assumed to be referring to its temporal, rather than its spatial, complexity. Similarly, when the order of an algorithm (its big $O$) is given without context it is assumed to be the algorithm’s &lt;strong&gt;worst-case&lt;/strong&gt; complexity (as opposed to the best/average case).&lt;/p&gt;
 
 &lt;details&gt;
@@ -154,7 +388,7 @@ Although I used the variable $x$ in the definitions given above, the variable $n
 &lt;p&gt;&lt;/p&gt;
 &lt;/details&gt;
 
-&lt;h4 id=&quot;common-orders&quot;&gt;Common Orders&lt;/h4&gt;
+&lt;h3 id=&quot;common-orders&quot;&gt;Common Orders&lt;/h3&gt;
 &lt;p&gt;Below is a table of common terminology for certain lower-bound complexity classes from slowest to fastest growth:&lt;/p&gt;
 
 &lt;table&gt;
@@ -209,157 +443,6 @@ Although I used the variable $x$ in the definitions given above, the variable $n
 &lt;/table&gt;
 
 &lt;p&gt;While the terminology $f$ is &lt;strong&gt;‘on the order’&lt;/strong&gt; $g$ is loose, if the particular notation is not specified it can be assumed to be referring to big $O$.&lt;/p&gt;
-
-&lt;!-- ## Big $O$ and little $o$ --&gt;
-&lt;details&gt;
-&lt;summary&gt;&lt;h2 class=&quot;inline&quot;&gt;Big $O$ and little $o$&lt;/h2&gt;&lt;/summary&gt;
-Big $O$, one of the most used notations, gives an upper-bound on the asymptotic growth of a function. Thus a function $f$ that is big $O$ of a function $g$ grows as fast or slower than $g$ (up to a constant). In the context of algorithms, this is its &lt;b&gt;upper-bound complexity&lt;/b&gt;. Little-$o$ is a stronger version of this where $f$ grows strictly slower than $g$.
-
-&lt;!-- #### Popularity --&gt;
-&lt;h4&gt;Popularity&lt;/h4&gt;
-While big $\Theta$ is the most descriptive of the 3 notations, it is not as popular as big $O$. Why is this? Well, it is in part due to laziness and convention.&lt;p&gt;&lt;/p&gt;
-
-However there is a more practical reason for this as well. Proving something is big $\Theta$ means proving it is both big $O$ and big $\Omega$ which may be much more difficult or even impossible compared to just proving one or the other.&lt;p&gt;&lt;/p&gt;
-
-As a result of this, it is generally expected that when someone states an algorithm is $O(g(x))$ that $g(x)$ is as small as they could make it. This makes it a tighter bound when possible but doesn't enforce it incase such a bound is not possible to prove.
-
-&lt;!-- #### Properties --&gt;
-&lt;h4&gt;Properties&lt;/h4&gt;
-I am omitting the $(x)$ after the functions (which, strictly speaking, shouldn't have been present in the first place) for readability:
-
-&lt;ul&gt;
-  &lt;li&gt;$f_1\in O(g_1)\wedge f_2\in O(g_2)\rightarrow f_1+f_2\in O(g_1+g_2)$&lt;/li&gt;
-  &lt;li&gt;$f_1\in O(g_1)\wedge f_2\in O(g_2)\rightarrow f_1f_2\in O(g_1g_2)$&lt;/li&gt;
-  &lt;li&gt;$fO(g)\in O(fg)$&lt;/li&gt;
-  &lt;li&gt;$f\in O(g)\rightarrow kf\in O(g)$&lt;/li&gt;
-  &lt;li&gt;$O(g)=O(kg)$&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;
-
-&lt;i&gt;Where $f,g$ are functions and $k$ is some non-zero constant&lt;/i&gt;
-
-&lt;!-- #### Examples --&gt;
-&lt;h4&gt;Examples&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;$5x^3+2\in O(x^3)$ Same most significant term (times a constant).&lt;/li&gt;
-  &lt;li&gt;$x^2\in O(x^3)$ Lower than most significant term.&lt;/li&gt;
-  &lt;li&gt;$2n^2\in O(n!+n)$ Lower than most significant term.&lt;/li&gt;
-  &lt;li&gt;$x^3\not\in O(x^2)$ Can't grow faster than function.&lt;/li&gt;
-  &lt;li&gt;$x^2\not\in o(x^2)$ Must be strictly smaller.&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;
-&lt;/details&gt;
-
-&lt;!-- ## Big $\Omega$ and little $\omega$ --&gt;
-&lt;details&gt;
-&lt;summary&gt;&lt;h2 class=&quot;inline&quot;&gt;Big $\Omega$ and little $\omega$&lt;/h2&gt;&lt;/summary&gt;
-Big $\Omega$ gives a lower-bound on the asymptotic growth of a function. Thus a function $f$ that is big $O$ of a function $g$ grows as fast or faster than $g$ (up to a constant). In the context of algorithms, this is its &lt;b&gt;lower-bound complexity&lt;/b&gt;. Little-$\omega$ is a stronger version of this where $f$ grows strictly faster than $g$.
-
-&lt;!-- #### Properties --&gt;
-&lt;h4&gt;Properties&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;$f_1\in\Omega(g_1)\wedge f_2\in\Omega(g_2)\rightarrow f_1+f_2\in\Omega(g_1+g_2)$&lt;/li&gt;
-  &lt;li&gt;$f_1\in\Omega(g_1)\wedge f_2\in\Omega(g_2)\rightarrow f_1f_2\in\Omega(g_1g_2)$&lt;/li&gt;
-  &lt;li&gt;$f\Omega(g)\in\Omega(fg)$&lt;/li&gt;
-  &lt;li&gt;$f\in\Omega(g)\rightarrow kf\in\Omega(g)$&lt;/li&gt;
-  &lt;li&gt;$\Omega(g)=\Omega(kg)$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;!-- #### Examples --&gt;
-&lt;h4&gt;Examples&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;$2x^2+2x\in\Omega(x^2)$ Same most significant term (times a constant).&lt;/li&gt;
-  &lt;li&gt;$x^3\in\Omega(x)$ Greater than most significant term.&lt;/li&gt;
-  &lt;li&gt;$n!\in\Omega(3n^2+2n)$ Greater than most significant term.&lt;/li&gt;
-  &lt;li&gt;$x^3\not\in\Omega(x^4)$ Can't grow slower than function.&lt;/li&gt;
-  &lt;li&gt;$x^2\not\in\omega(x^2)$ Must be strictly bigger.&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;
-&lt;/details&gt;
-
-&lt;!-- ## Big $\Theta$ --&gt;
-&lt;details&gt;
-&lt;summary&gt;&lt;h2 class=&quot;inline&quot;&gt;Big $\Theta$&lt;/h2&gt;&lt;/summary&gt;
-Big $\Theta$ forms a &lt;b&gt;tight bound&lt;/b&gt; on the asymptotic growth of a function. It is the combination of both big $O$ and big $\Omega$:
-
-$$f(x)\in\Theta(g(x))\equiv f(x)\in O(g(x))\wedge f(x)\in\Omega(g(x))$$
-
-And so, following the pattern, a function $f$ that is big $\Theta$ of a function $g$ grows as fast as $g$ (up to a constant).
-
-&lt;!-- #### Properties --&gt;
-&lt;h4&gt;Properties&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;$f_1\in\Theta(g_1)\wedge f_2\in\Theta(g_2)\rightarrow f_1+f_2\in\Theta(g_1+g_2)$&lt;/li&gt;
-  &lt;li&gt;$f_1\in\Theta(g_1)\wedge f_2\in\Theta(g_2)\rightarrow f_1f_2\in\Theta(g_1g_2)$&lt;/li&gt;
-  &lt;li&gt;$f\Theta(g)\in\Theta(fg)$&lt;/li&gt;
-  &lt;li&gt;$f\in\Theta(g)\rightarrow kf\in\Theta(g)$&lt;/li&gt;
-  &lt;li&gt;$\Theta(g)=\Theta(kg)$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;!-- #### Equivalence Relation --&gt;
-&lt;h4&gt;Equivalence Relation&lt;/h4&gt;
-Note that on top of the properties given above $f(x)\in\Theta(g(x))$, or more clearly $f\asymp g$, forms an equivalence &lt;a href=&quot;\relations&quot;&gt;relation&lt;/a&gt; over the set of all functions with some defined limit:
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Reflexivity&lt;/strong&gt;&lt;/summary&gt;
-Asymptotic equivalence is reflexive meaning that for all functions $f\sim f$. This is obvious:
-
-$$\forall f:\lim_{x\to\infty}{\frac{f(x)}{f(x)}}=k\rightarrow f\asymp f$$
-
-&lt;i&gt;Assuming $f(x)$ doesn't approach $0$.&lt;/i&gt;
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Symmetry&lt;/strong&gt;&lt;/summary&gt;
-Asymptotic equivalence is symmetric meaning that $f\asymp g\rightarrow g\asymp f$. This is because for any field, there is a multiplicative inverse for any element. So, by switching the functions in the limit (i.e reversing the relations) the constant on the other side should also be inversed:\exists k^{-1}
-
-$$\forall f\ \forall k:\lim_{x\to\infty}{\frac{f(x)}{g(x)}}=k\rightarrow \lim_{x\to\infty}{\frac{g(x)}{f(x)}}=\frac{1}{k}\equiv g\asymp f$$
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Transitivity&lt;/strong&gt;&lt;/summary&gt;
-I'll do this later, but this should be clear as big $\Theta$ forms equivalence classes characterized by the most significant terms of functions.
-&lt;/details&gt;
-
-&lt;!-- #### Examples --&gt;
-&lt;h4&gt;Examples&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;$2x^2\in\Theta(x^2)$ Same most significant term (times a constant).&lt;/li&gt;
-  &lt;li&gt;$x^3\in\Theta(15x^3+4x^2)$ Same most significant term (times a constant).&lt;/li&gt;
-  &lt;li&gt;$n!\not\in\Theta(3n^2+2n)$ Most significant terms don't match.&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;
-&lt;/details&gt;
-
-&lt;!-- ## Asymptotic Equivalence --&gt;
-&lt;details&gt;
-&lt;summary&gt;&lt;h2 class=&quot;inline&quot;&gt;Asymptotic Equivalence&lt;/h2&gt;&lt;/summary&gt;
-&lt;!-- #### Stronger Big $\Theta$ --&gt;
-&lt;h4&gt;Stronger Big $\Theta$&lt;/h4&gt;
-Another interesting point is that $f(x)\sim g(x)$ is just a more specific case of $f(x)\asymp g(x)$. This should come as no surprise. After all, in big $\Theta$ the functions $f$ and $g$ are asymptotically equal up to a constant, and so if that constant happened to be 1 we would be left with asymptotic equivalence:
-
-$$\begin{align}
-&amp;amp;f(x)\asymp g(x)\equiv (\exists k)\lim_{x\to\infty}\frac{f(x)}{g(x)}=k\\
-&amp;amp;k=1\\
-\therefore\ &amp;amp;f(x)\sim g(x)\equiv \lim_{x\to\infty}\frac{f(x)}{g(x)}=1\\
-\end{align}$$
-
-And since this is a special case of big $\Theta$, it also forms an equivalence relation.
-
-&lt;!-- #### Examples --&gt;
-&lt;h4&gt;Examples&lt;/h4&gt;
-Due to a technique called asymptotic expansion, there are some very interesting, and important, examples of asymptotic equivalence. For example:
-
-&lt;ul&gt;
-  &lt;li&gt;$n!\sim \sqrt{2\pi n}\left(\frac{n}{e}\right)^n$ (Stirling's approximation)&lt;/li&gt;
-  &lt;li&gt;$\pi(n)\sim\frac{n}{\log n}$ (prime number theorem)&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;
-
-Here are some more accessible examples:
-
-&lt;ul&gt;
-  &lt;li&gt;$x^2\sim x^2+2x$ (most significant terms are same)&lt;/li&gt;
-  &lt;li&gt;$4n!\sim 4n!+3n^2$ (most significant terms are same)&lt;/li&gt;
-  &lt;li&gt;$2x^2\not\sim x^2$ (different constants on most significant terms)&lt;/li&gt;
-  &lt;li&gt;$x^3\not\sim x^4$ (different most significant terms)&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;
-&lt;/details&gt;
 </content>
  </entry>
  

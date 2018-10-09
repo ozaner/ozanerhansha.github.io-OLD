@@ -11,15 +11,17 @@ In the infinite case, these relations usually boil down to the functions' *most 
 | Name | Set Membership<br>Notation | Comparitive<br>Notation |
 |-|:-:|:-:|
 | Little-$o$ | $f(n)\in o(g(n))$ | $f\prec g$ |
-| big $O$ | $f(n)\in O(g(n))$ | $f\preceq g$ |
-| big $\Theta$ | $f(n)\in \Theta(g(n))$ | $f\asymp g$ |
-| big $\Omega$ | $f(n)\in \Omega(g(n))$ | $f\succeq g$ |
+| Big $O$ | $f(n)\in O(g(n))$ | $f\preceq g$ |
+| Big $\Theta$ | $f(n)\in \Theta(g(n))$ | $f\asymp g$ |
+| Big $\Omega$ | $f(n)\in \Omega(g(n))$ | $f\succeq g$ |
 | Little-$\omega$ | $f(n)\in \omega(g(n))$ | $f\succ g$ |
 | Asymptotic<br>Equivalence | N/A | $f\sim g$ |
 
 <!--more-->
 
 These notations, particularly big $O$, are most commonly used to classify and compare the computational complexity (both temporal and spatial) of different algorithms as a function of their input size by stripping away unnecessary constants and minor terms that correspond to the different preconditions and runtime environments that these algorithms may run on. Ideally, an algorithm will be on the order of a relatively slowly growing function (e.g $\log n$ grows slower than $n^2$) as they take less resources and thus are more feasible to compute.
+
+![image](/assets/comp_sci/comp-complexity.png?style=centerme){:width="400px"}
 
 They are also used in the approximation of functions that would be infeasible, or even impossible, to calculate otherwise.
 
@@ -76,59 +78,10 @@ That said, the $x\to\infty$ case is so much more common that when no approached 
 
 $$f(x)\in O(g(x)) \ \ (\text{as }x\to\infty)\iff f(x)\in O(g(x))$$
 
-## Notation and Terminology
-The use of asymptotic notation is, unfortunately, quite varied and oftentimes informal. As such, I will try to clear up some of the nuance packed into these notations.
-
-#### Membership vs Equality
-The set membership notation $f(x)\in O(g(x))$ implies that there is a set of functions that are big $O$ of $g$ and that $f$ is one of those functions. The same reasoning applies to the other notations.
-
-That said it is very common to instead write:
-
-$$f(x)=O(g(x))$$
-
-This is an **abuse of notation** and does not *really* denote equality between the function $f$ and the class of functions on the order of $g$. It is merely a shorthand and, as we'll see below, this abuse can be taken to a much farther extreme...
-
-#### Equational Notation
-It is possible to use, for example, big $O$ notation in equations, extending the equality *analogy* that is common practice. For instance:
-
-$$n^{O(1)}=O(e^n)$$
-
-Is equivalent to the following, more formal, proposition:
-
-$$(\exists f,g)\left(f\in O(1)\wedge g\in O(e^n)\right)n^{f(n)}=g(n)$$
-
-And in general, the equation means that if all the big $O$'s on both sides were replaced with some function in that class, the equation is true. There just has to exist one set of functions that make the equation true.
-
-#### Computational Complexity
-When someone refers to the complexity of an algorithm without context they are assumed to be referring to its temporal, rather than its spatial, complexity. Similarly, when the order of an algorithm (its big $O$) is given without context it is assumed to be the algorithm's **worst-case** complexity (as opposed to the best/average case).
-
-<details>
-<summary><h4 class="inline">$n$ vs. $x$</h4></summary>
-Although I used the variable $x$ in the definitions given above, the variable $n$ is also very common. This is because $x$ is conventionally used to denote a continuous valued, real variable, while $n$ is conventionally used to denote a discrete, integer valued variable. This jives with the fact that these notations are often used in describing the computational complexity of algorithms expressed as functions of their, discrete sized, inputs (e.g there are no lists of size $2.5$ and even further to the point, we cannot subdivide the bit).
-<p></p>
-</details>
-
-#### Common Orders
-Below is a table of common terminology for certain lower-bound complexity classes from slowest to fastest growth:
-
-| Complexity Class | Notation           |
-|------------------|--------------------|
-| Constant         | $O(1)$             |
-| Logarithmic      | $O(\log n)$        |
-| Polylogarithmic  | $O((\log n)^k)$    |
-| Fractional Power | $O(n^k)_{\ 0<k<1}$ |
-| Linear           | $O(n)$             |
-| Linearithmic     | $O(n\log n)$       |
-| Quadratic        | $O(n^2)$           |
-| Polynomial       | $O(n^k)_{\ k>1}$   |
-| Exponential      | $O(k^n)_{\ k>1}$   |
-| Factorial        | $O(n!)$            |
-
-While the terminology $f$ is **'on the order'** $g$ is loose, if the particular notation is not specified it can be assumed to be referring to big $O$.
-
+## $o,O,\Theta,\Omega,\omega$ and $\sim$
 <!-- ## Big $O$ and little $o$ -->
 <details>
-<summary><h2 class="inline">Big $O$ and little $o$</h2></summary>
+<summary><h3 class="inline">Big $O$ and little $o$</h3></summary>
 Big $O$, one of the most used notations, gives an upper-bound on the asymptotic growth of a function. Thus a function $f$ that is big $O$ of a function $g$ grows as fast or slower than $g$ (up to a constant). In the context of algorithms, this is its <b>upper-bound complexity</b>. Little-$o$ is a stronger version of this where $f$ grows strictly slower than $g$.
 
 <!-- #### Popularity -->
@@ -166,7 +119,7 @@ I am omitting the $(x)$ after the functions (which, strictly speaking, shouldn't
 
 <!-- ## Big $\Omega$ and little $\omega$ -->
 <details>
-<summary><h2 class="inline">Big $\Omega$ and little $\omega$</h2></summary>
+<summary><h3 class="inline">Big $\Omega$ and little $\omega$</h3></summary>
 Big $\Omega$ gives a lower-bound on the asymptotic growth of a function. Thus a function $f$ that is big $O$ of a function $g$ grows as fast or faster than $g$ (up to a constant). In the context of algorithms, this is its <b>lower-bound complexity</b>. Little-$\omega$ is a stronger version of this where $f$ grows strictly faster than $g$.
 
 <!-- #### Properties -->
@@ -192,7 +145,7 @@ Big $\Omega$ gives a lower-bound on the asymptotic growth of a function. Thus a 
 
 <!-- ## Big $\Theta$ -->
 <details>
-<summary><h2 class="inline">Big $\Theta$</h2></summary>
+<summary><h3 class="inline">Big $\Theta$</h3></summary>
 Big $\Theta$ forms a <b>tight bound</b> on the asymptotic growth of a function. It is the combination of both big $O$ and big $\Omega$:
 
 $$f(x)\in\Theta(g(x))\equiv f(x)\in O(g(x))\wedge f(x)\in\Omega(g(x))$$
@@ -245,7 +198,7 @@ I'll do this later, but this should be clear as big $\Theta$ forms equivalence c
 
 <!-- ## Asymptotic Equivalence -->
 <details>
-<summary><h2 class="inline">Asymptotic Equivalence</h2></summary>
+<summary><h3 class="inline">Asymptotic Equivalence $\sim$</h3></summary>
 <!-- #### Stronger Big $\Theta$ -->
 <h4>Stronger Big $\Theta$</h4>
 Another interesting point is that $f(x)\sim g(x)$ is just a more specific case of $f(x)\asymp g(x)$. This should come as no surprise. After all, in big $\Theta$ the functions $f$ and $g$ are asymptotically equal up to a constant, and so if that constant happened to be 1 we would be left with asymptotic equivalence:
@@ -276,3 +229,57 @@ Here are some more accessible examples:
   <li>$x^3\not\sim x^4$ (different most significant terms)</li>
 </ul><p></p>
 </details>
+
+## Notation and Terminology
+The use of asymptotic notation is, unfortunately, quite varied and oftentimes informal. As such, I will try to clear up some of the nuance packed into these notations.
+
+### Membership vs Equality
+The set membership notation $f(x)\in O(g(x))$ implies that there is a set of functions that are big $O$ of $g$ and that $f$ is one of those functions. The same reasoning applies to the other notations.
+
+That said it is very common to instead write:
+
+$$f(x)=O(g(x))$$
+
+This is an **abuse of notation** and does not *really* denote equality between the function $f$ and the class of functions on the order of $g$. It is merely a shorthand and, as we'll see below, this abuse can be taken to a much farther extreme...
+
+<!-- #### Equational Notation -->
+<details>
+<summary><h4 class="inline">Equational Notation</h4></summary>
+It is possible to use asymptotic notation in equations, extending the equality <i>analogy</i> that is common practice. For instance:
+
+$$n^{O(1)}=O(e^n)$$
+
+Is equivalent to the following, more formal, proposition:
+
+$$(\exists f,g)\left(f\in O(1)\wedge g\in O(e^n)\right)n^{f(n)}=g(n)$$
+
+And in general, the equation means that if all the big $O$'s on both sides were replaced with some function in that class, the equation is true. There just has to exist one set of functions that make the equation true.
+<p></p>
+</details>
+
+### Computational Complexity
+When someone refers to the complexity of an algorithm without context they are assumed to be referring to its temporal, rather than its spatial, complexity. Similarly, when the order of an algorithm (its big $O$) is given without context it is assumed to be the algorithm's **worst-case** complexity (as opposed to the best/average case).
+
+<details>
+<summary><h4 class="inline">$n$ vs. $x$</h4></summary>
+Although I used the variable $x$ in the definitions given above, the variable $n$ is also very common. This is because $x$ is conventionally used to denote a continuous valued, real variable, while $n$ is conventionally used to denote a discrete, integer valued variable. This jives with the fact that these notations are often used in describing the computational complexity of algorithms expressed as functions of their, discrete sized, inputs (e.g there are no lists of size $2.5$ and even further to the point, we cannot subdivide the bit).
+<p></p>
+</details>
+
+### Common Orders
+Below is a table of common terminology for certain lower-bound complexity classes from slowest to fastest growth:
+
+| Complexity Class | Notation           |
+|------------------|--------------------|
+| Constant         | $O(1)$             |
+| Logarithmic      | $O(\log n)$        |
+| Polylogarithmic  | $O((\log n)^k)$    |
+| Fractional Power | $O(n^k)_{\ 0<k<1}$ |
+| Linear           | $O(n)$             |
+| Linearithmic     | $O(n\log n)$       |
+| Quadratic        | $O(n^2)$           |
+| Polynomial       | $O(n^k)_{\ k>1}$   |
+| Exponential      | $O(k^n)_{\ k>1}$   |
+| Factorial        | $O(n!)$            |
+
+While the terminology $f$ is **'on the order'** $g$ is loose, if the particular notation is not specified it can be assumed to be referring to big $O$.
