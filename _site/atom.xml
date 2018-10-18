@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-10-18T00:05:01-04:00</updated>
+ <updated>2018-10-18T12:12:17-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -17,7 +17,7 @@
    <link href="http://localhost:4000/sequential-search/"/>
    <updated>2018-10-09T00:00:00-04:00</updated>
    <id>http://localhost:4000/sequential-search</id>
-   <content type="html">&lt;p&gt;&lt;strong&gt;Sequential search&lt;/strong&gt;, or linear search, is a search algorithm usually implemented on lists. It is one of the most intuitive (some might say naïve) approaches to search: simply look at all entries until the element is found.&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;strong&gt;Sequential search&lt;/strong&gt;, or linear search, is a search algorithm implemented on lists. It is one of the most intuitive (some might even say naïve) approaches to search: simply look at all entries in order until the element is found.&lt;/p&gt;
 
 &lt;p&gt;Given a &lt;strong&gt;target&lt;/strong&gt; value, the algorithm iterates through every entry on the list and compares it to the target. If they match then it is a &lt;strong&gt;successful search&lt;/strong&gt; and the algorithm returns true. If the end of the list is reached and no match was found, it is an &lt;strong&gt;unsuccessful search&lt;/strong&gt; and the algorithm returns false.&lt;/p&gt;
 
@@ -35,14 +35,13 @@
 
 &lt;h3 id=&quot;java&quot;&gt;Java&lt;/h3&gt;
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;Iterator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;items&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;iterator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;hasNext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;equals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()))&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;equals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)))&lt;/span&gt;
       &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Notice we used &lt;code class=&quot;highlighter-rouge&quot;&gt;target&lt;/code&gt;’s implementation of the &lt;code class=&quot;highlighter-rouge&quot;&gt;equals&lt;/code&gt; method rather than &lt;code class=&quot;highlighter-rouge&quot;&gt;item.next()&lt;/code&gt;’s. We do this because we can change how we define equality by extending &lt;code class=&quot;highlighter-rouge&quot;&gt;T&lt;/code&gt; and overloading the method. This gives us greater flexibility in our criterion for search.&lt;/p&gt;
+&lt;p&gt;Notice we used &lt;code class=&quot;highlighter-rouge&quot;&gt;target&lt;/code&gt;’s implementation of the &lt;code class=&quot;highlighter-rouge&quot;&gt;equals&lt;/code&gt; method rather than &lt;code class=&quot;highlighter-rouge&quot;&gt;list.get(i)&lt;/code&gt;’s. We do this because we can change how we define equality by extending &lt;code class=&quot;highlighter-rouge&quot;&gt;T&lt;/code&gt; and overloading the method. This gives us greater flexibility in our criterion for search.&lt;/p&gt;
 
 &lt;!-- ### Python
 ````python
@@ -54,9 +53,9 @@ def search(L, T):
 ```` --&gt;
 
 &lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-&lt;p&gt;Sequential search is very rarely used in practice due to better alternatives such as binary search and hash tables. That said, sequential search has the advantage of being both simple to implement and detached from any particular data structure.&lt;/p&gt;
+&lt;p&gt;Sequential search is rarely used in practice due to better alternatives such as binary search and hash tables. That said, sequential search has the advantage of being both simple to implement and not requiring the list to be sorted.&lt;/p&gt;
 
-&lt;p&gt;As a result, sequential search is commonly implement in data structures such as unordered lists as they cannot leverage any better alternatives.&lt;/p&gt;
+&lt;p&gt;As a result, it is commonly implemented in unsorted lists as they cannot leverage any better alternatives. At least not with a classical computer…&lt;/p&gt;
 
 &lt;h2 id=&quot;analysis&quot;&gt;Analysis&lt;/h2&gt;
 &lt;h3 id=&quot;time-complexity&quot;&gt;Time Complexity&lt;/h3&gt;
@@ -88,7 +87,7 @@ But this assumes the target only appears once on the list. In general, it could 
 
 $$\frac{n+1}{k+1}$$
 
-Either way, the average case complexity of sequential search is $O(n)$
+Thus the average case complexity of sequential search is $O\left(\frac{n}{k}\right)$ or $O(n)$ if we don't vary $k$.
 &lt;p&gt;&lt;/p&gt;
 
 &lt;i&gt;Note that this analysis assumes each element has an equal probability of being the target. This assumption is removed in one of the variations of sequential search shown below.&lt;/i&gt;
@@ -109,10 +108,13 @@ Either way, the average case complexity of sequential search is $O(n)$
 
 &lt;p&gt;&lt;i&gt;Where $\sum_{i\in n} p_i=1$. Also notice that in the equal probability case, each $p_i=\frac{1}{n}$.&lt;/i&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;What this probability distribution is will determine the average case complexity of this variation on sequential search.&lt;/p&gt;
+&lt;p&gt;What this probability distribution is will determine the average case complexity of this variation on sequential search. For example, if the distribution is geometric and the elements are arranged from most to least likely, the complexity will be $O(1)$. This is even better than binary search!&lt;/p&gt;
 
+&lt;!--
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Ordered Search&lt;/h4&gt;&lt;/summary&gt; --&gt;
 &lt;h4 id=&quot;ordered-search&quot;&gt;Ordered Search&lt;/h4&gt;
-&lt;p&gt;Another assumption we can remove is that the list is unordered, that is the arrangement of the list has no specific meaning and can even be changed on the fly. If we instead assume that the list &lt;em&gt;is&lt;/em&gt; ordered we can improve the number of comparisons linear search takes. This is because we can stop checking once we have passed a value greater than the target. Here is some pseudocode:&lt;/p&gt;
+&lt;p&gt;Another assumption we can remove is that the list is unsorted, that is the arrangement of the list has no specific meaning and can even be changed on the fly. If we instead assume that the list &lt;i&gt;is&lt;/i&gt; sorted we can improve the number of comparisons linear search takes. This is because we can stop checking once we have passed a value greater than the target. Here is some pseudocode:&lt;/p&gt;
 
 &lt;p&gt;Given a list $L$ of length $n$ with the $i$th element denoted $L_i$ the target value denoted $T$ and $L_0\le L_1\le \cdots\le L_n$:&lt;/p&gt;
 &lt;ol&gt;
@@ -122,7 +124,8 @@ Either way, the average case complexity of sequential search is $O(n)$
   &lt;li&gt;Return $L_i=T$ &lt;strong&gt;END&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Of course, because we have stipulated that the list be ordered, there are now faster search algorithms that can be used on it, namely binary search. This obviates the use of sequential sort.&lt;/p&gt;
+&lt;p&gt;Of course, because we have stipulated that the list be sorted, there are now faster search algorithms that can be used on it, namely binary search. This obviates the use of sequential sort.
+&lt;!-- &lt;/details&gt; --&gt;&lt;/p&gt;
 </content>
  </entry>
  

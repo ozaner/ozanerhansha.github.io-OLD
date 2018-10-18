@@ -4,7 +4,7 @@ title: Sequential Search
 date: 2018-10-09
 tags: computer-science algorithms
 ---
-**Sequential search**, or linear search, is a search algorithm usually implemented on lists. It is one of the most intuitive (some might say naïve) approaches to search: simply look at all entries until the element is found.
+**Sequential search**, or linear search, is a search algorithm implemented on lists. It is one of the most intuitive (some might even say naïve) approaches to search: simply look at all entries in order until the element is found.
 
 Given a **target** value, the algorithm iterates through every entry on the list and compares it to the target. If they match then it is a **successful search** and the algorithm returns true. If the end of the list is reached and no match was found, it is an **unsuccessful search** and the algorithm returns false.
 
@@ -21,14 +21,13 @@ Given a list $L$ of length $n$ with the $i$th element denoted $L_i$ and the targ
 ### Java
 ````java
 boolean search(List<T> list, T target) {
-  Iterator<T> items = list.iterator();
-  while(items.hasNext())
-    if(target.equals(item.next()))
+  for(int i = 0; i < list.size(); i++)
+    if(target.equals(list.get(i)))
       return true;
   return false;
 }
 ````
-Notice we used `target`'s implementation of the `equals` method rather than `item.next()`'s. We do this because we can change how we define equality by extending `T` and overloading the method. This gives us greater flexibility in our criterion for search.
+Notice we used `target`'s implementation of the `equals` method rather than `list.get(i)`'s. We do this because we can change how we define equality by extending `T` and overloading the method. This gives us greater flexibility in our criterion for search.
 
 <!-- ### Python
 ````python
@@ -40,9 +39,9 @@ def search(L, T):
 ```` -->
 
 ## Usage
-Sequential search is very rarely used in practice due to better alternatives such as binary search and hash tables. That said, sequential search has the advantage of being both simple to implement and detached from any particular data structure.
+Sequential search is rarely used in practice due to better alternatives such as binary search and hash tables. That said, sequential search has the advantage of being both simple to implement and not requiring the list to be sorted.
 
-As a result, sequential search is commonly implement in data structures such as unordered lists as they cannot leverage any better alternatives.
+As a result, it is commonly implemented in unsorted lists as they cannot leverage any better alternatives. At least not with a classical computer...
 
 ## Analysis
 ### Time Complexity
@@ -74,7 +73,7 @@ But this assumes the target only appears once on the list. In general, it could 
 
 $$\frac{n+1}{k+1}$$
 
-Either way, the average case complexity of sequential search is $O(n)$
+Thus the average case complexity of sequential search is $O\left(\frac{n}{k}\right)$ or $O(n)$ if we don't vary $k$.
 <p></p>
 
 <i>Note that this analysis assumes each element has an equal probability of being the target. This assumption is removed in one of the variations of sequential search shown below.</i>
@@ -95,10 +94,13 @@ $$p_0s_0+p_1s_1+\cdots+p_ns_n=\sum_{i\in n}p_is_i$$
 
 <i>Where $\sum_{i\in n} p_i=1$. Also notice that in the equal probability case, each $p_i=\frac{1}{n}$.</i><br>
 
-What this probability distribution is will determine the average case complexity of this variation on sequential search.
+What this probability distribution is will determine the average case complexity of this variation on sequential search. For example, if the distribution is geometric and the elements are arranged from most to least likely, the complexity will be $O(1)$. This is even better than binary search!
 
+<!--
+<details>
+<summary><h4 class="inline">Ordered Search</h4></summary> -->
 #### Ordered Search
-Another assumption we can remove is that the list is unordered, that is the arrangement of the list has no specific meaning and can even be changed on the fly. If we instead assume that the list *is* ordered we can improve the number of comparisons linear search takes. This is because we can stop checking once we have passed a value greater than the target. Here is some pseudocode:
+Another assumption we can remove is that the list is unsorted, that is the arrangement of the list has no specific meaning and can even be changed on the fly. If we instead assume that the list <i>is</i> sorted we can improve the number of comparisons linear search takes. This is because we can stop checking once we have passed a value greater than the target. Here is some pseudocode:
 
 Given a list $L$ of length $n$ with the $i$th element denoted $L_i$ the target value denoted $T$ and $L_0\le L_1\le \cdots\le L_n$:
 1. Set variable $i:=0$
@@ -106,4 +108,5 @@ Given a list $L$ of length $n$ with the $i$th element denoted $L_i$ the target v
 3. Increment index $i:=i+1$ and goto step 2
 4. Return $L_i=T$ **END**
 
-Of course, because we have stipulated that the list be ordered, there are now faster search algorithms that can be used on it, namely binary search. This obviates the use of sequential sort.
+Of course, because we have stipulated that the list be sorted, there are now faster search algorithms that can be used on it, namely binary search. This obviates the use of sequential sort.
+<!-- </details> -->

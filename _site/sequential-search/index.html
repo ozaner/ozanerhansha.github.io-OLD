@@ -255,7 +255,7 @@
     <a href="/tag/algorithms"><code class="highligher-rouge"><nobr>algorithms</nobr></code>&nbsp;</a>
   
 ]</span>
-  <p><strong>Sequential search</strong>, or linear search, is a search algorithm usually implemented on lists. It is one of the most intuitive (some might say naïve) approaches to search: simply look at all entries until the element is found.</p>
+  <p><strong>Sequential search</strong>, or linear search, is a search algorithm implemented on lists. It is one of the most intuitive (some might even say naïve) approaches to search: simply look at all entries in order until the element is found.</p>
 
 <p>Given a <strong>target</strong> value, the algorithm iterates through every entry on the list and compares it to the target. If they match then it is a <strong>successful search</strong> and the algorithm returns true. If the end of the list is reached and no match was found, it is an <strong>unsuccessful search</strong> and the algorithm returns false.</p>
 
@@ -273,14 +273,13 @@
 
 <h3 id="java">Java</h3>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">boolean</span> <span class="nf">search</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">,</span> <span class="n">T</span> <span class="n">target</span><span class="o">)</span> <span class="o">{</span>
-  <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">items</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>
-  <span class="k">while</span><span class="o">(</span><span class="n">items</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span>
-    <span class="k">if</span><span class="o">(</span><span class="n">target</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">item</span><span class="o">.</span><span class="na">next</span><span class="o">()))</span>
+  <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">target</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">)))</span>
       <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
   <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
 <span class="o">}</span>
 </code></pre></div></div>
-<p>Notice we used <code class="highlighter-rouge">target</code>’s implementation of the <code class="highlighter-rouge">equals</code> method rather than <code class="highlighter-rouge">item.next()</code>’s. We do this because we can change how we define equality by extending <code class="highlighter-rouge">T</code> and overloading the method. This gives us greater flexibility in our criterion for search.</p>
+<p>Notice we used <code class="highlighter-rouge">target</code>’s implementation of the <code class="highlighter-rouge">equals</code> method rather than <code class="highlighter-rouge">list.get(i)</code>’s. We do this because we can change how we define equality by extending <code class="highlighter-rouge">T</code> and overloading the method. This gives us greater flexibility in our criterion for search.</p>
 
 <!-- ### Python
 ````python
@@ -292,9 +291,9 @@ def search(L, T):
 ```` -->
 
 <h2 id="usage">Usage</h2>
-<p>Sequential search is very rarely used in practice due to better alternatives such as binary search and hash tables. That said, sequential search has the advantage of being both simple to implement and detached from any particular data structure.</p>
+<p>Sequential search is rarely used in practice due to better alternatives such as binary search and hash tables. That said, sequential search has the advantage of being both simple to implement and not requiring the list to be sorted.</p>
 
-<p>As a result, sequential search is commonly implement in data structures such as unordered lists as they cannot leverage any better alternatives.</p>
+<p>As a result, it is commonly implemented in unsorted lists as they cannot leverage any better alternatives. At least not with a classical computer…</p>
 
 <h2 id="analysis">Analysis</h2>
 <h3 id="time-complexity">Time Complexity</h3>
@@ -326,7 +325,7 @@ But this assumes the target only appears once on the list. In general, it could 
 
 $$\frac{n+1}{k+1}$$
 
-Either way, the average case complexity of sequential search is $O(n)$
+Thus the average case complexity of sequential search is $O\left(\frac{n}{k}\right)$ or $O(n)$ if we don't vary $k$.
 <p></p>
 
 <i>Note that this analysis assumes each element has an equal probability of being the target. This assumption is removed in one of the variations of sequential search shown below.</i>
@@ -347,10 +346,13 @@ Either way, the average case complexity of sequential search is $O(n)$
 
 <p><i>Where $\sum_{i\in n} p_i=1$. Also notice that in the equal probability case, each $p_i=\frac{1}{n}$.</i><br /></p>
 
-<p>What this probability distribution is will determine the average case complexity of this variation on sequential search.</p>
+<p>What this probability distribution is will determine the average case complexity of this variation on sequential search. For example, if the distribution is geometric and the elements are arranged from most to least likely, the complexity will be $O(1)$. This is even better than binary search!</p>
 
+<!--
+<details>
+<summary><h4 class="inline">Ordered Search</h4></summary> -->
 <h4 id="ordered-search">Ordered Search</h4>
-<p>Another assumption we can remove is that the list is unordered, that is the arrangement of the list has no specific meaning and can even be changed on the fly. If we instead assume that the list <em>is</em> ordered we can improve the number of comparisons linear search takes. This is because we can stop checking once we have passed a value greater than the target. Here is some pseudocode:</p>
+<p>Another assumption we can remove is that the list is unsorted, that is the arrangement of the list has no specific meaning and can even be changed on the fly. If we instead assume that the list <i>is</i> sorted we can improve the number of comparisons linear search takes. This is because we can stop checking once we have passed a value greater than the target. Here is some pseudocode:</p>
 
 <p>Given a list $L$ of length $n$ with the $i$th element denoted $L_i$ the target value denoted $T$ and $L_0\le L_1\le \cdots\le L_n$:</p>
 <ol>
@@ -360,7 +362,8 @@ Either way, the average case complexity of sequential search is $O(n)$
   <li>Return $L_i=T$ <strong>END</strong></li>
 </ol>
 
-<p>Of course, because we have stipulated that the list be ordered, there are now faster search algorithms that can be used on it, namely binary search. This obviates the use of sequential sort.</p>
+<p>Of course, because we have stipulated that the list be sorted, there are now faster search algorithms that can be used on it, namely binary search. This obviates the use of sequential sort.
+<!-- </details> --></p>
 
 </div>
 
