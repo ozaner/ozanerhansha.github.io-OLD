@@ -18,14 +18,26 @@ Given a list $L$ of length $n$ with the $i$th element denoted $L_i$ and the targ
 3. Increment index $i:=i+1$
 4. If $i<n$, goto step 2; Else return false **END**
 
-### Python
+### Java
+````java
+boolean search(List<T> list, T target) {
+  Iterator<T> items = list.iterator();
+  while(items.hasNext())
+    if(target.equals(item.next()))
+      return true;
+  return false;
+}
+````
+Notice we used `target`'s implementation of the `equals` method rather than `item.next()`'s. We do this because we can change how we define equality by extending `T` and overloading the method. This gives us greater flexibility in our criterion for search.
+
+<!-- ### Python
 ````python
 def search(L, T):
   for True in range(len(L)):
     if L[i] == T:
       return True
   return False
-````
+```` -->
 
 ## Usage
 Sequential search is very rarely used in practice due to better alternatives such as binary search and hash tables. That said, sequential search has the advantage of being both simple to implement and detached from any particular data structure.
@@ -75,13 +87,13 @@ The algorithm is iterative, meaning the only space needed is the single variable
 #### Probabilistic Search
 Note that if we knew what frequency with which certain targets are searched for, we could rearrange the list such that things more often search are near the beginning. This would reduce the overall running average running time.
 
-*A way to implement this might be to move the most recently searched target to the front of the list.*
+*A way to implement this might be to move the most recently searched target to the front of the list, assuming the order of the elements is not crucial.*
 
 In this probabilistic case, the formula for computing the average running time is weighted:
 
-$$\frac{p_0s_0+p_1s_1+\cdots+p_ns_n}{n}=\frac{\sum_{i\in n}p_is_i}{n}$$
+$$p_0s_0+p_1s_1+\cdots+p_ns_n=\sum_{i\in n}p_is_i$$
 
-<i>Where $\sum_{i\in n} p_i=1$.</i><br>
+<i>Where $\sum_{i\in n} p_i=1$. Also notice that in the equal probability case, each $p_i=\frac{1}{n}$.</i><br>
 
 What this probability distribution is will determine the average case complexity of this variation on sequential search.
 
@@ -94,4 +106,4 @@ Given a list $L$ of length $n$ with the $i$th element denoted $L_i$ the target v
 3. Increment index $i:=i+1$ and goto step 2
 4. Return $L_i=T$ **END**
 
-Of course, because we have stipulated that the list be ordered, there are now faster search algorithms that can be used on it, such as quicksort. This obviates the use of sequential sort.
+Of course, because we have stipulated that the list be ordered, there are now faster search algorithms that can be used on it, namely binary search. This obviates the use of sequential sort.

@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-10-09T19:52:37-04:00</updated>
+ <updated>2018-10-18T00:05:01-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -33,13 +33,25 @@
   &lt;li&gt;If $i&amp;lt;n$, goto step 2; Else return false &lt;strong&gt;END&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&quot;python&quot;&gt;Python&lt;/h3&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
+&lt;h3 id=&quot;java&quot;&gt;Java&lt;/h3&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Iterator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;items&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;iterator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;hasNext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;equals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()))&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Notice we used &lt;code class=&quot;highlighter-rouge&quot;&gt;target&lt;/code&gt;’s implementation of the &lt;code class=&quot;highlighter-rouge&quot;&gt;equals&lt;/code&gt; method rather than &lt;code class=&quot;highlighter-rouge&quot;&gt;item.next()&lt;/code&gt;’s. We do this because we can change how we define equality by extending &lt;code class=&quot;highlighter-rouge&quot;&gt;T&lt;/code&gt; and overloading the method. This gives us greater flexibility in our criterion for search.&lt;/p&gt;
+
+&lt;!-- ### Python
+````python
+def search(L, T):
+  for True in range(len(L)):
+    if L[i] == T:
+      return True
+  return False
+```` --&gt;
 
 &lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
 &lt;p&gt;Sequential search is very rarely used in practice due to better alternatives such as binary search and hash tables. That said, sequential search has the advantage of being both simple to implement and detached from any particular data structure.&lt;/p&gt;
@@ -89,13 +101,13 @@ Either way, the average case complexity of sequential search is $O(n)$
 &lt;h4 id=&quot;probabilistic-search&quot;&gt;Probabilistic Search&lt;/h4&gt;
 &lt;p&gt;Note that if we knew what frequency with which certain targets are searched for, we could rearrange the list such that things more often search are near the beginning. This would reduce the overall running average running time.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;A way to implement this might be to move the most recently searched target to the front of the list.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;A way to implement this might be to move the most recently searched target to the front of the list, assuming the order of the elements is not crucial.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;In this probabilistic case, the formula for computing the average running time is weighted:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{p_0s_0+p_1s_1+\cdots+p_ns_n}{n}=\frac{\sum_{i\in n}p_is_i}{n}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;p_0s_0+p_1s_1+\cdots+p_ns_n=\sum_{i\in n}p_is_i&lt;/script&gt;
 
-&lt;p&gt;&lt;i&gt;Where $\sum_{i\in n} p_i=1$.&lt;/i&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i&gt;Where $\sum_{i\in n} p_i=1$. Also notice that in the equal probability case, each $p_i=\frac{1}{n}$.&lt;/i&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;What this probability distribution is will determine the average case complexity of this variation on sequential search.&lt;/p&gt;
 
@@ -110,7 +122,7 @@ Either way, the average case complexity of sequential search is $O(n)$
   &lt;li&gt;Return $L_i=T$ &lt;strong&gt;END&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Of course, because we have stipulated that the list be ordered, there are now faster search algorithms that can be used on it, such as quicksort. This obviates the use of sequential sort.&lt;/p&gt;
+&lt;p&gt;Of course, because we have stipulated that the list be ordered, there are now faster search algorithms that can be used on it, namely binary search. This obviates the use of sequential sort.&lt;/p&gt;
 </content>
  </entry>
  
@@ -480,12 +492,12 @@ Although I used the variable $x$ in the definitions given above, the variable $n
    <content type="html">&lt;p&gt;The Iverson bracket, denoted $[P]$, is a function that evaluates to $1$ if the given proposition $P$ is true and $0$ if it’s false. That is to say:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-[P]={\begin{cases}1&amp;{P}\\0&amp;{\neg P}\end{cases}} %]]&gt;&lt;/script&gt;
+[P]={\begin{cases}1,&amp;{P}\\0,&amp;{\neg P}\end{cases}} %]]&gt;&lt;/script&gt;
 
 &lt;p&gt;The Iverson bracket can also be used with predicates:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-[P(x)]={\begin{cases}1&amp;{P(x)}\\0&amp;{\neg P(x)}\end{cases}} %]]&gt;&lt;/script&gt;
+[P(x)]={\begin{cases}1,&amp;{P(x)}\\0,&amp;{\neg P(x)}\end{cases}} %]]&gt;&lt;/script&gt;
 
 &lt;p&gt;Below I give two formal definitions of the Iverson bracket. One for the propositional case and one for the predicate case.&lt;/p&gt;
 
@@ -3441,14 +3453,14 @@ N=mg\cos\theta \tag{force normal to the ramp}\\
 &lt;center&gt;&lt;i&gt;Relevant xckd&lt;/i&gt;&lt;/center&gt; --&gt;
 
 &lt;h2 id=&quot;q-learning&quot;&gt;Q-Learning&lt;/h2&gt;
-&lt;p&gt;The researchers at Google’s DeepMind achieved this stunning success with a type of machine learning called &lt;strong&gt;reinforcement learning&lt;/strong&gt; and more specifically &lt;strong&gt;Q-learning&lt;/strong&gt;. In essence, the goal of Q-learning is to approximate some ideal function $Q(s,a)$ that outputs a reward (how good we are doing at the task), where $s$ is a possible state of the environment/game/etc. and $a$ is a possible action to take in that state. If we had such a function, or even a good approximation, we could simply plug in our current state and choose whatever action will maximize $Q$ which would then maximize how well we perform the task. To approximate this function, the researches used a convolutional neural network (CNN) and trained it using Q-learning, thus creating a Deep Q Network. You can read more about Q-learning and DQNs &lt;a href=&quot;https://ai.intel.com/demystifying-deep-reinforcement-learning/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The researchers at Google’s DeepMind achieved this stunning success with a type of machine learning called &lt;strong&gt;reinforcement learning&lt;/strong&gt; and more specifically &lt;strong&gt;Q-learning&lt;/strong&gt;. In essence, the goal of Q-learning is to approximate some ideal function $Q(s,a)$ that outputs a reward (how good we are doing at the task), where $s$ is a possible state of the environment/game/etc. and $a$ is a possible action to take in that state. If we had such a function, or even a good approximation, we could simply plug in our current state and choose whatever action will maximize $Q$ which would then maximize how well we perform the task. To approximate this function, the researchers used a convolutional neural network (CNN) and trained it using Q-learning, thus creating a Deep Q Network. You can read more about Q-learning and DQNs &lt;a href=&quot;https://ai.intel.com/demystifying-deep-reinforcement-learning/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;By implementing Q-learning in a convolutional neural network (CNN) they create a DQN capable of predicting what actions to take based on the current state of the game.&lt;/p&gt;
 
 &lt;h2 id=&quot;policy-gradients&quot;&gt;Policy Gradients&lt;/h2&gt;
 &lt;p&gt;That said, Q-learning isn’t the only way to achieve these results. Another popular type of reinforcement learning is what known as &lt;strong&gt;policy gradients&lt;/strong&gt;. This method is more direct and conceptually simpler than Q-learning. Essentially, you input the current state, action taken, and reward given at every step and optimize the network accordingly.&lt;/p&gt;
 
-&lt;p&gt;And make no mistake, while simpler, policy networks can be just as good as DQNs. In fact, when tuned correctly, they perform even better than DQNs. Don’t believe me? Just ask the authors of the original papers themselves:
+&lt;p&gt;And make no mistake, while simpler, policy networks can be just as good as DQNs. In fact, when tuned correctly, they perform even better than DQNs. Don’t believe me? Just ask the authors of the original paper themselves:
 &lt;a href=&quot;https://arxiv.org/pdf/1602.01783.pdf&quot;&gt;Asynchronous Methods for Deep Reinforcement Learning&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;my-attempt&quot;&gt;My Attempt&lt;/h2&gt;

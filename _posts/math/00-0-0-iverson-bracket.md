@@ -2,15 +2,15 @@
 layout: post
 title: Iverson Bracket
 date: 2018-08-27
-tags: math computer-science logic
+tags: math logic
 ---
 The Iverson bracket, denoted $[P]$, is a function that evaluates to $1$ if the given proposition $P$ is true and $0$ if it's false. That is to say:
 
-$$[P]={\begin{cases}1&{P}\\0&{\neg P}\end{cases}}$$
+$$[P]={\begin{cases}1,&{P}\\0,&{\neg P}\end{cases}}$$
 
 The Iverson bracket can also be used with predicates:
 
-$$[P(x)]={\begin{cases}1&{P(x)}\\0&{\neg P(x)}\end{cases}}$$
+$$[P(x)]={\begin{cases}1,&{P(x)}\\0,&{\neg P(x)}\end{cases}}$$
 
 Below I give two formal definitions of the Iverson bracket. One for the propositional case and one for the predicate case.
 

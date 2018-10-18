@@ -15,14 +15,14 @@ If this wasn't enough, in 2015 they blew the machine learning community, and eve
 <center><i>Relevant xckd</i></center> -->
 
 ## Q-Learning
-The researchers at Google's DeepMind achieved this stunning success with a type of machine learning called **reinforcement learning** and more specifically **Q-learning**. In essence, the goal of Q-learning is to approximate some ideal function $Q(s,a)$ that outputs a reward (how good we are doing at the task), where $s$ is a possible state of the environment/game/etc. and $a$ is a possible action to take in that state. If we had such a function, or even a good approximation, we could simply plug in our current state and choose whatever action will maximize $Q$ which would then maximize how well we perform the task. To approximate this function, the researches used a convolutional neural network (CNN) and trained it using Q-learning, thus creating a Deep Q Network. You can read more about Q-learning and DQNs [here](https://ai.intel.com/demystifying-deep-reinforcement-learning/).
+The researchers at Google's DeepMind achieved this stunning success with a type of machine learning called **reinforcement learning** and more specifically **Q-learning**. In essence, the goal of Q-learning is to approximate some ideal function $Q(s,a)$ that outputs a reward (how good we are doing at the task), where $s$ is a possible state of the environment/game/etc. and $a$ is a possible action to take in that state. If we had such a function, or even a good approximation, we could simply plug in our current state and choose whatever action will maximize $Q$ which would then maximize how well we perform the task. To approximate this function, the researchers used a convolutional neural network (CNN) and trained it using Q-learning, thus creating a Deep Q Network. You can read more about Q-learning and DQNs [here](https://ai.intel.com/demystifying-deep-reinforcement-learning/).
 
 By implementing Q-learning in a convolutional neural network (CNN) they create a DQN capable of predicting what actions to take based on the current state of the game.
 
 ## Policy Gradients
 That said, Q-learning isn't the only way to achieve these results. Another popular type of reinforcement learning is what known as **policy gradients**. This method is more direct and conceptually simpler than Q-learning. Essentially, you input the current state, action taken, and reward given at every step and optimize the network accordingly.
 
-And make no mistake, while simpler, policy networks can be just as good as DQNs. In fact, when tuned correctly, they perform even better than DQNs. Don't believe me? Just ask the authors of the original papers themselves:
+And make no mistake, while simpler, policy networks can be just as good as DQNs. In fact, when tuned correctly, they perform even better than DQNs. Don't believe me? Just ask the authors of the original paper themselves:
 [Asynchronous Methods for Deep Reinforcement Learning](https://arxiv.org/pdf/1602.01783.pdf).
 
 ## My Attempt

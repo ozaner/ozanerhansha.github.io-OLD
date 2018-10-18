@@ -2,7 +2,7 @@
 layout: post
 title: Asymptotic Notation
 date: 2018-10-07
-tags: math computer-science relations
+tags: math computer-science relations algorithms
 ---
 The notation used to describe the **asymptotics**, or limiting behavior, of functions consists of a set of 6 relations. These different relations allow us to compare the growth of different functions as they approach some constant or, in most cases, infinity.
 
