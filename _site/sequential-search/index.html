@@ -325,7 +325,7 @@ But this assumes the target only appears once on the list. In general, it could 
 
 $$\frac{n+1}{k+1}$$
 
-Thus the average case complexity of sequential search is $O\left(\frac{n}{k}\right)$ or $O(n)$ if we don't vary $k$.
+Thus the average case complexity of sequential search is $O(\frac{n}{k})$ or $O(n)$ if we don't vary $k$.
 <p></p>
 
 <i>Note that this analysis assumes each element has an equal probability of being the target. This assumption is removed in one of the variations of sequential search shown below.</i>
@@ -335,35 +335,47 @@ Thus the average case complexity of sequential search is $O\left(\frac{n}{k}\rig
 <p>The algorithm is iterative, meaning the only space needed is the single variable that keeps track of the index of the current element being checked. As such sequential search always has a constant spatial complexity $O(1)$.</p>
 
 <h2 id="variations">Variations</h2>
-<h4 id="probabilistic-search">Probabilistic Search</h4>
-<p>Note that if we knew what frequency with which certain targets are searched for, we could rearrange the list such that things more often search are near the beginning. This would reduce the overall running average running time.</p>
-
-<p><em>A way to implement this might be to move the most recently searched target to the front of the list, assuming the order of the elements is not crucial.</em></p>
-
-<p>In this probabilistic case, the formula for computing the average running time is weighted:</p>
-
-<script type="math/tex; mode=display">p_0s_0+p_1s_1+\cdots+p_ns_n=\sum_{i\in n}p_is_i</script>
-
-<p><i>Where $\sum_{i\in n} p_i=1$. Also notice that in the equal probability case, each $p_i=\frac{1}{n}$.</i><br /></p>
-
-<p>What this probability distribution is will determine the average case complexity of this variation on sequential search. For example, if the distribution is geometric and the elements are arranged from most to least likely, the complexity will be $O(1)$. This is even better than binary search!</p>
-
-<!--
 <details>
-<summary><h4 class="inline">Ordered Search</h4></summary> -->
-<h4 id="ordered-search">Ordered Search</h4>
-<p>Another assumption we can remove is that the list is unsorted, that is the arrangement of the list has no specific meaning and can even be changed on the fly. If we instead assume that the list <i>is</i> sorted we can improve the number of comparisons linear search takes. This is because we can stop checking once we have passed a value greater than the target. Here is some pseudocode:</p>
+<summary><h4 class="inline">Probabilistic Search</h4></summary>
+<!-- #### Probabilistic Search -->
+Recall that our analysis of the complexity of sequential search assumed that each element in the list was equally likely (i.e a $\frac{1}{n}$ chance) to be searched for. If we remove this assumption, we are left with a more general case with the $i$th element having some probability $p_i$ of being searched for. Whenever we are analyzing the success case of the average complexity, these probabilities should all sum to 1:
 
-<p>Given a list $L$ of length $n$ with the $i$th element denoted $L_i$ the target value denoted $T$ and $L_0\le L_1\le \cdots\le L_n$:</p>
+$$\sum_{i\in n} p_i=1$$
+
+<i>Just like before, the failure case will always take $n$ comparisons.</i>
+<p></p>
+We can express the average running time of a probabilistic search algorithm like so:
+
+$$p_0s_0+p_1s_1+\cdots+p_ns_n=\sum_{i\in n}p_is_i$$
+
+Since sequential search takes $i$ comparisons at the $i$th element, we can rewrite this for probabilistic sequential search as:
+
+$$p_0+2p_1+\cdots+np_n=\sum_{i\in n}ip_i$$
+
+If we know what frequency with which certain targets are searched for, we can rearrange the list such that things with a higher probability of being searched for are near the beginning. Thereby reducing the amount of comparisons needed on average.
+<p></p>
+<i>A way to implement this in practice might be to move searched items forward in the list (assuming the order of the list is not critical). This would eventually settle the list into to its ideal form, assuming the elements were searched with certain probabilities.</i>
+<p></p>
+If we are given a particular probability distribution, we can make stronger statements about the complexity of the search. For example, if the distribution is geometric and the elements are arranged from most to least likely, the complexity will be $O(1)$. This is even better than binary search!
+<p></p>
+</details>
+
+<details>
+<summary><h4 class="inline">Ordered Search</h4></summary>
+<!-- #### Ordered Search -->
+Another assumption we can remove is that the list is unsorted, that is the arrangement of the list has no specific meaning and can even be changed on the fly. If we instead assume that the list <i>is</i> sorted we can improve the number of comparisons linear search takes. This is because we can stop checking once we have passed a value greater than the target (although it is still $O(n)$). Here is some pseudocode:
+<p></p>
+Given a list $L$ of length $n$ with the $i$th element denoted $L_i$ the target value denoted $T$ and $L_0\le L_1\le \cdots\le L_n$:
+<p></p>
 <ol>
   <li>Set variable $i:=0$</li>
   <li>If $L_i\ge T$, goto step 4</li>
   <li>Increment index $i:=i+1$ and goto step 2</li>
-  <li>Return $L_i=T$ <strong>END</strong></li>
+  <li>Return $L_i=T$ <b>END</b></li>
 </ol>
 
-<p>Of course, because we have stipulated that the list be sorted, there are now faster search algorithms that can be used on it, namely binary search. This obviates the use of sequential sort.
-<!-- </details> --></p>
+Of course, because we have stipulated that the list be sorted, there are now faster search algorithms that can be used on it, namely binary search. This obviates the use of sequential sort.
+</details>
 
 </div>
 

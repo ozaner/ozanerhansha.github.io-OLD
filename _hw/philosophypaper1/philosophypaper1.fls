@@ -1,8 +1,8 @@
-PWD C:/Users/Ozaner Hansha/Google Drive/Workspace/ozanerhansha.github.io/hw/philosophypaper1
+PWD C:/Users/Weegee 64/Google Drive/Workspace/ozanerhansha.github.io/_hw/philosophypaper1
 INPUT c:/texlive/2018/texmf.cnf
 INPUT c:/texlive/2018/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/Ozaner Hansha/Google Drive/Workspace/ozanerhansha.github.io/hw/philosophypaper1/philosophypaper1.tex
+INPUT philosophypaper1.tex
 OUTPUT philosophypaper1.log
 INPUT c:/texlive/2018/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2018/texmf-dist/tex/latex/base/article.cls
@@ -24,8 +24,8 @@ INPUT c:/texlive/2018/texmf-dist/tex/latex/csquotes/csquotes.def
 INPUT c:/texlive/2018/texmf-dist/tex/latex/csquotes/csquotes.def
 INPUT c:/texlive/2018/texmf-dist/tex/latex/csquotes/csquotes.cfg
 INPUT c:/texlive/2018/texmf-dist/tex/latex/csquotes/csquotes.cfg
-INPUT c:/Users/Ozaner Hansha/Google Drive/Workspace/ozanerhansha.github.io/hw/philosophypaper1/philosophypaper1.aux
-INPUT c:/Users/Ozaner Hansha/Google Drive/Workspace/ozanerhansha.github.io/hw/philosophypaper1/philosophypaper1.aux
+INPUT philosophypaper1.aux
+INPUT philosophypaper1.aux
 OUTPUT philosophypaper1.aux
 INPUT c:/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map
 INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
@@ -55,6 +55,7 @@ INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
 INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx9.tfm
 INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 OUTPUT philosophypaper1.pdf
 INPUT c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm
@@ -65,9 +66,8 @@ INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
 INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmti9.tfm
-INPUT c:/Users/Ozaner Hansha/Google Drive/Workspace/ozanerhansha.github.io/hw/philosophypaper1/philosophypaper1.aux
+INPUT philosophypaper1.aux
 INPUT c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb
 INPUT c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
