@@ -6,11 +6,11 @@ tags: computer-science algorithms
 ---
 **Sequential search**, or linear search, is a search algorithm implemented on lists. It is one of the most intuitive (some might even say naïve) approaches to search: simply look at all entries in order until the element is found.
 
-Given a **target** value, the algorithm iterates through every entry on the list and compares it to the target. If they match then it is a **successful search** and the algorithm returns the index of the target. If the end of the list is reached and no match was found, it is an **unsuccessful search** and the algorithm returns some non index like -1.
-
-If only the existence of the target in the list is of importance and the index is irrelevant, we can modify the algorithm such that it returns true for successful searches and false for unsuccessful ones. This doesn't affect it's complexity at all.
+Given a **target** value, the algorithm iterates through every entry on the list and compares it to the target. If they match then it is a **successful search** and the algorithm returns true. If the end of the list is reached and no match was found, it is an **unsuccessful search** and the algorithm returns false.
 
 <!--more-->
+
+A useful modification of this algorithm is to return the index of the target in the list when a match is found. In the case of an unsuccessful search, a special number denoting a failure is returned, usually -1. This slight modification has no affect on the complexity of the algorithm and so we might as well implement that version instead:
 
 ## Implementation
 ### Pseudocode
