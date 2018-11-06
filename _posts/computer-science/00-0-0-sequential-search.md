@@ -6,7 +6,9 @@ tags: computer-science algorithms
 ---
 **Sequential search**, or linear search, is a search algorithm implemented on lists. It is one of the most intuitive (some might even say naïve) approaches to search: simply look at all entries in order until the element is found.
 
-Given a **target** value, the algorithm iterates through every entry on the list and compares it to the target. If they match then it is a **successful search** and the algorithm returns true. If the end of the list is reached and no match was found, it is an **unsuccessful search** and the algorithm returns false.
+Given a **target** value, the algorithm iterates through every entry on the list and compares it to the target. If they match then it is a **successful search** and the algorithm returns the index of the target. If the end of the list is reached and no match was found, it is an **unsuccessful search** and the algorithm returns some non index like -1.
+
+If only the existence of the target in the list is of importance and the index is irrelevant, we can modify the algorithm such that it returns true for successful searches and false for unsuccessful ones. This doesn't affect it's complexity at all.
 
 <!--more-->
 
@@ -14,20 +16,21 @@ Given a **target** value, the algorithm iterates through every entry on the list
 ### Pseudocode
 Given a list $L$ of length $n$ with the $i$th element denoted $L_i$ and the target value denoted $T$:
 1. Set variable $i:=0$
-2. If $L_i=T$, return true **END**
+2. If $L_i=T$, return i **END**
 3. Increment index $i:=i+1$
-4. If $i<n$, goto step 2; Else return false **END**
+4. If $i<n$, goto step 2; Else return -1 **END**
 
 ### Java
 ````java
-boolean search(List<T> list, T target) {
-  for(int i = 0; i < list.size(); i++)
+int search(List<T> list, T target) {
+  int n = list.size();
+  for(int i = 0; i < n; i++)
     if(target.equals(list.get(i)))
-      return true;
-  return false;
+      return i;
+  return -1;
 }
 ````
-Notice we used `target`'s implementation of the `equals` method rather than `list.get(i)`'s. We do this because we can change how we define equality by extending `T` and overloading the method. This gives us greater flexibility in our criterion for search.
+Notice we used `target`'s implementation of the `equals` method rather than `list.get(i)`'s. Doing this allows us to change our definition of equality by extending `T` and overloading the method. This gives us greater flexibility in our criterion for search.
 
 <!-- ### Python
 ````python
@@ -39,9 +42,9 @@ def search(L, T):
 ```` -->
 
 ## Usage
-Sequential search is rarely used in practice due to better alternatives such as binary search and hash tables. That said, sequential search has the advantage of being both simple to implement and not requiring the list to be sorted.
+Sequential search is rarely used in practice due to better alternatives such as binary search and hash tables. That said, sequential search has the advantage of being both simple to implement and not requiring the list to be sorted. As a result, it is commonly implemented in unsorted lists as they cannot leverage any better alternatives. At least not with a classical computer…
 
-As a result, it is commonly implemented in unsorted lists as they cannot leverage any better alternatives. At least not with a classical computer...
+In fact, in cases where the list is small or searching is not too common, sequential search may even prove to be a faster solution as it does not require the list in question to constantly be sorted.
 
 ## Analysis
 ### Time Complexity
@@ -84,7 +87,7 @@ The algorithm is iterative, meaning the only space needed is the single variable
 
 ## Variations
 <details>
-<summary><h4 class="inline">Probabilistic Search</h4></summary>
+<summary><h3 class="inline">Probabilistic Search</h3></summary>
 <!-- #### Probabilistic Search -->
 Recall that our analysis of the complexity of sequential search assumed that each element in the list was equally likely (i.e a $\frac{1}{n}$ chance) to be searched for. If we remove this assumption, we are left with a more general case with the $i$th element having some probability $p_i$ of being searched for. Whenever we are analyzing the success case of the average complexity, these probabilities should all sum to 1:
 
@@ -109,7 +112,7 @@ If we are given a particular probability distribution, we can make stronger stat
 </details>
 
 <details>
-<summary><h4 class="inline">Ordered Search</h4></summary>
+<summary><h3 class="inline">Ordered Search</h3></summary>
 <!-- #### Ordered Search -->
 Another assumption we can remove is that the list is unsorted, that is the arrangement of the list has no specific meaning and can even be changed on the fly. If we instead assume that the list <i>is</i> sorted we can improve the number of comparisons linear search takes. This is because we can stop checking once we have passed a value greater than the target (although it is still $O(n)$). Here is some pseudocode:
 <p></p>

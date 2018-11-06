@@ -38,38 +38,22 @@ SR has been widely successful and has even been incorporated with quantum mechan
 This shortcoming led to the theory of general relativity. It generalizes special relativity and Newton's law of gravitation into a coherent theory where the curvature of spacetime itself becomes responsible for the force of gravity. Unfortunately, unlike special relativity, there has been no successful marriage of general relativity and quantum mechanics. A quantum theory of gravity remains a major goal of modern physics.
 
 ### Quantum Mechanics (QM)
-When considering matter and energy on very small scales, both classical and relativistic physics break down. This led to the creation of quantum mechanics, which mathematically grounds the mechanics and temporal evolution of subatomic particles. Quantum mechanics itself is not a theory of a particular type of particle like bosons or photons. Think of it as an analogue to classical mechanics which cover the motion and forces that act upon an object.
+When considering matter and energy on very small scales, both classical and relativistic physics break down. This led to the creation of quantum mechanics, which mathematically grounds the mechanics and temporal evolution of subatomic particles. Quantum mechanics itself is not a theory of a particular type of particle like bosons or photons. Think of it as an analogue to classical mechanics which covers the motion and forces that act upon an object.
 
 #### Quantum Field Theory
 By combining quantum mechanics and special relativity, we are left with a framework for creating quantum theories of subatomic particles. QFTs like quantum electrodynamics and chromodynamics both describe the interactions of a particular type of fundamental force (electromagnetism and the strong nuclear force respectively). These theories, via QM, model particles as perturbations (waves) on an underlying field that permeates all of space.
-
-<!-- <details>
-<summary><strong>Quantum Field Theory</strong></summary>
-<p>By combining quantum mechanics and special relativity, we are left with a framework for creating quantum theories of subatomic particles. QFTs like quantum electrodynamics and chromodynamics both describe the interactions of a particular type of fundamental force (electromagnetism and the strong nuclear force respectively). These theories, via QM, model particles as perturbations (waves) on an underlying field that permeates all of space.</p>
-</details> -->
-
-<!-- #### Quantum Electrodynamics (QED)
-Quantum electrodynamics is the QFT of the electromagnetic force. It is the quantum analogue to classical electrodynamics and completely describes the interactions between matter and the electromagnetic force (which is mediated by photons). -->
 
 <details>
 <summary><strong>Quantum Electrodynamics (QED)</strong></summary>
 <p>Quantum electrodynamics is the QFT of the electromagnetic force. It is the quantum analogue to classical electrodynamics and completely describes the interactions between matter and the electromagnetic force (which is mediated by photons).</p>
 </details>
 
-<!-- #### Electroweak Theory (EWT)
-Electroweak theory is a QFT that provides a unified description of both the electromagnetic and weak nuclear force (The weak force being responsible for the radioactive decay of atoms).
-
-EWT is thus a generalization of QED that adds on the weak force. Right after the big bang, the universe was hot enough that these two forces were one indistinguishable force. The theory describes the electroweak force before that time and the separate electromagnetic and weak forces after that time. -->
-
 <details>
 <summary><strong>Electroweak Theory (EWT)</strong></summary>
 <p>Electroweak theory is a QFT that provides a unified description of both the electromagnetic and weak nuclear force (The weak force being responsible for the radioactive decay of atoms).</p>
 
-<p>EWT is thus a generalization of QED that adds on the weak force. Right after the big bang, the universe was hot enough that these two forces were one indistinguishable force. The theory describes the electroweak force before that time and the separate electromagnetic and weak forces after that time.</p>
+<p>EWT is thus a generalization of QED that adds on the weak force. Right after the big bang, the universe was so hot that these two forces were actually a single, indistinguishable force. The theory describes the electroweak force during that time and the separate electromagnetic and weak forces after that time.</p>
 </details>
-
-<!-- #### Quantum Chromodynamics (QCD)
-Quantum chromodynamics is the QFT of the strong nuclear force. This theory describes the interactions between quarks and gluons. The strong nuclear force is the force that keeps the hadrons (which are made up of quarks and gluons) in atomic nuclei bonded together. -->
 
 <details>
 <summary><strong>Quantum Chromodynamics (QCD)</strong></summary>
@@ -77,14 +61,8 @@ Quantum chromodynamics is the QFT of the strong nuclear force. This theory descr
 </details>
 
 #### Standard Model of Physics
-The Standard Model is the combination of QED, EQT, and QCD into one unified theory of electromagnetism, the weak nuclear force, and the strong nuclear force. It is humanity's ultimate theory of the universe. That said, it still lacks a description of gravity. Such a theory of quantum gravity would allow for the creation of a "Theory of Everything" (TOE) that describes all four fundamental forces in tandem.
+The Standard Model is the combination of EWT and QCD into one unified theory of electromagnetism, the weak nuclear force, and the strong nuclear force. It is humanity's ultimate theory of the universe. That said, it still lacks a description of gravity. Such a theory of quantum gravity would allow for the creation of a "Theory of Everything" (TOE) that describes all four fundamental forces in tandem.
 ![standardmodel](https://upload.wikimedia.org/wikipedia/commons/0/00/Standard_Model_of_Elementary_Particles.svg?style=centerme)
 
 <!-- ![xkcd](https://imgs.xkcd.com/comics/turn-on.png?style=centerme)
 <center><i>Relevant xckd</i></center> -->
-
-<!-- <details open>
-<summary><strong>Standard Model of Physics</strong></summary>
-<p>The Standard Model is the combination of all the QFT into one unified theory of electromagnetism, the weak nuclear force, and the strong nuclear force. It is humanity's ultimate theory of the universe. That said, it still lacks a description of gravity. Such a theory of quantum gravity would allow for the creation of a "Theory of Everything" (TOE) that describes all four fundamental forces in tandem.</p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Standard_Model_of_Elementary_Particles.svg?style=centerme" alt="standard model pic"></img>
-</details> -->

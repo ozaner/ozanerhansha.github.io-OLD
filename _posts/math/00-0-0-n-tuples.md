@@ -43,14 +43,14 @@ $$(x_1,x_2,\cdots,x_{n-1},x_n)=((x_1,x_2,\cdots,x_{n-1}),x_n)$$
 
 *While the above definition is standard, it lacks a notion of a $0$ and $1$-tuple. See [this](https://en.wikipedia.org/wiki/Tuple#Tuples_as_nested_sets) for a different definition of $n$-tuples that uses the null-tuple as a base case rather than ordered pairs. I can't find a use for them that justifies their complication to the definition of $n$-tuple, so I excluded them.*
 
-*Alternatively, $n$-tuples can also be defined as functions with domains over some finite interval of the positive integers. In this sense, they would be equivalent to finite sequences.*
+*Alternatively, $n$-tuples can also be defined as functions with domains over some finite interval of the positive integers. In this sense, they would be equivalent to finite sequences. Although since tuples are usually used to define functions (and thus finite sequences) this would be circular.*
 
 Whatever definition is used, all that matters is that two $n$-tuples are equivalent *only* when the elements at each of their indices are equivalent. This is their defining property.
 
 #### Existence in ZFC
 The existence of an ordered pair of elements in ZFC can be proved using the axiom of pairing twice over. Once to prove that $ \\{ a \\} $ and $ \\{ a,b \\} $ exist and again to pair them with each other.
 
-And since, $n$-tuples are simply nested ordered pairs, they too must exist.
+And since $n$-tuples are simply nested ordered pairs, they too must exist.
 
 ## Equality
 Two ordered pairs are equivalent if and only if the elements in each of their respective indices are equal. That is to say, for two $n$-tuples $X$ and $Y$:
@@ -77,7 +77,7 @@ To extract the first element $\pi_1(P)$ of an ordered pair $P=(a,b)$ we can use 
 
 $$\pi_1(P)=\bigcup\bigcap P=a$$
 
-<details><summary>Proof</summary>
+<details><summary><strong>Proof</strong></summary>
   <b>Lemma 1</b>
   <p>To make proving the above statement easier, it would help to prove that the arbitrary union of a set of an element $\{x\}$ is that element $x$:
 
@@ -125,12 +125,12 @@ The second element $\pi_2(P)$ of an ordered pair $P=(a,b)$ can be found like so:
 
 $$\pi_2(P)=\bigcup\{x\in\bigcup P\mid\bigcup P\not=\bigcap P\implies x\not\in\bigcap P\}=b$$
 
-<details><summary>Proof</summary>
+<details><summary><strong>Proof</strong></summary>
 I'll do it later...
 </details>
 
 #### Extracting Elements of $n$-Tuples
-You may have noticed that the above definitions only apply to $2$-tuples. What about $n$-tuples? Well, as it turns out, we can extract the elements of an $n$-tuple of any size by recursively using the $\pi_1$ and $\pi_2$ functions we defined above.
+You may have noticed that the above definitions only apply to $2$-tuples. What about $n$-tuples? Well, quite intuitively, we can extract the elements of an $n$-tuple of any size by recursively using the $\pi_1$ and $\pi_2$ functions we defined above.
 
 The notation we'll use is as follows: $\pi^n_a(P)$ is the $a$th element of the $n$-tuple $P=\left(x_1,x_2,x_3,\cdots,x_n\right)$.
 
@@ -184,8 +184,8 @@ Why are is there a conditional definition of the $a$th element of an $n$-tuple? 
 </details> -->
 
 ## Some Uses
-#### [Cartesian Product](/cartesian-product)
-Ordered pairs are necessary in defining the Cartesian product, which in turn are used to define relations, functions, coordinates, etc.
+#### Cartesian product
+Ordered pairs are necessary in defining the [Cartesian Product](/cartesian-product), which in turn are used to define relations, functions, coordinates, etc.
 
 #### Mathematical Structures
 Tuples are often used to encapsulate sets along with some operator or relation into a complete mathematical structure. One example is a graph which is defined as an ordered pair $G=(V,E)$ where $V$ is a set of vertices and $E$ a set of edges connecting those vertices. Another example is a group which is defined as an ordered pair $G=(S,\cdot)$ where $\cdot$ is some binary operation on the elements of $S$. Tuples are also used to encapsulate rings, fields, vector spaces, topological spaces, ordered sets, and so on.

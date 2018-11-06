@@ -252,17 +252,18 @@
       <a href="/cartesian-product/">Cartesian Product</a>
     </h1>
     <span class="post-date">April 30, 2018</span>
-    <h2 id="definition">Definition</h2>
+    <!-- Heavily Reformatted 10/25/18 -->
+<h2 id="definition">Definition</h2>
 <p>The Cartesian product $\times$ is an operation on two sets, call them $A$ and $B$, that returns the set of all <a href="/n-tuples">ordered pairs</a> with their first element from $A$ and their second from $B$.</p>
 
 <script type="math/tex; mode=display">A\times B=\{(a,b)\mid a\in A \land b\in B\}</script>
 
 <h4 id="existence-in-zfc">Existence in ZFC</h4>
-<p>We can show that, utilizing the <a href="/n-tuples#definition">Kuratowski definition</a> of ordered pairs, the Cartesian product of two sets is merely a subset of the following:</p>
+<p>Utilizing the <a href="/n-tuples#definition">Kuratowski definition</a> of ordered pairs, we can show that the Cartesian product of two sets can be constructed from the axioms of ZFC. In particular, it is a subset of the following easily constructed set:</p>
 
-<script type="math/tex; mode=display">A\times B \subset \mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)</script>
+<script type="math/tex; mode=display">A\times B \subseteq \mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)</script>
 
-<details><summary>Proof</summary>
+<details><summary><strong>Proof</strong></summary>
 First, note that $A\cup B$ is guaranteed by the axiom of union and that its power set is guaranteed by the axiom of power set.
 
 Next notice that, among many other elements, the power set of $A\cup B$ contains:

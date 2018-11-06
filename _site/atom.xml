@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-10-19T15:48:29-04:00</updated>
+ <updated>2018-10-31T01:25:57-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -13,13 +13,47 @@
 
  
  <entry>
+   <title>Relations</title>
+   <link href="http://localhost:4000/relations/"/>
+   <updated>2018-10-25T00:00:00-04:00</updated>
+   <id>http://localhost:4000/relations</id>
+   <content type="html">&lt;p&gt;We can consider a &lt;strong&gt;relationship&lt;/strong&gt; between $n$ variables a predicate with $n$ free variables:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(x_1,x_2,x_3,\cdots,x_n)&lt;/script&gt;
+
+&lt;p&gt;That is, given a particular choice of $n$ variables, the relationship $P$ may either be true or false.&lt;/p&gt;
+
+&lt;p&gt;If we limit the domain of each variable $x_i$ in the predicate as belonging to some corresponding set $S_i$, we can define the solution set $G$ to the relationship $P$ as follows:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;G=\{(x_1,x_2\cdots,x_n)\in S_1,S_2\times\cdots\times S_n\mid P(x_1,x_2,\cdots,x_n)\}&lt;/script&gt;
+
+&lt;p&gt;We can now extend the idea of relationships to set theory by constructing a &lt;strong&gt;relation&lt;/strong&gt; between those $n$ sets which will be characterized by the solution set $G$, commonly called its &lt;strong&gt;graph&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
+&lt;p&gt;An &lt;strong&gt;$n$-ary relation&lt;/strong&gt; $R$ is an $(n+1)$-tuple of $n$ sets $S_1,S_2,\cdots,S_n$ and a subset of their cartesian product (called the graph) $G\subseteq S_1\times S_2\times\cdots\times S_n$:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;R\equiv(S_1,S_2,\cdots,S_n,G)&lt;/script&gt;
+
+&lt;h4 id=&quot;empty-relation&quot;&gt;Empty Relation&lt;/h4&gt;
+
+&lt;h4 id=&quot;infinitary-relations&quot;&gt;Infinitary Relations&lt;/h4&gt;
+
+&lt;h2 id=&quot;notation&quot;&gt;Notation&lt;/h2&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Sequential Search</title>
    <link href="http://localhost:4000/sequential-search/"/>
    <updated>2018-10-09T00:00:00-04:00</updated>
    <id>http://localhost:4000/sequential-search</id>
    <content type="html">&lt;p&gt;&lt;strong&gt;Sequential search&lt;/strong&gt;, or linear search, is a search algorithm implemented on lists. It is one of the most intuitive (some might even say naïve) approaches to search: simply look at all entries in order until the element is found.&lt;/p&gt;
 
-&lt;p&gt;Given a &lt;strong&gt;target&lt;/strong&gt; value, the algorithm iterates through every entry on the list and compares it to the target. If they match then it is a &lt;strong&gt;successful search&lt;/strong&gt; and the algorithm returns true. If the end of the list is reached and no match was found, it is an &lt;strong&gt;unsuccessful search&lt;/strong&gt; and the algorithm returns false.&lt;/p&gt;
+&lt;p&gt;Given a &lt;strong&gt;target&lt;/strong&gt; value, the algorithm iterates through every entry on the list and compares it to the target. If they match then it is a &lt;strong&gt;successful search&lt;/strong&gt; and the algorithm returns the index of the target. If the end of the list is reached and no match was found, it is an &lt;strong&gt;unsuccessful search&lt;/strong&gt; and the algorithm returns some non index like -1.&lt;/p&gt;
+
+&lt;p&gt;If only the existence of the target in the list is of importance and the index is irrelevant, we can modify the algorithm such that it returns true for successful searches and false for unsuccessful ones. This doesn’t affect it’s complexity at all.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
@@ -28,20 +62,21 @@
 &lt;p&gt;Given a list $L$ of length $n$ with the $i$th element denoted $L_i$ and the target value denoted $T$:&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;Set variable $i:=0$&lt;/li&gt;
-  &lt;li&gt;If $L_i=T$, return true &lt;strong&gt;END&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;If $L_i=T$, return i &lt;strong&gt;END&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;Increment index $i:=i+1$&lt;/li&gt;
-  &lt;li&gt;If $i&amp;lt;n$, goto step 2; Else return false &lt;strong&gt;END&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;If $i&amp;lt;n$, goto step 2; Else return -1 &lt;strong&gt;END&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h3 id=&quot;java&quot;&gt;Java&lt;/h3&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;equals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)))&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Notice we used &lt;code class=&quot;highlighter-rouge&quot;&gt;target&lt;/code&gt;’s implementation of the &lt;code class=&quot;highlighter-rouge&quot;&gt;equals&lt;/code&gt; method rather than &lt;code class=&quot;highlighter-rouge&quot;&gt;list.get(i)&lt;/code&gt;’s. We do this because we can change how we define equality by extending &lt;code class=&quot;highlighter-rouge&quot;&gt;T&lt;/code&gt; and overloading the method. This gives us greater flexibility in our criterion for search.&lt;/p&gt;
+&lt;p&gt;Notice we used &lt;code class=&quot;highlighter-rouge&quot;&gt;target&lt;/code&gt;’s implementation of the &lt;code class=&quot;highlighter-rouge&quot;&gt;equals&lt;/code&gt; method rather than &lt;code class=&quot;highlighter-rouge&quot;&gt;list.get(i)&lt;/code&gt;’s. Doing this allows us to change our definition of equality by extending &lt;code class=&quot;highlighter-rouge&quot;&gt;T&lt;/code&gt; and overloading the method. This gives us greater flexibility in our criterion for search.&lt;/p&gt;
 
 &lt;!-- ### Python
 ````python
@@ -53,9 +88,9 @@ def search(L, T):
 ```` --&gt;
 
 &lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-&lt;p&gt;Sequential search is rarely used in practice due to better alternatives such as binary search and hash tables. That said, sequential search has the advantage of being both simple to implement and not requiring the list to be sorted.&lt;/p&gt;
+&lt;p&gt;While slower than other search algorithms, like binary search, sequential search is easy to implement and does not require the list to be sorted.  As a result, it is commonly implemented in unsorted lists as they cannot leverage any better alternatives. At least not with a classical computer…&lt;/p&gt;
 
-&lt;p&gt;As a result, it is commonly implemented in unsorted lists as they cannot leverage any better alternatives. At least not with a classical computer…&lt;/p&gt;
+&lt;p&gt;In cases where the list is small or searching is not to common, sequential search may even prove to be a faster solution as it does not require the list in question to constantly be sorted.&lt;/p&gt;
 
 &lt;h2 id=&quot;analysis&quot;&gt;Analysis&lt;/h2&gt;
 &lt;h3 id=&quot;time-complexity&quot;&gt;Time Complexity&lt;/h3&gt;
@@ -98,7 +133,7 @@ Thus the average case complexity of sequential search is $O(\frac{n}{k})$ or $O(
 
 &lt;h2 id=&quot;variations&quot;&gt;Variations&lt;/h2&gt;
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Probabilistic Search&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;Probabilistic Search&lt;/h3&gt;&lt;/summary&gt;
 &lt;!-- #### Probabilistic Search --&gt;
 Recall that our analysis of the complexity of sequential search assumed that each element in the list was equally likely (i.e a $\frac{1}{n}$ chance) to be searched for. If we remove this assumption, we are left with a more general case with the $i$th element having some probability $p_i$ of being searched for. Whenever we are analyzing the success case of the average complexity, these probabilities should all sum to 1:
 
@@ -123,7 +158,7 @@ If we are given a particular probability distribution, we can make stronger stat
 &lt;/details&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Ordered Search&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;Ordered Search&lt;/h3&gt;&lt;/summary&gt;
 &lt;!-- #### Ordered Search --&gt;
 Another assumption we can remove is that the list is unsorted, that is the arrangement of the list has no specific meaning and can even be changed on the fly. If we instead assume that the list &lt;i&gt;is&lt;/i&gt; sorted we can improve the number of comparisons linear search takes. This is because we can stop checking once we have passed a value greater than the target (although it is still $O(n)$). Here is some pseudocode:
 &lt;p&gt;&lt;/p&gt;
@@ -352,9 +387,10 @@ $$\forall f:\lim_{x\to\infty}{\frac{f(x)}{f(x)}}=k\rightarrow f\asymp f$$
 
 &lt;details&gt;
 &lt;summary&gt;&lt;strong&gt;Symmetry&lt;/strong&gt;&lt;/summary&gt;
-Asymptotic equivalence is symmetric meaning that $f\asymp g\rightarrow g\asymp f$. This is because for any field, there is a multiplicative inverse for any element. So, by switching the functions in the limit (i.e reversing the relations) the constant on the other side should also be inversed:\exists k^{-1}
+Asymptotic equivalence is symmetric meaning that $f\asymp g\rightarrow g\asymp f$. This is because for any field, there is a multiplicative inverse for any element. So, by switching the functions in the limit (i.e reversing the relations) the constant on the other side should also be inversed:
 
 $$\forall f\ \forall k:\lim_{x\to\infty}{\frac{f(x)}{g(x)}}=k\rightarrow \lim_{x\to\infty}{\frac{g(x)}{f(x)}}=\frac{1}{k}\equiv g\asymp f$$
+&lt;i&gt;where $0\not=k&amp;lt;\infty$.&lt;/i&gt;
 &lt;/details&gt;
 
 &lt;details&gt;
@@ -573,14 +609,14 @@ $$\delta_{ij}=[i=j]$$
 
 &lt;details open=&quot;&quot;&gt;
 &lt;summary&gt;&lt;strong&gt;Trichotomy of $\mathbb{R}$&lt;/strong&gt;&lt;/summary&gt;
-Iverson brackets afford a much simpler way to convey the property of trichotomy, or any list of mutually exclusive conditions.
+Iverson brackets afford a much simpler way to convey the property of trichotomy, or any list of mutually exclusive conditions:
 
 $$[a&amp;lt;b]+[a=b]+[a&amp;gt;b]=1$$
 &lt;/details&gt;
 
 &lt;details&gt;
 &lt;summary&gt;&lt;strong&gt;Sign Function&lt;/strong&gt;&lt;/summary&gt;
-$$\operatorname{sgn}(x)=[x&amp;gt;0]-[x&amp;lt;0]$$
+$$\operatorname{sgn}(x)=[x&amp;gt;0]-[x&amp;lt;0]\ \ \ \ \ \ (\text{For $x\not=0$})$$
 &lt;/details&gt;
 
 &lt;details&gt;
@@ -708,214 +744,6 @@ k_2k_1\mathbb{u}&amp;amp;=\mathbb{w}\\
 \end{align}$$
 
 Because field multiplication is associative, the scalar $k_2k_1$ is the proportionality constant between $\mathbb{u}$ and $\mathbb{w}$ implying that $\mathbb{u}\propto\mathbb{w}$. And thus we have proved the transitivity of the proportional relation.
-&lt;/details&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Relations</title>
-   <link href="http://localhost:4000/relations/"/>
-   <updated>2018-08-12T00:00:00-04:00</updated>
-   <id>http://localhost:4000/relations</id>
-   <content type="html">&lt;!-- ## What is a Relation?
-Relations are used to correlate elements of different sets in some way. They are a more general form of a function, which can only relate elements to a single output.
-
-#### Example
-Say I had a set of tops $T$, pants $P$, and shoes $S$. I could define another set $R$ that is a collection of all the combinations of clothing that go together (a set of ordered triplets). This set would be called a relation, because it *relates* pieces of clothing that go well together by virtue of that combination being an element of $R$. --&gt;
-
-&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
-&lt;p&gt;A &lt;strong&gt;relation&lt;/strong&gt; $R$ on a set of sets $S_1,S_2,S_3,\cdots$ is a subset of their &lt;a href=&quot;/cartesian-product&quot;&gt;&lt;strong&gt;cartesian product&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;R\subseteq S_1\times S_2\times S_3\times \cdots&lt;/script&gt;
-
-&lt;p&gt;Relations are used to establish $n$-way relationships between elements of the same or different sets (ex. there is a two way relationship between $2$ and $5$ in that $2&amp;lt;5$).&lt;/p&gt;
-
-&lt;h4 id=&quot;arity&quot;&gt;Arity&lt;/h4&gt;
-&lt;p&gt;The arity of a relation is the number of sets it is a relation on (i.e the &lt;a href=&quot;/cartesian-product#arity&quot;&gt;arity of the cartesian product&lt;/a&gt; it is a subset of). Thus, a relation on $2$ sets is a &lt;em&gt;bi&lt;/em&gt;nary relation, $3$ sets makes a &lt;em&gt;tri&lt;/em&gt;nary relation and, in general, $n$ sets make an $n$-ary relation.&lt;/p&gt;
-
-&lt;p&gt;When $n$ is infinite the relation is &lt;strong&gt;infinitary&lt;/strong&gt; as opposed to &lt;strong&gt;finitary&lt;/strong&gt; for finite $n$.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h4 id=&quot;existence-in-zfc&quot;&gt;Existence in ZFC&lt;/h4&gt;
-&lt;p&gt;We &lt;a href=&quot;/cartesian-product#existence-in-zfc&quot;&gt;proved that cartesian products existed&lt;/a&gt; in another post and so, because relations are subsets of cartesian products, we only need to invoke the axiom of subset to prove their existence.&lt;/p&gt;
-
-&lt;h2 id=&quot;notation&quot;&gt;Notation&lt;/h2&gt;
-&lt;p&gt;Relations are common mathematical objects and thus have special notation regarding their use:&lt;/p&gt;
-
-&lt;h4 id=&quot;n-ary-relations&quot;&gt;$n$-ary Relations&lt;/h4&gt;
-&lt;p&gt;For $n$-ary relations it is common to write:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;Rabcd\cdots \equiv (a,b,c,d,\cdots)\in R&lt;/script&gt;
-
-&lt;p&gt;where $R$ is the relation in question and $(a,b,c,d,\cdots)$ are elements of the cartesian product $R$ is a subset of.&lt;/p&gt;
-
-&lt;h4 id=&quot;binary-relations&quot;&gt;Binary Relations&lt;/h4&gt;
-&lt;p&gt;While you can write $Rab$ for binary relations, it is more common to write:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;aRb\equiv (a,b)\in R&lt;/script&gt;
-
-&lt;p&gt;This notation is used for almost all common relations like $5&amp;gt;3$ or $ABC \cong ADC$.&lt;/p&gt;
-
-&lt;h2 id=&quot;properties-of-binary-relations&quot;&gt;Properties of Binary Relations&lt;/h2&gt;
-&lt;p&gt;The most common type of relations are binary. This is in part due to the fact that many higher arity relations can be broken up into a collection of binary relations.&lt;/p&gt;
-
-&lt;!-- This is in part because many relations can be [*curried*](https://en.wikipedia.org/wiki/Currying) into several different binary relations --&gt;
-
-&lt;p&gt;A binary relation on two different sets $A$ and $B$ is called &lt;em&gt;heterogenous&lt;/em&gt; when $A\not=B$ and &lt;em&gt;homogenous&lt;/em&gt; when $A=B$. Homogenous relations are also called &lt;strong&gt;relations on a set&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Below is a list of common classifications of binary relations based on what properties they satisfy. In all the definitions below, we will assume $R\subset A\times B$ and $a\in A, b\in B$:&lt;/p&gt;
-
-&lt;h3 id=&quot;uniqueness-properties&quot;&gt;Uniqueness Properties&lt;/h3&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Injective&lt;/strong&gt;&lt;/summary&gt;
-A relation is called injective if for all $b$ on the right side, the $a$ on the left side is unique in the expression $aRb$. More formally, $R$ is injective if:
-
-$$(\forall a_1,a_2\in A, \forall b\in B)\ a_1Rb\wedge a_2Rb\implies a_1=a_2$$
-
-Because of this property, injective relations are also called &lt;b&gt;left-unique&lt;/b&gt;.
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Functional&lt;/strong&gt;&lt;/summary&gt;
-A relation is functional if for all $a$ on the left side, the $b$ on the right is unique. Relations that fulfill this property are called &lt;b&gt;functions&lt;/b&gt; and are said to have a unique output $b$ for a given input $a$. Formally this means:
-
-$$(\forall a\in A, \forall b_1,b_2\in B)\ aRb_1\wedge aRb_2\implies b_1=b_2$$
-
-Similar to injective relations, a functional relation is also called &lt;b&gt;right-unique&lt;/b&gt;.
-&lt;/details&gt;
-
-&lt;!-- &lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;One-to-One&lt;/strong&gt;&lt;/summary&gt;
-One-to-One functions are relations that are both functional and injective. These functions map every element in their domain to a unique element in the range. These are also called &lt;b&gt;injective functions&lt;/b&gt; because being functional is implied in the classification 'function'.
-&lt;/details&gt; --&gt;
-
-&lt;h3 id=&quot;totality-properties&quot;&gt;Totality Properties&lt;/h3&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Left-Total&lt;/strong&gt;&lt;/summary&gt;
-A left-total relation means that for every element in $A$ there is at least one element in $B$ that it is related to:
-
-$$(\forall a\in A,\exists b\in B)\ aRb$$
-
-Note that all functions are automatically left-total, but not all left-total relations are functions.
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Surjective&lt;/strong&gt;&lt;/summary&gt;
-A relation is surjective every element in $B$ is related to at least one element in $A$:
-
-$$(\exists a\in A,\forall b\in B)\ aRb$$
-
-Similar to left-total relations, surjective relations are also called &lt;b&gt;right-total&lt;/b&gt;. When a function is both injective and surjective it forms a bijection.
-&lt;/details&gt;
-
-&lt;h3 id=&quot;other-properties&quot;&gt;Other Properties&lt;/h3&gt;
-&lt;p&gt;The following properties only apply to homogenous relations (i.e $R\subset X\times X$).&lt;/p&gt;
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Reflexive and Irreflexive&lt;/strong&gt;&lt;/summary&gt;
-A relation is reflexive if all elements relate to themselves:
-
-$$(\forall x\in X)\ xRx$$
-
-Some example of this are the less than or equal to $\le$ and the divides $\mid$ relations. Relations that don't relate &lt;i&gt;any&lt;/i&gt; element to themselves are called &lt;b&gt;irreflexive&lt;/b&gt;:
-
-$$(\forall x\in X)\ \neg(xRx)$$
-
-An example of this is the $lt$ relation.
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Symmetric&lt;/strong&gt;&lt;/summary&gt;
-A relation is symmetric if $xRy$ means $yRx$ as well:
-
-$$(\forall x,y\in X)\ xRy \implies yRx$$
-
-Some examples of this include the [proportionality](/proportionality) $\propto$ of functions and similarity $\sim$ of geometric objects.
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Anti-Symmetric&lt;/strong&gt;&lt;/summary&gt;
-A relation is anti-symmetric if when $xRy$ and $yRx$ are both true, then $x=y$:
-
-$$(\forall x,y\in X)\ xRy\wedge yRx \implies x=y$$
-
-Some examples of this include the $\le$ relation,  
-
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Transitive&lt;/strong&gt;&lt;/summary&gt;
-A relation is transitive if $xRy$ and $yRz$ means $xRz$:
-
-$$(\forall x,y,z\in X)\ xRy \wedge yRz\implies xRz$$
-
-Relations like $\le$ and similarity $\sim$ are transitive.
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Trichotomous&lt;/strong&gt;&lt;/summary&gt;
-A relation is trichotomus if for any two element in $X$ either $xRy$, $yRx$, or $x=y$ holds. But only 1 of those three options:
-
-$$(\forall x,y\in X)\ (xRy \oplus yRx \oplus x=y) \wedge \neg(xRy \wedge yRx \wedge x=y)$$
-
-The most common example of this is as a property of the real numbers under the $\lt$ or $\gt$ relations. In other words, any real number is either greater than, lesser than, &lt;i&gt;xor&lt;/i&gt; equal to any other number.
-&lt;/details&gt;
-
-&lt;h2 id=&quot;calculus-of-relations&quot;&gt;Calculus of Relations&lt;/h2&gt;
-&lt;p&gt;This is a list of different operations and transformations on one or more sets.&lt;/p&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Union and Intersection&lt;/strong&gt;&lt;/summary&gt;
-The union of two relations that are on the same sets is equivalent to 'adding/or-ing' them together. For example, the union of the $\lt$ and the $=$ relations is $\le$. Intersection has similar behavior except it displays an 'and' effect.
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Complement&lt;/strong&gt;&lt;/summary&gt;
-The complement of a relation $R\subset A\times B$ is simply all the of the ordered pairs in $A\times B$ that are &lt;i&gt;not&lt;/i&gt; in $R$. We can think of this as the ordinary complement of the relation denoted $R^\complement$ where $A\times B$ is the universal set:
-
-$$R^\complement=\{(a,b)\in A\times B\mid (a,b)\not\in R\}$$
-
-For example, the complement of less than or equal to is greater than: $\le^\complement=\gt$. The complement of &quot;is a parent of&quot; is &quot;is not a parent of&quot;.
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Logical Negation of a Relation&lt;/strong&gt;&lt;/summary&gt;
-Notice that negating a relation is equivalent to asserting its complement (assuming both elements being related are in the universal set). Put more formally, if $a\in A$ and $b\in B$:
-
-$$\neg(aRb)\equiv aR^\complement b$$
-
-It is this negating property that allows us to replace statements like $\neg(a\le b)$ with  $a\gt b$.
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Composition&lt;/strong&gt;&lt;/summary&gt;
-The composition of two relations $R\subset A\times B$ and $S\subset B\times C$ is a sort of 'product' denoted $S\circ R\subset A\times C$:
-
-$$S\circ R=\{(a,c)\in A\times C\mid\exists b:(a,b)\in R\wedge(b,c)\in S\}$$
-
-&lt;i&gt;Notice that relation composition is associative: $X\circ (Y\circ Z)=(X\circ Y)\circ Z$&lt;/i&gt;&lt;p&gt;&lt;/p&gt;
-
-An intuitive example of this can be found in kinship relations. The composition &quot;is parent of&quot; $\circ$ &quot;is father of&quot; returns the new relation &quot;is grandfather of&quot;.
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Converse&lt;/strong&gt;&lt;/summary&gt;
-The converse of a relation $R$ is denoted $R^\top$ and is simply the opposite of $R$. In other words, if $(x,y)$ is in a relation then $(y,x)$ is in its converse. Formally, for a relation $R\subset A\circ B$:
-
-$$R^\top=\{(b,a)\in B\times A\mid (a,b)\in R\}$$
-
-&lt;i&gt;Note that this means that the converse is idempotent: $(R^\top)^\top=R$. It also respects composition: $(R\circ L)^\top=L^\top\circ R^\top$.&lt;/i&gt;&lt;p&gt;&lt;/p&gt;
-
-For example, the converse of the greater than relation $\ge^\top$ is $\le$. Similarly, the converse of the relation &quot;is a child of&quot; is &quot;is a parent of&quot;.
-&lt;/details&gt;
-
-&lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Inverse&lt;/strong&gt;&lt;/summary&gt;
-Some relations are &lt;i&gt;invertible&lt;/i&gt; meaning that for a relation $R$ there exists another relation $X$ such that $X\circ R=I$, called &lt;b&gt;left-invertible&lt;/b&gt;, or if there exists a relation $Y$ such that $R\circ Y=I$, called &lt;b&gt;right-invertible&lt;/b&gt;. When both the left and right inverses concincide, the inverse $R^{-1}$ is simply equivalent to the converse $R^\top$. &lt;p&gt;&lt;/p&gt;
-
-For example, the composition &quot;is child of&quot; $\circ$ &quot;is parent of&quot; returns the identity relation (i.e &quot;is you&quot;). As such, they are inverses of each other.
 &lt;/details&gt;
 </content>
  </entry>
@@ -1216,7 +1044,7 @@ $$\operatorname{IF}|11\rangle=|1\rangle$$
 &lt;p&gt;We can represent the outputs of the half-adder symbolically as $S=X\oplus Y$ and $C=X\wedge Y$, where $S$ is the &lt;i&gt;sum&lt;/i&gt; bit and $C$ is the &lt;i&gt;carry&lt;/i&gt; bit. Below is a proof that derives the matrix representation of the half-adder:&lt;/p&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Proof&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;Proof&lt;/strong&gt;&lt;/summary&gt;
 To find the matrix that corresponds to sending two bits through a half adder, we must compute the tensor product of $X$ and $Y$ then compute and solve a series of tensor products:
 
 $$\begin{align}
@@ -1324,9 +1152,6 @@ $$\begin{align}
 \end{align}$$
 
 Because of this, we can simplify many of the expressions above (example $ab=0$ b.c either $a$ or $b$ is $0$) to form a more simpler vector:
-
-*We can also think of this finding non-contingent statements and simplifying them.*
-
 $$\begin{pmatrix}
   (ac)^2+a^2cd+abc^2+abcd+abd^2+b^2cd \\
   abcd+bd^2\\
@@ -1338,9 +1163,9 @@ $$\begin{pmatrix}
   bc+ad\\
   0
 \end{pmatrix}$$
+&lt;i&gt;We can also think of this finding non-contingent statements and simplifying them.&lt;/i&gt;&lt;p&gt;&lt;/p&gt;
 
 Now we are simply left with the following equation:
-
 $$\operatorname{Half-Adder}(X\otimes Y)=(S\otimes C)$$
 
 We can now solve for the $\operatorname{Half-Adder}$ matrix by explicitly writing out the above equation:
@@ -2179,17 +2004,18 @@ F_n&amp;=F_{n-2}+F_{n-1}\\
    <link href="http://localhost:4000/cartesian-product/"/>
    <updated>2018-04-30T00:00:00-04:00</updated>
    <id>http://localhost:4000/cartesian-product</id>
-   <content type="html">&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
+   <content type="html">&lt;!-- Heavily Reformatted 10/25/18 --&gt;
+&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
 &lt;p&gt;The Cartesian product $\times$ is an operation on two sets, call them $A$ and $B$, that returns the set of all &lt;a href=&quot;/n-tuples&quot;&gt;ordered pairs&lt;/a&gt; with their first element from $A$ and their second from $B$.&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;A\times B=\{(a,b)\mid a\in A \land b\in B\}&lt;/script&gt;
 
 &lt;h4 id=&quot;existence-in-zfc&quot;&gt;Existence in ZFC&lt;/h4&gt;
-&lt;p&gt;We can show that, utilizing the &lt;a href=&quot;/n-tuples#definition&quot;&gt;Kuratowski definition&lt;/a&gt; of ordered pairs, the Cartesian product of two sets is merely a subset of the following:&lt;/p&gt;
+&lt;p&gt;Utilizing the &lt;a href=&quot;/n-tuples#definition&quot;&gt;Kuratowski definition&lt;/a&gt; of ordered pairs, we can show that the Cartesian product of two sets can be constructed from the axioms of ZFC. In particular, it is a subset of the following easily constructed set:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;A\times B \subset \mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;A\times B \subseteq \mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)&lt;/script&gt;
 
-&lt;details&gt;&lt;summary&gt;Proof&lt;/summary&gt;
+&lt;details&gt;&lt;summary&gt;&lt;strong&gt;Proof&lt;/strong&gt;&lt;/summary&gt;
 First, note that $A\cup B$ is guaranteed by the axiom of union and that its power set is guaranteed by the axiom of power set.
 
 Next notice that, among many other elements, the power set of $A\cup B$ contains:
@@ -2209,61 +2035,78 @@ for all $a$ and $b$ in $A$ and $B$. Now invoke the axiom of subset to choose onl
 &lt;!--more--&gt;
 
 &lt;h2 id=&quot;n-ary-cartesian-product&quot;&gt;$n$-ary Cartesian Product&lt;/h2&gt;
-&lt;p&gt;While the Cartesian product of two sets returns a set of ordered pairs, the Cartesian product of $n$ sets returns an $n$-tuple:&lt;/p&gt;
+&lt;p&gt;It is easy to see how one might generalize this notion to $n$ sets. By simply chaining the Cartesian product we are left with a set of $n$-tuples:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;S_1\times S_2\times \cdots \times S_n=\{\left(s_1,s_2,\cdots,s_n\right)\mid\forall k,\ s_k\in S_k)\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align*}(S_0\times S_1)\times S_2&amp;=\{(\left(s_0,s_1),s_2\right)\mid\forall k\in 3,\ s_k\in S_k)\}\\
+&amp;=\{\left(s_0,s_1,s_2\right)\mid\forall k\in 3,\ s_k\in S_k)\}
+\end{align*} %]]&gt;&lt;/script&gt;
 
-&lt;details&gt;&lt;summary&gt;Details &amp;amp; Explanation&lt;/summary&gt;
+&lt;p&gt;Repeating this $n$ times, we are left with the following for any $n$ sets:&lt;/p&gt;
 
-Here's an example of a $3$-ary Cartesian product returning a set of $3$-tuples that uses the definition of an &lt;a href=&quot;/n-tuples#n-tuples&quot;&gt;$n$-tuple&lt;/a&gt;:
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;S_0\times S_1\times \cdots \times S_{n-1}=\{\left(s_0,s_1,\cdots,s_{n-1}\right)\mid\forall k\in n,\ s_k\in S_k)\}&lt;/script&gt;
 
-$$\begin{align}
-A\times B\times C&amp;amp;=(A \times B)\times C\\
-&amp;amp;=\{(a,b)\}\times C\\
-&amp;amp;=\{((a,b),c)\}\\
-&amp;amp;=\{(a,b,c)\}
-\end{align}$$
-*Where $a\in A$, $b\in B$, and $c\in C$*.
-&lt;/details&gt;
+&lt;p&gt;&lt;em&gt;Notice that the parenthesis are omitted. This is because the cartesian product is left-associative, a property that is expounded upon further below.&lt;/em&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;cartesian-powers&quot;&gt;Cartesian Powers&lt;/h4&gt;
-&lt;p&gt;When referring to the repeated Cartesian product of the same set $S$, we can use an abbreviated notation:&lt;/p&gt;
+&lt;p&gt;When dealing with the repeated Cartesian product of a single set $S$, we call it the $n$th Cartesian power and use the following notation:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\underbrace{S\times S \times \cdots \times S}_{n\text{ sets}}=S^n&lt;/script&gt;
 
-&lt;h4 id=&quot;arity&quot;&gt;Arity&lt;/h4&gt;
-&lt;p&gt;The arity of a Cartesian product is the number $n$ of sets that are being multiplied.&lt;/p&gt;
-
-&lt;p&gt;When $n$ is infinite the product is &lt;strong&gt;infinitary&lt;/strong&gt; as opposed to &lt;strong&gt;finitary&lt;/strong&gt; for finite $n$.&lt;/p&gt;
+&lt;h4 id=&quot;infinitary-products&quot;&gt;Infinitary Products&lt;/h4&gt;
+&lt;p&gt;The arity of a Cartesian product is the number $n$ of sets that are being multiplied. When $n$ is infinite the product is &lt;strong&gt;infinitary&lt;/strong&gt; as opposed to &lt;strong&gt;finitary&lt;/strong&gt; for finite $n$.&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\underbrace{\text{binary},\text{trinary},\cdots,n\text{-ary}}_{\text{finitary}}\cdots;\underbrace{\aleph_0\text{-ary},\aleph_1\text{-ary},\cdots}_{\text{infinitary}}&lt;/script&gt;
 
 &lt;p&gt;All the definitions used above apply only to finite $n$. There &lt;em&gt;are&lt;/em&gt; valid notions of infinitary Cartesian products, but they are beyond the scope of this post.&lt;/p&gt;
 
-&lt;h2 id=&quot;rules-of-replacement&quot;&gt;Rules of replacement&lt;/h2&gt;
-&lt;h4 id=&quot;non-commutative&quot;&gt;Non-Commutative&lt;/h4&gt;
-&lt;p&gt;The Cartesian product is a non-commutative operator:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;A\times B \not= B \times A&lt;/script&gt;
-
-&lt;p&gt;This should be obvious as the ordered tuples $(a,b)\not=(b,a)$ where $a\in A$ and $b\in B$ via the definition of &lt;a href=&quot;/n-tuples#equality&quot;&gt;tuple equality&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h4 id=&quot;non-associative&quot;&gt;Non-Associative&lt;/h4&gt;
-&lt;p&gt;The Cartesian product is a non-associative operator:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\left(A\times B\right) \times C \not= A\times \left(B \times C\right)&lt;/script&gt;
-
-&lt;p&gt;Similar to its non-commutativity, we can illustrate this by noting that $((a,b),c)\not= (a,(b,c))$ where $a\in A$, $b\in B$, and $c\in C$.&lt;/p&gt;
-
-&lt;h4 id=&quot;left-associative&quot;&gt;Left-Associative&lt;/h4&gt;
-&lt;p&gt;When faced with an $n$-ary Cartesian product, it is conventionally evaluated from left to right. That is to say the Cartesian product is left-associative:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;A\times B \times C=(A \times B)\times C&lt;/script&gt;
-
+&lt;h2 id=&quot;properties&quot;&gt;Properties&lt;/h2&gt;
+&lt;h3 id=&quot;ordering-properties&quot;&gt;Ordering Properties&lt;/h3&gt;
+&lt;!-- #### Non-Commutative --&gt;
 &lt;details&gt;
-&lt;summary&gt;&lt;h2 class=&quot;inline&quot;&gt;Distributive Properties&lt;/h2&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Non-Commutative&lt;/h4&gt;&lt;/summary&gt;
+The Cartesian product is a non-commutative operator:
 
-&lt;h4&gt;Union&lt;/h4&gt;
+$$A\times B \not= B \times A$$
+
+This should be obvious as the ordered tuples $(a,b)\not=(b,a)$ where $a\in A$ and $b\in B$ via the definition of &lt;a href=&quot;/n-tuples#equality&quot;&gt;tuple equality&lt;/a&gt;.
+&lt;p&gt;&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;!-- #### Non-Associative --&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Non-Associative&lt;/h4&gt;&lt;/summary&gt;
+The Cartesian product is a non-associative operator:
+
+$$\left(A\times B\right) \times C \not= A\times \left(B \times C\right)$$
+
+Similar to its non-commutativity, we can illustrate this by noting that $((a,b),c)\not= (a,(b,c))$ where $a\in A$, $b\in B$, and $c\in C$.
+&lt;p&gt;&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;!-- #### Left-Associative --&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Left-Associative&lt;/h4&gt;&lt;/summary&gt;
+When faced with an $n$-ary Cartesian product, it is conventionally evaluated from left to right. That is to say the Cartesian product is left-associative:
+
+$$A\times B \times C=(A \times B)\times C$$
+
+This convention agrees with the definition of $n$-ary Cartesian products and $n$-tuples.
+&lt;/details&gt;
+
+&lt;h3 id=&quot;distributive-properties&quot;&gt;Distributive Properties&lt;/h3&gt;
+&lt;!-- &lt;details&gt;
+&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;Distributive Properties&lt;/h3&gt;&lt;/summary&gt; --&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\begin{gather*}
+A\times\left(B\cup C\right)=\left(A\times B\right)\cup \left(A\times C\right)\tag{Union}\\
+A\times\left(B\cap C\right)=\left(A\times B\right)\cap \left(A\times C\right)\tag{Intersection 1}\\
+\left(A\times B\right)\cap \left(C\times D\right)=\left(A\cap B\right)\times \left(C\cap D\right)\tag{Intersection 2}\\
+A\times\left(B\setminus C\right)=\left(A\times B\right)\setminus \left(A\times C\right)\tag{Set Difference}\\
+B\subseteq C\iff\left(A\times B\right)\subseteq \left(A\times C\right)\tag{Subset 1}\\
+\left(A\times B\right)\subseteq \left(C\times D\right)\iff\left(A\subseteq B\right)\land \left(C\subseteq D\right)\tag{Subset 2}\\
+\end{gather*}&lt;/script&gt;&lt;/p&gt;
+
+&lt;!-- &lt;h4&gt;Union&lt;/h4&gt;
 $$A\times\left(B\cup C\right)=\left(A\times B\right)\cup \left(A\times C\right)$$
 
 &lt;h4&gt;Intersection&lt;/h4&gt;
@@ -2279,31 +2122,31 @@ $$B\subseteq C\iff\left(A\times B\right)\subseteq \left(A\times C\right)$$
 
 $$\left(A\times B\right)\subseteq \left(C\times D\right)\iff\left(A\subseteq B\right)\land \left(C\subseteq D\right)$$
 
-&lt;h4&gt;Complements&lt;/h4&gt;
-If $A$ and $B$ are memebers of some universal set $U$, then their absolute complement is denoted $A^C$ and $B^C$ respectively.
+&lt;h4&gt;Complements&lt;/h4&gt; --&gt;
+&lt;p&gt;If $A$ and $B$ are members of some universal set $U$, then their absolute complement is denoted $A^C$ and $B^C$ respectively.&lt;/p&gt;
 
-$$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right)\cup\left(A\times B^C\right)$$
-&lt;/details&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right)\cup\left(A\times B^C\right)\tag{Complement}&lt;/script&gt;
+&lt;!-- &lt;/details&gt; --&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;examples&quot;&gt;Examples&lt;/h2&gt;
-&lt;h4 id=&quot;functions-and-relations&quot;&gt;Functions and Relations&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&quot;\relations&quot;&gt;Relations&lt;/a&gt;, and thus functions and operations, from a set $A$ to a set $B$ are defined as subsets of the Cartesian product $A\times B$. For example, the less than or equal to relation $\le$ on the integers can be defined as so:&lt;/p&gt;
+&lt;h4 id=&quot;relations&quot;&gt;Relations&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&quot;\relations&quot;&gt;Relations&lt;/a&gt; from a set $A$ to a set $B$ are defined, in part, as subsets of the Cartesian product $A\times B$. For example, the less than or equal to relation $\le$ on the integers can be defined like so, with the third element being a subset of the cartesian product of te first two:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\le\equiv\{\cdots,\left(1,2\right),\left(-14,0\right),\left(5,5\right),\left(12,13\right),\cdots\}&lt;/script&gt;
 
-&lt;p&gt;&lt;em&gt;We can formalize this definition to set theory by comparing the cardinality of the sets represented by the naturals and further the integers.&lt;/em&gt;&lt;/p&gt;
-
 &lt;p&gt;And so, because $10$ is less than $12$, the ordered pair $(10,12)\in\le$. We can write this more conventionally as $10\le12$.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This glosses over some nuance regarding the notation of relations and the specification of their domain and codomain.&lt;/em&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;cardinal-multiplication&quot;&gt;Cardinal Multiplication&lt;/h4&gt;
 &lt;p&gt;Cartesian products are used to define the product of two cardinal numbers:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\left|X\right|\cdot\left|Y\right|=\left|X\times Y\right|&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\left|X\right|\left|Y\right|=\left|X\times Y\right|&lt;/script&gt;
 
-&lt;h4 id=&quot;coordinates&quot;&gt;Coordinates&lt;/h4&gt;
-&lt;p&gt;Every point in $2$-space represents an element of the Cartesian product of the Reals with themselves (i.e $\mathbb{R}^2$). This can be generalized for $n$-space with every point being an element of $\mathbb{R}^n$:&lt;/p&gt;
+&lt;h4 id=&quot;cartesian-coordinates&quot;&gt;Cartesian Coordinates&lt;/h4&gt;
+&lt;p&gt;Every point in $2$-space represents an element of the Cartesian product of the Reals with themselves (i.e $\mathbb{R}^2$). This can be generalized to $n$-space with every point being an element of $\mathbb{R}^n$:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbb{R}^n=\{(x_1,x_2,\cdots,x_n)\mid \forall k\in\mathbb{N}_n^* :   x_k\in\mathbb{R}\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbb{R}^n=\{(x_0,x_1,\cdots,x_{n-1})\mid \forall k\in n:   x_k\in\mathbb{R}\}&lt;/script&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cartesian-coordinate-system.svg/354px-Cartesian-coordinate-system.svg.png?style=centerme&quot; alt=&quot;plane&quot; /&gt;&lt;/p&gt;
 
@@ -2428,14 +2271,14 @@ $$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right
 
 &lt;p&gt;&lt;em&gt;While the above definition is standard, it lacks a notion of a $0$ and $1$-tuple. See &lt;a href=&quot;https://en.wikipedia.org/wiki/Tuple#Tuples_as_nested_sets&quot;&gt;this&lt;/a&gt; for a different definition of $n$-tuples that uses the null-tuple as a base case rather than ordered pairs. I can’t find a use for them that justifies their complication to the definition of $n$-tuple, so I excluded them.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Alternatively, $n$-tuples can also be defined as functions with domains over some finite interval of the positive integers. In this sense, they would be equivalent to finite sequences.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Alternatively, $n$-tuples can also be defined as functions with domains over some finite interval of the positive integers. In this sense, they would be equivalent to finite sequences. Although since tuples are usually used to define functions (and thus finite sequences) this would be circular.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Whatever definition is used, all that matters is that two $n$-tuples are equivalent &lt;em&gt;only&lt;/em&gt; when the elements at each of their indices are equivalent. This is their defining property.&lt;/p&gt;
 
 &lt;h4 id=&quot;existence-in-zfc&quot;&gt;Existence in ZFC&lt;/h4&gt;
 &lt;p&gt;The existence of an ordered pair of elements in ZFC can be proved using the axiom of pairing twice over. Once to prove that $ \{ a \} $ and $ \{ a,b \} $ exist and again to pair them with each other.&lt;/p&gt;
 
-&lt;p&gt;And since, $n$-tuples are simply nested ordered pairs, they too must exist.&lt;/p&gt;
+&lt;p&gt;And since $n$-tuples are simply nested ordered pairs, they too must exist.&lt;/p&gt;
 
 &lt;h2 id=&quot;equality&quot;&gt;Equality&lt;/h2&gt;
 &lt;p&gt;Two ordered pairs are equivalent if and only if the elements in each of their respective indices are equal. That is to say, for two $n$-tuples $X$ and $Y$:&lt;/p&gt;
@@ -2464,7 +2307,7 @@ X=Y&amp;\equiv\forall k\in\mathbb{N}_n^ * \ (x_k=y_k)\\
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\pi_1(P)=\bigcup\bigcap P=a&lt;/script&gt;
 
-&lt;details&gt;&lt;summary&gt;Proof&lt;/summary&gt;
+&lt;details&gt;&lt;summary&gt;&lt;strong&gt;Proof&lt;/strong&gt;&lt;/summary&gt;
   &lt;b&gt;Lemma 1&lt;/b&gt;
   &lt;p&gt;To make proving the above statement easier, it would help to prove that the arbitrary union of a set of an element $\{x\}$ is that element $x$:
 
@@ -2512,12 +2355,12 @@ X=Y&amp;\equiv\forall k\in\mathbb{N}_n^ * \ (x_k=y_k)\\
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\pi_2(P)=\bigcup\{x\in\bigcup P\mid\bigcup P\not=\bigcap P\implies x\not\in\bigcap P\}=b&lt;/script&gt;
 
-&lt;details&gt;&lt;summary&gt;Proof&lt;/summary&gt;
+&lt;details&gt;&lt;summary&gt;&lt;strong&gt;Proof&lt;/strong&gt;&lt;/summary&gt;
 I'll do it later...
 &lt;/details&gt;
 
 &lt;h4 id=&quot;extracting-elements-of-n-tuples&quot;&gt;Extracting Elements of $n$-Tuples&lt;/h4&gt;
-&lt;p&gt;You may have noticed that the above definitions only apply to $2$-tuples. What about $n$-tuples? Well, as it turns out, we can extract the elements of an $n$-tuple of any size by recursively using the $\pi_1$ and $\pi_2$ functions we defined above.&lt;/p&gt;
+&lt;p&gt;You may have noticed that the above definitions only apply to $2$-tuples. What about $n$-tuples? Well, quite intuitively, we can extract the elements of an $n$-tuple of any size by recursively using the $\pi_1$ and $\pi_2$ functions we defined above.&lt;/p&gt;
 
 &lt;p&gt;The notation we’ll use is as follows: $\pi^n_a(P)$ is the $a$th element of the $n$-tuple $P=\left(x_1,x_2,x_3,\cdots,x_n\right)$.&lt;/p&gt;
 
@@ -2571,8 +2414,8 @@ Why are is there a conditional definition of the $a$th element of an $n$-tuple? 
 &lt;/details&gt; --&gt;
 
 &lt;h2 id=&quot;some-uses&quot;&gt;Some Uses&lt;/h2&gt;
-&lt;h4 id=&quot;cartesian-product&quot;&gt;&lt;a href=&quot;/cartesian-product&quot;&gt;Cartesian Product&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;Ordered pairs are necessary in defining the Cartesian product, which in turn are used to define relations, functions, coordinates, etc.&lt;/p&gt;
+&lt;h4 id=&quot;cartesian-product&quot;&gt;Cartesian product&lt;/h4&gt;
+&lt;p&gt;Ordered pairs are necessary in defining the &lt;a href=&quot;/cartesian-product&quot;&gt;Cartesian Product&lt;/a&gt;, which in turn are used to define relations, functions, coordinates, etc.&lt;/p&gt;
 
 &lt;h4 id=&quot;mathematical-structures&quot;&gt;Mathematical Structures&lt;/h4&gt;
 &lt;p&gt;Tuples are often used to encapsulate sets along with some operator or relation into a complete mathematical structure. One example is a graph which is defined as an ordered pair $G=(V,E)$ where $V$ is a set of vertices and $E$ a set of edges connecting those vertices. Another example is a group which is defined as an ordered pair $G=(S,\cdot)$ where $\cdot$ is some binary operation on the elements of $S$. Tuples are also used to encapsulate rings, fields, vector spaces, topological spaces, ordered sets, and so on.&lt;/p&gt;
@@ -3825,38 +3668,22 @@ It is important to note that the kinematic equations apply to all systems of 3 v
 &lt;p&gt;This shortcoming led to the theory of general relativity. It generalizes special relativity and Newton’s law of gravitation into a coherent theory where the curvature of spacetime itself becomes responsible for the force of gravity. Unfortunately, unlike special relativity, there has been no successful marriage of general relativity and quantum mechanics. A quantum theory of gravity remains a major goal of modern physics.&lt;/p&gt;
 
 &lt;h3 id=&quot;quantum-mechanics-qm&quot;&gt;Quantum Mechanics (QM)&lt;/h3&gt;
-&lt;p&gt;When considering matter and energy on very small scales, both classical and relativistic physics break down. This led to the creation of quantum mechanics, which mathematically grounds the mechanics and temporal evolution of subatomic particles. Quantum mechanics itself is not a theory of a particular type of particle like bosons or photons. Think of it as an analogue to classical mechanics which cover the motion and forces that act upon an object.&lt;/p&gt;
+&lt;p&gt;When considering matter and energy on very small scales, both classical and relativistic physics break down. This led to the creation of quantum mechanics, which mathematically grounds the mechanics and temporal evolution of subatomic particles. Quantum mechanics itself is not a theory of a particular type of particle like bosons or photons. Think of it as an analogue to classical mechanics which covers the motion and forces that act upon an object.&lt;/p&gt;
 
 &lt;h4 id=&quot;quantum-field-theory&quot;&gt;Quantum Field Theory&lt;/h4&gt;
 &lt;p&gt;By combining quantum mechanics and special relativity, we are left with a framework for creating quantum theories of subatomic particles. QFTs like quantum electrodynamics and chromodynamics both describe the interactions of a particular type of fundamental force (electromagnetism and the strong nuclear force respectively). These theories, via QM, model particles as perturbations (waves) on an underlying field that permeates all of space.&lt;/p&gt;
-
-&lt;!-- &lt;details&gt;
-&lt;summary&gt;&lt;strong&gt;Quantum Field Theory&lt;/strong&gt;&lt;/summary&gt;
-&lt;p&gt;By combining quantum mechanics and special relativity, we are left with a framework for creating quantum theories of subatomic particles. QFTs like quantum electrodynamics and chromodynamics both describe the interactions of a particular type of fundamental force (electromagnetism and the strong nuclear force respectively). These theories, via QM, model particles as perturbations (waves) on an underlying field that permeates all of space.&lt;/p&gt;
-&lt;/details&gt; --&gt;
-
-&lt;!-- #### Quantum Electrodynamics (QED)
-Quantum electrodynamics is the QFT of the electromagnetic force. It is the quantum analogue to classical electrodynamics and completely describes the interactions between matter and the electromagnetic force (which is mediated by photons). --&gt;
 
 &lt;details&gt;
 &lt;summary&gt;&lt;strong&gt;Quantum Electrodynamics (QED)&lt;/strong&gt;&lt;/summary&gt;
 &lt;p&gt;Quantum electrodynamics is the QFT of the electromagnetic force. It is the quantum analogue to classical electrodynamics and completely describes the interactions between matter and the electromagnetic force (which is mediated by photons).&lt;/p&gt;
 &lt;/details&gt;
 
-&lt;!-- #### Electroweak Theory (EWT)
-Electroweak theory is a QFT that provides a unified description of both the electromagnetic and weak nuclear force (The weak force being responsible for the radioactive decay of atoms).
-
-EWT is thus a generalization of QED that adds on the weak force. Right after the big bang, the universe was hot enough that these two forces were one indistinguishable force. The theory describes the electroweak force before that time and the separate electromagnetic and weak forces after that time. --&gt;
-
 &lt;details&gt;
 &lt;summary&gt;&lt;strong&gt;Electroweak Theory (EWT)&lt;/strong&gt;&lt;/summary&gt;
 &lt;p&gt;Electroweak theory is a QFT that provides a unified description of both the electromagnetic and weak nuclear force (The weak force being responsible for the radioactive decay of atoms).&lt;/p&gt;
 
-&lt;p&gt;EWT is thus a generalization of QED that adds on the weak force. Right after the big bang, the universe was hot enough that these two forces were one indistinguishable force. The theory describes the electroweak force before that time and the separate electromagnetic and weak forces after that time.&lt;/p&gt;
+&lt;p&gt;EWT is thus a generalization of QED that adds on the weak force. Right after the big bang, the universe was so hot that these two forces were actually a single, indistinguishable force. The theory describes the electroweak force during that time and the separate electromagnetic and weak forces after that time.&lt;/p&gt;
 &lt;/details&gt;
-
-&lt;!-- #### Quantum Chromodynamics (QCD)
-Quantum chromodynamics is the QFT of the strong nuclear force. This theory describes the interactions between quarks and gluons. The strong nuclear force is the force that keeps the hadrons (which are made up of quarks and gluons) in atomic nuclei bonded together. --&gt;
 
 &lt;details&gt;
 &lt;summary&gt;&lt;strong&gt;Quantum Chromodynamics (QCD)&lt;/strong&gt;&lt;/summary&gt;
@@ -3864,17 +3691,11 @@ Quantum chromodynamics is the QFT of the strong nuclear force. This theory descr
 &lt;/details&gt;
 
 &lt;h4 id=&quot;standard-model-of-physics&quot;&gt;Standard Model of Physics&lt;/h4&gt;
-&lt;p&gt;The Standard Model is the combination of QED, EQT, and QCD into one unified theory of electromagnetism, the weak nuclear force, and the strong nuclear force. It is humanity’s ultimate theory of the universe. That said, it still lacks a description of gravity. Such a theory of quantum gravity would allow for the creation of a “Theory of Everything” (TOE) that describes all four fundamental forces in tandem.
+&lt;p&gt;The Standard Model is the combination of EWT and QCD into one unified theory of electromagnetism, the weak nuclear force, and the strong nuclear force. It is humanity’s ultimate theory of the universe. That said, it still lacks a description of gravity. Such a theory of quantum gravity would allow for the creation of a “Theory of Everything” (TOE) that describes all four fundamental forces in tandem.
 &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/0/00/Standard_Model_of_Elementary_Particles.svg?style=centerme&quot; alt=&quot;standardmodel&quot; /&gt;&lt;/p&gt;
 
 &lt;!-- ![xkcd](https://imgs.xkcd.com/comics/turn-on.png?style=centerme)
 &lt;center&gt;&lt;i&gt;Relevant xckd&lt;/i&gt;&lt;/center&gt; --&gt;
-
-&lt;!-- &lt;details open&gt;
-&lt;summary&gt;&lt;strong&gt;Standard Model of Physics&lt;/strong&gt;&lt;/summary&gt;
-&lt;p&gt;The Standard Model is the combination of all the QFT into one unified theory of electromagnetism, the weak nuclear force, and the strong nuclear force. It is humanity's ultimate theory of the universe. That said, it still lacks a description of gravity. Such a theory of quantum gravity would allow for the creation of a &quot;Theory of Everything&quot; (TOE) that describes all four fundamental forces in tandem.&lt;/p&gt;
-&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/0/00/Standard_Model_of_Elementary_Particles.svg?style=centerme&quot; alt=&quot;standard model pic&quot;&gt;&lt;/img&gt;
-&lt;/details&gt; --&gt;
 </content>
  </entry>
  

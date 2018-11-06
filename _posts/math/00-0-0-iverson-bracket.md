@@ -69,14 +69,14 @@ $$\delta_{ij}=[i=j]$$
 
 <details open>
 <summary><strong>Trichotomy of $\mathbb{R}$</strong></summary>
-Iverson brackets afford a much simpler way to convey the property of trichotomy, or any list of mutually exclusive conditions.
+Iverson brackets afford a much simpler way to convey the property of trichotomy, or any list of mutually exclusive conditions:
 
 $$[a<b]+[a=b]+[a>b]=1$$
 </details>
 
 <details>
 <summary><strong>Sign Function</strong></summary>
-$$\operatorname{sgn}(x)=[x>0]-[x<0]$$
+$$\operatorname{sgn}(x)=[x>0]-[x<0]\ \ \ \ \ \ (\text{For $x\not=0$})$$
 </details>
 
 <details>

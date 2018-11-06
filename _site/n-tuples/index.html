@@ -318,14 +318,14 @@
 
 <p><em>While the above definition is standard, it lacks a notion of a $0$ and $1$-tuple. See <a href="https://en.wikipedia.org/wiki/Tuple#Tuples_as_nested_sets">this</a> for a different definition of $n$-tuples that uses the null-tuple as a base case rather than ordered pairs. I can’t find a use for them that justifies their complication to the definition of $n$-tuple, so I excluded them.</em></p>
 
-<p><em>Alternatively, $n$-tuples can also be defined as functions with domains over some finite interval of the positive integers. In this sense, they would be equivalent to finite sequences.</em></p>
+<p><em>Alternatively, $n$-tuples can also be defined as functions with domains over some finite interval of the positive integers. In this sense, they would be equivalent to finite sequences. Although since tuples are usually used to define functions (and thus finite sequences) this would be circular.</em></p>
 
 <p>Whatever definition is used, all that matters is that two $n$-tuples are equivalent <em>only</em> when the elements at each of their indices are equivalent. This is their defining property.</p>
 
 <h4 id="existence-in-zfc">Existence in ZFC</h4>
 <p>The existence of an ordered pair of elements in ZFC can be proved using the axiom of pairing twice over. Once to prove that $ \{ a \} $ and $ \{ a,b \} $ exist and again to pair them with each other.</p>
 
-<p>And since, $n$-tuples are simply nested ordered pairs, they too must exist.</p>
+<p>And since $n$-tuples are simply nested ordered pairs, they too must exist.</p>
 
 <h2 id="equality">Equality</h2>
 <p>Two ordered pairs are equivalent if and only if the elements in each of their respective indices are equal. That is to say, for two $n$-tuples $X$ and $Y$:</p>
@@ -354,7 +354,7 @@ X=Y&\equiv\forall k\in\mathbb{N}_n^ * \ (x_k=y_k)\\
 
 <script type="math/tex; mode=display">\pi_1(P)=\bigcup\bigcap P=a</script>
 
-<details><summary>Proof</summary>
+<details><summary><strong>Proof</strong></summary>
   <b>Lemma 1</b>
   <p>To make proving the above statement easier, it would help to prove that the arbitrary union of a set of an element $\{x\}$ is that element $x$:
 
@@ -402,12 +402,12 @@ X=Y&\equiv\forall k\in\mathbb{N}_n^ * \ (x_k=y_k)\\
 
 <script type="math/tex; mode=display">\pi_2(P)=\bigcup\{x\in\bigcup P\mid\bigcup P\not=\bigcap P\implies x\not\in\bigcap P\}=b</script>
 
-<details><summary>Proof</summary>
+<details><summary><strong>Proof</strong></summary>
 I'll do it later...
 </details>
 
 <h4 id="extracting-elements-of-n-tuples">Extracting Elements of $n$-Tuples</h4>
-<p>You may have noticed that the above definitions only apply to $2$-tuples. What about $n$-tuples? Well, as it turns out, we can extract the elements of an $n$-tuple of any size by recursively using the $\pi_1$ and $\pi_2$ functions we defined above.</p>
+<p>You may have noticed that the above definitions only apply to $2$-tuples. What about $n$-tuples? Well, quite intuitively, we can extract the elements of an $n$-tuple of any size by recursively using the $\pi_1$ and $\pi_2$ functions we defined above.</p>
 
 <p>The notation we’ll use is as follows: $\pi^n_a(P)$ is the $a$th element of the $n$-tuple $P=\left(x_1,x_2,x_3,\cdots,x_n\right)$.</p>
 
@@ -461,8 +461,8 @@ Why are is there a conditional definition of the $a$th element of an $n$-tuple? 
 </details> -->
 
 <h2 id="some-uses">Some Uses</h2>
-<h4 id="cartesian-product"><a href="/cartesian-product">Cartesian Product</a></h4>
-<p>Ordered pairs are necessary in defining the Cartesian product, which in turn are used to define relations, functions, coordinates, etc.</p>
+<h4 id="cartesian-product">Cartesian product</h4>
+<p>Ordered pairs are necessary in defining the <a href="/cartesian-product">Cartesian Product</a>, which in turn are used to define relations, functions, coordinates, etc.</p>
 
 <h4 id="mathematical-structures">Mathematical Structures</h4>
 <p>Tuples are often used to encapsulate sets along with some operator or relation into a complete mathematical structure. One example is a graph which is defined as an ordered pair $G=(V,E)$ where $V$ is a set of vertices and $E$ a set of edges connecting those vertices. Another example is a group which is defined as an ordered pair $G=(S,\cdot)$ where $\cdot$ is some binary operation on the elements of $S$. Tuples are also used to encapsulate rings, fields, vector spaces, topological spaces, ordered sets, and so on.</p>
@@ -472,6 +472,15 @@ Why are is there a conditional definition of the $a$th element of an $n$-tuple? 
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/relations/">
+            Relations
+            <small>25 Oct 2018</small>
+          </a>
+        </h3>
+      </li>
     
       <li>
         <h3>
@@ -487,15 +496,6 @@ Why are is there a conditional definition of the $a$th element of an $n$-tuple? 
           <a href="/asymptotic-notation/">
             Asymptotic Notation
             <small>07 Oct 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/iverson-bracket/">
-            Iverson Bracket
-            <small>27 Aug 2018</small>
           </a>
         </h3>
       </li>

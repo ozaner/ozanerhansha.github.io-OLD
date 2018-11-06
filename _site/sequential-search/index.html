@@ -257,7 +257,9 @@
 ]</span>
   <p><strong>Sequential search</strong>, or linear search, is a search algorithm implemented on lists. It is one of the most intuitive (some might even say naïve) approaches to search: simply look at all entries in order until the element is found.</p>
 
-<p>Given a <strong>target</strong> value, the algorithm iterates through every entry on the list and compares it to the target. If they match then it is a <strong>successful search</strong> and the algorithm returns true. If the end of the list is reached and no match was found, it is an <strong>unsuccessful search</strong> and the algorithm returns false.</p>
+<p>Given a <strong>target</strong> value, the algorithm iterates through every entry on the list and compares it to the target. If they match then it is a <strong>successful search</strong> and the algorithm returns the index of the target. If the end of the list is reached and no match was found, it is an <strong>unsuccessful search</strong> and the algorithm returns some non index like -1.</p>
+
+<p>If only the existence of the target in the list is of importance and the index is irrelevant, we can modify the algorithm such that it returns true for successful searches and false for unsuccessful ones. This doesn’t affect it’s complexity at all.</p>
 
 <!--more-->
 
@@ -266,20 +268,21 @@
 <p>Given a list $L$ of length $n$ with the $i$th element denoted $L_i$ and the target value denoted $T$:</p>
 <ol>
   <li>Set variable $i:=0$</li>
-  <li>If $L_i=T$, return true <strong>END</strong></li>
+  <li>If $L_i=T$, return i <strong>END</strong></li>
   <li>Increment index $i:=i+1$</li>
-  <li>If $i&lt;n$, goto step 2; Else return false <strong>END</strong></li>
+  <li>If $i&lt;n$, goto step 2; Else return -1 <strong>END</strong></li>
 </ol>
 
 <h3 id="java">Java</h3>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">boolean</span> <span class="nf">search</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">,</span> <span class="n">T</span> <span class="n">target</span><span class="o">)</span> <span class="o">{</span>
-  <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">search</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">,</span> <span class="n">T</span> <span class="n">target</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+  <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
     <span class="k">if</span><span class="o">(</span><span class="n">target</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">)))</span>
-      <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-  <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+      <span class="k">return</span> <span class="n">i</span><span class="o">;</span>
+  <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
 <span class="o">}</span>
 </code></pre></div></div>
-<p>Notice we used <code class="highlighter-rouge">target</code>’s implementation of the <code class="highlighter-rouge">equals</code> method rather than <code class="highlighter-rouge">list.get(i)</code>’s. We do this because we can change how we define equality by extending <code class="highlighter-rouge">T</code> and overloading the method. This gives us greater flexibility in our criterion for search.</p>
+<p>Notice we used <code class="highlighter-rouge">target</code>’s implementation of the <code class="highlighter-rouge">equals</code> method rather than <code class="highlighter-rouge">list.get(i)</code>’s. Doing this allows us to change our definition of equality by extending <code class="highlighter-rouge">T</code> and overloading the method. This gives us greater flexibility in our criterion for search.</p>
 
 <!-- ### Python
 ````python
@@ -291,9 +294,9 @@ def search(L, T):
 ```` -->
 
 <h2 id="usage">Usage</h2>
-<p>Sequential search is rarely used in practice due to better alternatives such as binary search and hash tables. That said, sequential search has the advantage of being both simple to implement and not requiring the list to be sorted.</p>
+<p>While slower than other search algorithms, like binary search, sequential search is easy to implement and does not require the list to be sorted.  As a result, it is commonly implemented in unsorted lists as they cannot leverage any better alternatives. At least not with a classical computer…</p>
 
-<p>As a result, it is commonly implemented in unsorted lists as they cannot leverage any better alternatives. At least not with a classical computer…</p>
+<p>In cases where the list is small or searching is not to common, sequential search may even prove to be a faster solution as it does not require the list in question to constantly be sorted.</p>
 
 <h2 id="analysis">Analysis</h2>
 <h3 id="time-complexity">Time Complexity</h3>
@@ -336,7 +339,7 @@ Thus the average case complexity of sequential search is $O(\frac{n}{k})$ or $O(
 
 <h2 id="variations">Variations</h2>
 <details>
-<summary><h4 class="inline">Probabilistic Search</h4></summary>
+<summary><h3 class="inline">Probabilistic Search</h3></summary>
 <!-- #### Probabilistic Search -->
 Recall that our analysis of the complexity of sequential search assumed that each element in the list was equally likely (i.e a $\frac{1}{n}$ chance) to be searched for. If we remove this assumption, we are left with a more general case with the $i$th element having some probability $p_i$ of being searched for. Whenever we are analyzing the success case of the average complexity, these probabilities should all sum to 1:
 
@@ -361,7 +364,7 @@ If we are given a particular probability distribution, we can make stronger stat
 </details>
 
 <details>
-<summary><h4 class="inline">Ordered Search</h4></summary>
+<summary><h3 class="inline">Ordered Search</h3></summary>
 <!-- #### Ordered Search -->
 Another assumption we can remove is that the list is unsorted, that is the arrangement of the list has no specific meaning and can even be changed on the fly. If we instead assume that the list <i>is</i> sorted we can improve the number of comparisons linear search takes. This is because we can stop checking once we have passed a value greater than the target (although it is still $O(n)$). Here is some pseudocode:
 <p></p>
@@ -385,6 +388,15 @@ Of course, because we have stipulated that the list be sorted, there are now fas
     
       <li>
         <h3>
+          <a href="/relations/">
+            Relations
+            <small>25 Oct 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/asymptotic-notation/">
             Asymptotic Notation
             <small>07 Oct 2018</small>
@@ -397,15 +409,6 @@ Of course, because we have stipulated that the list be sorted, there are now fas
           <a href="/iverson-bracket/">
             Iverson Bracket
             <small>27 Aug 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/proportionality/">
-            Proportionality
-            <small>17 Aug 2018</small>
           </a>
         </h3>
       </li>

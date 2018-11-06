@@ -18,7 +18,7 @@ $$\textbf{d}=0.7390851332151606...$$
 
 <!--more-->
 
-### Fixed Point
+## Fixed Point
 $\textbf{d}$ is what's called a fixed point of $\cos x$, because the cosine function maps $\textbf{d}$ to itself. As a result, repeatedly taking the cosine of $\textbf{d}$ returns the same result:
 
 <!-- $$\cos \textbf{d} = \textbf{d} \implies (\forall n\in\mathbb{N})\  \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n}\ \textbf{d}=\textbf{d}$$ -->
@@ -27,7 +27,7 @@ $$\cos \textbf{d} = \textbf{d} \implies \forall n\in\mathbb{N}\  \left(\underbra
 
 $\textbf{d}$ is the $\cos$ function's only *real* fixed point, but there exists infinitely many solutions to $\cos z=z$ for the complex numbers. Those solutions, however, are not attractors.
 
-### Universal Attractor
+## Universal Attractor
 What's interesting about $\textbf{d}$ is that it's not just the real fixed point of $\cos$ but also its **universal fixed point attractor**. That is to say, if you take the cosine of any real number and repeatedly take the cosine of the result, you will always approach $\textbf{d}$:
 
 $$\forall x\in\mathbb{R} \left(\lim_{n\to\infty} \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n}\ x=\textbf{d}\right)$$
@@ -88,7 +88,7 @@ $$\begin{align}
 
 </p></details>
 
-### Kaplan's Series
+## Kaplan's Series
 [Kaplan](https://www.maa.org/sites/default/files/Kaplan2007-131105.pdf) proved that $\textbf{d}$ is equivalent to the following series:
 
 $$\textbf{d} = \sum_{n=0}^{\infty}\ g^{\left(n\right)}\left(\frac{\pi}{2}\right)\frac{\left(-\pi\right)^n}{2^nn!}$$
@@ -272,8 +272,8 @@ Where $a_n$ is a sequence of rational numbers found by solving the above equatio
   </p>
 </details>
 
-### Approximating the Dottie Number
-#### Solve Kaplan's series
+## Approximating the Dottie Number
+### Solve Kaplan's series
 One way is to simply calculate a specified number of terms in Kaplan's series and sum them.
 
 $$\begin{align}
@@ -287,7 +287,7 @@ While this can provide a decent approximation, it is a very time consuming proce
 
 $$\textbf{d}\approx 0.73908 51332 15160 64\color{red}{570 711495 ...}$$
 
-#### Taylor Series of Cosine
+### Taylor Series of Cosine
 Another way to approximate $\textbf{d}$ is to simply substitute Taylor polynomials of $\cos x$ for $\cos x = x$ and solve for the zero of the resulting polynomial:
 
 $$\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!}- \frac{x^6}{6!}+\cdots$$
@@ -318,5 +318,5 @@ However, after the 3rd term, we run into a problem. [Abel's impossibility theore
 
 *You may have noticed I didn't include an exact representation of the quartic equation above. This is because, even though there exists a generic solution to quartic polynomials, it is crazily complex and not worth using practically. Click the [quartic](https://upload.wikimedia.org/wikipedia/commons/9/95/Quartic_Formula.jpg) link to see the equation in its entirety*
 
-#### General Root Finding Algorithm
+### General Root Finding Algorithm
 The only choice we have left is to use a general root, or zero, finding algorithm like [Newton's method](https://en.wikipedia.org/wiki/Newton%27s_method) or the [bisection method](https://en.wikipedia.org/wiki/Bisection_method) to calculate $\textbf{d}$ to a given accuracy.

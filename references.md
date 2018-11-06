@@ -48,7 +48,7 @@ A compendium of links, articles, books and other references I have read and/or h
 ## Philosophy
 * [Stanford Encyclopedia of Philosophy](https://plato.stanford.edu/contents.html) --- An online reference of different philosophers, ideas, schools of thought, etc. maintained by many philosophers around the world.
 * [Nicky Case's Blog](http://ncase.me) --- A collection of well-made, interesting games/simulations. Here's three of my favorite:
-  * [We Become What be Behold](https://ncase.itch.io/wbwwb) --- A disturbing, yet eerily accurate, portrayal of mass media's effect on a society.
+  * [We Become what we Behold](https://ncase.itch.io/wbwwb) --- A disturbing, yet eerily accurate, portrayal of mass media's effect on a society.
   * [Parable of the Polygons](http://ncase.me/polygons/) --- A simulation that reveals the inevitability of segregation between groups of people given certain conditions.
   * [The Evolution of Trust](http://ncase.me/trust/) ---  A look at the progression of trust to mistrust and the [social trap](https://en.wikipedia.org/wiki/Social_trap), in game form!
 * [*The Unreasonable Effectiveness of Mathematics*](http://www.maths.ed.ac.uk/~aar/papers/wigner.pdf) by Eugene Wigner --- A 1960 article published by physicist Eugene Wigner. In it he describes the oddity that is the furthering of the empirical sciences via pure math. [Is the physical world truly mathematical?](https://en.wikipedia.org/wiki/Mathematical_universe_hypothesis)

@@ -249,12 +249,36 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="/relations/">Relations</a>
+    </h1>
+    <span class="post-date">October 25, 2018</span>
+    <p>We can consider a <strong>relationship</strong> between $n$ variables a predicate with $n$ free variables:</p>
+
+<script type="math/tex; mode=display">P(x_1,x_2,x_3,\cdots,x_n)</script>
+
+<p>That is, given a particular choice of $n$ variables, the relationship $P$ may either be true or false.</p>
+
+<p>If we limit the domain of each variable $x_i$ in the predicate as belonging to some corresponding set $S_i$, we can define the solution set $G$ to the relationship $P$ as follows:</p>
+
+<script type="math/tex; mode=display">G=\{(x_1,x_2\cdots,x_n)\in S_1,S_2\times\cdots\times S_n\mid P(x_1,x_2,\cdots,x_n)\}</script>
+
+<p>We can now extend the idea of relationships to set theory by constructing a <strong>relation</strong> between those $n$ sets which will be characterized by the solution set $G$, commonly called its <strong>graph</strong>.</p>
+
+
+    <!--Adds Read more-->
+    <a href="/relations/">Read more</a>
+    <hr>
+    
+  <div class="post">
+    <h1 class="post-title">
       <a href="/sequential-search/">Sequential Search</a>
     </h1>
     <span class="post-date">October 9, 2018</span>
     <p><strong>Sequential search</strong>, or linear search, is a search algorithm implemented on lists. It is one of the most intuitive (some might even say naïve) approaches to search: simply look at all entries in order until the element is found.</p>
 
-<p>Given a <strong>target</strong> value, the algorithm iterates through every entry on the list and compares it to the target. If they match then it is a <strong>successful search</strong> and the algorithm returns true. If the end of the list is reached and no match was found, it is an <strong>unsuccessful search</strong> and the algorithm returns false.</p>
+<p>Given a <strong>target</strong> value, the algorithm iterates through every entry on the list and compares it to the target. If they match then it is a <strong>successful search</strong> and the algorithm returns the index of the target. If the end of the list is reached and no match was found, it is an <strong>unsuccessful search</strong> and the algorithm returns some non index like -1.</p>
+
+<p>If only the existence of the target in the list is of importance and the index is irrelevant, we can modify the algorithm such that it returns true for successful searches and false for unsuccessful ones. This doesn’t affect it’s complexity at all.</p>
 
 
     <!--Adds Read more-->
@@ -352,34 +376,6 @@
 
     <!--Adds Read more-->
     <a href="/proportionality/">Read more</a>
-    <hr>
-    
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/relations/">Relations</a>
-    </h1>
-    <span class="post-date">August 12, 2018</span>
-    <!-- ## What is a Relation?
-Relations are used to correlate elements of different sets in some way. They are a more general form of a function, which can only relate elements to a single output.
-
-#### Example
-Say I had a set of tops $T$, pants $P$, and shoes $S$. I could define another set $R$ that is a collection of all the combinations of clothing that go together (a set of ordered triplets). This set would be called a relation, because it *relates* pieces of clothing that go well together by virtue of that combination being an element of $R$. -->
-
-<h2 id="definition">Definition</h2>
-<p>A <strong>relation</strong> $R$ on a set of sets $S_1,S_2,S_3,\cdots$ is a subset of their <a href="/cartesian-product"><strong>cartesian product</strong></a>:</p>
-
-<script type="math/tex; mode=display">R\subseteq S_1\times S_2\times S_3\times \cdots</script>
-
-<p>Relations are used to establish $n$-way relationships between elements of the same or different sets (ex. there is a two way relationship between $2$ and $5$ in that $2&lt;5$).</p>
-
-<h4 id="arity">Arity</h4>
-<p>The arity of a relation is the number of sets it is a relation on (i.e the <a href="/cartesian-product#arity">arity of the cartesian product</a> it is a subset of). Thus, a relation on $2$ sets is a <em>bi</em>nary relation, $3$ sets makes a <em>tri</em>nary relation and, in general, $n$ sets make an $n$-ary relation.</p>
-
-<p>When $n$ is infinite the relation is <strong>infinitary</strong> as opposed to <strong>finitary</strong> for finite $n$.</p>
-
-
-    <!--Adds Read more-->
-    <a href="/relations/">Read more</a>
     <hr>
     
   </div>

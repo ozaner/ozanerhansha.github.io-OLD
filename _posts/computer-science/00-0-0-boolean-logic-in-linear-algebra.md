@@ -305,7 +305,7 @@ Here's an example, the half-adder:
 We can represent the outputs of the half-adder symbolically as $S=X\oplus Y$ and $C=X\wedge Y$, where $S$ is the <i>sum</i> bit and $C$ is the <i>carry</i> bit. Below is a proof that derives the matrix representation of the half-adder:
 
 <details>
-<summary><h4 class="inline">Proof</h4></summary>
+<summary><strong>Proof</strong></summary>
 To find the matrix that corresponds to sending two bits through a half adder, we must compute the tensor product of $X$ and $Y$ then compute and solve a series of tensor products:
 
 $$\begin{align}
@@ -413,9 +413,6 @@ $$\begin{align}
 \end{align}$$
 
 Because of this, we can simplify many of the expressions above (example $ab=0$ b.c either $a$ or $b$ is $0$) to form a more simpler vector:
-
-*We can also think of this finding non-contingent statements and simplifying them.*
-
 $$\begin{pmatrix}
   (ac)^2+a^2cd+abc^2+abcd+abd^2+b^2cd \\
   abcd+bd^2\\
@@ -427,9 +424,9 @@ $$\begin{pmatrix}
   bc+ad\\
   0
 \end{pmatrix}$$
+<i>We can also think of this finding non-contingent statements and simplifying them.</i><p></p>
 
 Now we are simply left with the following equation:
-
 $$\operatorname{Half-Adder}(X\otimes Y)=(S\otimes C)$$
 
 We can now solve for the $\operatorname{Half-Adder}$ matrix by explicitly writing out the above equation:

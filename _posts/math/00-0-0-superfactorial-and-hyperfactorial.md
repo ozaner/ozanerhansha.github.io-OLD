@@ -57,7 +57,7 @@ It is possible to relate all three of these factorial variants (factorial, super
 $$n{$}\cdot H(n)=n!^{n+1}$$
 
 <details>
-<summary><h4 class="inline">Proof</h4></summary>
+<summary><strong>Proof</strong></summary>
 
 We can prove the above statement, which we'll call $P(n)$, by induction:
 

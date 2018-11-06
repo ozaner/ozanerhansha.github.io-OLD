@@ -255,17 +255,18 @@
     <a href="/tag/set-theory"><code class="highligher-rouge"><nobr>set-theory</nobr></code>&nbsp;</a>
   
 ]</span>
-  <h2 id="definition">Definition</h2>
+  <!-- Heavily Reformatted 10/25/18 -->
+<h2 id="definition">Definition</h2>
 <p>The Cartesian product $\times$ is an operation on two sets, call them $A$ and $B$, that returns the set of all <a href="/n-tuples">ordered pairs</a> with their first element from $A$ and their second from $B$.</p>
 
 <script type="math/tex; mode=display">A\times B=\{(a,b)\mid a\in A \land b\in B\}</script>
 
 <h4 id="existence-in-zfc">Existence in ZFC</h4>
-<p>We can show that, utilizing the <a href="/n-tuples#definition">Kuratowski definition</a> of ordered pairs, the Cartesian product of two sets is merely a subset of the following:</p>
+<p>Utilizing the <a href="/n-tuples#definition">Kuratowski definition</a> of ordered pairs, we can show that the Cartesian product of two sets can be constructed from the axioms of ZFC. In particular, it is a subset of the following easily constructed set:</p>
 
-<script type="math/tex; mode=display">A\times B \subset \mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)</script>
+<script type="math/tex; mode=display">A\times B \subseteq \mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)</script>
 
-<details><summary>Proof</summary>
+<details><summary><strong>Proof</strong></summary>
 First, note that $A\cup B$ is guaranteed by the axiom of union and that its power set is guaranteed by the axiom of power set.
 
 Next notice that, among many other elements, the power set of $A\cup B$ contains:
@@ -285,61 +286,78 @@ for all $a$ and $b$ in $A$ and $B$. Now invoke the axiom of subset to choose onl
 <!--more-->
 
 <h2 id="n-ary-cartesian-product">$n$-ary Cartesian Product</h2>
-<p>While the Cartesian product of two sets returns a set of ordered pairs, the Cartesian product of $n$ sets returns an $n$-tuple:</p>
+<p>It is easy to see how one might generalize this notion to $n$ sets. By simply chaining the Cartesian product we are left with a set of $n$-tuples:</p>
 
-<script type="math/tex; mode=display">S_1\times S_2\times \cdots \times S_n=\{\left(s_1,s_2,\cdots,s_n\right)\mid\forall k,\ s_k\in S_k)\}</script>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}(S_0\times S_1)\times S_2&=\{(\left(s_0,s_1),s_2\right)\mid\forall k\in 3,\ s_k\in S_k)\}\\
+&=\{\left(s_0,s_1,s_2\right)\mid\forall k\in 3,\ s_k\in S_k)\}
+\end{align*} %]]></script>
 
-<details><summary>Details &amp; Explanation</summary>
+<p>Repeating this $n$ times, we are left with the following for any $n$ sets:</p>
 
-Here's an example of a $3$-ary Cartesian product returning a set of $3$-tuples that uses the definition of an <a href="/n-tuples#n-tuples">$n$-tuple</a>:
+<script type="math/tex; mode=display">S_0\times S_1\times \cdots \times S_{n-1}=\{\left(s_0,s_1,\cdots,s_{n-1}\right)\mid\forall k\in n,\ s_k\in S_k)\}</script>
 
-$$\begin{align}
-A\times B\times C&amp;=(A \times B)\times C\\
-&amp;=\{(a,b)\}\times C\\
-&amp;=\{((a,b),c)\}\\
-&amp;=\{(a,b,c)\}
-\end{align}$$
-*Where $a\in A$, $b\in B$, and $c\in C$*.
-</details>
+<p><em>Notice that the parenthesis are omitted. This is because the cartesian product is left-associative, a property that is expounded upon further below.</em></p>
 
 <h4 id="cartesian-powers">Cartesian Powers</h4>
-<p>When referring to the repeated Cartesian product of the same set $S$, we can use an abbreviated notation:</p>
+<p>When dealing with the repeated Cartesian product of a single set $S$, we call it the $n$th Cartesian power and use the following notation:</p>
 
 <script type="math/tex; mode=display">\underbrace{S\times S \times \cdots \times S}_{n\text{ sets}}=S^n</script>
 
-<h4 id="arity">Arity</h4>
-<p>The arity of a Cartesian product is the number $n$ of sets that are being multiplied.</p>
-
-<p>When $n$ is infinite the product is <strong>infinitary</strong> as opposed to <strong>finitary</strong> for finite $n$.</p>
+<h4 id="infinitary-products">Infinitary Products</h4>
+<p>The arity of a Cartesian product is the number $n$ of sets that are being multiplied. When $n$ is infinite the product is <strong>infinitary</strong> as opposed to <strong>finitary</strong> for finite $n$.</p>
 
 <script type="math/tex; mode=display">\underbrace{\text{binary},\text{trinary},\cdots,n\text{-ary}}_{\text{finitary}}\cdots;\underbrace{\aleph_0\text{-ary},\aleph_1\text{-ary},\cdots}_{\text{infinitary}}</script>
 
 <p>All the definitions used above apply only to finite $n$. There <em>are</em> valid notions of infinitary Cartesian products, but they are beyond the scope of this post.</p>
 
-<h2 id="rules-of-replacement">Rules of replacement</h2>
-<h4 id="non-commutative">Non-Commutative</h4>
-<p>The Cartesian product is a non-commutative operator:</p>
-
-<script type="math/tex; mode=display">A\times B \not= B \times A</script>
-
-<p>This should be obvious as the ordered tuples $(a,b)\not=(b,a)$ where $a\in A$ and $b\in B$ via the definition of <a href="/n-tuples#equality">tuple equality</a>.</p>
-
-<h4 id="non-associative">Non-Associative</h4>
-<p>The Cartesian product is a non-associative operator:</p>
-
-<script type="math/tex; mode=display">\left(A\times B\right) \times C \not= A\times \left(B \times C\right)</script>
-
-<p>Similar to its non-commutativity, we can illustrate this by noting that $((a,b),c)\not= (a,(b,c))$ where $a\in A$, $b\in B$, and $c\in C$.</p>
-
-<h4 id="left-associative">Left-Associative</h4>
-<p>When faced with an $n$-ary Cartesian product, it is conventionally evaluated from left to right. That is to say the Cartesian product is left-associative:</p>
-
-<script type="math/tex; mode=display">A\times B \times C=(A \times B)\times C</script>
-
+<h2 id="properties">Properties</h2>
+<h3 id="ordering-properties">Ordering Properties</h3>
+<!-- #### Non-Commutative -->
 <details>
-<summary><h2 class="inline">Distributive Properties</h2></summary>
+<summary><h4 class="inline">Non-Commutative</h4></summary>
+The Cartesian product is a non-commutative operator:
 
-<h4>Union</h4>
+$$A\times B \not= B \times A$$
+
+This should be obvious as the ordered tuples $(a,b)\not=(b,a)$ where $a\in A$ and $b\in B$ via the definition of <a href="/n-tuples#equality">tuple equality</a>.
+<p></p>
+</details>
+
+<!-- #### Non-Associative -->
+<details>
+<summary><h4 class="inline">Non-Associative</h4></summary>
+The Cartesian product is a non-associative operator:
+
+$$\left(A\times B\right) \times C \not= A\times \left(B \times C\right)$$
+
+Similar to its non-commutativity, we can illustrate this by noting that $((a,b),c)\not= (a,(b,c))$ where $a\in A$, $b\in B$, and $c\in C$.
+<p></p>
+</details>
+
+<!-- #### Left-Associative -->
+<details>
+<summary><h4 class="inline">Left-Associative</h4></summary>
+When faced with an $n$-ary Cartesian product, it is conventionally evaluated from left to right. That is to say the Cartesian product is left-associative:
+
+$$A\times B \times C=(A \times B)\times C$$
+
+This convention agrees with the definition of $n$-ary Cartesian products and $n$-tuples.
+</details>
+
+<h3 id="distributive-properties">Distributive Properties</h3>
+<!-- <details>
+<summary><h3 class="inline">Distributive Properties</h3></summary> -->
+<p><script type="math/tex">\begin{gather*}
+A\times\left(B\cup C\right)=\left(A\times B\right)\cup \left(A\times C\right)\tag{Union}\\
+A\times\left(B\cap C\right)=\left(A\times B\right)\cap \left(A\times C\right)\tag{Intersection 1}\\
+\left(A\times B\right)\cap \left(C\times D\right)=\left(A\cap B\right)\times \left(C\cap D\right)\tag{Intersection 2}\\
+A\times\left(B\setminus C\right)=\left(A\times B\right)\setminus \left(A\times C\right)\tag{Set Difference}\\
+B\subseteq C\iff\left(A\times B\right)\subseteq \left(A\times C\right)\tag{Subset 1}\\
+\left(A\times B\right)\subseteq \left(C\times D\right)\iff\left(A\subseteq B\right)\land \left(C\subseteq D\right)\tag{Subset 2}\\
+\end{gather*}</script></p>
+
+<!-- <h4>Union</h4>
 $$A\times\left(B\cup C\right)=\left(A\times B\right)\cup \left(A\times C\right)$$
 
 <h4>Intersection</h4>
@@ -355,31 +373,31 @@ $$B\subseteq C\iff\left(A\times B\right)\subseteq \left(A\times C\right)$$
 
 $$\left(A\times B\right)\subseteq \left(C\times D\right)\iff\left(A\subseteq B\right)\land \left(C\subseteq D\right)$$
 
-<h4>Complements</h4>
-If $A$ and $B$ are memebers of some universal set $U$, then their absolute complement is denoted $A^C$ and $B^C$ respectively.
+<h4>Complements</h4> -->
+<p>If $A$ and $B$ are members of some universal set $U$, then their absolute complement is denoted $A^C$ and $B^C$ respectively.</p>
 
-$$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right)\cup\left(A\times B^C\right)$$
-</details>
+<p><script type="math/tex">\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right)\cup\left(A\times B^C\right)\tag{Complement}</script>
+<!-- </details> --></p>
 
 <h2 id="examples">Examples</h2>
-<h4 id="functions-and-relations">Functions and Relations</h4>
-<p><a href="\relations">Relations</a>, and thus functions and operations, from a set $A$ to a set $B$ are defined as subsets of the Cartesian product $A\times B$. For example, the less than or equal to relation $\le$ on the integers can be defined as so:</p>
+<h4 id="relations">Relations</h4>
+<p><a href="\relations">Relations</a> from a set $A$ to a set $B$ are defined, in part, as subsets of the Cartesian product $A\times B$. For example, the less than or equal to relation $\le$ on the integers can be defined like so, with the third element being a subset of the cartesian product of te first two:</p>
 
 <script type="math/tex; mode=display">\le\equiv\{\cdots,\left(1,2\right),\left(-14,0\right),\left(5,5\right),\left(12,13\right),\cdots\}</script>
 
-<p><em>We can formalize this definition to set theory by comparing the cardinality of the sets represented by the naturals and further the integers.</em></p>
-
 <p>And so, because $10$ is less than $12$, the ordered pair $(10,12)\in\le$. We can write this more conventionally as $10\le12$.</p>
+
+<p><em>This glosses over some nuance regarding the notation of relations and the specification of their domain and codomain.</em></p>
 
 <h4 id="cardinal-multiplication">Cardinal Multiplication</h4>
 <p>Cartesian products are used to define the product of two cardinal numbers:</p>
 
-<script type="math/tex; mode=display">\left|X\right|\cdot\left|Y\right|=\left|X\times Y\right|</script>
+<script type="math/tex; mode=display">\left|X\right|\left|Y\right|=\left|X\times Y\right|</script>
 
-<h4 id="coordinates">Coordinates</h4>
-<p>Every point in $2$-space represents an element of the Cartesian product of the Reals with themselves (i.e $\mathbb{R}^2$). This can be generalized for $n$-space with every point being an element of $\mathbb{R}^n$:</p>
+<h4 id="cartesian-coordinates">Cartesian Coordinates</h4>
+<p>Every point in $2$-space represents an element of the Cartesian product of the Reals with themselves (i.e $\mathbb{R}^2$). This can be generalized to $n$-space with every point being an element of $\mathbb{R}^n$:</p>
 
-<script type="math/tex; mode=display">\mathbb{R}^n=\{(x_1,x_2,\cdots,x_n)\mid \forall k\in\mathbb{N}_n^* :   x_k\in\mathbb{R}\}</script>
+<script type="math/tex; mode=display">\mathbb{R}^n=\{(x_0,x_1,\cdots,x_{n-1})\mid \forall k\in n:   x_k\in\mathbb{R}\}</script>
 
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cartesian-coordinate-system.svg/354px-Cartesian-coordinate-system.svg.png?style=centerme" alt="plane" /></p>
 
@@ -397,6 +415,15 @@ $$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right
     
       <li>
         <h3>
+          <a href="/relations/">
+            Relations
+            <small>25 Oct 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/sequential-search/">
             Sequential Search
             <small>09 Oct 2018</small>
@@ -409,15 +436,6 @@ $$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right
           <a href="/asymptotic-notation/">
             Asymptotic Notation
             <small>07 Oct 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/iverson-bracket/">
-            Iverson Bracket
-            <small>27 Aug 2018</small>
           </a>
         </h3>
       </li>
