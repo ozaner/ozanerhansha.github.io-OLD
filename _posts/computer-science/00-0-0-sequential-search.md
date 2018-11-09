@@ -10,7 +10,7 @@ Given a **target** value, the algorithm iterates through every entry on the list
 
 <!--more-->
 
-A useful modification of this algorithm is to return the index of the target in the list when a match is found. In the case of an unsuccessful search, a special number denoting a failure is returned, usually -1. This slight modification has no affect on the complexity of the algorithm and so we might as well implement that version instead:
+A useful modification of this algorithm is to return the index of the target in the list when a match is found. In the case of an unsuccessful search, a special number denoting a failure is returned, usually -1. This slight modification has no effect on the complexity of the algorithm and so we might as well implement that version instead:
 
 ## Implementation
 ### Pseudocode

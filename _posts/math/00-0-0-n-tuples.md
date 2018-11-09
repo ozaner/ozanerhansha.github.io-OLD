@@ -37,15 +37,15 @@ $$\begin{align}
 &=\{\{\{\{x_1\},\{x_1,x_2\}\}\},\{\{\{x_1\},\{x_1,x_2\}\},x_3\}\}\\
 \end{align}$$
 
-And in general, an $n$-tuple for $n>2$ is defined as:
+And in general, an $n$-tuple for $n>2$ is recursively defined as:
 
 $$(x_1,x_2,\cdots,x_{n-1},x_n)=((x_1,x_2,\cdots,x_{n-1}),x_n)$$
 
 *While the above definition is standard, it lacks a notion of a $0$ and $1$-tuple. See [this](https://en.wikipedia.org/wiki/Tuple#Tuples_as_nested_sets) for a different definition of $n$-tuples that uses the null-tuple as a base case rather than ordered pairs. I can't find a use for them that justifies their complication to the definition of $n$-tuple, so I excluded them.*
 
-*Alternatively, $n$-tuples can also be defined as functions with domains over some finite interval of the positive integers. In this sense, they would be equivalent to finite sequences. Although since tuples are usually used to define functions (and thus finite sequences) this would be circular.*
+<!-- *Alternatively, $n$-tuples can also be defined as functions with domains over some finite interval of the positive integers. In this sense, they would be equivalent to finite sequences. Although since tuples are usually used to define functions (and thus finite sequences) this would be circular.*
 
-Whatever definition is used, all that matters is that two $n$-tuples are equivalent *only* when the elements at each of their indices are equivalent. This is their defining property.
+Whatever definition is used, all that matters is that two $n$-tuples are equivalent *only* when the elements at each of their indices are equivalent. This is their defining property. -->
 
 #### Existence in ZFC
 The existence of an ordered pair of elements in ZFC can be proved using the axiom of pairing twice over. Once to prove that $ \\{ a \\} $ and $ \\{ a,b \\} $ exist and again to pair them with each other.
@@ -56,24 +56,25 @@ And since $n$-tuples are simply nested ordered pairs, they too must exist.
 Two ordered pairs are equivalent if and only if the elements in each of their respective indices are equal. That is to say, for two $n$-tuples $X$ and $Y$:
 
 $$\begin{align}
-X&=(x_1,x_2,x_3,\cdots,x_n)\\
-Y&=(y_1,y_2,y_3,\cdots,y_n)
+X&=(x_0,x_1,x_2,\cdots,x_{n-1})\\
+Y&=(y_0,y_1,y_2,\cdots,y_{n-1})
 \end{align}$$
 
 $X$ and $Y$ are only equal if:
 
 $$\begin{align}
-X=Y&\equiv\forall k\in\mathbb{N}_n^ * \ (x_k=y_k)\\
-&\equiv x_1=y_1 \land x_2=y_2 \land \cdots \land x_n=y_n\\
+X=Y&\equiv\forall k\in n \ (x_k=y_k)\\
+&\equiv x_0=y_0 \land x_1=y_1 \land \cdots \land x_{n-1}=y_{n-1}\\
 \end{align}$$
 
-*Where [$\mathbb{N}_n^ * $](/natural-numbers#notation) is the set of all positive integers from and including $1$ to $n$.*
+*Where $n$ is a set as per its construction in the [natural numbers](\natural-numbers).*
 
 Note that for this definition to work, the two tuples have to be the same size. As such, tuples of different sizes will never be equal.
 
 ## Extraction
+In order to use these tuples, we have to be sure we can have some formula to extract the first and second elements from them. These formulas are called the first and second **projections**.
 #### First Element
-To extract the first element $\pi_1(P)$ of an ordered pair $P=(a,b)$ we can use the following construction:
+To project the first element $\pi_1(P)$ of an ordered pair $P=(a,b)$ we can use the following construction:
 
 $$\pi_1(P)=\bigcup\bigcap P=a$$
 

@@ -37,27 +37,43 @@ for all $a$ and $b$ in $A$ and $B$. Now invoke the axiom of subset to choose onl
 ## $n$-ary Cartesian Product
 It is easy to see how one might generalize this notion to $n$ sets. By simply chaining the Cartesian product we are left with a set of $n$-tuples:
 
-$$\begin{align*}(S_0\times S_1)\times S_2&=\{(\left(s_0,s_1),s_2\right)\mid\forall k\in 3,\ s_k\in S_k)\}\\
-&=\{\left(s_0,s_1,s_2\right)\mid\forall k\in 3,\ s_k\in S_k)\}
+$$\begin{align*}(S_0\times S_1)\times S_2&=\{(\left(s_0,s_1),s_2\right)\mid\forall k\in 3,\ s_i\in S_i)\}\\
+&=\{\left(s_0,s_1,s_2\right)\mid\forall k\in 3,\ s_i\in S_i)\}
 \end{align*}$$
 
-Repeating this $n$ times, we are left with the following for any $n$ sets:
+Repeating this $n$ times (inductively), we are left with the following for any $n$ sets:
 
-$$S_0\times S_1\times \cdots \times S_{n-1}=\{\left(s_0,s_1,\cdots,s_{n-1}\right)\mid\forall k\in n,\ s_k\in S_k)\}$$
+$$S_0\times S_1\times \cdots \times S_{n-1}=\{\left(s_0,s_1,\cdots,s_{n-1}\right)\mid\forall i\in n,\ s_i\in S_i)\}$$
 
 *Notice that the parenthesis are omitted. This is because the cartesian product is left-associative, a property that is expounded upon further below.*
+
+<!-- Letting $S_i$ be a family of sets indexed by $n$, we can write this in the more concise big pi notation:
+$$\prod_{i=1}^nS_i=S_1\times S_2\times \cdots \times S_n$$
+
+*Note that the notion of indexed families comes from functions which depend on the definition of $n$-ary cartesian products. So it should only be taken as a useful shorthand.* -->
+
+#### Indexed and Infinitary Products
+It is possible to extend the notion of the Cartesian product to allow for the product of any indexed family of sets:
+
+$$\prod_{i\in I}S_i=\{f:I\to\bigcup_{i\in I}S_i\mid \forall i,f(i)\in S_i\}$$
+
+In words this Cartesian product returns the set of all functions that map an element from $I$ to a corresponding element in $S_i$. Note that this allows for index sets with an infinite cardinality, leading to **infinitary** products.
+
+$$\underbrace{\text{binary},\text{trinary},\cdots,n\text{-ary}}_{\text{finitary}}\cdots;\underbrace{\aleph_0\text{-ary},\aleph_1\text{-ary},\cdots}_{\text{infinitary}}$$
+
+Note that this definition of Cartesian product depends on the notion of functions (indexed family of sets), which in turn depends on our previous definition. As such we are left with two distinct versions of the Cartesian product, one more general than the other.
+
+*That said, once defined, we can always map between these two definitions (for finitary products at least). So in most cases, the distinction is irrelevant.*
 
 #### Cartesian Powers
 When dealing with the repeated Cartesian product of a single set $S$, we call it the $n$th Cartesian power and use the following notation:
 
- $$\underbrace{S\times S \times \cdots \times S}_{n\text{ sets}}=S^n$$
+ $$S^n=\underbrace{S\times S \times \cdots \times S}_{n\text{ sets}}$$
 
-#### Infinitary Products
-The arity of a Cartesian product is the number $n$ of sets that are being multiplied. When $n$ is infinite the product is **infinitary** as opposed to **finitary** for finite $n$.
+ Even more generally, using the indexed definition of Cartesian product, we can denote the set of all functions from a set $I$ to $S$ like so:
+ $$S^I=\prod_{i\in I}S=\{f\mid f:I\to S\}$$
 
-$$\underbrace{\text{binary},\text{trinary},\cdots,n\text{-ary}}_{\text{finitary}}\cdots;\underbrace{\aleph_0\text{-ary},\aleph_1\text{-ary},\cdots}_{\text{infinitary}}$$
-
-All the definitions used above apply only to finite $n$. There *are* valid notions of infinitary Cartesian products, but they are beyond the scope of this post.
+ *Note that this meshes with the simpler definition of $S^n$ since $n$ can be considered a set as per its construction in the [natural numbers](\natural-numbers).*
 
 ## Properties
 ### Ordering Properties
@@ -130,18 +146,21 @@ $$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right
 
 ## Examples
 #### Relations
-[Relations](\relations) from a set $A$ to a set $B$ are defined, in part, as subsets of the Cartesian product $A\times B$. For example, the less than or equal to relation $\le$ on the integers can be defined like so, with the third element being a subset of the cartesian product of te first two:
+An $n$-ary [relation](\relations) is defined as an $n$-tuple with the first $n$ elements being a list of sets and the last element a subset of their Cartesian product. For example, $\le$ is a binary relation on the set $\mathbb R$:
+$$\begin{gather}
+\le\equiv(\mathbb R,\mathbb R,G)\\
+G\subseteq\mathbb R\times\mathbb R
+\end{gather}$$
 
-$$\le\equiv\{\cdots,\left(1,2\right),\left(-14,0\right),\left(5,5\right),\left(12,13\right),\cdots\}$$
-
-And so, because $10$ is less than $12$, the ordered pair $(10,12)\in\le$. We can write this more conventionally as $10\le12$.
-
-*This glosses over some nuance regarding the notation of relations and the specification of their domain and codomain.*
+This allows us to formalize statements like $4\le7$ which really means $(4,7)\in G$.
 
 #### Cardinal Multiplication
 Cartesian products are used to define the product of two cardinal numbers:
 
-$$\left|X\right|\left|Y\right|=\left|X\times Y\right|$$
+$$\left|X\times Y\right|=\left|X\right|\left|Y\right|$$
+
+And for any indexed family of cardinal numbers:
+$$\left|\prod_{i\in I}X_i\right|=\prod_{i\in I}\left|X_i\right|$$
 
 #### Cartesian Coordinates
 Every point in $2$-space represents an element of the Cartesian product of the Reals with themselves (i.e $\mathbb{R}^2$). This can be generalized to $n$-space with every point being an element of $\mathbb{R}^n$:
@@ -154,4 +173,4 @@ $$\mathbb{R}^n=\{(x_0,x_1,\cdots,x_{n-1})\mid \forall k\in n:   x_k\in\mathbb{R}
 
 Points in $3$-space are necessary in describing the [position](/position) of objects and particles in space and thus set up the study of [motion](\kinematics), the causes of that motion and, ultimately, the rest of physics.
 
-Moreover, $2$-space (and less frequently $3$-space) is used in plotting and making inferences from data as well as visualizing functions over an interval of numbers.
+Moreover, $2$-space (and less frequently $3$-space) is used in plotting and making inferences from data as well as visualizing functions over an interval of numbers. We can even consider an infinite dimensional real space $\mathbb R^\mathbb \omega$, aka the set of all real sequences.
