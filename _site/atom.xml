@@ -4,7 +4,7 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-10-31T01:25:57-04:00</updated>
+ <updated>2018-12-07T23:09:46-05:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
@@ -13,34 +13,263 @@
 
  
  <entry>
-   <title>Relations</title>
-   <link href="http://localhost:4000/relations/"/>
-   <updated>2018-10-25T00:00:00-04:00</updated>
-   <id>http://localhost:4000/relations</id>
-   <content type="html">&lt;p&gt;We can consider a &lt;strong&gt;relationship&lt;/strong&gt; between $n$ variables a predicate with $n$ free variables:&lt;/p&gt;
+   <title>Cartesian Product</title>
+   <link href="http://localhost:4000/cartesian-product/"/>
+   <updated>2018-12-07T00:00:00-05:00</updated>
+   <id>http://localhost:4000/cartesian-product</id>
+   <content type="html">&lt;!-- Heavily Reformatted 11/30/18 --&gt;
+&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
+&lt;p&gt;The Cartesian product $\times$ is an operation on two sets, call them $A$ and $B$, that returns the set of all &lt;a href=&quot;/n-tuples&quot;&gt;ordered pairs&lt;/a&gt; with their first element from $A$ and their second from $B$. Formally, we can think of it as shorthand for the following:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(x_1,x_2,x_3,\cdots,x_n)&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;A\times B=\{(a,b)\mid a\in A \land b\in B\}&lt;/script&gt;
 
-&lt;p&gt;That is, given a particular choice of $n$ variables, the relationship $P$ may either be true or false.&lt;/p&gt;
+&lt;h4 id=&quot;existence-in-zfc&quot;&gt;Existence in ZFC&lt;/h4&gt;
+&lt;p&gt;Utilizing the &lt;a href=&quot;/n-tuples#definition&quot;&gt;Kuratowski definition&lt;/a&gt; of ordered pairs, we can show that the Cartesian product of two sets can be constructed from the axioms of ZFC. In particular, it is a subset of the following easily constructed set:&lt;/p&gt;
 
-&lt;p&gt;If we limit the domain of each variable $x_i$ in the predicate as belonging to some corresponding set $S_i$, we can define the solution set $G$ to the relationship $P$ as follows:&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;A\times B \subseteq \mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)&lt;/script&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;G=\{(x_1,x_2\cdots,x_n)\in S_1,S_2\times\cdots\times S_n\mid P(x_1,x_2,\cdots,x_n)\}&lt;/script&gt;
+&lt;details&gt;&lt;summary&gt;&lt;strong&gt;Proof&lt;/strong&gt;&lt;/summary&gt;
+First, note that $A\cup B$ is guaranteed by the axiom of union and that its power set is guaranteed by the axiom of power set.
 
-&lt;p&gt;We can now extend the idea of relationships to set theory by constructing a &lt;strong&gt;relation&lt;/strong&gt; between those $n$ sets which will be characterized by the solution set $G$, commonly called its &lt;strong&gt;graph&lt;/strong&gt;.&lt;/p&gt;
+Next notice that, among many other elements, the power set of $A\cup B$ contains:
+&lt;!-- \left(\forall a\in A,\forall b\in B\right) --&gt;
+$$\{a\},\{a,b\}\in\mathcal{P}\left(A\cup B\right)$$
+
+where $a$ and $b$ are elements in $A$ and $B$ respectively. Now if we take the power set again we'll see that the result contains, among other things, the elements:
+
+$$\{\{a\},\{a,b\}\}\in\mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)$$
+
+for all $a$ and $b$ in $A$ and $B$. Now invoke the axiom of subset to choose only those elements that fit the description and we are done!
+&lt;/details&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;!-- $A\cup B$ is guaranteed by the axiom of union, and its repeated power sets are guaranteed by the axiom of power set. This coupled with the fact that the Cartesian product is only a subset of the above expression implies that it must exist. --&gt;
 
 &lt;!--more--&gt;
 
-&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
-&lt;p&gt;An &lt;strong&gt;$n$-ary relation&lt;/strong&gt; $R$ is an $(n+1)$-tuple of $n$ sets $S_1,S_2,\cdots,S_n$ and a subset of their cartesian product (called the graph) $G\subseteq S_1\times S_2\times\cdots\times S_n$:&lt;/p&gt;
+&lt;h2 id=&quot;n-ary-cartesian-product&quot;&gt;$n$-ary Cartesian Product&lt;/h2&gt;
+&lt;p&gt;It is easy to see how one might generalize this notion to $n$ sets. For example, by chaining the Cartesian product twice we are left with a set of $3$-tuples:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;R\equiv(S_1,S_2,\cdots,S_n,G)&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align*}(S_1\times S_2)\times S_3&amp;=\{(\left(s_1,s_2),s_3\right)\mid\forall i\in[1..3],\ s_i\in S_i)\}\\
+&amp;=\{\left(s_1,s_2,s_3\right)\mid\forall i\in[1..3],\ s_i\in S_i)\}
+\end{align*} %]]&gt;&lt;/script&gt;
 
-&lt;h4 id=&quot;empty-relation&quot;&gt;Empty Relation&lt;/h4&gt;
+&lt;p&gt;Repeating this $n$ times, we are left with the following for any $n$ sets:&lt;/p&gt;
 
-&lt;h4 id=&quot;infinitary-relations&quot;&gt;Infinitary Relations&lt;/h4&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;S_1\times S_2\times \cdots \times S_n=\{\left(s_1,s_2,\cdots,s_n\right)\mid\forall i\in[1..n],\ s_i\in S_i)\}&lt;/script&gt;
 
-&lt;h2 id=&quot;notation&quot;&gt;Notation&lt;/h2&gt;
+&lt;p&gt;The resulting product has an &lt;strong&gt;arity&lt;/strong&gt; of $n$ and is dubbed an &lt;strong&gt;$n$-ary Cartesian product&lt;/strong&gt;. We can denote product of multiple sets more concisely via the following notation:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\prod_{i=1}^nS_i=S_1\times S_2\times \cdots \times S_n&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;Notice that the parenthesis are omitted. This is because the cartesian product is left-associative, a property that is expounded upon further below.&lt;/em&gt;&lt;/p&gt;
+
+&lt;!-- Letting $S_i$ be a family of sets indexed by $n$, we can write this in the more concise big pi notation:
+$$\prod_{i=1}^nS_i=S_1\times S_2\times \cdots \times S_n$$
+
+*Note that the notion of indexed families comes from functions which depend on the definition of $n$-ary cartesian products. So it should only be taken as a useful shorthand.* --&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot; id=&quot;simultaneity-of-arity&quot;&gt;Simultaneity of Arity&lt;/h4&gt;&lt;/summary&gt;
+Recall that any $n$-tuple can be &lt;a href=&quot;\cartesian-product#simultaneous-interpretation&quot;&gt;simultaneously interpreted&lt;/a&gt; as a $k$-tuple where $2\le k\le n$. Likewise, this means that an $n$-ary Cartesian product:
+
+$$\prod_{i=1}^nS_i=S_1\times S_2\times \cdots \times S_n$$
+
+can also be interpreted as having arity $k$. We do this by first defining a new indexed set:
+
+$$U_i =
+  \begin{cases}
+  \displaystyle  \prod^{n-k+1}_{i=1}S_i &amp;amp; i=1 \\
+  \displaystyle  S_{n-k+i} &amp;amp; i&amp;gt;1
+  \end{cases}$$
+
+And now we can phrase the original $n$-ary product as a product of $k$ sets:
+
+$$\prod_{i=1}^kU_i=\left(\prod^{n-k+1}_{i=1}S_i\right)\times S_{n-k+2}\times \cdots \times S_n$$
+&lt;p&gt;&lt;/p&gt;&lt;/details&gt;
+
+&lt;h3 id=&quot;indexed--infinitary-products&quot;&gt;Indexed &amp;amp; Infinitary Products&lt;/h3&gt;
+&lt;p&gt;It is possible to extend the notion of the Cartesian product to allow for the product of any indexed family of sets:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\prod_{i\in I}S_i=\{f:I\to\bigcup_{i\in I}S_i\mid \forall i,f(i)\in S_i\}&lt;/script&gt;
+
+&lt;p&gt;In words, this Cartesian product returns every function that takes an element $i\in I$ and maps it to an element $f(i)\in S_i$. Note that this allows for index sets with an infinite cardinality, leading to &lt;strong&gt;infinitary&lt;/strong&gt; Cartesian products:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\underbrace{\text{binary},\text{trinary},\cdots,n\text{-ary}}_{\text{finitary}},\cdots;\underbrace{\aleph_0\text{-ary},\aleph_1\text{-ary},\cdots}_{\text{infinitary}}&lt;/script&gt;
+
+&lt;p&gt;Note that this generalizes the first definition because $n$ can be thought of as a set with $n$ elements as per its construction in the &lt;a href=&quot;\natural-numbers&quot;&gt;natural numbers&lt;/a&gt;, and so we can take it to be our index set $I$. As such, these two definitions are isomorphic for finitary products.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Also note that this definition of Cartesian product depends on the notion of indexed families of sets (i.e. functions), which in turn depends on our original definition. As such we are left with two distinct versions of the Cartesian product, with the less general finitary version used to found the more general indexed one.&lt;/em&gt;&lt;/p&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Cartesian Powers&lt;/h4&gt;&lt;/summary&gt;
+When dealing with the repeated Cartesian product of a single set $S$, we call it the &lt;b&gt;$n$th Cartesian power&lt;/b&gt; and use the following notation:
+
+$$S^n=\prod_{i=1}^nS=\underbrace{S\times S \times \cdots \times S}_{n\text{ sets}}$$
+
+Even more generally, using the indexed definition of Cartesian product, we can denote the set of all functions from a set $I$ to $S$ like so:
+
+$$S^I=\prod_{i\in I}S=\{f\mid f:I\to S\}$$
+
+&lt;!-- $$S^I=\prod_{i\in I}S=\{G\mid (\exists f)\ f=(I,S,G)\wedge \operatorname{isFunction}(f)\}$$
+
+*Note that, because many naïve definitions of function identify them solely via their graphs, the definition of $S^I$ above may not look the same as usual.* --&gt;
+
+&lt;!-- Note that this meshes with the simpler definition of $S^n$ since $n$ can be thought of as a set with $n$ elements as per its construction in the &lt;a href=&quot;\natural-numbers&quot;&gt;natural numbers&lt;/a&gt;
+&lt;!-- [natural numbers](\natural-numbers). --&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Empty Set&lt;/h4&gt;&lt;/summary&gt;
+A special case of the Cartesian product is when one of the sets $S_i=\emptyset$. When this happens the entire product collapses into the empty set. This is because there are simply no elements in $\emptyset$ to be mapped to by $f(i)$. We can state this as the following for any indexed family of sets $\{S_i\}_{i\in I}$:
+
+$$(\exists i\in I)\ S_i=\emptyset\implies \prod_{i\in I}S_i=\emptyset$$
+
+Indeed this absorbing property of the empty set is the only case in which a Cartesian product could result in the empty set.
+&lt;br /&gt;&lt;br /&gt;
+&lt;i&gt;Interestingly, if we don't assume the axiom of choice, it is possible that an infinite Cartesian product of nonempty sets will still produce the empty set.&lt;/i&gt;&lt;p&gt;&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Nullary Product&lt;/h4&gt;&lt;/summary&gt;
+Another special case is when the index set $I=\emptyset$. This is called an empty or &lt;b&gt;nullary Cartesian product&lt;/b&gt;. The index set being empty means that there can only be one function (the empty function) in the product:
+
+$$\prod_\emptyset=\{f_\emptyset:\emptyset\to\emptyset\}=\{(\emptyset,\emptyset)\}$$
+
+Going back to Cartesian powers, this implies that $S^0=S^\emptyset=\{f_\emptyset\}$ for any set $S$.
+
+&lt;i&gt;If we were to identify functions as just their graphs, then the nullary product would just be $\{\emptyset\}$.&lt;/i&gt;
+&lt;/details&gt;
+
+&lt;h2 id=&quot;properties&quot;&gt;Properties&lt;/h2&gt;
+&lt;p&gt;Note that the following properties refer to the standard binary Cartesian product and not its indexed variant.&lt;/p&gt;
+&lt;h3 id=&quot;positional-properties&quot;&gt;Positional Properties&lt;/h3&gt;
+&lt;details open=&quot;&quot;&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Left-Associative&lt;/h4&gt;&lt;/summary&gt;
+When faced with an $n$-ary Cartesian product without parenthesis, it is conventionally evaluated from left to right. That is to say the Cartesian product is left-associative:
+
+$$A\times B \times C=(A \times B)\times C$$
+
+This convention intuitively meshes with the definition of $n$-ary Cartesian products and $n$-tuples (i.e. $((a,b),c)=(a,b,c)$)
+&lt;p&gt;&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Non-Commutative&lt;/h4&gt;&lt;/summary&gt;
+The Cartesian product is a non-commutative operator:
+
+$$A\times B \not= B \times A$$
+
+This should be obvious as the ordered tuples $(a,b)\not=(b,a)$ where $a\in A$ and $b\in B$ via the definition of &lt;a href=&quot;/n-tuples#equality&quot;&gt;tuple equality&lt;/a&gt;.
+&lt;p&gt;&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Non-Associative&lt;/h4&gt;&lt;/summary&gt;
+The Cartesian product is a non-associative operator:
+
+$$\left(A\times B\right) \times C \not= A\times \left(B \times C\right)$$
+
+Similar to its non-commutativity, we can illustrate this by noting that $((a,b),c)\not= (a,(b,c))$ where $a\in A$, $b\in B$, and $c\in C$.
+&lt;/details&gt;
+
+&lt;h3 id=&quot;distributive-properties&quot;&gt;Distributive Properties&lt;/h3&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\begin{align*}
+A\times\left(B\cup C\right)&amp;=\left(A\times B\right)\cup \left(A\times C\right)\tag{Union}\\
+A\times\left(B\cap C\right)&amp;=\left(A\times B\right)\cap \left(A\times C\right)\tag{Intersection 1}\\
+\left(A\times B\right)\cap \left(C\times D\right)&amp;=\left(A\cap B\right)\times \left(C\cap D\right)\tag{Intersection 2}\\
+A\times\left(B\setminus C\right)&amp;=\left(A\times B\right)\setminus \left(A\times C\right)\tag{Set Difference}\\
+B\subseteq C&amp;\leftrightarrow\left(A\times B\right)\subseteq \left(A\times C\right)\tag{Subset 1}\\
+\left(A\times B\right)\subseteq \left(C\times D\right)&amp;\leftrightarrow\left(A\subseteq B\right)\land \left(C\subseteq D\right)\tag{Subset 2}\\
+\end{align*} %]]&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;!-- &lt;h4&gt;Union&lt;/h4&gt;
+$$A\times\left(B\cup C\right)=\left(A\times B\right)\cup \left(A\times C\right)$$
+
+&lt;h4&gt;Intersection&lt;/h4&gt;
+$$A\times\left(B\cap C\right)=\left(A\times B\right)\cap \left(A\times C\right)$$
+
+$$\left(A\times B\right)\cap \left(C\times D\right)=\left(A\cap B\right)\times \left(C\cap D\right)$$
+
+&lt;h4&gt;Set Difference&lt;/h4&gt;
+$$A\times\left(B\setminus C\right)=\left(A\times B\right)\setminus \left(A\times C\right)$$
+
+&lt;h4&gt;Subsets&lt;/h4&gt;
+$$B\subseteq C\iff\left(A\times B\right)\subseteq \left(A\times C\right)$$
+
+$$\left(A\times B\right)\subseteq \left(C\times D\right)\iff\left(A\subseteq B\right)\land \left(C\subseteq D\right)$$
+
+&lt;h4&gt;Complements&lt;/h4&gt; --&gt;
+&lt;p&gt;If $A$ and $B$ are members of some universal set $U$, then their absolute complement is denoted $A^C$ and $B^C$ respectively.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right)\cup\left(A\times B^C\right)\tag{Complement}&lt;/script&gt;
+
+&lt;h2 id=&quot;cartesian-factorization&quot;&gt;Cartesian Factorization&lt;/h2&gt;
+&lt;p&gt;The Cartesian product is analogous to the integer product we are familiar with in the following way: a Cartesian product can be ‘factored’ into its component sets. Even further, there exists a unique prime factorization of any Cartesian product that recovers its original sets.&lt;/p&gt;
+
+&lt;h4 id=&quot;finitary-product&quot;&gt;Finitary Product&lt;/h4&gt;
+&lt;!-- Before we can factor finite Cartesian products we have to remember their simultaneity of arity, i.e. that they can be interpreted in multiple ways. To avoid this, and arrive at a unique prime factorization, we have to extract the factors right to left, since the **rightmost factor** (RMF) of any Cartesian product $P$ is the same for all its possible factorizations. --&gt;
+&lt;p&gt;To find the $i$th &lt;strong&gt;Cartesian Factor (CF)&lt;/strong&gt; of an $n$-ary Cartesian product $P$ we simply have to find the union of all the tuples in $P$ at the $i$th index:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\operatorname{CF}_i(P)=\bigcup_{p\in P} \pi^n_i(p)=S_i&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;Where $\pi^n_i(p)$ is the &lt;a href=&quot;\n-tuple#extraction&quot;&gt;tuple extraction function&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;indexed-product&quot;&gt;Indexed Product&lt;/h4&gt;
+&lt;p&gt;In the more general case where our Cartesian product $P$ is of an indexed family $\{S_i\} _{i\in I}$ then we can find the $i$th factor in the following way:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\operatorname{CF}_i(P)=\bigcup_{p\in P} p(i)=S_i&lt;/script&gt;
+
+&lt;p&gt;Note that we can recover the index set $I$ from the product $P$ by simply choosing any one of its element (a function) and looking at its first element. It will end up being the Cartesian product of its domain $I$ and codomain which is a binary product, so we can extract the first set as described in the finitary case.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Also note that, unlike the finitary case, indexed products can only be interpreted one way and so only have one factorization.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;prime-factorization&quot;&gt;Prime Factorization&lt;/h4&gt;
+&lt;p&gt;The &lt;strong&gt;Cartesian prime factorization (CPF)&lt;/strong&gt; is simply the indexed set of all the Cartesian factors. Note that the indexing is important because, unlike integer factors, the order matters. And so for a Cartesian product $\prod_{i\in I}S_i=P$ we can say:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\operatorname{CPF}(P)=\{\operatorname{Factor}_i(P)\}_{i\in I}=\{S_i\}_{i\in I}&lt;/script&gt;
+
+&lt;p&gt;Note that due to the simultaneity of arity, the factorization of a finite product depends on what arity we consider to it be. We can resolve this if we specify that the &lt;em&gt;unique&lt;/em&gt; prime factorization of a finitary product requires it be considered the maximum arity possible.&lt;/p&gt;
+
+&lt;h4 id=&quot;factorization-of-the-empty-set&quot;&gt;Factorization of the Empty Set&lt;/h4&gt;
+&lt;p&gt;Analogous to the number zero, the empty set $\emptyset$ does not have a unique prime factorization. That is because if one of the factors of a Cartesian product happens to be the empty set, then the result too will be empty and thus there is no way to recover the original factors from it. In other words, any family of sets can serve as a factorization of $\emptyset$ so long as one of them is $\emptyset$ itself.&lt;/p&gt;
+
+&lt;h2 id=&quot;examples--uses&quot;&gt;Examples &amp;amp; Uses&lt;/h2&gt;
+&lt;h4 id=&quot;relations&quot;&gt;Relations&lt;/h4&gt;
+&lt;p&gt;An $n$-ary &lt;a href=&quot;\relations&quot;&gt;relation&lt;/a&gt; is defined as an $n$-tuple with the first element being an $n$-ary Cartesian product and the last element a subset of that product. For example, $\le$ is a binary relation on the set $\mathbb R$:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{gather}
+\le\equiv(\mathbb R\times\mathbb R,G)\\
+G\subseteq\mathbb R\times\mathbb R
+\end{gather}&lt;/script&gt;
+
+&lt;p&gt;This allows us to formalize statements like $4\le7$ which really means $(4,7)\in G$.&lt;/p&gt;
+
+&lt;h4 id=&quot;cardinal-multiplication&quot;&gt;Cardinal Multiplication&lt;/h4&gt;
+&lt;p&gt;Cartesian products are used to define the product of two cardinal numbers:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\left|X\times Y\right|=\left|X\right|\left|Y\right|&lt;/script&gt;
+
+&lt;p&gt;And in general for any indexed family of cardinal numbers:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\left|\prod_{i\in I}X_i\right|=\prod_{i\in I}\left|X_i\right|&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;Note the left product denotes the Cartesian product while the right denotes the cardinal product.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;cartesian-coordinates&quot;&gt;Cartesian Coordinates&lt;/h4&gt;
+&lt;p&gt;Every point in $2$-space represents an element of the Cartesian product of the Reals with themselves (i.e $\mathbb{R}^2$). This can be generalized to $n$-space with every point being an element of $\mathbb{R}^n$:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbb{R}^n=\{(x_1,x_2,\cdots,x_n)\mid \forall i\in [1..n]:   x_i\in\mathbb{R}\}&lt;/script&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cartesian-coordinate-system.svg/354px-Cartesian-coordinate-system.svg.png?style=centerme&quot; alt=&quot;plane&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Indeed, the graphical representation above was dubbed the Cartesian plane after the same &lt;a href=&quot;https://en.wikipedia.org/wiki/René_Descartes&quot;&gt;Descartes&lt;/a&gt; that used it to represent the Cartesian product $\mathbb{R}\times\mathbb{R}$.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Points in $3$-space are necessary in describing the &lt;a href=&quot;/position&quot;&gt;position&lt;/a&gt; of objects and particles in space and thus set up the study of &lt;a href=&quot;\kinematics&quot;&gt;motion&lt;/a&gt;, the causes of that motion and, ultimately, the rest of physics.&lt;/p&gt;
+
+&lt;p&gt;Moreover, $2$-space (and less frequently $3$-space) is used in plotting and making inferences from data as well as visualizing functions over an interval of numbers. We can even consider an infinite dimensional real space $\mathbb R^\mathbb \omega$, aka the set of all real sequences.&lt;/p&gt;
 </content>
  </entry>
  
@@ -51,20 +280,20 @@
    <id>http://localhost:4000/sequential-search</id>
    <content type="html">&lt;p&gt;&lt;strong&gt;Sequential search&lt;/strong&gt;, or linear search, is a search algorithm implemented on lists. It is one of the most intuitive (some might even say naïve) approaches to search: simply look at all entries in order until the element is found.&lt;/p&gt;
 
-&lt;p&gt;Given a &lt;strong&gt;target&lt;/strong&gt; value, the algorithm iterates through every entry on the list and compares it to the target. If they match then it is a &lt;strong&gt;successful search&lt;/strong&gt; and the algorithm returns the index of the target. If the end of the list is reached and no match was found, it is an &lt;strong&gt;unsuccessful search&lt;/strong&gt; and the algorithm returns some non index like -1.&lt;/p&gt;
-
-&lt;p&gt;If only the existence of the target in the list is of importance and the index is irrelevant, we can modify the algorithm such that it returns true for successful searches and false for unsuccessful ones. This doesn’t affect it’s complexity at all.&lt;/p&gt;
+&lt;p&gt;Given a &lt;strong&gt;target&lt;/strong&gt; value, the algorithm iterates through every entry on the list and compares it to the target. If they match then it is a &lt;strong&gt;successful search&lt;/strong&gt; and the algorithm returns true. If the end of the list is reached and no match was found, it is an &lt;strong&gt;unsuccessful search&lt;/strong&gt; and the algorithm returns false.&lt;/p&gt;
 
 &lt;!--more--&gt;
+
+&lt;p&gt;A useful modification of this algorithm is to return the index of the target in the list when a match is found. In the case of an unsuccessful search, a special number denoting a failure is returned, usually -1. This slight modification has no effect on the complexity of the algorithm and so we might as well implement that version instead:&lt;/p&gt;
 
 &lt;h2 id=&quot;implementation&quot;&gt;Implementation&lt;/h2&gt;
 &lt;h3 id=&quot;pseudocode&quot;&gt;Pseudocode&lt;/h3&gt;
 &lt;p&gt;Given a list $L$ of length $n$ with the $i$th element denoted $L_i$ and the target value denoted $T$:&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;Set variable $i:=0$&lt;/li&gt;
-  &lt;li&gt;If $L_i=T$, return i &lt;strong&gt;END&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;If $L_i=T$, return $i$ &lt;strong&gt;END&lt;/strong&gt;; else goto step 3&lt;/li&gt;
   &lt;li&gt;Increment index $i:=i+1$&lt;/li&gt;
-  &lt;li&gt;If $i&amp;lt;n$, goto step 2; Else return -1 &lt;strong&gt;END&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;If $i&amp;lt;n$, goto step 2; else return $-1$ &lt;strong&gt;END&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h3 id=&quot;java&quot;&gt;Java&lt;/h3&gt;
@@ -88,9 +317,9 @@ def search(L, T):
 ```` --&gt;
 
 &lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-&lt;p&gt;While slower than other search algorithms, like binary search, sequential search is easy to implement and does not require the list to be sorted.  As a result, it is commonly implemented in unsorted lists as they cannot leverage any better alternatives. At least not with a classical computer…&lt;/p&gt;
+&lt;p&gt;Sequential search is rarely used in practice due to better alternatives such as binary search and hash tables. That said, sequential search has the advantage of being both simple to implement and not requiring the list to be sorted. As a result, it is commonly implemented in unsorted lists as they cannot leverage any better alternatives. At least not with a classical computer…&lt;/p&gt;
 
-&lt;p&gt;In cases where the list is small or searching is not to common, sequential search may even prove to be a faster solution as it does not require the list in question to constantly be sorted.&lt;/p&gt;
+&lt;p&gt;In fact, in cases where the list is small or searching is not too common, sequential search may even prove to be a faster solution as it does not require the list in question to constantly be sorted.&lt;/p&gt;
 
 &lt;h2 id=&quot;analysis&quot;&gt;Analysis&lt;/h2&gt;
 &lt;h3 id=&quot;time-complexity&quot;&gt;Time Complexity&lt;/h3&gt;
@@ -110,11 +339,11 @@ The worst case of sequential search is if either the last element was the target
 &lt;summary&gt;&lt;strong&gt;Average Case&lt;/strong&gt;&lt;br /&gt;&lt;/summary&gt;
 The average case complexity of a search algorithm is the sum of the times it takes to search for each element divided by the number of elements. More formally:
 
-$$\frac{s_0+s_1+\cdots+s_n}{n}=\frac{\sum_{i\in n}s_i}{n}$$
+$$\frac{s_1+s_2+\cdots+s_n}{n}=\displaystyle \sum_{i=1}^n\frac{s_i}{n}$$
 
-&lt;i&gt;Where $s_i$ is the time it takes to search for the $i$th element. And $n$ is a &lt;a href=&quot;\natural-numbers&quot;&gt;natural number&lt;/a&gt;.&lt;/i&gt;&lt;p&gt;&lt;/p&gt;
+&lt;i&gt;Where $s_i$ is the time it takes to search for the $i$th element, and $n$ is the length of the list.&lt;/i&gt;&lt;p&gt;&lt;/p&gt;
 
-In sequential search, we have to perform $i$ comparisons to search for the $(i-1)$th element (the $-1$ is because we index starting at $0$). Because of this we can write:
+In sequential search, we have to perform $i$ comparisons to return $i$th element. Because of this we can write:
 
 $$\frac{1+2+\cdots+n}{n}=\frac{n(n+1)}{2}\cdot\frac{1}{n}=\frac{n+1}{2}$$
 
@@ -143,17 +372,17 @@ $$\sum_{i\in n} p_i=1$$
 &lt;p&gt;&lt;/p&gt;
 We can express the average running time of a probabilistic search algorithm like so:
 
-$$p_0s_0+p_1s_1+\cdots+p_ns_n=\sum_{i\in n}p_is_i$$
+$$p_1s_1+p_2s_2+\cdots+p_ns_n=\sum_{i\in n}p_is_i$$
 
 Since sequential search takes $i$ comparisons at the $i$th element, we can rewrite this for probabilistic sequential search as:
 
-$$p_0+2p_1+\cdots+np_n=\sum_{i\in n}ip_i$$
+$$p_1+2p_2+\cdots+np_n=\sum_{i\in n}ip_i$$
 
 If we know what frequency with which certain targets are searched for, we can rearrange the list such that things with a higher probability of being searched for are near the beginning. Thereby reducing the amount of comparisons needed on average.
 &lt;p&gt;&lt;/p&gt;
 &lt;i&gt;A way to implement this in practice might be to move searched items forward in the list (assuming the order of the list is not critical). This would eventually settle the list into to its ideal form, assuming the elements were searched with certain probabilities.&lt;/i&gt;
 &lt;p&gt;&lt;/p&gt;
-If we are given a particular probability distribution, we can make stronger statements about the complexity of the search. For example, if the distribution is geometric and the elements are arranged from most to least likely, the complexity will be $O(1)$. This is even better than binary search!
+If we are given a particular probability distribution, we can make stronger statements about the complexity of the search. For example, if the distribution is geometric and the elements are arranged from most to least likely, the average complexity will be $O(1)$. This is even better than binary search!
 &lt;p&gt;&lt;/p&gt;
 &lt;/details&gt;
 
@@ -171,7 +400,7 @@ Given a list $L$ of length $n$ with the $i$th element denoted $L_i$ the target v
   &lt;li&gt;Return $L_i=T$ &lt;b&gt;END&lt;/b&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-Of course, because we have stipulated that the list be sorted, there are now faster search algorithms that can be used on it, namely binary search. This obviates the use of sequential sort.
+Of course, because we have stipulated that the list be sorted, there are now faster search algorithms that can be used on it (like binary search). This obviates the use of sequential sort.
 &lt;/details&gt;
 </content>
  </entry>
@@ -181,7 +410,7 @@ Of course, because we have stipulated that the list be sorted, there are now fas
    <link href="http://localhost:4000/asymptotic-notation/"/>
    <updated>2018-10-07T00:00:00-04:00</updated>
    <id>http://localhost:4000/asymptotic-notation</id>
-   <content type="html">&lt;p&gt;The notation used to describe the &lt;strong&gt;asymptotics&lt;/strong&gt;, or limiting behavior, of functions consists of a set of 6 relations. These different relations allow us to compare the growth of different functions as they approach some constant or, in most cases, infinity.&lt;/p&gt;
+   <content type="html">&lt;p&gt;The notation used to describe the &lt;strong&gt;asymptotics&lt;/strong&gt;, or limiting behavior, of functions consists of a set of 6 &lt;a href=&quot;\relations&quot;&gt;relations&lt;/a&gt;. These different relations allow us to compare the growth of different functions as they approach some constant or, in most cases, infinity.&lt;/p&gt;
 
 &lt;p&gt;In the infinite case, these relations usually boil down to the functions’ &lt;em&gt;most significant term&lt;/em&gt;. That is, the term that grows the quickest as $x$ increases. For example, in the function $x^3+5x^2+x$ this role falls on the $x^3$ term as the other terms become insignificant (i.e tend to 0) as $x\to\infty$.&lt;/p&gt;
 
@@ -229,14 +458,14 @@ Of course, because we have stipulated that the list be sorted, there are now fas
 
 &lt;!--more--&gt;
 
-&lt;p&gt;These notations, particularly big $O$, are most commonly used to classify and compare the computational complexity (both temporal and spatial) of different algorithms as a function of their input size by stripping away unnecessary constants and minor terms that correspond to the different preconditions and runtime environments that these algorithms may run on. Ideally, an algorithm will be on the order of a relatively slowly growing function (e.g $\log n$ grows slower than $n^2$) as they take less resources and thus are more feasible to compute.&lt;/p&gt;
+&lt;p&gt;These relations, particularly big $O$, are most commonly used to classify and compare the computational complexity (both temporal and spatial) of different algorithms as a function of their input size by stripping away unnecessary constants and minor terms that correspond to the different preconditions and runtime environments that these algorithms may run on. Ideally, an algorithm will be on the order of a relatively slowly growing function (e.g $\log n$ grows slower than $n^2$) as they take less resources and thus are more feasible to compute.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/comp_sci/comp-complexity.png?style=centerme&quot; alt=&quot;image&quot; width=&quot;400px&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;They are also used in the approximation of functions that would be infeasible, or even impossible, to calculate otherwise.&lt;/p&gt;
 
 &lt;h2 id=&quot;formal-definitions&quot;&gt;Formal Definitions&lt;/h2&gt;
-&lt;p&gt;More concretely, this notation is based off $f$ being a member of some set defined by $g$. How these sets are defined for each notation is elaborated below via two similar (but not quite equivalent) formalizations of the concept. One where we consider how the values of the function grow after some sufficiently large value $x_0$, and one by comparing the limit of their ratio as $x$ approaches infinity. Both notions are given below:&lt;/p&gt;
+&lt;p&gt;More concretely, asymptotic notation is based off $f$ being a member of some set defined by $g$. How these sets are defined for each notation is elaborated below via two similar (but not quite equivalent) formalizations of the concept. One where we consider how the values of the function grow after some sufficiently large value $x_0$, and one by comparing the limit of their ratio as $x$ approaches infinity. Both notions are given below:&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Note that asymptotic equivalence only has a limit definition.&lt;/em&gt;&lt;/p&gt;
 
@@ -282,7 +511,7 @@ f(x)\succ g(x)&amp;amp;\equiv \lim_{x\to\infty}\left|\frac{f(x)}{g(x)}\right|=\i
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x)\in O(g(x)) \ \ (\text{as }x\to c)&lt;/script&gt;
 
-&lt;p&gt;In this more general case, the asymptotic notations are actually families of notations indexed by some constant $c$. We can modify the limit definitions given above by simply replacing $x\to\infty$ with $x\to c$.&lt;/p&gt;
+&lt;p&gt;In this more general case, the asymptotic notations are actually families of relations indexed by some constant $c$. We can modify the limit definitions given above by simply replacing $x\to\infty$ with $x\to c$.&lt;/p&gt;
 
 &lt;p&gt;That said, the $x\to\infty$ case is so much more common that when no approached value is specified, we will assume this to be the case. In other words:&lt;/p&gt;
 
@@ -2000,165 +2229,6 @@ F_n&amp;=F_{n-2}+F_{n-1}\\
  </entry>
  
  <entry>
-   <title>Cartesian Product</title>
-   <link href="http://localhost:4000/cartesian-product/"/>
-   <updated>2018-04-30T00:00:00-04:00</updated>
-   <id>http://localhost:4000/cartesian-product</id>
-   <content type="html">&lt;!-- Heavily Reformatted 10/25/18 --&gt;
-&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
-&lt;p&gt;The Cartesian product $\times$ is an operation on two sets, call them $A$ and $B$, that returns the set of all &lt;a href=&quot;/n-tuples&quot;&gt;ordered pairs&lt;/a&gt; with their first element from $A$ and their second from $B$.&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;A\times B=\{(a,b)\mid a\in A \land b\in B\}&lt;/script&gt;
-
-&lt;h4 id=&quot;existence-in-zfc&quot;&gt;Existence in ZFC&lt;/h4&gt;
-&lt;p&gt;Utilizing the &lt;a href=&quot;/n-tuples#definition&quot;&gt;Kuratowski definition&lt;/a&gt; of ordered pairs, we can show that the Cartesian product of two sets can be constructed from the axioms of ZFC. In particular, it is a subset of the following easily constructed set:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;A\times B \subseteq \mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)&lt;/script&gt;
-
-&lt;details&gt;&lt;summary&gt;&lt;strong&gt;Proof&lt;/strong&gt;&lt;/summary&gt;
-First, note that $A\cup B$ is guaranteed by the axiom of union and that its power set is guaranteed by the axiom of power set.
-
-Next notice that, among many other elements, the power set of $A\cup B$ contains:
-&lt;!-- \left(\forall a\in A,\forall b\in B\right) --&gt;
-$$\{a\},\{a,b\}\in\mathcal{P}\left(A\cup B\right)$$
-
-where $a$ and $b$ are elements in $A$ and $B$ respectively. Now if we take the power set again we'll see that the result contains, among other things, the elements:
-
-$$\{\{a\},\{a,b\}\}\in\mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)$$
-
-for all $a$ and $b$ in $A$ and $B$. Now invoke the axiom of subset to choose only those elements that fit the description and we are done!
-&lt;/details&gt;
-&lt;p&gt;&lt;/p&gt;
-
-&lt;!-- $A\cup B$ is guaranteed by the axiom of union, and its repeated power sets are guaranteed by the axiom of power set. This coupled with the fact that the Cartesian product is only a subset of the above expression implies that it must exist. --&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;n-ary-cartesian-product&quot;&gt;$n$-ary Cartesian Product&lt;/h2&gt;
-&lt;p&gt;It is easy to see how one might generalize this notion to $n$ sets. By simply chaining the Cartesian product we are left with a set of $n$-tuples:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align*}(S_0\times S_1)\times S_2&amp;=\{(\left(s_0,s_1),s_2\right)\mid\forall k\in 3,\ s_k\in S_k)\}\\
-&amp;=\{\left(s_0,s_1,s_2\right)\mid\forall k\in 3,\ s_k\in S_k)\}
-\end{align*} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;Repeating this $n$ times, we are left with the following for any $n$ sets:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;S_0\times S_1\times \cdots \times S_{n-1}=\{\left(s_0,s_1,\cdots,s_{n-1}\right)\mid\forall k\in n,\ s_k\in S_k)\}&lt;/script&gt;
-
-&lt;p&gt;&lt;em&gt;Notice that the parenthesis are omitted. This is because the cartesian product is left-associative, a property that is expounded upon further below.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;cartesian-powers&quot;&gt;Cartesian Powers&lt;/h4&gt;
-&lt;p&gt;When dealing with the repeated Cartesian product of a single set $S$, we call it the $n$th Cartesian power and use the following notation:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\underbrace{S\times S \times \cdots \times S}_{n\text{ sets}}=S^n&lt;/script&gt;
-
-&lt;h4 id=&quot;infinitary-products&quot;&gt;Infinitary Products&lt;/h4&gt;
-&lt;p&gt;The arity of a Cartesian product is the number $n$ of sets that are being multiplied. When $n$ is infinite the product is &lt;strong&gt;infinitary&lt;/strong&gt; as opposed to &lt;strong&gt;finitary&lt;/strong&gt; for finite $n$.&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\underbrace{\text{binary},\text{trinary},\cdots,n\text{-ary}}_{\text{finitary}}\cdots;\underbrace{\aleph_0\text{-ary},\aleph_1\text{-ary},\cdots}_{\text{infinitary}}&lt;/script&gt;
-
-&lt;p&gt;All the definitions used above apply only to finite $n$. There &lt;em&gt;are&lt;/em&gt; valid notions of infinitary Cartesian products, but they are beyond the scope of this post.&lt;/p&gt;
-
-&lt;h2 id=&quot;properties&quot;&gt;Properties&lt;/h2&gt;
-&lt;h3 id=&quot;ordering-properties&quot;&gt;Ordering Properties&lt;/h3&gt;
-&lt;!-- #### Non-Commutative --&gt;
-&lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Non-Commutative&lt;/h4&gt;&lt;/summary&gt;
-The Cartesian product is a non-commutative operator:
-
-$$A\times B \not= B \times A$$
-
-This should be obvious as the ordered tuples $(a,b)\not=(b,a)$ where $a\in A$ and $b\in B$ via the definition of &lt;a href=&quot;/n-tuples#equality&quot;&gt;tuple equality&lt;/a&gt;.
-&lt;p&gt;&lt;/p&gt;
-&lt;/details&gt;
-
-&lt;!-- #### Non-Associative --&gt;
-&lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Non-Associative&lt;/h4&gt;&lt;/summary&gt;
-The Cartesian product is a non-associative operator:
-
-$$\left(A\times B\right) \times C \not= A\times \left(B \times C\right)$$
-
-Similar to its non-commutativity, we can illustrate this by noting that $((a,b),c)\not= (a,(b,c))$ where $a\in A$, $b\in B$, and $c\in C$.
-&lt;p&gt;&lt;/p&gt;
-&lt;/details&gt;
-
-&lt;!-- #### Left-Associative --&gt;
-&lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Left-Associative&lt;/h4&gt;&lt;/summary&gt;
-When faced with an $n$-ary Cartesian product, it is conventionally evaluated from left to right. That is to say the Cartesian product is left-associative:
-
-$$A\times B \times C=(A \times B)\times C$$
-
-This convention agrees with the definition of $n$-ary Cartesian products and $n$-tuples.
-&lt;/details&gt;
-
-&lt;h3 id=&quot;distributive-properties&quot;&gt;Distributive Properties&lt;/h3&gt;
-&lt;!-- &lt;details&gt;
-&lt;summary&gt;&lt;h3 class=&quot;inline&quot;&gt;Distributive Properties&lt;/h3&gt;&lt;/summary&gt; --&gt;
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\begin{gather*}
-A\times\left(B\cup C\right)=\left(A\times B\right)\cup \left(A\times C\right)\tag{Union}\\
-A\times\left(B\cap C\right)=\left(A\times B\right)\cap \left(A\times C\right)\tag{Intersection 1}\\
-\left(A\times B\right)\cap \left(C\times D\right)=\left(A\cap B\right)\times \left(C\cap D\right)\tag{Intersection 2}\\
-A\times\left(B\setminus C\right)=\left(A\times B\right)\setminus \left(A\times C\right)\tag{Set Difference}\\
-B\subseteq C\iff\left(A\times B\right)\subseteq \left(A\times C\right)\tag{Subset 1}\\
-\left(A\times B\right)\subseteq \left(C\times D\right)\iff\left(A\subseteq B\right)\land \left(C\subseteq D\right)\tag{Subset 2}\\
-\end{gather*}&lt;/script&gt;&lt;/p&gt;
-
-&lt;!-- &lt;h4&gt;Union&lt;/h4&gt;
-$$A\times\left(B\cup C\right)=\left(A\times B\right)\cup \left(A\times C\right)$$
-
-&lt;h4&gt;Intersection&lt;/h4&gt;
-$$A\times\left(B\cap C\right)=\left(A\times B\right)\cap \left(A\times C\right)$$
-
-$$\left(A\times B\right)\cap \left(C\times D\right)=\left(A\cap B\right)\times \left(C\cap D\right)$$
-
-&lt;h4&gt;Set Difference&lt;/h4&gt;
-$$A\times\left(B\setminus C\right)=\left(A\times B\right)\setminus \left(A\times C\right)$$
-
-&lt;h4&gt;Subsets&lt;/h4&gt;
-$$B\subseteq C\iff\left(A\times B\right)\subseteq \left(A\times C\right)$$
-
-$$\left(A\times B\right)\subseteq \left(C\times D\right)\iff\left(A\subseteq B\right)\land \left(C\subseteq D\right)$$
-
-&lt;h4&gt;Complements&lt;/h4&gt; --&gt;
-&lt;p&gt;If $A$ and $B$ are members of some universal set $U$, then their absolute complement is denoted $A^C$ and $B^C$ respectively.&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right)\cup\left(A\times B^C\right)\tag{Complement}&lt;/script&gt;
-&lt;!-- &lt;/details&gt; --&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;examples&quot;&gt;Examples&lt;/h2&gt;
-&lt;h4 id=&quot;relations&quot;&gt;Relations&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&quot;\relations&quot;&gt;Relations&lt;/a&gt; from a set $A$ to a set $B$ are defined, in part, as subsets of the Cartesian product $A\times B$. For example, the less than or equal to relation $\le$ on the integers can be defined like so, with the third element being a subset of the cartesian product of te first two:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\le\equiv\{\cdots,\left(1,2\right),\left(-14,0\right),\left(5,5\right),\left(12,13\right),\cdots\}&lt;/script&gt;
-
-&lt;p&gt;And so, because $10$ is less than $12$, the ordered pair $(10,12)\in\le$. We can write this more conventionally as $10\le12$.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;This glosses over some nuance regarding the notation of relations and the specification of their domain and codomain.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;cardinal-multiplication&quot;&gt;Cardinal Multiplication&lt;/h4&gt;
-&lt;p&gt;Cartesian products are used to define the product of two cardinal numbers:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\left|X\right|\left|Y\right|=\left|X\times Y\right|&lt;/script&gt;
-
-&lt;h4 id=&quot;cartesian-coordinates&quot;&gt;Cartesian Coordinates&lt;/h4&gt;
-&lt;p&gt;Every point in $2$-space represents an element of the Cartesian product of the Reals with themselves (i.e $\mathbb{R}^2$). This can be generalized to $n$-space with every point being an element of $\mathbb{R}^n$:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbb{R}^n=\{(x_0,x_1,\cdots,x_{n-1})\mid \forall k\in n:   x_k\in\mathbb{R}\}&lt;/script&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cartesian-coordinate-system.svg/354px-Cartesian-coordinate-system.svg.png?style=centerme&quot; alt=&quot;plane&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Indeed, the graphical representation above was dubbed the Cartesian plane after the same &lt;a href=&quot;https://en.wikipedia.org/wiki/René_Descartes&quot;&gt;Descartes&lt;/a&gt; that used it to represent the Cartesian product $\mathbb{R}\times\mathbb{R}$.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Points in $3$-space are necessary in describing the &lt;a href=&quot;/position&quot;&gt;position&lt;/a&gt; of objects and particles in space and thus set up the study of &lt;a href=&quot;\kinematics&quot;&gt;motion&lt;/a&gt;, the causes of that motion and, ultimately, the rest of physics.&lt;/p&gt;
-
-&lt;p&gt;Moreover, $2$-space (and less frequently $3$-space) is used in plotting and making inferences from data as well as visualizing functions over an interval of numbers.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
    <title>On Culpability</title>
    <link href="http://localhost:4000/on-culpability/"/>
    <updated>2018-04-25T00:00:00-04:00</updated>
@@ -2265,18 +2335,27 @@ $$\left(A\times B\right)\subseteq \left(C\times D\right)\iff\left(A\subseteq B\r
 &amp;=\{\{\{\{x_1\},\{x_1,x_2\}\}\},\{\{\{x_1\},\{x_1,x_2\}\},x_3\}\}\\
 \end{align} %]]&gt;&lt;/script&gt;
 
-&lt;p&gt;And in general, an $n$-tuple for $n&amp;gt;2$ is defined as:&lt;/p&gt;
+&lt;p&gt;And in general, an $n$-tuple for $n&amp;gt;2$ is recursively defined as:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;(x_1,x_2,\cdots,x_{n-1},x_n)=((x_1,x_2,\cdots,x_{n-1}),x_n)&lt;/script&gt;
 
 &lt;p&gt;&lt;em&gt;While the above definition is standard, it lacks a notion of a $0$ and $1$-tuple. See &lt;a href=&quot;https://en.wikipedia.org/wiki/Tuple#Tuples_as_nested_sets&quot;&gt;this&lt;/a&gt; for a different definition of $n$-tuples that uses the null-tuple as a base case rather than ordered pairs. I can’t find a use for them that justifies their complication to the definition of $n$-tuple, so I excluded them.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Alternatively, $n$-tuples can also be defined as functions with domains over some finite interval of the positive integers. In this sense, they would be equivalent to finite sequences. Although since tuples are usually used to define functions (and thus finite sequences) this would be circular.&lt;/em&gt;&lt;/p&gt;
+&lt;!-- *Alternatively, $n$-tuples can also be defined as functions with domains over some finite interval of the positive integers. In this sense, they would be equivalent to finite sequences. Although since tuples are usually used to define functions (and thus finite sequences) this would be circular.*
 
-&lt;p&gt;Whatever definition is used, all that matters is that two $n$-tuples are equivalent &lt;em&gt;only&lt;/em&gt; when the elements at each of their indices are equivalent. This is their defining property.&lt;/p&gt;
+Whatever definition is used, all that matters is that two $n$-tuples are equivalent *only* when the elements at each of their indices are equivalent. This is their defining property. --&gt;
+
+&lt;details open=&quot;&quot;&gt;
+&lt;summary&gt;&lt;h4 class=&quot;inline&quot; id=&quot;simultaneous-interpretation&quot;&gt;Simultaneous Interpretation&lt;/h4&gt;&lt;/summary&gt;
+An important property of this definition is that any $n$-tuple can also be thought of as a $k$-tuple where $2\le k\le n$. This is an immediate consequence of the recursive definition:
+
+$$(x_1,x_2,\cdots,x_n)=((x_1,x_2,\cdots,x_{n-k+1}),x_{n-k+2},\cdots,x_n)$$
+
+This has consequences in how we interpret the [arity of Cartesian products](\cartesian-product#simultaneity-of-arity) and thus relations and functions.
+&lt;/details&gt;
 
 &lt;h4 id=&quot;existence-in-zfc&quot;&gt;Existence in ZFC&lt;/h4&gt;
-&lt;p&gt;The existence of an ordered pair of elements in ZFC can be proved using the axiom of pairing twice over. Once to prove that $ \{ a \} $ and $ \{ a,b \} $ exist and again to pair them with each other.&lt;/p&gt;
+&lt;p&gt;The existence of an ordered pair of elements in ZFC can be proved using the axiom of pairing 3 times. Once to prove that $ \{ a \} $ exists, another to prove $ \{ a,b \} $ exists, and one more time to pair them with each other.&lt;/p&gt;
 
 &lt;p&gt;And since $n$-tuples are simply nested ordered pairs, they too must exist.&lt;/p&gt;
 
@@ -2285,25 +2364,26 @@ $$\left(A\times B\right)\subseteq \left(C\times D\right)\iff\left(A\subseteq B\r
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{align}
-X&amp;=(x_1,x_2,x_3,\cdots,x_n)\\
-Y&amp;=(y_1,y_2,y_3,\cdots,y_n)
+X&amp;=(x_0,x_1,x_2,\cdots,x_{n-1})\\
+Y&amp;=(y_0,y_1,y_2,\cdots,y_{n-1})
 \end{align} %]]&gt;&lt;/script&gt;
 
 &lt;p&gt;$X$ and $Y$ are only equal if:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \begin{align}
-X=Y&amp;\equiv\forall k\in\mathbb{N}_n^ * \ (x_k=y_k)\\
-&amp;\equiv x_1=y_1 \land x_2=y_2 \land \cdots \land x_n=y_n\\
+X=Y&amp;\equiv\forall k\in n \ (x_k=y_k)\\
+&amp;\equiv x_0=y_0 \land x_1=y_1 \land \cdots \land x_{n-1}=y_{n-1}\\
 \end{align} %]]&gt;&lt;/script&gt;
 
-&lt;p&gt;&lt;em&gt;Where &lt;a href=&quot;/natural-numbers#notation&quot;&gt;$\mathbb{N}_n^ * $&lt;/a&gt; is the set of all positive integers from and including $1$ to $n$.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Where $n$ is a set as per its construction in the &lt;a href=&quot;\natural-numbers&quot;&gt;natural numbers&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Note that for this definition to work, the two tuples have to be the same size. As such, tuples of different sizes will never be equal.&lt;/p&gt;
 
 &lt;h2 id=&quot;extraction&quot;&gt;Extraction&lt;/h2&gt;
+&lt;p&gt;In order to use these tuples, we have to be sure we can have some formula to extract the first and second elements from them. These formulas are called the first and second &lt;strong&gt;projections&lt;/strong&gt;.&lt;/p&gt;
 &lt;h4 id=&quot;first-element&quot;&gt;First Element&lt;/h4&gt;
-&lt;p&gt;To extract the first element $\pi_1(P)$ of an ordered pair $P=(a,b)$ we can use the following construction:&lt;/p&gt;
+&lt;p&gt;To project the first element $\pi_1(P)$ of an ordered pair $P=(a,b)$ we can use the following construction:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\pi_1(P)=\bigcup\bigcap P=a&lt;/script&gt;
 
@@ -2362,7 +2442,7 @@ I'll do it later...
 &lt;h4 id=&quot;extracting-elements-of-n-tuples&quot;&gt;Extracting Elements of $n$-Tuples&lt;/h4&gt;
 &lt;p&gt;You may have noticed that the above definitions only apply to $2$-tuples. What about $n$-tuples? Well, quite intuitively, we can extract the elements of an $n$-tuple of any size by recursively using the $\pi_1$ and $\pi_2$ functions we defined above.&lt;/p&gt;
 
-&lt;p&gt;The notation we’ll use is as follows: $\pi^n_a(P)$ is the $a$th element of the $n$-tuple $P=\left(x_1,x_2,x_3,\cdots,x_n\right)$.&lt;/p&gt;
+&lt;p&gt;The notation we’ll use is as follows: $\pi^n_i(P)$ is the $i$th element of the $n$-tuple $P=\left(x_1,x_2,x_3,\cdots,x_n\right)$.&lt;/p&gt;
 
 &lt;p&gt;The first element of $P$ can be found like so:&lt;/p&gt;
 
@@ -2370,7 +2450,7 @@ I'll do it later...
 
 &lt;p&gt;For any element &lt;em&gt;other&lt;/em&gt; than the first, we can use the following formula:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\pi^n_a(P)=\pi_2\circ\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-a\text{ iterations}}(P)=x_a&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\pi^n_i(P)=\pi_2\circ\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-i\text{ iterations}}(P)=x_i&lt;/script&gt;
 
 &lt;p&gt;This should be fairly intuitive as the repeated $\pi_1$ serve to extract the desired nested tuple and once we reach the base case of the $2$-tuple, we either want the first $\pi_1$ or second $\pi_2$ term.&lt;/p&gt;
 
@@ -2480,7 +2560,7 @@ Why are is there a conditional definition of the $a$th element of an $n$-tuple? 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;n{$}\cdot H(n)=n!^{n+1}&lt;/script&gt;
 
 &lt;details&gt;
-&lt;summary&gt;&lt;h4 class=&quot;inline&quot;&gt;Proof&lt;/h4&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;Proof&lt;/strong&gt;&lt;/summary&gt;
 
 We can prove the above statement, which we'll call $P(n)$, by induction:
 
@@ -2538,7 +2618,7 @@ $$\begin{align}
    <id>http://localhost:4000/dottie-number</id>
    <content type="html">&lt;p&gt;The Dottie number, which I will denote as $\textbf{d}$, is the only real solution to the following equation:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\cos x=x&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\Large{\cos x = x}&lt;/script&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Dottie_number.svg/800px-Dottie_number.svg.png?style=centerme&quot; alt=&quot;graph&quot; width=&quot;440px&quot; /&gt;&lt;/p&gt;
 
@@ -2550,7 +2630,7 @@ $$\begin{align}
 
 &lt;!--more--&gt;
 
-&lt;h3 id=&quot;fixed-point&quot;&gt;Fixed Point&lt;/h3&gt;
+&lt;h2 id=&quot;fixed-point&quot;&gt;Fixed Point&lt;/h2&gt;
 &lt;p&gt;$\textbf{d}$ is what’s called a fixed point of $\cos x$, because the cosine function maps $\textbf{d}$ to itself. As a result, repeatedly taking the cosine of $\textbf{d}$ returns the same result:&lt;/p&gt;
 
 &lt;!-- $$\cos \textbf{d} = \textbf{d} \implies (\forall n\in\mathbb{N})\  \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n}\ \textbf{d}=\textbf{d}$$ --&gt;
@@ -2559,7 +2639,7 @@ $$\begin{align}
 
 &lt;p&gt;$\textbf{d}$ is the $\cos$ function’s only &lt;em&gt;real&lt;/em&gt; fixed point, but there exists infinitely many solutions to $\cos z=z$ for the complex numbers. Those solutions, however, are not attractors.&lt;/p&gt;
 
-&lt;h3 id=&quot;universal-attractor&quot;&gt;Universal Attractor&lt;/h3&gt;
+&lt;h2 id=&quot;universal-attractor&quot;&gt;Universal Attractor&lt;/h2&gt;
 &lt;p&gt;What’s interesting about $\textbf{d}$ is that it’s not just the real fixed point of $\cos$ but also its &lt;strong&gt;universal fixed point attractor&lt;/strong&gt;. That is to say, if you take the cosine of any real number and repeatedly take the cosine of the result, you will always approach $\textbf{d}$:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\forall x\in\mathbb{R} \left(\lim_{n\to\infty} \underbrace{\cos\circ\cos\circ\cdots\circ\cos}_{n}\ x=\textbf{d}\right)&lt;/script&gt;
@@ -2620,7 +2700,7 @@ $$\begin{align}
 
 &lt;/p&gt;&lt;/details&gt;
 
-&lt;h3 id=&quot;kaplans-series&quot;&gt;Kaplan’s Series&lt;/h3&gt;
+&lt;h2 id=&quot;kaplans-series&quot;&gt;Kaplan’s Series&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.maa.org/sites/default/files/Kaplan2007-131105.pdf&quot;&gt;Kaplan&lt;/a&gt; proved that $\textbf{d}$ is equivalent to the following series:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\textbf{d} = \sum_{n=0}^{\infty}\ g^{\left(n\right)}\left(\frac{\pi}{2}\right)\frac{\left(-\pi\right)^n}{2^nn!}&lt;/script&gt;
@@ -2804,8 +2884,8 @@ $$\begin{align}
   &lt;/p&gt;
 &lt;/details&gt;
 
-&lt;h3 id=&quot;approximating-the-dottie-number&quot;&gt;Approximating the Dottie Number&lt;/h3&gt;
-&lt;h4 id=&quot;solve-kaplans-series&quot;&gt;Solve Kaplan’s series&lt;/h4&gt;
+&lt;h2 id=&quot;approximating-the-dottie-number&quot;&gt;Approximating the Dottie Number&lt;/h2&gt;
+&lt;h3 id=&quot;solve-kaplans-series&quot;&gt;Solve Kaplan’s series&lt;/h3&gt;
 &lt;p&gt;One way is to simply calculate a specified number of terms in Kaplan’s series and sum them.&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
@@ -2820,7 +2900,7 @@ $$\begin{align}
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\textbf{d}\approx 0.73908 51332 15160 64\color{red}{570 711495 ...}&lt;/script&gt;
 
-&lt;h4 id=&quot;taylor-series-of-cosine&quot;&gt;Taylor Series of Cosine&lt;/h4&gt;
+&lt;h3 id=&quot;taylor-series-of-cosine&quot;&gt;Taylor Series of Cosine&lt;/h3&gt;
 &lt;p&gt;Another way to approximate $\textbf{d}$ is to simply substitute Taylor polynomials of $\cos x$ for $\cos x = x$ and solve for the zero of the resulting polynomial:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!}- \frac{x^6}{6!}+\cdots&lt;/script&gt;
@@ -2851,7 +2931,7 @@ $$\begin{align}
 
 &lt;p&gt;&lt;em&gt;You may have noticed I didn’t include an exact representation of the quartic equation above. This is because, even though there exists a generic solution to quartic polynomials, it is crazily complex and not worth using practically. Click the &lt;a href=&quot;https://upload.wikimedia.org/wikipedia/commons/9/95/Quartic_Formula.jpg&quot;&gt;quartic&lt;/a&gt; link to see the equation in its entirety&lt;/em&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;general-root-finding-algorithm&quot;&gt;General Root Finding Algorithm&lt;/h4&gt;
+&lt;h3 id=&quot;general-root-finding-algorithm&quot;&gt;General Root Finding Algorithm&lt;/h3&gt;
 &lt;p&gt;The only choice we have left is to use a general root, or zero, finding algorithm like &lt;a href=&quot;https://en.wikipedia.org/wiki/Newton%27s_method&quot;&gt;Newton’s method&lt;/a&gt; or the &lt;a href=&quot;https://en.wikipedia.org/wiki/Bisection_method&quot;&gt;bisection method&lt;/a&gt; to calculate $\textbf{d}$ to a given accuracy.&lt;/p&gt;
 </content>
  </entry>

@@ -6,7 +6,7 @@ tags: math
 ---
 The Dottie number, which I will denote as $\textbf{d}$, is the only real solution to the following equation:
 
-$$\cos x=x$$
+$$\Large{\cos x = x}$$
 
 ![graph](https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Dottie_number.svg/800px-Dottie_number.svg.png?style=centerme){:width="440px"}
 

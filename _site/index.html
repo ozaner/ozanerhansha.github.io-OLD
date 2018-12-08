@@ -249,24 +249,40 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/relations/">Relations</a>
+      <a href="/cartesian-product/">Cartesian Product</a>
     </h1>
-    <span class="post-date">October 25, 2018</span>
-    <p>We can consider a <strong>relationship</strong> between $n$ variables a predicate with $n$ free variables:</p>
+    <span class="post-date">December 7, 2018</span>
+    <!-- Heavily Reformatted 11/30/18 -->
+<h2 id="definition">Definition</h2>
+<p>The Cartesian product $\times$ is an operation on two sets, call them $A$ and $B$, that returns the set of all <a href="/n-tuples">ordered pairs</a> with their first element from $A$ and their second from $B$. Formally, we can think of it as shorthand for the following:</p>
 
-<script type="math/tex; mode=display">P(x_1,x_2,x_3,\cdots,x_n)</script>
+<script type="math/tex; mode=display">A\times B=\{(a,b)\mid a\in A \land b\in B\}</script>
 
-<p>That is, given a particular choice of $n$ variables, the relationship $P$ may either be true or false.</p>
+<h4 id="existence-in-zfc">Existence in ZFC</h4>
+<p>Utilizing the <a href="/n-tuples#definition">Kuratowski definition</a> of ordered pairs, we can show that the Cartesian product of two sets can be constructed from the axioms of ZFC. In particular, it is a subset of the following easily constructed set:</p>
 
-<p>If we limit the domain of each variable $x_i$ in the predicate as belonging to some corresponding set $S_i$, we can define the solution set $G$ to the relationship $P$ as follows:</p>
+<script type="math/tex; mode=display">A\times B \subseteq \mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)</script>
 
-<script type="math/tex; mode=display">G=\{(x_1,x_2\cdots,x_n)\in S_1,S_2\times\cdots\times S_n\mid P(x_1,x_2,\cdots,x_n)\}</script>
+<details><summary><strong>Proof</strong></summary>
+First, note that $A\cup B$ is guaranteed by the axiom of union and that its power set is guaranteed by the axiom of power set.
 
-<p>We can now extend the idea of relationships to set theory by constructing a <strong>relation</strong> between those $n$ sets which will be characterized by the solution set $G$, commonly called its <strong>graph</strong>.</p>
+Next notice that, among many other elements, the power set of $A\cup B$ contains:
+<!-- \left(\forall a\in A,\forall b\in B\right) -->
+$$\{a\},\{a,b\}\in\mathcal{P}\left(A\cup B\right)$$
+
+where $a$ and $b$ are elements in $A$ and $B$ respectively. Now if we take the power set again we'll see that the result contains, among other things, the elements:
+
+$$\{\{a\},\{a,b\}\}\in\mathcal{P}\left(\mathcal{P}\left(A\cup B\right)\right)$$
+
+for all $a$ and $b$ in $A$ and $B$. Now invoke the axiom of subset to choose only those elements that fit the description and we are done!
+</details>
+<p></p>
+
+<!-- $A\cup B$ is guaranteed by the axiom of union, and its repeated power sets are guaranteed by the axiom of power set. This coupled with the fact that the Cartesian product is only a subset of the above expression implies that it must exist. -->
 
 
     <!--Adds Read more-->
-    <a href="/relations/">Read more</a>
+    <a href="/cartesian-product/">Read more</a>
     <hr>
     
   <div class="post">
@@ -276,9 +292,7 @@
     <span class="post-date">October 9, 2018</span>
     <p><strong>Sequential search</strong>, or linear search, is a search algorithm implemented on lists. It is one of the most intuitive (some might even say naïve) approaches to search: simply look at all entries in order until the element is found.</p>
 
-<p>Given a <strong>target</strong> value, the algorithm iterates through every entry on the list and compares it to the target. If they match then it is a <strong>successful search</strong> and the algorithm returns the index of the target. If the end of the list is reached and no match was found, it is an <strong>unsuccessful search</strong> and the algorithm returns some non index like -1.</p>
-
-<p>If only the existence of the target in the list is of importance and the index is irrelevant, we can modify the algorithm such that it returns true for successful searches and false for unsuccessful ones. This doesn’t affect it’s complexity at all.</p>
+<p>Given a <strong>target</strong> value, the algorithm iterates through every entry on the list and compares it to the target. If they match then it is a <strong>successful search</strong> and the algorithm returns true. If the end of the list is reached and no match was found, it is an <strong>unsuccessful search</strong> and the algorithm returns false.</p>
 
 
     <!--Adds Read more-->
@@ -290,7 +304,7 @@
       <a href="/asymptotic-notation/">Asymptotic Notation</a>
     </h1>
     <span class="post-date">October 7, 2018</span>
-    <p>The notation used to describe the <strong>asymptotics</strong>, or limiting behavior, of functions consists of a set of 6 relations. These different relations allow us to compare the growth of different functions as they approach some constant or, in most cases, infinity.</p>
+    <p>The notation used to describe the <strong>asymptotics</strong>, or limiting behavior, of functions consists of a set of 6 <a href="\relations">relations</a>. These different relations allow us to compare the growth of different functions as they approach some constant or, in most cases, infinity.</p>
 
 <p>In the infinite case, these relations usually boil down to the functions’ <em>most significant term</em>. That is, the term that grows the quickest as $x$ increases. For example, in the function $x^3+5x^2+x$ this role falls on the $x^3$ term as the other terms become insignificant (i.e tend to 0) as $x\to\infty$.</p>
 

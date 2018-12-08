@@ -47,8 +47,17 @@ $$(x_1,x_2,\cdots,x_{n-1},x_n)=((x_1,x_2,\cdots,x_{n-1}),x_n)$$
 
 Whatever definition is used, all that matters is that two $n$-tuples are equivalent *only* when the elements at each of their indices are equivalent. This is their defining property. -->
 
+<details open>
+<summary><h4 class="inline" id="simultaneous-interpretation">Simultaneous Interpretation</h4></summary>
+An important property of this definition is that any $n$-tuple can also be thought of as a $k$-tuple where $2\le k\le n$. This is an immediate consequence of the recursive definition:
+
+$$(x_1,x_2,\cdots,x_n)=((x_1,x_2,\cdots,x_{n-k+1}),x_{n-k+2},\cdots,x_n)$$
+
+This has consequences in how we interpret the [arity of Cartesian products](\cartesian-product#simultaneity-of-arity) and thus relations and functions.
+</details>
+
 #### Existence in ZFC
-The existence of an ordered pair of elements in ZFC can be proved using the axiom of pairing twice over. Once to prove that $ \\{ a \\} $ and $ \\{ a,b \\} $ exist and again to pair them with each other.
+The existence of an ordered pair of elements in ZFC can be proved using the axiom of pairing 3 times. Once to prove that $ \\{ a \\} $ exists, another to prove $ \\{ a,b \\} $ exists, and one more time to pair them with each other.
 
 And since $n$-tuples are simply nested ordered pairs, they too must exist.
 
@@ -133,7 +142,7 @@ I'll do it later...
 #### Extracting Elements of $n$-Tuples
 You may have noticed that the above definitions only apply to $2$-tuples. What about $n$-tuples? Well, quite intuitively, we can extract the elements of an $n$-tuple of any size by recursively using the $\pi_1$ and $\pi_2$ functions we defined above.
 
-The notation we'll use is as follows: $\pi^n_a(P)$ is the $a$th element of the $n$-tuple $P=\left(x_1,x_2,x_3,\cdots,x_n\right)$.
+The notation we'll use is as follows: $\pi^n_i(P)$ is the $i$th element of the $n$-tuple $P=\left(x_1,x_2,x_3,\cdots,x_n\right)$.
 
 The first element of $P$ can be found like so:
 
@@ -141,7 +150,7 @@ $$\pi^n_1(P)=\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-1\text{ iterations}}(P)=
 
 For any element *other* than the first, we can use the following formula:
 
-$$\pi^n_a(P)=\pi_2\circ\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-a\text{ iterations}}(P)=x_a$$
+$$\pi^n_i(P)=\pi_2\circ\underbrace{\pi_1\circ\cdots\circ\pi_1}_{n-i\text{ iterations}}(P)=x_i$$
 
 This should be fairly intuitive as the repeated $\pi_1$ serve to extract the desired nested tuple and once we reach the base case of the $2$-tuple, we either want the first $\pi_1$ or second $\pi_2$ term.
 

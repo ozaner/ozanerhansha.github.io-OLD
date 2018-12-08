@@ -1,0 +1,26 @@
+## Bonds
+**Bonds** is just a way for a company to borrow money from you the creditor. They must be paid back in full with interest after some amount of time. Bonds take legal precedence over stocks in the event of bankruptcy.
+
+## Stock
+A **stock** is a share of a company issued by that company. For major shareholders, this allows them to vote and make bigger decisions regarding the future of the company.
+
+For regular shareholders, stocks hold value in the profit, or **dividends**, they pay out or. Another possibility is that the company reinvests all profits back into the cooperation. In this case the value is coming from the stock itself, which is (hopefully) growing in value.
+
+There are two main types of stock:
+- **Common Stock**: Majority of stock is common. Given voting rights and a claim on profits.
+- **Preferred Stock**: No voting rights and can be bought back (i.e. **callable**) but, are guaranteed a fixed dividend in perpetuity. Precedence over common stock in event of bankruptcy.
+
+## Raising Money as a Company
+Corporations can raise money either by issuing stock and having people buy it directly (when a company offers their own shares it is on the *primary market*, when you buy stock from someone else it is off the *secondary market*) or they can raise money by issuing bonds. The government, for example, issues long term bonds. These are very safe as the US govt. isn't going anywhere anytime soon...
+
+## Risk
+Some investments(?) are riskier than others:
+$$\text{Bonds}\gt\underbrace{\text{Preferred}\gt\text{Common}}_{\text{Stock}}\gt\text{Options}$$
+
+*$a>b$ means $a$ is safer than $b$.*
+
+- Bonds are the least risky since they have legal precedence over stocks and are guaranteed interest.
+- Stocks are less risky than options since they will always have (except under bankruptcy) intrinsic value somewhat close to the original buying price despite the value possibly lowering.
+- Options are the riskiest of the three since the entire entry cost  you put in may be totally lost if your prediction (whether the stock would rise or lower) wasn't correct. Moreover it will also be lost even if the stock stayed stagnant or only slightly raised/lowered.
+
+However the more security an investment(?) has, the less profit is (generally) made from them. Stocks for example return 8-10% historically while bonds only do 5-7%.

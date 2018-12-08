@@ -1,12 +1,12 @@
 ---
 layout: post
 title: Cartesian Product
-date: 2018-04-30
+date: 2018-12-7
 tags: math set-theory
 ---
-<!-- Heavily Reformatted 10/25/18 -->
+<!-- Heavily Reformatted 11/30/18 -->
 ## Definition
-The Cartesian product $\times$ is an operation on two sets, call them $A$ and $B$, that returns the set of all [ordered pairs](/n-tuples) with their first element from $A$ and their second from $B$.
+The Cartesian product $\times$ is an operation on two sets, call them $A$ and $B$, that returns the set of all [ordered pairs](/n-tuples) with their first element from $A$ and their second from $B$. Formally, we can think of it as shorthand for the following:
 
 $$A\times B=\{(a,b)\mid a\in A \land b\in B\}$$
 
@@ -35,15 +35,19 @@ for all $a$ and $b$ in $A$ and $B$. Now invoke the axiom of subset to choose onl
 <!--more-->
 
 ## $n$-ary Cartesian Product
-It is easy to see how one might generalize this notion to $n$ sets. By simply chaining the Cartesian product we are left with a set of $n$-tuples:
+It is easy to see how one might generalize this notion to $n$ sets. For example, by chaining the Cartesian product twice we are left with a set of $3$-tuples:
 
-$$\begin{align*}(S_0\times S_1)\times S_2&=\{(\left(s_0,s_1),s_2\right)\mid\forall k\in 3,\ s_i\in S_i)\}\\
-&=\{\left(s_0,s_1,s_2\right)\mid\forall k\in 3,\ s_i\in S_i)\}
+$$\begin{align*}(S_1\times S_2)\times S_3&=\{(\left(s_1,s_2),s_3\right)\mid\forall i\in[1..3],\ s_i\in S_i)\}\\
+&=\{\left(s_1,s_2,s_3\right)\mid\forall i\in[1..3],\ s_i\in S_i)\}
 \end{align*}$$
 
-Repeating this $n$ times (inductively), we are left with the following for any $n$ sets:
+Repeating this $n$ times, we are left with the following for any $n$ sets:
 
-$$S_0\times S_1\times \cdots \times S_{n-1}=\{\left(s_0,s_1,\cdots,s_{n-1}\right)\mid\forall i\in n,\ s_i\in S_i)\}$$
+$$S_1\times S_2\times \cdots \times S_n=\{\left(s_1,s_2,\cdots,s_n\right)\mid\forall i\in[1..n],\ s_i\in S_i)\}$$
+
+The resulting product has an **arity** of $n$ and is dubbed an **$n$-ary Cartesian product**. We can denote product of multiple sets more concisely via the following notation:
+
+$$\prod_{i=1}^nS_i=S_1\times S_2\times \cdots \times S_n$$
 
 *Notice that the parenthesis are omitted. This is because the cartesian product is left-associative, a property that is expounded upon further below.*
 
@@ -52,32 +56,91 @@ $$\prod_{i=1}^nS_i=S_1\times S_2\times \cdots \times S_n$$
 
 *Note that the notion of indexed families comes from functions which depend on the definition of $n$-ary cartesian products. So it should only be taken as a useful shorthand.* -->
 
-#### Indexed and Infinitary Products
+<details>
+<summary><h4 class="inline" id="simultaneity-of-arity">Simultaneity of Arity</h4></summary>
+Recall that any $n$-tuple can be <a href="\cartesian-product#simultaneous-interpretation">simultaneously interpreted</a> as a $k$-tuple where $2\le k\le n$. Likewise, this means that an $n$-ary Cartesian product:
+
+$$\prod_{i=1}^nS_i=S_1\times S_2\times \cdots \times S_n$$
+
+can also be interpreted as having arity $k$. We do this by first defining a new indexed set:
+
+$$U_i =
+  \begin{cases}
+  \displaystyle  \prod^{n-k+1}_{i=1}S_i & i=1 \\
+  \displaystyle  S_{n-k+i} & i>1
+  \end{cases}$$
+
+And now we can phrase the original $n$-ary product as a product of $k$ sets:
+
+$$\prod_{i=1}^kU_i=\left(\prod^{n-k+1}_{i=1}S_i\right)\times S_{n-k+2}\times \cdots \times S_n$$
+<p></p></details>
+
+### Indexed & Infinitary Products
 It is possible to extend the notion of the Cartesian product to allow for the product of any indexed family of sets:
 
 $$\prod_{i\in I}S_i=\{f:I\to\bigcup_{i\in I}S_i\mid \forall i,f(i)\in S_i\}$$
 
-In words this Cartesian product returns the set of all functions that map an element from $I$ to a corresponding element in $S_i$. Note that this allows for index sets with an infinite cardinality, leading to **infinitary** products.
+In words, this Cartesian product returns every function that takes an element $i\in I$ and maps it to an element $f(i)\in S_i$. Note that this allows for index sets with an infinite cardinality, leading to **infinitary** Cartesian products:
 
-$$\underbrace{\text{binary},\text{trinary},\cdots,n\text{-ary}}_{\text{finitary}}\cdots;\underbrace{\aleph_0\text{-ary},\aleph_1\text{-ary},\cdots}_{\text{infinitary}}$$
+$$\underbrace{\text{binary},\text{trinary},\cdots,n\text{-ary}}_{\text{finitary}},\cdots;\underbrace{\aleph_0\text{-ary},\aleph_1\text{-ary},\cdots}_{\text{infinitary}}$$
 
-Note that this definition of Cartesian product depends on the notion of functions (indexed family of sets), which in turn depends on our previous definition. As such we are left with two distinct versions of the Cartesian product, one more general than the other.
+Note that this generalizes the first definition because $n$ can be thought of as a set with $n$ elements as per its construction in the [natural numbers](\natural-numbers), and so we can take it to be our index set $I$. As such, these two definitions are isomorphic for finitary products.
 
-*That said, once defined, we can always map between these two definitions (for finitary products at least). So in most cases, the distinction is irrelevant.*
+*Also note that this definition of Cartesian product depends on the notion of indexed families of sets (i.e. functions), which in turn depends on our original definition. As such we are left with two distinct versions of the Cartesian product, with the less general finitary version used to found the more general indexed one.*
 
-#### Cartesian Powers
-When dealing with the repeated Cartesian product of a single set $S$, we call it the $n$th Cartesian power and use the following notation:
+<details>
+<summary><h4 class="inline">Cartesian Powers</h4></summary>
+When dealing with the repeated Cartesian product of a single set $S$, we call it the <b>$n$th Cartesian power</b> and use the following notation:
 
- $$S^n=\underbrace{S\times S \times \cdots \times S}_{n\text{ sets}}$$
+$$S^n=\prod_{i=1}^nS=\underbrace{S\times S \times \cdots \times S}_{n\text{ sets}}$$
 
- Even more generally, using the indexed definition of Cartesian product, we can denote the set of all functions from a set $I$ to $S$ like so:
- $$S^I=\prod_{i\in I}S=\{f\mid f:I\to S\}$$
+Even more generally, using the indexed definition of Cartesian product, we can denote the set of all functions from a set $I$ to $S$ like so:
 
- *Note that this meshes with the simpler definition of $S^n$ since $n$ can be considered a set as per its construction in the [natural numbers](\natural-numbers).*
+$$S^I=\prod_{i\in I}S=\{f\mid f:I\to S\}$$
+
+<!-- $$S^I=\prod_{i\in I}S=\{G\mid (\exists f)\ f=(I,S,G)\wedge \operatorname{isFunction}(f)\}$$
+
+*Note that, because many naïve definitions of function identify them solely via their graphs, the definition of $S^I$ above may not look the same as usual.* -->
+
+<!-- Note that this meshes with the simpler definition of $S^n$ since $n$ can be thought of as a set with $n$ elements as per its construction in the <a href="\natural-numbers">natural numbers</a>
+<!-- [natural numbers](\natural-numbers). -->
+<p></p></details>
+
+<details>
+<summary><h4 class="inline">Empty Set</h4></summary>
+A special case of the Cartesian product is when one of the sets $S_i=\emptyset$. When this happens the entire product collapses into the empty set. This is because there are simply no elements in $\emptyset$ to be mapped to by $f(i)$. We can state this as the following for any indexed family of sets $\{S_i\}_{i\in I}$:
+
+$$(\exists i\in I)\ S_i=\emptyset\implies \prod_{i\in I}S_i=\emptyset$$
+
+Indeed this absorbing property of the empty set is the only case in which a Cartesian product could result in the empty set.
+<br><br>
+<i>Interestingly, if we don't assume the axiom of choice, it is possible that an infinite Cartesian product of nonempty sets will still produce the empty set.</i><p></p>
+</details>
+
+<details>
+<summary><h4 class="inline">Nullary Product</h4></summary>
+Another special case is when the index set $I=\emptyset$. This is called an empty or <b>nullary Cartesian product</b>. The index set being empty means that there can only be one function (the empty function) in the product:
+
+$$\prod_\emptyset=\{f_\emptyset:\emptyset\to\emptyset\}=\{(\emptyset,\emptyset)\}$$
+
+Going back to Cartesian powers, this implies that $S^0=S^\emptyset=\{f_\emptyset\}$ for any set $S$.
+
+<i>If we were to identify functions as just their graphs, then the nullary product would just be $\{\emptyset\}$.</i>
+</details>
 
 ## Properties
-### Ordering Properties
-<!-- #### Non-Commutative -->
+Note that the following properties refer to the standard binary Cartesian product and not its indexed variant.
+### Positional Properties
+<details open>
+<summary><h4 class="inline">Left-Associative</h4></summary>
+When faced with an $n$-ary Cartesian product without parenthesis, it is conventionally evaluated from left to right. That is to say the Cartesian product is left-associative:
+
+$$A\times B \times C=(A \times B)\times C$$
+
+This convention intuitively meshes with the definition of $n$-ary Cartesian products and $n$-tuples (i.e. $((a,b),c)=(a,b,c)$)
+<p></p>
+</details>
+
 <details>
 <summary><h4 class="inline">Non-Commutative</h4></summary>
 The Cartesian product is a non-commutative operator:
@@ -88,7 +151,6 @@ This should be obvious as the ordered tuples $(a,b)\not=(b,a)$ where $a\in A$ an
 <p></p>
 </details>
 
-<!-- #### Non-Associative -->
 <details>
 <summary><h4 class="inline">Non-Associative</h4></summary>
 The Cartesian product is a non-associative operator:
@@ -96,30 +158,17 @@ The Cartesian product is a non-associative operator:
 $$\left(A\times B\right) \times C \not= A\times \left(B \times C\right)$$
 
 Similar to its non-commutativity, we can illustrate this by noting that $((a,b),c)\not= (a,(b,c))$ where $a\in A$, $b\in B$, and $c\in C$.
-<p></p>
-</details>
-
-<!-- #### Left-Associative -->
-<details>
-<summary><h4 class="inline">Left-Associative</h4></summary>
-When faced with an $n$-ary Cartesian product, it is conventionally evaluated from left to right. That is to say the Cartesian product is left-associative:
-
-$$A\times B \times C=(A \times B)\times C$$
-
-This convention agrees with the definition of $n$-ary Cartesian products and $n$-tuples.
 </details>
 
 ### Distributive Properties
-<!-- <details>
-<summary><h3 class="inline">Distributive Properties</h3></summary> -->
-$$\begin{gather*}
-A\times\left(B\cup C\right)=\left(A\times B\right)\cup \left(A\times C\right)\tag{Union}\\
-A\times\left(B\cap C\right)=\left(A\times B\right)\cap \left(A\times C\right)\tag{Intersection 1}\\
-\left(A\times B\right)\cap \left(C\times D\right)=\left(A\cap B\right)\times \left(C\cap D\right)\tag{Intersection 2}\\
-A\times\left(B\setminus C\right)=\left(A\times B\right)\setminus \left(A\times C\right)\tag{Set Difference}\\
-B\subseteq C\iff\left(A\times B\right)\subseteq \left(A\times C\right)\tag{Subset 1}\\
-\left(A\times B\right)\subseteq \left(C\times D\right)\iff\left(A\subseteq B\right)\land \left(C\subseteq D\right)\tag{Subset 2}\\
-\end{gather*}
+$$\begin{align*}
+A\times\left(B\cup C\right)&=\left(A\times B\right)\cup \left(A\times C\right)\tag{Union}\\
+A\times\left(B\cap C\right)&=\left(A\times B\right)\cap \left(A\times C\right)\tag{Intersection 1}\\
+\left(A\times B\right)\cap \left(C\times D\right)&=\left(A\cap B\right)\times \left(C\cap D\right)\tag{Intersection 2}\\
+A\times\left(B\setminus C\right)&=\left(A\times B\right)\setminus \left(A\times C\right)\tag{Set Difference}\\
+B\subseteq C&\leftrightarrow\left(A\times B\right)\subseteq \left(A\times C\right)\tag{Subset 1}\\
+\left(A\times B\right)\subseteq \left(C\times D\right)&\leftrightarrow\left(A\subseteq B\right)\land \left(C\subseteq D\right)\tag{Subset 2}\\
+\end{align*}
 $$
 
 <!-- <h4>Union</h4>
@@ -142,13 +191,43 @@ $$\left(A\times B\right)\subseteq \left(C\times D\right)\iff\left(A\subseteq B\r
 If $A$ and $B$ are members of some universal set $U$, then their absolute complement is denoted $A^C$ and $B^C$ respectively.
 
 $$\left(A\times B\right)^C=\left(A^C\times B^C\right)\cup\left(A^C\times B\right)\cup\left(A\times B^C\right)\tag{Complement}$$
-<!-- </details> -->
 
-## Examples
+## Cartesian Factorization
+The Cartesian product is analogous to the integer product we are familiar with in the following way: a Cartesian product can be 'factored' into its component sets. Even further, there exists a unique prime factorization of any Cartesian product that recovers its original sets.
+
+#### Finitary Product
+<!-- Before we can factor finite Cartesian products we have to remember their simultaneity of arity, i.e. that they can be interpreted in multiple ways. To avoid this, and arrive at a unique prime factorization, we have to extract the factors right to left, since the **rightmost factor** (RMF) of any Cartesian product $P$ is the same for all its possible factorizations. -->
+To find the $i$th **Cartesian Factor (CF)** of an $n$-ary Cartesian product $P$ we simply have to find the union of all the tuples in $P$ at the $i$th index:
+
+$$\operatorname{CF}_i(P)=\bigcup_{p\in P} \pi^n_i(p)=S_i$$
+
+*Where $\pi^n_i(p)$ is the [tuple extraction function](\n-tuple#extraction).*
+
+#### Indexed Product
+In the more general case where our Cartesian product $P$ is of an indexed family $\\{S_i\\} _{i\in I}$ then we can find the $i$th factor in the following way:
+
+$$\operatorname{CF}_i(P)=\bigcup_{p\in P} p(i)=S_i$$
+
+Note that we can recover the index set $I$ from the product $P$ by simply choosing any one of its element (a function) and looking at its first element. It will end up being the Cartesian product of its domain $I$ and codomain which is a binary product, so we can extract the first set as described in the finitary case.
+
+*Also note that, unlike the finitary case, indexed products can only be interpreted one way and so only have one factorization.*
+
+#### Prime Factorization
+The **Cartesian prime factorization (CPF)** is simply the indexed set of all the Cartesian factors. Note that the indexing is important because, unlike integer factors, the order matters. And so for a Cartesian product $\prod_{i\in I}S_i=P$ we can say:
+
+$$\operatorname{CPF}(P)=\{\operatorname{Factor}_i(P)\}_{i\in I}=\{S_i\}_{i\in I}$$
+
+Note that due to the simultaneity of arity, the factorization of a finite product depends on what arity we consider to it be. We can resolve this if we specify that the *unique* prime factorization of a finitary product requires it be considered the maximum arity possible.
+
+#### Factorization of the Empty Set
+Analogous to the number zero, the empty set $\emptyset$ does not have a unique prime factorization. That is because if one of the factors of a Cartesian product happens to be the empty set, then the result too will be empty and thus there is no way to recover the original factors from it. In other words, any family of sets can serve as a factorization of $\emptyset$ so long as one of them is $\emptyset$ itself.
+
+## Examples & Uses
 #### Relations
-An $n$-ary [relation](\relations) is defined as an $n$-tuple with the first $n$ elements being a list of sets and the last element a subset of their Cartesian product. For example, $\le$ is a binary relation on the set $\mathbb R$:
+An $n$-ary [relation](\relations) is defined as an $n$-tuple with the first element being an $n$-ary Cartesian product and the last element a subset of that product. For example, $\le$ is a binary relation on the set $\mathbb R$:
+
 $$\begin{gather}
-\le\equiv(\mathbb R,\mathbb R,G)\\
+\le\equiv(\mathbb R\times\mathbb R,G)\\
 G\subseteq\mathbb R\times\mathbb R
 \end{gather}$$
 
@@ -159,13 +238,16 @@ Cartesian products are used to define the product of two cardinal numbers:
 
 $$\left|X\times Y\right|=\left|X\right|\left|Y\right|$$
 
-And for any indexed family of cardinal numbers:
+And in general for any indexed family of cardinal numbers:
+
 $$\left|\prod_{i\in I}X_i\right|=\prod_{i\in I}\left|X_i\right|$$
+
+*Note the left product denotes the Cartesian product while the right denotes the cardinal product.*
 
 #### Cartesian Coordinates
 Every point in $2$-space represents an element of the Cartesian product of the Reals with themselves (i.e $\mathbb{R}^2$). This can be generalized to $n$-space with every point being an element of $\mathbb{R}^n$:
 
-$$\mathbb{R}^n=\{(x_0,x_1,\cdots,x_{n-1})\mid \forall k\in n:   x_k\in\mathbb{R}\}$$
+$$\mathbb{R}^n=\{(x_1,x_2,\cdots,x_n)\mid \forall i\in [1..n]:   x_i\in\mathbb{R}\}$$
 
 ![plane](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cartesian-coordinate-system.svg/354px-Cartesian-coordinate-system.svg.png?style=centerme)
 

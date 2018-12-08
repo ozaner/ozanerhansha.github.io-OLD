@@ -4,7 +4,7 @@ title: Asymptotic Notation
 date: 2018-10-07
 tags: math computer-science relations algorithms
 ---
-The notation used to describe the **asymptotics**, or limiting behavior, of functions consists of a set of 6 relations. These different relations allow us to compare the growth of different functions as they approach some constant or, in most cases, infinity.
+The notation used to describe the **asymptotics**, or limiting behavior, of functions consists of a set of 6 [relations](\relations). These different relations allow us to compare the growth of different functions as they approach some constant or, in most cases, infinity.
 
 In the infinite case, these relations usually boil down to the functions' *most significant term*. That is, the term that grows the quickest as $x$ increases. For example, in the function $x^3+5x^2+x$ this role falls on the $x^3$ term as the other terms become insignificant (i.e tend to 0) as $x\to\infty$.
 
@@ -19,14 +19,14 @@ In the infinite case, these relations usually boil down to the functions' *most 
 
 <!--more-->
 
-These notations, particularly big $O$, are most commonly used to classify and compare the computational complexity (both temporal and spatial) of different algorithms as a function of their input size by stripping away unnecessary constants and minor terms that correspond to the different preconditions and runtime environments that these algorithms may run on. Ideally, an algorithm will be on the order of a relatively slowly growing function (e.g $\log n$ grows slower than $n^2$) as they take less resources and thus are more feasible to compute.
+These relations, particularly big $O$, are most commonly used to classify and compare the computational complexity (both temporal and spatial) of different algorithms as a function of their input size by stripping away unnecessary constants and minor terms that correspond to the different preconditions and runtime environments that these algorithms may run on. Ideally, an algorithm will be on the order of a relatively slowly growing function (e.g $\log n$ grows slower than $n^2$) as they take less resources and thus are more feasible to compute.
 
 ![image](/assets/comp_sci/comp-complexity.png?style=centerme){:width="400px"}
 
 They are also used in the approximation of functions that would be infeasible, or even impossible, to calculate otherwise.
 
 ## Formal Definitions
-More concretely, this notation is based off $f$ being a member of some set defined by $g$. How these sets are defined for each notation is elaborated below via two similar (but not quite equivalent) formalizations of the concept. One where we consider how the values of the function grow after some sufficiently large value $x_0$, and one by comparing the limit of their ratio as $x$ approaches infinity. Both notions are given below:
+More concretely, asymptotic notation is based off $f$ being a member of some set defined by $g$. How these sets are defined for each notation is elaborated below via two similar (but not quite equivalent) formalizations of the concept. One where we consider how the values of the function grow after some sufficiently large value $x_0$, and one by comparing the limit of their ratio as $x$ approaches infinity. Both notions are given below:
 
 *Note that asymptotic equivalence only has a limit definition.*
 
@@ -72,7 +72,7 @@ Notice that while the limit definitions above use limits to infinity and the gro
 
 $$f(x)\in O(g(x)) \ \ (\text{as }x\to c)$$
 
-In this more general case, the asymptotic notations are actually families of notations indexed by some constant $c$. We can modify the limit definitions given above by simply replacing $x\to\infty$ with $x\to c$.
+In this more general case, the asymptotic notations are actually families of relations indexed by some constant $c$. We can modify the limit definitions given above by simply replacing $x\to\infty$ with $x\to c$.
 
 That said, the $x\to\infty$ case is so much more common that when no approached value is specified, we will assume this to be the case. In other words:
 

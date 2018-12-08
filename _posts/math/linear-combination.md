@@ -23,7 +23,7 @@ $$r_1m_1s_1+r_2m_2s_2+\cdots+r_nm_ns_n=\sum_{i=1}^{n}{r_im_is_i}$$
 
 *Where $m_i\in M$, $r_i\in R$ and $s_i\in S$*
 
-If $R$ is commutative then this distinction doesn't matter. Indeed this is the case for vector spaces, which are the focus of the rest of these notes, as they are just special cases of modules over a commutative ring.
+If $R$ is a commutative ring, then this distinction doesn't matter. This is the case for vector spaces, which are the focus of the rest of these notes, as they are just special cases of modules over a commutative ring.
 
 ## Linear Independence
 A set of vectors $X\subseteq V$, where $V$ is a vector space, is **linearly independent** if none of the vectors in the set can be written as linear combinations of the others. The negation of linearly independence is **linearly dependence**.
@@ -59,7 +59,7 @@ When it is clear from the context what vector space is being used we can write $
 #### Properties (PROVE THEM)
 For some $S_1,S_2\subseteq V$ where $V$ is a vector space:
 
-- If 
+- If
 
 Proof
 

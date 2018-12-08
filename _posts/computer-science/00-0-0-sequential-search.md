@@ -16,9 +16,9 @@ A useful modification of this algorithm is to return the index of the target in 
 ### Pseudocode
 Given a list $L$ of length $n$ with the $i$th element denoted $L_i$ and the target value denoted $T$:
 1. Set variable $i:=0$
-2. If $L_i=T$, return i **END**
+2. If $L_i=T$, return $i$ **END**; else goto step 3
 3. Increment index $i:=i+1$
-4. If $i<n$, goto step 2; Else return -1 **END**
+4. If $i<n$, goto step 2; else return $-1$ **END**
 
 ### Java
 ````java
@@ -64,11 +64,11 @@ The worst case of sequential search is if either the last element was the target
 <summary><strong>Average Case</strong><br></summary>
 The average case complexity of a search algorithm is the sum of the times it takes to search for each element divided by the number of elements. More formally:
 
-$$\frac{s_0+s_1+\cdots+s_n}{n}=\frac{\sum_{i\in n}s_i}{n}$$
+$$\frac{s_1+s_2+\cdots+s_n}{n}=\displaystyle \sum_{i=1}^n\frac{s_i}{n}$$
 
-<i>Where $s_i$ is the time it takes to search for the $i$th element. And $n$ is a <a href="\natural-numbers">natural number</a>.</i><p></p>
+<i>Where $s_i$ is the time it takes to search for the $i$th element, and $n$ is the length of the list.</i><p></p>
 
-In sequential search, we have to perform $i$ comparisons to search for the $(i-1)$th element (the $-1$ is because we index starting at $0$). Because of this we can write:
+In sequential search, we have to perform $i$ comparisons to return $i$th element. Because of this we can write:
 
 $$\frac{1+2+\cdots+n}{n}=\frac{n(n+1)}{2}\cdot\frac{1}{n}=\frac{n+1}{2}$$
 
@@ -97,17 +97,17 @@ $$\sum_{i\in n} p_i=1$$
 <p></p>
 We can express the average running time of a probabilistic search algorithm like so:
 
-$$p_0s_0+p_1s_1+\cdots+p_ns_n=\sum_{i\in n}p_is_i$$
+$$p_1s_1+p_2s_2+\cdots+p_ns_n=\sum_{i\in n}p_is_i$$
 
 Since sequential search takes $i$ comparisons at the $i$th element, we can rewrite this for probabilistic sequential search as:
 
-$$p_0+2p_1+\cdots+np_n=\sum_{i\in n}ip_i$$
+$$p_1+2p_2+\cdots+np_n=\sum_{i\in n}ip_i$$
 
 If we know what frequency with which certain targets are searched for, we can rearrange the list such that things with a higher probability of being searched for are near the beginning. Thereby reducing the amount of comparisons needed on average.
 <p></p>
 <i>A way to implement this in practice might be to move searched items forward in the list (assuming the order of the list is not critical). This would eventually settle the list into to its ideal form, assuming the elements were searched with certain probabilities.</i>
 <p></p>
-If we are given a particular probability distribution, we can make stronger statements about the complexity of the search. For example, if the distribution is geometric and the elements are arranged from most to least likely, the complexity will be $O(1)$. This is even better than binary search!
+If we are given a particular probability distribution, we can make stronger statements about the complexity of the search. For example, if the distribution is geometric and the elements are arranged from most to least likely, the average complexity will be $O(1)$. This is even better than binary search!
 <p></p>
 </details>
 
@@ -125,5 +125,5 @@ Given a list $L$ of length $n$ with the $i$th element denoted $L_i$ the target v
   <li>Return $L_i=T$ <b>END</b></li>
 </ol>
 
-Of course, because we have stipulated that the list be sorted, there are now faster search algorithms that can be used on it, namely binary search. This obviates the use of sequential sort.
+Of course, because we have stipulated that the list be sorted, there are now faster search algorithms that can be used on it (like binary search). This obviates the use of sequential sort.
 </details>

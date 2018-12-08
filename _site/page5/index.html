@@ -249,35 +249,6 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/kinematics/">Kinematics</a>
-    </h1>
-    <span class="post-date">March 17, 2018</span>
-    <!-- Make vectors bold rather than arrow headed -->
-<p>$\renewcommand{\vec}[1]{\mathbf{#1}}$
-Translational Kinematics describes the motion of objects through space over time. Using an object’s <a href="/position">position</a>, velocity and acceleration vectors, it is possible to predict where it will be in the future and where it was in the past. Where an object gets that velocity/acceleration is what dynamics seeks to explain.</p>
-
-<h3 id="variable-acceleration">Variable Acceleration</h3>
-<p>To calculate the motion of an object with continuous acceleration, simply refer to the definitions of velocity and acceleration:</p>
-
-<script type="math/tex; mode=display">\begin{align}
-\vec{v}=\frac{d\vec{x}}{dt}\\
-\vec{a}=\frac{d\vec{v}}{dt}
-\end{align}</script>
-
-<p>Integrating these equations we get:</p>
-
-<script type="math/tex; mode=display">\begin{align}
-\vec{x}=\int\vec{v} \,dt+\vec{x}_0\\
-\vec{v}=\int\vec{a} \,dt+\vec{v}_0
-\end{align}</script>
-
-
-    <!--Adds Read more-->
-    <a href="/kinematics/">Read more</a>
-    <hr>
-    
-  <div class="post">
-    <h1 class="post-title">
       <a href="/position/">Position</a>
     </h1>
     <span class="post-date">March 15, 2018</span>
@@ -358,6 +329,24 @@ Translational Kinematics describes the motion of objects through space over time
 
     <!--Adds Read more-->
     <a href="/filetopng/">Read more</a>
+    <hr>
+    
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/breast-cancer-classification/">Breast Cancer Classification</a>
+    </h1>
+    <span class="post-date">January 15, 2018</span>
+    <h2 id="background">Background</h2>
+<p>I made this model to test how easily I could use external datasets to create and train a neural network with Google’s <a href="https://www.tensorflow.org/"><em>TensorFlow</em></a> library. In this post I’ll attempt to explain the code, its results, and its accuracy. The <a href="https://github.com/ozanerhansha/NeuralNetworks/blob/master/src/test/bcDiagnosis.py">entire program</a> is in my <a href="https://github.com/ozanerhansha/NeuralNetworks">NeuralNetwork</a> repository on GitHub as well as at the end of this post.</p>
+
+<h2 id="the-training-data">The Training Data</h2>
+<p>All the training data comes from the <a href="http://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+%28diagnostic%29">Wisconsin Breast Cancer Data Set</a>, hosted by the University of California’s <a href="http://archive.ics.uci.edu/ml/index.php">Machine Learning Repository</a>.</p>
+
+<p>The training data consists of 569 subjects each with 3 values (mean, worst value, and standard error) for each of 10 categories:</p>
+
+
+    <!--Adds Read more-->
+    <a href="/breast-cancer-classification/">Read more</a>
     <hr>
     
   </div>

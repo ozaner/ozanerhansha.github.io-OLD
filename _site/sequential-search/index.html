@@ -257,20 +257,20 @@
 ]</span>
   <p><strong>Sequential search</strong>, or linear search, is a search algorithm implemented on lists. It is one of the most intuitive (some might even say naïve) approaches to search: simply look at all entries in order until the element is found.</p>
 
-<p>Given a <strong>target</strong> value, the algorithm iterates through every entry on the list and compares it to the target. If they match then it is a <strong>successful search</strong> and the algorithm returns the index of the target. If the end of the list is reached and no match was found, it is an <strong>unsuccessful search</strong> and the algorithm returns some non index like -1.</p>
-
-<p>If only the existence of the target in the list is of importance and the index is irrelevant, we can modify the algorithm such that it returns true for successful searches and false for unsuccessful ones. This doesn’t affect it’s complexity at all.</p>
+<p>Given a <strong>target</strong> value, the algorithm iterates through every entry on the list and compares it to the target. If they match then it is a <strong>successful search</strong> and the algorithm returns true. If the end of the list is reached and no match was found, it is an <strong>unsuccessful search</strong> and the algorithm returns false.</p>
 
 <!--more-->
+
+<p>A useful modification of this algorithm is to return the index of the target in the list when a match is found. In the case of an unsuccessful search, a special number denoting a failure is returned, usually -1. This slight modification has no effect on the complexity of the algorithm and so we might as well implement that version instead:</p>
 
 <h2 id="implementation">Implementation</h2>
 <h3 id="pseudocode">Pseudocode</h3>
 <p>Given a list $L$ of length $n$ with the $i$th element denoted $L_i$ and the target value denoted $T$:</p>
 <ol>
   <li>Set variable $i:=0$</li>
-  <li>If $L_i=T$, return i <strong>END</strong></li>
+  <li>If $L_i=T$, return $i$ <strong>END</strong>; else goto step 3</li>
   <li>Increment index $i:=i+1$</li>
-  <li>If $i&lt;n$, goto step 2; Else return -1 <strong>END</strong></li>
+  <li>If $i&lt;n$, goto step 2; else return $-1$ <strong>END</strong></li>
 </ol>
 
 <h3 id="java">Java</h3>
@@ -294,9 +294,9 @@ def search(L, T):
 ```` -->
 
 <h2 id="usage">Usage</h2>
-<p>While slower than other search algorithms, like binary search, sequential search is easy to implement and does not require the list to be sorted.  As a result, it is commonly implemented in unsorted lists as they cannot leverage any better alternatives. At least not with a classical computer…</p>
+<p>Sequential search is rarely used in practice due to better alternatives such as binary search and hash tables. That said, sequential search has the advantage of being both simple to implement and not requiring the list to be sorted. As a result, it is commonly implemented in unsorted lists as they cannot leverage any better alternatives. At least not with a classical computer…</p>
 
-<p>In cases where the list is small or searching is not to common, sequential search may even prove to be a faster solution as it does not require the list in question to constantly be sorted.</p>
+<p>In fact, in cases where the list is small or searching is not too common, sequential search may even prove to be a faster solution as it does not require the list in question to constantly be sorted.</p>
 
 <h2 id="analysis">Analysis</h2>
 <h3 id="time-complexity">Time Complexity</h3>
@@ -316,11 +316,11 @@ The worst case of sequential search is if either the last element was the target
 <summary><strong>Average Case</strong><br /></summary>
 The average case complexity of a search algorithm is the sum of the times it takes to search for each element divided by the number of elements. More formally:
 
-$$\frac{s_0+s_1+\cdots+s_n}{n}=\frac{\sum_{i\in n}s_i}{n}$$
+$$\frac{s_1+s_2+\cdots+s_n}{n}=\displaystyle \sum_{i=1}^n\frac{s_i}{n}$$
 
-<i>Where $s_i$ is the time it takes to search for the $i$th element. And $n$ is a <a href="\natural-numbers">natural number</a>.</i><p></p>
+<i>Where $s_i$ is the time it takes to search for the $i$th element, and $n$ is the length of the list.</i><p></p>
 
-In sequential search, we have to perform $i$ comparisons to search for the $(i-1)$th element (the $-1$ is because we index starting at $0$). Because of this we can write:
+In sequential search, we have to perform $i$ comparisons to return $i$th element. Because of this we can write:
 
 $$\frac{1+2+\cdots+n}{n}=\frac{n(n+1)}{2}\cdot\frac{1}{n}=\frac{n+1}{2}$$
 
@@ -349,17 +349,17 @@ $$\sum_{i\in n} p_i=1$$
 <p></p>
 We can express the average running time of a probabilistic search algorithm like so:
 
-$$p_0s_0+p_1s_1+\cdots+p_ns_n=\sum_{i\in n}p_is_i$$
+$$p_1s_1+p_2s_2+\cdots+p_ns_n=\sum_{i\in n}p_is_i$$
 
 Since sequential search takes $i$ comparisons at the $i$th element, we can rewrite this for probabilistic sequential search as:
 
-$$p_0+2p_1+\cdots+np_n=\sum_{i\in n}ip_i$$
+$$p_1+2p_2+\cdots+np_n=\sum_{i\in n}ip_i$$
 
 If we know what frequency with which certain targets are searched for, we can rearrange the list such that things with a higher probability of being searched for are near the beginning. Thereby reducing the amount of comparisons needed on average.
 <p></p>
 <i>A way to implement this in practice might be to move searched items forward in the list (assuming the order of the list is not critical). This would eventually settle the list into to its ideal form, assuming the elements were searched with certain probabilities.</i>
 <p></p>
-If we are given a particular probability distribution, we can make stronger statements about the complexity of the search. For example, if the distribution is geometric and the elements are arranged from most to least likely, the complexity will be $O(1)$. This is even better than binary search!
+If we are given a particular probability distribution, we can make stronger statements about the complexity of the search. For example, if the distribution is geometric and the elements are arranged from most to least likely, the average complexity will be $O(1)$. This is even better than binary search!
 <p></p>
 </details>
 
@@ -377,7 +377,7 @@ Given a list $L$ of length $n$ with the $i$th element denoted $L_i$ the target v
   <li>Return $L_i=T$ <b>END</b></li>
 </ol>
 
-Of course, because we have stipulated that the list be sorted, there are now faster search algorithms that can be used on it, namely binary search. This obviates the use of sequential sort.
+Of course, because we have stipulated that the list be sorted, there are now faster search algorithms that can be used on it (like binary search). This obviates the use of sequential sort.
 </details>
 
 </div>
@@ -388,9 +388,9 @@ Of course, because we have stipulated that the list be sorted, there are now fas
     
       <li>
         <h3>
-          <a href="/relations/">
-            Relations
-            <small>25 Oct 2018</small>
+          <a href="/cartesian-product/">
+            Cartesian Product
+            <small>07 Dec 2018</small>
           </a>
         </h3>
       </li>
