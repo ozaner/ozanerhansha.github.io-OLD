@@ -4,13 +4,107 @@
  <title>Ozaner</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-12-07T23:09:46-05:00</updated>
+ <updated>2018-12-24T03:57:35-05:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ozaner Hansha</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Intro Probability Notes Ch. 1</title>
+   <link href="http://localhost:4000/prob-notes-1/"/>
+   <updated>2018-12-23T00:00:00-05:00</updated>
+   <id>http://localhost:4000/prob-notes-1</id>
+   <content type="html">&lt;p&gt;Notes for Ch. 1 of &lt;em&gt;A First Course in Probability&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&quot;basic-principle-of-counting&quot;&gt;Basic Principle of Counting&lt;/h2&gt;
+&lt;p&gt;The basic principle of counting states that if two events are independent and the first has $m$ possible outcomes and the second has $n$ possible outcomes, then the events taken together have $mn$ possible outcomes.&lt;/p&gt;
+
+&lt;p&gt;Formally, if $A$ is the set of all outcomes of the first experiment and $B$ the second:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;A=\{a_1,a_2,\cdots,a_m\}\ \ \ \ \ B=\{b_1,b_2,\cdots,b_n\}&lt;/script&gt;
+
+&lt;p&gt;then the set of combined outcomes is just their &lt;a href=&quot;\cartesian-product&quot;&gt;cartesian product&lt;/a&gt; $A\times B$:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+A\times B=\{(a,b)\mid a\in A\wedge b\in B\}=\left\{
+\begin{matrix}
+    (a_1,b_1), &amp; (a_1,b_2), &amp; \dots &amp; (a_1,b_n), \\
+    (a_2,b_1), &amp; (a_2,b_2), &amp; \dots &amp; (a_2,b_n), \\
+    \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+    (a_m,b_1), &amp; (a_m,b_2), &amp; \dots &amp; (a_m,b_n)
+\end{matrix}\right\} %]]&gt;&lt;/script&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;The basic principle, then, just reiterates that the &lt;a href=&quot;\cartesian-product#cartesian-multiplication&quot;&gt;product of cardinalities&lt;/a&gt; is equal to the cardinality of the cartesian product:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;|A\times B|=|A||B|=mn&lt;/script&gt;
+
+&lt;p&gt;This of course generalizes to, not just two, but any number of events due to the properties of multiplication. It even generalizes to infinite cardinalities, although those aren’t particularly useful in combinatorics.&lt;/p&gt;
+
+&lt;h4 id=&quot;independence-of-outcomes&quot;&gt;Independence of Outcomes&lt;/h4&gt;
+&lt;p&gt;It is important to note that if the outcome of the first experiment &lt;em&gt;does&lt;/em&gt;  affect the second experiment (i.e. not independent), then certain pairs of outcomes may not be possible, e.g. $(a_3,b_2)$. The cartesian product, then, wouldn’t represent all possible outcomes as it would include impossible ones as well.&lt;/p&gt;
+
+&lt;p&gt;Sometimes if the first event affects the second, it is possible to still use the basic principle regardless of the particular sets of outcomes. For example, if we want the set of all two digit strings with no repeats we have 10 choices of digits for the first digit and 9 choices for the second:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;|\{(0,1),(2,3),(9,3),\cdots\}|=10\cdot 9=90&lt;/script&gt;
+
+&lt;p&gt;Notice that while we cannot represent the above as a cartesian product of two sets (i.e. it doesn’t have a &lt;a href=&quot;\cartesian-product#cartesian-factorization&quot;&gt;cartesian factorization&lt;/a&gt;) because the set of possible choices of the second element changes for every choice of the first element, we do know the &lt;em&gt;cardinality&lt;/em&gt; of the set of second choices and thus can still use the basic principle.&lt;/p&gt;
+
+&lt;h2 id=&quot;permutations&quot;&gt;Permutations&lt;/h2&gt;
+&lt;p&gt;Given a set of $n$ distinct elements, we can use the basic principle to derive the number of way we can arrange, or &lt;strong&gt;permutate&lt;/strong&gt;, them. If we have $n$ choices for the first element, $n-1$ for the second and so on, we are left with:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;n(n-1)(n-2)\cdots 3\cdot 2\cdot 1=n!&lt;/script&gt;
+
+&lt;p&gt;And so there are $n!$ way to rearrange a list of $n$ &lt;em&gt;distinct&lt;/em&gt; elements. What if they aren’t distinct? Given a multiset of $n$ elements, each with their own multiplicities, this is how many permutations there are:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{n!}{m_1!m_2!\cdots m_{n-1}!m_n!}&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;where $m_i$ is the multiplicity of the $i$th element.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Dividing by the factorial of each element’s multiplicity accounts for all the permutations where identical elements were swapped (leading to no change). Notice that this definition generalizes the unique element case where all the multiplicities are 1.&lt;/p&gt;
+
+&lt;h2 id=&quot;combinations--binomial-coefficients&quot;&gt;Combinations &amp;amp; Binomial Coefficients&lt;/h2&gt;
+&lt;p&gt;Another combinatorial problem is how many different sets of $r$ groups can be formed from $n$ distinct elements:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{n!}{(n-r)!\ r!}=\binom{n}{r}&lt;/script&gt;
+
+&lt;p&gt;The parenthetical notation above is used for denoting combinations and is read “$n$ choose $r$” and is called a binomial coefficient. Note that we define $\binom{n}{r}=0$ for $r&amp;lt; 0$ because there are no ways to split a set into less than 0 groups, and for $r&amp;gt;n$ because there are no ways to split a set into more groups than there are elements. The binomial theorem, discussed below, provides additional rationale to this definition.&lt;/p&gt;
+
+&lt;h4 id=&quot;explanation-of-formula&quot;&gt;Explanation of Formula&lt;/h4&gt;
+&lt;p&gt;Note that the formula is equivalent to:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{n!}{(n-r)!\ r!}=\frac{n(n-1)\cdots(n-r+1)}{r!}&lt;/script&gt;
+
+&lt;p&gt;The numerator applies the basic principle to the $n$ choices for the first group, $n-1$ for the second and so on up to the number of groups $r$. The $r!$ accounts for the groups overcounted by enumerating all their permutations.&lt;/p&gt;
+
+&lt;h4 id=&quot;recursive-identity&quot;&gt;Recursive Identity&lt;/h4&gt;
+&lt;p&gt;A special identity of the binomial coefficient is:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\binom{n}{r}=\binom{n-1}{r-1}+\binom{n-1}{r}&lt;/script&gt;
+
+&lt;p&gt;The binomial coefficient has many other &lt;a href=&quot;https://en.wikipedia.org/wiki/Binomial_coefficient#Identities_involving_binomial_coefficients&quot;&gt;interesting identities&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;binomial-theorem&quot;&gt;Binomial Theorem&lt;/h4&gt;
+&lt;p&gt;The binomial theorem tells us the coefficients of each term in $(x+y)^n$ as we vary $n$:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;(x+y)^n=\sum^n_{k=0}\binom{n}{k}x^ky^{n-k}&lt;/script&gt;
+
+&lt;p&gt;This is why $n$ choose $k$ is called a binoial coefficient. We can prove the above statement via induction (I’ll do it later).&lt;/p&gt;
+
+&lt;h4 id=&quot;multinomial-coefficients&quot;&gt;Multinomial Coefficients&lt;/h4&gt;
+
+&lt;h4 id=&quot;-of-integer-solutions&quot;&gt;# of Integer Solutions&lt;/h4&gt;
+
+&lt;p&gt;TODO:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Pascal’s triangle&lt;/li&gt;
+  &lt;li&gt;Generalization of Pascal’s Triangle.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Cartesian Product</title>
@@ -72,11 +166,11 @@ $$\prod_{i=1}^nS_i=S_1\times S_2\times \cdots \times S_n$$
 
 &lt;details&gt;
 &lt;summary&gt;&lt;h4 class=&quot;inline&quot; id=&quot;simultaneity-of-arity&quot;&gt;Simultaneity of Arity&lt;/h4&gt;&lt;/summary&gt;
-Recall that any $n$-tuple can be &lt;a href=&quot;\cartesian-product#simultaneous-interpretation&quot;&gt;simultaneously interpreted&lt;/a&gt; as a $k$-tuple where $2\le k\le n$. Likewise, this means that an $n$-ary Cartesian product:
+Recall that any $n$-tuple can be &lt;a href=&quot;\n-tuples#simultaneous-interpretation&quot;&gt;simultaneously interpreted&lt;/a&gt; as a $k$-tuple where $2\le k\le n$. Likewise, this means that an $n$-ary Cartesian product:
 
 $$\prod_{i=1}^nS_i=S_1\times S_2\times \cdots \times S_n$$
 
-can also be interpreted as having arity $k$. We do this by first defining a new indexed set:
+can also be interpreted as having arity $k$. We can show this by first defining a new indexed set:
 
 $$U_i =
   \begin{cases}
@@ -2345,13 +2439,13 @@ F_n&amp;=F_{n-2}+F_{n-1}\\
 
 Whatever definition is used, all that matters is that two $n$-tuples are equivalent *only* when the elements at each of their indices are equivalent. This is their defining property. --&gt;
 
-&lt;details open=&quot;&quot;&gt;
+&lt;details&gt;
 &lt;summary&gt;&lt;h4 class=&quot;inline&quot; id=&quot;simultaneous-interpretation&quot;&gt;Simultaneous Interpretation&lt;/h4&gt;&lt;/summary&gt;
-An important property of this definition is that any $n$-tuple can also be thought of as a $k$-tuple where $2\le k\le n$. This is an immediate consequence of the recursive definition:
+A consequence of this definition is that any $n$-tuple can also be thought of as a $k$-tuple where $2\le k\le n$. This is an immediate consequence of the recursive definition:
 
 $$(x_1,x_2,\cdots,x_n)=((x_1,x_2,\cdots,x_{n-k+1}),x_{n-k+2},\cdots,x_n)$$
 
-This has consequences in how we interpret the [arity of Cartesian products](\cartesian-product#simultaneity-of-arity) and thus relations and functions.
+This has consequences in how we interpret the &lt;a href=&quot;\cartesian-product#simultaneity-of-arity&quot;&gt;arity of Cartesian products&lt;/a&gt; and thus relations and functions.
 &lt;/details&gt;
 
 &lt;h4 id=&quot;existence-in-zfc&quot;&gt;Existence in ZFC&lt;/h4&gt;

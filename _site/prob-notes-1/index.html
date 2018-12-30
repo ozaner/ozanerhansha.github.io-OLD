@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>
+    
+      Intro Probability Notes Ch. 1 &middot; Ozaner
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- Load JQuery (JavaScript)-->
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      positionToHash: true,
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      messageStyle: "none",
+      "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        styles: {".MathJax": {color: "#CCCCCC"}}
+      },
+      displayAlign: "center!important",
+      displayIndent: "0em"
+    });
+    MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  <!-- Adds MathJax -->
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <!-- Adds Awesome Icons-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Collects tags of all posts-->
+  
+    
+
+
+
+
+
+
+  
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111962015-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111962015-1');
+  </script>
+</head>
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          $$\large{\text {Oz}}\tiny{\underbrace{\large {\text {∀n∈ℝ}}}_{\tiny {\text {For all real n...}}}}$$
+        </a>
+      </h1>
+      <p class="lead">A compilation of my notes, projects, and articles.</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="https://medium.com/@ozanerhansha" target="_blank">Articles</a><br/>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/notes/">Notes</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/references/">Interesting References</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <style>
+        p.small {
+            line-height: 0.7;
+        }
+      </style>
+
+      <br>
+
+      <p class="small">
+        <!--- Icon Links -->
+        <b>Links: </b>
+        <a href="https://github.com/ozanerhansha"><i class='fa fa-github'></i></a>
+        <!-- <a href="https://www.quora.com/profile/Ozaner-Hansha/questions"><i class='fa fa-quora'></i></a> -->
+        <a href="https://medium.com/@ozanerhansha"<i class='fa fa-medium'></i></a>
+        <!-- <a href="https://math.stackexchange.com/users/490433/ozaner-hansha?tab=questions"><i class='fa fa-stack-exchange'></i></a> -->
+
+        <br>
+        <font size="2"><a href="https://github.com/ozanerhansha/ozanerhansha.github.io">This Website's Code</a></font>
+      </p>
+    </nav>
+    <p>2018 Ozaner Hansha</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Intro Probability Notes Ch. 1</h1>
+  <span class="post-date">December 23, 2018</span>
+  <span>[
+  
+    
+    <a href="/tag/math"><code class="highligher-rouge"><nobr>math</nobr></code>&nbsp;</a>
+  
+    
+    <a href="/tag/probability-theory"><code class="highligher-rouge"><nobr>probability-theory</nobr></code>&nbsp;</a>
+  
+]</span>
+  <p>Notes for Ch. 1 of <em>A First Course in Probability</em></p>
+<h2 id="basic-principle-of-counting">Basic Principle of Counting</h2>
+<p>The basic principle of counting states that if two events are independent and the first has $m$ possible outcomes and the second has $n$ possible outcomes, then the events taken together have $mn$ possible outcomes.</p>
+
+<p>Formally, if $A$ is the set of all outcomes of the first experiment and $B$ the second:</p>
+
+<script type="math/tex; mode=display">A=\{a_1,a_2,\cdots,a_m\}\ \ \ \ \ B=\{b_1,b_2,\cdots,b_n\}</script>
+
+<p>then the set of combined outcomes is just their <a href="\cartesian-product">cartesian product</a> $A\times B$:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+A\times B=\{(a,b)\mid a\in A\wedge b\in B\}=\left\{
+\begin{matrix}
+    (a_1,b_1), & (a_1,b_2), & \dots & (a_1,b_n), \\
+    (a_2,b_1), & (a_2,b_2), & \dots & (a_2,b_n), \\
+    \vdots & \vdots & \ddots & \vdots \\
+    (a_m,b_1), & (a_m,b_2), & \dots & (a_m,b_n)
+\end{matrix}\right\} %]]></script>
+
+<!--more-->
+
+<p>The basic principle, then, just reiterates that the <a href="\cartesian-product#cartesian-multiplication">product of cardinalities</a> is equal to the cardinality of the cartesian product:</p>
+
+<script type="math/tex; mode=display">|A\times B|=|A||B|=mn</script>
+
+<p>This of course generalizes to, not just two, but any number of events due to the properties of multiplication. It even generalizes to infinite cardinalities, although those aren’t particularly useful in combinatorics.</p>
+
+<h4 id="independence-of-outcomes">Independence of Outcomes</h4>
+<p>It is important to note that if the outcome of the first experiment <em>does</em>  affect the second experiment (i.e. not independent), then certain pairs of outcomes may not be possible, e.g. $(a_3,b_2)$. The cartesian product, then, wouldn’t represent all possible outcomes as it would include impossible ones as well.</p>
+
+<p>Sometimes if the first event affects the second, it is possible to still use the basic principle regardless of the particular sets of outcomes. For example, if we want the set of all two digit strings with no repeats we have 10 choices of digits for the first digit and 9 choices for the second:</p>
+
+<script type="math/tex; mode=display">|\{(0,1),(2,3),(9,3),\cdots\}|=10\cdot 9=90</script>
+
+<p>Notice that while we cannot represent the above as a cartesian product of two sets (i.e. it doesn’t have a <a href="\cartesian-product#cartesian-factorization">cartesian factorization</a>) because the set of possible choices of the second element changes for every choice of the first element, we do know the <em>cardinality</em> of the set of second choices and thus can still use the basic principle.</p>
+
+<h2 id="permutations">Permutations</h2>
+<p>Given a set of $n$ distinct elements, we can use the basic principle to derive the number of way we can arrange, or <strong>permutate</strong>, them. If we have $n$ choices for the first element, $n-1$ for the second and so on, we are left with:</p>
+
+<script type="math/tex; mode=display">n(n-1)(n-2)\cdots 3\cdot 2\cdot 1=n!</script>
+
+<p>And so there are $n!$ way to rearrange a list of $n$ <em>distinct</em> elements. What if they aren’t distinct? Given a multiset of $n$ elements, each with their own multiplicities, this is how many permutations there are:</p>
+
+<script type="math/tex; mode=display">\frac{n!}{m_1!m_2!\cdots m_{n-1}!m_n!}</script>
+
+<p><em>where $m_i$ is the multiplicity of the $i$th element.</em></p>
+
+<p>Dividing by the factorial of each element’s multiplicity accounts for all the permutations where identical elements were swapped (leading to no change). Notice that this definition generalizes the unique element case where all the multiplicities are 1.</p>
+
+<h2 id="combinations--binomial-coefficients">Combinations &amp; Binomial Coefficients</h2>
+<p>Another combinatorial problem is how many different sets of $r$ groups can be formed from $n$ distinct elements:</p>
+
+<script type="math/tex; mode=display">\frac{n!}{(n-r)!\ r!}=\binom{n}{r}</script>
+
+<p>The parenthetical notation above is used for denoting combinations and is read “$n$ choose $r$” and is called a binomial coefficient. Note that we define $\binom{n}{r}=0$ for $r&lt; 0$ because there are no ways to split a set into less than 0 groups, and for $r&gt;n$ because there are no ways to split a set into more groups than there are elements. The binomial theorem, discussed below, provides additional rationale to this definition.</p>
+
+<h4 id="explanation-of-formula">Explanation of Formula</h4>
+<p>Note that the formula is equivalent to:</p>
+
+<script type="math/tex; mode=display">\frac{n!}{(n-r)!\ r!}=\frac{n(n-1)\cdots(n-r+1)}{r!}</script>
+
+<p>The numerator applies the basic principle to the $n$ choices for the first group, $n-1$ for the second and so on up to the number of groups $r$. The $r!$ accounts for the groups overcounted by enumerating all their permutations.</p>
+
+<h4 id="recursive-identity">Recursive Identity</h4>
+<p>A special identity of the binomial coefficient is:</p>
+
+<script type="math/tex; mode=display">\binom{n}{r}=\binom{n-1}{r-1}+\binom{n-1}{r}</script>
+
+<p>The binomial coefficient has many other <a href="https://en.wikipedia.org/wiki/Binomial_coefficient#Identities_involving_binomial_coefficients">interesting identities</a>.</p>
+
+<h4 id="binomial-theorem">Binomial Theorem</h4>
+<p>The binomial theorem tells us the coefficients of each term in $(x+y)^n$ as we vary $n$:</p>
+
+<script type="math/tex; mode=display">(x+y)^n=\sum^n_{k=0}\binom{n}{k}x^ky^{n-k}</script>
+
+<p>This is why $n$ choose $k$ is called a binoial coefficient. We can prove the above statement via induction (I’ll do it later).</p>
+
+<h4 id="multinomial-coefficients">Multinomial Coefficients</h4>
+
+<h4 id="-of-integer-solutions"># of Integer Solutions</h4>
+
+<p>TODO:</p>
+<ul>
+  <li>Pascal’s triangle</li>
+  <li>Generalization of Pascal’s Triangle.</li>
+</ul>
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/cartesian-product/">
+            Cartesian Product
+            <small>07 Dec 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/sequential-search/">
+            Sequential Search
+            <small>09 Oct 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/asymptotic-notation/">
+            Asymptotic Notation
+            <small>07 Oct 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+    </div>
+  </body>
+</html>
