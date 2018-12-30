@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Intro Probability Notes Ch. 2
-date: 2018-12-25
+date: 2018-12-30
 tags: math probability-theory
 ---
 Notes for *A First Course in Probability* Ch. 2 - Axioms of Probability
