@@ -27,3 +27,5 @@ p3 #8 ordered pairs
 
 #2 filetopng
 #2 Play Atari Pong Reinforcement
+
+jdae fkz neapxlsdjb scdq spdudoh adlcep ndn xkt tqe rpemtejax ojohxqdq kp ioxze ftqs zptse rkpae

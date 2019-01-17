@@ -33,3 +33,18 @@ Stock markets are places where shareholders can trade and sell stocks with each 
 We can talk about *the* stock market, however, because all the big stock exchanges are now much more integrated and cohesive due to the advent of telecommunications and, more recently, the internet. This leads to a greater pool of sellers and buyers and thus more standard/fair prices and higher liquidity.
 
 ## Regulation
+Stock markets are self-regulated organizations (SROs). That is, they are non-governmental agencies that create and enforce industry standards and regulations. The **Financial Industry Regulatory Authority (FINRA)** regulates stock markets in order to ensure that they are fair for all parties involved in trading.
+
+Even further, the **US Securities and Exchange Commission (SEC)** is the independent agency of the federal government (outside of the control of the executive branch) responsible for enforcing and proposing laws on stock markets and exchanges.
+
+## Liquidity, Spread, and Depth
+In order to make trades on the stock market, a buyer has to find a seller who agrees with their price. The more willing buyers and sellers there are of a stock, the more **liquidity** that stock is said to possess. This property allows the stock to be traded much easier and is important for an effective stock market. Since a willing buyer/seller may not exist at any given moment, stock markets may rely on middlemen that maintain continual trades. These middlemen are called **market makers**.
+
+Since stocks are sole with seller setting an *offer* and a buyer giving an *offer* there is usually a discrepancy between these two quantities, due to the two parties valuing the stock/instrument differently. This discrepancy is called the **spread** of the stock. Note that the lower the spread and the larger the bids and offers are, the more liquid the stock is. When there are many buyers and sellers whose offers/bids are at many different prices, the stock is said to have good **depth**.
+
+Note that the terms liquidity and depth also apply to the stock market as a whole rather than just stocks. A good stock (like those of large companies) are ones with high liquidity and good depth. Likewise, a good stock market is one whose stocks possess these qualities.
+
+## Indices
+An index is an aggregated representation of a number of companies' stock prices. For example, the S&P 500 is a weighted average of the largest 500 publicly traded companies in the US. Its movement, then, is a quantification of the health of the US economy and stock market as a whole. When people refer to the stock market as a whole they are referring to some large index. There are also smaller indices that only take into count specific industries like oil, technology, chip manufacturing, etc.
+
+While indices are theoretical tools, they can be realized into **exchange traded funds (ETFs)**. Big companies essentially buy the correct proportions of each stock as prescribed by the index in question and sell them as a sort of 'stock' that one can buy, sell, put, call and so on.

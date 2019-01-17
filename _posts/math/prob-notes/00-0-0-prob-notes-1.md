@@ -24,11 +24,11 @@ $$A\times B=\{(a,b)\mid a\in A\wedge b\in B\}=\left\{
 
 <!--more-->
 
-The basic principle, then, just reiterates that the [product of cardinalities](\cartesian-product#cartesian-multiplication) is equal to the cardinality of the cartesian product:
+The basic principle, then, just reiterates that the [product of cardinalities](\cartesian-product#cardinal-multiplication) is equal to the cardinality of the cartesian product:
 
 $$|A\times B|=|A||B|=mn$$
 
-This of course generalizes to, not just two, but any number of events due to the properties of multiplication. It even generalizes to infinite cardinalities, although those aren't particularly useful in combinatorics.
+This of course generalizes to, not just two, but any number of independent events due to the properties of multiplication. It even generalizes to infinite cardinalities, although those aren't particularly useful in combinatorics.
 
 #### Independence of Outcomes
 It is important to note that if the outcome of the first experiment *does*  affect the second experiment (i.e. not independent), then certain pairs of outcomes may not be possible, e.g. $(a_3,b_2)$. The cartesian product, then, wouldn't represent all possible outcomes as it would include impossible ones as well.
@@ -40,7 +40,7 @@ $$|\{(0,1),(2,3),(9,3),\cdots\}|=10\cdot 9=90$$
 Notice that while we cannot represent the above as a cartesian product of two sets (i.e. it doesn't have a [cartesian factorization](\cartesian-product#cartesian-factorization)) because the set of possible choices of the second element changes for every choice of the first element, we do know the *cardinality* of the set of second choices and thus can still use the basic principle.
 
 ## Permutations
-Given a set of $n$ distinct elements, we can use the basic principle to derive the number of way we can arrange, or **permutate**, them. If we have $n$ choices for the first element, $n-1$ for the second and so on, we are left with:
+Given a set of $n$ distinct elements, we can use the basic principle to derive the number of ways we can arrange, or **permutate**, them. If we have $n$ choices for the first element, $n-1$ for the second and so on, we are left with:
 
 $$n(n-1)(n-2)\cdots 3\cdot 2\cdot 1=n!$$
 
@@ -81,7 +81,7 @@ $$(x+y)^n=\sum^n_{k=0}\binom{n}{k}x^ky^{n-k}$$
 We can prove the above statement via induction (I'll do it later).
 
 #### Multinomial Coefficients
-Another question a combinatorialist might ask if how many ways a set of $n$ distinct elements can be partitioned into groups of size $n_1,n_2,\cdots,n_r$ where all the groups add up to $n$. We have $n$ choose $n_1$ combinations for the first group, $n-n_1$ choose $n_2$ for the second, and so on giving us:
+Another question a combinatorialist might ask is how many ways a set of $n$ distinct elements can be partitioned into groups of size $n_1,n_2,\cdots,n_r$ where all the groups add up to $n$. We have $n$ choose $n_1$ combinations for the first group, $n-n_1$ choose $n_2$ for the second, and so on giving us:
 
 $$\binom{n}{n_1}\binom{n-n_1}{n_2}\cdots\binom{n-n_1-n_2-\cdots n_{r-1}}{n_r}$$
 
@@ -95,12 +95,12 @@ $$\binom{n}{n_1,n_2,\cdots,n_r}=\frac{n!}{n_1!n_2!\cdots n_r!}$$
 
 *where $\sum_i^r n_i=n$*
 
-Even further, the binomial theorem can be extended to any multinomial using the above in the following way:
+As you might've guessed, the binomial theorem can be extended to any multinomial using the above in the following way:
 
-$$(x_1+x_2+\cdots+x_m)^n=\sum_{n_1+n_2+\cdots n_r=n}\binom{n}{n_1,n_2,\cdots, n_r}x_1^{n_1}x_2^{n_2}\cdots x_r^{n_r}$$
+$$(x_1+x_2+\cdots+x_r)^n=\sum_{n_1+n_2+\cdots n_r=n}\binom{n}{n_1,n_2,\cdots, n_r}x_1^{n_1}x_2^{n_2}\cdots x_r^{n_r}$$
 
 *Where the sum is taking place over all tuples $(n_1,n_2,\cdots,n_r)$ such that their pointwise sum is $n$.*
 
-TODO:
+<!-- TODO:
 - Pascal's triangle
-- Generalization of Pascal's Triangle.
+- Generalization of Pascal's Triangle. -->

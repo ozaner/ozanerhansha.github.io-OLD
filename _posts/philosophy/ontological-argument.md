@@ -2,17 +2,17 @@
 layout: post
 title: Ontological Argument
 date: 2018-09-07
-tags: philosophy logic
+tags: philosophy
 ---
-An **ontological argument** is an [argument](/arguments) whose conclusion is the existence of God (regardless of how the writer defines God). The existence of God is a very important aspect of human culture and has affected humanity for as long as we've existed. It is no surprise then, that arguments for/against God are an integral part of philosophy.
+An **ontological argument** is an [argument](/arguments) whose conclusion is the existence of God (regardless of how the writer defines God). The existence of God is a very important aspect of culture and society and has affected humanity for as long as we've existed. It is no surprise then, that arguments for/against God are staples of philosophy.
 
 #### Unfalsifiability
-Arguments for God, and even against God, are usually ineffective. Indeed nowadays most people consider the existence of God to be unfalsifiable, that is it cannot be proven or disproven. Despite this, however, many may still believe that proving that God is likely/unlikely to exist is still worthwhile.
+Arguments for God, and even against God, are usually ineffective. Indeed, nowadays most people consider the existence of God to be unfalsifiable, that is God's existence cannot be proven nor disproven. Despite this however, many still believe that proving that God is likely/unlikely to exist is still a worthwhile exercise.
 
 <!--more-->
 
 ## Definition of God
-Different conceptions of *God* or an all powerful figure have existed throughout human history. Some monotheistic conceptions posit a singular supreme being that stands above all others (Abrahamic religions), some polytheistic conceptions posit multiple deities that exist simultaneously (like Hinduism), and some are less grounded like the Buddhist conception of samsara.
+Different conceptions of *God* or an all powerful figure have existed throughout human history. Some monotheistic conceptions posit a singular supreme being that stands above all others (Abrahamic religions), some polytheistic conceptions posit multiple deities that exist simultaneously (like Hinduism), and some are less explicit like the Buddhist conception of Samsara.
 
 Despite all these different conceptions of God, most ontological arguments (at least from the western world) aim to prove the monotheistic conception. As a result we will take the following to be our working definition of God:
 
