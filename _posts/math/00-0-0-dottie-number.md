@@ -35,7 +35,7 @@ $$\forall x\in\mathbb{R} \left(\lim_{n\to\infty} \underbrace{\cos\circ\cos\circ\
 In fact, the above is true for a certain range of the complex numbers as well. This range forms the [*Julia Set*](https://en.wikipedia.org/wiki/Julia_set) of $\cos z$.
 
 <details>
-<summary><h3 class="inline">Proof of Transcendence </h3></summary>
+<summary><h2 class="inline">Proof of Transcendence </h2></summary>
 
 <h4>LWT</h4><p>
 To prove $\textbf{d}$'s transcendence, we'll need to make use of the <b><a href="https://en.wikipedia.org/wiki/Lindemann%E2%80%93Weierstrass_theorem">Lindemann–Weierstrass theorem</a></b> (LWT) which states:
@@ -115,7 +115,7 @@ Where $a_n$ is a sequence of rational numbers found by solving the above equatio
 
 <!-- Proof of Kaplan's Series -->
 <details>
-  <summary><h3 class="inline">Proof of Kaplan's Series</h3></summary>
+  <summary><h2 class="inline">Proof of Kaplan's Series</h2></summary>
   <h4>Taylor Series of $f^{-1}$</h4>
   <p>
     To start off with, consider a function $f$ that is defined as such:

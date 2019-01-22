@@ -118,6 +118,17 @@ Indeed this absorbing property of the empty set is the only case in which a Cart
 </details>
 
 <details>
+<summary><h4 class="inline">Unary Product</h4></summary>
+Because our product notation allows us to denote the cartesian product of <i>any</i> indexed family of sets, it is natural for us to ask what is returned when the family consists of a single set. The answer is just that set itself:
+
+$$\prod_{i=1}^1S=S$$
+
+We define the unary product in this way to make more our product notation more convenient (e.g. recursive definition of product has a base case of 1 set). It also allows us to avoid adding $1$-tuples, and even further $0$-tuples, and the unnecessary complexity they add to our definition of $n$-tuples.
+
+Note that this definition implies that a "$1$-tuple" can be intuitively thought of as just an element of a set.
+</details>
+
+<details>
 <summary><h4 class="inline">Nullary Product</h4></summary>
 Another special case is when the index set $I=\emptyset$. This is called an empty or <b>nullary Cartesian product</b>. The index set being empty means that there can only be one function (the empty function) in the product:
 
@@ -201,7 +212,7 @@ To find the $i$th **Cartesian Factor (CF)** of an $n$-ary Cartesian product $P$ 
 
 $$\operatorname{CF}_i(P)=\bigcup_{p\in P} \pi^n_i(p)=S_i$$
 
-*Where $\pi^n_i(p)$ is the [tuple extraction function](\n-tuple#extraction).*
+*Where $\pi^n_i(p)$ is the [tuple extraction function](\n-tuples#extraction).*
 
 #### Indexed Product
 In the more general case where our Cartesian product $P$ is of an indexed family $\\{S_i\\} _{i\in I}$ then we can find the $i$th factor in the following way:
@@ -215,7 +226,7 @@ Note that we can recover the index set $I$ from the product $P$ by simply choosi
 #### Prime Factorization
 The **Cartesian prime factorization (CPF)** is simply the indexed set of all the Cartesian factors. Note that the indexing is important because, unlike integer factors, the order matters. And so for a Cartesian product $\prod_{i\in I}S_i=P$ we can say:
 
-$$\operatorname{CPF}(P)=\{\operatorname{Factor}_i(P)\}_{i\in I}=\{S_i\}_{i\in I}$$
+$$\operatorname{CPF}(P)=(\operatorname{CF}_i(P))_{i\in I}=(S_i)_{i\in I}$$
 
 Note that due to the simultaneity of arity, the factorization of a finite product depends on what arity we consider to it be. We can resolve this if we specify that the *unique* prime factorization of a finitary product requires it be considered the maximum arity possible.
 
