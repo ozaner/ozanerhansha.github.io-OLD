@@ -57,7 +57,7 @@ or more generally:
 $$\left(\bigcup E_i\right)^\complement=\bigcap E_i^\complement\ \ \ \ \ \ \  \left(\bigcap E_i\right)^\complement=\bigcup E_i^\complement$$
 
 ## Axioms of Probability
-Consider a sample space $\Omega$, a set of possible events $F\subseteq \mathcal{P}(\Omega)$ called the **event space**, and a function $P:\mathcal F\to\mathbb R$ whose outputs are called **probabilities**. We call the triple $(\Omega,\mathcal F,P)$ a **probability space** if it satisfies the following 3 axioms:
+Consider a sample space $\Omega$, a set of possible events $\mathcal F\subseteq \mathcal{P}(\Omega)$ called the **event space**, and a function $P:\mathcal F\to\mathbb R$ whose outputs are called **probabilities**. We call the triple $(\Omega,\mathcal F,P)$ a **probability space** if it satisfies the following 3 axioms:
 
 **Axiom 1.** Every event in the event space has a nonnegative probability:
 
@@ -73,7 +73,7 @@ $$P(\Omega)=1$$
 
 This is called the unitary property, and it corresponds with the fact that every experiment must have *some* outcome in the sample space.
 
-**Axiom 3.** Any countable set of disjoint events $\{E_i\}_{i=1}^\infty$ satisfies:
+**Axiom 3.** Any countable set of disjoint events $(E_i)_{i=1}^\infty$ satisfies:
 
 $$P\left(\bigcup_{i=1}^\infty E_i\right)=\sum_{i=1}^\infty P(E_i)$$
 
@@ -98,7 +98,7 @@ P(A^\complement)=1-P(A)
 - $P(A\cup B)=P(A)+P(B)-P(A B)$
 - $P(A^\complement)=1-P(A)$ -->
 
-*for any events $A,B\in F$.*
+*for any events $A,B\in\mathcal F$.*
 
 ### Inclusion-Exclusion Principle
 Recall one of the consequences we mentioned earlier:
@@ -138,7 +138,7 @@ This is a consequence of $P(\Omega)=1$. A further consequence of this is that th
 $$P(E)=\frac{|E|}{|\Omega|}$$
 
 ### Increasing and Decreasing Sequences of Events
-A sequence of events $\{E_i\}_{i=1}^\infty$ is increasing if:
+A sequence of events $(E_i)_{i=1}^\infty$ is increasing if:
 
 $$\left(\forall i\in\mathbb Z^+\right) E_i\subseteq E_{i+1}$$
 

@@ -126,12 +126,12 @@ $$\operatorname{odds}(E)=\frac{P(E)}{P(E^\complement)}=\frac{P(E)}{1-P(E)}$$
 
 We can use Bayes' Theorem to describe how the odds of a hypothesis $H$ are affected by the introduction of some new evidence $E$:
 
-$$\frac{P(H|E)}{P(H^\complement|E)}=\frac{P(H)P(E|H)}{P(H^\complement)P(E|H^\complement)}=\operatorname{odds}(H)\operatorname{odds}(E|H)$$
+$$\operatorname{odds}(H|E)=\frac{P(H|E)}{P(H^\complement|E)}=\frac{P(H)P(E|H)}{P(H^\complement)P(E|H^\complement)}=\operatorname{odds}(H)\operatorname{odds}(E|H)$$
 
 Notice that odds that the hypothesis happened are multiplied by the odds the evidence given the hypothesis, resulting in the new odds of the hypothesis.
 
 ### Independent Events
-When the probability of an event $E$ does not change when another event $F$ is known to have occurred, the events are called **independent** and are called **dependent** otherwise. In other words, the event $E$ is independent of $F$ when:
+When the probability of an event $E$ does not change when another event $F$ is known to have occurred, the events are called **independent**. They are called **dependent** otherwise. In other words, the event $E$ is independent of $F$ when:
 
 $$P(E|F)=P(F)$$
 
