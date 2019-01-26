@@ -53,7 +53,7 @@ $$P(F)=0\implies P(E|F)=\frac{P(EF)}{P(F)}=\frac{0}{0}$$
 
 This jives with our intuition as it doesn't make sense to consider the probability of an event $E$ under the precondition that an impossible event $F$ occurred.
 
-### Multiplication Rule
+## Multiplication Rule
 Note that we can rearrange the conditional probability formula as so:
 
 $$P(EF)=P(F)P(E|F)$$
@@ -67,8 +67,8 @@ Or more succinctly:
 
 $$P\left(\bigcap_{i=1}^n E_i\right)=\prod_{i=1}^n\left(E_i\mid\bigcap_{i=1}^{n-1} E_i\right)$$
 
-### Law of Total Probability
-The law of total probability states that for any countable partition $(F_i)_{i\in I}$ of the sample space $\Omega$, the event $E$ satisfies:
+## Law of Total Probability
+The law of total probability states that for any countable partition $(F_i)_{i\in I}$ of the sample space $\Omega$, an event $E$ satisfies:
 
 $$\begin{align*}
 P(E)&=\sum_{i\in I}P(EF_i)\\
@@ -91,7 +91,7 @@ P(E)&=P(E|F)P(F)+P(E|F^\complement)P(F^\complement)\\
 &=P(E|F)P(F)+P(E|F^\complement)(1-P(F))
 \end{align*}$$
 
-### Bayes' Theorem
+## Bayes' Theorem
 Bayes' Theorem is the simple observation that for any two events $E$ and $F$:
 
 $$P(F|E)=\frac{P(E|F)P(F)}{P(E)}$$
@@ -119,8 +119,8 @@ Bayes Theorem is also useful, and is often phrased, in the following form where 
 
 $$P(F|E)=\frac{P(E|F)P(F)}{P(E|F)P(F)+P(E|F^\complement)P(F^\complement)}$$
 
-### Odds of an Event
-When we use the phrase "The odds $E$ happens" we mean how much more likely it is that $E$ occurs rather than doesn't occur (i.e. $E^\complement$ occurs):
+## Odds of an Event
+When we use the phrase "The odds $E$ happens" we mean how much more times likely it is that $E$ occurs rather than doesn't occur (i.e. $E^\complement$ occurs):
 
 $$\operatorname{odds}(E)=\frac{P(E)}{P(E^\complement)}=\frac{P(E)}{1-P(E)}$$
 
@@ -130,7 +130,7 @@ $$\operatorname{odds}(H|E)=\frac{P(H|E)}{P(H^\complement|E)}=\frac{P(H)P(E|H)}{P
 
 Notice that odds that the hypothesis happened are multiplied by the odds the evidence given the hypothesis, resulting in the new odds of the hypothesis.
 
-### Independent Events
+## Independent Events
 When the probability of an event $E$ does not change when another event $F$ is known to have occurred, the events are called **independent**. They are called **dependent** otherwise. In other words, the event $E$ is independent of $F$ when:
 
 $$P(E|F)=P(F)$$

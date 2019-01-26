@@ -4,7 +4,7 @@ title: Taylor Series
 date: 2019-01-25
 tags: math calculus computer-science
 ---
-Taylor series' are a clever way of representing smooth functions as an infinite polynomial. This provides a way of defining important analytic functions (like $\sin x$ or $e^x$) in a way that encompasses the entire complex plane.
+Taylor series are a clever way of representing smooth functions as infinite polynomials. Doing this allows us to define important analytic functions (like $\sin x$ or $e^x$) in a way that encompasses the entire complex plane.
 
 Moreover, the partial sums of these series provide a practical way of approximating the values of functions that are themselves infeasible/impossible to compute directly.
 
