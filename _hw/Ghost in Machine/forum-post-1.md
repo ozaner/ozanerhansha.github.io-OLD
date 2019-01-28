@@ -1,4 +1,6 @@
 ## Forum Post 1
+Post three questions related to AI that concern you.
+
 1. While the march of artificial intelligence towards obviating much of the workforce may lead to a future where humans no longer work for survival and instead pursue what they please, a more menacing outcome is possible where those who control the artificial intelligences (the companies, and organizations who created them) can monopolize work itself, leading to even greater power imbalances in society. How our society can account for this radical shift and make sure our transition from an economy based on human labor to one based on robots is a big question.
 
 2. Corollary to this is how humans will live their lives after said economic revolution. Since the development of agriculture itself, human life was, and continues to be, characterized by the work/job we do. We're not just people, we're lawyers, doctors, clerks, priests, teachers, kings, slaves, etc. A society where work is no longer necessary poses a fundamental challenge to how we view ourselves and what we ought to do with our lives. Free of thinking about how to advance our careers or provide for our families, we would be forced to come face to face with some shaky existential questions.

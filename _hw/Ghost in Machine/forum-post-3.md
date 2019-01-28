@@ -1,3 +1,5 @@
+## Forum Post 3
+
 If I were the interrogator in a Turing test I wouldn't use questions of the following sort (this isn't exhaustive):
 - Jokes or puns. This is a classic type of question to use in Turing tests but it is not impossible, nor even implausible, that we could develop a language parsing AI that could make sense of such wordplay and even analyze it for sentiment. We already have the rudiments of such systems today.
 - "Is this sentence false?". This won't work either as these overplayed logical paradoxes won't 'crash the computer' or anything of the sort. A well programmed Turing test taker would be able to identify these paradoxes and simply respond with "What am I a logician?" or "the truth value of that statement is undefined" depending on what kind of person this program is trying to imitate.

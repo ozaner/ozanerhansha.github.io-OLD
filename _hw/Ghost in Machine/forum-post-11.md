@@ -1,3 +1,5 @@
+## Forum Post 11
+
 I wouldn't give it a model of ethics. Whatever my purpose in building an AI, be it a toy project, a companion, a worker that needed ethics to do said work for some reason, etc. Giving it a model of ethics would be putting too much trust in this intuition we have of ethics. All 'ethics' is, is a product of human society, psychology, evolution, biology, chemistry, and ultimately physics. Unless you believe in something immaterial that could possibly found morality in something cosmic or objective, ethics is merely a shorthand for us to believe our cobbled together, evolved neural networks that we are consistent 'selves' and that we are making 'just' and 'good' decisions. A depressed hairless ape constantly doubting the very notion of self wouldn't be a very fit one, evolutionarily speaking.
 
 Thus, giving our idealized notions of ethics, complete with their logical holes, their plethora of edge cases, and the fact that they can only be based on nothing but arbitrary maxims "minimize suffering in biological/sentient beings" Why? Because... pain is bad? Sort of circular. What about "never kill" Why? Because killing is wrong?
