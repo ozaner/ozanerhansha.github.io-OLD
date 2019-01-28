@@ -7,7 +7,7 @@ tags: philosophy
 The following are my thoughts on Peter Singer's ['All Animals are Equal'](https://rintintin.colorado.edu/~vancecd/phil3140/Singer1.pdf).
 
 ### Counterexample to Human Equality
-*In response to Pg.3, Para. 1:*
+*In response paragraph 10:*
 
 As Singer rightly points out, humans are indeed not equal. It is commonly thought that over the whole of the different sexes and races, there are individuals more capable in any one dimension than members of the other categories. This, the thought goes, provides justification for the treatment of these different races and sexes equally as they are just as capable as each other. This justification though, as Singer shows, leaves open a variety of other forms of discrimination like that of intelligence.
 
@@ -16,7 +16,7 @@ Just as we have an intuitive distaste of treating those with different skin colo
 <!--more-->
 
 ### Foundation of Equality
-*In response to Pg.3, Para. 4:*
+*In response to paragraph 13:*
 
 I am totally in accordance with Singer that claims of treating others equally cannot be based on some logical reasoning (and how could it? logic has no goals and is merely a vehicle to achieve them) and are instead a "prescription of how we should treat humans." Whether or not all humans are equal, and in a variety of dimensions they are certainly not, that has no bearing on how we 'ought' to treat them. Like any moral judgement, the principle of equality is asserted because it is 'right' or 'good'. Almost like an axiom, this principle is simply accepted and its consequences explored by Singer.
 
@@ -29,7 +29,7 @@ While we may think it unlikely for Singer's ideas to have arisen in anything sho
 And equally, it is hard to imagine Singer arguing for 'animal rights' in a world without the liberation movements of women and black people. Either via them not happening yet or them not being needed at all and everybody always having been considered equal.
 
 ### Regarding 'Interests'
-*In response to Pg.4, Para. 5:*
+*In response to paragraph 18:*
 
 It seems in stating that the "[t]he capacity for suffering and enjoying things is a prerequisite for having interests", Singer has defined *'interests'*. And, depending what definition of suffering Singer intended, the resulting definition of *'interests'* may run counter to the intuitive notion of interests we may already hold. Does a computer programmed to play chess have an interest in winning? If so, it must also have a capacity for suffering according to Singer. If not, why? Is it something biological in nature that demarcates the capacity to suffer? This runs counter to our notions of computability. Consider a simulation of an animal brain that we classically consider to be able to 'suffer' (simulations of which already exist$^1$). Is it unethical to cause this simulation pain? If not, this would seem to imply something immaterial existent in our flesh. A seemingly ridiculous proposition for modern science.
 
@@ -42,7 +42,7 @@ It seems in stating that the "[t]he capacity for suffering and enjoying things i
 If there is a contradiction between our normal notion of interests and Singer's, then we can certainly assert that our intuitive notion of *'interests'* was wrong. However, in doing so we leave ourselves open to the counter "who's to say your notion of equality and morality wasn't also wrong?" After all, we so arbitrarily accepted equality and then subsequently threw out interests solely on the basis of 'intuition'. Such an argument would seem more like a textbook defining a mathematical structure and less a philosopher making an argument.
 
 ### Why Not Save the Animals?
-*In response to Pg.5, Para. 3:*
+*In response to paragraphs 21-26:*
 
 While I wholly agree with Singer that our treatment of animals in mass scale killing plants would be counter to his principle of equality, and even our standard intuitions of ethicality, and also agree that for the most part eating meat is a choice based on taste and not on necessity, I don't see why he stops there.
 
@@ -61,11 +61,11 @@ So, taking Singer argument to heart, it would seem that it is our moral duty to 
 Ultimately Singer hasn't found some profound new aspect of moral reality or a forgone consequence of the principles of morality we have already established. What he is doing is formalizing (i.e. doing the mental gymnastics required to make peace with) his intuition that killing animals is 'bad', or that causing suffering is 'bad'. These intuitions of his have no basis other than, as I've said before, the millennia our psychology has evolved through and the centuries our culture has shaped that psychology since birth.
 
 ### An Arbitrary Line Between Humans and Animals
-*In response to Pg.7, Para. 1:*
+*In response to paragraph 30:*
 
 Singer brings up an important point here. I agree wholly that whenever one tries to consider what features distinguish humans (as being superior or deserving moral consideration) from those of other animals, they can never quite define them in a way that excludes all animals but includes all humans. Is it the ability to use tools? No apes can do that. How about emotion? lots of animals display that. Language? nope. Society and culture, maybe intelligence? what about those who live outside of society? What about those incapable of partaking in society due to being mentally disabled? There is always an exception to the rule, and this fact proves troublesome to the notion of human equality being anything but arbitrary.
 
 ### Why Stop at Animals?
-*In response to Pg.7, Para. 5:*
+*In response to paragraph 34-35:*
 
-I am in agreement with Singer. Why can't animals have and enjoy 'good lives'? What I disagree with is that he doesn't take this further to computer programs that have served their purpose and can thus terminate successfully. I'm only being partially facetious. The point I'm making is that just as Frankena's line between humans and animals is arbitrary, so too is Singer's between animals and say plants or silicon chips.
+I am in agreement with Singer. Why can't animals have and enjoy 'good lives' or have an 'intrinsic dignity' to their soul? What I disagree with is that he doesn't take this further to computer programs that have served their purpose and can thus terminate successfully. I'm only being partially facetious. The point I'm making is that just as Frankena's line between humans and animals is arbitrary, so too is Singer's between animals and say plants or silicon chips.
