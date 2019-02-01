@@ -100,5 +100,96 @@ This gives us:
 $$\epsilon=\frac{2^{-n-1}}{(.a_1a_2a_3\cdots)_ 2}\ge 2^{-n-1}$$
 
 #### Double Prescision
-Scientific computing mostly uses the $64$-bit double precision float which allocates $n=52$ bits to the mantissa. The minimum error of this or its **unit roundoff** is:
+Scientific computing mostly uses the $64$-bit double precision float which allocates $n=52$ bits to the mantissa. Thus, the minimum error of this scheme, or its **unit roundoff**, is:
 $$\epsilon=\frac{x-\operatorname{fl}(x)}{x}\ge2^{-53}\approx 10^{-16}$$
+
+## Root Finding w/ MVT
+### Mean Value Theorem
+Recall that, given some continuous function $f:\mathbb R\to\mathbb R$, the mean value theorem says that $f$ must have a root in the interval $[a,b]$ if $f(a)>0$ and $f(b)<0$ or vice versa. In other words:
+
+$$f(a)\cdot f(b)<0\implies(\exists x_0\in[a,b])\ f(x_0)=0$$
+
+### Bisection Method
+The bisection method uses the MVT to approach the roots of a function. Given a function $f(x)$:
+
+1. Find two points $a$ and $b$, such that $f(a)\cdot f(b)<0$.
+2. Let $c:=\frac{a+b}{2}$
+3. if $\ \ \ \ \ \ \ f(c)\cdot f(a)<0$, then set $b:=c$,<br>
+  else if $f(c)\cdot f(b)<0$, then set $a:=c$,<br>
+  else if $f(c)\cdot f(b)=0$, then return $c$
+4. Repeat step 2 until: $|a-b|<\text{tol}$.
+
+*Where $\text{tol}$ is some prescribed tolerance like $10^{-4}$ i.e. 4 decimal digits of accuracy.*
+
+For example, computing $\sqrt a$, where $a>0$, can be equivalently stated as finding the positive root of $f(x)=x^2-a$.
+
+#### Error
+Let $(a_n,b_n)$ be the $n$th interval, let $x_n=\frac{a_n+b_n}{2}$ be the $n$th guess, and let $p$ be the true solution of $f(x)=0$.
+
+The error at step $n$ is always at the most $\frac{1}{2}$ the intervals size. Working backwards to each iteration we find:
+
+$$\begin{align*}
+|p-x_n|&\le\frac{1}{2}|a_0-b_0|\\
+&\le\frac{1}{4}|a_1-b_1|\\
+&\vdots\\
+&\le\frac{1}{2^{n+1}}|a_n-b_n|\\
+\end{align*}$$
+
+For example, the number of iterations to get within a tolerance of $2^{-53}$ is determined by how far the initial bounds are form each other:
+
+$$\underbrace{|p-x_n|}_{\text{error}}\le\underbrace{\frac{1}{2^{n+1}}|a_n-b_n|=2^{-53}}_{\text{tolerance}}$$
+
+### Newton's Method
+Given a differentiable function $f:\mathbb R\to\mathbb R$ and an initial guess $x_0$, we can perform the following algorithm to approximate a root:
+
+1. do $x_n:=x_{n-1}-\frac{f'(x_{n-1})}{f(x_{n-1})}$
+2. while $|x_{n}-x_{n-1}|<\text{tol}$
+3. return $x_n$
+
+*Of course, when actually implementing this we only need 2 variables not $n$.*
+
+The algorithm uses a sequence of tangent lines that get arbitrarily closer to the true root. As such the tolerance in this case refers to how little change has happened between the current and last iterations.
+
+Note that under certain conditions, this method may not always converge for certain functions, intervals, etc.
+
+#### Error
+The error at a step $n$ is:
+
+$$|p-x_n|\le c|p-x_n|^2$$
+
+Where the constant $c$ depends on
+
+$$\frac{f''(\theta_n)}{2f'(x_n)},\ \theta_n\in(p,x_n)$$
+
+#### Order of Convergence
+When newton's method works right, it has a quadratic convergence.
+
+### Secant Method
+Given two initial points $x_0$ and $x_1$, find their secant line, and then find its x-intercept $x_2$. Repeat process with previous two points up to desired accuracy. The algorithm:
+
+1. do $x_n:=x_{n-1}-\frac{x_{n-1}-x_{n-2}}{f(x_{n-1})-f(x_{n-2})}f(x_{n-1})$
+2. while $|x_{n}-x_{n-1}|<\text{tol}$
+3. return $x_n$
+
+#### Error
+The error at step $n$ can be shown to be bounded by:
+
+$$p-x_n\le c|p-x_{n-1}|^r,\ \ \ r=\frac{\sqrt 5+1}{2}\approx 1.62$$
+
+Where the constant $c$ depends on:
+
+$$\left|\frac{f''(\theta_n)}{2f'(x_n)}\right|,\ \theta_n\in(p,x_{n-1})$$
+
+#### Order of Convergence
+Recall that the error converges in order $r$ means:
+
+$$|x_{n-1}-p\le c|x_n-p|^r$$
+
+### Fixed Point Iteration
+Recall that a fixed point of a function $f$ is one which satisfies:
+
+$$f(x)=x$$
+
+Consider $x_n=f(x_{n-1})$. Note that finding a fixed point of $f(x)$ is equivalent to finding a root $f(x)-x=0$. Newton's method can be viewed as a fixed point iteration.
+
+#### fixed point theroem

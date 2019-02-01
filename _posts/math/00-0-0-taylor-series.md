@@ -21,11 +21,11 @@ When centered at the origin, i.e. $a=0$, the series is known as a **Maclaurin Se
 $$\sum_{n=0}^\infty \frac{f^{(n)}(0)}{n!}x^n=f(0)+f'(0)x+\frac{f''(0)}{2!}x^2+\cdots$$
 
 ## Analytic Functions
-An function is **analytic** on some interval (or disc for the complex plane) when it equals its Taylor series on that interval:
+An function $f$ is **analytic** on some interval (or disc for the complex plane) when it equals its Taylor series on that interval:
 
 $$f(x)=\sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!}(x-a)^n$$
 
-When a function is analytic on the entire complex plane it is called **entire**. Also it is important to note that while all analytic functions are smooth, the converse is not true. There are functions that can be infinitely differentiable yet are not equal to their Taylor series.
+When a function is analytic on the entire complex plane it is called **entire**. Also, it is important to note that while all analytic functions are smooth, the converse is not true. There exist functions that are infinitely differentiable yet don't equal their Taylor series.
 
 That said, most of the elementary functions we use in day to day mathematical parlance (i.e. $\tanh x$, $\log x$, $\sqrt x$, etc.) are analytic in some capacity if not entire.
 
@@ -60,11 +60,11 @@ Another way to view the remainder is via [asymptotic notation](\asymptotic-notat
 $$R_k(x)\in O(x^k)$$
 
 #### Lagrange Form
-While the above two forms only characterized the remainder term, we can go a step further and provide explicit formulas for it. If the function is not just $k$ but $k+1$ times differentiable, the remainder can also be expressed in mean-value (Lagrange) form:
+While the above two forms only characterized the remainder term, we can go a step further and provide explicit formulas for it. If $f$ has a continuous $k+1$ order derivative, the remainder can also be expressed in mean-value (Lagrange) form:
 
-$$R_k(x)=\frac{f^{(k+1)}(\xi)}{(k+1)!}(x-a)^{k+1}$$
+$$R_k(x)=\frac{f^{(k+1)}(c)}{(k+1)!}(x-a)^{k+1}$$
 
-*Where $a<\xi<x$ a-la the mean-value theorem.*
+*Where $a<c<x$ a-la the mean-value theorem.*
 
 #### Integral Form
 With a bit of calculus we can even rewrite the remainder as an integral:

@@ -11,9 +11,9 @@ The following are my thoughts on Peter Singer's ['All Animals are Equal'](https:
 
 As Singer rightly points out, humans are indeed not equal. It is commonly thought that over the whole of the different sexes and races, there are individuals more capable in any one dimension than members of the other categories. This, the thought goes, provides justification for the treatment of these different races and sexes equally as they are just as capable as each other. This justification though, as Singer shows, leaves open a variety of other forms of discrimination like that of intelligence.
 
-Just as we have an intuitive distaste of treating those with different skin colors or genders unequally (brought on by our psychology, evolution, society, etc.), we have a distaste for treating the less intelligent unequally. At least to the point where we deny them equal political power, for instance.
-
 <!--more-->
+
+Just as we have an intuitive distaste of treating those with different skin colors or genders unequally (brought on by our psychology, evolution, society, etc.), we have a distaste for treating the less intelligent unequally. At least to the point where we deny them equal political power, for instance.
 
 ### Foundation of Equality
 *In response to paragraph 13:*
@@ -31,7 +31,7 @@ And equally, it is hard to imagine Singer arguing for 'animal rights' in a world
 ### Regarding 'Interests'
 *In response to paragraph 18:*
 
-It seems in stating that the "[t]he capacity for suffering and enjoying things is a prerequisite for having interests", Singer has defined *'interests'*. And, depending what definition of suffering Singer intended, the resulting definition of *'interests'* may run counter to the intuitive notion of interests we may already hold. Does a computer programmed to play chess have an interest in winning? If so, it must also have a capacity for suffering according to Singer. If not, why? Is it something biological in nature that demarcates the capacity to suffer? This runs counter to our notions of computability. Consider a simulation of an animal brain that we classically consider to be able to 'suffer' (simulations of which already exist$^1$). Is it unethical to cause this simulation pain? If not, this would seem to imply something immaterial existent in our flesh. A seemingly ridiculous proposition for modern science.
+It seems in stating that "[t]he capacity for suffering and enjoying things is a prerequisite for having interests", Singer has defined *'interests'*. And, depending what definition of suffering Singer intended, the resulting definition of *'interests'* may run counter to the intuitive notion of interests we may already hold. Does a computer programmed to play chess have an interest in winning? If so, it must also have a capacity for suffering according to Singer. If not, why? Is it something biological in nature that demarcates the capacity to suffer? This runs counter to our notions of computability. Consider a simulation of an animal brain that we classically consider to be able to 'suffer' (simulations of which already exist$^1$). Is it unethical to cause this simulation pain? If not, this would seem to imply something immaterial existent in our flesh. A seemingly ridiculous proposition for modern science. What about a virus (or any other organism that isn’t classically able to suffer) that has an ‘interest’ in spreading its genetic matter? It certainly does not have the capacity to suffer by most definitions and so, counter to my intuition at least, doesn’t really have an interest in its own survival according to Singer.
 
 *[1] Worm brains have been simulated whole (although they aren't considered to be able to suffer), and so have cat brains, and parts of human brains.*
 
@@ -39,7 +39,7 @@ It seems in stating that the "[t]he capacity for suffering and enjoying things i
 
 *Another side note, these simulated brains run much slower than real life ones. It wouldn't logically make any moral difference, yet we may still feel like it does, highlighting yet again the arbitrariness of our notion of morality.*
 
-If there is a contradiction between our normal notion of interests and Singer's, then we can certainly assert that our intuitive notion of *'interests'* was wrong. However, in doing so we leave ourselves open to the counter "who's to say your notion of equality and morality wasn't also wrong?" After all, we so arbitrarily accepted equality and then subsequently threw out interests solely on the basis of 'intuition'. Such an argument would seem more like a textbook defining a mathematical structure and less a philosopher making an argument.
+If there is a contradiction between our normal notion of interests and Singer’s, then we can certainly assert that our intuitive notion of *‘interests’* was wrong. However, in doing so we leave ourselves open to the counter “who’s to say your notion of equality and consideration of suffering wasn’t also wrong?” After all, we so arbitrarily accepted the principle of equality and then subsequently threw out interests solely on the basis of intuition. Such an argument would seem more like a textbook defining a mathematical structure and less a philosopher making an argument.
 
 ### Why Not Save the Animals?
 *In response to paragraphs 21-26:*
