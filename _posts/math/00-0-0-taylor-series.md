@@ -11,7 +11,7 @@ Moreover, the partial sums of these series provide a practical way of approximat
 <!--more-->
 
 ## Definition
-The **Taylor series** of a smooth (i.e. infinitely differentiable) complex function $f(z)$ centered at a number $a$ is the following power series:
+The **Taylor series** of a smooth (i.e. infinitely differentiable) real, or complex, function $f(x)$ centered at a number $a$ is the following power series:
 
 $$\sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!}(x-a)^n=f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}(x-a)^2+\cdots$$
 
@@ -30,13 +30,13 @@ When a function is analytic on the entire complex plane it is called **entire**.
 That said, most of the elementary functions we use in day to day mathematical parlance (i.e. $\tanh x$, $\log x$, $\sqrt x$, etc.) are analytic in some capacity if not entire.
 
 ## Taylor Polynomials
-The $n$th partial sum of this power series is called the **$k$-th order Taylor polynomial** of $f(x)$:
+The $k$th partial sum of this power series is called the **$k$th order Taylor polynomial** of $f(x)$:
 
 $$\sum_{n=0}^k \frac{f^{(n)}(a)}{n!}(x-a)^n=f(a)+f'(a)(x-a)+\cdots+\frac{f^{(k)}(a)}{k!}(x-a)^k$$
 
 In the same vein, the $k$th partial sum of a Maclaurin series is a $k$th order Maclaurin polynomial.
 
-Note that while a Taylor series requires a function to be infinitely differentiable, an $n$th degree Taylor polynomial only requires it to be $n$-times differentiable.
+Note that while a Taylor series requires a function to be infinitely differentiable, a $k$th degree Taylor polynomial only requires it to be $k$-times differentiable.
 
 ## Taylor's Theorem & Remainder
 Note that the higher the degree of the Taylor polynomial we take, the closer it is the actual function. Taylor's theorem quantifies this error, allowing us to make full use of Taylor polynomials for approximating the values of hard/impossible to compute functions.
@@ -48,7 +48,7 @@ $$f(x)=P_k(x)+R_k(x)$$
 We can characterize this remainder function in a variety of approximate and explicit ways. Each one having its own uses.
 
 #### Peano Form
-The Peano form of the remainder highlights that the error approaches zero the closer one is to the center point of the Taylor polynomial:
+The Peano form of the remainder highlights that the error approaches zero the closer the function is evaluated to the center point $a$ of the Taylor polynomial:
 
 $$R_k(x)=h_k(x)(x-a)^k$$
 
