@@ -69,3 +69,10 @@ Singer brings up an important point here. I agree wholly that whenever one tries
 *In response to paragraph 34-35:*
 
 I am in agreement with Singer. Why can't animals have and enjoy 'good lives' or have an 'intrinsic dignity' to their soul? What I disagree with is that he doesn't take this further to computer programs that have served their purpose and can thus terminate successfully. I'm only being partially facetious. The point I'm making is that just as Frankena's line between humans and animals is arbitrary, so too is Singer's between animals and say plants or silicon chips.
+
+And even sticking to animals, are all animals persons? At what stage in evolution do we draw the line? Wouldn't any such line be arbitrary? We certainly couldn't include the rocks on which abiogenesis took place right?
+
+### Conclusion
+It would seem that, depending on what groups you wish to include as 'persons', the key features that distinguish person from non-person, and arbitrary distinctions that come with them (human vs. animal, biochemical vs. silicon, 'intelligent' vs. not, etc.), would have to change to try and encompass that group and only that group. It would also seem that such a set of features is impossible to define save straight up listing what is a person and what is not.
+
+Even worse, trying to remove all arbitrary distinctions would leave you with everything being a person or the lack of personhood at all. It's for these reasons that I simply don't buy the notion of personhood at all. It is a just an intuitive concept, borne of the statistical nonsense evolved in our brains to make us more fit. *Not* some underlying moral truth of the universe (whatever that means).
