@@ -9,13 +9,13 @@ Ex: Let $A$ be an $n\times n$ matrix and $\vec v$ an $n$-dim vector. Find the or
 
 $$A\cdot\vec v=
 \begin{bmatrix}
-    a_{11},&\cdots, &a_{1n}\\
-    \vdots,&\ddots, &\vdots\\
-    a_{n1},&\cdots, &a_{nn}\\
+    a_{11}&\cdots &a_{1n}\\
+    \vdots&\ddots &\vdots\\
+    a_{n1}&\cdots &a_{nn}\\
 \end{bmatrix}\begin{bmatrix}
     a_{1}\\
     \vdots\\
-    a_{n},\\
+    a_{n}\\
 \end{bmatrix}$$
 
 Each row requires $n$ multiplications and $n-1$ additions. So the complexity of all $n$ rows means that the time complexity of $A\cdot\vec v$ is:
@@ -185,11 +185,88 @@ Recall that the error converges in order $r$ means:
 
 $$|x_{n-1}-p\le c|x_n-p|^r$$
 
-### Fixed Point Iteration
+## Fixed Point Iteration
 Recall that a fixed point of a function $f$ is one which satisfies:
 
 $$f(x)=x$$
 
-Consider $x_n=f(x_{n-1})$. Note that finding a fixed point of $f(x)$ is equivalent to finding a root $f(x)-x=0$. Newton's method can be viewed as a fixed point iteration.
+Consider $x_{n+1}=f(x_n)$. Note that finding a fixed point of $f(x)$ is equivalent to finding a root of $f(x)-x$. Newton's method can be viewed as a fixed point iteration.
 
-#### fixed point theroem
+#### Fixed Point Theorem
+For sequence $x_{n+1}=f(x_n)$ for which $f:I=\to\mathbb R$ satisfies the following:
+- $f(x)$ is continuous on $I=[a,b]$
+- $(\forall x\in I)\ a\le f(x)\le b$
+- $(\forall x\in I)\ |f'(x)|<1$
+
+Then $G(x)$ has a unique fixed point $s$. Moreover, the sequence will approach it:
+
+$$\lim_{n\to\infty}x_n=\lim_{x\to\infty}f(x)=s$$
+
+#### Example
+Root of $x^2+x+6=0\to x=\frac{6}{x^2}\to x_{n+1}=\frac{6}{x_n^2}$. If this recurrence relation satisfies the fixed point theorem then it will converge. If not then it won't.
+
+#### Order of Convergence
+If $x_n\to s$ and:
+- $f(s)=s$
+- $f'(s)=f''(s)=\cdots=f^{(p-1)}(s)=0$
+- $f^{(p)}(s)\not= 0$
+
+then the Taylor series tells us:
+
+$$|x_{n+1}-s|=\frac{f^{(p)}(s)}{p!}(x_n-s)^p+O(|x_n-s|^{p+1})$$
+
+or in other words:
+
+$$|x_{n+1}-s|\le \alpha|x_n-s|^p$$
+
+And so the function has an order $p$ convergence. That is, the order of convergence is the first $p$ such that $f^{(p)}(s)\not=0$.
+
+## 8.9 Nonlinear systems
+For a non linear system of $n$ equations, here we show 2:
+- $f(x,y)=0$
+- $g(x,y)=0$
+
+#### Newton's Method for Nonlinear Systems
+Estimate using tangent plane rather than tangent line. The equation of a tangent plane is:
+$$p(x,y)=f(x_0,y_0)+f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)$$
+
+So we approximate $f$ and $g$ by finding their tangent planes $p$ and $q$ at $(x_0.y_0)$ and finding *their* zeros:
+- $p(x,y)=0$
+- $q(x,y)=0$
+
+As a matrix we get:
+$$\begin{bmatrix}
+    f_x(x_0,y_0) & f_y(x_0,y_0)\\
+    g_x(x_0,y_0) & g_y(x_0,y_0)
+\end{bmatrix}
+\begin{bmatrix}
+    x-x_0\\
+    y-y_0
+\end{bmatrix}=
+\begin{bmatrix}
+    -f(x_0,y_0)\\
+    -g(x_0,y_0)
+\end{bmatrix}$$
+
+We plug in the initial guess, as the change in $x$ and $y$ and solve for $x$ and $y$ then iterate.
+
+#### Error Analysis
+Let $\vec \alpha=[x,y]$ be a solution of the linear system:
+- $f(x,y)=0$
+- $g(x,y)=0$
+
+Assume $f$ and $g$ are smooth, if $\|\vec \alpha-\vec x_k\|\le \epsilon$ and:
+
+$$\left|\begin{matrix}
+    f_x & f_y\\
+    g_x & g_y
+\end{matrix}\right|\not= 0$$
+
+Then the following holds:
+
+$$\|\vec \alpha-\vec x_{k+1}\|\le c\|\vec\alpha-\vec x_k\|^2$$
+
+That is to say, the error converges quadratically.
+
+#### Application
+Consider a function $f(x,y)$. We can find the minimum by equivalently finding where its derivative equals $(0,0)$.

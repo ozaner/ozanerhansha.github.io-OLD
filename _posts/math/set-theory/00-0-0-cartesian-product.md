@@ -123,9 +123,9 @@ Because our product notation allows us to denote the cartesian product of <i>any
 
 $$\prod_{i=1}^1S=S$$
 
-We define the unary product in this way to make more our product notation more convenient (e.g. recursive definition of product has a base case of 1 set). It also allows us to avoid adding $1$-tuples, and even further $0$-tuples, and the unnecessary complexity they add to our definition of $n$-tuples.
+We define the unary product in this way to make our product notation more convenient (e.g. recursive definition of product has a base case of 1 set). It also allows us to avoid adding $1$-tuples, and even further $0$-tuples, along with the unnecessary complexity they add to our definition of $n$-tuples.
 
-Note that this definition implies that a "$1$-tuple" can be intuitively thought of as just an element of a set.
+Note that this definition implies that a "$1$-tuple" can be intuitively thought of as just an element of a set.<p></p>
 </details>
 
 <details>

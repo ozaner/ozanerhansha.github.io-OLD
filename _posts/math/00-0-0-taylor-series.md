@@ -4,7 +4,7 @@ title: Taylor Series
 date: 2019-01-25
 tags: math calculus computer-science
 ---
-Taylor series are a clever way of representing smooth functions as infinite polynomials. Doing this allows us to define important analytic functions (like $\sin x$ or $e^x$) in a way that encompasses the entire complex plane.
+Taylor series are a clever way of representing smooth (i.e. infinitely differentiable) functions as infinite polynomials. Doing this allows us to define important analytic functions (like $\sin x$ or $e^x$) in a way that encompasses the entire complex plane.
 
 Moreover, the partial sums of these series provide a practical way of approximating the values of functions that are themselves infeasible/impossible to compute directly.
 
@@ -21,11 +21,13 @@ When centered at the origin, i.e. $a=0$, the series is known as a **Maclaurin Se
 $$\sum_{n=0}^\infty \frac{f^{(n)}(0)}{n!}x^n=f(0)+f'(0)x+\frac{f''(0)}{2!}x^2+\cdots$$
 
 ## Analytic Functions
-An function $f$ is **analytic** on some interval (or disc for the complex plane) when it equals its Taylor series on that interval:
+A function $f$ is **analytic** over some interval of the reals/disc of the complex numbers when it equals its Taylor series in that domain:
 
 $$f(x)=\sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!}(x-a)^n$$
 
-When a function is analytic on the entire complex plane it is called **entire**. Also, it is important to note that while all analytic functions are smooth, the converse is not true. There exist functions that are infinitely differentiable yet don't equal their Taylor series.
+When a function is analytic on the entire complex plane it is called **entire**.
+
+A Taylor series can fail to be analytic in a variety of ways, like by not being convergent, converging to a value different from that of the function, or just not being smooth. This means that there are infinitely differentiable functions that don't equal their Taylor series.
 
 That said, most of the elementary functions we use in day to day mathematical parlance (i.e. $\tanh x$, $\log x$, $\sqrt x$, etc.) are analytic in some capacity if not entire.
 
@@ -54,19 +56,26 @@ $$R_k(x)=h_k(x)(x-a)^k$$
 
 *Where $\lim_{x\to a}h_k(x)=0$*.
 
-#### Asymptotic Notation
-Another way to view the remainder is via [asymptotic notation](\asymptotic-notation). In particular, we can characterize the order of convergence (i.e. to what degree our approximation is off) of a Taylor polynomial in the following way:
-
-$$R_k(x)\in O(x^k)$$
-
 #### Lagrange Form
-While the above two forms only characterized the remainder term, we can go a step further and provide explicit formulas for it. If $f$ has a continuous $k+1$ order derivative, the remainder can also be expressed in mean-value (Lagrange) form:
+If $f$ has a continuous $k+1$ order derivative, we can give a more explicit remainder using the mean value theorem:
 
 $$R_k(x)=\frac{f^{(k+1)}(c)}{(k+1)!}(x-a)^{k+1}$$
 
 *Where $a<c<x$ a-la the mean-value theorem.*
 
 #### Integral Form
-With a bit of calculus we can even rewrite the remainder as an integral:
+With a bit of calculus we can even rewrite Lagrange remainder as an integral:
 
-$$R_k(x)=\int_a^x\frac{f^{(k+1)}(t)}{k!}(x-t)^k$$
+$$R_k(x)=\int_a^x\frac{f^{(k+1)}(t)}{k!}(x-t)^k\ dt$$
+
+
+#### Asymptotic Notation
+Another way to view the remainder is via [asymptotic notation](\asymptotic-notation). In particular, we can characterize the order of convergence (i.e. to what degree our approximation is off) of a Taylor polynomial in the following way:
+
+$$R_k(x)\in O(x^{k+1}),\ \ \ x\to a$$
+
+This is assuming the $k+1$ order derivative is nonzero. In reality the order of convergence may be even higher:
+
+$$R_k(x)\in O(x^p),\ \ \ x\to a$$
+
+*where $f^{(p)}(a)$ is the first non zero derivative after $k$.*

@@ -1,0 +1,176 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+\title{Numerical Analysis HW \#1}
+\author{Ozaner Hansha}
+\date{February 12, 2019}
+\maketitle
+
+\section*{Problem 1}
+Consider the following function:
+$$f(x)=\frac{1-\cos x}{x^2}$$
+
+\subsection*{Part a}
+\textbf{Problem:} Prove the following:
+$$\lim_{x\to0} f(x)=\frac{1}{2}$$
+\textbf{Solution:}
+% Note that if we plug 0 into $f(x)$ we arrive at the indeterminate form $\frac{0}{0}$. This means that L'hospital's rule applies:
+% $$
+% \lim_{x\to0} \frac{1-\cos x}{x^2}=\lim_{x\to0} \frac{\frac{d}{dx}(1-\cos x)}{\frac{d}{dx}x^2}=\lim_{x\to0}\frac{\sin x}{2x}=\frac{1}{2}\lim_{x\to0}\frac{\sin x}{x}=\frac{1}{2}
+% $$
+% And of course $\lim_{x\to0}\frac{\sin x}{x}=1$ because for $x\le 1$:
+% \begin{align*}
+% \sin x&\le x\le\frac{\sin x}{\cos x}\tag{$\cos x\le 1$}\\
+% 1&\le \frac{x}{\sin x}\le \cos x\tag{divide by $\sin x$}\\
+% \cos x&\le \frac{\sin x}{x}\le 1\tag{take reciprocals}
+% \end{align*}
+% Now if we take the limits of this inequality:
+% \begin{align*}
+% \lim_{x\to 0}\cos x\le \lim_{x\to 0}\frac{\sin x}{x}\le \lim_{x\to 0}1\\
+% 1\le \lim_{x\to 0}\frac{\sin x}{x}\le 1\\
+% \lim_{x\to 0}\frac{\sin x}{x}=1\tag{squeeze theorem}\\
+% \end{align*}
+First let us plug the Taylor expansion of $\cos x$ into $f(x)$:
+\begin{align*}
+f(x)&=\frac{1-\cos x}{x^2}\\
+&=\frac{1-(1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}+\cdots)}{x^2}\\
+&=\frac{\frac{x^2}{2!}-\frac{x^4}{4!}+\frac{x^6}{6!}-\cdots}{x^2}\\
+&=\frac{1}{2!}-\frac{x^2}{4!}+\frac{x^4}{6!}-\cdots\\
+\end{align*}
+
+The limit as $x$ approaches 0 of this series becomes clear:
+\begin{align*}
+\lim_{x\to 0}f(x)&=\frac{1-\cos x}{x^2}\\
+&=\lim_{x\to 0}\left(\sum_{n=1}^\infty\frac{x^{2n-2}}{(2n)!}(-1)^{n+1}\right)\\
+&=\lim_{x\to 0}\left(\frac{1}{2!}-\frac{x^2}{4!}+\frac{x^4}{6!}-\cdots\right)\\
+&=\frac{1}{2!}-0+0-\cdots=\frac{1}{2}
+\end{align*}
+
+\subsection*{Part b}
+\textbf{Problem:} Find $\alpha\in\mathbb R$ such that:
+$$(\exists c\in\mathbb R)\ \lim_{x\to0}\frac{|f(x)-1/2|}{x^\alpha}=c\not=0$$
+\\\\
+\textbf{Solution:} Recall that in part a, $f(x)$ was shown to be equal to:
+
+\begin{align*}
+  f(x)&=\frac{1-\cos x}{x^2}=\sum_{n=1}^\infty \frac{x^{2n-2}}{(2n)!}(-1)^{n+1}\\
+  &=\frac{1}{2!}-\frac{x^2}{4!}+\frac{x^4}{6!}-\cdots
+\end{align*}
+And so:
+\begin{align*}
+  \frac{|f(x)-1/2|}{x^\alpha}&=\frac{\left|\left(\frac{1}{2!}-\frac{x^2}{4!}+\frac{x^4}{6!}-\cdots\right)-1/2\right|}{x^\alpha}\\
+  &=\frac{\left|-\frac{x^2}{4!}+\frac{x^4}{6!}-\frac{x^6}{8!}\cdots\right|}{x^\alpha}
+\end{align*}
+
+At this point it should be obvious the lowest degree term (which has the largest value as $x\to 0$) is 2. This leaves us with $\alpha=2$:
+
+$$\lim_{x\to0}\frac{|f(x)-1/2|}{x^2}=\lim_{x\to0}\frac{\left|-\frac{x^2}{4!}+\frac{x^4}{6!}-\frac{x^4}{6!}\cdots\right|}{x^2}=\lim_{x\to0}\left|-\frac{1}{4!}+\frac{x^2}{6!}-\frac{x^4}{8!}\cdots\right|=\frac{1}{4!}$$
+
+\subsection*{Part c}
+\textbf{Problem:} Write a Matlab program to calculate $f(x)$ and its error $|f(x)-1/2|$ for the values $10^{-1},10^{-2},\cdots,10^{-8}$.
+\\\\
+\textbf{Solution:}
+\begin{center}
+\begin{tabular}{c|c|c}
+      $x$ & $f(x)$ & $|f(x)-1/2|$\\
+      \hline
+      $10^{-1}$ & 4.9958e-01 & 4.1653e-04\\
+      $10^{-2}$ & 5.0000e-01 & 4.1667e-06\\
+      $10^{-3}$ & 5.0000e-01 & 4.1674e-08\\
+      $10^{-4}$ & 5.0000e-01 & 3.0387e-09\\ % <-- added row here
+      $10^{-5}$ & 5.0000e-01 & 4.1370e-08\\ % <-- added row here
+      $10^{-6}$ & 5.0004e-01 & 4.4450e-05\\ % <-- added row here
+      $10^{-7}$ & 4.9960e-01 & 3.9964e-04\\ % <-- added row here
+      $10^{-8}$ & 0 & 5.0000e-01 % <-- added row here
+\end{tabular}
+\end{center}
+
+\subsection*{Part d}
+\textbf{Problem:} Why doesn't the error, and thus the result, converge in part c as it was proven to in part b?
+\\\\
+\textbf{Solution:}
+
+\section*{Problem 2}
+Consider the following function:
+$$f(x)=x^3+x-4$$
+
+\subsection*{Part a}
+\textbf{Problem:} Show that $f(x)$ has at least one root in the interval $[1,4]$.
+\\\\
+\textbf{Solution:} Recall the intermediate value theorem. That is, for any continous function $f:[a,b]\to\mathbb R$, the following must be true:
+
+$$(\forall y\in[\min{(f(a),f(b))},\max{(f(a),f(b))}])\ (\exists c\in(a,b))\ y=f(c)$$
+
+Since a root of $f$ is simply a value $c$ such that $f(c)=0$, we can simply evalaute the $f$ at the bounds of the interval $I$ to find:
+
+$$f(1)=-2\ \ \ \ \ \ \  f(4)=64$$
+
+And because:
+$$-2<0<64$$
+
+the intermediate value theorem holds and thus this function must have at least 1 root.
+
+\subsection*{Part b}
+\textbf{Problem:} Show that $(\forall x\in\mathbb R)\ f'(x)>0$. Use this to show that $f(x)$ has only 1 real root.
+\\\\
+\textbf{Solution:} First note that the derivative of $f$ is:
+
+$$f'(x)=3x^2+1$$
+
+It is should be clear that this is strictly positive, but to spell it out:
+\begin{align*}
+  x^2&\ge 0\tag{even-valued exponentiation}\\
+  3x^2&\ge 0\tag{ordered field multiplication}\\
+  3x^2+1&\ge 1\tag{ordered field addition}
+\end{align*}
+
+Now for the second part of the question, we have shown that $f$ has at least 1 root. Now let us assume that it has at least 2 distinct roots $r_1$ and $r_2$. If this was the case then the mean value theorem tells us:
+
+$$(\exists c\in\mathbb R)\ f'(c)=\frac{f(r_1)-f(r_2)}{r_1-r_2}=0$$
+
+But this contradicts our previously establiushed result of $(\forall x\in\mathbb R)\ f'(x)>0$. Thus $f$ has only 1 real root.
+
+\subsection*{Part c}
+\textbf{Problem:} Write Matlab programs to approximate the root of $f$ using both Newton and the bisection method to within a tolerance of $10^{-3}$ (for the input in the bisection method and for the iterations in Newton's method). For Newton's method use an initial guess of $x_0=1$ and for the bisection method use the same interval $[1,4]$. Give each iteration and the total number of iterations for both programs.
+\\\\
+\textbf{Solution:}
+\begin{center}
+\begin{tabular}{r|c|c}
+      Iteration & Bisection & Newton\\
+      \hline
+      1 & 2.500000000000000 & 1.500000000000000\\
+      2 & 1.750000000000000 & 1.387096774193548\\
+      3 & 1.375000000000000 & 1.378838947597994\\
+      4 & 1.562500000000000 & 1.378796701230898\\
+      5 & 1.468750000000000 & \\
+      6 & 1.421875000000000 & \\
+      7 & 1.398437500000000 & \\
+      8 & 1.386718750000000 & \\
+      9 & 1.380859375000000 & \\
+      10 & 1.377929687500000 & \\
+      11 & 1.379394531250000 & \\
+      12 & 1.378662109375000 & \\
+\end{tabular}
+\end{center}
+
+\section*{Problem 3}
+\textbf{Problem:} Note the following recurrence relation:
+$$x_{n+1}=2-(1+c)x_n+cx_n^3$$
+This sequence will converge to the value $s=1$ for certain $c$, assuming $x_0$ is sufficiently close to $s$. Find those $c$ values. Also find which of them lead the sequence to converge quadratically.
+\\\\
+\textbf{Solution:}
+
+\section*{Problem 4}
+\textbf{Problem:}
+\\\\
+\textbf{Solution:}
+
+\section*{Problem 5}
+\textbf{Problem:}
+\\\\
+\textbf{Solution:}
+
+\end{document}

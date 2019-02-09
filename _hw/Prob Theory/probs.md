@@ -31,8 +31,8 @@ Without replacement the sample space looks like:
 
 $$\Omega=\{(r,g),(r,b),(g,r),(g,b),(b,r),(b,g)\}$$
 
-
-#### Extra
+## In Class
+#### 1
 Probability of that we have at least 1 card from each suit from drawing 13 cards.
 
 
@@ -49,5 +49,15 @@ Probability of choosing 6 cards, and having more than 1 from each suit, now we c
 $$\text{case 2}=\frac{\binom{4}{2}\binom{13}{2}\binom{13}{2}\cdot13\cdot13}{\binom{52}{6}}$$
 
 
-#### HW Prob
-choose 26 cards from 52, whats the prob you get at least 2 cards form each suit.
+#### 2
+Choose 26 cards from a 52 card deck. What is the probability that there are at least 2 cards from each suit. To solve this we will is solve for the probability of its complement, i.e. the probability of the union of the event that each suit has less than 2 cards.  First we can ask what is the probability of getting less than 2 (i.e. 1 or 0) cards from a particular suit, say diamonds:
+
+$$P(\diamondsuit_{0,1})=\frac{\overbrace{\binom{52-13}{26}}^{\text{no }\diamondsuit}+\overbrace{13}^{1\diamondsuit}\overbrace{\binom{52-13}{25}}^{25\text{ non-}\diamondsuit}}{\binom{52}{26}}$$
+
+Now consider the intersection of two of these events, say for diamonds and hearts:
+
+$$P(\diamondsuit_{0,1}\cap{\heartsuit}_{0,1})=\frac{\overbrace{\binom{52-13}{26}}^{\text{no }\diamondsuit}+\overbrace{13}^{1\diamondsuit}\overbrace{\binom{52-13}{25}}^{25\text{ non-}\diamondsuit}}{\binom{52}{26}}$$
+
+Also notice that it is impossible for 3 suits, and thus 4, to have less than 2 cards each and still add to 26. And so, the final inclusion-exclusion expression is:
+
+$$P({\diamondsuit}_{0,1}\cup{\heartsuit}_{0,1}\cup{\spadesuit}_{0,1}\cup{\clubsuit}_{0,1})=\frac{4P({\diamondsuit}_{0,1})-\binom{4}{2}P({\diamondsuit}_{0,1}\cap{\heartsuit}_{0,1})+0-0}{\binom{52}{26}}$$
