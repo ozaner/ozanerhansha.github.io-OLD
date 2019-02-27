@@ -16,6 +16,8 @@ $$p(x)=\sum_{k=0}^n c_k x^k=c_0+c_1x+c_2x^2+\cdots+c_n c^n$$
 
 What is the fastest way to evaluate it for a given input $x$? Where 'fastest' means the lowest combined total of additions and multiplications.
 
+<!--more-->
+
 #### Naïve Algorithm
 Naïvely, computing the $k$th term of a polynomial takes $k$ multiplications:
 
