@@ -87,7 +87,7 @@ The algorithm is iterative, meaning the only space needed is the single variable
 
 ## Variations
 <details>
-<summary><h3 class="inline">Probabilistic Search</h3></summary>
+<summary><h3 class="inline">Probabilistic List</h3></summary>
 <!-- #### Probabilistic Search -->
 Recall that our analysis of the complexity of sequential search assumed that each element in the list was equally likely (i.e a $\frac{1}{n}$ chance) to be searched for. If we remove this assumption, we are left with a more general case with the $i$th element having some probability $p_i$ of being searched for. Whenever we are analyzing the success case of the average complexity, these probabilities should all sum to 1:
 
@@ -112,7 +112,7 @@ If we are given a particular probability distribution, we can make stronger stat
 </details>
 
 <details>
-<summary><h3 class="inline">Ordered Search</h3></summary>
+<summary><h3 class="inline">Ordered List</h3></summary>
 <!-- #### Ordered Search -->
 Another assumption we can remove is that the list is unsorted, that is the arrangement of the list has no specific meaning and can even be changed on the fly. If we instead assume that the list <i>is</i> sorted we can improve the number of comparisons linear search takes. This is because we can stop checking once we have passed a value greater than the target (although it is still $O(n)$). Here is some pseudocode:
 <p></p>

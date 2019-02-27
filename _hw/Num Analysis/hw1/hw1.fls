@@ -1,8 +1,8 @@
-PWD C:/Users/Ozaner Hansha/Google Drive/Workspace/ozanerhansha.github.io/_hw/Num Analysis/hw1
+PWD C:/Users/Weegee 64/Google Drive/Workspace/ozanerhansha.github.io/_hw/Num Analysis/hw1
 INPUT c:/texlive/2018/texmf.cnf
 INPUT c:/texlive/2018/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/Ozaner Hansha/Google Drive/Workspace/ozanerhansha.github.io/_hw/Num Analysis/hw1/hw1.tex
+INPUT hw1.tex
 OUTPUT hw1.log
 INPUT c:/texlive/2018/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2018/texmf-dist/tex/latex/base/article.cls
@@ -22,8 +22,16 @@ INPUT c:/texlive/2018/texmf-dist/tex/latex/amsfonts/amssymb.sty
 INPUT c:/texlive/2018/texmf-dist/tex/latex/amsfonts/amssymb.sty
 INPUT c:/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 INPUT c:/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty
-INPUT c:/Users/Ozaner Hansha/Google Drive/Workspace/ozanerhansha.github.io/_hw/Num Analysis/hw1/hw1.aux
-INPUT c:/Users/Ozaner Hansha/Google Drive/Workspace/ozanerhansha.github.io/_hw/Num Analysis/hw1/hw1.aux
+INPUT c:/texlive/2018/texmf-dist/tex/latex/listings/listings.sty
+INPUT c:/texlive/2018/texmf-dist/tex/latex/listings/listings.sty
+INPUT c:/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT c:/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT c:/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT c:/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT c:/texlive/2018/texmf-dist/tex/latex/listings/listings.cfg
+INPUT c:/texlive/2018/texmf-dist/tex/latex/listings/listings.cfg
+INPUT hw1.aux
+INPUT hw1.aux
 OUTPUT hw1.aux
 INPUT c:/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map
 INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
@@ -63,7 +71,12 @@ INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 OUTPUT hw1.pdf
 INPUT c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT c:/Users/Ozaner Hansha/Google Drive/Workspace/ozanerhansha.github.io/_hw/Num Analysis/hw1/hw1.aux
+INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
+INPUT c:/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT c:/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT c:/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
+INPUT c:/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
+INPUT hw1.aux
 INPUT c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
@@ -76,4 +89,5 @@ INPUT c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb
 INPUT c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+INPUT c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
 INPUT c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb

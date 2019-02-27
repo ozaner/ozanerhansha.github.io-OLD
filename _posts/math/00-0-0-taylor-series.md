@@ -2,7 +2,7 @@
 layout: post
 title: Taylor Series
 date: 2019-01-25
-tags: math calculus computer-science
+tags: math calculus numerical-analysis
 ---
 Taylor series are a clever way of representing smooth (i.e. infinitely differentiable) functions as infinite polynomials. Doing this allows us to define important analytic functions (like $\sin x$ or $e^x$) in a way that encompasses the entire complex plane.
 
@@ -61,7 +61,7 @@ If $f$ has a continuous $k+1$ order derivative, we can give a more explicit rema
 
 $$R_k(x)=\frac{f^{(k+1)}(c)}{(k+1)!}(x-a)^{k+1}$$
 
-*Where $a<c<x$ a-la the mean-value theorem.*
+*Where $c\in[a,x]$ a-la the mean-value theorem.*
 
 #### Integral Form
 With a bit of calculus we can even rewrite Lagrange remainder as an integral:

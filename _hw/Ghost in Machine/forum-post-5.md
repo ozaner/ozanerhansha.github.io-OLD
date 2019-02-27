@@ -1,0 +1,6 @@
+## Forum Post 5
+What can the cockpit teach us about the future of humans and AI?
+
+Hutchins' paper reminds us of the confusion that arises when defining, what are sometimes loaded, terms relating to cognition. In this case the object of this confusion is *memory*. To a functionalist, *memory* can be defined in a singular and coherent way, where the difference between the memory of a functional system like a cockpit or computer is different to that of a human system in a known way. To a dualist, however, the kind of *memory* a human has is not only more complex or differently organized but of a whole different sort than that of any functional, non-conscious system like a computer.
+
+If AI are ever to be considered as *beings*, however we may feel like defining that equally loaded concept, then it is necessary that we dispel the notion of this immaterial memory. Indeed any AI that runs on a machine is bound by physical laws. It can't go 'above and beyond its programming' as, whatever that throwaway phrase is meant to convey, all physical laws are completely describable via mathematics (symbol manipulation if you will) and thus computation, a physical process, is too. The only way around this is to posit an unobservable, unverifiable dual reality that separates the constructed cockpit from the more complicated, naturally selected man.

@@ -78,7 +78,7 @@ X=Y&\equiv\forall k\in n \ (x_k=y_k)\\
 
 *Where $n$ is a set as per its construction in the [natural numbers](\natural-numbers).*
 
-Note that for this definition to work, the two tuples have to be the same size. As such, tuples of different sizes will never be equal.
+Note that for this definition to work, the two tuples have to be the same size. As such, tuples of different sizes will never be equal (unless they can be simultaneously interpreted as having the same size).
 
 ## Extraction
 In order to use these tuples, we have to be sure we can have some formula to extract the first and second elements from them. These formulas are called the first and second **projections**.
