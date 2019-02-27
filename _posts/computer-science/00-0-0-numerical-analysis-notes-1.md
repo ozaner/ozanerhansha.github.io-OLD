@@ -12,7 +12,7 @@ See post on [Taylor Series](/taylor-series).
 ## 1.3 Polynomial Evaluation
 Given a polynomial with coefficients $c_k$:
 
-$$p(x)=\sum_{k=0}^nc_kx^k=c_0+c_1x+c_2x^2+\cdots+c_nc^n$$
+$$p(x)=\sum_{k=0}^n c_k x^k=c_0+c_1x+c_2x^2+\cdots+c_n c^n$$
 
 What is the fastest way to evaluate it for a given input $x$? Where 'fastest' means the lowest combined total of additions and multiplications.
 
