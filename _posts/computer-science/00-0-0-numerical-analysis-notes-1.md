@@ -19,7 +19,7 @@ What is the fastest way to evaluate it for a given input $x$? Where 'fastest' me
 #### Naïve Algorithm
 Naïvely, computing the $k$th term of a polynomial takes $k$ multiplications:
 
-$$cx^k=c\cdot\underbrace{x\cdot x\cdots x}_{{k-1}\text{ multiplies}}$$
+$$cx^k=c\cdot\underbrace{x\cdot x\cdots x}_{k-1\text{ multiplies}}$$
 
 Adding up all $n+1$ terms of an $n$th degree polynomial would take $n$ additions:
 
