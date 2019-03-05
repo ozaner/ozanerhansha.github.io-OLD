@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{listings}
+
+\begin{document}
+
+\title{Numerical Analysis HW \#2}
+\author{Ozaner Hansha}
+\date{March 7, 2019}
+\maketitle
+
+\section*{Problem 1}
+\subsection*{Part a}
+\textbf{Problem:}
+\textbf{Solution:}
+
+\begin{center}
+\begin{tabular}{r|c|c}
+      Iteration & $x_n$ & $y_n$\\
+      \hline
+      0 & 0.500000000000000 & 0.500000000000000\\
+      1 & 1.000000000000000 & 0.500000000000000\\
+      2 & 0.812500000000000 & 0.437500000000000\\
+      3 & 0.773719879518072 & 0.420557228915663\\
+      4 & 0.771848952636680 & 0.419645658001209\\
+      5 & 0.771844506371371 & 0.419643377620421\\
+      6 & 0.771844506346038 & 0.419643377607081\\
+      7 & 0.771844506346038 & 0.419643377607081
+\end{tabular}
+\end{center}
+
+
+\section*{Problem 5}
+\textbf{Problem:} Solve the same system as in problem 4 but use Matlab's \verb|fsolve| routine to do it. In particular, use the following code:
+
+\begin{lstlisting}[language=Matlab]
+options = optimset('Display', 'iter');
+x0 = [0.5,0.5]
+[x,fval] = fsolve(@fcnns,x0,options)|
+\end{lstlisting}
+\textbf{Solution:}
+Running this code, with the system defined in \verb|fccns.m|, returns the following approximation and error:
+
+\begin{lstlisting}[language=Matlab]
+x = 0.771844506371479   0.419643377620486
+
+fval = 1.0e-10 *
+
+  -0.250830467507512
+  -0.146170298087611
+\end{lstlisting}
+
+Note that \verb|fsolve| defaults to 10 decimal places of accuracy ($\operatorname{tol}=10^{-10}$) and so it only agrees with problem 4's answer to the 10th decimal place.
+
+\end{document}

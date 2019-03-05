@@ -4,7 +4,7 @@ title: Intro Probability Notes Ch. 2
 date: 2018-12-30
 tags: math probability-theory
 ---
-Notes for *A First Course in Probability* Ch. 2 - Axioms of Probability
+My notes on Ross' *A First Course in Probability*. Chapter 2 - Axioms of Probability
 
 ## Sample Spaces and Events
 When considering an experiment or real world phenomena whose definite outcome is not known but whose possible outcomes *are* known, we can model it with a sample space. A sample space $\Omega$ is the set of possible outcomes of an experiment. For example, the sample space of a dice roll is:

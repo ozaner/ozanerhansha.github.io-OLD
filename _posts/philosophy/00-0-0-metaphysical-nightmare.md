@@ -37,7 +37,7 @@ A chemist can give you certainty that a particular solution will erode a metal b
 #### Computation
 Computers are a prime example of this, as they can only deal with problems that are well defined (i.e programmable via a set of steps or **algorithm**). Ask it to solve the quadratic function, model an atom, or even play music and it'll do just fine. But ask it to judge how strong an argumentative essay is and it might run into trouble. Digital music is just a sound wave sampled at a high rate, easy. But what is a good essay, formally speaking?
 
-*This problem of doing shakily defined tasks on computers can be partially dealt with via **machine learning**. And the underlying philosophy behind it's effectiveness in the real world is called the [manifold hypothesis](http://www.deeplearningbook.org/version-2015-10-03/contents/manifolds.html).*
+*This problem of doing shakily defined tasks on computers can be partially dealt with via **machine learning**. And the underlying philosophy behind it's effectiveness in the real world is called the [manifold hypothesis](https://deepai.org/machine-learning-glossary-and-terms/manifold-hypothesis).*
 
 ## Well Defined Concepts
 To formally deal with any idea or concept, it has to be well defined. By making our definitions more concrete we can make more precise statements about these ideas. This is how math and science are born.
@@ -115,7 +115,7 @@ $$\begin{align*}
 
 In the example above $B_1, B_2, B_3$ and so on are all different possible human brains that are thinking about cats.
 
-*Labeling the graphs with subscript $1,2,3,\cdots$ is misleading because such a set is most likely not countable.*
+*Labeling the graphs with subscript $1,2,3,\cdots$ is misleading because such a set is most likely not countable if you count quantum superpositions.*
 
 ## How does this Definition even Help?
 Remember when I said formally defining concepts allows us to make formal statements about them? Well that was only partially true. While this 'set of all possible particle configurations' definition is more formal than your standard notion of jealousy, it's not exactly helpful in trying to understand the nature of emotion of people's interactions with each other.

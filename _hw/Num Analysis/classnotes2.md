@@ -1,4 +1,4 @@
-Midterm I
+justMidterm I
 on Chapter 4 (Rootfinding)
 and Chapter 6 (Linear Systems)
 
@@ -92,7 +92,7 @@ $$\operatorname{cond}(A)=\|A\|\|A^{-1}\|$$
 From this we can conclude that if $\operatorname{cond}(A)$ is small, then a small perturbation in $\vec b$ does not produce a large error in $\vec x$.
 When this is the case, we say the problem is **well-conditioned**. Otherwise it is ill-conditioned.
 
-#### Iterative Methods
+## Iterative Methods of Linear Systems
 Some motivation for considering an iterative method: In many cases for the equation $A\vec x=\vec b$, the matrix $A$ is sparse (doesn't have many non-zero entries). An example might be a diagonal or tridiagonal matrix.
 
 The complexity of matrix-vector multiplication of a, say, $n\times n$ tridiagonal matrix is only rows(3*s and 2+s) giving us $O(5n)$. This is to say that the complexity of sparse matrix-multiplication is much less than full matrix multiplication.
@@ -172,3 +172,44 @@ That is to say the sum of the magnitude of all the (off diagonal) elements is le
 This is relevant because the Jacobi iteration always converges when $A$ is diagonally dominant. In fact, it converges *exactly* when $A$ is diagonally dominant.
 
 The same is true for the Gauss–Seidel method except it also converges when the matrix is symmetric and positive definite.
+
+#### Complexity
+If $A$ is sparse then the complexity of each iteration is given below.
+
+For Jacobi the complexity of solving $(L+U)\vec x^{(k)}$ is on the order of $n$.
+
+## 7.1 Computing Eigenvalues
+Given an $n\times n$ matrix $A$, we say that $\lambda\in\mathbb R$ is an eigenvalue and $\vec v$ an eigenvector of $A$ if:
+
+$$A\vec v=\lambda\vec v$$
+
+Recall that to find the eigenvalues of $A$ we use its characteristic polynomial:
+
+$$p(\lambda)=\det(A-\lambda I_n)$$
+
+The roots of this equation are the eigenvalues of $A$. To find the associated eigenvectors of these values, we solve for them like so:
+
+$$(A-\lambda_iI_n)\vec v_i=\vec 0$$
+
+Note that the characteristic polynomial of $A$ is an $n$th degree polynomial and thus has $n$ complex roots.
+
+#### Symmetric Matrices
+If a matrix $A$ is symmetric (i.e. $A=A^\top$), then all $n$ eigenvalues (with possible duplicates) are real and all their associated eigenvectors form an orthogonal basis of $\mathbb R^n$ (and not a lower dimension), further we can make this orthonormal by just choosing those with length 1.
+
+### Power Method
+Computing the determinant of a matrix is a difficult calculation, and finding the roots of a polynomial is also difficult and isn't generally numerically unstable.
+
+One method that gets around this is the power method, which approximates the largest magnitude eigenvalue (and its corresponding eigenvector) of a symmetric matrix $A$.
+
+Given some initial guess $\vec v^{(0)}$ of the eigenvector, the iteration is:
+
+$$\vec v^{(k+1)}=\frac{A\vec v^{(k)}}{\|A\vec v^{(k)}\|}$$
+
+*Notice we normalize the iteration at each step.*
+
+This iteration will converge to the largest eigenvector.
+
+#### Error
+The error of this method is given by:
+
+$$\|\vec v^{(k)}-\vec v_1\|\approx O\left(\frac{\lambda_2}{\lambda_1}\right)^k$$

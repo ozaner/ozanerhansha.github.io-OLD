@@ -4,7 +4,7 @@ title: Numerical Analysis Notes Ch. 1
 date: 2019-02-15
 tags: math computer-science numerical-analysis
 ---
-My notes on Atkinson and Han's *Elementary Numerical Analysis* Chapter 1 - Taylor Polynomials.
+My notes on Atkinson and Han's *Elementary Numerical Analysis*. Chapter 1 - Taylor Polynomials.
 
 ## 1.1 - 1.2 Taylor Polynomials and Error
 See post on [Taylor Series](/taylor-series).

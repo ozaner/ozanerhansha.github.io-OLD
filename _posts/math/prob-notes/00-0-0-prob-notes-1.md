@@ -4,7 +4,7 @@ title: Intro Probability Notes Ch. 1
 date: 2018-12-24
 tags: math probability-theory
 ---
-Notes for *A First Course in Probability* Ch. 1 - Combinatorics
+My notes on Ross' *A First Course in Probability*. Chapter 1 - Combinatorics
 ## Basic Principle of Counting
 The basic principle of counting states that if two events are independent and the first has $m$ possible outcomes and the second has $n$ possible outcomes, then the events taken together have $mn$ possible outcomes.
 

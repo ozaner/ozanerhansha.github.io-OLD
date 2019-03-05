@@ -4,7 +4,7 @@ title: Intro Probability Notes Ch. 3
 date: 2019-01-21
 tags: math probability-theory
 ---
-Notes for *A First Course in Probability* Ch. 3 - Conditional Probability and Independence
+My notes on Ross' *A First Course in Probability*. Chapter 3 - Conditional Probability and Independence
 
 ## Conditional Probabilities
 Conditional probabilities arise when we have partial information about an experiment. That is, given that an event $F$ has occurred, the probability that an event $E$ occurs is denoted and given by:
