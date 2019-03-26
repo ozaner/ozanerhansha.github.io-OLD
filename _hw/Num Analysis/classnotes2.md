@@ -158,7 +158,7 @@ $$\vec e^{(k)}=\vec x - \vec x^{(k)}$$
 
 Thus the error is given by:
 
-$$\vec e^{(k+1)}== N^{-1}Pe^{(k)}=Me^{(k)}$$
+$$\vec e^{(k+1)}= N^{-1}Pe^{(k)}=M\vec e^{(k)}$$
 
 #### Convergence & Diagonal Dominance
 The convergence this method is guaranteed only when $\|M\|<1$ where the norm is the max of the sum of the magnitude of each row.

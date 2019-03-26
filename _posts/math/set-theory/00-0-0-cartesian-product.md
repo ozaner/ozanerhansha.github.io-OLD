@@ -84,9 +84,12 @@ In words, this Cartesian product returns every function that takes an element $i
 
 $$\underbrace{\text{binary},\text{trinary},\cdots,n\text{-ary}}_{\text{finitary}},\cdots;\underbrace{\aleph_0\text{-ary},\aleph_1\text{-ary},\cdots}_{\text{infinitary}}$$
 
-Note that this generalizes the first definition because $n$ can be thought of as a set with $n$ elements as per its construction in the [natural numbers](\natural-numbers), and so we can take it to be our index set $I$. As such, these two definitions are isomorphic for finitary products.
+Note that this generalizes the first definition because $n$ can be thought of as a set with $n$ elements as per its construction in the [natural numbers](\natural-numbers), and so we can take it to be our index set $I$. As a result, these two definitions are isomorphic for finitary products.
 
-*Also note that this definition of Cartesian product depends on the notion of indexed families of sets (i.e. functions), which in turn depends on our original definition. As such we are left with two distinct versions of the Cartesian product, with the less general finitary version used to found the more general indexed one.*
+#### Useful Shorthand
+Note that the normal finitary product produces a set of tuples while this indexed product produces a set of functions. This distinction is important because the definition of a function depends on that finitary product.
+
+Think of the indexed product as just a useful shorthand for defining a the set of all functions from some $I$ to some set of domains $S_i$, and not a replacement for the finitary product.
 
 <details>
 <summary><h4 class="inline">Cartesian Powers</h4></summary>
@@ -107,7 +110,7 @@ $$S^I=\prod_{i\in I}S=\{f\mid f:I\to S\}$$
 <p></p></details>
 
 <details>
-<summary><h4 class="inline">Empty Set</h4></summary>
+<summary><h4 class="inline"><a id="empty-set">Empty Set</a></h4></summary>
 A special case of the Cartesian product is when one of the sets $S_i=\emptyset$. When this happens the entire product collapses into the empty set. This is because there are simply no elements in $\emptyset$ to be mapped to by $f(i)$. We can state this as the following for any indexed family of sets $\{S_i\}_{i\in I}$:
 
 $$(\exists i\in I)\ S_i=\emptyset\implies \prod_{i\in I}S_i=\emptyset$$
@@ -148,7 +151,7 @@ When faced with an $n$-ary Cartesian product without parenthesis, it is conventi
 
 $$A\times B \times C=(A \times B)\times C$$
 
-This convention intuitively meshes with the definition of $n$-ary Cartesian products and $n$-tuples (i.e. $((a,b),c)=(a,b,c)$)
+This convention intuitively meshes with the definition of $n$-ary Cartesian products and $n$-tuples, i.e. $((a,b),c)=(a,b,c)$.
 <p></p>
 </details>
 
@@ -208,9 +211,9 @@ The Cartesian product is analogous to the integer product we are familiar with i
 
 #### Finitary Product
 <!-- Before we can factor finite Cartesian products we have to remember their simultaneity of arity, i.e. that they can be interpreted in multiple ways. To avoid this, and arrive at a unique prime factorization, we have to extract the factors right to left, since the **rightmost factor** (RMF) of any Cartesian product $P$ is the same for all its possible factorizations. -->
-To find the $i$th **Cartesian Factor (CF)** of an $n$-ary Cartesian product $P$ we simply have to find the union of all the tuples in $P$ at the $i$th index:
+To find the $i$th **Cartesian Factor (CF)** of an $n$-ary Cartesian product $P$ we simply have to find the union of the $i$th index of all tuples in $P$:
 
-$$\operatorname{CF}_i(P)=\bigcup_{p\in P} \pi^n_i(p)=S_i$$
+$$\operatorname{CF}_i^n(P)=\bigcup_{p\in P} \pi^n_i(p)=S_i$$
 
 *Where $\pi^n_i(p)$ is the [tuple extraction function](\n-tuples#extraction).*
 
@@ -224,11 +227,15 @@ Note that we can recover the index set $I$ from the product $P$ by simply choosi
 *Also note that, unlike the finitary case, indexed products can only be interpreted one way and so only have one factorization.*
 
 #### Prime Factorization
-The **Cartesian prime factorization (CPF)** is simply the indexed set of all the Cartesian factors. Note that the indexing is important because, unlike integer factors, the order matters. And so for a Cartesian product $\prod_{i\in I}S_i=P$ we can say:
+The **Cartesian prime factorization (CPF)** is simply the indexed set of all the Cartesian factors. Note that the indexing is important because, unlike integer factors, the order matters. And so for an $n$-ary Cartesian product $\prod_{i=1}^nS_i=P$ we can say:
 
-$$\operatorname{CPF}(P)=(\operatorname{CF}_i(P))_{i\in I}=(S_i)_{i\in I}$$
+$$\operatorname{CPF}^n(P)=(\operatorname{CF}_i^n(P))_{i=0}^n=(S_i)_{i=1}^n$$
 
 Note that due to the simultaneity of arity, the factorization of a finite product depends on what arity we consider to it be. We can resolve this if we specify that the *unique* prime factorization of a finitary product requires it be considered the maximum arity possible.
+
+For an indexed Cartesian product $\prod_{i\in I}S_i=P$ we can say:
+
+$$\operatorname{CPF}(P)=(\operatorname{CF}_i(P))_{i\in I}=(S_i)_{i\in I}$$
 
 #### Factorization of the Empty Set
 Analogous to the number zero, the empty set $\emptyset$ does not have a unique prime factorization. That is because if one of the factors of a Cartesian product happens to be the empty set, then the result too will be empty and thus there is no way to recover the original factors from it. In other words, any family of sets can serve as a factorization of $\emptyset$ so long as one of them is $\emptyset$ itself.

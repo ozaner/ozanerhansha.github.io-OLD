@@ -56,14 +56,14 @@ In English, the above statement asserts that there exists a set $S$ that contain
 ## Notation
 The set of natural numbers is denoted by the double struck capital letter $\mathbb{N}$. But there are variations on the set that do/don't include $0$ as well as ones that include all natural numbers up to and including $n$:
 
-$$\begin{alignat*}{2}
-&\mathbb{N}&&=\{0,1,2,3,4,5,\cdots\}\\
-&\mathbb{N}^* &&=\{1,2,3,4,5,\cdots\}\\
-&\mathbb{N}_n&&=\{0,1,2,3,4,\cdots,n\}\\
-&\mathbb{N}^* _ n&&=\{1,2,3,4,\cdots,n\}\\
-\end{alignat*}$$
+$$\begin{align*}
+\mathbb{N}&=\{0,1,2,3,4,5,\cdots\}\\
+\mathbb{N}_ 1 &=\{1,2,3,4,5,\cdots\}\\
+[0..n]&=\{0,1,2,3,4,\cdots,n\}\\
+[1..n]&=\{1,2,3,4,\cdots,n\}\\
+\end{align*}$$
 
-The last one in particular, the set of all non-zero natural numbers up to $n$, can be written as the integer interval $[1\ldotp\ldotp n]$ to avoid confusion.
+Notice the use of integer intervals as an unambiguous way to define a contiguous subset of the naturals.
 
 ## Structure on the Naturals
 <details>

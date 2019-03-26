@@ -4,7 +4,7 @@ I wouldn't give it a model of ethics. Whatever my purpose in building an AI, be 
 
 Thus, giving our idealized notions of ethics, complete with their logical holes, their plethora of edge cases, and the fact that they can only be based on nothing but arbitrary maxims "minimize suffering in biological/sentient beings" Why? Because... pain is bad? Sort of circular. What about "never kill" Why? Because killing is wrong?
 
-Let's consider that last rule more closely. "Don't kill." Say our robotic friend is in a situation where it must kill someone. Either by inaction or action. A trolley problem I suppose. There is now ay out, your programming of its ethics, via inclusion or exclusion, made that call. Now we enter the murky valuation of human lives and ultimately are forced to come to grips with the fact that it was all based on our, again, arbitrary intuition of right and wrong, begot from millions of years of natural selection.
+Let's consider that last rule more closely. "Don't kill." Say our robotic friend is in a situation where it must kill someone. Either by inaction or action. A trolley problem I suppose. There is no way out, your programming of its ethics, via inclusion or exclusion, made that call. Now we enter the murky valuation of human lives and ultimately are forced to come to grips with the fact that it was all based on our, again, arbitrary intuition of right and wrong, begot from millions of years of natural selection.
 
 So if I had to program a robot with ethics, presumably to be more like humans, I wouldn't. I would just program it to be like humans, because whatever decision making process we have is certainly not this romanticized, and more importantly impossible, fantasy that is morality.
 

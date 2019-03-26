@@ -9,7 +9,7 @@ The following are my notes on Peter Singer's ['All Animals are Equal'](https://r
 ### Counterexample to Human Equality
 *In response paragraph 10:*
 
-As Singer rightly points out, humans are indeed not equal. It is commonly thought that over the whole of the different sexes and races, there are individuals more capable in any one dimension than members of the other categories. This, the thought goes, provides justification for the treatment of these different races and sexes equally as they are just as capable as each other. This justification though, as Singer shows, leaves open a variety of other forms of discrimination like that of intelligence.
+As Singer rightly points out, humans are indeed not equal. It is commonly thought that over the whole of the different sexes and races, there are individuals more capable in any one dimension than members of the other categories. This, the thought goes, provides justification for the treatment of these different races and sexes equally as they are just as capable as each other. This justification though, as Singer shows, still leaves open a variety of *other* forms of discrimination like that of intelligence.
 
 <!--more-->
 
