@@ -58,7 +58,7 @@ $$\prod_{i=1}^nS_i=S_1\times S_2\times \cdots \times S_n$$
 
 <details>
 <summary><h4 class="inline" id="simultaneity-of-arity">Simultaneity of Arity</h4></summary>
-Recall that any $n$-tuple can be <a href="\n-tuples#simultaneous-interpretation">simultaneously interpreted</a> as a $k$-tuple where $2\le k\le n$. Likewise, this means that an $n$-ary Cartesian product:
+Recall that any $n$-tuple can be <a href="\n-tuples#simultaneous-interpretation">simultaneously interpreted</a> as a $k$-tuple where $1\le k\le n$. Likewise, this means that an $n$-ary Cartesian product:
 
 $$\prod_{i=1}^nS_i=S_1\times S_2\times \cdots \times S_n$$
 
@@ -121,7 +121,7 @@ Indeed this absorbing property of the empty set is the only case in which a Cart
 </details>
 
 <details>
-<summary><h4 class="inline">Unary Product</h4></summary>
+<summary><h4 class="inline" id="unary-product">Unary Product</h4></summary>
 Because our product notation allows us to denote the cartesian product of <i>any</i> indexed family of sets, it is natural for us to ask what is returned when the family consists of a single set. The answer is just that set itself:
 
 $$\prod_{i=1}^1S=S$$

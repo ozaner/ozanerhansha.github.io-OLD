@@ -49,11 +49,14 @@ Whatever definition is used, all that matters is that two $n$-tuples are equival
 
 <details>
 <summary><h4 class="inline" id="simultaneous-interpretation">Simultaneous Interpretation</h4></summary>
-A consequence of this definition is that any $n$-tuple can also be thought of as a $k$-tuple where $2\le k\le n$. This is an immediate consequence of the recursive definition:
+A consequence of this definition is that any $n$-tuple can also be thought of as a $k$-tuple where $1\le k\le n$. This is an immediate consequence of the recursive definition:
 
 $$(x_1,x_2,\cdots,x_n)=((x_1,x_2,\cdots,x_{n-k+1}),x_{n-k+2},\cdots,x_n)$$
 
 This has consequences in how we interpret the <a href="\cartesian-product#simultaneity-of-arity">arity of Cartesian products</a> and thus relations and functions.
+
+<i>Note that a '1-tuple' just means and element of a set. All sets are trivially 1-tuples. This fits in with the definition of the <a href="\cartesian-product#unary-product">unary Cartesian product</a>.</i>
+
 </details>
 
 #### Existence in ZFC

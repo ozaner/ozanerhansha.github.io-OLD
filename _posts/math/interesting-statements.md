@@ -28,6 +28,8 @@ A sequence $f$ over $S$ is a function of the following form:
 
 $$f:\alpha\in\operatorname{Ord}\to S$$
 
-Bi-infinite sequences? Must allow sum of reverse order types (i.e. $\omega^*+\omega$). Opens the door to order types in general or at least total order types. Canonical representation of order types? Not that I've seen.
+Bi-infinite sequences? Must allow sum of reverse order types (i.e. $\omega^* +\omega$). Opens the door to order types in general or at least total order types. Canonical representation of order types? Not that I've seen.
 
 Could just throw out bi-infinite sequences. Call them functions from integers to a set.
+
+How do we deal with the natural numbers embedded in the reals rather than ordinals? hyperreals?

@@ -1,3 +1,5 @@
+midterm curve +12 points
+
 ## Least Square Data Fitting
 Given a set of points in $\mathbb R^2$:
 
@@ -108,3 +110,60 @@ $$L_i(x)=\prod_{j=0\\j\not=i}^n\frac{x-x_j}{x_i-x_j}$$
 4n^2-12n+7=O(n^2), not horrible I suppose.
 
 Doing it by simply solving an $n$th degree polynomial via a linear system as opposed to using Lagrange polynomials is an $O(n^3)$ solution.
+
+## Newton Interpolation
+#### Linear Interpolation
+Given two points, the unique line that connects them is:
+
+$$p(x)=y_1+\frac{y_2-y_1}{x_2-x_1}(x-x_1)$$
+
+#### Divided Difference
+Given two points $(x_1,y_1),(x_2,y_2)$, where $f(x_i)=y+i$, their divided difference is:
+
+$$f[x_1,x_2]=\frac{y_1-y_2}{x_1-x_2}$$
+
+So our linear interpolation becomes:
+
+$$p(x)=y_1+f[x_1,x_2] (x-x_1)$$
+
+The divided difference of three points is:
+
+$$f[x_1,x_2,x_3]=\frac{f[x_1,x_2]-f[x_2,x_3]}{x_1-x_3}$$
+
+So our interpolation polynomial is:
+
+$$p(x)=y_1+f[x_1,x_2] (x-x_1)+f[x_1,x_2,x_3] (x-x_1)(x-x_2)$$
+
+#### General Case
+In general, given $n+1$ points the Newton polynomial is given by:
+
+$$p(x)=\sum_{i=0}^n\left(f[x_1,\cdots,x_n]\prod_{j=0}^{i-1}(x-x_j)\right)$$
+
+To solve for a divided difference, its useful to create a table of x,y,1st order, 2nd order, etc. values to use in the computation.
+
+#### Implementation
+1. Initialize an $n$-dim vector $d:=[y_1,y,_ 2,\cdots, y_n]$
+2. Now we update the last element $d_n:=\frac{d_{n-1}-d_n}{x_{n-1}-x_n}$
+3. We continue backwards, updating from $n$ to $2$ setting the $i$th entry equal to $d_i:=\frac{d_{i-1}-d_i}{x_{i-1}-x_i}$. This leaves us with the first order differences (except for the 1st element, which is the 0th order difference of the first element)
+4. Now we compute the second order differences backwards from $n$ to $3$ using the same formula. And so on??
+
+#### Psuedocode
+```python
+d:=(y_1,y,_2,..., y_n)
+for i=2:n
+  for j=n:(-1):i #-1 makes the increment go backwards.
+    d_j:=(d[j-1]-d[j])/(x[j-i+1]-x[j])
+```
+
+Evaluating the polynomial naively gives an $O(n^2)$ running time. Rewriting it using Horner's method we have:
+
+$$p(x)=d_1+\left(x+x_1\right)\left(d_2+\left(x-x_2\right)\left(d_3+\left(x-x_3\right)\left(\cdots d_n(x-x_{n-1})\right)\right)\right)$$
+
+So we get:
+```python
+p=d[n]
+p=((x-x[n-1])p+d[n-1])
+p=((x-x[n-2])p+d[n-2])
+...
+p=((x-x[n-i])p+d[n-i])
+```

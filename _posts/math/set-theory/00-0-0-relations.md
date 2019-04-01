@@ -4,19 +4,19 @@ title: Relations
 date: 2019-03-17
 tags: math set-theory relations
 ---
-Relations are used to establish $n$-way relationships between elements of the same or different sets (ex. there is a two way relationship between $2$ and $5$ in that $2<5$). Some important types of relations include partial orders, equivalence relations, and functions.
+Relations are used to establish $n$-way relationships between elements of the same or different sets (e.g. there is a two way relationship between $2$ and $5$ in that $2<5$). Some important types of relations include partial orders, equivalence relations, and functions.
 
 <!-- Relations are some of the most fundamental objects to set theory and mathematics as a whole. They allow us to formalize the relationships between different mathematical objects and concepts in the broadest sense.  -->
 
-
-<!--
-Some examples of relations include:
-- $\vec v\perp\vec u$ Orthogonality
-- $x^2$ Square function
-- $n|m$ Divisibility
-- $x\le y$ Less than or equal to -->
-
 Relations with certain properties can be further collected to form particular mathematical structures like fields, ordered sets, and vector spaces that can be studied further.
+
+Some examples of relations include:
+- $x\le y$ Less than or equal to
+- $\mathbf v\perp\mathbf u$ Orthogonality
+- $x^2$ Square function
+- $n\mid m$ Divisibility
+
+<!--more-->
 
 <!-- We can call a predicate with $n\ge2$ free variables a **relationship** between those variables. That is, given a particular choice of $n$ variables, the relationship $P$ may or may not hold:
 
@@ -28,7 +28,6 @@ $$G=\{(x_1,x_2\cdots,x_n)\in S_1\times S_2\times\cdots\times S_n\mid P(x_1,x_2,\
 
 We can now extend the idea of relationships to set theory by constructing a **relation** between those $n$ sets which will be characterized by the solution set $G$, commonly called its **graph**. -->
 
-<!--more-->
 
 ## Definition
 An **$n$-ary relation** $R$ is an ordered pair of an $n$-ary [Cartesian product](\cartesian-product) $\prod_{i=1}^n$ and a subset of that product $G$:
@@ -56,6 +55,13 @@ $$P(x_1,x_2,\cdots)\rightarrow P(\{x_i\}_{i\in I})$$
 Because [cartesian products exist](/cartesian-product#existence-in-zfc), invoking the axiom of subset tells us that their subsets exist too (i.e. graphs). This, combined with the [existence of $n$-tuples](/n-tuples#existence-in-zfc), is enough to conclude that relations must also exist.
 
 #### Simultaneity of Arity
+Recall that any $n$-ary Cartesian product can be <a href="\cartesian-product#simultaneity-of-arity">simultaneously interpreted</a> as a $k$-ary product where $1\le k\le n$. Likewise, this means that an $n$-ary relation can be interpreted as a $k$-ary relation:
+
+$$R=\left(\prod_{i=1}^nS_i,G\right)=\left(\prod_{i=1}^kU_i,G\right)$$
+
+Where the $k$-ary product is given by:
+
+$$\prod_{i=1}^kU_i=\left(\prod^{n-k+1}_{i=1}S_i\right)\times S_{n-k+2}\times \cdots \times S_n$$
 
 <!-- #### Large Relations & Proper Classes
 
@@ -82,15 +88,12 @@ This notation is ubiquitous, for example: $3\le5$, $ABC \cong ADC$, $\mathbf v\p
 
 
 ## Empty, Universal, and Identity Relations
-#### Negation
-To denote that a tuple does *not* satisfy a relation, we draw a strikethrough
-
 #### Empty Relation
-An $n$-ary **empty relation** is a relation whose graph is the empty set. That is, any relation of the form:
+An $n$-ary **empty relation** is a relation whose graph is the empty set, i.e. any relation of the form:
 
 $$E=\left(\prod_{i=1}^nS_i,\emptyset\right)$$
 
-Thus no element of a Cartesian product satisfies its empty relation:
+Thus no element of a Cartesian product satisfies its corresponding empty relation:
 
 $$\left(\forall(x_1,x_2,\cdots,x_n)\in\prod_{i=1}^nS_i\right)\neg Ex_1x_2\cdots x_n$$
 
@@ -101,11 +104,11 @@ Note that if any one of the domains $S_i=\emptyset$, then the relation is necess
 $$\left(\forall \{x_i\}_{i=1}^n\in \prod_{i=1}^nS_i\right)\ \neg P(x_1,x_2,x_3,\cdots,x_n)$$ -->
 
 #### Universal Relation
-Similar to an empty relation, a universal relation is one whose graph includes every element of the Cartesian product of its domains:
+Opposite to an empty relation, a universal relation is one whose graph includes every element of the Cartesian product of its domains:
 
 $$U=\left(\prod_{i=1}^nS_i,\prod_{i=1}^nS_i\right)$$
 
-Thus every element of a Cartesian product satisfies its universal relation:
+Thus every element of a Cartesian product satisfies its corresponding universal relation:
 
 $$\left(\forall(x_1,x_2,\cdots,x_n)\in\prod_{i=1}^nS_i\right) Ux_1x_2\cdots x_n$$
 
@@ -126,6 +129,8 @@ The most common type of relations are binary. This is in part due to the fact th
 A binary relation on two different sets $A$ and $B$ is called *heterogenous* when $A\not=B$ and *homogenous* when $A=B$. Homogenous relations are also called **relations on a set**.
 
 Below is a list of common classifications of binary relations based on what properties they satisfy. In all the definitions below we will assume $R=(A\times B,G)$ where $G\subseteq A\times B$:
+
+*The number of relations on a set of $n$ elements is given by $2^{n^2}$, which is sequence [A002416](https://oeis.org/A002416) on the OEIS. The number of relations in an $n$ element set that satisfy the properties below can also be found on the OEIS, though not all have closed formulae.*
 
 ### Uniqueness Properties
 
@@ -229,7 +234,7 @@ Below we include a collection of common transformations and operations on relati
 
 <details>
 <summary><strong>Union and Intersection</strong></summary>
-The union of two relations with the same domains $R_1,R_2\subseteq\prod S_i$ and graphs $G_1,G_2$ is the following relation:
+The union of two relations $R_1,R_2$ with the same domains $\prod S_i$, and corresponding graphs $G_1,G_2$, is the following relation:
 
 $$R_1\cup^* R_2\equiv \left(\prod S_i,G_1\cup G_2\right)$$
 
@@ -239,64 +244,140 @@ $$R_1\cap^* R_2\equiv \left(\prod S_i,G_1\cap G_2\right)$$
 
 And of course, we can generalize the relational union and intersection of to a finite number of relations with the same domains $n$:
 
-$$\bigcup_{i=1}^n{\vphantom{\bigcup}}^*R_i=\left(\prod S_i,\bigcup_{i=1}^n G_i\right)$$
+$$\bigcup_{i=1}^n{\vphantom{\bigcup}}^* R_i\equiv\left(\prod S_i,\bigcup_{i=1}^n G_i\right)$$
 
-$$\bigcap_{i=1}^n{\vphantom{\bigcup}}^*R_i=\left(\prod S_i,\bigcap_{i=1}^n G_i\right)$$
+$$\bigcap_{i=1}^n{\vphantom{\bigcup}}^* R_i\equiv\left(\prod S_i,\bigcap_{i=1}^n G_i\right)$$
 
-<i>Note that the relational union/intersection above are not true set unions/intersections, hence the $ *$ above their symbols. This is because we don't define relations as JUST their graphs but as an ordered pair including it, making their set union/intersection a bit awkward. That said, when the context is clear, the $ *$ can be omitted.</i>
+<i>Note that the relational union/intersection above are not true set unions/intersections, hence the $ * $ above their symbols. This is because we don't define relations as JUST their graphs but as an ordered pair including it, making their set union/intersection a bit awkward. That said, when the context is clear, the $ * $ can be omitted.</i>
 <p></p>
 Here are some examples:
 <ul>
-<li>$<\cup^*I=\le$ The union of less than and the identity relation is less than or equal to.</li>
-<li>$\ge\cap^*>=I$ The intersection of greater than or equal to and greater than is the identity relation.</li>
+<li>$<\cup^* I=\le$ The union of less than and the identity relation is less than or equal to.</li>
+<li>$\ge\cap^* >=I$ The intersection of greater than or equal to and greater than is the identity relation.</li>
+<li>The union of "is father of" and "is mother of" gives "is parent of"</li>
 </ul>
 <p></p>
 </details>
 
-<details open>
-<summary><strong>Complement</strong></summary>
-The complement of a relation $R\subset A\times B$ is simply all the of the ordered pairs in $A\times B$ that are <i>not</i> in $R$. We can think of this as the ordinary complement of the relation denoted $R^\complement$ where $A\times B$ is the universal set:
+<details>
+<summary><strong>Subrelations</strong></summary>
+A <b>subrelation</b> of $R$ is one with the same domains as $R$ and whose graph is a subset of $R$'s graph $G$:
 
-$$R^\complement=\{(a,b)\in A\times B\mid (a,b)\not\in R\}$$
+$$R_\downarrow=\left(\prod S_i,G_\downarrow\right)$$
 
-For example, the complement of less than or equal to is greater than: $\le^\complement=\gt$. The complement of "is a parent of" is "is not a parent of".
-<p></p>
+$$R_\downarrow\subseteq^* R\equiv G_\downarrow\subseteq G$$
+
+
+Likewise, a <b>superrelation</b> of $R$ is one with the same domains and whose graph is a superset of $R$'s:
+
+$$R_\uparrow=\left(\prod S_i,G_\uparrow\right)$$
+
+$$R_\uparrow\supseteq^* R\equiv G_\uparrow\supseteq G$$
+
 </details>
 
 <details>
+<summary><strong>Complement</strong></summary>
+The complement of a relation $R$ is denoted $\not R$, and sometimes $\bar R$, and is the set of ordered pairs in $\prod S_i$ that are <i>not</i> in $G$:
+
+$$\not R\equiv \left(\prod S_i,\prod S_i\setminus G\right)$$
+
+Some interesting properties of the complement relation are:
+<ul>
+<li>$\bar{(\not R)}=R$ The complement of $\not R$ is $R$, i.e. the complement is its own inverse.</li>
+<li>$R\cup^* \not R=U$ The relational union of a relation with its complement gives the universal relation.</li>
+</ul>
+<p></p>
+Also note that, because $\not R$ contains all the pairs <i>not</i> in $R$, it represents it's logical negation:
+
+$$\left(\forall(x_1,x_2,\cdots,x_n)\in\prod_{i=1}^nS_i\right) \neg Rx_1x_2\cdots x_n\iff\not Rx_1x_2\cdots x_n$$
+
+It is this property of the complement relation that allows us to, for example, replace $\not>$ with $\le$ since they are complements of each other:
+
+$$\neg(2>5)\equiv 2\not>5\equiv 2\le 5$$
+</details>
+
+<!-- <details>
 <summary><strong>Logical Negation of a Relation</strong></summary>
 Notice that negating a relation is equivalent to asserting its complement (assuming both elements being related are in the universal set). Put more formally, if $a\in A$ and $b\in B$:
 
 $$\neg(aRb)\equiv aR^\complement b$$
 
 It is this negating property that allows us to replace statements like $\neg(a\le b)$ with  $a\gt b$.
-</details>
+</details> -->
 
 <details>
 <summary><strong>Composition</strong></summary>
-The composition of two relations $R\subset A\times B$ and $S\subset B\times C$ is a sort of 'product' denoted $S\circ R\subset A\times C$:
+The composition of two binary relations is the result of applying one after the other. If the first relation is $R_1$, with domain $A\times B$, and the second $R_2$, with domain $B\times C$, their composition is a new relation denoted $R_2\circ R_1$:
 
-$$S\circ R=\{(a,c)\in A\times C\mid\exists b:(a,b)\in R\wedge(b,c)\in S\}$$
+$$R_2\circ R_1=\left(A\times C, G\right)$$
 
-<i>Notice that relation composition is associative: $X\circ (Y\circ Z)=(X\circ Y)\circ Z$</i><p></p>
+where the graph $G$ is:
 
-An intuitive example of this can be found in kinship relations. The composition "is parent of" $\circ$ "is father of" returns the new relation "is grandfather of".
+$$G=\left\{(a,c)\in A\times C\mid\exists b:(a,b)\in G_1\wedge(b,c)\in G_2\right\}$$
+
+In other words, for $a\in A,c\in C$:
+
+$$a(R_2\circ R_1)c\equiv \left(\exists b\in B\right)aR_1bR_2c$$
+
+<i>You'll notice that the order of the relations in the notation seems reversed, this is no accident however. The reason for this is that when we define functional composition, as just a special case of relational composition, the notation will stay the same. Thus, to make reasoning about relational compositions easier, it may help to simply switch their order in your mind.</i>
+
+An interesting property of relation composition is its associativity:
+
+$$X\circ (Y\circ Z)=(X\circ Y)\circ Z$$
+
+An intuitive example of this can be found in kinship relations. The composition "is parent of" $\circ$ "is father of" returns the new relation "is grandfather of".<p></p>
 </details>
 
 <details>
 <summary><strong>Converse</strong></summary>
-The converse of a relation $R$ is denoted $R^\top$ and is simply the opposite of $R$. In other words, if $(x,y)$ is in a relation then $(y,x)$ is in its converse. Formally, for a relation $R\subseteq A\times B$:
+The converse of a binary relation $R$ is denoted $R^\top$ and is simply the reverse of $R$. In other words, if $(x,y)$ is in a relation's graph, then $(y,x)$ is in its converse's graph. This means the domains must be reversed as well. Formally, for a binary relation $R$
 
-$$R^\top=\{(b,a)\in B\times A\mid (a,b)\in R\}$$
+$$R=\left(A\times B, G\right)$$
 
-<i>Note that this means that the converse is idempotent: $(R^\top)^\top=R$. It also respects composition: $(R\circ L)^\top=L^\top\circ R^\top$.</i><p></p>
+It's converse is given by:
+
+$$R^\top=\left(B\times A, G^\top\right)$$
+
+$$G^\top=\{(b,a)\in B\times A\mid (a,b)\in G\}$$
+
+Some interesting properties of conversion are that it respects composition:
+
+$$(R\circ L)^\top=L^\top\circ R^\top$$
+
+and its an involution:
+
+$$(R^\top)^\top=R$$
 
 For example, the converse of the greater than relation $\ge^\top$ is $\le$. Similarly, the converse of the relation "is a child of" is "is a parent of".
+
+<i>All finite relations can be represented by a matrix (or a graph which in turn can be represented by an adjacency matrix). It is interesting to note, then, that the converse is analogous to the matrix transpose, hence the notation.</i><p></p>
 </details>
 
 <details>
 <summary><strong>Inverse</strong></summary>
-Some relations are <b>invertible</b>. This means for a relation $R$ there exists another relation $X$ such that $X\circ R=I$, called <b>left-invertible</b>, or if there exists a relation $Y$ such that $R\circ Y=I$, called <b>right-invertible</b>. When both the left and right inverses coincide, the inverse $R^{-1}$ is simply equivalent to the converse $R^\top$.<p></p>
+There are some binary relations $R$ for which there exists a relation $X$ such that:
+
+$$X\circ R=I$$
+
+These relations are called <b>left-invertible</b>. Similarly, when there exists a relation $Y$ such that:
+
+$$R\circ Y=I$$
+
+the relation is called <b>right-invertible</b>. When $R$ is both left and right invertible, it is simply called <b>invertible</b>. We denote the inverse of $R$ as $R^{-1}$. Interestingly, when a relation is invertible, its left and right inverses and converse are all equivalent to the inverse:
+
+$$R^{-1}=R^\top=X=Y$$
 </details>
 
 <!-- For example, the composition "is child of" $\circ$ "is parent of" returns the identity relation (i.e "is you"). As such, they are inverses of each other. -->
+
+<details>
+<summary><strong>Closures and Reductions</strong></summary>
+A <b>closure</b> of some relation $R$ is the smallest superrelation of $R$ that satisfies some property.<p></p>
+
+For example the <i>reflexive</i> closure of $R$, denoted $R^=$, is the smallest superrelation of $R$ that is reflexive.<p></p>
+
+A <b>reduction</b> is very similar except it removes the least number of elements from $R$ as necessary in order to have the new relations satisfy some property.<p></p>
+
+For example the <i>irreflexive</i> reduction of $R$, denoted $R^{\not=}$, is the largest subrelation of $R$ that is irreflexive.
+</details>
