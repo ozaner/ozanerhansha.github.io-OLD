@@ -26,7 +26,7 @@ A list of all my HW for the class. Both problems and solutions are typed up in L
 #### Calculus III
 A list of all my HW for the class. Both problems and solutions are typed up in LaTeX below:
 
-- [HW1]({{ site.url }}\hw\Fall%202018\Calculus%20III\PDFs\calc3hw1.pdf),  [HW2](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw2.pdf), [HW3](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw3.pdf), [HW4](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw4.pdf), [HW5](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw5.pdf), [HW6](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw6.pdf), [HW7](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw7.pdf), [HW8](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw8.pdf), [HW9](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw9.pdf), [Challenge HW1](\hw\Fall%202018\Calculus%20III\PDFs\calc3challengehw1.pdf), [Challenge HW 3](\hw\Fall%202018\Calculus%20III\PDFs\calc3challengehw3.pdf),
+- [HW1](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw1.pdf),  [HW2](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw2.pdf), [HW3](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw3.pdf), [HW4](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw4.pdf), [HW5](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw5.pdf), [HW6](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw6.pdf), [HW7](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw7.pdf), [HW8](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw8.pdf), [HW9](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw9.pdf), [Challenge HW1](\hw\Fall%202018\Calculus%20III\PDFs\calc3challengehw1.pdf), [Challenge HW 3](\hw\Fall%202018\Calculus%20III\PDFs\calc3challengehw3.pdf).
 
 ## Spring 2019
 
