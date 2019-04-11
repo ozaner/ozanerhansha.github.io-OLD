@@ -14,7 +14,7 @@ A collection of geometry proofs too specific to include in any other page. These
 Let's call the first point $\mathbf{P}$ and the point on the sphere closest to it $\mathbf{Q}$. This would make the distance between the point and sphere $\|\mathbf{P}-\mathbf{Q}\|$.
 <p></p>
 
-Notice that wherever $\mathbf{P}$ is on the sphere, its distance from the center of the sphere $\mathbf{C}$ is equal to the radius $r$. This is the very definition of a sphere.
+Notice that wherever $\mathbf{Q}$ is on the sphere, its distance from the center of the sphere $\mathbf{C}$ is equal to the radius $r$. This is the very definition of a sphere.
 <p></p>
 
 This means that the distance we are trying to find is:
@@ -25,7 +25,7 @@ because moving from $\mathbf{P}$ to $\mathbf{Q}$ is the same as moving from $\ma
 
 <p></p><img src="/assets/math/point_to_sphere.png?style=centerme" style="width:300px;"><p></p>
 
-However, because we are only concered with the <i>distance</i> between the point and the sphere and not the <i>displacement</i> we can say:
+However, because we are only concerned with the <i>distance</i> between the point and the sphere and not the <i>displacement</i> we can say:
 
 $$\|\mathbf{P}-\mathbf{Q}\|=\|(\mathbf{P}-\mathbf{C})-r\mathbf{\hat{Q}}\|$$
 

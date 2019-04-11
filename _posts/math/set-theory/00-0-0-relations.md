@@ -36,7 +36,7 @@ $$R\equiv\left(\prod_{i=1}^nS_i,G\right)$$
 
 The set $S_i$ is called the $i$th **domain** of $R$ and the subset $G$ is called the **graph** of $R$. We can always extract the domains of $R$ from the Cartesian product by [factoring](\cartesian-product#factoring) them out.
 
-Note that this implies that (for $n\ge3$) any $n$-ary relation can also be considered an $(n-1)$-ary relation. That said, there is always a maximum $n$ for which an $n$-ary relation can be considered (i.e. the number of prime Cartesian factors).
+Note that this implies that (for $n\gt1$) any $n$-ary relation can also be considered an $(n-1)$-ary relation. That said, there is always a maximum $n$ for which an $n$-ary relation can be considered (i.e. the number of prime Cartesian factors).
 
 *e.g. the first domain of an $n$-ary relation $R$ is $\operatorname{CF}_1^n(\pi_1(R))$*
 
@@ -198,17 +198,16 @@ A relation is symmetric if $xRy$ implies $yRx$ as well:
 
 $$\forall x,y\in X \left(xRy \implies yRx\right)$$
 
-Some examples of this include the [proportionality](/proportionality) $\propto$ of functions and similarity $\sim$ of geometric objects.
+Some examples of this include the <a href="/proportionality">proportionality</a> $\propto$ of functions and similarity $\sim$ of geometric objects.
 </details>
 
 <details>
 <summary><strong>Anti-Symmetric</strong></summary>
-A relation is anti-symmetric if when $xRy$ and $yRx$ are both true, then $x=y$:
+A relation is anti-symmetric if $xRy$ and $yRx$ imply $x=y$:
 
 $$\forall x,y\in X \left(xRy\wedge yRx \implies x=y\right)$$
 
-Some examples of this include the $\le$ relation,
-
+All partial orders satisfy this property, e.g. $\le$.
 </details>
 
 <details>
@@ -217,7 +216,7 @@ A relation is transitive if $xRy$ and $yRz$ means $xRz$:
 
 $$\forall x,y,z\in X \left(xRy \wedge yRz\implies xRz\right)$$
 
-Relations like $\le$ and similarity $\sim$ are transitive.
+All partial orders and equivalence relations, like $\le$ and $\sim$, are transitive.
 </details>
 
 <details>
@@ -226,7 +225,7 @@ A relation is trichotomus if for any two element in $X$ either $xRy$, $yRx$, or 
 
 $$(\forall x,y\in X)\ (xRy \oplus yRx \oplus x=y) \wedge \neg(xRy \wedge yRx \wedge x=y)$$
 
-The most common example of this is as a property of the real numbers under the $\lt$ or $\gt$ relations. In other words, any real number is either greater than, lesser than, <i>xor</i> equal to any other number.
+The most common example of this is as a property of the real numbers under the $\lt$ or $\gt$ relations. In other words, any real number is either greater than, lesser than, <i>xor</i> equal to any other number. All total orders must satisfy this property.
 </details>
 
 ## Calculus of Relations

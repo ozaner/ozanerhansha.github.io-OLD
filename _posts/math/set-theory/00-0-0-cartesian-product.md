@@ -110,7 +110,7 @@ $$S^I=\prod_{i\in I}S=\{f\mid f:I\to S\}$$
 <p></p></details>
 
 <details>
-<summary><h4 class="inline"><a id="empty-set">Empty Set</a></h4></summary>
+<summary><h4 class="inline" id="empty-set">Empty Set</h4></summary>
 A special case of the Cartesian product is when one of the sets $S_i=\emptyset$. When this happens the entire product collapses into the empty set. This is because there are simply no elements in $\emptyset$ to be mapped to by $f(i)$. We can state this as the following for any indexed family of sets $\{S_i\}_{i\in I}$:
 
 $$(\exists i\in I)\ S_i=\emptyset\implies \prod_{i\in I}S_i=\emptyset$$

@@ -31,3 +31,6 @@ In newer pokemon titles (generation VI and further), Spinda's spots are no longe
 
 #### Visual Duplicates
 In practice there are a bit fewer than $2^{32}$ different observable Spinda patterns because of the possibility of some of the spots overlapping with each other. Finding which personality values correspond with this probably isn't too difficult, but it would depend on which game the Spinda is being rendered in and how it displays its spots. As such, we simply make it our goal to catch all PV's of Spinda to deal with different spot rendering schemes as well as the odd hole in our Spindex where those overlapping Spinda would be.
+
+#### Basic research
+Equivalence classes of Visual duplicates across generations. Probabilities of all phenomoemna. PsuedoRNG results.

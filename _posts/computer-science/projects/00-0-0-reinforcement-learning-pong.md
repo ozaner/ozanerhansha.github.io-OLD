@@ -2,7 +2,7 @@
 layout: post
 title: Playing Atari Pong with Reinforcement Learning
 date: 2018-03-18
-tags: computer-science machine-learning projects
+tags: computer-science artificial-intelligence projects
 ---
 ## Background
 In 2013 the relatively new AI startup DeepMind released their paper [*Playing Atari with Deep Reinforcement Learning*](https://arxiv.org/pdf/1312.5602.pdf) detailing an artificial neural network that was able to play, not 1, but 7 Atari games with human and even super-human level proficiency. What made this paper so astounding was the fact that it was a single, general purpose neural network (a **general artificial intelligence** if you will) that could be trained to play all these games rather than 7 separate ones.
