@@ -73,7 +73,7 @@ Arguments in real life, and even in academic discourse/papers, are not usually g
 
 As a result, before we can analyze the logic of the argument (like its validity if it's deductive or its strength if it's inductive) we must first **extract** it from the reasoning. This is not a concrete process and some liberty must be taken to represent what the author of the passage/paper might have implicitly meant to be in their argument. Premises added by interpretation to keep the argument valid are called **suppressed premises**.
 
-Staying true to the source is paramount in a historical analysis of the ideas of past philosophers. However, when engaging in a debate with another, it is good practice to assume the strongest version of your interlocutor's argument rather than go through the formality of disproving them on a technicality or easily remedied premise. We call this the *the principle of charity*, or **charitable interpretation**, and abiding by it produces more productive and interesting debates.
+Staying true to the source is paramount in a historical analysis of the ideas of past philosophers. However, when engaging in a debate with another, it is good practice to assume the strongest version of your interlocutor's argument rather than go through the formality of disproving them on a technicality or easily remedied premise. We call this **charitable interpretation** and abiding by it produces more productive and interesting debates.
 
 <!-- *When told to extract an argument without being told what type of inference should be used, deduction is the most likely. This is simply because deduction is based on concrete, formal logic and thus is apt for rigorous analysis.* -->
 

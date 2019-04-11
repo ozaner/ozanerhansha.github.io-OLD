@@ -1,6 +1,6 @@
-<b>Ozaner Hansha</b><br>
+<b>Ozaner Hansha</b>
 September 17th, 2018<br>
-RUID: 188003484
+
 ## Honors Calculus III HW 1
 ### Exercise 1.2
 $\mathbf a:=(5,2)\ \ \mathbf b:=(2,-1)\ \ \mathbf c:=(1,1)$
