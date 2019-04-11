@@ -3,7 +3,7 @@ layout: page
 title: Papers & HW
 ---
 # Papers & HW
-Below is a collection of papers and homework I've written up for a some of my undergraduate classes.
+Below is a collection of papers and homework I've written up for some of my undergraduate classes.
 
 <!-- ## Table of Contents
 * [Fall 2018](#fall-2018)
