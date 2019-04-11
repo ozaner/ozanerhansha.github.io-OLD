@@ -17,7 +17,7 @@ Also regarding
 states if and only if there is something that it is to be that organism—something it is like for the
 organism."
 
-You can't get more hand-wavy than that. I don't blame Nagel, it's hard to formalize something that is claimed to be unformalizable by current standards. But this fact should highlight why Nagel should think twice about posing his argument as anything but an intuitive observation.
+You can't get more hand-wavy than that. I don't blame Nagel, it's hard to formalize something that is claimed to be unformalizable by current standards. But this fact should highlight why Nagel ought to think twice about posing his argument as anything but an intuitive observation.
 
 *Paragraph 5*<br>
 It seems that Nagel is just rephrasing this intuitive idea of there being something 'other' to consciousness as something 'physicalist theory' hasn't accounted for yet.

@@ -5,9 +5,9 @@ date: 2019-02-09
 tags: philosophy computer-science artificial-intelligence
 ---
 #### Background
-These are my thoughts, summary, and possibly a bit more, on Alan Turing's seminal 1950 paper ["Computing Machinery and Intelligence"](http://phil415.pbworks.com/f/TuringComputing.pdf). Each section (denoted by §) of this post corresponds to the same titled section of the paper.
+These are my thoughts, a summary, and possibly a bit more, on Alan Turing's seminal 1950 paper ["Computing Machinery and Intelligence"](http://phil415.pbworks.com/f/TuringComputing.pdf). Each section (denoted by §) of this post corresponds to the same titled section of the paper.
 
-As a quick background, the paper was published in the philosophy journal *Mind* in 1950 and laid a method of testing the 'intellectual capabilities' of a machine, the Turing test. The paper is a cornerstone of artificial intelligence, computer science, and the philosophy of the mind and the Turing test has influenced the thinking of these fields since its inception.
+As a quick background, the paper was published in the philosophy journal *Mind* in 1950 and laid out a method of testing the 'intellectual capabilities' of a machine, the Turing test. The paper is a cornerstone of artificial intelligence, computer science, and the philosophy of the mind. Even further, the Turing test has become a mainstay of popular culture and science fiction.
 
 ## §1. The Imitation Game
 Turing wastes no time in posing the question of interest: "Can machines think?" but then immediately points out that key to this question is the definition of 'machine' and 'think'. To avoid the murky issue of nailing down such definitions, Turing proposes an experiment called the *imitation game* or, as we know it today, the **Turing test**. The rules of the game are quite simple:

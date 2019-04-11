@@ -2,7 +2,7 @@
 layout: post
 title: On the Chinese Room Argument
 date: 2019-02-11
-tags: philosophy artificial-intelligence computer-science
+tags: philosophy artificial-intelligence
 ---
 <!-- On Searle's 'Minds, Brains, and Programs' -->
 John Searle's Chinese room argument is a staple of popular philosophy and in particular the philosophy of artificial intelligence. Laid out in his seminal paper [*Minds Brains, and Programs*](https://www.law.upenn.edu/live/files/3413-searle-j-minds-brains-and-programs-1980pdf) it, at least at first glance, appears to sum up our intuitive apprehensions in ascribing the seemingly rich qualia present in our own human experience to 'mere symbol manipulators' as Searle puts it. That said it is in my view, and the view of many scientists and philosophers, that the argument is deeply flawed in a variety of ways. Below I will detail 3 of my own objections to it.
