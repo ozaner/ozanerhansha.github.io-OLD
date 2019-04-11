@@ -23,4 +23,4 @@ plugins:          [jekyll-paginate]
 
 excerpt_separator: <!--more-->
 
-exclude: ['hw']
+exclude: ['/hw/*.md']
