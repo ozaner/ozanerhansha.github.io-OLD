@@ -5,7 +5,7 @@ date: 2019-02-11
 tags: philosophy artificial-intelligence
 ---
 <!-- On Searle's 'Minds, Brains, and Programs' -->
-John Searle's Chinese room argument is a staple of popular philosophy and in particular the philosophy of artificial intelligence. Laid out in his seminal paper [*Minds Brains, and Programs*](https://www.law.upenn.edu/live/files/3413-searle-j-minds-brains-and-programs-1980pdf) it, at least at first glance, appears to sum up our intuitive apprehensions in ascribing the seemingly rich qualia present in our own human experience to 'mere symbol manipulators' as Searle puts it. That said it is in my view, and the view of many scientists and philosophers, that the argument is deeply flawed in a variety of ways. Below I will detail 3 of my own objections to it.
+John Searle's Chinese room argument is a staple of popular philosophy and in particular the philosophy of artificial intelligence. Laid out in his seminal paper [*Minds, Brains, and Programs*](https://www.law.upenn.edu/live/files/3413-searle-j-minds-brains-and-programs-1980pdf) it, at least at first glance, appears to sum up our intuitive apprehensions in ascribing the seemingly rich qualia present in our own human experience to 'mere symbol manipulators' as Searle puts it. That said it is in my view, and the view of many scientists and philosophers, that the argument is deeply flawed in a variety of ways. Below I will detail 3 of my own objections to it.
 
 <!--more-->
 
@@ -40,22 +40,25 @@ Searle's Chinese room argument unlike other philosophical arguments, is based on
 
 [Richard Yee's Paper on the matter.](https://chineseroom.info/doc/Angels-Dancing-Chinese-Room_v13_2016.pdf)
 
-The gist of it is that Searle conflates the *universal Turing machine* with the more general *Turing machine*. Searle doesn't realize that the computer, the universal Turing machine, is Seale himself in the box. The Turing machine that actually does the Chinese processing is the one he is simulating by interpreting the English instructions given to him. Those English rules and the Chinese input together form the input to Searle, not just the Chinese.
+Th gist of it is that Searle fails to realize that there are actually 2 Turing machines in the Chinese room a *universal Turing machine* and the *Turing machine* it is simulating, and that he is conflating the two. The man (Searle) inside the box is the universal Turing machine. His input isn't just the Chinese text, but also the English instruction for how to manipulate that text.
+
+The Turing machine that actually does the Chinese processing is the one he is simulating by interpreting the English instructions given to him. This simulated Turing machine's input is indeed just the Chinese.
 
 So when he implements the Chinese translating program he is doing symbolic manipulation, but when he is interpreting the English rules to do that manipulation, he is using his 'intuition' and 'human understanding' to do so. Searle can only introspect on the universal computation he is performing, and the argument only focuses on this purely symbolic computation. But the actual computation of interest, the simulated Turing machine responding to Chinese, is not accessible to Searle. He wouldn't be able to know if it was processing inputs the way a real Chinese speaker might.
 
-Yee boils down the argument to this:
+He is analogous to a neuron in a human mind, or a transistor in a computer chip. Just because a neuron doesn't know Chinese doesn't mean the system it comprises doesn't. This is, a form of, the **systems reply** to the Chinese room argument.
+
+Searle has replied to this view:
+> Actually I feel somewhat embarrassed to give even this answer to the systems theory because the theory seems to me so implausible to start with. The idea is that while a person doesn’t understand Chinese, somehow the conjunction of that person and bits of paper might understand Chinese. It is not easy for me to imagine how someone who was not in the grip of an ideology would find the idea at all plausible.
+
+Clearly he still does not understand the theory and its implications as he still believes it is the human and paper that knows Chinese, not the Turing machine they simulate.
+
+Yee boils down his argument to this:
 > 1. If computation alone were sufficient for human understanding of Chinese, then in principle there would be a program for it.
 > 2. Let Searle execute such a program exactly as a computer would.
 > 3. In so doing, Searle detects no human understanding of Chinese. Hence, it does not occur in the room.
 
-#### The Systems Reply
-In this light the systems reply is the idea that what has the understanding of Chinese is the simulated Turing machine (the program). Searle could not be aware of this understanding as he is just a middleman, no different than a transistor or neuron.
-
-<!-- Searle's reply:
-> Actually I feel somewhat embarrassed to give even this answer to the systems theory because the theory seems to me so implausible to start with. The idea is that while a person doesn’t understand Chinese, somehow the conjunction of that person and bits of paper might understand Chinese. It is not easy for me to imagine how someone who was not in the grip of an ideology would find the idea at all plausible.
-
-He is actually an idiot. -->
+His argument is clearly shortsighted and one can make this even more apparent if they were to replace Searle with neuron and room with skull.
 
 ## Conclusion
 It would seem to me that the only thing Searle's argument formalizes is our inherent and seemingly unshakeable bias that if consciousness is a thing, then only humans/biological entities can have it. It is unfounded and ignores the mechanical construction of ourselves and of everything in the universe.

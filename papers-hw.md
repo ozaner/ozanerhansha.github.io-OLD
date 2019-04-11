@@ -14,7 +14,7 @@ Below is a collection of papers and homework I've written up for some of my unde
 #### Intro to Philosophy
 Below are the two papers I wrote for the class. They both take the form of an extraction then analysis of an argument.
 - [*On Clark's "Without Evidence or Argument"*](\hw\Fall%202018\Intro%20to%20Philosophy\philosophypaper1.pdf) - A paper that extracts and critiques Kelly J. Clark's argument against William Clifford's argument on the ethics of beliefs.
-- [*On Pereboom's Argument Against Moral responsibility*](\hw\Fall%202018\Intro%20to%20Philosophy\philosophypaper1.pdf) - An extraction and commentary on Derek Pereboom's 4 case argument from his article "Why We Have No Free Will and Can Live Without It."
+- [*On Pereboom's Argument Against Moral Responsibility*](\hw\Fall%202018\Intro%20to%20Philosophy\philosophypaper1.pdf) - An extraction and commentary on Derek Pereboom's 4 case argument from his article "Why We Have No Free Will and Can Live Without It."
 
 #### Intro to Math Reasoning
 A list of all my HW for the class. Both problems and solutions are typed up in LaTeX below:
@@ -36,7 +36,7 @@ A list of all my HW for the class. Both problems and solutions are typed up in L
 #### Numerical Analysis
 A list of all my HW for the class. Both problems and solutions are typed up in LaTeX below:
 
-- [HW1](\hw\Spring%202019\Num%20Analysis\hw1\hw1.pdf), [HW2](\hw\Spring%202019\Num%20Analysis\hw2\hw2.pdf), [HW3](\hw\Spring%202019\Num%20Analysis\hw2\hw3.pdf).
+- [HW1](\hw\Spring%202019\Num%20Analysis\hw1\hw1.pdf), [HW2](\hw\Spring%202019\Num%20Analysis\hw2\hw2.pdf), [HW3](\hw\Spring%202019\Num%20Analysis\hw3\hw3.pdf).
 
 <!-- #### Computer Architecture -->
 
