@@ -22,3 +22,5 @@ paginate:         5
 plugins:          [jekyll-paginate]
 
 excerpt_separator: <!--more-->
+
+exclude: ['hw']
