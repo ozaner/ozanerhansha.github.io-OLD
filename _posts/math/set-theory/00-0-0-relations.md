@@ -8,7 +8,7 @@ Relations are used to establish $n$-way relationships between elements of the sa
 
 <!-- Relations are some of the most fundamental objects to set theory and mathematics as a whole. They allow us to formalize the relationships between different mathematical objects and concepts in the broadest sense.  -->
 
-Relations with certain properties can be further collected to form particular mathematical structures like fields, ordered sets, and vector spaces that can be studied further.
+Relations with certain properties can be further collected to form particular mathematical structures like fields, ordered sets, and vector spaces who themselves can be studied.
 
 Some examples of relations include:
 - $x\le y$ Less than or equal to
@@ -36,7 +36,7 @@ $$R\equiv\left(\prod_{i=1}^nS_i,G\right)$$
 
 The set $S_i$ is called the $i$th **domain** of $R$ and the subset $G$ is called the **graph** of $R$. We can always extract the domains of $R$ from the Cartesian product by [factoring](\cartesian-product#factoring) them out.
 
-Note that this implies that (for $n\gt1$) any $n$-ary relation can also be considered an $(n-1)$-ary relation. That said, there is always a maximum $n$ for which an $n$-ary relation can be considered (i.e. the number of prime Cartesian factors).
+<!-- Note that this implies that (for $n\gt1$) any $n$-ary relation can also be considered an $(n-1)$-ary relation. That said, there is always a maximum $n$ for which an $n$-ary relation can be considered (i.e. the number of prime Cartesian factors). -->
 
 *e.g. the first domain of an $n$-ary relation $R$ is $\operatorname{CF}_1^n(\pi_1(R))$*
 

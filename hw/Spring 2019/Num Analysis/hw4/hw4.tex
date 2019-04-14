@@ -1,0 +1,85 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[margin=1.2in]{geometry}
+
+\begin{document}
+
+\title{Numerical Analysis HW \#4}
+\author{Ozaner Hansha}
+\date{April 18, 2019}
+\maketitle
+
+\section*{Problem 1}
+\textbf{Problem:} Use the composite trapezoid method with 4 equally sized subintervals to approximate the following integral:
+
+$$\int^2_1 x\ln x\ dx$$
+
+Also give an upper bound of the approximation's error.
+\\\\
+\textbf{Solution:} Splitting up our interval of $[1,2]$ into $n=4$ subintervals gives us the following 5 nodes (rounded to the 5th decimal place) with which to interpolate:
+
+$$\left(1,0\right), \left(1.25,0.27893\right), \left(1.5,0.60820\right), \left(1.75,0.97933\right), \left(2,1.38629\right)$$
+
+Recall that the composite trapezoid rule for a uniform distribution of 5 points is given by:
+
+$$\frac{\Delta x}{2}\left(y_0+2y_1+2y_2+2y_3+y_4\right)$$
+
+Leaving us with:
+
+$$\int^2_1 x\ln x\ dx\approx\frac{1}{8}\left(0+2(0.27893)+2(0.60820)+2(0.97933)+1.38629\right)=\boxed{0.63990}$$
+
+As for the error of this approximation, recall that the maximum absolute error of the trapezoid method is given by the following:
+
+$$\operatorname{error_{\text{max}}}=\frac{(\Delta x)^3n}{12}\max_{\xi\in[1,2]}|f''(\xi)|$$
+
+The second derivative of $f$ is given by:
+
+$$f(x)=x\ln x\ \ \ \ \ \ \ \  f'(x)=\ln x + 1\ \ \ \ \ \ \ \  f''(x)=\frac{1}{x}$$
+
+The second derivative, the inverse function, is a decreasing function over the positive reals. Since our interval $[1,2]\subseteq\mathbb R^+$, the maximum of this function is at the end point $x=1$. This gives us $f(1)=1$. Plugging this back into our error bound we arrive at:
+
+$$|\operatorname{error}|\le \frac{(\Delta x)^3n}{12}\max_{\xi\in[1,2]}|f''(\xi)|=\frac{(1)^3(4)}{12}(1)=\boxed{\frac{1}{3}}$$
+
+\section*{Problem 2}
+\textbf{Problem:} Use the composite Simpson rule with 2 equally sized subintervals to approximate the same integral as problem 1 and give an upper bound of the approximation's error.
+\\\\
+\textbf{Solution:} Splitting up our interval of $[1,2]$ into $n=2$ subintervals gives us the following 3 nodes (rounded to the 5th decimal place) with which to interpolate:
+
+$$\left(1,0\right), \left(1.3\overline{33},0.383576\right), \left(2,1.38629\right)$$
+
+Recall that the composite trapezoid rule for a uniform distribution of 5 points is given by:
+
+$$\frac{\Delta x}{2}\left(y_0+2y_1+2y_2+2y_3+y_4\right)$$
+
+Leaving us with:
+
+$$\int^2_1 x\ln x\ dx\approx\frac{1}{8}\left(0+2(0.27893)+2(0.60820)+2(0.97933)+1.38629\right)=\boxed{0.63990}$$
+
+As for the error of this approximation, recall that the maximum absolute error of the trapezoid method is given by the following:
+
+$$\operatorname{error_{\text{max}}}=\frac{(\Delta x)^3n}{12}\max_{\xi\in[1,2]}|f''(\xi)|$$
+
+The second derivative of $f$ is given by:
+
+$$f(x)=x\ln x\ \ \ \ \ \ \ \  f'(x)=\ln x + 1\ \ \ \ \ \ \ \  f''(x)=\frac{1}{x}$$
+
+The second derivative, the inverse function, is a decreasing function over the positive reals. Since our interval $[1,2]\subseteq\mathbb R^+$, the maximum of this function is at the end point $x=1$. This gives us $f(1)=1$. Plugging this back into our error bound we arrive at:
+
+$$|\operatorname{error}|\le \frac{(\Delta x)^3n}{12}\max_{\xi\in[1,2]}|f''(\xi)|=\frac{(1)^3(4)}{12}(1)=\boxed{\frac{1}{3}}$$
+
+\section*{Problem 3}
+\textbf{Problem:} Use Gaussian Integration with 2 nodes and weights to approximate the same integral as problem 1.
+\\\\
+\textbf{Solution:}
+
+\section*{Problem 4}
+\textbf{Problem:} Use both the composite trapezoid and Simpson rule to approximate the following integrals to a tolerance of $10^{-2},10^{-4},10^{-8}$ and record the number of intervals $n$ needed and the error for each.
+
+$$\int^1_0 (1-4x(1-x))^{\frac{1}{3}}\ dx\ \ \ \ \ \ \ \ \ \int^1_0 xe^{-x}\ dx$$
+
+Also use the Simpson rule on the second integral to a tolerance of $10^{-16}$ and see the results.
+\\\\
+\textbf{Solution:}
+
+\end{document}

@@ -12,10 +12,10 @@ As a quick background, the paper was published in the philosophy journal *Mind* 
 ## §1. The Imitation Game
 Turing wastes no time in posing the question of interest: "Can machines think?" but then immediately points out that key to this question is the definition of 'machine' and 'think'. To avoid the murky issue of nailing down such definitions, Turing proposes an experiment called the *imitation game* or, as we know it today, the **Turing test**. The rules of the game are quite simple:
 
-- There are two players A and B and an interrogator C.
+- There are two players $A$ and $B$ and an interrogator.
 - One of the two players is a computer and the other a human.
 - It is the interrogator's job (also a human) to determine which of the two is the computer and which the human.
-- To that end, the interrogator is able to communicate with A and B via text (a chatroom, teleprompter, etc.) and ask them any question they please.
+- To that end, the interrogator is able to communicate with $A$ and $B$ via text (a chatroom, teleprompter, etc.) and ask them any question they please.
 
 It is with this Turing test that we can rephrase our initial question of "Can a machine think?" to the more unambiguous "Can a machine fool the interrogator into thinking it is a human?" Of course, this still leaves 'machine' undefined but Turing will address that in §3.
 
@@ -29,7 +29,7 @@ It is in this paragraph that Turing addresses what constitutes a 'machine' that 
 
 The reader may, at first glance, think this to be too limiting a restriction to our question, but they would be wrong. Indeed the mathematical idealization that is the universal Turing machine, realized by electronic digital computers, represents the most general of information manipulation. The very notion of computation is defined by them. Any 'thinking' machine one could come up with (that could be constructed) would *necessarily* be less than or equivalent to a Turing machine.
 
-*In fact strictly less than, as the mathematical formulation of a Turing machine calls for a countably infinite amount of memory. That said, this distinction needn't concern us, as humans don't require a countably infinite amount of memory to function and Turing machine can only use a finite amount of memory at one time anyway.*
+*In fact strictly less than, as the mathematical formulation of a Turing machine calls for a countably infinite amount of memory. That said, this distinction needn't concern us as humans don't require a countably infinite amount of memory to function. Moreover Turing machines can only use a finite amount of memory at one time anyway.*
 
 #### Regarding Machine Learning
 Another interesting point Turing made when considering what machines would be applicable is:
@@ -43,7 +43,7 @@ Since Turing has written this paper an even more general model of computation ha
 
 That said, while quantum computers *are* more general than classical ones, they still cannot compute anything a classical one can't (in theory). The only difference between them is that quantum computers can solve a particular subset of problems (called BQP) faster than any classical computer.
 
-Why I put 'in theory' in parenthesis above is because while the difference between quantum and classical is one of efficiency and not of computability, it is the case that algorithms that would take longer than the lifespan of the universe to run on a classical computer could run in a tractable time on a quantum one. That said, while this *quantum speedup* is real and has a real world implications on what problems humanity could possibly solve, that speedup is most likely not necessary for solving the Turing test. Even if it was we can just as well prepend 'quantum' to all instances of 'computer' in the paper and continue without a worry.
+Why I put 'in theory' in parenthesis above is because while the difference between quantum and classical is one of efficiency and not of computability, it is the case that algorithms that would take longer than the lifespan of the universe to run on a classical computer could run in a tractable time on a quantum one. That said, while this *quantum speedup* is real and has a real world implications on what problems humanity could possibly solve, that speedup is most likely not necessary for solving the Turing test. Even if it was, we can just as well prepend 'quantum' to all instances of 'computer' in the paper and continue without a worry.
 
 #### Regarding the Computation of the Universe
 Even further, I'd argue that all things in the universe are computable. Indeed, quantum physics has shown us that there are only 2 types of events that can occur in the universe: 1) the *deterministic* unitary transformation of a quantum system and 2) the *indeterministic* collapse of these quantum systems described only by probabilities. This is exactly what a quantum algorithm is: a sequence of unitary transforms and measurements (i.e. collapses). It would stand to reason then that all real world phenomena are computable, that is, describable via some algorithm, even thought itself (unless you believe that it is something immaterial and thus not bound by the laws of physics).
@@ -53,7 +53,7 @@ All that said, this is probably overkill for our goal of simply imitating human 
 ## §4. Digital Computers
 Here Turing, sparing the reader the details, describes how a digital computer works using a simplified von Neumann model, i.e. using the concepts of store, executive unit, and control as well as conditionals and looping. The instructions such a machine could perform are very simple ones: write a 0 here, multiply these two numbers and store the result here, if there is a 1 here jump to this instruction, etc. I too will spare you the details as I don't feel it necessary to reiterate the rudiments of computing's foundations.
 
-A key take away he makes is that anything a computer can do a human could do as well, just much more slowly. Also of note, Turing briefly defines **programming**:
+A key take away of this exposition is that anything a computer can do a human could do as well, just much more slowly. Also of note, Turing briefly defines **programming** in this section:
 > "To 'programme a machine to carry out the operation A' means to put the appropriate instruction table into the machine so that it will do A."
 
 Indeed the programming we do today on our machines is, in a mathematically formal sense, equivalent to setting up the instruction table of a Turing machine.
@@ -65,25 +65,25 @@ After this, Turing notes that the notion of a 'digital computer' is not a new on
 Turing makes special note of that fact that, despite being totally mechanical rather than electrical like modern computers, the analytical engine is totally equivalent to any other digital computer. He does this because, apparently, some people attached special importance to the fact that both the human nervous system and digital computers are electrical. The existence of mechanical computers, then, rids us of any connection between the two based on some superstitious view of electricity. That said, it is no surprise that both nervous systems and computers use electricity as both systems require 'fast signaling' as Turing puts it.
 
 ## §5. Universality of Digital Computers
-Here Turing tells us that Turing machines are **discrete state machines** and elaborates on this concept. An important point he makes is that, given the inputs and current state of such a machine, its future behavior is fully determined. He likens this to the Laplacian view that if one knew the current state of the entire universe, one could use classical mechanics to calculate the future (aka Laplace's demon). The difference here, Turing notes, is that constructing a finite state machine is a bit more practical then measuring the entire current state of the universe.
+Here Turing tells us that Turing machines are **discrete state machines** and elaborates on this concept. An important point he makes is that, given the inputs and current state of such a machine, its future behavior is fully determined. He likens this to the Laplacian view that if one knew the current state of the entire universe, one could use classical mechanics to calculate the future (aka Laplace's demon). The difference here, Turing notes, is that constructing a finite state machine is quite a bit more practical then measuring the entire current state of the universe.
 
-Another important point he makes is that these discrete states, as opposed to the regular continuous states we see in nature, is that they are resistant to small changes, i.e. they are not chaotic. Utilizing the Laplacian demon analogy, he notes that something as small as an electron being in a slightly different position might lead to radically different results in the calculation of the universe's future state (a phenomena commonly referred to as the butterfly effect).
+Another important point he makes is that, unlike the regular continuous states we see in nature, these discrete states are resistant to small changes, i.e. they are not chaotic. Utilizing the Laplacian demon analogy, he notes that something as small as an electron being in a slightly different position might lead to radically different results in the calculation of the universe's future state (a phenomena commonly referred to as the butterfly effect).
 
 Discrete state machines don't suffer from this problem as it is easy to distinguish their states from one another due to there being a finite (or in the case of Turing machines, countably infinite) number of them. An obvious example of this is the representation of 0 and 1 in digital computers as electrical voltages. Even if a voltage that was neither 0 nor 1 was registered, it could be reasonably assumed that the intended voltage is whatever is closer to either of the valid states ($0.3\approx0$, $0.9\approx1$).
 
 *Of course, our modern view of physics does not allow for a Laplacian demon as, even if one got around the relativistic ambiguity of 'the current state of the universe', one would also have to contend with the fact that, on quantum scales, the universe and its laws are probablistic.*
 
-Moving along, Turing now takes a quick detour to talk about the number of representable states in a contemporary (1950) digital computer. He uses the 'Manchester Machine', the first electronic stored-program computer and housed at the University of Manchester, as a measuring stick. It had 174,380 bits (~21.8 kb) of storage meaning it could represent $2^{174380}\approx10^{52500}$.
+Moving along, Turing now takes a quick detour to talk about the number of representable states in a contemporary (1950) digital computer. He uses the 'Manchester Machine', the first electronic stored-program computer as a measuring stick. It had 174,380 bits (~21.8 kb) of storage meaning it could represent $2^{174380}\approx10^{52500}$ different states.
 
-Despite this complexity, it should be possible to predict what this computer will do by simply having a copy of its instruction table and current state. And if a human can compute the future states of this machine:
+Despite this complexity, it should be possible to predict what this computer will do by simply having a copy of its instruction table and current state. Further, if a human could compute the future states of this machine via the table, why not a computer:
 
 >"There is no reason why this calculation should not be carried out by means of a digital computer. Provided it could be carried sufficiently quickly the digital computer could mimic the behavior of any discrete state machine."
 
-And with this, Turing introduces us to the notion of a **universal Turing machine**. A Turing machine that can simulate any other Turing machine, even themselves. Digital computers, like the Manchester machine, are examples of these types of machines. Of course the effectiveness of this emulation will depend on what resources the emulator has at its disposal. There will always be an overhead to this sort of simulation, but not necessarily a prohibitively expensive one.
+And with this Turing introduces us to the notion of a **universal Turing machine**, a Turing machine that can simulate any other Turing machine, even themselves. Digital computers, like the Manchester machine, are examples of these types of machines. Of course the effectiveness of this emulation will depend on what resources the emulator has at its disposal. There will always be an overhead to this sort of simulation, but not necessarily a prohibitively expensive one.
 
-A useful consequences of this is that any computational task can be achieved with a single device with sufficient resources. There is no need, in principal, to create new and different computers for different tasks as they are all effectively equivalent.
+A useful consequences of this is that any computational task can be done using a single device with sufficient resources. There is no need, in principal, to create new and different computers for different tasks as they are all computationally equivalent.
 
-*Indeed you can (naively) think of your desktop computer as a universal Turing machine, and the stored programs it runs as simulated Turing machines. No need to buy a powerpoint machine when its program code can be stored instead.*
+*Indeed you can (naively) think of your desktop computer as a universal Turing machine, and the stored programs it runs as simulated Turing machines. No need to buy a powerpoint machine when its program code (i.e. instructions) can be stored and ran (i.e. simulated) instead.*
 
 Turing ends this section by simply restating the question posed in §3 "are there imaginable digital machines that can do well in the imitation game?" to the following, as he's shown, equivalent question:
 

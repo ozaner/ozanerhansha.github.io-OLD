@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1554779669 "hw3.xdv" "hw3.pdf" "hw3" 1554779670
-  "hw3.xdv" 1554779669 54004 cd7c6b5474d56c2ffd1c915d3ab9b7ee "xelatex"
+["xdvipdfmx"] 1555106238 "hw4.xdv" "hw4.pdf" "hw4" 1555106239
+  "hw4.xdv" 1555106238 26548 9255ad3b37f09034aeb1e5cfdd140df6 "xelatex"
   (generated)
-  "hw3.pdf"
-["xelatex"] 1554779668 "hw3.tex" "hw3.xdv" "hw3" 1554779670
+  "hw4.pdf"
+["xelatex"] 1555106237 "hw4.tex" "hw4.xdv" "hw4" 1555106239
   "c:/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1550107988 3332 103109f5612ad95229751940c61aada0 ""
   "c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1550106356 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1550106356 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -40,10 +40,9 @@
   "c:/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty" 1550108094 41645 0653033a985e06c69a2a9cea9a95e31a ""
   "c:/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty" 1550108199 2591 6404d0c7d28505fb38ce0d86c2e28ae7 ""
   "c:/texlive/2018/texmf-var/web2c/xetex/xelatex.fmt" 1550111751 3737617 e6b461995a0a9c065bab2e06ed3df6b3 ""
-  "hw3.aux" 1554779669 8 a94a2480d3289e625eea47cd1b285758 ""
-  "hw3.tex" 1554779667 9511 3ec85b3809c521f38f5effcb3c1e3ed4 ""
+  "hw4.aux" 1555106238 8 a94a2480d3289e625eea47cd1b285758 ""
+  "hw4.tex" 1555106237 4004 a77a5e21c7f45dfe708e3255d3d477da ""
   (generated)
-  "hw3.log"
-  "hw3.pdf"
-  "hw3.xdv"
-  "hw3.aux"
+  "hw4.aux"
+  "hw4.log"
+  "hw4.xdv"

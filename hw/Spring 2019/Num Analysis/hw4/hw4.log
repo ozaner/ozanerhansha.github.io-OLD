@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.2.13)  8 APR 2019 23:14
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.2.13)  12 APR 2019 17:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**hw3.tex
-(./hw3.tex
+**hw4.tex
+(./hw4.tex
 LaTeX2e <2018-12-01>
 (c:/texlive/2018/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
@@ -109,8 +109,8 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layouthoffset=\dimen118
 \Gm@layoutvoffset=\dimen119
 \Gm@dimlist=\toks20
-) (./hw3.aux)
-\openout1 = `hw3.aux'.
+) (./hw4.aux)
+\openout1 = `hw4.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
@@ -169,112 +169,35 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 11.
  (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 21--24
+Underfull \hbox (badness 10000) in paragraph at lines 18--21
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--48
 
  []
 
 [1
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 72--75
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 81--84
 
  []
 
-[2] [3]
-./hw3.tex:171: Missing $ inserted.
-<inserted text> 
-                $
-l.171 x_
-        i & y_i & 1\text{st Order Diff.} & 2\text{nd Order Diff.} & 3\text{r...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./hw3.tex:171: Extra }, or forgotten $.
-<template> \unskip \hfil }
-                          \hskip \tabcolsep \hskip -.5\arrayrulewidth \vrule...
-l.171 x_i &
-            y_i & 1\text{st Order Diff.} & 2\text{nd Order Diff.} & 3\text{r...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./hw3.tex:171: Missing $ inserted.
-<inserted text> 
-                $
-l.171 x_i &
-            y_i & 1\text{st Order Diff.} & 2\text{nd Order Diff.} & 3\text{r...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./hw3.tex:171: Missing } inserted.
-<inserted text> 
-                }
-l.171 x_i &
-            y_i & 1\text{st Order Diff.} & 2\text{nd Order Diff.} & 3\text{r...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./hw3.tex:171: Missing $ inserted.
-<inserted text> 
-                $
-l.171 x_i & y_
-              i & 1\text{st Order Diff.} & 2\text{nd Order Diff.} & 3\text{r...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./hw3.tex:171: Extra }, or forgotten $.
-<template> \unskip \hfil }
-                          \hskip \tabcolsep \hskip -.5\arrayrulewidth \vrule...
-l.171 x_i & y_i &
-                  1\text{st Order Diff.} & 2\text{nd Order Diff.} & 3\text{r...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./hw3.tex:171: Missing $ inserted.
-<inserted text> 
-                $
-l.171 x_i & y_i &
-                  1\text{st Order Diff.} & 2\text{nd Order Diff.} & 3\text{r...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./hw3.tex:171: Missing } inserted.
-<inserted text> 
-                }
-l.171 x_i & y_i &
-                  1\text{st Order Diff.} & 2\text{nd Order Diff.} & 3\text{r...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 192--195
-
- []
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 222--225
-
- []
-
-[5] (./hw3.aux) ) 
+[2] (./hw4.aux) ) 
 Here is how much of TeX's memory you used:
  1680 strings out of 492933
  20817 string characters out of 6136537
- 99618 words of memory out of 5000000
+ 95618 words of memory out of 5000000
  5726 multiletter control sequences out of 15000+600000
  10048 words of font info for 48 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 27i,11n,32p,518b,200s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,6n,32p,291b,200s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on hw3.xdv (5 pages, 54004 bytes).
+Output written on hw4.xdv (2 pages, 26548 bytes).

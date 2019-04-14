@@ -1,7 +1,7 @@
-PWD C:/Users/Weegee 64/Google Drive/Workspace/ozanerhansha.github.io/_hw/Num Analysis/hw3
+PWD C:/Users/Weegee 64/Google Drive/Workspace/ozanerhansha.github.io/hw/Spring 2019/Num Analysis/hw4
 INPUT c:/texlive/2018/texmf-var/web2c/xetex/xelatex.fmt
-INPUT hw3.tex
-OUTPUT hw3.log
+INPUT hw4.tex
+OUTPUT hw4.log
 INPUT c:/texlive/2018/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2018/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2018/texmf-dist/tex/latex/base/size10.clo
@@ -30,9 +30,9 @@ INPUT c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 INPUT c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 INPUT c:/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 INPUT c:/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
-INPUT hw3.aux
-INPUT hw3.aux
-OUTPUT hw3.aux
+INPUT hw4.aux
+INPUT hw4.aux
+OUTPUT hw4.aux
 INPUT c:/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map
 INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
@@ -64,5 +64,5 @@ INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
 INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-OUTPUT hw3.xdv
-INPUT hw3.aux
+OUTPUT hw4.xdv
+INPUT hw4.aux

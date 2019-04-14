@@ -1,6 +1,6 @@
 <b>Ozaner Hansha</b>
 September 17th, 2018
-
+RUID: 188003484
 ## Intro to Math Reasoning HW 1
 ### Problem 1
 Let's first phrase the problem in terms of sets. The set of all letters in the alphabet is denoted $\Omega=\{A,B,C,\cdots,Z\}$ and can be constructed in any way that doesn't collide with the set $\mathbb{Z}$. The set of consonants can be defined as $\Psi=\{\omega\in\Omega\mid\omega\not=A,E,I,O,U\}$ or in English: "the set of all letters that are not vowels."
