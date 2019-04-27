@@ -27,7 +27,7 @@ The algorithm goes something like this:
 Reconstructing the images into files is as simple as reversing this process.
 
 #### Side Note on Function Mapping
-You can think of the program as a function that maps the set of all [finite bit strings](https://en.wikipedia.org/wiki/Kleene_star) to the set of all square images. Because this image is a square of pixels with 4 layers (red, green, blue, and alpha) we can represent it as the set of all rank 3 tensors with size $n\times n\times 4$ and integer elements from $0$ to $255$:
+You can think of the program as a *one-to-one* function that maps the set of all [finite bit strings](https://en.wikipedia.org/wiki/Kleene_star) to the set of all square images. Because this image is a square of pixels with 4 layers (red, green, blue, and alpha) we can represent it as the set of all rank 3 tensors with size $n\times n\times 4$ and integer elements from $0$ to $255$:
 
 $$\text{FileToPNG}:\{0,1\}^+\to \left(\mathbb{N}_{255}\right)^{n\times n\times 4}$$
 

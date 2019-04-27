@@ -46,11 +46,11 @@ $$\text{error}_n=-\frac{(b-a)^3}{12n^2}f''(\xi)=-\frac{(\Delta x)^2(b-a)}{12}f''
 
 An asymptotic formulation is given by:
 
-$$\text{error}_n = -\frac{(\Delta x)^2}{12} \big[ f'(x_n)-f'(x_0) \big] + O((\Delta x)^{3})$$
+$$\text{error}_n = -\frac{(\Delta x)^2(b-a)}{12} \big[ f'(x_n)-f'(x_0) \big] + O((\Delta x)^{3})$$
 
 The maximum magnitude of the error is given by:
 
-$$|\text{max error}_n|=\frac{(\Delta x)^2}{12}\max_{a\le\xi\le b}|f''(\xi)|$$
+$$|\text{max error}_n|=\frac{(\Delta x)^2(b-a)}{12}\max_{a\le\xi\le b}|f''(\xi)|$$
 
 ## Simpson's Rule
 Simpson's rule uses a piecewise quadratic interpolation to approximate the function rather than a linear one. We then can easily integrate that quadratic function like so:

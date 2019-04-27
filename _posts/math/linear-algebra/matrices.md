@@ -1,17 +1,45 @@
 ---
 layout: post
 title: Matrices
-date: 2018-09-04
+date: 2019-04-15
 tags: math linear-algebra
 ---
-A matrix is a $2$-dimensional array of elements, usually from a ring or field.
+A matrix is a $2$-dimensional array of elements from a ring. It is a key object of study in linear algebra and is ubiquitous in mathematics, computer science, physics, and most other fields of science.
+
+All matrices have 2 dimensions and referred to by those dimensions, e.g. "a $3\times 2$ matrix of real numbers". While the entries in a matrix can be any element of a ring, the ones most used are the real and complex numbers.
 
 <!--more-->
 
 ## Definition
-An $m\times n$ matrix $\mathbf A$ over some set $S$ is defined as a function from the [cartesian product](\cartesian-product) of $\mathbb{N}_n$ and $\mathbb{N}_m$ to $S$:
+An $m\times n$ matrix $\mathbf A$ over a ring $R$ is defined as a function from the [cartesian product](\cartesian-product) of the two integer intervals $[1..m]$ and $[1..n]$ to the ring $R$:
 
-$$\mathbf A:\mathbb{N}_m\times \mathbb{N}_n\to S$$
+$$\mathbf A:[1..m]\times [1..n]\to R$$
+
+## Notation
+The $(i,j)$th **entry** of a matrix $\mathbf A$ is the output of the matrix given the inputs, or **indices**, $i$ and $j$. It can be denoted in any of the following ways:
+
+$$\mathbf A(i,j)\equiv\mathbf A_{ij}\equiv a_{ij}$$
+
+*When necessary, e.g. to disambiguate multidigit indices, a comma is added between the indices: $a_{i,j}$.*
+
+Matrices are often written in an explicit form, with each entry appearing in a rectangular array in the $i$th row and $j$th column. They can also utilize the more informal ellipses $\cdots$ notation when the pattern of their entries is clear. In general, this looks like:
+
+$$\mathbf A =\underbrace{\begin{bmatrix}
+a_{11} & a_{12} & \dots & a_{1j} & \dots & a_{1n} \\
+a_{21} & a_{22} & \dots & a_{2j} & \dots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+a_{i1} & a_{i2} & \dots & a_{ij} & \dots & a_{in} \\
+\vdots & \vdots & \vdots & \vdots & \ddots & \vdots &\\
+a_{m1} & a_{m2} & \dots & a_{mj} & \dots & a_{mn}
+\end{bmatrix}}_{n \text{ columns}}
+\left.\vphantom{\begin{bmatrix}
+a_{11} & a_{12} & \dots & a_{1j} & \dots & a_{1m} \\
+a_{21} & a_{22} & \dots & a_{2j} & \dots & a_{2m} \\
+\vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+a_{i1} & a_{i2} & \dots & a_{ij} & \dots & a_{im} \\
+\vdots & \vdots & \vdots & \vdots & \ddots & \vdots &\\
+a_{n1} & a_{n2} & \dots & a_{nj} & \dots & a_{nm}
+\end{bmatrix}}\right\}\scriptsize{m\text{ rows}}$$
 
 ## notes
 - $M^T+N^T=(M+N)^T$ idempotency
@@ -20,32 +48,6 @@ $$\mathbf A:\mathbb{N}_m\times \mathbb{N}_n\to S$$
 - vector multi, matrix multi
 - tensor multi
 - generalized def
-
-## Notation
-Shown below is the $m\times n$ matrix $\mathbf A$. When a matrix is given *explicitly* it is written in this form with elements in each entry.
-
-$$
-\mathbf A = \underbrace{
-      \begin{bmatrix}
-      a_{11} & a_{12} & \dots & a_{1j} & \dots & a_{1m} \\
-      a_{21} & a_{22} & \dots & a_{2j} & \dots & a_{2m} \\
-      \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
-      a_{i1} & a_{i2} & \dots & a_{ij} & \dots & a_{im} \\
-      \vdots & \vdots & \vdots & \vdots & \ddots & \vdots &\\
-      a_{n1} & a_{n2} & \dots & a_{nj} & \dots & a_{nm}
-      \end{bmatrix}}_{m \text{ columns}}
-
-      \left.\vphantom{\begin{bmatrix}
-      a_{11} & a_{12} & \dots & a_{1j} & \dots & a_{1m} \\
-      a_{21} & a_{22} & \dots & a_{2j} & \dots & a_{2m} \\
-      \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
-      a_{i1} & a_{i2} & \dots & a_{ij} & \dots & a_{im} \\
-      \vdots & \vdots & \vdots & \vdots & \ddots & \vdots &\\
-      a_{n1} & a_{n2} & \dots & a_{nj} & \dots & a_{nm}
-      \end{bmatrix}}\right\}\scriptsize{n\text{ rows}}
-$$
-
-*The ellipses denote that an unspecified amount of entries have passed.*
 
 #### Dimensions of a Matrix
 A matrix, being a $2$-dimensional array, has $2$ dimensions. The number of columns in the matrix is usually denoted $m$ while the number of rows is denoted $n$. The set of all $m\times n$ matrices on a set $S$ is denoted:

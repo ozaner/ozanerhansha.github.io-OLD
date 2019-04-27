@@ -14,7 +14,7 @@ Below is a collection of papers and homework I've written up for some of my unde
 #### Intro to Philosophy
 Below are the two papers I wrote for the class. They both take the form of an extraction then analysis of an argument.
 - [*On Clark's "Without Evidence or Argument"*](\hw\Fall%202018\Intro%20to%20Philosophy\philosophypaper1.pdf) - A paper that extracts and critiques Kelly J. Clark's argument against William Clifford's argument on the ethics of beliefs.
-- [*On Pereboom's Argument Against Moral Responsibility*](\hw\Fall%202018\Intro%20to%20Philosophy\philosophypaper1.pdf) - An extraction and commentary on Derek Pereboom's 4 case argument from his article "Why We Have No Free Will and Can Live Without It."
+- [*On Pereboom's Argument Against Moral Responsibility*](\hw\Fall%202018\Intro%20to%20Philosophy\philosophypaper2.pdf) - An extraction and commentary on Derek Pereboom's 4 case argument from his article "Why We Have No Free Will and Can Live Without It."
 
 #### Intro to Math Reasoning
 A list of all my HW for the class. Both problems and solutions are typed up in LaTeX below:
@@ -26,17 +26,17 @@ A list of all my HW for the class. Both problems and solutions are typed up in L
 #### Calculus III
 A list of all my HW for the class. Both problems and solutions are typed up in LaTeX below:
 
-- [HW1](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw1.pdf),  [HW2](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw2.pdf), [HW3](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw3.pdf), [HW4](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw4.pdf), [HW5](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw5.pdf), [HW6](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw6.pdf), [HW7](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw7.pdf), [HW8](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw8.pdf), [HW9](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw9.pdf), [Challenge HW1](\hw\Fall%202018\Calculus%20III\PDFs\calc3challengehw1.pdf), [Challenge HW 3](\hw\Fall%202018\Calculus%20III\PDFs\calc3challengehw3.pdf).
+- [HW1](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw1.pdf),  [HW2](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw2.pdf), [HW3](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw3.pdf), [HW4](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw4.pdf), [HW5](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw5.pdf), [HW6](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw6.pdf), [HW7](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw7.pdf), [HW8](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw8.pdf), [HW9](\hw\Fall%202018\Calculus%20III\PDFs\calc3hw9.pdf), [Challenge HW1](\hw\Fall%202018\Calculus%20III\PDFs\calc3challengehw1.pdf), [Challenge HW3](\hw\Fall%202018\Calculus%20III\PDFs\calc3challengehw3.pdf).
 
 ## Spring 2019
 
 #### The Ghost in the Machine
-- [*Atari Pong AI via Reinforcment Learning*](\hw\Fall%202018\Intro%20to%20Philosophy\philosophypaper1.pdf) - A paper that gives a rudimentary overview of the construction of my [Atari Pong AI](\reinforcement-learning-pong) and neural networks in general then uses that to inform questions of the effect of public perception of AI in the future.
+- [*Atari Pong AI via Reinforcment Learning*](\hw\Fall%202018\Intro%20to%20Philosophy\philosophypaper1.pdf) - A paper that gives a rudimentary overview of the construction of my [Atari Pong AI](\reinforcement-learning-pong) and of neural networks in general, then uses that to inform questions on the consequences of the public perception of AI in the future.
 
 #### Numerical Analysis
 A list of all my HW for the class. Both problems and solutions are typed up in LaTeX below:
 
-- [HW1](\hw\Spring%202019\Num%20Analysis\hw1\hw1.pdf), [HW2](\hw\Spring%202019\Num%20Analysis\hw2\hw2.pdf), [HW3](\hw\Spring%202019\Num%20Analysis\hw3\hw3.pdf).
+- [HW1](\hw\Spring%202019\Num%20Analysis\hw1\hw1.pdf), [HW2](\hw\Spring%202019\Num%20Analysis\hw2\hw2.pdf), [HW3](\hw\Spring%202019\Num%20Analysis\hw3\hw3.pdf), [HW4](\hw\Spring%202019\Num%20Analysis\hw4\hw4.pdf).
 
 <!-- #### Computer Architecture -->
 

@@ -2,7 +2,7 @@
 layout: post
 title: Proportionality
 date: 2018-08-17
-tags: math relations
+tags: math relations linear-algebra
 ---
 ## A Review of Proportionality
 Recall that two expressions, which we can consider **functions**, are proportional if there exists some constant that when multiplied by one of the functions makes them equivalent. This relationship is usually denoted $y\propto x$ or equivalently as $y=kx$ where $k$ is some **proportionality constant**.
