@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1556347426 "paper.xdv" "paper.pdf" "paper" 1556347665
-  "paper.xdv" 1556347426 37580 309589aeab2e2990dfb80fc6595882d3 "xelatex"
+["xdvipdfmx"] 1557125282 "paper.xdv" "paper.pdf" "paper" 1557125283
+  "paper.xdv" 1557125282 137208 509045600aeb52e34b942235d97f19f4 "xelatex"
   (generated)
   "paper.pdf"
-["xelatex"] 1556347424 "paper.tex" "paper.xdv" "paper" 1556347665
+["xelatex"] 1557125280 "paper.tex" "paper.xdv" "paper" 1557125283
   "c:/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1550107988 3332 103109f5612ad95229751940c61aada0 ""
   "c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1550106356 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1550106356 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -34,8 +34,8 @@
   "c:/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty" 1550108199 2591 6404d0c7d28505fb38ce0d86c2e28ae7 ""
   "c:/texlive/2018/texmf-dist/tex/latex/setspace/setspace.sty" 1550110519 22913 a27d7908fc6f0385466454a966a316eb ""
   "c:/texlive/2018/texmf-var/web2c/xetex/xelatex.fmt" 1550111751 3737617 e6b461995a0a9c065bab2e06ed3df6b3 ""
-  "paper.aux" 1556347425 665 a73ff9bb3892c13f63a6c82c79e8b65c ""
-  "paper.tex" 1556347665 4031 f6c0daae9f433e6b968627d9620aa2d4 ""
+  "paper.aux" 1557125282 1241 a29928617304b91da0e120727487a80f ""
+  "paper.tex" 1557125280 14258 82a4ecd486ec91d4dd9c32fa5a28a33c ""
   (generated)
   "paper.xdv"
   "paper.log"

@@ -113,7 +113,7 @@ $$\textbf{d} = \sum_{n=0}^{\infty}a_n\pi^{2n+1}$$
 
 Where $a_n$ is a sequence of rational numbers found by solving the above equation.
 
-*The numerators of the Kaplan Series is sequence [A302977](https://oeis.org/A302977) in the OEIS.*
+*The numerators of the Kaplan Series is sequence [A302977](https://oeis.org/A302977) in the OEIS, and the denominators are sequence [A306254](https://oeis.org/A306254)*
 
 <!-- Proof of Kaplan's Series -->
 <details>

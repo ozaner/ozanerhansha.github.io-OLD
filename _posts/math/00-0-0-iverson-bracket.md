@@ -19,7 +19,7 @@ Below I give two formal definitions of the Iverson bracket. One for the proposit
 ## Propositional Definition
 We can think of the notation $[P]$ as being shorthand for the following:
 
-$$[P]\equiv\bigcup\{x\in 2\mid(P\wedge x=1) \vee (\neg P\wedge x=0)\}$$
+$$[P]\equiv\bigcup\{x\in 2\mid(x=1\wedge P) \vee (x=0\wedge\neg P)\}$$
 
 *Where $2=\\{0,1\\}$ as per its construction in the [natural numbers](\natural-numbers).*
 
