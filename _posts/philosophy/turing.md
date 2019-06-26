@@ -9,6 +9,8 @@ These are my thoughts, summary, and possibly a bit more, on Alan Turing's semina
 
 As a quick background, the paper was published in the philosophy journal *Mind* in 1950 and laid out a method of testing the 'intellectual capabilities' of a machine: the Turing test. The paper is a cornerstone of artificial intelligence, cognitive science, and the philosophy of the mind. Even further, the Turing test has become a mainstay of popular culture and science fiction.
 
+<!--more-->
+
 ## §1. The Imitation Game
 Turing wastes no time in posing the question of interest: "Can machines think?" but then immediately points out that key to this question is the definition of 'machine' and 'think'. To avoid the murky issue of nailing down such definitions, Turing proposes an experiment called the *imitation game* or, as we know it today, the **Turing test**. The rules of the game are quite simple:
 
@@ -27,11 +29,11 @@ Another important point here is that there may be some game theoretic trickery g
 ## §3. The Machines concerned in the Game
 It is in this paragraph that Turing addresses what constitutes a 'machine' that can take part in the imitation game. After mulling the possibility of simply rearing a human (maybe even in such a way as to have arisen from a single cell and not normal procreation), Turing restricts the kind of machine we will be focusing on to the **universal Turing machine** or, as he refers to it in the paper, the **digital computer**.
 
-The reader may, at first glance, think this to be too limiting a restriction to our question, but they would be wrong. Indeed the mathematical idealization that is the universal Turing machine, realized by electronic digital computers, represents the most general of information manipulation. The very notion of computation is defined by them. Any 'thinking' machine one could come up with (that could be constructed) would *necessarily* be less than or equivalent to a Turing machine.
+The reader may, at first glance, think this to be too limiting a restriction to our question, but they would be wrong. Indeed the mathematical idealization that is the universal Turing machine, realized by electronic digital computers, represents the most general\* of information manipulation. The very notion of computation is defined by them. Any 'thinking' machine one could come up with (that could be constructed) would *necessarily* be less than or equivalent to a Turing machine.
 
 *In fact strictly less than, as the mathematical formulation of a Turing machine calls for a countably infinite amount of memory. That said, this distinction needn't concern us as humans don't require a countably infinite amount of memory to function. Moreover Turing machines can only use a finite amount of memory at one time anyway.*
 
-#### Regarding Quantum Computers
+#### \*Regarding Quantum Computers
 In the time since Turing has written this paper an even more general model of computation has been discovered, namely the **quantum Turing machine**. This model of computation is concerned with the manipulation of quantum information and, unless some reality shattering new physics is discovered, it would appear that this is the most general notion of computation in the universe (more on that below).
 
 That said, while quantum computers *are* more general than classical ones, they still cannot compute anything a classical one can't (in theory). The only difference between them is that quantum computers can solve a particular subset of problems, called BQP, faster than any classical computer.
@@ -39,7 +41,7 @@ That said, while quantum computers *are* more general than classical ones, they 
 Why I put 'in theory' in parenthesis above is because while the difference between quantum and classical is one of efficiency and not of computability, it is the case that algorithms that would take longer than the lifespan of the universe to run on a classical computer could run in a tractable time on a quantum one. That said, while this *quantum speedup* is real and has real world implications on what problems humanity could possibly solve, that speedup is most likely not necessary for solving the Turing test. Even if it was, we can just as well prepend 'quantum' to all instances of 'computer' in the paper and continue without a worry.
 
 #### Regarding the Computation of the Universe
-Taking quantum computing further, I'd argue that all things in the universe are computable. Indeed, quantum physics has shown us that there are only 2 types of events that can occur in the universe: 1) the *deterministic* unitary transformation of a quantum system and 2) the *indeterministic* collapse of these quantum systems described only by probabilities. This is exactly what a quantum algorithm is: a sequence of unitary transforms and measurements (i.e. collapses). It would stand to reason, then, that all real world phenomena are computable, that is describable via some algorithm. Even thought itself (unless you believe that it is something immaterial and thus not bound by the laws of physics).
+Taking quantum computing further, I'd argue that all things in the universe are computable. Indeed, quantum physics has shown us that there are only 2 types of events that can occur in the universe: 1) the *deterministic* unitary transformation of a quantum system and 2) the *indeterministic* collapse of these quantum systems described only by probabilities. This is exactly what a quantum algorithm is: a sequence of unitary transforms and measurements (i.e. collapses). It would stand to reason, then, that all real world phenomena are computable, that is describable via some algorithm. Even thought itself (unless you believe that it is something immaterial and thus not bound by the laws of physics). (See [*"On the CTD Principle's Implications for the Mind"*](\hw\Spring%202019\Ghost%20in%20Machine\ctdpaper\main.pdf))
 
 *In regards to the gap between the uncountably infinite dimensional states real world quantum phenomena can hold as opposed to the finite dimensional states of quantum computers, I would qualify my statement as "all things in the universe are computable to a desired precision." Although I may not even need such a qualification if there are hard limits on the scales that can be observed.*
 
@@ -57,7 +59,7 @@ In the next paragraph, Turing briefly touches on the notion of probabilistic Tur
 
 After this, Turing notes that the notion of a 'digital computer' is not a new one, and goes back all the way to Charles Babbage and his plans for an [*Analytical Engine*](https://en.wikipedia.org/wiki/Analytical_Engine) in 1837. His computer, however, was unfortunately never realized as he failed garner sufficient funding. In particular there wasn't much of a need for digital computers back in the 1800s, especially compared to Turing's era of code breaking brought on by WWII.
 
-Turing makes special note of that fact that, despite being totally mechanical rather than electrical like modern computers, the analytical engine is totally equivalent to any other digital computer. He does this because, apparently, some people attached special importance to the fact that both the human nervous system and digital computers are electrical. The existence of mechanical computers, then, rids us of any connection between the two based on some superstitious view of electricity. That said, it is no surprise that both nervous systems and computers use electricity as both systems require 'fast signaling' as Turing puts it.
+Turing makes special note of the fact that, despite being totally mechanical rather than electrical like modern computers, the analytical engine is totally equivalent to any other digital computer. He does this because, apparently, some people attached special importance to the fact that both the human nervous system and digital computers are electrical. The existence of mechanical computers, then, rids us of any connection between the two based on some superstitious view of electricity. That said, it is no surprise that both nervous systems and digital computers use electricity as both systems require 'fast signaling' as Turing puts it.
 
 ## §5. Universality of Digital Computers
 #### Discrete State Machines
@@ -80,7 +82,7 @@ And with this Turing introduces us to the notion of a **universal Turing machine
 
 A useful consequences of this is that any computational task can be done using a single device with sufficient resources. There is no need, in principal, to create new and different computers for different tasks as they are all computationally equivalent.
 
-*Indeed you can (naively) think of your desktop computer as a universal Turing machine, and the stored programs it runs as simulated Turing machines. No need to buy a powerpoint machine when its program code (i.e. instructions) can be stored and ran (i.e. simulated) instead.*
+*Indeed you can naively think of your desktop computer as a universal Turing machine, and the stored programs it runs as simulated Turing machines. No need to buy a powerpoint machine when its program code (i.e. instructions) can be stored and ran (i.e. simulated) instead.*
 
 Turing ends this section by simply restating the question posed in §3 "are there imaginable digital machines that can do well in the imitation game?" to the following, as he's shown, equivalent question:
 
@@ -92,7 +94,7 @@ We can see that the question is becoming more and more concrete. That said, I fe
 At this point Turing is finally done providing the necessary background in §3-§5 and can now proceed to the philosophical content of the paper. Namely, we can now discuss whether a machine can do well in the imitation game and how that relates to the original question of "Can a machine think?"
 
 Before Turing continues to the possible objections, he gives his own opinion on the question:
-> I believe that in about fifty years' time it will be possible, to programme computers, with a storage capacity of about 109, to make them play the imitation game so well that an average interrogator will not have more than 70 per cent chance of making the right identification after five minutes of questioning.
+> I believe that in about fifty years' time it will be possible, to programme computers, with a storage capacity of about $10^9$, to make them play the imitation game so well that an average interrogator will not have more than 70 per cent chance of making the right identification after five minutes of questioning.
 
 To be sure, his predication was certainly off (50 years from the time of writing is the year 2000). We have only recently begun to understand the techniques, namely machine learning and natural language processing, that could make such a prediction come true. That said, with the giant strides made in these fields everyday, it may be the case that Turing will only be 25 to 30 years off the mark.
 
@@ -103,9 +105,9 @@ While it is hard to judge exactly what Turing's sentiment is from this small pas
 
 And indeed this should be the case. These robots, just like humans, are totally determined machines that run based off of totally physical (and crucially, computable) processes. There is no room for anything that could differentiate a computer's 'thoughts' from that of a human other than one being made of flesh and the other silicon. Even then, that flesh could be simulated.
 
-The notion of 'thinking', however defined, as anything special or reserved for humans is certainly nothing but an evolved/culturally learned propensity for humans to think of themselves as possessing some ephemeral 'soul' or 'free will'.
+The notion of 'thinking', however defined, as anything special or reserved for humans is certainly nothing but an evolved/culturally learned propensity for humans to think of themselves as possessing some ephemeral 'soul' or 'free will'. To this sentiment I point to the byproduct theory of religion.
 
-In any case, we now move on to the bulk of the paper: the objections. Turing considers 7 in total and after each provides his rebuttal.
+In any case, we now move on to the second half of the paper: the objections. Turing considers 7 in total and after each provides his rebuttal.
 
 #### 1. The Theological Objection
 Turing phrases the theological objection as follows:
@@ -119,12 +121,12 @@ Besides these immediate pushbacks, Turing attempts to level with the type of per
 
 All that said, Turing still notes that he is 'not impressed' by theological arguments of any kind. He gives the example of the many inconsistencies in the Bible about the history and mechanics of the earth. In particular the Copernican theory of geocentrism.
 
-I applaud Turing's attempt to help rationalize the notion of machine thinking to a religious reader. I think it should be quite clear that the very notion of a soul (and all things theological) is nothing but a product of folk psychology. With that folk psychology being propped up by antiquated philosophy, evolution, and culture.
+I applaud Turing's attempt to help rationalize the notion of machine thinking to a religious reader. I think it should be quite clear that the very notion of a soul (and all things theological) is nothing but a product of folk psychology. With that folk psychology being propped up by evolution, culture, and antiquated philosophy. (See [*"On Bloom's "Is God an Accident?""*](\hw\Spring%202019\humannaturepaper\paper.pdf))
 
 #### 2. The 'Heads in the Sand' Objection
 >"The consequences of machines thinking would be too dreadful. Let us hope and believe that they cannot do so."
 
-While nobody would actually phrase their objection like this, Turing notes, it certainly captures the underlying thought behind many people's apprehension of considering 'thinking' machines. If humans are not unique in their capacity to think, what makes us superior? Nothing, it would seem. We can see that this objection is closely connected to the first (and equally ridiculous in my view).
+While nobody would actually phrase their objection like this, Turing notes, it certainly captures the underlying thought behind many people's apprehension of considering 'thinking' machines. If humans are not unique in their capacity to think, what makes us superior? Nothing, it would seem. We can see that this objection is closely connected to the first (and equally ridiculous).
 
 Turing, quite rightly so, doesn't feel the need to defend against this objection, sentiment really, and even quips:
 >I do not think that this argument is sufficiently substantial to require refutation. Consolation would be more appropriate: perhaps this should be sought in the transmigration of souls.
@@ -132,24 +134,94 @@ Turing, quite rightly so, doesn't feel the need to defend against this objection
 *At least I think he meant it to be a quip...*
 
 #### 3. The Mathematical Objection
+This objection regards the fact that, as Gödel showed, any consistent logical system has statements that it cannot prove. Turing phrases this in terms of his own result on the halting problem, that is to say, there exists problems that a Turing machine could not solve. This, the argument posits, shows a deficiency in computer thinking where there appears to be none in human thinking.
 
+Turing rebuttals that while any Turing machine has limitations, any importance to this fact would be accompanied by an underlying assumption that humans don't also have these limitations. Humans also give wrong answers much of the time.
+> There would be no question of triumphing simultaneously over
+all machines. In short, then, there might be men cleverer than any given machine, but
+then again there might be other machines cleverer again, and so on.
+
+Turing gives a compelling justification but, personally, I think he can take it much farther. This particular objection really boils my blood as it seem so ridiculous. Of course there are unsolvable and unprovable problems. Gödel indeed showed that there is no consistent system (of useful power) that can simultaneously prove its consistency. But you'd be crazy to think that humans, physical systems, are above these limitations. If they were they'd be bona fide hypercomputers (putting this in terms of Turing's results) and we could use human minds to disprove Gödel and prove unprovable statements.
+
+Humans thoughts and actions don't run into these logical limits because humans don't make true/provable statements. They are simply biological systems that respond to stimuli. Anything a human can do or be is under the purview of computation as they are totally physical systems. Just because a human mind doesn't have a Von Neumann architecture doesn't mean it can't be simulated by one, nor does it give it some magical power over them.
+
+Some philosophers, who don't understand the physical significance of computation, point to humans' ability to change goals, think about many things at once, or some other feature of the mind, and that because the computer on their desktop doesn't seem to do those things that humans have some true physical advantage over them. This is simply not true. A human being changing goals or realizing it made an error is also just a series of computations. Only in that case those computations were setup by evolution to have those features. A computer could just as well be programmed to do the same thing. There's no magical hyperturing 'soul' at the helm allowing the human mind to 'transcend' computation. If you believe that then you might as well tout objection 1. (Again I point to my [paper](\hw\Spring%202019\Ghost%20in%20Machine\ctdpaper\main.pdf) on the CTD Principle).
 
 #### 4. The Argument from Consciousness
+Turing summarizes this objection via a quote by Professor Geoffrey Jefferson:
+
+> "Not until a machine can write a sonnet or compose a concerto because of thoughts and emotions felt, and not by the chance fall of symbols, could we agree that machine equals brain-that is, not only write it but know that it had written it. No mechanism could feel (and not merely artificially signal, an easy contrivance) pleasure at its successes, grief when its valves fuse, be warmed by flattery, be made miserable by its mistakes, be charmed by sex, be angry or depressed when it cannot get what it wants."
+
+Turing recognizes this as a flat out denial of the Turing test and notes that, at least taken to the extreme, Lister's view is that of the solipsist. That is to say "the only way by which one could be sure that machine thinks is to be the machine and to feel oneself thinking."
+
+This point of view, while understandable, is hardly productive nor is it what we (I assume) usually believe. Humans usually believe that the humans around them who seem to have internal thoughts and feelings, which can't be verified, really do have them. As Turing puts it we "have the polite convention that everyone thinks".
+
+Turing gives Jefferson, and those who hold similar views, the benefit of the doubt and assume they too hold this polite convention. If this is the case he believes it is possible to sway their opinions on the matter by demonstrating that a computer could actually demonstrate intelligence *viva voce*. That is, via an oral interrogation:
+
+- Interrogator: In the first line of your sonnet which reads "Shall I compare thee to a summer's day," would not "a spring day" do as well or better?
+- Witness: It wouldn't scan.
+- Interrogator: How about "a winter's day," That would scan all right.
+- Witness: Yes, but nobody wants to be compared to a winter's day. 
+- Interrogator: Would you say Mr. Pickwick reminded you of Christmas?
+- Witness: In a way.
+- Interrogator: Yet Christmas is a winter's day, and I do not think Mr. Pickwick would mind the comparison.
+- Witness: I don't think you're serious. By a winter's day one means a typical winter's day, rather than a special one like Christmas. 
+
+Turing believes that Jefferson might be swayed if a computer demonstrated such an exchange.
+
+All that said, Turing makes a point of noting that he still thinks there are many mysteries regarding consciousness and that these need to be solved before the object this paper can be truly addressed.
+
+Personally I believe that there are fewer mysteries of consciousness than we think. We truly are just bags of flesh controlled by neurological, biological, chemical, and ultimately physical interactions. The real 'hard problem of consciousness' is why we believe in such fantasies as phenomenal consciousness, souls, and =other superstitions. This is partially answered by the byproduct theory (see Bloom), but a more sufficient answer must be provided by neuroscientist as to why we tell ourselves we are somehow different than other physical systems. This would amount to an *illusionist* theory of mind (see Frankish).
 
 #### 5. Arguments from Various Disabilities
+Here Turing considers a whole class of objections. THey take the following form:
+
+>  "I grant you that you can make machines do all the things you have mentioned but you will never be able to make one to do $X$."
+
+Where $X$ is something like:
+
+>"Be kind, resourceful, beautiful, friendly, have initiative, have a sense of humour, tell right from wrong, make mistakes, fall in love, enjoy strawberries and cream, make some one fall in love with it, learn from experience, use words properly, be the subject of its own thought, have as much diversity of behaviour as a man, do something really new. "
+
+Turing goes to say that most of these objections are based on a flawed induction. That is to say, people have only ever known machines to be able to serve narrow purposes and are totally useless in any other domain. Thus all computers must be like this. This reasoning is a subconscious facet of human reasoning and so it is no surprise that humans can't imagine or believe computers could do these things as they've never seen any computer do anything similar.
+
+Interestingly Turing claims that "Many of these limitations are associated with the very small storage capacity of most
+machines." While it is probably true that a copious amount of storage space is a prerequisite to any impressive intelligent behavior displayed by a computer, recent advances in AI have showed us that its not the whole story. Collecting and processing data are not the only bottleneck but so too are the methods by which we make sense of them.
+
+Moving on though, Turing notes that some of the objections of this form deserve special remarks. First is the claim that "machine cannot make mistakes". Turing clears up this confusion by delineating two different kinds of 'mistakes'. *Errors of functioning* being a fault in the computer's hardware or programming, and *errors of conclusion* being when the computer spits out an output (which we interpret to mean represent truth bearing statement/conclusion) that isn't correct.
+
+It is simple to see that computers can be programmed to be 'wrong'. I could, as Turing puts it, make a program that just spits out $0=1$. The conclusion the computer is making is false, but it is functioning correctly as it was programmed to give that output.
+
+Another interesting one is the claim that "a machine cannot be the subject matter of its own thoughts." This doesn't seem to be the case. Consider a computer trying to solve the equation $2x=5$. If we consider that equation as part of its 'subject matter' than it seems clear that a computer that can reason about its own behavior (e.g. to help predict what altering its structure will do) would have itself as part of tis subject matter. There is nothing paradoxical about this. Its totally possible to simulate a universal turing machine in a universal turing machine for example. You can try this by emulating your PC on itself.
+
+Turing wraps up this section by noting that this objection is mostly just the argument form consciousness one in disguise. He says this because even if we do make a machine that can, or at least appears to, be able to do any of these things, they probably won't convince the objectors. They will simply claim that is nothing but the 'chance fall of symbols' and that it is not truly performing $X$.
 
 #### 6. Lady Lovelace's Objection
+Here Turing addresses the objection that computers are incapable of 'originality' or that they can't 'take us by surprise'. He points toa quote by Ada Lovelace in regards to the analytical engine:
+
+> "The Analytical Engine has no pretensions whatever to originate anything. It can do whatever we know how to order it to perform. It can follow analysis; but it has no power of anticipating any analytical relations or truths."
+
+To this Turing says that machine take him by surprise all the time. Granted this is because he does not carry out the calculations needed to predict its behavior by hand. But even in this case, Turing argues that "[t]here is nothing new under the sun." Everything is a product of the cause and effect of general principles.
+
+*A modern objector might point to quantum mechanics as an example of indeterministic behavior but this is easily dealt with by considering quantum computers (as we have done earlier in this post) and **their** capabilities.*
+
+Turing also notes that Lovelace had no context nor evidence to think that a computer could replicate human behaviors and originality. He points out that he has the benefit of recent advancements in science and biology and can see that the human brain is quite similar to a computer. The topic of machines that can learn like humans do is covered in the next section.
 
 #### 7. Argument from Continuity in the Nervous System
+
+#### 8. The Argument from Informality of Behaviour
+
+#### 9. The Argument from Extrasensory Perception
 
 ## §7. Learning Machines
 The beginnings of AI. some may say this passage is the start of AI (or at least computational based AI)
 
-edit section 3 machine learing i think i interpreted that incorrectly.
 
+edit section 3 machine learing i think i interpreted that incorrectly.
 #### Regarding Machine Learning
 Another interesting point Turing made when considering what machines would be applicable is:
 
 > "...to allow the possibility that an engineer or team of engineers may construct a machine which works, but whose manner of operation cannot be satisfactorily described by its constructors because they have applied a method which is largely experimental."
 
 To any computer scientist of the modern age, a single thought comes to mind when reading that passage: **machine learning**. In particular, artificial neural networks and deep learning. These relatively new, at least in practice, models of computation have proven to be able to tackle tasks 'classical AI' could never have hoped to accomplish. From diagnosing patients, writing poetry, composing music, and driving cars, there have been few domains untouched by the rise of machine learning in our society, and those few will invariably become even fewer. That Turing might even have had an inkling of such a possibility is incredible. Due to the nature of human intelligence, that is, an intelligence cobbled up by the random statistical processes of evolution and culture, techniques where we do not explicitly know/program our machines (a la machine learning) seem all but necessary to solve the Turing test.
+
+

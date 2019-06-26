@@ -5,7 +5,7 @@ date: 2018-12-24
 tags: math probability-theory
 ---
 My notes on Ross' *A First Course in Probability*. Chapter 1 - Combinatorics
-## Basic Principle of Counting
+<!-- ## Basic Principle of Counting
 The basic principle of counting states that if two events are independent and the first has $m$ possible outcomes and the second has $n$ possible outcomes, then the events taken together have $mn$ possible outcomes.
 
 Formally, if $A$ is the set of all outcomes of the first experiment and $B$ the second:
@@ -22,8 +22,6 @@ $$A\times B=\{(a,b)\mid a\in A\wedge b\in B\}=\left\{
     (a_m,b_1), & (a_m,b_2), & \dots & (a_m,b_n)
 \end{matrix}\right\}$$
 
-<!--more-->
-
 The basic principle, then, just reiterates that the [product of cardinalities](\cartesian-product#cardinal-multiplication) is equal to the cardinality of the cartesian product:
 
 $$|A\times B|=|A||B|=mn$$
@@ -37,7 +35,10 @@ Sometimes if the first event affects the second, it is possible to still use the
 
 $$|\{(0,1),(2,3),(9,3),\cdots\}|=10\cdot 9=90$$
 
-Notice that while we cannot represent the above as a cartesian product of two sets (i.e. it doesn't have a [cartesian factorization](\cartesian-product#cartesian-factorization)) because the set of possible choices of the second element changes for every choice of the first element, we do know the *cardinality* of the set of second choices and thus can still use the basic principle.
+Notice that while we cannot represent the above as a cartesian product of two sets (i.e. it doesn't have a [cartesian factorization](\cartesian-product#cartesian-factorization)) because the set of possible choices of the second element changes for every choice of the first element, we do know the *cardinality* of the set of second choices and thus can still use the basic principle. -->
+
+## Fundemental Principle of Counting
+[See here](/the-fundemental-principle-of-counting)
 
 ## Permutations
 Given a set of $n$ distinct elements, we can use the basic principle to derive the number of ways we can arrange, or **permutate**, them. If we have $n$ choices for the first element, $n-1$ for the second and so on, we are left with:
@@ -51,6 +52,8 @@ $$\frac{n!}{m_1!m_2!\cdots m_{n-1}!m_n!}$$
 *where $m_i$ is the multiplicity of the $i$th element.*
 
 Dividing by the factorial of each element's multiplicity accounts for all the permutations where identical elements were swapped (leading to no change). Notice that this definition generalizes the unique element case where all the multiplicities are 1.
+
+<!--more-->
 
 ## Combinations & Binomial Coefficients
 Another combinatorial problem is how many different sets of $r$ groups can be formed from $n$ distinct elements:
