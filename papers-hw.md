@@ -16,7 +16,7 @@ Below is a collection of papers and homework I've written up for some of my unde
 - [*Atari Pong AI via Reinforcment Learning*](\hw\Spring%202019\Ghost%20in%20Machine\pongpaper\pongpaper.pdf) - A paper that gives a rudimentary overview of the construction of my [Atari Pong AI](\reinforcement-learning-pong) and of neural networks in general, then uses that to inform questions on the consequences of the public perception of AI in the future.
 
 #### Human Nature and Diversity
-- [*On Bloom's "Is God an Accident?"*](\hw\Spring%202019\humannaturepaper\paper.pdf) - My thoughts and critique, although pretty much just agreement, on Paul Bloom's 2005 article ["Is God an Accident?"](https://www.theatlantic.com/magazine/archive/2005/12/is-god-an-accident/304425/) which discusses the byproduct theory of religion and its evidence.
+- [*On Bloom's "Is God an Accident?"*](\hw\Spring%202019\humannaturepaper\paper.pdf) - My thoughts and critique, although pretty much just agreement, of Paul Bloom's 2005 article ["Is God an Accident?"](https://www.theatlantic.com/magazine/archive/2005/12/is-god-an-accident/304425/) which discusses the byproduct theory of religion and its evidence.
 
 #### Numerical Analysis
 A list of all my HW for the class. Both problems and solutions are typed up in LaTeX below:
