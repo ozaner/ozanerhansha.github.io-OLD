@@ -29,27 +29,27 @@ The basic principle, then, just reiterates that the [product of cardinalities](\
 $$|A\times B|=|A||B|=mn$$
 
 #### Example
-For example, consider rolling two dice, where the event of rolling a die is given by $D=\{1,2,3,4,5,6\}$. Since these are independent events (rolling one dice doesn't affect the outcome of the other) the set of outcomes for rolling two dice is given by $D\times D$. An example of an outcome is $(3,2)$ which corresponds to rolling a $3$ on the first die and a $2$ on the second. The basic principle tells us that the number of different possible dice rolls is given by:
+For example, consider rolling two dice, where the event of rolling a die is given by $D=\\{1,2,3,4,5,6\\}$. Since these are independent events (rolling one die doesn't affect the outcome of the other) the set of outcomes for rolling two dice is given by $D\times D$. An example of an outcome is $(3,2)$ which corresponds to rolling a $3$ on the first die and a $2$ on the second. The basic principle tells us that the number of different possible dice rolls is given by:
 
 $$|D\times D|=|D||D|=6\cdot6=36$$
 
 *Note here that $(3,2)$ is different from $(2,3)$. That is to say, order matters.*
 
 #### Generalizations
-This of course generalizes to, not just two, but any number of independent events due to the properties of multiplication:
+This of course generalizes to, not just two, but any number (even an infinite number) of independent events due to the properties of multiplication:
 
 $$\left|\prod_{i\in I}S_i\right|=|S_1\times S_2\times\cdots|=|S_1||S_2|\cdots=\prod_{i\in I}|S_i|$$
 
-The cardinality of the cartesian product serves as the definition of the (possibly infinitary) product of cardinals. Below is an example of the product of an infinite number of infinite sets:
+It also applies to events with an infinite number of outcomes:
 
-$$|\mathbb Z^{\aleph_0}|=|\underbrace{\mathbb Z\times \mathbb Z\times\cdots}_{\aleph_0}|=|\mathbb Z||\mathbb Z|\cdots=\aleph_0\aleph_0\cdots=\aleph_0^{\aleph_0}=\mathfrak{c}=|\mathbb R|$$
+$$|\underbrace{\mathbb Z\times \mathbb Z\times\cdots}_{\aleph_0}|=|\mathbb Z||\mathbb Z|\cdots=\aleph_0\aleph_0\cdots=\aleph_0^{\aleph_0}=\mathfrak{c}$$
 
 #### Independence of Outcomes
 It is important to note that if the outcome of the first event *does*  affect the second event (i.e. not independent), then certain pairs of outcomes may not be possible. The cartesian product, then, wouldn't represent all possible outcomes as it might include impossible ones as well. An example might be if rolling a 2 on the first die precluded you from rolling a 4 on the second dice. This would mean $(2,4)$ was not a possible event and $|D\times D|$ is $1$ too high. 
 
 #### Without Explicit Sets
-Sometimes if the first event affects the second, it is possible to still use the basic principle regardless of the particular sets of outcomes. For example, if we want the set of all two digit strings with no repeats we have 10 choices of digits for the first digit and 9 choices for the second:
+Conversely, sometimes it is still possible to use the basic principle even if the outcome of the first event affects the second. For example, if we want the set of all two digit strings with no repeats, we have 10 choices of digits for the first digit and 9 choices for the second:
 
 $$|\{(0,1),(2,3),(9,3),\cdots\}|=10\cdot 9=90$$
 
-Notice that while we cannot represent the above as a cartesian product of two sets (i.e. it doesn't have a [cartesian factorization](\cartesian-product#cartesian-factorization)) because the set of possible choices of the second element changes for every choice of the first element, we do know the *cardinality* of the set of second choices and thus can still use the basic principle.
+Notice that while we cannot represent the above as a cartesian product of two sets (i.e. it doesn't have a [cartesian factorization](\cartesian-product#cartesian-factorization)) because the set of possible choices of the second element changes for every choice of the first element, we do know the *cardinality* of the set of second choices (there will always be 9 digits left after the first is chosen) and thus can still use the basic principle.
