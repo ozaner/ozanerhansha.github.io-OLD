@@ -48,7 +48,7 @@ $$|\underbrace{\mathbb Z\times \mathbb Z\times\cdots}_{\aleph_0}|=|\mathbb Z||\m
 It is important to note that if the outcome of the first event *does*  affect the second event (i.e. not independent), then certain pairs of outcomes may not be possible. The cartesian product, then, wouldn't represent all possible outcomes as it might include impossible ones as well. An example might be if rolling a 2 on the first die precluded you from rolling a 4 on the second dice. This would mean $(2,4)$ was not a possible event and $|D\times D|$ is $1$ too high. 
 
 #### Without Explicit Sets
-Conversely, sometimes it is still possible to use the basic principle even if the outcome of the first event affects the second. For example, if we want the set of all two digit strings with no repeats, we have 10 choices of digits for the first digit and 9 choices for the second:
+That said, it is sometimes still possible to use the basic principle even if the outcome of the first event affects the second. For example, if we want to quantify the set of all two digit strings with no repeats, we have 10 choices of digits for the first digit and 9 choices for the second:
 
 $$|\{(0,1),(2,3),(9,3),\cdots\}|=10\cdot 9=90$$
 

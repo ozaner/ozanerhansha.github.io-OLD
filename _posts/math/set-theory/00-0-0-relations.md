@@ -30,7 +30,7 @@ We can now extend the idea of relationships to set theory by constructing a **re
 
 
 ## Definition
-An **$n$-ary relation** $R$ is an ordered pair of an $n$-ary [Cartesian product](\cartesian-product) $\prod_{i=1}^n$ and a subset of that product $G$:
+An **$n$-ary relation** $R$ is an ordered pair of an $n$-ary [Cartesian product](\cartesian-product) $\prod_{i=1}^n$ and a subset of that product $G\text{:}$
 
 $$R\equiv\left(\prod_{i=1}^nS_i,G\right)$$
 
