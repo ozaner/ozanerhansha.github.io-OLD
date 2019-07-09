@@ -4,9 +4,9 @@ title: The Basic Principle of Counting
 date: 2019-06-25
 tags: math set-theory probability-theory
 ---
-The basic principle of counting is a combinatorial, and ultimately set-theoretic, statement regarding the number of outcomes two events can have when taken together.
+The basic principle of counting is a combinatorial, and ultimately set-theoretic, statement regarding the number of outcomes two events can have when taken together. This is particularly useful in calculating the probability of events with finite number of outcomes, which can often be reduced to counting those outcomes.
 
-The principle states that if two events are independent (that is, one doesn't affect the other) and the first has $m$ possible outcomes and the second has $n$ possible outcomes, then the events taken together have $mn$ possible outcomes.
+The principle states that if one event has $m$ possible outcomes and another has $n$ possible outcomes, then the events taken together have $mn$ possible outcomes.
 
 <!--more-->
 
@@ -36,16 +36,16 @@ $$|D\times D|=|D||D|=6\cdot6=36$$
 *Note here that $(3,2)$ is different from $(2,3)$. That is to say, order matters.*
 
 #### Generalizations
-This of course generalizes to, not just two, but any number (even an infinite number) of independent events due to the properties of multiplication:
+This of course generalizes to, not just two, but any number of events due to the properties of multiplication:
 
-$$\left|\prod_{i\in I}S_i\right|=|S_1\times S_2\times\cdots|=|S_1||S_2|\cdots=\prod_{i\in I}|S_i|$$
+$$\left|\prod_{i=1}^nS_i\right|=|S_1\times S_2\times\cdots\times S_n|=|S_1||S_2|\cdots|S_n|=\prod_{i=1}^n|S_i|$$
 
-It also applies to events with an infinite number of outcomes:
+It also applies to an infinite number of events as well as events with an infinite number of outcomes. For example:
 
 $$|\underbrace{\mathbb Z\times \mathbb Z\times\cdots}_{\aleph_0}|=|\mathbb Z||\mathbb Z|\cdots=\aleph_0\aleph_0\cdots=\aleph_0^{\aleph_0}=\mathfrak{c}$$
 
 #### Independence of Outcomes
-It is important to note that if the outcome of the first event *does*  affect the second event (i.e. not independent), then certain pairs of outcomes may not be possible. The cartesian product, then, wouldn't represent all possible outcomes as it might include impossible ones as well. An example might be if rolling a 2 on the first die precluded you from rolling a 4 on the second dice. This would mean $(2,4)$ was not a possible event and $|D\times D|$ is $1$ too high. 
+It is important to note that if the outcome of the first event affects the number of outcomes of future events (i.e. not independent), the cartesian product wouldn't represent all possible outcomes as it would include impossible ones as well. An example might be if rolling a 2 on one die precluded you from rolling a 4 on the second dice. This would mean the outcome $(2,4)$ is not a possible event and $|D\times D|=36$ is $1$ too high.
 
 #### Without Explicit Sets
 That said, it is sometimes still possible to use the basic principle even if the outcome of the first event affects the second. For example, if we want to quantify the set of all two digit strings with no repeats, we have 10 choices of digits for the first digit and 9 choices for the second:
