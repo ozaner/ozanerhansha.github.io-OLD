@@ -6,11 +6,11 @@ tags: math calculus
 ---
 
 ### Definition
-A first order differential equation is called **separable** if the derivative can be factored into the product of a function dependent on $t$ and function dependent on $y$:
+A first order differential equation is called **separable** if the derivative can be expressed as the product of a function dependent on $t$ and function dependent on $y$:
 
 $$\frac{dy}{dt}=f(t,y)=g(t)h(y)$$
 
-*where both $g(t)$ and $h(y)$ are continuous.*
+*where both $g(t)$ and $h(y)$ are continuous functions.*
 
 <!--more-->
 
@@ -37,10 +37,10 @@ $$\begin{align}
 </details>
 
 ### Equilibrium Solutions
-Note that the second step of our proof (where we divided both sides by $h(y)$) is not valid for $y$ such that $h(y)=0$ as division by zero is undefined, and so we must take special care in checking the roots of $h(y)$. In particular, we note that these roots are actually solutions to the separable equation since the derivative of a constant is $0$:
+Note that the second step of our proof (where we divided both sides by $h(y)$) is not valid for constant $y_0$ such that $h(y_0)=0$ as division by zero is undefined, and so we must take special care in checking the roots of $h(y)$. In particular, we note that these roots are actually solutions to the separable equation since the derivative of a constant is $0$:
 
-$$\frac{d}{dt}y_0=0\,\,\,\,\,\,\,\,\,\,\,\,\,\frac{dy}{dt}=g(t)h(y_0)=0$$
+$$\frac{dy}{dt}=g(t)h(y_0)=0\,\,\,\,\,\,\,\,\,\,\,\,\,\frac{d}{dt}y_0=0$$
 
 *For any constant $y_0$ such that $h(y_0)=0$*
 
-These constant solutions for $y$, called **equilibrium solutions**, aren't present in the solution to the integral equation above. And so the *entire* solution set of a separable equation consists of the roots of the $h(y)$ as well as the solutions of the integral equation above.
+These constant solutions for $y$, called **equilibrium solutions**, aren't present in the solution to the integral equation above. And so the *entire* solution set of a separable equation consists of the roots of $h(y)$ as well as the solutions of the integral equation above.

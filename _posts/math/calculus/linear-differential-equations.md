@@ -1,15 +1,19 @@
 ---
 layout: post
 title: Linear (Ordinary) Differential Equations
-date: 2018-05-28
+date: 2019-07-12
 tags: math calculus
 ---
+
+date: 2018-05-28
+
+
 ## Definition
 An $n$th order linear differential equation (LDE) is one that can be expressed as a linear combination of differentiable functions of $x$ and derivatives of some function $y$ with respect to $x$ (up to its $n$th derivative):
 
 $$a_0(x)y+a_1(x)\dfrac{\mathrm{d}y}{\mathrm{d}x}+a_2(x)\dfrac{\mathrm{d}^2y}{\mathrm{d}x^2}+\cdots+a_n(x)\dfrac{\mathrm{d}^ny}{\mathrm{d}x^n}=b(x)$$
 
-Where $a_{i\in\mathbb{N}_n}(x)$, $b(x)$, and $y$ are differentiable functions of $x$.
+Where $a_i(x)$, $b(x)$, and $y$ are differentiable functions of $x$.
 
 *The above refers to linear ODEs. Linear PDE's are linear combinations of a function's partial derivatives.*
 
