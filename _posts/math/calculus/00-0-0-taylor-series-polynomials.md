@@ -4,14 +4,16 @@ title: Taylor Series & Polynomials
 date: 2019-01-25
 tags: math calculus
 ---
-Taylor series are a clever way of representing smooth (i.e. infinitely differentiable) functions as infinite polynomials. Doing this allows us to define important analytic functions (like $\sin x$ or $e^x$) in a way that encompasses the entire complex plane.
+Taylor series are a useful way of representing smooth (i.e. infinitely differentiable) functions as infinite polynomials.
 
-Moreover, the partial sums of these series, i.e. Taylor polynomials, provide a practical way of approximating the values of functions that are themselves infeasible/impossible to compute directly.
+Doing this allows us to define important analytic functions (like $\sin x$ or $e^x$) over the entire complex plane.
+
+Moreover, the partial sums of these series (i.e. Taylor polynomials) provide a practical way of approximating the values of functions that are themselves infeasible/impossible to compute directly.
 
 <!--more-->
 
 ## Definition
-The **Taylor series** of a smooth (i.e. infinitely differentiable) real, or complex, function $f(x)$ centered at a number $a$ is the following power series:
+The **Taylor series** of a smooth (i.e. infinitely differentiable) function $f(x)$ centered at a number $a$ is given by the following power series:
 
 $$\sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!}(x-a)^n=f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}(x-a)^2+\cdots$$
 
@@ -84,8 +86,8 @@ Another way to view the remainder is via [asymptotic notation](\asymptotic-notat
 
 $$R_k(x)\in O(x^{k+1}),\ \ \ x\to a$$
 
-This is assuming the $k+1$ order derivative is nonzero. In reality the order of convergence may be even higher:
+This is assuming $f^{(k+1)}(a)$ is nonzero. In reality the order of convergence may be even higher:
 
 $$R_k(x)\in O(x^p),\ \ \ x\to a$$
 
-*where $f^{(p)}(a)$ is the first non zero derivative after $k$.*
+*where $p$ is the first integer after $k$ such that $f^{(p)}(a)$ is non zero.*

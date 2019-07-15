@@ -24,8 +24,8 @@ The frictional force is responsible for filling the gap between our everyday int
 $\renewcommand{\vec}[1]{\mathbf{#1}}$
 <!--more-->
 
-<!-- ![xkcd](https://imgs.xkcd.com/comics/experiment.png?style=centerme)
-<center><i>Relevant xckd</i></center> -->
+![xkcd](https://imgs.xkcd.com/comics/experiment.png?style=centerme)
+<center><i>Relevant xckd</i></center>
 
 ### Amontons' Laws of Dry Friction
 The empirical laws that govern friction were (re)discovered by French physicist Guillaume Amontons:
@@ -105,10 +105,10 @@ $$E_{th}=\int_C\vec{F_k}(\vec{x})\cdot d\vec{x}$$
 The proportionality constant between the frictional force and the normal force is called the coefficient of static/kinetic friction and is denoted $\mu_s$ and $\mu_k$ respectively. This constant differs depending on the 2 surfaces involved and, as a result of being a abstract approximation of complex interactions, cannot be derived from first principles and is instead measured empirically.
 
 Below are some common coefficients of static and kinetic friction:
-![table](http://hadron.physics.fsu.edu/~crede/TEACHING/PHY2048C/Calendar/W6_D1/Friction%20Coefficients_files/friction-coeffs.gif){:width="600px"}
+![table](http://hadron.physics.fsu.edu/~crede/TEACHING/PHY2048C/Calendar/W6_D1/Friction%20Coefficients_files/friction-coeffs.gif?style=centerme){:width="600px"}
 
-<!-- ![xkcd](https://imgs.xkcd.com/comics/mu.png?style=centerme)
-<center><i>Relevant xckd</i></center> -->
+![xkcd](https://imgs.xkcd.com/comics/mu.png?style=centerme)
+<center><i>Yet another relevant xckd</i></center>
 
 #### Angle of Repose
 When an object is placed on a ramp, the object will overcome static friction and slide down the ramp at some angle $\theta$. As it turns out, the tangent of this angle is equivalent to the coefficient of static friction:

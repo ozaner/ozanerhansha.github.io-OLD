@@ -11,8 +11,8 @@ If this wasn't enough, in 2015 they blew the machine learning community, and eve
 
 <!--more-->
 
-<!-- ![xkcd](https://imgs.xkcd.com/comics/pong.png?style=centerme)
-<center><i>Relevant xckd</i></center> -->
+![xkcd](https://imgs.xkcd.com/comics/pong.png?style=centerme)
+<center><i>Relevant xckd</i></center>
 
 ## Q-Learning
 The researchers at Google's DeepMind achieved this stunning success with a type of machine learning called **reinforcement learning** and more specifically **Q-learning**. In essence, the goal of Q-learning is to approximate some ideal function $Q(s,a)$ that outputs a reward (how good we are doing at the task), where $s$ is a possible state of the environment/game/etc. and $a$ is a possible action to take in that state. If we had such a function, or even a good approximation, we could simply plug in our current state and choose whatever action will maximize $Q$ which would then maximize how well we perform the task. To approximate this function, the researchers used a convolutional neural network (CNN) and trained it using Q-learning, thus creating a Deep Q Network. You can read more about Q-learning and DQNs [here](https://ai.intel.com/demystifying-deep-reinforcement-learning/).
