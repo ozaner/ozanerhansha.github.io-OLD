@@ -5,7 +5,7 @@ date: 2019-07-09
 tags: math calculus
 ---
 
-### Definition
+## Definition
 A first order differential equation is called **separable** if the derivative can be expressed as the product of a function dependent on $t$ and function dependent on $y$:
 
 $$\frac{dy}{dt}=f(t,y)=g(t)h(y)$$
@@ -14,15 +14,15 @@ $$\frac{dy}{dt}=f(t,y)=g(t)h(y)$$
 
 <!--more-->
 
-#### Autonomous
-Note that in the special case that $g(t)=1$, the separable equation is only dependent on $y$ and thus is a first order **autonomous** equation. Unlike separable equations, autonomous equations generalize to higher orders.
+#### Autonomous Equations
+Note that in the special case that $g(t)=1$, the separable equation is only dependent on $y$ and thus is a first order **autonomous** equation. Autonomous differential equations are ones that are independent of $t$. Instead they are dependent only on $y$ and, for higher order equations, $y$'s derivatives.
 
-### Solutions
+## Solutions
 The reason differential equations of the above form are interesting is because they are equivalent to the following (hopefully simple) integral equation:
 
 $$\int\frac{1}{h(y)} \,dy=\int g(t) \,dt$$
 
-which, when computed, will yield a family of *implicit solutions* to the differential equation (which can possibly be solved for *explicit solutions*). We call this technique for solving differential equations the **separation of variables**.
+which, when computed, will yield a family of *implicit solutions* to the differential equation (which can possibly be solved for a family of *explicit solutions*). We call this technique for solving differential equations the **separation of variables**.
 
 <details>
 <summary><strong>Proof</strong></summary>
@@ -36,11 +36,11 @@ $$\begin{align}
 <i>Note that for this proof we used non-standard analysis, which uses the hyperreal numbers to define derivatives and integrals. In particular, since integration is just a infinite summation and $\frac{dy}{dt}$ is just the ratio of infinitesimals, our cancellation of $dt$ in the last step was justified.</i>
 </details>
 
-### Equilibrium Solutions
-Note that the second step of our proof (where we divided both sides by $h(y)$) is not valid for constant $y_0$ such that $h(y_0)=0$ as division by zero is undefined, and so we must take special care in checking the roots of $h(y)$. In particular, we note that these roots are actually solutions to the separable equation since the derivative of a constant is $0$:
+## Equilibrium Solutions
+Note that the second step of our proof (where we divided both sides by $h(y)$) is not valid for constant $y_0$ such that $h(y_0)=0$ as division by zero is undefined. As such, we must take special care in checking the roots of $h(y)$. In particular, we note that these roots are actually solutions to the separable equation since the derivative of a constant is $0$:
 
 $$\frac{dy}{dt}=g(t)h(y_0)=0\,\,\,\,\,\,\,\,\,\,\,\,\,\frac{d}{dt}y_0=0$$
 
-*For any constant $y_0$ such that $h(y_0)=0$*
+*For any constant $y_0$ such that $h(y_0)=0$.*
 
-These constant solutions for $y$, called **equilibrium solutions**, aren't present in the solution to the integral equation above. And so the *entire* solution set of a separable equation consists of the roots of $h(y)$ as well as the solutions of the integral equation above.
+These constant solutions for $y$, called **equilibrium solutions**, aren't present in the solution to the integral equation above. And so the *entire* solution set of a separable equation consists of the roots of $h(y)$ as well as the solutions of the integral equation.

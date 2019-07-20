@@ -73,7 +73,7 @@ img[src$="centerme"] {
 }
 
 .highlight pre code {
-  white-space: pre;       // forces <code> to respect <pre> formatting
+  white-space: pre;       /* forces <code> to respect <pre> formatting */
 }
 
 pre.highlight {

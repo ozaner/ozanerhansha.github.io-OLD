@@ -15,10 +15,11 @@ A useful modification of this algorithm is to return the index of the target in 
 ## Implementation
 ### Pseudocode
 Given a list $L$ of length $n$ with the $i$th element denoted $L_i$ and the target value denoted $T$:
-1. Set variable $i:=0$
-2. If $L_i=T$, return $i$ **END**; else goto step 3
-3. Increment index $i:=i+1$
-4. If $i<n$, goto step 2; else return $-1$ **END**
+1. **for** $i$ from $1$ to $n$:
+    <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**if** $L_i=T$:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**return** $i$<br>
+2. **return** $-1$
 
 ### Java
 ````java
@@ -91,17 +92,17 @@ The algorithm is iterative, meaning the only space needed is the single variable
 <!-- #### Probabilistic Search -->
 Recall that our analysis of the complexity of sequential search assumed that each element in the list was equally likely (i.e a $\frac{1}{n}$ chance) to be searched for. If we remove this assumption, we are left with a more general case with the $i$th element having some probability $p_i$ of being searched for. Whenever we are analyzing the success case of the average complexity, these probabilities should all sum to 1:
 
-$$\sum_{i\in n} p_i=1$$
+$$\sum_{i=1}^n p_i=1$$
 
 <i>Just like before, the failure case will always take $n$ comparisons.</i>
 <p></p>
 We can express the average running time of a probabilistic search algorithm like so:
 
-$$p_1s_1+p_2s_2+\cdots+p_ns_n=\sum_{i\in n}p_is_i$$
+$$p_1s_1+p_2s_2+\cdots+p_ns_n=\sum_{i=1}^np_is_i$$
 
 Since sequential search takes $i$ comparisons at the $i$th element, we can rewrite this for probabilistic sequential search as:
 
-$$p_1+2p_2+\cdots+np_n=\sum_{i\in n}ip_i$$
+$$p_1+2p_2+\cdots+np_n=\sum_{i=1}^nip_i$$
 
 If we know what frequency with which certain targets are searched for, we can rearrange the list such that things with a higher probability of being searched for are near the beginning. Thereby reducing the amount of comparisons needed on average.
 <p></p>

@@ -50,7 +50,7 @@ This applies to all atoms, and thus all molecules, and further anything in the u
 
 *Of course, modeling even molecules (much less humans) as quantum wave functions is pretty much out of our reach computationally. As such, the claim that quantum wave functions can model all aspects of our lives is solely a theoretical one.*
 
-![chain of abstraction](/assets/philosophy/metaphysical-nightmare/chain_of_abstraction.png?style=centerme)
+![chain of abstraction](/assets/philosophy/chain_of_abstraction.png?style=centerme)
 
 Take psychology. It is really just applied biology, which is just applied chemistry, which is just applied physics, which is just (as we've seen) applied mathematics.
 
