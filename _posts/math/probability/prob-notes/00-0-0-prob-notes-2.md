@@ -28,11 +28,11 @@ Analogously, the intersection of two events is the event that both happen. For e
 
 $$A\cap B=\{2,4,6\}\cap\{1,2,4\}=\{2,4\}$$
 
-*The intersection is also referred to as $AB$.*
+*The intersection is also denoted $AB$.*
 
 This concept extends to arbitrary unions and intersections sets but, due to some finer points regarding measurability, only countable unions/intersections can be considered *events*:
 
-$$(\forall A\in\mathcal F)\ |A|\le\aleph_0\rightarrow \bigcup A\in \mathcal F\wedge \bigcap A\in \mathcal F$$
+$$(\forall A\subseteq\mathcal F)\ |A|\le\aleph_0\rightarrow \bigcup A\in \mathcal F\wedge \bigcap A\in \mathcal F$$
 
 *The event space $\mathcal F$ is explained further below.*
 
@@ -100,7 +100,7 @@ P(A^\complement)=1-P(A)
 
 *for any events $A,B\in\mathcal F$.*
 
-### Inclusion-Exclusion Principle
+## Inclusion-Exclusion Principle
 Recall one of the consequences we mentioned earlier:
 
 $$P(A\cup B)=P(A)+P(B)-P(A B)$$
@@ -128,7 +128,7 @@ P\left(\bigcup_{i=1}^nE_i\right)&\le\sum_{i=1}^nP(E_i)\\
 
 and so on, with each successive partial sum being more accurate than the last.
 
-### Discrete Uniform Distribution
+## Discrete Uniform Distribution
 Given a finite sample space $\Omega$, a **discrete uniform distribution** is one where each element $s$ in $\Omega$ is equally likely to occur meaning:
 
 $$\left(\forall x\in \Omega\right) P(\{x\})=\frac{1}{|\Omega|}$$
@@ -137,7 +137,7 @@ This is a consequence of $P(\Omega)=1$. A further consequence of this is that th
 
 $$P(E)=\frac{|E|}{|\Omega|}$$
 
-### Increasing and Decreasing Sequences of Events
+## Increasing and Decreasing Sequences of Events
 A sequence of events $(E_i)_{i=1}^\infty$ is increasing if:
 
 $$\left(\forall i\in\mathbb Z^+\right) E_i\subseteq E_{i+1}$$

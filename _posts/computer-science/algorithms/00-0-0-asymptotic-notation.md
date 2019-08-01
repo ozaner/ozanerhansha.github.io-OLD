@@ -267,6 +267,8 @@ Although I used the variable $x$ in the definitions given above, the variable $n
 <p></p>
 </details>
 
+![xkcd](https://imgs.xkcd.com/comics/travelling_salesman_problem.png?style=centerme)
+
 ### Common Orders
 Below is a table of common terminology for certain lower-bound complexity classes from slowest to fastest growth:
 

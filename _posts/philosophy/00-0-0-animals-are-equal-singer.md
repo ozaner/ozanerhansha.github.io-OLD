@@ -35,7 +35,7 @@ It seems in stating that "[t]he capacity for suffering and enjoying things is a 
 
 *[1] Worm brains have been simulated whole (although they aren't considered to be able to suffer), and so have cat brains, and parts of human brains.*
 
-*Side note to the worm thing, people would be hesitant to cut up a live worm the same way they do a plane yet, they should be no morally different. Just more fuel to the fire of inconsistent intuition that is morality.*
+*Side note to the worm thing, people would be hesitant to cut up a live worm the same way they do a plant yet, they should be no morally different. Just more fuel to the fire of inconsistent intuition that is morality.*
 
 *Another side note, these simulated brains run much slower than real life ones. It wouldn't logically make any moral difference, yet we may still feel like it does, highlighting yet again the arbitrariness of our notion of morality.*
 

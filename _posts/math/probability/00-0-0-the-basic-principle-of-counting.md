@@ -4,7 +4,7 @@ title: The Basic Principle of Counting
 date: 2019-06-25
 tags: math set-theory probability-theory
 ---
-The basic principle of counting is a combinatorial, and ultimately set-theoretic, statement regarding the number of outcomes two events can have when taken together. This is particularly useful in calculating the probability of events with finite number of outcomes, which can often be reduced to counting those outcomes.
+The **basic principle of counting** is a combinatorial, and ultimately set-theoretic, statement regarding the number of outcomes two events can have when taken together. This is particularly useful in calculating the probability of events with finite number of outcomes, which can often be reduced to counting those outcomes.
 
 The principle states that if one event has $m$ possible outcomes and another has $n$ possible outcomes, then the events taken together have $mn$ possible outcomes.
 
@@ -48,8 +48,8 @@ $$|\underbrace{\mathbb Z\times \mathbb Z\times\cdots}_{\aleph_0}|=|\mathbb Z||\m
 It is important to note that if the outcome of the first event affects the number of outcomes of future events (i.e. not independent), the cartesian product wouldn't represent all possible outcomes as it would include impossible ones as well. An example might be if rolling a 2 on one die precluded you from rolling a 4 on the second dice. This would mean the outcome $(2,4)$ is not a possible event and $|D\times D|=36$ is $1$ too high.
 
 ### Without Explicit Sets
-That said, it is sometimes still possible to use the basic principle even if the outcome of the first event affects the second. For example, if we want to quantify the set of all two digit strings with no repeats, we have 10 choices of digits for the first digit and 9 choices for the second:
+Note that this independence only matters when the *number* of outcomes changes. For example, if we want to quantify the set of all two digit strings with no repeats, we have 10 choices of digits for the first digit and 9 choices for the second:
 
 $$|\{(0,1),(2,3),(9,3),\cdots\}|=10\cdot 9=90$$
 
-Notice that while we cannot represent the above as a cartesian product of two sets (i.e. it doesn't have a [cartesian factorization](\cartesian-product#cartesian-factorization)) because the set of possible choices of the second element changes for every choice of the first element, we do know the *cardinality* of the set of second choices (there will always be 9 digits left after the first is chosen) and thus can still use the basic principle.
+Notice that we cannot represent the above as a cartesian product of two sets (i.e. it doesn't have a [cartesian factorization](\cartesian-product#cartesian-factorization)) because the set of possible choices of the second element changes for every choice of the first element. We do know, however, the number (or *cardinality*) of the set of second choices (as there will always be 9 digits left after the first is chosen) and thus can we still use the basic principle.

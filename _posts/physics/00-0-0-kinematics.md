@@ -4,10 +4,9 @@ title: Kinematics
 date: 2018-03-17
 tags: physics classical-mechanics
 ---
-<!-- Make vectors bold rather than arrow headed --> $\renewcommand{\vec}[1]{\mathbf{#1}}$
-Translational Kinematics describes the motion of objects through space over time. Using an object's [position](/position), velocity and acceleration vectors, it is possible to predict where it will be in the future and where it was in the past. Where an object gets that velocity/acceleration is what dynamics seeks to explain.
+Translational Kinematics describes the motion of objects through space over time. Using an object's [position](/position), velocity, and acceleration vectors, it is possible to predict where it will be in the future and where it was in the past. Where an object gets it's velocity and acceleration is what dynamics seeks to explain. <!-- Make vectors bold rather than arrow headed --> $\renewcommand{\vec}[1]{\mathbf{#1}}$
 
-### Variable Acceleration
+## Variable Acceleration
 To calculate the motion of an object with continuous acceleration, simply refer to the definitions of velocity and acceleration:
 
 $$\begin{align}
@@ -31,7 +30,7 @@ $$\begin{align}
 - $\vec{a}$ is the object's acceleration as a function of time.
 - $t$ is time
 
-### Constant Acceleration
+## Constant Acceleration
 When acceleration is assumed to be constant, as is the case for many physical systems, the following kinematic equations can be derived:
 
 <!-- #### Position Independent Equation
@@ -135,7 +134,7 @@ $$\begin{align}
 <p>$$\boxed{\left \| \vec{v} \right \|^2 = 2\vec{a}\cdot(\vec{x}-\vec{x}_0)+\left \| \vec{v}_0 \right \|^2}$$</p>
 </details>
 
-### Book Keeping
+## Notational Cleanup
 There are a couple of things we can do to clean up this set of 4 equations before we display them all together.
 
 #### Displacement vs. Position
@@ -169,7 +168,7 @@ The dot product of a vector with itself is that vector's **squared norm** and is
 
 $$\vec{v}\cdot\vec{v}=\left \| \vec{v} \right \|^2=v^2$$
 
-#### The Kinematic Equations
+### The Kinematic Equations
 Taking into account average velocity, the simpler dot product notation and using displacement instead of position, we can rewrite the kinematic equations for constant acceleration as:
 
 $$\begin{gather}
@@ -182,10 +181,10 @@ $$\begin{gather}
 <!-- #### Note on Applicability of Kinematic Equations
 It is important to note that the kinematic equations apply to all systems of 3 variables $x, \frac{dx}{dt}$, and $\frac{d^2x}{dt^2}$ as long as $$\frac{d^2x}{dt^2}$$ is constant. For example, $x$ could represent the  -->
 
-### Graphing
+## Graphing
 When the position, velocity, and acceleration functions are graphed with respect to time, their graphs are related by the kinematic equations.
 
-#### General Info
+### General Info
 For any graph of $\vec{x}(t)$
 -  Slope of the secant line created by two points is the average velocity during that time interval.
 - Slope of line tangent to curve at time $$t$$ is the object's instantaneous velocity at $t$.
@@ -198,7 +197,7 @@ For any graph of $\vec{v}(t)$
 For any graph of $\vec{a}(t)$
 - Area under a region of the curve from $[a,b]$ is the object's change in velocity during $[a,b]$.
 
-#### Graph Shapes
+### Graph Shapes
 ![graphs](/assets/physics/kinematics/kinematics.png?style=centerme)
 
 <!-- #### An Object at Rest

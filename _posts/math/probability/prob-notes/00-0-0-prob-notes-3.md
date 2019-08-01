@@ -65,7 +65,7 @@ $$P(E_1E_2E_3\cdots E_n)=P(E_1)P(E_2|E_1)P(E_3|E_1E_2)\cdots P(E_n|E_1E_2\cdots 
 
 Or more succinctly:
 
-$$P\left(\bigcap_{i=1}^n E_i\right)=\prod_{i=1}^n\left(E_i\mid\bigcap_{i=1}^{n-1} E_i\right)$$
+$$P\left(\bigcap_{i=1}^n E_i\right)=\prod_{i=1}^nP\left(E_i\mid\bigcap_{i=1}^{n-1} E_i\right)$$
 
 ## Law of Total Probability
 The law of total probability states that for any countable partition $(F_i)_{i\in I}$ of the sample space $\Omega$, an event $E$ satisfies:
@@ -128,7 +128,7 @@ We can use Bayes' Theorem to describe how the odds of a hypothesis $H$ are affec
 
 $$\operatorname{odds}(H|E)=\frac{P(H|E)}{P(H^\complement|E)}=\frac{P(H)P(E|H)}{P(H^\complement)P(E|H^\complement)}=\operatorname{odds}(H)\operatorname{odds}(E|H)$$
 
-Notice that odds that the hypothesis happened are multiplied by the odds the evidence given the hypothesis, resulting in the new odds of the hypothesis.
+Notice that odds that the hypothesis happened are multiplied by the odds of the evidence happening given the hypothesis, resulting in the new odds of the hypothesis.
 
 ## Independent Events
 When the probability of an event $E$ does not change when another event $F$ is known to have occurred, the events are called **independent**. They are called **dependent** otherwise. In other words, the event $E$ is independent of $F$ when:

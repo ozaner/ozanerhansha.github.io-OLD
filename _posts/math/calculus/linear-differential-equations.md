@@ -1,12 +1,10 @@
 ---
 layout: post
 title: Linear (Ordinary) Differential Equations
-date: 2019-07-12
+date: 2018-05-28
 tags: math calculus
 ---
-
-date: 2018-05-28
-
+<!-- original date: 2018-05-28 -->
 
 ## Definition
 An $n$th order linear differential equation (LDE) is one that can be expressed as a linear combination of differentiable functions of $x$ and derivatives of some function $y$ with respect to $x$ (up to its $n$th derivative):

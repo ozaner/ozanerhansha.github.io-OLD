@@ -46,11 +46,11 @@ Given a set of $n$ distinct elements, we can use the basic principle to derive t
 
 $$n(n-1)(n-2)\cdots 3\cdot 2\cdot 1=n!$$
 
-And so there are $n!$ way to rearrange a list of $n$ *distinct* elements. What if they aren't distinct? Given a multiset of $n$ elements, each with their own multiplicities, this is how many permutations there are:
+And so there are $n!$ way to rearrange a list of $n$ *distinct* elements. What if they aren't distinct? Given a multiset of size $n$ with $r$ unique elements, each with their own multiplicities $m_i$, the number of permutations is given by:
 
-$$\frac{n!}{m_1!m_2!\cdots m_{n-1}!m_n!}$$
+$$\frac{n!}{m_1!m_2!\cdots m_{r-1}!m_r!}$$
 
-*where $m_i$ is the multiplicity of the $i$th element.*
+*to be clear $n$ is the sum of the multiplicities of the elements in the multiset: $n=\sum_1^r m_i$*
 
 Dividing by the factorial of each element's multiplicity accounts for all the permutations where identical elements were swapped (leading to no change). Notice that this definition generalizes the unique element case where all the multiplicities are 1.
 
@@ -68,7 +68,7 @@ Note that the formula is equivalent to:
 
 $$\frac{n!}{(n-r)!\ r!}=\frac{n(n-1)\cdots(n-r+1)}{r!}$$
 
-The numerator applies the basic principle to the $n$ choices for the first group, $n-1$ for the second and so on up to the number of groups $r$. The $r!$ accounts for the groups overcounted by enumerating all their permutations.
+The numerator applies the basic principle to the $n$ choices for the first group, $n-1$ for the second and so on up to the number of groups $r$. The $r!$ accounts for the groups overcounted by enumerating all their permutations, because order doesn't matter.
 
 #### Recursive Identity
 A special identity of the binomial coefficient is:
@@ -103,7 +103,7 @@ As you might've guessed, the binomial theorem can be extended to any multinomial
 
 $$(x_1+x_2+\cdots+x_r)^n=\sum_{n_1+n_2+\cdots n_r=n}\binom{n}{n_1,n_2,\cdots, n_r}x_1^{n_1}x_2^{n_2}\cdots x_r^{n_r}$$
 
-*Where the sum is taking place over all tuples $(n_1,n_2,\cdots,n_r)$ such that their pointwise sum is $n$.*
+*Where the sum is taking place over all tuples $(n_1,n_2,\cdots,n_r)$ with $0\le n_i\le n$ that sum to $n$.*
 
 <!-- TODO:
 - Pascal's triangle
