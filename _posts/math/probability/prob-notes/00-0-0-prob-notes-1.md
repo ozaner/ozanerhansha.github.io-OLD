@@ -57,7 +57,7 @@ Dividing by the factorial of each element's multiplicity accounts for all the pe
 <!--more-->
 
 ## Combinations & Binomial Coefficients
-Another combinatorial problem is how many different sets of $r$ groups can be formed from $n$ distinct elements:
+Another combinatorial problem is how many different sets of groups with $r$ elements can be formed from $n$ distinct elements:
 
 $$\frac{n!}{(n-r)!\ r!}=\binom{n}{r}$$
 
@@ -80,7 +80,7 @@ The binomial coefficient has many other [interesting identities](https://en.wiki
 #### Binomial Theorem
 The binomial theorem tells us the coefficients of each term in the expansion of the binomial $(x+y)^n$ as we vary $n$:
 
-$$(x+y)^n=\sum^n_{k=0}\binom{n}{k}x^ky^{n-k}$$
+$$(x+y)^n=\sum^n_{k=0}\binom{n}{k}x^{n-k}y^{k}$$
 
 We can prove the above statement via induction (I'll do it later).
 

@@ -130,7 +130,7 @@ A binary relation on two different sets $A$ and $B$ is called *heterogenous* whe
 
 Below is a list of common classifications of binary relations based on what properties they satisfy. In all the definitions below we will assume $R=(A\times B,G)$ where $G\subseteq A\times B$:
 
-*The number of relations on a set of $n$ elements is given by $2^{n^2}$, which is sequence [A002416](https://oeis.org/A002416) on the OEIS. The number of relations in an $n$ element set that satisfy the properties below can also be found on the OEIS, though not all have closed formulae.*
+*The number of relations on a set of $n$ elements is given by $2^{n^2}$, which is sequence [A002416](https://oeis.org/A002416) on the OEIS. The number of relations on an $n$ element set that satisfy the properties below can also be found on the OEIS, though not all have closed formulae.*
 
 ### Uniqueness Properties
 
