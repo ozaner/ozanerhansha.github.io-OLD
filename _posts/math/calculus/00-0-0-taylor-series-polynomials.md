@@ -6,7 +6,7 @@ tags: math calculus
 ---
 Taylor series are a useful way of representing smooth (i.e. infinitely differentiable) functions as infinite polynomials.
 
-Doing this allows us to define important analytic functions (like $\sin x$ or $e^x$) over the entire complex plane.
+Defining important analytic functions (like $\sin x$ or $e^x$) in terms of these series allows us to extend them over the entire complex plane.
 
 Moreover, the partial sums of these series (i.e. Taylor polynomials) provide a practical way of approximating the values of functions that are themselves infeasible/impossible to compute directly.
 

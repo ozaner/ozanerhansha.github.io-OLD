@@ -45,7 +45,7 @@ It also applies to an infinite number of events as well as events with an infini
 $$|\underbrace{\mathbb Z\times \mathbb Z\times\cdots}_{\aleph_0}|=|\mathbb Z||\mathbb Z|\cdots=\aleph_0\aleph_0\cdots=\aleph_0^{\aleph_0}=\mathfrak{c}$$
 
 ### Independence of Outcomes
-It is important to note that if the outcome of the first event affects the number of outcomes of future events (i.e. not independent), the cartesian product wouldn't represent all possible outcomes as it would include impossible ones as well. An example might be if getting a 2 on the first roll precluded you from getting a 4 on the second roll. This would mean the outcome $(2,4)$ is not a possible event and $|D\times D|=36$ is $1$ too high.
+It is important to note that if the outcome of the first event affects the number of outcomes of the other events (implying they're not independent), the cartesian product wouldn't represent all possible outcomes as it would include impossible ones as well. An example might be if getting a 2 on the first roll precluded you from getting a 4 on the second roll. This would mean the outcome $(2,4)$ is not a possible event and $|D_1\times D_2|=36$ is $1$ too high.
 
 ### Without Explicit Sets
 Note that this independence only matters when the *number* of outcomes changes. For example, if we want to quantify the set of all two digit strings with no repeats, we have 10 choices of digits for the first digit and 9 choices for the second:

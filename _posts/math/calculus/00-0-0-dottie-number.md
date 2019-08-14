@@ -2,7 +2,7 @@
 layout: post
 title: The Dottie Number
 date: 2018-04-16
-tags: math
+tags: math calculus
 ---
 The Dottie number, which I will denote as $\textbf{d}$, is the only real solution to the following equation:
 

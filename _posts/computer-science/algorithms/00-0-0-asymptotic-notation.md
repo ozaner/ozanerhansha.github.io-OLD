@@ -2,7 +2,8 @@
 layout: post
 title: Asymptotic Notation
 date: 2018-10-07
-tags: computer-science math algorithms relations
+tags: computer-science math algorithms
+# relations
 ---
 The notation used to describe the **asymptotics**, or limiting behavior, of functions consists of a set of 6 [relations](\relations). These different relations allow us to compare the growth of different functions as they approach some constant or, in most cases, infinity.
 
@@ -252,7 +253,7 @@ $$n^{O(1)}=O(e^n)$$
 
 Is equivalent to the following, more formal, proposition:
 
-$$(\exists f,g)\left(f\in O(1)\wedge g\in O(e^n)\right)n^{f(n)}=g(n)$$
+$$(\exists f\in O(1),\exists g\in O(e^n))\,n^{f(n)}=g(n)$$
 
 And in general, the equation means that if all the big $O$'s on both sides were replaced with some function in that class, the equation is true. There just has to exist one set of functions that make the equation true.
 <p></p>
@@ -285,4 +286,4 @@ Below is a table of common terminology for certain lower-bound complexity classe
 | Exponential      | $O(k^n)_{\ k>1}$   |
 | Factorial        | $O(n!)$            |
 
-While the terminology $f$ is **'on the order'** $g$ is loose, if the particular notation is not specified it can be assumed to be referring to big $O$.
+While the terminology $f$ is **'on the order of'** $g$ is loose, if the particular notation is not specified it can be assumed to be referring to big $O$.

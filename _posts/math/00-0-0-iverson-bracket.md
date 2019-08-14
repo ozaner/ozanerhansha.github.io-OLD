@@ -2,7 +2,7 @@
 layout: post
 title: Iverson Bracket
 date: 2018-08-27
-tags: math logic
+tags: math logic set-theory
 ---
 The Iverson bracket, denoted $[P]$, is a function that evaluates to $1$ if the given proposition $P$ is true and $0$ if it's false. That is to say:
 
@@ -36,14 +36,14 @@ $$Q\equiv\{(x,y)\mid(P(x)\wedge y=1)\vee(\neg P(x)\wedge y=0)\}$$
 
 <details>
 <summary><strong>Proof of Function</strong></summary>
-We can see that $Q$ is a set of ordered pairs $(x,y)$ with $x\in S$ and $y\in 2$. This implies that $Q\subset S\times 2$. However, this only shows that $[P(x)]$ is a <a href="\relations">relation</a>.
+We can see that $Q$ is a set of ordered pairs $(x,y)$ with $x\in S$ and $y\in \{0,1\}$. This implies that $Q\subset S\times \{0,1\}$. However, this only shows that $[P(x)]$ is a <a href="\relations">relation</a>.
 <p></p>
 
 To show that $Q$ is a function, we must show that it is right-unique. This should be clear as for any given $x$, $y=0\oplus y=1$. This is because $P(x)\oplus\neg P(x)$ due to the law of the excluded middle.
 </details>
 <p></p>
 
-And so $Q$ is a function $Q:S\to 2$. We can now say $Q(x)\equiv [P(x)]$, to return to our original notation.
+And so $Q$ is a function $Q:S\to \\{0,1\\}$. We can now say $Q(x)\equiv [P(x)]$, to return to our original notation.
 
 ## Arithmetic Properties
 Below are some of the immediate properties of the Iverson bracket. We can think of these equalities as bridges between the first order logic notions of truth (true vs. false) and the arithmetic/computational notion of booleans ($0$ vs. $1$).

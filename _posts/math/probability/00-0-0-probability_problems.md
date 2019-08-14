@@ -2,7 +2,7 @@
 layout: post
 title: Miscellaneous Probability Problems
 date: 2019-02-24
-tags: math probability
+tags: math probability-theory
 ---
 This is a collection of random (ha) exercises I've written up solutions to relating to combinatorics and probability theory. They're all taken from Ross' <i>A First Course in Probability</i>.
 
@@ -60,7 +60,7 @@ Where the first element of each outcome is the first choice and likewise for the
 
 <details>
 <summary><h4 class="inline">Problem 2</h4></summary>
-<b>Question:</b> A die is rolled continually until a 6 appears. What is the sample space of this experiment? Let $E_n$ denote the event that $n$ rolls were needed to end the experiment. What outcomes are in $E_n$? What does $(\bigcup_{n\in\mathbb{N}} E_n)^\complement$ mean?
+<b>Question:</b> A die is rolled continually until a 6 appears. Let $E_n$ denote the event that $n$ rolls were needed to end the experiment. What outcomes are in $E_n$? What is the sample space of this experiment? What does $(\bigcup_{n\in\mathbb{N}} E_n)^\complement$ mean?
 <p></p>
 <b>Answer:</b> First let us define the event $E_n$. That is, the set of all sequences of rolls of length $n$ (each of which must end in a 6):
 
@@ -69,10 +69,6 @@ $$E_n = \{(k_1,k_2,\cdots,k_i,\cdots,k_{n-1},6)\mid k_i\in[1..5]\}$$
 The sample space of this experiment is the set of all finite sequences that end with a $6$ (where the experiment ends) <i>as well as</i> the set of all infinite sequences that don't include $6$ (where the experiment goes on forever):
 
 $$\Omega = \underbrace{\left(\bigcup_{n\in\mathbb{N}} E_n\right)}_{\text{finite sequences}}\cup\underbrace{\{(k_1,k_2,\cdots)\mid k_i\in[1..5]\}}_{\text{infinite sequences}}$$
-
-$E_n$ is the event the experiment ends in $n$ rolls, and so contains all outcomes of length $n$:
-
-$$E_n = \{(k_1,\cdots,k_i,\cdots,k_{n-1},6)\mid k_i\in[1..5]\}$$
 
 Recall that $\bigcup_{n\in\mathbb{N}} E_n$ is the event that the experiment terminates, i.e. the outcome is of finite length. Thus, its complement $(\bigcup_{n\in\mathbb{N}} E_n)^\complement$ is the event that it does <i>not</i> terminate and is infinite:
 
@@ -205,17 +201,46 @@ P(B)&=P(BA)+P(BA^\complement)\\
 \end{align*}$$
 </details>
 
-<!-- ## Chapter 3 - Conditional Probability
-
-<details open>
-<summary><h4 class="inline">Exercise ?</h4></summary>
-<b>Question:</b> 
-<p></p>
-<b>Answer:</b>
-<p></p>
-</details>
+## Chapter 3 - Conditional Probability
 
 <details>
+<summary><h4 class="inline">Exercise 1</h4></summary>
+<b>Question:</b> Two dice are rolled. What is the probability that at least one lands on $6$ given that the dice landed on different numbers? 
+<p></p>
+<b>Answer:</b> let $E$ represent the event that one die lands on a $6$ and $F$ that the rolls are different. The conditional probability of $E$ occurring given $F$ is:
+
+$$P(E|F)=\frac{P(EF)}{P(F)}$$
+
+To compute the necessary probabilities we first note that this experiment is given by a discrete uniform distribution. As a result, the probability of an event occurring is simply its cardinality over the cardinality of the sample space. So first we compute the cardinalities of each event.
+<p></p>
+For the sample space $\Omega$, we have two dice each with $6$ independent outcomes, and so <a href="/the-basic-principle-of-counting">the basic principle of counting</a> tells us its size:
+
+$$|\Omega|=6\cdot6=36$$
+
+The number of outcomes in $E$ is given by all the rolls where the first die is a $6$ and the second isn't, where the second die is a $6$ and the first isn't, and where they are both $6$:
+
+$$|E|=5+5+1=11$$
+
+For $F$, there are 6 choices of the first die and only 5 valid choices for the second die (i.e. no repeats) and so, via the basic principle of counting, the number of outcomes is given by:
+
+$$|F|=6\cdot5=30$$
+
+Note that the outcomes in $E$ are all contained in $F$ except the outcome that both rolls are a $6$. As such, the size of $EF$ is given by:
+
+$$|EF|=11-1=10$$
+
+We can now compute the relevant probabilities:
+
+$$P(EF)=\frac{|EF|}{|\Omega|}=\frac{10}{36}\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,P(F)=\frac{|F|}{|\Omega|}=\frac{30}{36}$$
+
+Plugging these probabilities into our original formula we finally arrive at:
+
+$$P(E|F)=\frac{P(EF)}{P(F)}=\frac{10/36}{30/36}=\frac{1}{3}$$
+
+<p></p>
+</details>
+<!-- 
+<details open>
 <summary><h4 class="inline">Exercise ?</h4></summary>
 <b>Question:</b> 
 <p></p>

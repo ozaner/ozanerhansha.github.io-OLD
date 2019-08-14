@@ -10,7 +10,7 @@ An ODE is called **autonomous** if it is independent of it's independent variabl
 
 $$\frac{d^ny}{dt}=f(y,y',y'',\cdots,y^{(n-1)})$$
 
-ODEs that *are* dependent on $t$ are called **non-autonomous**. And a system of autonomous ODEs is called an **autonomous system**.
+ODEs that *are* dependent on $t$ are called **non-autonomous**, and a system of autonomous ODEs is called an **autonomous system**.
 
 <!--more-->
 
@@ -23,7 +23,7 @@ Recall that any explicit first order autonomous equation:
 
 $$\frac{dy}{dt}=h(y)$$
 
-is [**separable**](/separable-equations) and so, their solution sets are given by the **equilibrium points**, i.e. the roots of $h(y)$, as well as the solutions to the following integral equation:
+is [**separable**](/separable-equations) and so their solution sets are given by the **equilibrium points**, i.e. the roots of $h(y)$, as well as the solutions to the following integral equation:
 
 $$\int\frac{1}{h(y)}\,dy=t+C$$
 

@@ -2,7 +2,8 @@
 layout: post
 title: Kinematics
 date: 2018-03-17
-tags: physics classical-mechanics
+tags: physics
+# classical-mechanics
 ---
 Translational Kinematics describes the motion of objects through space over time. Using an object's [position](/position), velocity, and acceleration vectors, it is possible to predict where it will be in the future and where it was in the past. Where an object gets it's velocity and acceleration is what dynamics seeks to explain. <!-- Make vectors bold rather than arrow headed --> $\renewcommand{\vec}[1]{\mathbf{#1}}$
 

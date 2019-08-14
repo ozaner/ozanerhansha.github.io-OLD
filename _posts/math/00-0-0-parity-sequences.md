@@ -2,7 +2,8 @@
 layout: post
 title: Parity Sequences
 date: 2018-05-10
-tags: math relations
+tags: math
+# relations
 ---
 <!-- New new date is even better reformulation of parity sequences as a commutative ring with associated operations. Also got rid of +- notation
 since that would confuse the ring operations.

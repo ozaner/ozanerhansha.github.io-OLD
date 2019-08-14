@@ -2,7 +2,8 @@
 layout: post
 title: Classical Physics
 date: 2018-03-24
-tags: physics classical-mechanics
+tags: physics
+# classical-mechanics
 ---
 Classical physics refers to the branches of physics that were conceived of prior to quantum mechanics and Einsteinian relativity. These branches of physics are more than sufficient in describing phenomena at non-relativistic speeds and non-quantum scales. Moreover, they serve as starting points for understanding and deriving modern physics.
 
