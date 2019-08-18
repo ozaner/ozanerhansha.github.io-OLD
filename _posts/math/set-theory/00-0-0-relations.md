@@ -114,7 +114,7 @@ Thus every element of a Cartesian product satisfies its corresponding universal 
 $$\left(\forall(x_1,x_2,\cdots,x_n)\in\prod_{i=1}^nS_i\right) Ux_1x_2\cdots x_n$$
 
 #### Identity Relation
-Unlike the empty and universal relations which can be defined for any Cartesian product, the identity relation can only be defined as a relation on a set (see below). An identity relation is a binary relation where each element is only related to itself:
+Unlike the empty and universal relations which can be defined for any Cartesian product, the identity relation can only be defined as a *relation on a set* (see below). An identity relation is a binary relation where each element is only related to itself:
 
 $$I=\left(S\times S,\{(x,x)\mid x\in S\}\right)$$
 
@@ -127,11 +127,11 @@ The most common type of relations are binary. This is in part due to the fact th
 
 <!-- This is in part because many relations can be [*curried*](https://en.wikipedia.org/wiki/Currying) into several different binary relations -->
 
-A binary relation on two different sets $A$ and $B$ is called *heterogenous* when $A\not=B$ and *homogenous* when $A=B$. Homogenous relations are also called **relations on a set**.
+A binary relation on two different sets $A$ and $B$ is called **heterogenous** when $A\not=B$ and **homogenous** when $A=B$. Homogenous relations are also called **relations on a set**.
 
-Below is a list of common classifications of binary relations based on what properties they satisfy. In all the definitions below we will assume $R=(A\times B,G)$ where $G\subseteq A\times B$:
+Below is a list of common classifications of binary relations based on what properties they satisfy. In all the definitions below we will let $R=(A\times B,G)$ where $G\subseteq A\times B$:
 
-*The number of relations on a set of $n$ elements is given by $2^{n^2}$, which is sequence [A002416](https://oeis.org/A002416) on the OEIS. The number of relations on an $n$ element set that satisfy the properties below can also be found on the OEIS, though not all have closed formulae.*
+*A combinatorial side note: the number of relations on a set of $n$ elements is given by $2^{n^2}$, which is sequence [A002416](https://oeis.org/A002416) on the OEIS. The number of relations on an $n$ element set that satisfy the properties below can also be found on the OEIS, though not all have closed formulae.*
 
 ### Uniqueness Properties
 
@@ -142,6 +142,7 @@ A relation is called injective if for all $b\in B$, the $a\in A$ is unique in th
 $$\forall a_1,a_2\in A, \forall b\in B \left(a_1Rb\wedge a_2Rb\implies a_1=a_2\right)$$
 
 Because of this property, injective relations are also called <b>left-unique</b>.
+<p></p>
 </details>
 
 <details>
@@ -167,13 +168,14 @@ A left-total relation means that for every element in $A$ there is at least one 
 $$(\forall a\in A,\exists b\in B)\ aRb$$
 
 Note that all functions are automatically left-total, but not all left-total relations are functions.
+<p></p>
 </details>
 
 <details>
 <summary><strong>Surjective</strong></summary>
-A relation is surjective every element in $B$ is related to at least one element in $A$:
+A relation is surjective if every element in $B$ is related to at least one element in $A$:
 
-$$(\exists a\in A,\forall b\in B)\ aRb$$
+$$(\forall b\in B,\exists a\in A)\ aRb$$
 
 Similar to left-total relations, surjective relations are also called <b>right-total</b>. When a function is both injective and surjective it forms a bijection.
 </details>
@@ -191,6 +193,7 @@ Some example of this are the less than or equal to $\le$ and the divides $\mid$ 
 $$(\forall x\in X)\ \neg(xRx)$$
 
 An example of this is the $\lt$ relation.
+<p></p>
 </details>
 
 <details>
@@ -200,6 +203,7 @@ A relation is symmetric if $xRy$ implies $yRx$ as well:
 $$\forall x,y\in X \left(xRy \implies yRx\right)$$
 
 Some examples of this include the <a href="/proportionality">proportionality</a> $\propto$ of functions and similarity $\sim$ of geometric objects.
+<p></p>
 </details>
 
 <details>
@@ -209,6 +213,7 @@ A relation is anti-symmetric if $xRy$ and $yRx$ imply $x=y$:
 $$\forall x,y\in X \left(xRy\wedge yRx \implies x=y\right)$$
 
 All partial orders satisfy this property, e.g. $\le$.
+<p></p>
 </details>
 
 <details>
@@ -218,11 +223,12 @@ A relation is transitive if $xRy$ and $yRz$ means $xRz$:
 $$\forall x,y,z\in X \left(xRy \wedge yRz\implies xRz\right)$$
 
 All partial orders and equivalence relations, like $\le$ and $\sim$, are transitive.
+<p></p>
 </details>
 
 <details>
 <summary><strong>Trichotomous</strong></summary>
-A relation is trichotomus if for any two element in $X$ either $xRy$, $yRx$, or $x=y$ holds. But only 1 of those three options:
+A relation is trichotomus if for any two element in $X$ only one of the following 3 options holds: $xRy$, $yRx$, or $x=y$. More formally:
 
 $$(\forall x,y\in X)\ (xRy \oplus yRx \oplus x=y) \wedge \neg(xRy \wedge yRx \wedge x=y)$$
 
@@ -273,7 +279,6 @@ Likewise, a <b>superrelation</b> of $R$ is one with the same domains and whose g
 $$R_\uparrow=\left(\prod S_i,G_\uparrow\right)$$
 
 $$R_\uparrow\supseteq^* R\equiv G_\uparrow\supseteq G$$
-
 </details>
 
 <details>
@@ -326,7 +331,8 @@ An interesting property of relation composition is its associativity:
 
 $$X\circ (Y\circ Z)=(X\circ Y)\circ Z$$
 
-An intuitive example of this can be found in kinship relations. The composition "is parent of" $\circ$ "is father of" returns the new relation "is grandfather of".<p></p>
+An intuitive example of this can be found in kinship relations. The composition "is parent of" $\circ$ "is father of" returns the new relation "is grandfather of".
+<p></p>
 </details>
 
 <details>
@@ -351,7 +357,8 @@ $$(R^\top)^\top=R$$
 
 For example, the converse of the greater than relation $\ge^\top$ is $\le$. Similarly, the converse of the relation "is a child of" is "is a parent of".
 
-<i>All finite relations can be represented by a matrix (or a graph which in turn can be represented by an adjacency matrix). It is interesting to note, then, that the converse is analogous to the matrix transpose, hence the notation.</i><p></p>
+<i>All finite relations can be represented by a matrix (or a graph which in turn can be represented by an adjacency matrix). It is interesting to note, then, that the converse is analogous to the matrix transpose, hence the notation.</i>
+<p></p>
 </details>
 
 <details>

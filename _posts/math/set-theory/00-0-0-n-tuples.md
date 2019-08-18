@@ -91,7 +91,7 @@ To project the first element $\pi_1(P)$ of an ordered pair $P=(a,b)$ we can use 
 $$\pi_1(P)=\bigcup\bigcap P=a$$
 
 <details><summary><strong>Proof</strong></summary>
-  <b>Lemma 1</b>
+  <!-- <b>Lemma 1</b>
   <p>To make proving the above statement easier, it would help to prove that the arbitrary union of a set of an element $\{x\}$ is that element $x$:
 
   $$\bigcup \{x\}=x$$
@@ -112,9 +112,7 @@ $$\pi_1(P)=\bigcup\bigcap P=a$$
 
   $$\boxed{\bigcup \{x\}=x}$$
   </p>
-  <b>The Proof</b>
-  <p>
-
+  <b>The Proof</b> -->
   $$\begin{align}
   \pi_1(P)&=\bigcup\bigcap P\\
   &=\bigcup\bigcap \{\{a\},\{a,b\}\}\\
@@ -125,12 +123,11 @@ $$\pi_1(P)=\bigcup\bigcap P=a$$
 
   $$\pi_1(P)=\bigcup \{a\}$$
 
-  And from Lemma 1, we know this equals:
+  And because the union of all the element in $a$ is precisely $a$, we have:
 
   $$\pi_1(P)=\bigcup \{a\}=a$$
 
   And indeed, $a$ is the first element of the ordered pair $P$.
-  </p>
 </details>
 
 #### Second Element

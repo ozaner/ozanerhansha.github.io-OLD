@@ -232,6 +232,9 @@ Here are some more accessible examples:
 </ul><p></p>
 </details>
 
+#### Properties
+Quite trivially all of the asymptotic relations are **reflexive** and with a little work it can be proven that they are all **transitive** as well. On top of that, as mentioned previously, big $\Theta$ (and thus asymptotic equivalence) are also **symmetric**, meaning they are equivalence relations.
+
 ## Notation and Terminology
 The use of asymptotic notation is, unfortunately, quite varied and oftentimes informal. As such, I will try to clear up some of the nuance packed into these notations.
 
@@ -262,13 +265,13 @@ And in general, the equation means that if all the big $O$'s on both sides were 
 ### Computational Complexity
 When someone refers to the complexity of an algorithm without context they are assumed to be referring to its temporal, rather than its spatial, complexity. Similarly, when the order of an algorithm (its big $O$) is given without context it is assumed to be the algorithm's **worst-case** complexity (as opposed to the best/average case).
 
+![xkcd](https://imgs.xkcd.com/comics/travelling_salesman_problem.png?style=centerme)
+
 <details>
 <summary><h4 class="inline">$n$ vs. $x$</h4></summary>
 Although I used the variable $x$ in the definitions given above, the variable $n$ is also very common. This is because $x$ is conventionally used to denote a continuous valued, real variable, while $n$ is conventionally used to denote a discrete, integer valued variable. This jives with the fact that these notations are often used in describing the computational complexity of algorithms expressed as functions of their, discrete sized, inputs (e.g there are no lists of size $2.5$ and even further to the point, we cannot subdivide the bit).
 <p></p>
 </details>
-
-![xkcd](https://imgs.xkcd.com/comics/travelling_salesman_problem.png?style=centerme)
 
 ### Common Orders
 Below is a table of common terminology for certain lower-bound complexity classes from slowest to fastest growth:

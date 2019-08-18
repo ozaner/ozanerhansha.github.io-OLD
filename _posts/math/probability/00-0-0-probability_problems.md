@@ -12,6 +12,22 @@ This is a collection of random (ha) exercises I've written up solutions to relat
 
 ## Chapter 1 - Combinatorics
 <details>
+<summary><h4 class="inline">Problem 20</h4></summary>
+<b>Question:</b> A person has $8$ friends but will only invite $5$ to a party. How many ways can he invite them if $2$ of the friends are feuding and won't attend together? How many ways if $2$ of the friends will only attend together?
+<p></p>
+<b>Answer:</b> The first question is given by the total number of combinations of friends minus the number of combinations that have the two friends:
+
+$$\underbrace{\binom{8}{5}}_{\substack{\text{all combos}\\ \text{of friends}}}\mkern-13mu-\underbrace{\overbrace{\binom{2}{2}}^{\substack{\text{feuding}\\ \text{friends}}}\overbrace{\binom{6}{3}}^{\substack{\text{the}\\ \text{rest}}}}_{\text{impossible cases}}=36$$
+
+The second question is given by the number of combinations where the two close friends show up together plus the number of combinations where they do not:
+
+$$\underbrace{\binom{6}{5}}_{\substack{\text{close friends}\\ \text{don't show}}}\mkern-18mu+\,\,\underbrace{\overbrace{\binom{2}{2}}^{\substack{\text{close}\\ \text{friends}}}\overbrace{\binom{6}{3}}^{\substack{\text{the}\\ \text{rest}}}}_{\substack{\text{close friends}\\ \text{show up}}}=26$$
+
+
+<p></p>
+</details>
+
+<details>
 <summary><h4 class="inline">Problem 24</h4></summary>
 <b>Question:</b> Expand $(3x^2+y)^5$.
 <p></p>
@@ -28,6 +44,15 @@ $$\begin{align*}
 </details>
 
 <details>
+<summary><h4 class="inline">Problem 25</h4></summary>
+<b>Question:</b> A game of bridge has $4$ players dealt $13$ cards each. How many different bridge deals are possible?
+<p></p>
+<b>Answer:</b> There are $4\cdot 13=52$ cards in total, so the total number of ways of splitting $52$ cards in $4$ equal groups is given by the following multinomial coefficient:
+
+$$\binom{52}{13,13,13,13}=\frac{52!}{(13!)^4}\approx5.35\cdot10^{28}$$
+</details>
+
+<details>
 <summary><h4 class="inline">Problem 28</h4></summary>
 <b>Question:</b> Given $8$ teachers to be divided into $4$ schools, how many divisions are possible? What if each school must receive $2$ teachers?
 <p></p>
@@ -40,6 +65,88 @@ $$\underbrace{\mkern-20mu\overbrace{4}^{4\text{ schools}}\mkern-20mu\cdot4\cdot4
 The above case was for any division (even those in which some schools got no teachers). However in the following case, each school must receive 2 teachers. The number of ways a group of 8 can be split into 4 groups of 2 is given by the following multinomial coefficient:
 
 $$\binom{8}{2,2,2,2}=\frac{8!}{2!2!2!2!}=2520\text{ divisions}$$
+</details>
+
+
+
+<details>
+<summary><h4 class="inline">Problem 30</h4></summary>
+<b>Question:</b> Delegates from $10$ countries are to be seated in a row together, $1$ per country. $4$ of these countries are the US, Russia, England, and France. How many possible seating arrangements are there if the American and Russian delegates <i>can't</I> sit together, and the English and French delegates <i>must</i> sit together?
+<p></p>
+<b>Answer:</b> The number of ways $n$ things can be permutated is given by $n!$. As such, if we consider the English and French delegates as one unit, there are $9!$ ways of arranging them with the other delegates times $2$ since we can switch the French and English delegates amongst themselves:
+
+$$\small\substack{\text{2 options}\\ \text{for En & Fr}}\left\{
+    \begin{array}{ll}
+        \underbrace{(x_1,x_2,x_3,x_4,x_5,x_6,x_7,x_8,\text{EnFr})}_{9! \text{ permutations}}\\
+        \underbrace{(x_1,x_2,x_3,x_4,x_5,x_6,x_7,x_8,\text{FrEn})}_{9! \text{ permutations}}
+    \end{array}
+\right.=2\cdot 9!$$
+
+Now we calculate all the arrangements where not only France and England are sitting together, but where the US and Russia are as well. This is given by a similar argument, where we treat the US and Russia as a single unit:
+
+$$\small\substack{\text{2 options}\\ \text{for En & Fr}\\\text{2 options}\\ \text{for US & Ru}}\left\{
+    \begin{array}{ll}
+        \phantom{(Dummy)}\\
+        \underbrace{(x_1,x_2,x_3,x_4,x_5,x_6,\text{USRu},\text{EnFr})}_{8! \text{ permutations}}\\
+        \underbrace{(x_1,x_2,x_3,x_4,x_5,x_6,\text{USRu},\text{FrEn})}_{8! \text{ permutations}}\\
+        \underbrace{(x_1,x_2,x_3,x_4,x_5,x_6,\text{RuUS},\text{EnFr})}_{8! \text{ permutations}}\\
+        \underbrace{(x_1,x_2,x_3,x_4,x_5,x_6,\text{RuUS},\text{FrEn})}_{8! \text{ permutations}}
+    \end{array}
+\right.=2\cdot2\cdot 8!$$
+
+And using these two quantities, it should be clear that the total number of valid arrangements is given by those where France and England sit together <i>minus</i> those where they sit together AND the US and Russia sit together (since all that's left are the arrangements that satisfy both constraints):
+
+$$(2\cdot9!)-(2\cdot2\cdot8!)=564480$$
+</details>
+
+<details>
+<summary><h4 class="inline">Problem 32</h4></summary>
+<b>Question:</b> An elevator starts at the basement with $8$ people (not including the operator) and will discharge them all by the time it reaches floor $6$. How many different ways could the operator have seen people leaving the elevator if all people look alike to him? What if there were $5$ men and $3$ women and he could tell men and women apart?
+<p></p>
+<b>Answer:</b> The number of different ways a group of $8$ identical people could be distributed amongst $6$ different floors is given by the following multiset coefficient:
+
+$$\left(\!\!{6 \choose 8}\!\!\right)=\binom{6+8-1}{8}=1287$$
+
+The number of different ways a group of $5$ identical men could be distributed amongst $6$ different floors times the number of ways $3$ women could be distributed is given by the following product:
+
+$$\left(\!\!{6 \choose 5}\!\!\right)\left(\!\!{6 \choose 3}\!\!\right)=\binom{6+5-1}{5}\binom{6+3-1}{3}=14112$$
+
+<p></p>
+</details>
+
+<details>
+<summary><h4 class="inline">Theoretical Exercise 8</h4></summary>
+<b>Question:</b> Why does the following identity hold?:
+
+$$\binom{n+m}{k}=\sum_{i=0}^k\binom{n}{k-i}\binom{m}{i}$$
+
+<b>Answer:</b> Note that $\binom{n+m}{k}$ is the number of ways to pick $k$ members from a group of $n+m$ candidates.  Another way to phrase this is the following sum:
+
+$$\binom{n}{k}\binom{m}{0}+\binom{n}{k-1}\binom{m}{1}+\cdots+\binom{n}{0}\binom{m}{k}$$
+
+Which is the number of ways to pick $k$ members from only the first $n$ candidates and $0$ from the other $m$, plus the number of ways to pick $k-1$ members from the first $n$ and only $1$ from the other $m$, and so on. This sum gives us all the ways of picking $k$ members of the total group $n+m$ in terms of just the smaller groups $n$ and $m$.
+<p></p>
+</details>
+
+<details>
+<summary><h4 class="inline">Theoretical Exercise 9</h4></summary>
+<b>Question:</b> Using the result from Theoretical Exercise 8, prove the following identity:
+
+$$\binom{2n}{n}=\sum_{k=0}^n\binom{n}{k}^2$$
+
+<b>Answer:</b> From the previous exercise we have:
+
+$$\begin{align*}
+\binom{2n}{n}=\binom{n+n}{n}&=\sum_{k=0}^n\binom{n}{n-k}\binom{n}{k}\\
+&=\sum_{k=0}^n\binom{n}{k}\binom{n}{k}=\sum_{k=0}^n\binom{n}{k}^2
+\end{align*}$$
+
+With the third equality being justified by the following identity:
+
+$$\binom{n}{n-k}=\frac{n!}{(n-n+k)!(n-k)!}=\frac{n!}{k!(n-k)!}=\binom{n}{k}$$
+
+<i>whenever $0\le k\le n$.</i>
+<p></p>
 </details>
 
 ## Chapter 2 - Probability Spaces
@@ -149,35 +256,35 @@ $$|\Omega| =|\{0,1\}^5|=2^5=32$$
 The system is working when at least 1 of the 3 conditions mentioned are satisfied:
 
 $$\begin{align*}
-W=\{(x_1,x_2,x_3,x_4,x_5)\,\mid\, &(x_1=x_2=1)\,\vee\\
+W=\{(x_1,x_2,x_3,x_4,x_5)\in\Omega\,\mid\, &(x_1=x_2=1)\,\vee\\
 &(x_3=x_4=1)\,\vee\\
 &(x_1=x_3=x_5=1)\}
 \end{align*}$$
 
-The event $A$ is just when 4 and 5 are 0. Only 3 components are free with 2 possible states each, meaning the number of outcomes is:
+The event $A$ is just when $x_4$ and $x_5$ are $0$. Only 3 variables are free with 2 possible states each, meaning the number of outcomes is:
 
-$$|A|=\left|\{(x_1,x_2,x_3,x_4,x_5)\mid x_4=x_5=0\}\right|=2^3=8$$
+$$|A|=\left|\{(x_1,x_2,x_3,x_4,x_5)\in\Omega\mid x_4=x_5=0\}\right|=2^3=8$$
 
-Event $AW$ is when the system is working, despite 4 and 5 not working. This only leaves two possibilities (because 3 working is irrelevant):
+Event $AW$ is when the system is working, despite $x_4$ and $x_5$ not working. This only leaves two possibilities (because $x_3$ working is irrelevant):
 
 $$AW=\{(1,1,0,0,0),(1,1,1,0,0)\}$$
 </details>
 
 <details>
 <summary><h4 class="inline">Problem 8</h4></summary>
-<b>Question:</b> $A$ and $B$ are mutually exclusive events with $P(A)=.3$, and $P(B)=.5$. What is the probability of $A\cup B$, $AB^\complement$, and $AB$
+<b>Question:</b> $A$ and $B$ are mutually exclusive events with $P(A)=.3$, and $P(B)=.5$. What is the probability of $AB$, $AB^\complement$, and $A\cup B$?
 <p></p>
-<b>Answer:</b> Because they are mutually exclusive $AB=\emptyset$, and thus:
+<b>Answer:</b> Because they are mutually exclusive we have $AB=\emptyset$ and thus:
 
-$$P(A\cup B) = P(A) + P(B) - P(AB) = 0.3+0.5+0=0.8$$
+$$P(AB)=P(\emptyset)=0$$
 
-Note that because they are mutually exclusive, the probability that $B$ does not occur given $A$ has occurred is 1, giving us:
+Also because they are mutually exclusive, the probability that $B$ does not occur given $A$ has occurred is $1$, giving us:
 
 $$P(AB^\complement)=P(B^\complement|A)P(A)=1\cdot 0.3=0.3$$
 
-And finally, recall that $AB=\emptyset$ and thus:
+And finally, recalling that $P(AB)=0$, we have:
 
-$$P(AB)=P(\emptyset)=0$$
+$$P(A\cup B) = P(A) + P(B) - P(AB) = 0.3+0.5+0=0.8$$
 </details>
 
 <details>
@@ -239,14 +346,14 @@ $$P(E|F)=\frac{P(EF)}{P(F)}=\frac{10/36}{30/36}=\frac{1}{3}$$
 
 <p></p>
 </details>
-<!-- 
+
 <details open>
 <summary><h4 class="inline">Exercise ?</h4></summary>
 <b>Question:</b> 
 <p></p>
 <b>Answer:</b>
 <p></p>
-</details> -->
+</details>
 
 <!-- Problem Template
 <details>

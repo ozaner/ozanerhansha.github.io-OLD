@@ -15,11 +15,13 @@ A useful modification of this algorithm is to return the index of the target in 
 ## Implementation
 ### Pseudocode
 Given a list $L$ of length $n$ with the $i$th element denoted $L_i$ and the target value denoted $T$:
-1. **for** $i$ from $1$ to $n$:
+<p></p>
+
+> **for** $i$ from $1$ to $n$:
     <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**if** $L_i=T$:<br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**return** $i$<br>
-2. **return** $-1$
+**return** $-1$
 
 ### Java
 ````java
@@ -119,12 +121,18 @@ Another assumption we can remove is that the list is unsorted, that is the arran
 <p></p>
 Given a list $L$ of length $n$ with the $i$th element denoted $L_i$ the target value denoted $T$ and $L_0\le L_1\le \cdots\le L_n$:
 <p></p>
-<ol>
+<!-- <ol>
   <li>Set variable $i:=0$</li>
   <li>If $L_i\ge T$, goto step 4</li>
   <li>Increment index $i:=i+1$ and goto step 2</li>
   <li>Return $L_i=T$ <b>END</b></li>
-</ol>
+</ol> -->
 
+<blockquote><font color="black"><b>for</b> $i$ from $1$ to $n$:
+    <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>if</b> $L_i\ge T$:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> $i$<br>
+<b>return</b> $L_i=T$ </font></blockquote>
+<p></p>
 Of course, because we have stipulated that the list be sorted, there are now faster search algorithms that can be used on it (like binary search). This obviates the use of sequential sort.
 </details>
