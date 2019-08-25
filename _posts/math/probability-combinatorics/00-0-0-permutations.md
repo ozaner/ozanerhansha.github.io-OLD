@@ -71,7 +71,7 @@ The number of different permutations of a set (i.e. the cardinality of it's symm
 
 Note that for a finite set with $n$ elements, we have $n$ choices for what to map the first element to, $n-1$ choices for the second element, and so on until we reach the $n$th element which has only $1$ choice left to map to.
 
-Thus, by the [principle of counting](/principle-of-counting), the number of distinct permutations of an $n$ element set $S$ is given by the [factorial](\superfactorial-and-hyperfactorial):
+Thus, by the [principle of counting](/the-basic-principle-of-counting), the number of distinct permutations of an $n$ element set $S$ is given by the [factorial](\superfactorial-and-hyperfactorial):
 
 $$|\text{Sym}(S)|=n(n-1)(n-2)\cdots3\cdot2\cdot1=n!$$
 

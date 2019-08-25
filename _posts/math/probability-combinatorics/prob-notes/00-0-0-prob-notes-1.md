@@ -39,7 +39,7 @@ $$|\{(0,1),(2,3),(9,3),\cdots\}|=10\cdot 9=90$$
 Notice that while we cannot represent the above as a cartesian product of two sets (i.e. it doesn't have a [cartesian factorization](\cartesian-product#cartesian-factorization)) because the set of possible choices of the second element changes for every choice of the first element, we do know the *cardinality* of the set of second choices and thus can still use the basic principle. -->
 
 ## Basic Principle of Counting
-[See here.](/principle-of-counting)
+[See here.](/the-basic-principle-of-counting)
 
 ## Permutations
 <!-- Given a set of $n$ distinct elements, we can use the basic principle to derive the number of ways we can arrange, or **permutate**, them. If we have $n$ choices for the first element, $n-1$ for the second and so on, we are left with:

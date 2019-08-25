@@ -1,10 +1,10 @@
 ---
 layout: post
-title: The Principle of Counting
+title: The Basic Principle of Counting
 date: 2019-06-25
 tags: math set-theory combinatorics probability-theory
 ---
-The basic **principle of counting** is a combinatorial, and ultimately set-theoretic, statement regarding the number of outcomes two events can have when taken together. This is particularly useful in calculating the probability of events with finite number of outcomes, which can often be reduced to counting those outcomes.
+The **basic principle of counting** is a combinatorial, and ultimately set-theoretic, statement regarding the number of outcomes two events can have when taken together. This is particularly useful in calculating the probability of events with finite number of outcomes, which can often be reduced to counting those outcomes.
 
 The principle states that if one event has $m$ possible outcomes and another has $n$ possible outcomes, then the events taken together have $mn$ possible outcomes.
 
