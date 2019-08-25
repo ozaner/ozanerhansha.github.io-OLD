@@ -2,7 +2,7 @@
 layout: post
 title: Intro Probability Notes Ch. 1
 date: 2018-12-24
-tags: math probability-theory
+tags: math probability-theory combinatorics
 ---
 My notes on Ross' *A First Course in Probability*. Chapter 1 - Combinatorics
 
@@ -39,10 +39,10 @@ $$|\{(0,1),(2,3),(9,3),\cdots\}|=10\cdot 9=90$$
 Notice that while we cannot represent the above as a cartesian product of two sets (i.e. it doesn't have a [cartesian factorization](\cartesian-product#cartesian-factorization)) because the set of possible choices of the second element changes for every choice of the first element, we do know the *cardinality* of the set of second choices and thus can still use the basic principle. -->
 
 ## Basic Principle of Counting
-[See here.](/the-basic-principle-of-counting)
+[See here.](/principle-of-counting)
 
 ## Permutations
-Given a set of $n$ distinct elements, we can use the basic principle to derive the number of ways we can arrange, or **permutate**, them. If we have $n$ choices for the first element, $n-1$ for the second and so on, we are left with:
+<!-- Given a set of $n$ distinct elements, we can use the basic principle to derive the number of ways we can arrange, or **permutate**, them. If we have $n$ choices for the first element, $n-1$ for the second and so on, we are left with:
 
 $$n(n-1)(n-2)\cdots 3\cdot 2\cdot 1=n!$$
 
@@ -52,7 +52,9 @@ $$\frac{n!}{m_1!m_2!\cdots m_{r-1}!m_r!}$$
 
 *to be clear $n$ is the sum of the multiplicities of the elements in the multiset: $n=\sum_1^r m_i$*
 
-Dividing by the factorial of each element's multiplicity accounts for all the permutations where identical elements were swapped (leading to no change). Notice that this definition generalizes the unique element case where all the multiplicities are 1.
+Dividing by the factorial of each element's multiplicity accounts for all the permutations where identical elements were swapped (leading to no change). Notice that this definition generalizes the unique element case where all the multiplicities are 1. -->
+
+[See here.](/permutations)
 
 <!--more-->
 

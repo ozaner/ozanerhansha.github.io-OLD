@@ -252,8 +252,8 @@ Logical equivalence/biconditional checks if two bits are equal (i.e $f(x,y)=x\if
 
 $$
   \operatorname{IFF} = \begin{pmatrix}
-    1 & 1 & 1 & 0 \\
-    0 & 0 & 0 & 1
+    0 & 1 & 1 & 0 \\
+    1 & 0 & 0 & 1
   \end{pmatrix}
 $$
 

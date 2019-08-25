@@ -2,7 +2,7 @@
 layout: post
 title: Miscellaneous Probability Problems
 date: 2019-02-24
-tags: math probability-theory
+tags: math probability-theory combinatorics
 ---
 This is a collection of random (ha) exercises I've written up solutions to relating to combinatorics and probability theory. They're all taken from Ross' <i>A First Course in Probability</i>.
 
@@ -58,7 +58,7 @@ $$\binom{52}{13,13,13,13}=\frac{52!}{(13!)^4}\approx5.35\cdot10^{28}$$
 <p></p>
 <b>Answer:</b> First note that the teachers and schools are different, so a school receiving teacher A and B is a different division from them receiving B and C.
 <p></p>
-With this in mind, in the first case we see that for every teacher there is a choice to be in 1 of 4 schools. Thus, via the <a href="/the-basic-principle-of-counting">principle of counting</a>, we have:
+With this in mind, in the first case we see that for every teacher there is a choice to be in 1 of 4 schools. Thus, via the <a href="/principle-of-counting">principle of counting</a>, we have:
 
 $$\underbrace{\mkern-20mu\overbrace{4}^{4\text{ schools}}\mkern-20mu\cdot4\cdot4\cdot4\cdot4\cdot4\cdot4\cdot4}_{8\text{ teachers}}=4^8=65536\text{ divisions}$$
 
@@ -320,7 +320,7 @@ $$P(E|F)=\frac{P(EF)}{P(F)}$$
 
 To compute the necessary probabilities we first note that this experiment is given by a discrete uniform distribution. As a result, the probability of an event occurring is simply its cardinality over the cardinality of the sample space. So first we compute the cardinalities of each event.
 <p></p>
-For the sample space $\Omega$, we have two dice each with $6$ independent outcomes, and so <a href="/the-basic-principle-of-counting">the basic principle of counting</a> tells us its size:
+For the sample space $\Omega$, we have two dice each with $6$ independent outcomes, and so <a href="/principle-of-counting">the basic principle of counting</a> tells us its size:
 
 $$|\Omega|=6\cdot6=36$$
 
@@ -344,14 +344,6 @@ Plugging these probabilities into our original formula we finally arrive at:
 
 $$P(E|F)=\frac{P(EF)}{P(F)}=\frac{10/36}{30/36}=\frac{1}{3}$$
 
-<p></p>
-</details>
-
-<details open>
-<summary><h4 class="inline">Exercise ?</h4></summary>
-<b>Question:</b> 
-<p></p>
-<b>Answer:</b>
 <p></p>
 </details>
 
