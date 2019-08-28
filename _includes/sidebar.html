@@ -11,8 +11,6 @@
     </div>
 
     <nav class="sidebar-nav">
-      <a href="https://medium.com/@ozanerhansha" target="_blank">Articles</a><br/>
-
       {% comment %}
         The code below dynamically generates a sidebar nav of pages with
         `layout: page` in the front-matter. See readme for usage.
@@ -26,6 +24,8 @@
           {% endif %}
         {% endif %}
       {% endfor %}
+
+      <a href="https://medium.com/@ozanerhansha" target="_blank">Medium Articles</a><br/>
 
       <style>
         p.small {
