@@ -46,7 +46,7 @@ A compendium of websites, articles, books and other references I have read and h
     </ul>
   <h3>Quantum Computing</h3>
     <ul>
-      <li><a href="https://qiskit.org/">QISKit</a> - IBM's open source python library for coding in OpenQASM as well as running that code on a real quantum computer! A tutorial can be found [here](https://github.com/QISKit/qiskit-tutorial).</li>
+      <li><a href="https://qiskit.org/">QISKit</a> - IBM's open source python library for coding in OpenQASM as well as running that code on a real quantum computer!</li>
       <li><a href="https://quantumexperience.ng.bluemix.net/qx/experience">IBM Quantum Experience</a> - In 2016 IBM made their quantum computer available to the public. You can sign up to use and program it via a drag an drop GUI or their python library, QISKit.</li>
       <li><a>Quantum Computing for Computer Scientists</a> by Mannucci and Yanofsky - A great introduction to the basics of quantum mechanics like superposition and measurement in the context of quantum computing.</li>
     </ul>

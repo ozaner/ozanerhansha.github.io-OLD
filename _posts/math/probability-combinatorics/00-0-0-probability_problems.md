@@ -343,9 +343,15 @@ $$P(EF)=\frac{|EF|}{|\Omega|}=\frac{10}{36}\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,P(F)=\f
 Plugging these probabilities into our original formula we finally arrive at:
 
 $$P(E|F)=\frac{P(EF)}{P(F)}=\frac{10/36}{30/36}=\frac{1}{3}$$
-
-<p></p>
 </details>
+
+<!-- <details>
+<summary><h4 class="inline">Problem ?</h4></summary>
+<b>Question:</b> 
+<p></p>
+<b>Answer:</b>
+<p></p>
+</details> -->
 
 <!-- Problem Template
 <details>

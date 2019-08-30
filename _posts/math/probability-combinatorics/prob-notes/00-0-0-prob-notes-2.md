@@ -101,7 +101,7 @@ P(A^\complement)=1-P(A)
 *for any events $A,B\in\mathcal F$.*
 
 ## Inclusion-Exclusion Principle
-Recall one of the consequences we mentioned earlier:
+<!-- Recall one of the consequences we mentioned earlier:
 
 $$P(A\cup B)=P(A)+P(B)-P(A B)$$
 
@@ -126,7 +126,9 @@ P\left(\bigcup_{i=1}^nE_i\right)&\le\sum_{i=1}^nP(E_i)\\
 &\le\sum_{i=1}^nP(E_i)-\sum_{j< i}P(E_i E_j)+\sum_{k< j< i}P(E_i E_j E_k)
 \end{align*}$$
 
-and so on, with each successive partial sum being more accurate than the last.
+and so on, with each successive partial sum being more accurate than the last. -->
+
+[See here.](/inclusion-exclusion-principle)
 
 ## Discrete Uniform Distribution
 Given a finite sample space $\Omega$, a **discrete uniform distribution** is one where each element $s$ in $\Omega$ is equally likely to occur meaning:
