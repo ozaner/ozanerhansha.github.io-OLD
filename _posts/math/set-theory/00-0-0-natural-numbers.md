@@ -26,7 +26,7 @@ $$\begin{align}
 n&\equiv\{0,1,2,3,\cdots,n-1\}\\
 \end{align}$$
 
-Defining the naturals in this way is consistent with the construction of the [von Neumann ordinals](http://mathworld.wolfram.com/OrdinalNumber.html).
+Defining the naturals in this way is consistent with the construction of the von Neumann ordinals.
 
 #### Successor Function
 This definition of the naturals can be more succinctly written via the successor function $S(n)$ which returns the number that comes after $n$:

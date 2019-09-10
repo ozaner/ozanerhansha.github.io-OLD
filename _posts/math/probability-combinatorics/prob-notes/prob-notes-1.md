@@ -6,8 +6,8 @@ tags: math probability-theory combinatorics
 ---
 My notes on Ross' *A First Course in Probability*. Chapter 1 - Combinatorics
 
-<!-- ## Basic Principle of Counting
-The basic principle of counting states that if two events are independent and the first has $m$ possible outcomes and the second has $n$ possible outcomes, then the events taken together have $mn$ possible outcomes.
+## Basic Principle of Counting
+<!-- The basic principle of counting states that if two events are independent and the first has $m$ possible outcomes and the second has $n$ possible outcomes, then the events taken together have $mn$ possible outcomes.
 
 Formally, if $A$ is the set of all outcomes of the first experiment and $B$ the second:
 
@@ -38,7 +38,6 @@ $$|\{(0,1),(2,3),(9,3),\cdots\}|=10\cdot 9=90$$
 
 Notice that while we cannot represent the above as a cartesian product of two sets (i.e. it doesn't have a [cartesian factorization](\cartesian-product#cartesian-factorization)) because the set of possible choices of the second element changes for every choice of the first element, we do know the *cardinality* of the set of second choices and thus can still use the basic principle. -->
 
-## Basic Principle of Counting
 [See here.](/the-basic-principle-of-counting)
 
 ## Permutations
@@ -59,7 +58,7 @@ Dividing by the factorial of each element's multiplicity accounts for all the pe
 <!--more-->
 
 ## Combinations & Binomial Coefficients
-Another combinatorial problem is how many different sets of groups with $r$ elements can be formed from $n$ distinct elements:
+<!-- Another combinatorial problem is how many different sets of groups with $r$ elements can be formed from $n$ distinct elements:
 
 $$\frac{n!}{(n-r)!\ r!}=\binom{n}{r}$$
 
@@ -105,8 +104,10 @@ As you might've guessed, the binomial theorem can be extended to any multinomial
 
 $$(x_1+x_2+\cdots+x_r)^n=\sum_{n_1+n_2+\cdots n_r=n}\binom{n}{n_1,n_2,\cdots, n_r}x_1^{n_1}x_2^{n_2}\cdots x_r^{n_r}$$
 
-*Where the sum is taking place over all tuples $(n_1,n_2,\cdots,n_r)$ with $0\le n_i\le n$ that sum to $n$.*
+*Where the sum is taking place over all tuples $(n_1,n_2,\cdots,n_r)$ with $0\le n_i\le n$ that sum to $n$.* -->
 
 <!-- TODO:
 - Pascal's triangle
 - Generalization of Pascal's Triangle. -->
+
+[See here.](/binomial-coefficient)

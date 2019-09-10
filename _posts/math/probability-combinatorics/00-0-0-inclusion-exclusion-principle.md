@@ -85,7 +85,7 @@ $$\begin{align*}
 
 Here we can see the measure of the union of $n$ sets is simply the sum of the measures of all the sets minus the sum of the measures of all pairwise intersections plus the sum of the measures of all threeway intersections and so on, alternating the sign.
 
-An interesting property of the principle is best displayed in this form. That is, the entire sum is either both above and below by each additional term like so:
+An interesting property of the principle is best displayed in this form. That is, the entire sum is bounded either above or below by each additional term like so:
 
 $$\begin{align*}
 \mu\left(\bigcup_{i=1}^nS_i\right)&\le\sum_{i=1}^n\mu(S_i)\\
@@ -93,7 +93,7 @@ $$\begin{align*}
 &\le\sum_{i=1}^n\mu(S_i)-\sum_{j< i}\mu(S_i S_j)+\sum_{k< j< i}\mu(S_i S_j S_k)
 \end{align*}$$
 
-This allows us to only sum as many terms as required for whatever degree of accuracy is desired.
+As more terms are computed the value gets closer to the true answer. Depending on our desired accuracy, this allows us to get away with summing only some of the terms.
 
 Removing the ellipses from our formula and instead expressing the intersections in terms of an index set $I$ for each cardinality from $1$ to $n$ we get a more compact formula:
 
@@ -106,9 +106,9 @@ Taking this formula even further and just considering every subset at once (barr
 <!-- ## Intuition -->
 
 ## Probability
-Since a probability space $(\Omega, \mathcal F, P)$ is a finite measure space, in particular $P(\Omega)=1$, the inclusion exclusion principle applies to any finite set of events $(E_i)_{i=1}^n$ giving us the familiar identity:
+Since a probability space $(\Omega, \mathcal F, P)$ is a finite measure space, in particular $P(\Omega)=1$, the inclusion-exclusion principle applies to any finite set of events $(E_i)_{i=1}^n$ giving us the familiar identity:
 
-$$P\left(\bigcup_{i=1}^nS_i\right)=\sum _{I\subseteq [1..n] \atop I\not=\emptyset}\left((-1)^{|I|-1}P\left(\bigcap_{i\in I}S_i\right)\right)$$
+$$P\left(\bigcup_{i=1}^nE_i\right)=\sum _{I\subseteq [1..n] \atop I\not=\emptyset}\left((-1)^{|I|-1}P\left(\bigcap_{i\in I}E_i\right)\right)$$
 
 ## Cardinality
 To see how the principle applies to cardinality we need to define the following measure $\mu: \Sigma\to[0,\infty]$ that assigns values based on the set's cardinality:

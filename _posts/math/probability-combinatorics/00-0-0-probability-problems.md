@@ -311,7 +311,7 @@ P(B)&=P(BA)+P(BA^\complement)\\
 ## Chapter 3 - Conditional Probability
 
 <details>
-<summary><h4 class="inline">Exercise 1</h4></summary>
+<summary><h4 class="inline">Problem 1</h4></summary>
 <b>Question:</b> Two dice are rolled. What is the probability that at least one lands on $6$ given that the dice landed on different numbers? 
 <p></p>
 <b>Answer:</b> let $E$ represent the event that one die lands on a $6$ and $F$ that the rolls are different. The conditional probability of $E$ occurring given $F$ is:

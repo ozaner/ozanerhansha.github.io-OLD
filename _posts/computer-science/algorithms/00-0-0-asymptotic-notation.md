@@ -7,7 +7,7 @@ tags: computer-science math algorithms
 ---
 The notation used to describe the **asymptotics**, or limiting behavior, of functions consists of a set of 6 [relations](\relations). These different relations allow us to compare the growth of different functions as they approach some constant or, in most cases, infinity.
 
-In the infinite case, these relations usually boil down to the functions' *most significant term*. That is, the term that grows the quickest as $x$ increases. For example, in the function $x^3+5x^2+x$ this role falls on the $x^3$ term as the other terms become insignificant (i.e tend to 0) as $x\to\infty$.
+In the infinite case, these relations usually boil down to the functions' *most significant term*. That is, the term that grows the quickest as $x$ increases. For example, in the function $x^3+5x^2+x$ this role falls on the $x^3$ term as the other terms become insignificant as $x\to\infty$.
 
 | Name | Set Membership<br>Notation | Comparitive<br>Notation |
 |-|:-:|:-:|
@@ -121,7 +121,7 @@ I am omitting the $(x)$ after the functions (which, strictly speaking, shouldn't
 <!-- ## Big $\Omega$ and little $\omega$ -->
 <details>
 <summary><h3 class="inline">Big $\Omega$ and little $\omega$</h3></summary>
-Big $\Omega$ gives a lower-bound on the asymptotic growth of a function. Thus a function $f$ that is big $O$ of a function $g$ grows as fast or faster than $g$ (up to a constant). In the context of algorithms, this is its <b>lower-bound complexity</b>. Little-$\omega$ is a stronger version of this where $f$ grows strictly faster than $g$.
+Big $\Omega$ gives a lower-bound on the asymptotic growth of a function. Thus a function $f$ that is big $O$ of a function $g$, grows as fast or faster than $g$ (up to a constant). In the context of algorithms, this is its <b>lower-bound complexity</b>. Little-$\omega$ is a stronger version of this where $f$ grows strictly faster than $g$.
 
 <!-- #### Properties -->
 <h4>Properties</h4>
