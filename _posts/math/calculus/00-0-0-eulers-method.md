@@ -1,9 +1,11 @@
 ---
 layout: post
 title: Euler's Method
-date: 2019-07-13
+date: 2019-09-19
 tags: math calculus algorithms
 ---
+<!-- First wrote it on date: 2019-07-13, gave up on proving LTE and GTE (for now) the day its posted-->
+
 **Euler's method** is a numerical method used to compute the solution of a first order IVP at a particular point. While not very accurate compared to other methods, it's simplicity makes it a common starting point for students learning numerical analysis. Indeed, it is *the* prototypical numerical algorithm, and serves as a useful starting point in understanding and defining more effective methods.
 
 <!--more-->
@@ -12,7 +14,7 @@ Informally, the method works by starting at some initial value $t_0$ then tracin
 
 ![img](/assets/math/eulers-method.PNG?style=centerme)
 
-*The slope field and solution to $y'=2y-1$ along with an Euler's method approximation.*
+*The slope field and solution to $y'=2y-1$ with $y(0)=1$ along with an Euler's method approximation.*
 
 This method falls under the broader class of *Runge-Kutta* methods. Below we will describe it in greater detail, along with its implementation and error, measured both locally and globally.
 
@@ -24,19 +26,19 @@ $$\frac{dy}{dt}=f(t,y),\,\,\,\,\,\,\,\,\,\,\,\,y(t_0)=y_0$$
 we want to approximate $y(t)$ for some value $t$. First we split the interval $[t_0,t]$ into $n$ subintervals, giving us $n+1$ equally spaced nodes:
 
 $$\begin{align*}
-t_{k+1}&=t_k+h\\
-&=t_0+h(k+1)
+t_{i+1}&=t_i+h\\
+&=t_0+h(i+1)
 \end{align*}$$
 
-*Where $h=\frac{t-t_0}{n}$. Note that this means $t_n=t$.*
+*Where $h=\frac{t-t_0}{n}$. Note that this means $t=t_n$.*
 
-The more nodes we have, the smaller the **step size** $h$ is, and the more accurate our approximation will be. Using these values of $t_k$ We then perform the following iteration to compute approximate values of $y(t_k)$ at the nodes, denoted $y_k$:
+The more nodes we have, the smaller the **step size** $h$ is, and the more accurate our approximation will be. Using these values of $t_i$, we then perform the following iteration to compute approximate values of $y(t_i)$, denoted $y_i$, at the nodes:
 
-$$y_{k+1}=y_k+hf(t_k,y_k)$$
+$$y_{i+1}=y_i+hf(t_i,y_i)$$
 
 *Where $y_0$ is given by the initial condition.*
 
-At the $n$th and final iteration, we compute $y_n$ which is our approximation of $y(t)$.
+At the $n$th and final iteration, we compute $y_n$ which is our approximation of $y(t_n)$.
 
 <details>
 <summary><h3 class="inline">Derivation</h3></summary>
@@ -47,7 +49,7 @@ At the $n$th and final iteration, we compute $y_n$ which is our approximation of
 
 <!-- Note that $t_1-t_0=h$, which is just the step size. Plugging this in, and grouping the other terms together, we get:
 
-    $$y(t_1)=y(t_0)+y'(t_0)h+\frac{y''(t_0)}{2!}h^2+\cdots$$ -->
+$$y(t_1)=y(t_0)+y'(t_0)h+\frac{y''(t_0)}{2!}h^2+\cdots$$ -->
 
     We can plug in $f(t,y(t))$ for $y'(t)$ but, as we don't have expressions for the higher derivatives of $y$, we'll cut our approximation short at the first two terms. This gives us the following 1st degree Taylor polynomial:
 
@@ -55,7 +57,7 @@ At the $n$th and final iteration, we compute $y_n$ which is our approximation of
 
     Now we have an approximation of $y(t_1)$ which we'll call $y_1$. Using $(t_1,y_1)$ as our new initial point, we can use the same procedure to approximate $y(t_2)$ and likewise dub it $y_2$. We keep doing this until we reach $y_n$ which will be our approximation of $y(t_n)$ aka $y(t)$. This procedure of repeated approximations is given by the following iteration:
 
-    $$y_{k+1}=y_k+hf(t_k,y_k)$$
+    $$y_{i+1}=y_i+hf(t_i,y_i)$$
 <!-- </p> -->
 </details>
 
@@ -108,59 +110,61 @@ function [y,T,Y] = eulers_method(f,t0,y0,n,tn)
 end
 ````
 
-## Error Analysis
+## Truncation Error
+Recall from the derivation given above that Euler's method is simply an iterative version of $y(t)'s$ 1st order Taylor polynomial. The error incurred by this truncation is dubbed the **truncation error**. This type of error is independent of the accuracy of our machine, as opposed to round-off error.
+
 ### Local Truncation Error (LTE)
-The **local truncation error (LTE)** is the error made in single iteration of Euler's method. That is to say, the LTE at step $i$ is the difference between $y(t_i)$ and it's approximation $y_i$:
+The **local truncation error (LTE)** is the error made in one iteration, assuming there was no error previously. Denoted $\tau_i$, it's given by:
 
-$$LTE_i=y(t_i)-y_i$$
+$$\tau_i=y(t_i)-y(t_{i-1})$$
 
-We can phrase the LTE in terms of [asymptotic notation](/asymptotic-notation) further by plugging in Taylor expansion of $y(t_i)$, as referenced in the derivation section:
+As it turns out the *order of convergence* of the LTE is 2. That is to say, the LTE is quadratic with respect to the step size $h$:
 
-$$\begin{align*}
-LTE&=y(t_i)-y_i\\
-&=y(t_i)-y(t_{i-1})-hf(t_{i-1},y(t_{i-1}))
-\end{align*}$$
+$$\tau_i=O(h^2)$$
+
+<details>
+<summary><strong>Proof</strong></summary>
+While an intuitive reasoning of this fact is easy to show, a real proof of this for any step $i$ is quite complicated and I'll do it later when I can.
+</details>
+<p></p>
+
+This result leads to to the next, more complete, view of truncation error. Put roughly: using $\frac{1}{2}$ the step size $h$, gives us $\frac{1}{4}$ the LTE.
 
 ### Global Truncation Error (GTE)
+The **global truncation error (GTE)** is the error made over the entire iteration of Euler's method so far. In other words, it is the collective effect of all the LTE's up to this step. Denoted $e_i$, it's given by:
 
+$$e_i=y(t_i)-y_i$$
+
+The *order of convergence* of the GTE, and thus of Euler's method, is 1. That is to say that the GTE is linear with respect to $h$.
+
+$$e_i=O(h)$$
+
+<details>
+<summary><strong>Proof</strong></summary>
+Again, it is intuitive to see this as a result of summing the quadratic LTE's for each step, but a real proof of this for any step $i$ is complicated and I'll do it later when I can.
+</details>
+<p></p>
+
+This is the main error result of Euler's method. Put roughly: using $\frac{1}{2}$ step size $h$, gives us $\frac{1}{2}$ the GTE.
 
 ## Variations
-- varied step size
-- backwards eulers method (implicit) [in this context eulers method is referred to as the forward eulers method]
+### System of ODEs
+Euler's method works equally well for a system of first order ODEs. Given the system $\mathbf f(t,\mathbf y)$ and the initial condition $\mathbf y(t_0)=\mathbf y_0$ we have:
 
-# From classnotes num analysis
+$$\mathbf y_{i+1}=\mathbf y_i+h\mathbf f(t_i,\mathbf y_i)$$
 
-#### Local Error
-The **local truncation error** (LTE) of the Euler method. Let $y(t)$ be the exact solution of the ODE. The LTE of the Euler method at $x_i$ is given by:
+Also note that we can reduce any $n$th order ODE to a system of first order ODE's by considering each derivative a separate variable.
 
-$$LTE(x_{i+1}=y(x_{i+1})-y(x_i)-h_if(x_i,y(x_i))$$
+### Backwards Euler's Method
+A common variation on Euler's method is the following iteration:
 
-Note that when $i=0$ we get:
+$$y_{i+1}=y_i+hf(t_{i+1},y_{i+1})$$
 
-$$LTE(x_1)=y(x_1)-\underbrace{y(x_0)+h_0f(x_0,y_0)}_{=y_1}$$
+You'll notice that the next iteration of the method $y_{i+1}$ appears on both sides of the equation. This makes the backwards Euler's method an **implicit** method, and $y_{i+1}$ will have to be solved for algebraically before it can be used.
 
-#### Local Error Complexity
-We can rephrase the LTE at $x_i$ by using $y$'s Taylor expansion:
+### Variable Step Size
+Another variation is found by using a different step size $h_i$ at every iteration:
 
-$$y(x_i+h_i)=y(x_i)+y'(x_i)h_i+\frac{y''(x_i)}{2}h_i^2+\cdots$$
+$$y_{i+1}=y_i+h_{i+1}f(t_i,y_i)$$
 
-We have:
-
-$$LTE(x_{i+1})=\left[y(x_i)+y'(x_i)h_i+\frac{y''(x_i)}{2}h_i^2+\cdots\right]-y(x_i)-h_if(x_i,y(x_i))$$
-
-Canceling we arrive at:
-
-$$LTE(x_{i+1})=\frac{y''(x_i)}{2}h_i^2+\frac{y'''(x_i)}{3!}h_i^3+\cdots=O(h_i^2)$$
-
-As we can see, the only way to minimize the LTE is to use smaller $h_i$ (we can't change the solution and thus can't change its higher derivatives).
-
-Big picture: the LTE of the Euler Method is $O(h^2)$ for uniform intervals.
-
-#### Global Error
-The global error is approximately equal to the sum of the local error at each step:
-
-$$GTE\approx\sum_{i=0}^nLTE(x_{i+1})=O(nh_i^2)$$
-
-If the step size is constant then $nh=b-a$. Thus, the global error is:
-
-$$|y(b)-y_n|=O(h)$$
+Smaller step sizes are more accurate yet more computationally intensive. Thus, it would be desirable to use small step sizes (and thus preserve accuracy) when the function is changing rapidly and bigger ones when it isn't. Here's a [paper](https://www.sciencedirect.com/science/article/pii/S0377042711003682) on it.

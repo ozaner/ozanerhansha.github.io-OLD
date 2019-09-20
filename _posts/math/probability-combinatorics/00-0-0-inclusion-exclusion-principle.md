@@ -65,7 +65,7 @@ $$\begin{align*}
 &=\sum _{I\subseteq [1..n] \atop I\not=\emptyset}\left((-1)^{|I|-1}\mu\left(\bigcap_{i\in I}S_i\right)\right)+\mu(S_{n+1})-\sum _{I\subseteq [1..n] \atop I\not=\emptyset}\left((-1)^{|I|-1}\mu\left(\bigcap_{i\in I\cup\{n+1\}}S_i\right)\right)\tag{def. of indexed $\cap$}\\
 &=\sum _{I\subseteq [1..n] \atop I\not=\emptyset}\left((-1)^{|I|-1}\mu\left(\bigcap_{i\in I}S_i\right)\right)+\mu(S_{n+1})+\sum _{I\subseteq [1..n] \atop I\not=\emptyset}\left((-1)^{|I|}\mu\left(\bigcap_{i\in I\cup\{n+1\}}S_i\right)\right)\tag{distribute $-1$}\\
 &=\sum _{I\subseteq [1..n] \atop I\not=\emptyset}\left((-1)^{|I|-1}\mu\left(\bigcap_{i\in I}S_i\right)\right)+\sum _{I\subseteq [1..n]}\left((-1)^{|I|}\mu\left(\bigcap_{i\in I\cup\{n+1\}}S_i\right)\right)\tag{reindex to include $\mu(S_{n+1}$}\\
-&=\sum _{I\subseteq [1..n] \atop I\not=\emptyset}\left((-1)^{|I|-1}\mu\left(\bigcap_{i\in I}S_i\right)\right)+\sum _{I\subseteq [1..n+1]\atop {n+1\in S}}\left((-1)^{|I|-1}\mu\left(\bigcap_{i\in I}S_i\right)\right)\tag{redefine $S$ to always have $n+1$}\\
+&=\sum _{I\subseteq [1..n] \atop I\not=\emptyset}\left((-1)^{|I|-1}\mu\left(\bigcap_{i\in I}S_i\right)\right)+\sum _{I\subseteq [1..n+1]\atop {n+1\in I}}\left((-1)^{|I|-1}\mu\left(\bigcap_{i\in I}S_i\right)\right)\tag{redefine $I$ to always have $n+1$}\\
 &=\sum _{I\subseteq [1..n+1] \atop I\not=\emptyset}\left((-1)^{|I|-1}\mu\left(\bigcap_{i\in I}S_i\right)\right)\tag{$P(n+1)$}\\
 \end{align*}$$
 
