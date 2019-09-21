@@ -1,9 +1,9 @@
 ---
 layout: page
-title: All Posts
+title: All Notes
 ---
 <div>{% include tag-cloud.html %}</div>
-<h2>All Posts</h2>
+<h2>All Notes</h2>
 <ul>
   {% for post in site.posts %}
     <li><a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date_to_string }})<br>

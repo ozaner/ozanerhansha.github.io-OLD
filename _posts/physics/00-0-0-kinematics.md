@@ -25,9 +25,9 @@ $$\begin{align}
 <!--more-->
 
 - $\vec{x}$ is the object's position as a function of time.
-- $\vec{x}_0$ is the initial position, at $$t=0$$.
+- $\vec{x}_0$ is the initial position, usually at $$t=0$$.
 - $\vec{v}$ is the object's velocity as a function of time.
-- $\vec{v}_0$ is the initial velocity, at $$t=0$$.
+- $\vec{v}_0$ is the initial velocity, usually at $$t=0$$.
 - $\vec{a}$ is the object's acceleration as a function of time.
 - $t$ is time
 

@@ -5,7 +5,7 @@ date: 2018-03-15
 tags: physics
 # classical-mechanics
 ---
-The position of a particle or object in **space** is defined as a point on an n-dimensional [**Cartesian coordinate system**](/cartesian-product/#coordinates). This point can equivalently be thought of as a vector.
+The position of a particle or object in **space** is defined as a point on an n-dimensional [**Cartesian coordinate system**](/cartesian-product/#cartesian-coordinates). This point can equivalently be thought of as a vector.
 
 ### Classical Physics
 In classical physics, a position or displacement $\vec{x}$ is a 3-dimensional vector with components $\left(x,y,z\right)$.

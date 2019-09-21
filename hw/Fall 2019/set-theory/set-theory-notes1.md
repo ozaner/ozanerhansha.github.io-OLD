@@ -7,7 +7,6 @@
 He wants us to use the notation in the book but the book doesn't use mathfrak it uses mathcal (or something similar) so... whatever.
 
 ## Class 3
-
 A **formula** in set theory is a sentence constructed from **atomic formulas**:
 
 - 'variable $\in$ 'another variable'

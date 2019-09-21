@@ -62,9 +62,9 @@ $$y(t_1)=y(t_0)+y'(t_0)h+\frac{y''(t_0)}{2!}h^2+\cdots$$ -->
 </details>
 
 
-<details>
+<!-- <details>
 <summary><h3 class="inline">Example</h3></summary>
-</details>
+</details> -->
 
 ## Implementation
 ### Pseudocode
@@ -124,7 +124,7 @@ $$\tau_i=O(h^2)$$
 
 <details>
 <summary><strong>Proof</strong></summary>
-While an intuitive reasoning of this fact is easy to show, a real proof of this for any step $i$ is quite complicated and I'll do it later when I can.
+While an intuitive reasoning of this fact is easy to show, a real proof of this for any step $i$ is quite complicated and so we'll shelve it for now.
 </details>
 <p></p>
 
@@ -141,7 +141,7 @@ $$e_i=O(h)$$
 
 <details>
 <summary><strong>Proof</strong></summary>
-Again, it is intuitive to see this as a result of summing the quadratic LTE's for each step, but a real proof of this for any step $i$ is complicated and I'll do it later when I can.
+It is intuitive to see this as a result of summing the quadratic LTE's for each step but again, a real proof of this for any step $i$ is complicated and so we'll shelve it for now.
 </details>
 <p></p>
 
