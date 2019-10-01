@@ -23,7 +23,7 @@ A list of all my HW for the class. Both problems and solutions are typed up in L
 #### Set Theory
 A list of all my HW for the class. Both problems and solutions are typed up in LaTeX below:
 
-- [HW1](\hw\Fall%202019\diff-eqs\PDFs\set-theory-hw1.pdf), [HW2](\hw\Fall%202019\diff-eqs\PDFs\set-theory-hw2.pdf), [HW3](\hw\Fall%202019\diff-eqs\PDFs\set-theory-hw3.pdf).
+- [HW1](\hw\Fall%202019\set-theory\PDFs\set-theory-hw1.pdf), [HW2](\hw\Fall%202019\set-theory\PDFs\set-theory-hw2.pdf), [HW3](\hw\Fall%202019\set-theory\PDFs\set-theory-hw3.pdf).
 
 ## Spring 2019
 
