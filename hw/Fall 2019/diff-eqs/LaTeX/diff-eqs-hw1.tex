@@ -387,21 +387,21 @@ And indeed, this coincides with the derivative of $y_1$:
 \begin{align*}
     \der&=ty^{\frac{2}{3}}\\
     \int \frac{1}{y^{\frac{2}{3}}}\mathop{dy}&=\int t\mathop{dt}\tag{separable equation}\\
-    \frac{\sqrt[3]{y}}{3}&=\frac{t^2}{2}+C_1\tag{integration}\\
-    y&=\frac{27t^6}{8}+C_2\tag{algebra}\\
+    3\sqrt[3]{y}&=\frac{t^2}{2}+C_1\tag{integration}\\
+    y&=\frac{t^6}{216}+C_2\tag{algebra}\\
 \end{align*}
 
 Now by plugging in our initial condition we can solve for the constant $C_2$ that corresponds to our partiular solution:
 
 \begin{align*}
-    0&=\frac{27\cdot0^6}{8}+C_2\tag{$(t,y)=(0,0)$}\\
+    0&=\frac{0^6}{216}+C_2\tag{$(t,y)=(0,0)$}\\
     \implies C_2&=0
 \end{align*}
 
 And so $C_2=0$, giving us the following particular solution:
 
 \begin{equation*}
-    y(t)=\frac{27t^6}{8}
+    y(t)=\frac{t^6}{216}
 \end{equation*}
 
 You'll notice that both this solution and the equilibrium solution $y_0(t)=0$ both solve the same IVP and thus are not unique. This is because the precondition for uniqueness is for $\frac{\partial f}{\partial y}$ to be continuous over the desired rectangle of uniqueness, and if we calculate this derivative:

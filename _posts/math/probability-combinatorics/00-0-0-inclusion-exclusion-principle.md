@@ -119,7 +119,7 @@ $$\mu(S)={\begin{cases}\vert S\vert, &|S|\in\aleph_0\\\infty, &|S|\not\in\aleph_
 
 *The above does indeed qualify as a measure on any $\sigma$-algebra.*
 
-Now, if we let $X$ be the union of $n$ finite sets $(S_i)_{i=0}^n$ and $\Sigma$ a $\sigma$-algebra over $X$, the inclusion-exclusion principle applies since $\mu(X)\lt\infty$. This gives us:
+Now for any collection of $n$ finite sets $(S_i)^n_{i=0}$, if we let $X=\bigcup_{i=0}^n S_i$ and let $\Sigma=\mathcal P(X)$, the inclusion-exclusion principle applies since $\mu(X)\lt\infty$. This gives us:
 
 $$\left|\bigcup_{i=1}^nS_i\right|=\sum _{I\subseteq [1..n] \atop I\not=\emptyset}\left((-1)^{|I|-1}\left|\bigcap_{i\in I}S_i\right|\right)$$
 

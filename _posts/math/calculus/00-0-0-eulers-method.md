@@ -36,12 +36,10 @@ The more nodes we have, the smaller the **step size** $h$ is, and the more accur
 
 $$y_{i+1}=y_i+hf(t_i,y_i)$$
 
-*Where $y_0$ is given by the initial condition.*
-
 At the $n$th and final iteration, we compute $y_n$ which is our approximation of $y(t_n)$.
 
 <details>
-<summary><h3 class="inline">Derivation</h3></summary>
+<summary><strong>Derivation</strong></summary>
 <!-- <p style="background-color: #d1ecfa;"> -->
     Recalling that <a href="/taylor-series-polynomials">Taylor polynomials</a> can serve as approximations of analytical functions, we'll try using one to approximate $y$ at the next time step $t_1=t_0+h$. Below is the resulting Taylor expansion of $y$ centered at $t_0$:
 
@@ -111,7 +109,7 @@ end
 ````
 
 ## Truncation Error
-Recall from the derivation given above that Euler's method is simply an iterative version of $y(t)'s$ 1st order Taylor polynomial. The error incurred by this truncation is dubbed the **truncation error**. This type of error is independent of the accuracy of our machine, as opposed to round-off error.
+Recall from the derivation given above that Euler's method is simply an iterative version of $y(t)$'s 1st order Taylor polynomial. The error incurred by this truncation is dubbed the **truncation error**. This type of error is independent of the precision of our machine, as opposed to round-off error.
 
 ### Local Truncation Error (LTE)
 The **local truncation error (LTE)** is the error made in one iteration, assuming there was no error previously. Denoted $\tau_i$, it's given by:
@@ -160,11 +158,11 @@ A common variation on Euler's method is the following iteration:
 
 $$y_{i+1}=y_i+hf(t_{i+1},y_{i+1})$$
 
-You'll notice that the next iteration of the method $y_{i+1}$ appears on both sides of the equation. This makes the backwards Euler's method an **implicit** method, and $y_{i+1}$ will have to be solved for algebraically before it can be used.
+You'll notice that the next iteration of the method $y_{i+1}$ appears on both sides of the equation. This makes the backwards Euler's method an *implicit method*, and $y_{i+1}$ will have to be solved for algebraically for a specific function $f$ before it can be used.
 
 ### Variable Step Size
 Another variation is found by using a different step size $h_i$ at every iteration:
 
 $$y_{i+1}=y_i+h_{i+1}f(t_i,y_i)$$
 
-Smaller step sizes are more accurate yet more computationally intensive. Thus, it would be desirable to use small step sizes (and thus preserve accuracy) when the function is changing rapidly and bigger ones when it isn't. Here's a [paper](https://www.sciencedirect.com/science/article/pii/S0377042711003682) on it.
+Smaller step sizes are more accurate yet more computationally intensive. Thus, it would be desirable to use small step sizes (and thus preserve accuracy) when the function is changing rapidly and bigger ones when it isn't. Here's a [paper](https://www.sciencedirect.com/science/article/pii/S0377042711003682) on the topic.

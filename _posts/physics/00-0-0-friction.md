@@ -5,15 +5,8 @@ date: 2018-03-26
 tags: physics
 # classical-mechanics
 ---
-### General Info
-<!-- & Table of Contents -->
-Dry Friction is a force that opposes the motion of two surfaces that slide against each other. This force is proportional to the normal force of the object.
-
-<!-- - [Amontons' Laws of Dry Friction](#amontons-laws-of-dry-friction)
-- [From Static to Kinetic Friction](#from-static-to-kinetic-friction)
-- [Static Friction](#static-friction)
-- [Kinetic Friction](#kinetic-friction)
-- [Coefficient of Friction](#coefficient-of-friction) -->
+## General Info
+**Dry friction** is a force that opposes the motion of two solid surfaces that slide against each other. This force is proportional to the normal force of the object.
 
 #### Where does Friction come from?
 The frictional force is not fundamental and is instead a useful abstraction of the complex electromagnetic interactions between two surfaces that come into contact with each other. The sum total of the forces created by these interactions can, in a variety of cases, be thought of as a singular force that is proportional to the normal force.
@@ -28,17 +21,17 @@ $\renewcommand{\vec}[1]{\mathbf{#1}}$
 ![xkcd](https://imgs.xkcd.com/comics/experiment.png?style=centerme)
 <center><i>Relevant xckd</i></center>
 
-### Amontons' Laws of Dry Friction
+## Amontons' Laws of Dry Friction
 The empirical laws that govern friction were (re)discovered by French physicist Guillaume Amontons:
 
 - **Amontons' First Law**: The force of friction is directly proportional to the applied load.
   - The more an object is pushed into a surface (normal force) the more it interacts with that surface (friction).
 - **Amontons' Second Law**: The force of friction is independent of the apparent area of contact.
   - While more surface area means more interactions with the surface (friction), having more area means the applied load is more distributed, offsetting the increase in area.
-- Amontons' Third Law (**Coulomb's Law of Friction**): Kinetic friction is independent of the sliding velocity.
+- Amontons' Third Law (**Coulomb's Law of Friction**): Kinetic friction is independent of the (magnitude of the) sliding velocity.
   - Kinetic friction takes over after static friction has been overcome and object starts to move, but once its in motion friction is constant.
 
-### From Static to Kinetic Friction
+## From Static to Kinetic Friction
 There are two types of friction: static friction which acts on an object at rest, and kinetic friction which acts on an object in motion. When the force of static friction reaches a maximum, kinetic friction takes over:
 
 ![graph](/assets/physics/friction_graph.png?style=centerme){:width="500px"}
@@ -102,7 +95,7 @@ $$E_{th}=\int_C\vec{F_k}(\vec{x})\cdot d\vec{x}$$
 - $\vec{x}$ is the position of the object.
 - $C$ is the path the object took.
 
-### Coefficient of Friction
+## Coefficient of Friction
 The proportionality constant between the frictional force and the normal force is called the coefficient of static/kinetic friction and is denoted $\mu_s$ and $\mu_k$ respectively. This constant differs depending on the 2 surfaces involved and, as a result of being a abstract approximation of complex interactions, cannot be derived from first principles and is instead measured empirically.
 
 Below are some common coefficients of static and kinetic friction:
@@ -111,7 +104,7 @@ Below are some common coefficients of static and kinetic friction:
 ![xkcd](https://imgs.xkcd.com/comics/mu.png?style=centerme)
 <center><i>Yet another relevant xckd</i></center>
 
-#### Angle of Repose
+### Angle of Repose
 When an object is placed on a ramp, the object will overcome static friction and slide down the ramp at some angle $\theta$. As it turns out, the tangent of this angle is equivalent to the coefficient of static friction:
 
 ![angle of repose](https://upload.wikimedia.org/wikipedia/commons/8/85/Free_body.svg?style=centerme)
@@ -120,7 +113,7 @@ When an object is placed on a ramp, the object will overcome static friction and
 
 $$\begin{align*}
 N=mg\cos\theta \tag{force normal to the ramp}\\
-\mu_sN=mg\sin\theta \tag{$F_k$ at the moment of slipping}\\
+F_s=\mu_sN=mg\sin\theta \tag{static friction at the moment of slipping}\\
 \mu_smg\cos\theta=mg\sin\theta\\
 \mu_s=\frac{\sin\theta}{\cos\theta}=\tan\theta
 \end{align*}$$</p></details>
