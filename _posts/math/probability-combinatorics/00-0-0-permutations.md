@@ -11,9 +11,9 @@ $$\sigma:S\xrightarrow{\small\rm Bijective} S$$
 
 This, the modern mathematical definition of the term, is opposed to the more common conception of a permutation as an arrangement or *sequence* of all $n$ elements of $S$ with no repeats:
 
-$$f: n\xrightarrow{\small\rm Bijective} S$$
+$$f: [1..n]\xrightarrow{\small\rm Bijective} S$$
 
-*Where $n=[0..n-1]$ [as per von Neumann](/natural-numbers/#definition). So the zeroth element is $f(0)$, first is $f(1)$, etc.*
+<!-- *Where $n=[0..n-1]$ [as per von Neumann](/natural-numbers/#definition). So the zeroth element is $f(0)$, first is $f(1)$, etc.* -->
 
 <!--more-->
 
@@ -92,21 +92,21 @@ We now detail some generalizations of passive permutations which may serve usefu
 ### Partial Permutations
 A **$k$-permutation** of an $n$ element set $S$ is a sequence of $k$ distinct elements from $S$, with $k\le n$:
 
-$$f:k\to S,\,\,\,\,(\forall i,j\in k)\,\,\,\,\sigma(i)\not=\sigma(j)$$
+$$f:[1..k]\to S,\,\,\,\,(\forall i,j\in k)\,\,\,\,\sigma(i)\not=\sigma(j)$$
 
 #### Counting Partial Permutations
 The number of different $k$-permutations a set with $n$ elements has is denoted $_nP_k$, or more commonly in statistics as `nPr(n,k)`. Via the principle of counting, it is given by:
 
 $$_nP_k=n(n-1)(n-2)\cdots(n-k+1)=n^{\underline {k}}$$
 
-Which we can see is just the $k$th falling factorial of $n$. Another way to see this is to recognize that there are $\binom{n}{k}$ combinations of $k$ elements each with $k!$ permutations, giving us:
+Which we can see is just the $k$th falling factorial of $n$. Another way to see this is to recognize that there are $\binom{n}{k}$ [combinations](\binomial-coefficient) of $k$ elements each with $k!$ permutations, giving us:
 
 $$_nP_k=\binom{n}{k}k!=\frac{n!}{(n-k)!k!}k!=\frac{n!}{(n-k)!}=n^{\underline{k}}$$
 
 ### Multiset Permutations
 Given a multiset $S$ of size $n$, a **multiset permutation** is a sequence of $S$ in which each element $s_i$ appears exactly as many times as is their multiplicity $k_i$:
 
-$$f:n\to S,\,\,\,\,\big|\{i\in n\mid\sigma(i)=s_i\}\big|=k_i$$
+$$f:[1..n]\to S,\,\,\,\,\big|\{i\in n\mid\sigma(i)=s_i\}\big|=k_i$$
 
 #### Counting Multiset Permutations
 The number of different multiset permutations a multiset $S$ of size $n$ has is simply $n!$ divided by the number of permutations of identical elements, i.e. the factorial of each element's multiplicity:
@@ -120,7 +120,7 @@ You'll notice that this is equivalent to the above [multinomial coefficient](/bi
 ### Partial Multiset Permutations
 A mixture of the two previous variants, a partial multiset permutation of length $k$ is called a **$k$-multiset permutation**. That is, a sequence of length $k$ on a multiset $S$ where no element $s_i$ appears more times that its multiplicity $k_i$:
 
-$$f:k\to S,\,\,\,\,\big|\{i\in k\mid\sigma(i)=s_i\}\big|\le k_i$$
+$$f:[1..k]\to S,\,\,\,\,\big|\{i\in k\mid\sigma(i)=s_i\}\big|\le k_i$$
 
 To my knowledge, however, there is no concise formula to count these permutations.
 

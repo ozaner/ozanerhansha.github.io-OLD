@@ -6,22 +6,29 @@ tags: physics
 ---
 Physics is the branch of science that studies, at varying scales and levels of abstraction, the properties and mechanics of matter and energy in spacetime and their interaction with the 4 fundamental forces.
 
-There are 3 main divisions of physics:
+![xkcd](https://imgs.xkcd.com/comics/fundamental_forces.png?style=centerme)
+<center><i>Relevant xckd</i></center>
+
+We can broadly categorize physics into 3 main divisions:
 - [Classical Physics](#classical-physics)
 - [Special & General Relativity](#special--general-relativity)
 - [Quantum Mechanics](#quantum-mechanics-qm)
 
-![physics](https://upload.wikimedia.org/wikipedia/commons/5/56/Modernphysicsfields.svg?style=centerme)
+![physics](https://upload.wikimedia.org/wikipedia/commons/5/56/Modernphysicsfields.svg?style=centerme){:width="700px"}
 
 <!--more-->
 
 ## Classical Physics
 [Classical physics](/classical-physics) is a catch all for the theories of physics that predated the relativistic and quantum theories of physics we have today. They very adequately describe the interactions and mechanics of everyday objects, fluids, gasses, electricity, magnetism, and even celestial bodies.
 
-The 3 main branches of pre-Einsteinian physics are:
-- [Classical Mechanics](/classical-physics#classical-mechanics)
-- [Classical Electromagnetism](/classical-physics#classical-electromagnetism)
-- [Thermodynamics](/classical-physics#thermodynamics)
+Classical physics can be split up into 3 main branches:
+- Classical Mechanics
+- Classical Electromagnetism
+- Thermodynamics
+
+<!--  [Classical Mechanics](/classical-physics#classical-mechanics)
+ [Classical Electromagnetism](/classical-physics#classical-electromagnetism)
+ [Thermodynamics](/classical-physics#thermodynamics) -->
 
 ## Special & General Relativity
 #### Special Relativity (SR)
@@ -38,7 +45,7 @@ SR has been widely successful and has even been incorporated with quantum mechan
 Gravity's absence from SR is what lead to the theory of general relativity. It *generalizes* special relativity and Newton's law of gravitation into a coherent theory where the curvature of spacetime itself becomes responsible for the force of gravity. Unfortunately, unlike special relativity, there has been no successful marriage of general relativity and quantum mechanics. A quantum theory of gravity remains a major goal of modern physics.
 
 ## Quantum Mechanics (QM)
-When considering matter and energy on very small scales, classical and relativistic physics fail to explain experiments/observations. This led to the creation of quantum mechanics, which mathematically grounds the mechanics and temporal evolution of subatomic particles. Quantum mechanics itself is not a theory of a particular type of particle like bosons or photons. Think of it as an analogue to classical mechanics which covers the motion and forces that act upon an object.
+When considering matter and energy on very small scales, classical and relativistic physics fail to explain experiments/observations. This led to the creation of quantum mechanics, which mathematically grounds the states and temporal evolution of subatomic particles. Quantum mechanics itself is not a theory of a particular type of particle like bosons or photons. Think of it as an analogue to classical mechanics which covers the motion and forces that act upon an object.
 
 #### Quantum Field Theory (QFT)
 By combining quantum mechanics and special relativity, we are left with a framework for creating quantum theories of subatomic particles. QFTs like quantum electrodynamics and chromodynamics both describe the interactions of a particular type of fundamental force (electromagnetism and the strong nuclear force respectively). These theories, via QM, model particles as perturbations (waves) on an underlying **quantum field** that permeates all of space.
@@ -65,4 +72,4 @@ The Standard Model is the combination of EWT and QCD into one unified theory of 
 ![standardmodel](https://upload.wikimedia.org/wikipedia/commons/0/00/Standard_Model_of_Elementary_Particles.svg?style=centerme){:width="600px"}
 
 ![xkcd](https://imgs.xkcd.com/comics/turn-on.png?style=centerme)
-<center><i>Relevant xckd</i></center>
+<center><i>Another relevant xckd</i></center>

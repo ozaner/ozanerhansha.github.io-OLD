@@ -2,14 +2,14 @@
 layout: post
 title: Contraction Maps
 date: 2019-09-30
-tags: math calculus
+tags: math analysis
 ---
 ## Definition
 A **contraction map** on a metric space $(X,d)$ is a function $T:X\to X$ such that:
 
 $$(\exists k\in[0,1))(\forall x,y\in X)\,\,d(T(x),T(y))\le kd(x,y)$$
 
-Another way to phrase this is that applying the contraction on any two points shrinks their distance by some minimum factor $k$.
+Another way to phrase this is that applying the contraction on any two points shrinks their distance by at least some factor $k$.
 
 <!-- (this number, of course, can't be negative as distances are nonnegative) -->
 
@@ -45,7 +45,7 @@ However, since $k$ is some constant in $[0,1)$, and the function $d$ is nonnegat
 
 $$d(x_1,x_2)=0$$
 
-Which, by the identity of indiscernibles, tells us that $x_1=x_2$. $$\tag*{$\blacksquare$}$$
+Which, by the identity of indiscernibles, tells us that $x_1=x_2.\,\,\,\,\,\,\,\, \blacksquare$
 
 </details>
 <p></p>

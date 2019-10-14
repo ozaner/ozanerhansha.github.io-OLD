@@ -7,7 +7,7 @@ tags: philosophy
 The existence of God is a very important aspect of culture and society and has affected humanity for as long as we've existed. It is no surprise then, that arguments for/against God are staples of philosophy. Below we detail some, historically, major arguments for and against the existence of God as well as some terminology.
 
 #### Unfalsifiability
-Arguments for God, and even against God, are usually ineffective. Indeed, nowadays most people consider the existence of God to be unfalsifiable, that is God's existence cannot be proven nor disproven. Despite this however, many still believe that proving that God is likely/unlikely to exist is still a worthwhile exercise.
+Arguments for God, and even against God, are usually ineffective. Indeed nowadays most people consider the existence of God to be unfalsifiable, that is, God's existence cannot be proven nor disproven. Despite this however, many still believe that proving that God is likely/unlikely to exist is still a worthwhile exercise.
 
 <!--more-->
 
@@ -23,11 +23,11 @@ While this definition does severely limit our scope, it is usually the case that
 ## Stances on God
 There can be three stances an interlocutor may hold on this God:
 
-- Theist: Someone who believes that God exists.
-- Atheist: Someone who believes that God does not exist.
-- Agnostic: Someone who suspends judgement about the existence of God.
+- **Theist**: Someone who believes that God exists.
+- **Atheist**: Someone who believes that God does not exist.
+- **Agnostic**: Someone who suspends judgement about the existence of God.
 
-*Again we are ignoring considerations of polytheism and eastern-esque religions as they can be put into similar terms.*
+<!-- *Again we are ignoring considerations of polytheism and eastern-esque religions as they can be put into similar terms.* -->
 
 ## Differing Justifications
 Pragmatic reasoning vs. epistemic reasoning

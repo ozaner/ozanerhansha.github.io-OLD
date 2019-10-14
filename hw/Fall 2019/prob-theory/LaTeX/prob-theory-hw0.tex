@@ -47,7 +47,6 @@ We begin by letting $u=x^2$ and $v=e^{\frac{2x}{5}}$. Differentiating, we arrive
 \end{gather*}
 
 Plugging this into the identity we have:
-
 \begin{align*}
     \int \frac{2}{5}x^2e^{\frac{2x}{5}}\,dx&=x^2e^{\frac{2x}{5}}-\int 2xe^{\frac{2x}{5}}\,dx\\
     \frac{2}{5}\int x^2e^{\frac{2x}{5}}\,dx&=x^2e^{\frac{2x}{5}}-2\int xe^{\frac{2x}{5}}\,dx\\
@@ -80,14 +79,13 @@ Now plugging the new integral into our equation for our original integral we fin
     &=\frac{5}{4}e^{\frac{2x}{5}}\left(2x^2-10x+25\right)+C_3
 \end{align*}
 
-Where $C_3$ is some constant of integration. With this we are done.
+Where $C_3\in\mathbb R$. With this we are done.
 \\\\
 
 \noindent\textbf{Problem b:} Evaluate the following integral:
 $$\int_{-\infty}^\infty xe^{\frac{-x^2}{2}}\, dx$$
 
-\noindent\textbf{Solution:} First we need to evaluate the indefinite form of the above integral. We do this via $u$-substitution with:
-
+\noindent\textbf{Solution:} First we need to evaluate the indefinite form of the above integral. We do this via\\ $u$-substitution with:
 \begin{gather*}
     u=\frac{-x^2}{2}\\
     \frac{du}{dx}=-x\rightarrow dx=-\frac{du}{x}
@@ -108,7 +106,7 @@ We can now evaluate the definite integral via the following chain of equalities:
     &=\lim_{t\to-\infty}\int_t^0 xe^{\frac{-x^2}{2}}\, dx+\lim_{t\to\infty}\int_0^t xe^{\frac{-x^2}{2}}\, dx\\
     &=\lim_{t\to-\infty}\Eval{-e^{\frac{-x^2}{2}}}{t}{0}+\lim_{t\to\infty}\Eval{-e^{\frac{-x^2}{2}}}{0}{t}\\
     &=\lim_{t\to-\infty}\left(-1+e^{\frac{-t^2}{2}}\right)+\lim_{t\to\infty}\left(-e^{\frac{-t^2}{2}}+1\right)\\
-    &=-1+1=0\\
+    &=-1+1=0
 \end{align*}
 \indent And we are done.
 
@@ -121,7 +119,6 @@ Where $D$ is the set of all points such that $3x+y\le 3$, $x+y\ge 1$ and $x\ge y
 \\
 
 \noindent\textbf{Solution:} First off, solving for $y$ in these inequalities will help both in graphing them, as well as calculating the bounds for our integral:
-
 \begin{align*}
     3x+y\le 3\rightarrow y&\le 3-3x\\
     x+y\ge 1\rightarrow y&\ge 1-x\\
@@ -196,9 +193,10 @@ For the left triangle the bounds of integration over $x$ begin where the red and
 And so our integral is given by the following:
 
 $$\int^{\frac{3}{4}}_\frac{1}{2}\int^{x}_{1-x}x+y\,dydx+\int^{1}_{\frac{3}{4}}\int^{3-3x}_{1-x}x+y\,dydx$$
-\bigskip
+\pagebreak
 
 All that's left is to evaluate it. We'll start with the left triangle:
+
 \begin{align*}
     \int^\frac{3}{4}_\frac{1}{2}\int^{x}_{1-x}x+y\,dydx&=\int^\frac{3}{4}_\frac{1}{2}\Eval{\frac{y^2}{2}+xy}{1-x}{x}\,dx\\
     &=\int^\frac{3}{4}_\frac{1}{2}\frac{x^2}{2}+x^2-\left(\frac{(1-x)^2}{2}+x(1-x)\right)\,dx\\
@@ -227,8 +225,9 @@ $$\frac{7}{96}+\frac{7}{96}=\frac{7}{48}$$
 \noindent\textbf{Problem:} Rewrite the following integral with the order of integration reversed:
 
 $$\int_0^\infty\int_{2y}^\infty f(x,y)\,dxdy$$
+\pagebreak
 
-\noindent\textbf{Solution:} When we draw the area of integration in its current form we get:
+\noindent\textbf{Solution:} When we draw the area of integration in its current form we get the graph on the left:
 
 % In the pic it should be y\in[0,x/2] for the second graph since the y is less than 0 for x<0
 
@@ -323,20 +322,9 @@ $$f(x,y)=\frac{e^{\frac{-x}{y}}e^{-y}}{y}$$
     &=\frac{1}{y}\cdot\frac{\partial}{\partial y}\left(e^{\frac{-x}{y}-y}\right)+e^{\frac{-x}{y}-y}\cdot\frac{\partial}{\partial y}\left(\frac{1}{y}\right)\\
     &=\frac{e^{\frac{-x}{y}-y}}{y}\frac{\partial}{\partial y}\left(\frac{-x}{y}-y\right)-\frac{e^{\frac{-x}{y}-y}}{y^2}\\
     &=\frac{-e^{\frac{-x}{y}-y}}{y}\left(\frac{x}{y^2}+1\right)-\frac{e^{\frac{-x}{y}-y}}{y^2}\\
-    &=\frac{1}{e^{\frac{x}{y}+y}}\left(\frac{x}{y^3}-\frac{1}{y^2}-\frac{1}{y}\right)
+    &=\frac{1}{ye^{\frac{x}{y}+y}}\left(\frac{x}{y^2}-\frac{1}{y}-1\right)
 \end{align*}
 
 And we are done.
 
 \end{document}
-
-% -Remove Address
-% -Organize Coursework into CS, Math
-% -Extracurricular Activities** 
-% -qRNG - remove opensource, capitalize/bold Python
-% - Remove FIRST Coach, Captain
-% - Move Skills section up
-
-% - Writing - add "read by n people"
-% - Add more side projects
-% - Extracurriculars: Rewrite to be more impressive? Minor reorganization, update descriptions.

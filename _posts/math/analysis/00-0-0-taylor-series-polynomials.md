@@ -2,7 +2,7 @@
 layout: post
 title: Taylor Series & Polynomials
 date: 2019-01-25
-tags: math calculus
+tags: math analysis
 ---
 Taylor series are a useful way of representing smooth (i.e. infinitely differentiable) functions as infinite polynomials.
 

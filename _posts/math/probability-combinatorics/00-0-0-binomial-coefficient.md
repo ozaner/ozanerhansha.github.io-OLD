@@ -16,7 +16,7 @@ As we can see, combinations themselves aren't all too interesting. Instead it is
 ## Binomial Coefficient
 The number of $k$-combinations of a finite set $S$ with $n$ elements is given by the **binomial coefficient**:
 
-$$|\{A\subseteq S: |A|=k\}|=\binom{n}{k}=\frac{n!}{k!(n-k)!}=\frac{n^{\underline {k}}}{k!}$$
+$$\binom{n}{k}=\frac{n!}{k!(n-k)!}=\frac{n^{\underline {k}}}{k!}=|\{A\subseteq S: |A|=k\}|$$
 
 <details>
 <summary><strong>Proof</strong></summary>

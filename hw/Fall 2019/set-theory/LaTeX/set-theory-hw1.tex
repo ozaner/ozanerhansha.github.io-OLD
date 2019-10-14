@@ -107,10 +107,10 @@ And because of our assumption that $B\subseteq C$ and the transitivity of subset
 Exercises 5,7 from page 9 in the textbook. Where $V_\alpha$ below refers to the rank $\alpha$ of the von Neumann hierarchy.
 \bigskip
 
-\noindent\textbf{Exercise 5:} Define the rank of a set $c$ to be the least $\alpha$ such that $c\subseteq V_\alpha$. Compute the rank of $\{\varnothing\}$ and $\{\varnothing, \{\varnothing\}, \{\varnothing, \{\varnothing\}\}\}$.
+\noindent\textbf{Exercise 5:} Define the rank of a set $c$ to be the least $\alpha$ such that $c\subseteq V_\alpha$. Compute the rank of $\{\{\varnothing\}\}$ and $\{\varnothing, \{\varnothing\}, \{\varnothing, \{\varnothing\}\}\}$.
 \bigskip
 
-\noindent\textbf{Solution:} The rank of $\{\varnothing\}$ is $1$ as $V_1=\pset{V_0}=\pset \varnothing$ is the first rank in which it shows up.
+\noindent\textbf{Solution:} The rank of $\{\{\varnothing\}\}$ is $2$ as $V_2=\pset{V_1}=\pset \varnothing$ is the first rank in which it shows up.
 
 
 The highest ranked element of $\{\varnothing, \{\varnothing\}, \{\varnothing, \{\varnothing\}\}\}$ is $\{\varnothing, \{\varnothing\}\}$, which first appears in rank $3$. And because $\{\varnothing, \{\varnothing\}, \{\varnothing, \{\varnothing\}\}\}$ contains this rank $3$ element, it appears in $V_4=\pset{V_3}$ and so is rank $4$.
@@ -169,7 +169,7 @@ Also, since $a$ and $b$ are transitive, we have:
 
 So we have by the constructive dilemma, i.e.:
 
-$$((p\implies q)\and(r\implies s)\and(p\OR r))\implies (q\OR r)$$
+$$((p\implies q)\and(r\implies s)\and(p\OR r))\implies (q\OR s)$$
 
 the following:
 

@@ -2,7 +2,7 @@
 layout: post
 title: Euler's Method
 date: 2019-09-19
-tags: math calculus algorithms
+tags: math analysis algorithms differential-equations
 ---
 <!-- First wrote it on date: 2019-07-13, gave up on proving LTE and GTE (for now) the day its posted-->
 

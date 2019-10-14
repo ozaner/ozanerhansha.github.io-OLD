@@ -57,17 +57,17 @@ And for each of these two arrangements, we have to choose how to arrange the 4 m
 \end{equation*}
 
 \section*{Problem 22}
-\noindent\textbf{Problem:} A person has 8 friends, of whom 5 will be invited to a party. How many choices of invitees are there if 2 of the friends are feuding and will not attend together? How many choices are there if 2 of the friends will only attend together?
+\noindent\textbf{Problem:} A person has 8 friends, of whom 5 will be invited to a party. \textbf{a)} How many choices of invitees are there if 2 of the friends are feuding and will not attend together? \textbf{b)} How many choices are there if 2 of the friends will only attend together?
 \bigskip
 
-\noindent\textbf{Solution:} The first question is given by the total number of combinations of friends minus the number of combinations that have the two friends:
+\noindent\textbf{Solution:} \textbf{a)} is given by the total number of combinations of friends minus the number of combinations that have the two friends:
 
 \begin{equation*}
     \underbrace{\binom{8}{5}}_{\substack{\text{all combos}\\ \text{of friends}}}\mkern-5mu-\underbrace{\overbrace{\binom{2}{2}}^{\substack{\text{feuding}\\ \text{friends}}}\overbrace{\binom{6}{3}}^{\substack{\text{the}\\ \text{rest}}}}_{\text{impossible cases}}=36
 \end{equation*}
 \bigskip
 
-The second question is given by the number of combinations where the two close friends show up together plus the number of combinations where they do not:
+\textbf{b)} is given by the number of combinations where the two close friends show up together plus the number of combinations where they do not:
 
 \begin{equation*}
     \underbrace{\binom{6}{5}}_{\substack{\text{close friends}\\ \text{don't show}}}\mkern-12mu+\,\,\underbrace{\overbrace{\binom{2}{2}}^{\substack{\text{close}\\ \text{friends}}}\overbrace{\binom{6}{3}}^{\substack{\text{the}\\ \text{rest}}}}_{\substack{\text{close friends}\\ \text{show up}}}=26
@@ -75,16 +75,16 @@ The second question is given by the number of combinations where the two close f
 
 \section*{\underline{Chapter 2}}
 \section*{Problem 10}
-\noindent\textbf{Problem:} 60\% of the students at a school wear wear neither a ring nor a necklace. 20\% wear a ring and 30\% wear a necklace. What's the probability that any given student is wearing a ring \textit{or} a necklace? What about a ring \textit{and} a necklace?
+\noindent\textbf{Problem:} 60\% of the students at a school wear wear neither a ring nor a necklace. 20\% wear a ring and 30\% wear a necklace. \textbf{a)} What's the probability that any given student is wearing a ring \textit{or} a necklace? \textbf{b)} What about a ring \textit{and} a necklace?
 \bigskip
 
-\noindent\textbf{Solution:} Letting $R$ be the event that a student wears a ring, and $N$ the event they wear a necklace, the problem statement tells us that the event a student wears neither (i.e. $R^\complement N^\complement$) is $0.6$. This implies that the probability a student wears a ring or necklace (i.e. $R\cup N$) is given by:
+\noindent\textbf{Solution:} \textbf{a)} Letting $R$ be the event that a student wears a ring, and $N$ the event they wear a necklace, the problem statement tells us that the event a student wears neither (i.e. $R^\complement N^\complement$) is $0.6$. This implies that the probability a student wears a ring or necklace (i.e. $R\cup N$) is given by:
 
 \begin{equation*}
     P((R^\complement N^\complement)^\complement)=P(R\cup N)=1-0.6=0.4
 \end{equation*}
 
-We can find the probability that a student wears both (i.e. $RN$) by plugging in our known probabilities into the inclusion-exclusion principle and solving for $P(RN)$:
+\textbf{b)} We can find the probability that a student wears both (i.e. $RN$) by plugging in our known probabilities into the inclusion-exclusion principle and solving for $P(RN)$:
 
 \begin{align*}
     P(R\cup N)&=P(R)+P(N)-P(RN)\\

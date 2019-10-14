@@ -25,9 +25,8 @@
 \noindent\textbf{Part a:} Solve the following differential equation:
 
 \begin{equation*}
-    \der=t^4y
+    y'=t^4y
 \end{equation*}
-\smallskip
 
 \noindent\textbf{Solution:} The solution set is given by the following chain of equalities:
 
@@ -39,19 +38,18 @@
     y&=C_2e^{\frac{t^5}{5}}\tag{$\pm e^{C_1}=C_2\not=0$}
 \end{align*}
 
-Note that by letting $C_2=0$, we arrive at what happens to be the sole equilibrium solution: $y=0$. Thus we can replace $C_2$ with a new constant $C_3$ that can take on any real value. This gives us the following family of solutions indexed by $C_3\in\mathbb R$:
+Note that by letting $C_2=0$, we arrive at what happens to be the sole equilibrium solution: $y=0$. Thus we can replace $C_2$ with a new constant $C_3$ that can take on any real value. This gives us the following family of solutions indexed by $C\in\mathbb R$:
 
 \begin{equation*}
-    y_{C_3}(t)=C_3e^{\frac{t^5}{5}}
+    y(t)=Ce^{\frac{t^5}{5}}
 \end{equation*}
 \smallskip
 
 \noindent\textbf{Part b:} Solve the following differential equation:
 
 \begin{equation*}
-    \der=2y+1
+    y'=2y+1
 \end{equation*}
-\smallskip
 
 \noindent\textbf{Solution:} The solution set is given by the following chain of equalities:
 
@@ -62,7 +60,6 @@ Note that by letting $C_2=0$, we arrive at what happens to be the sole equilibri
 \pagebreak
 
 At this point we perform $u$-substitution on the LHS:
-
 \begin{gather*}
     u=2y+1\\
     \der[u][y]=2\implies dy=\frac{du}{2}
@@ -80,17 +77,17 @@ Plugging this into our integral we find:
     y&=C_4e^{2t}-\frac{1}{2}\tag{algebra}
 \end{align*}
 
-Note that by letting $C_4=0$, we arrive at what happens to be the sole equilibrium solution: $y=-\frac{1}{2}$. Thus we can replace $C_4$ with a new constant $C_5$ that can take on any real value. This gives us the following family of solutions indexed by $C_5\in\mathbb R$:
+Note that by letting $C_4=0$, we arrive at what happens to be the sole equilibrium solution: $y=-\frac{1}{2}$. Thus we can replace $C_4$ with a new constant $C$ that can take on any real value. This gives us the following family of solutions indexed by $C\in\mathbb R$:
 
 \begin{equation*}
-    y(t)=C_5e^{2t}-\frac{1}{2}
+    y(t)=Ce^{2t}-\frac{1}{2}
 \end{equation*}
 \smallskip
 
 \noindent\textbf{Part c:} Solve the following differential equation:
 
 \begin{equation*}
-    \der=\frac{t}{t^2y+y}
+    y'=\frac{t}{t^2y+y}
 \end{equation*}
 \smallskip
 
@@ -103,14 +100,12 @@ Note that by letting $C_4=0$, we arrive at what happens to be the sole equilibri
 \end{align*}
 
 At this point we perform $u$-substitution on the RHS:
-
 \begin{gather*}
     u=t^2+1\\
     \der[u]=2t\implies dt=\frac{du}{2t}
 \end{gather*}
 
 Plugging this into our integral we find:
-
 \begin{align*}
     \int y\mathop{dy}&=\int \frac{t}{2tu}\mathop{du}\tag{$u$-substitution}\\
     \int y\mathop{dy}&=\frac{1}{2}\int\frac{1}{u}\mathop{du}\tag{algebra}\\
@@ -129,7 +124,7 @@ And so we have the following family of solutions with each one given by a consta
 \noindent\textbf{Part a:} Solve the following IVP:
 
 \begin{equation*}
-    \der=t^2y^3,\,\,\,\, y(0)=-1
+    y'=t^2y^3,\,\,\,\, y(0)=-1
 \end{equation*}
 \smallskip
 
@@ -162,7 +157,7 @@ And so our constant $C_2=1$ and our choice of sign is $-$, giving us the followi
 \noindent\textbf{Part b:} Solve the following IVP:
 
 \begin{equation*}
-    \der=\frac{1-y^2}{y},\,\,\,\, y(0)=-2
+    y'=\frac{1-y^2}{y},\,\,\,\, y(0)=-2
 \end{equation*}
 \smallskip
 
@@ -174,7 +169,6 @@ And so our constant $C_2=1$ and our choice of sign is $-$, giving us the followi
 \end{align*}
 
 At this point we perform $u$-substitution on the LHS:
-
 \begin{gather*}
     u=1-y^2\\
     \der[u][y]=-2y\implies dy=\frac{du}{-2y}
@@ -194,7 +188,6 @@ Plugging this into our integral we find:
 \end{align*}
 
 Now by plugging in our initial condition we can solve for the constant $C_4$ that corresponds to our partiular solution:
-
 \begin{align*}
     -2&=\pm\sqrt{C_4e^{-2\cdot0}+1}\tag{$(t,y)=(0,-2)$}\\
     &=\pm\sqrt{C_4+1}\\
@@ -241,7 +234,6 @@ Now plugging in these values for $T$ and $k$ we have:
 \end{align*}
 
 Now by plugging in our initial condition we can solve for the constant $C_3$ that corresponds to our partiular solution:
-
 \begin{align*}
     170&=C_3e^{-\frac{0}{5}}+70\tag{$(t,y)=(0,170)$}\\
     &=C_3+70\\
@@ -260,13 +252,11 @@ And so $C_3=100$, giving us the following particular solution:
 \bigskip
 
 \noindent\textbf{Solution:} Plugging in $110$ into the model of the hot chocolate's temperature we found in part a we have:
-
 \begin{align*}
     100e^{-\frac{t}{5}}+70&=110\tag{$y(t)=110$}\\
     e^{-\frac{t}{5}}&=\frac{2}{5}\tag{algebra}\\
     -\frac{t}{5}&=\ln\left(\frac{2}{5}\right)\tag{$\ln()$ both sides}\\    
-    t&=-5\ln\left(\frac{2}{5}\right)\tag{algebra}\\
-    &\approx4.581    
+    t&=-5\ln\left(\frac{2}{5}\right)\approx4.581\tag{algebra}
 \end{align*}
 
 And so the hot chocolate should cool to $110\,{^\circ\text{F}}$ in about 4.581 seconds.
@@ -274,36 +264,37 @@ And so the hot chocolate should cool to $110\,{^\circ\text{F}}$ in about 4.581 s
 \section*{Problem 4}
 Consider the following differential equation:
 \begin{equation*}
-    \der=f(t,y)=-y^2+y+2yt^2+2t-t^2-t^4
+    y'=f(t,y)=-y^2+y+2yt^2+2t-t^2-t^4
 \end{equation*}
 \smallskip
 
 \noindent\textbf{Part a:} Show that $y_1(t)=t^2$ and $y_2(t)=t^2+1$ are solutions to the differential equation:
 \bigskip
 
-\noindent\textbf{Solution:} Letting $y=y_1=t^2$, the differential equation gives us:
+\noindent\textbf{Solution:} Plugging $y_1$ into the differential equation gives us:
 
 \begin{equation*}
-    \der[y_1]=f(t,y_1)=-(t^2)^2+t^2+2(t^2)t^2+2t-t^2-t^4=2t
+    f(t,y_1)=-(t^2)^2+t^2+2(t^2)t^2+2t-t^2-t^4=2t
 \end{equation*}
 
 And indeed, this coincides with the derivative of $y_1$:
 
 \begin{equation*}
-    \der[y_1]=\der[]t^2=2t
+    y_1'=\der[]t^2=2t
 \end{equation*}
 
-Letting $y=y_2=t^2+1$, the differential equation gives us:
+Plugging $y_2$ into the differential equation gives us:
 
 \begin{equation*}
-    \der[y_2]=f(t,y_2)=-(t^2+1)^2+t^2+1+2(t^2+1)t^2+2t-t^2-t^4=2t
+    f(t,y_2)=-(t^2+1)^2+t^2+1+2(t^2+1)t^2+2t-t^2-t^4=2t
 \end{equation*}
 
 Like before, this coincides with the derivative of $y_2$:
 
 \begin{equation*}
-    \der[y_2]=\der[](t^2+1)=2t
+    y_2'=\der[](t^2+1)=2t
 \end{equation*}
+\smallskip
 
 \noindent\textbf{Part b:} Show that if $y(t)$ is a solution to the differential equation and $0<y(0)<1$, then $t^2<y(t)<t^2+1$ for all $t$.
 \bigskip
@@ -359,7 +350,7 @@ Notice that that any solution $y(t)$ with $0<y(0)<1$ is bounded above by $y_2$ a
 \section*{Problem 5}
 Consider the following differential equation:
 \begin{equation*}
-    \der=f(t,y)=ty^{\frac{2}{3}}
+    y'=f(t,y)=ty^{\frac{2}{3}}
 \end{equation*}
 
 \noindent\textbf{Part a:} Show that $y_1(t)=0$ is a solution to the differential equation:
@@ -368,13 +359,13 @@ Consider the following differential equation:
 \noindent\textbf{Solution:} Letting $y=y_1=0$, the differential equation gives us:
 
 \begin{equation*}
-    \der[y_1]=f(t,y_1)=t\cdot0^{\frac{2}{3}}=0
+    f(t,y_1)=t\cdot0^{\frac{2}{3}}=0
 \end{equation*}
 
 And indeed, this coincides with the derivative of $y_1$:
 
 \begin{equation*}
-    \der[y_1]=\der[]0=0
+    y_1'=\der[]0=0
 \end{equation*}
 \smallskip
 
@@ -383,7 +374,6 @@ And indeed, this coincides with the derivative of $y_1$:
 \pagebreak
 
 \noindent\textbf{Solution:} As this is a separable equation, we have the following chain of equalities:
-
 \begin{align*}
     \der&=ty^{\frac{2}{3}}\\
     \int \frac{1}{y^{\frac{2}{3}}}\mathop{dy}&=\int t\mathop{dt}\tag{separable equation}\\
@@ -392,7 +382,6 @@ And indeed, this coincides with the derivative of $y_1$:
 \end{align*}
 
 Now by plugging in our initial condition we can solve for the constant $C_2$ that corresponds to our partiular solution:
-
 \begin{align*}
     0&=\frac{0^6}{216}+C_2\tag{$(t,y)=(0,0)$}\\
     \implies C_2&=0
@@ -410,7 +399,7 @@ You'll notice that both this solution and the equilibrium solution $y_0(t)=0$ bo
     \frac{\partial}{\partial y}ty^{\frac{2}{3}}=\frac{2t}{3\sqrt[3]{y}}
 \end{equation*}
 
-We can see that this partial derivative does not exist for any point $(t,0)$. And so, as mentioned before, the existence of two solutions that solve the same IVP with an initial condition of $y(0)=0$ is unsurprising.
+We can see that this partial derivative does not exist for any point $(t,0)$. And so, as mentioned before, the existence of two solutions that solve the same IVP with an initial condition of $y(0)=0$ is consistent.
 
 \section*{Problem 6}
 Use Euler’s method with the given step size $\Delta t$ to approximate the solution to the given initial value problem over the time interval specified.
@@ -440,7 +429,7 @@ Giving us $y(3)\approx-1$.
 
 \bigskip
 
-\noindent\textbf{Part b:} Approximate $w(2)$ with $\Delta t=0.5$ for the following differential equation:
+\noindent\textbf{Part b:} Approximate $w(2)$ with $\Delta t=0.5$ for the following IVP:
 
 \begin{equation*}
     w'=(3-w)(w+1),\,\,\,w(0)=0

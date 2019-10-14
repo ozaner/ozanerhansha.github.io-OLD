@@ -2,7 +2,7 @@
 layout: post
 title: Separable Differential Equations
 date: 2019-07-09
-tags: math calculus
+tags: math analysis differential-equations
 ---
 
 ## Definition

@@ -82,7 +82,7 @@ Putting these together we find that the force of kinetic friction is:
 
 $$\vec{F_{k}}=-\mu_kN\hat{\vec{v}}=\frac{-\mu_kN}{\|\vec{v}\|}\vec{v}$$
 
-*Note that this does not violate Coulomb’s Law of Friction because it refers only to the magnitude of kinetic friction.*
+*Note that this does not violate Coulomb’s Law of Friction as that refers only to the magnitude of kinetic friction.*
 
 #### Non-Conservative Force and Thermal Energy
 Friction is a non-conservative force, meaning that the work done by kinetic friction is dependent on the path taken. Friction also causes heat energy to be released into the system, meaning it does not conserve mechanical energy.

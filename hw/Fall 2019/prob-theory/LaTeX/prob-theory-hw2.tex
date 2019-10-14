@@ -111,25 +111,25 @@ It is quite plain to see that this is a finite telescoping product. Canceling ou
     |E_\heartsuit\cup E_\spadesuit\cup E_\diamondsuit\cup E_\clubsuit|=\left|\bigcup_{i\in\{\heartsuit,\spadesuit,\diamondsuit,\clubsuit\}}\mkern-30muE_i\mkern+10mu\right|=\sum_{k=1}^4\left((-1)^{k-1}\mkern-10mu\sum _{I\subseteq \{\heartsuit,\spadesuit,\diamondsuit,\clubsuit\} \atop |I|=k}\left|\bigcap_{i\in I}E_i\right|\right)
 \end{equation*}
 
-Now note that each suit we have determines 2 of the cards in our hand. For example, $|E_\heartsuit|=\binom{52-2}{13-2}$ since 2 of the cards have been chosen for us. Similarly, we have $|E_\heartsuit E_\spadesuit|=\binom{52-4}{13-4}$ since 4 of the cards (2 from hearts and 2 from spades) have been chosen for us. Generalizing this we have for $|I|=k$:
+Now note that each suit we have determines 2 of the cards in our hand. For example, $|E_\heartsuit|=\binom{52-2}{13-2}$ since 2 of the cards have been chosen for us. Similarly, we have $|E_\heartsuit E_\spadesuit|=\binom{52-4}{13-4}$ since 4 of the cards (2 from hearts and 2 from spades) have been chosen for us. Generalizing this, we have for $|I|=k$:
 
 \begin{equation*}
     \left|\bigcap_{i\in I}E_i\right|=\binom{52-2k}{13-2k}
 \end{equation*}
 
-Plugging this into our expression for the inclusion-exclusion principle we have:
+Plugging this into our expression for the inclusion-exclusion principle gives us:
 
 \begin{equation*}
     \left|\bigcup_{i\in\{\heartsuit,\spadesuit,\diamondsuit,\clubsuit\}}\mkern-30muE_i\mkern+10mu\right|=\sum_{k=1}^4\left((-1)^{k-1}\mkern-10mu\sum _{I\subseteq \{\heartsuit,\spadesuit,\diamondsuit,\clubsuit\} \atop |I|=k}\binom{52-2k}{13-2k}\right)
 \end{equation*}
 
-Now noting that there are $\binom{4}{k}$ $k$-combinations of the set $\{\heartsuit,\spadesuit,\diamondsuit,\clubsuit\}$ we have:
+Now, noting that there are $\binom{4}{k}$ $k$-combinations of the set $\{\heartsuit,\spadesuit,\diamondsuit,\clubsuit\}$, we have:
 
 \begin{equation*}
     \left|\bigcup_{i\in\{\heartsuit,\spadesuit,\diamondsuit,\clubsuit\}}\mkern-30muE_i\mkern+10mu\right|=\sum_{k=1}^4\left((-1)^{k-1}\binom{4}{k}\binom{52-2k}{13-2k}\right)=139565328072
 \end{equation*}
 
-We have calculate the number of hands with at least 1 pair of an ace and heart of a single suit. And because this is a discrete uniform distribution, that is to say that each hand is equally likely, the probability of drawing such a hand is simply:
+We have calculated the number of hands with at least 1 pair of an ace and heart of a single suit. And because this is a discrete uniform distribution, i.e. each hand is equally likely, the probability of drawing such a hand is simply:
 
 \begin{equation*}
     P(E_\heartsuit\cup E_\spadesuit\cup E_\diamondsuit\cup E_\clubsuit)=\frac{|E_\heartsuit\cup E_\spadesuit\cup E_\diamondsuit\cup E_\clubsuit|}{|\Omega|}=\frac{139565328072}{\binom{52}{13}}=\frac{9895443}{45023650}\approx0.219783
@@ -249,7 +249,7 @@ For \textbf{b)} the desired probability is given by $P(R| L^\complement)$. We ca
 
 \begin{align*}
     P(R| L^\complement)&=\frac{P(L^\complement| R)P(R)}{P(L^\complement)}\tag{Bayes' theorem}\\
-    &=\frac{(1-P(L| R))P(R)}{P(L^\complement)}\tag{conditional law of complement}\\
+    &=\frac{(1-P(L| R))P(R)}{P(L^\complement)}\tag{complement of conditional}\\
     &=\frac{(1-0.3)0.7}{0.76}=\frac{49}{76}\approx0.644734
 \end{align*}
 
@@ -262,6 +262,7 @@ For \textbf{b)} the desired probability is given by $P(R| L^\complement)$. We ca
 \begin{equation*}
     P(A)=0.3\,\,\,\,\,\,\,\,P(B| A^\complement)=0.4
 \end{equation*}
+\pagebreak
 
 Now, note that by Bayes' theorem we have the following chain of equalities:
 
@@ -269,7 +270,7 @@ Now, note that by Bayes' theorem we have the following chain of equalities:
     P(B|A^\complement)&=\frac{P(A^\complement| B)P(B)}{P(A^\complement)}\tag{Bayes' theorem}\\
     0.4&=\frac{P(A^\complement| B)P(B)}{1-0.3}\\
     0.4\cdot0.7&=P(A^\complement| B)P(B)\\
-    0.28&=(1-P(A| B))P(B)\tag{conditional law of complement}\\
+    0.28&=(1-P(A| B))P(B)\tag{complement of conditional}\\
     0.28&=P(B)-P(A| B)P(B)\\
     0.28&=P(B)-P(AB)\tag{def. of conditional probability}
 \end{align*}
@@ -279,6 +280,7 @@ Now, via the inclusion-exclusion principle for $n=2$, we can solve for our desir
 \begin{equation*}
     P(A\cup B)=P(A)+P(B)-P(AB)=0.3+0.28=0.58
 \end{equation*}
+\bigskip
 
 \begin{center}
     \Large\textbf{Part B}
@@ -313,13 +315,13 @@ Now, via the inclusion-exclusion principle for $n=2$, we can solve for our desir
 \bigskip
 
 \noindent\textbf{Solution:} As we can see, the red bounded region can be expressed as the 3 regions split up by the blue dashed lines. The functions of each side, starting with the top left line and going clockwise, are given by: 
-
 \begin{align*}
     y&=x\\
     y&=\frac{-3x}{2}+5\\
     y&=\frac{x}{3}-\frac{1}{2}\\
     y&=-2x+3
 \end{align*}
+\pagebreak
 
 And so we can express our integral sum like so:
 

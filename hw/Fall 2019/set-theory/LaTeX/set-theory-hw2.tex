@@ -12,19 +12,19 @@
 \maketitle
 
 % Set Theory Class notation
-\newcommand{\pset}[1]{\mathfrak P#1}
-\newcommand{\psetp}[1]{\mathfrak P(#1)}
-\newcommand{\and}{\,\,\&\,\,}
-\newcommand{\OR}{\text{ or }}
-\newcommand{\pair}[2]{<#1,#2>}
-\renewcommand{\setminus}{-}
+% \newcommand{\pset}[1]{\mathfrak P#1}
+% \newcommand{\psetp}[1]{\mathfrak P(#1)}
+% \newcommand{\and}{\,\,\&\,\,}
+% \newcommand{\OR}{\text{ or }}
+% \newcommand{\pair}[2]{<#1,#2>}
+% \renewcommand{\setminus}{-}
 
 % My Notation
-% \newcommand{\pset}[1]{\mathcal P(#1)}
-% \newcommand{\psetp}[1]{\mathcal P(#1)}
-% \newcommand{\and}{\wedge}
-% \newcommand{\OR}{\vee}
-% \newcommand{\pair}[2]{(#1,#2))}
+\newcommand{\pset}[1]{\mathcal P(#1)}
+\newcommand{\psetp}[1]{\mathcal P(#1)}
+\newcommand{\and}{\wedge}
+\newcommand{\OR}{\vee}
+\newcommand{\pair}[2]{(#1,#2))}
 
 \section*{Problem 1}
 Exercises 5,7,10 from page 26 in the textbook.
@@ -60,7 +60,7 @@ And thus we have shown that for any $a\in\bigcup A$, the set $a$ must also be an
 \noindent\textbf{Solution:} a) Consider an arbitrary set $x$ and note the following chain of logical equivalences:
 
 \begin{align*}
-    x\in\pset A\cup\pset B&\iff x\in \pset A \and x\in\pset B\tag{def. of intersection}\\
+    x\in\pset A\cap\pset B&\iff x\in \pset A \and x\in\pset B\tag{def. of intersection}\\
     &\iff x\subseteq A\and x\subseteq B\tag{def. power set}\\
     &\iff x\subseteq A\cap B\tag{def. of intersection}\\
     &\iff x\in\psetp{A\cap B}\tag{def. power set}
@@ -191,14 +191,14 @@ And with both sides of the implication proved, the equality holds true.
 \noindent\textbf{Solution:} Consider an arbitrary set $x$ and note the following chain of implications:
 
 \begin{align*}
-    x\in A&\implies\{x\}\subseteq A\tag{def. of subset}\\
-    &\implies\{x\}\in\pset A\tag{def. of powerset}\\
+    x\in A&\iff\{x\}\subseteq A\tag{def. of subset}\\
+    &\iff\{x\}\in\pset A\tag{def. of powerset}\\
     &\iff\{x\}\in\pset B\tag{assumption}\\
-    &\implies\{x\}\subseteq B\tag{def. of powerset}\\
-    &\implies x\in B\tag{def. of subset}
+    &\iff\{x\}\subseteq B\tag{def. of powerset}\\
+    &\iff x\in B\tag{def. of subset}
 \end{align*}
 
-This gives us $x\in A\implies x\in B$, and by replacing all occurrences of $A$ with $B$ we have an argument for the reverse direction. Putting these together we have $A=B$.
+And so by extensionality we have $A=B$.
 
 \section*{Problem 3}
 Exercises 32,33,36 from pages 33-34 in the textbook.
@@ -230,8 +230,8 @@ For b) we have:
 For c) we have:
 \begin{align*}
     \bigcap\bigcup S\cup \left(\bigcup\bigcup S\setminus\bigcup\bigcap S\right)&=\bigcap\{a,b\}\cup \left(\bigcup\{a,b\}\setminus\bigcup\{a\}\right)\\
-    &=(a\cup b)\cup ((a\cup b)\setminus a)\\
-    &=(a\cup b)\cup (b\setminus a)\\
+    &=(a\cap b)\cup ((a\cup b)\setminus a)\\
+    &=(a\cap b)\cup (b\setminus a)\\
     &=b
 \end{align*}
 
@@ -252,7 +252,7 @@ For the case that $a\not= b$ we have:
 
 For the case that $a = b$ we have:
 \begin{equation*}
-    \bigcup\left(\{a,b\} \setminus\{a\}\right)=\bigcup\left(\{a\} \setminus\{a\}\right)=\bigcup\emptyset=\emptyset
+    \bigcup\left(\{a,b\} \setminus\{a\}\right)=\bigcup\left(\{a\} \setminus\{a\}\right)=\bigcup\varnothing=\varnothing
 \end{equation*}
 
 \bigskip
@@ -270,17 +270,17 @@ For the case that $a = b$ we have:
     &=A\cap(A^\complement\cup B^\complement)\tag{DeMorgan's Law}\\
     &=(A\cap A^\complement)\cup (A\cap B^\complement)\tag{distributivity of intersection}\\
     &=(A\setminus A)\cup (A\setminus B)\tag{relative complement}\\
-    &=\emptyset\cup (A\setminus B)\\
+    &=\varnothing\cup (A\setminus B)\\
     &=A\setminus B\\
 \end{align*}
 
 For b) we have:
 \begin{align*}
-    A\setminus(A\cap B)&=A\cap(A\setminus B)^\complement\tag{relative complement}\\
+    A\setminus(A\setminus B)&=A\cap(A\setminus B)^\complement\tag{relative complement}\\
     &=A\cap(A\cap B^\complement)^\complement\tag{relative complement}\\
     &=A\cap(A^\complement\cup B)\tag{DeMorgan's Law}\\
     &=(A\cap A^\complement)\cup (A\cap B)\tag{distributivity of intersection}\\
-    &=\emptyset\cup (A\cap B)\\
+    &=\varnothing\cup (A\cap B)\\
     &=A\cap B\\
 \end{align*}
 
