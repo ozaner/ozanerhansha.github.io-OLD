@@ -19,7 +19,7 @@ We can broadly categorize physics into 3 main divisions:
 <!--more-->
 
 ## Classical Physics
-[Classical physics](/classical-physics) is a catch all for the theories of physics that predated the relativistic and quantum theories of physics we have today. They very adequately describe the interactions and mechanics of everyday objects, fluids, gasses, electricity, magnetism, and even celestial bodies.
+Classical physics is a catch all for the theories of physics that predated the relativistic and quantum theories of physics we have today. They very adequately describe the interactions and mechanics of everyday objects, fluids, gasses, electricity, magnetism, and even celestial bodies.
 
 Classical physics can be split up into 3 main branches:
 - Classical Mechanics
@@ -42,7 +42,7 @@ The theory models the 3 dimensions of space and 1 dimension of time as a singula
 SR has been widely successful and has even been incorporated with quantum mechanics to form quantum field theory. That said, special relativity doesn't explain or deal with the force of gravity, keeping spacetime flat rather than curved.
 
 #### General Relativity (GR)
-Gravity's absence from SR is what lead to the theory of general relativity. It *generalizes* special relativity and Newton's law of gravitation into a coherent theory where the curvature of spacetime itself becomes responsible for the force of gravity. Unfortunately, unlike special relativity, there has been no successful marriage of general relativity and quantum mechanics. A quantum theory of gravity remains a major goal of modern physics.
+Gravity's absence from SR is what lead to the theory of general relativity. It *generalizes* special relativity and Newton's law of gravitation into a coherent theory where the curvature of spacetime itself becomes responsible for the force of gravity. Unfortunately, unlike special relativity, there has been no successful marriage of general relativity and quantum mechanics. A quantum theory of gravity remains a major goal, if not *the* goal, of modern physics.
 
 ## Quantum Mechanics (QM)
 When considering matter and energy on very small scales, classical and relativistic physics fail to explain experiments/observations. This led to the creation of quantum mechanics, which mathematically grounds the states and temporal evolution of subatomic particles. Quantum mechanics itself is not a theory of a particular type of particle like bosons or photons. Think of it as an analogue to classical mechanics which covers the motion and forces that act upon an object.

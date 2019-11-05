@@ -116,7 +116,7 @@ The **local truncation error (LTE)** is the error made in one iteration, assumin
 
 $$\tau_i=y(t_i)-y(t_{i-1})$$
 
-As it turns out the *order of convergence* of the LTE is 2. That is to say, the LTE is quadratic with respect to the step size $h$:
+As it turns out, the *order of convergence* of the LTE is 2. That is to say, the LTE is quadratic with respect to the step size $h$:
 
 $$\tau_i=O(h^2)$$
 
@@ -151,7 +151,7 @@ Euler's method works equally well for a system of first order ODEs. Given the sy
 
 $$\mathbf y_{i+1}=\mathbf y_i+h\mathbf f(t_i,\mathbf y_i)$$
 
-Also note that we can reduce any $n$th order ODE to a system of first order ODE's by considering each derivative a separate variable.
+Also note that we can reduce any $n$th order ODE to a system of first order ODE's by considering each derivative a separate variable, allowing for the use of this method.
 
 ### Backwards Euler's Method
 A common variation on Euler's method is the following iteration:

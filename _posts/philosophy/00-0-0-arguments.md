@@ -49,7 +49,7 @@ $$\begin{align}
 \therefore\ &\hline{q}\\
 \end{align}$$
 
-If an argument does not satisfy the above it is called <b>unsound</b>. A good deductive argument is sound one .<p></p>
+If an argument does not satisfy the above it is called <b>unsound</b>. A good deductive argument is a sound one.<p></p>
 </details><p></p>
 
 Because deductive arguments are based in logic they can be **formalized**, meaning that they can be reasoned about and verified via totally mechanical means (à la FOL) after being put in a logical form. That said, deductive arguments are different from full on formal proofs in that the atomic statements present in the premises and conclusion are expressed in a natural language.

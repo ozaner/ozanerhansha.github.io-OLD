@@ -13,12 +13,12 @@ Below is a collection of papers and homework I've written up for some of my unde
 #### Theory of Probability
 A list of all my HW for the class. Both problems and solutions are typed up in LaTeX below:
 
-- [HW0](\hw\Fall%202019\prob-theory\PDFs\prob-theory-hw0.pdf), [HW1](\hw\Fall%202019\prob-theory\PDFs\prob-theory-hw1.pdf), [HW2](\hw\Fall%202019\prob-theory\PDFs\prob-theory-hw2.pdf).
+- [HW0](\hw\Fall%202019\prob-theory\PDFs\prob-theory-hw0.pdf), [HW1](\hw\Fall%202019\prob-theory\PDFs\prob-theory-hw1.pdf), [HW2](\hw\Fall%202019\prob-theory\PDFs\prob-theory-hw2.pdf), [HW3](\hw\Fall%202019\prob-theory\PDFs\prob-theory-hw3.pdf), [HW4](\hw\Fall%202019\prob-theory\PDFs\prob-theory-hw4.pdf), [HW5](\hw\Fall%202019\prob-theory\PDFs\prob-theory-hw5.pdf), [HW6](\hw\Fall%202019\prob-theory\PDFs\prob-theory-hw6.pdf).
 
 #### Elementary Differential Equations
 A list of all my HW for the class. Both problems and solutions are typed up in LaTeX below:
 
-- [HW1](\hw\Fall%202019\diff-eqs\PDFs\diff-eqs-hw1.pdf), [HW2](\hw\Fall%202019\diff-eqs\PDFs\diff-eqs-hw2.pdf).
+- [HW1](\hw\Fall%202019\diff-eqs\PDFs\diff-eqs-hw1.pdf), [HW2](\hw\Fall%202019\diff-eqs\PDFs\diff-eqs-hw2.pdf), [HW3](\hw\Fall%202019\diff-eqs\PDFs\diff-eqs-hw3.pdf).
 
 #### Set Theory
 A list of all my HW for the class. Both problems and solutions are typed up in LaTeX below:

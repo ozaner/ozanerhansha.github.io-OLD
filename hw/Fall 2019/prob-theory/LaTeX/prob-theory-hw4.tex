@@ -71,7 +71,7 @@ Thus, the probability that the system functions tomorrow is given by:
 \begin{align*}
     P(Z\ge k)&=P(Z\ge k\pbar R)P(R)+P(Z\ge k\pbar R^\complement)P(R^\complement)\\
     &=P(X\ge k)P(R)+P(Y\ge k)P(R^\complement)\tag{def. of $X$ and $Y$}\\
-    &=\sum_{i=k}^n\binom{n}{i}p_1^i(1-p_1)^{n-i}\alpha+\sum_{i=k}^n\binom{n}{i}p_2^i(1-p_2)^{n-i}(1-\alpha)\tag{binomial distribution}
+    &=\alpha\sum_{i=k}^n\binom{n}{i}p_1^i(1-p_1)^{n-i}+(1-\alpha)\sum_{i=k}^n\binom{n}{i}p_2^i(1-p_2)^{n-i}\tag{binomial distribution}
 \end{align*}
 
 \subsection*{Problem 47}
@@ -208,9 +208,9 @@ In a tournament involving players 1, 2, 3, and 4, players 1 and 2 play a game, w
 And so the pmf of $X$ is simply given by:
 
 \begin{align*}
-    p_X(n)&=\binom{n-1}{10-1}\left(\frac{1}{2}\right)^{10}\left(1-\frac{1}{2}\right)^{n-10}\\
-    &=\binom{n-1}{9}\left(\frac{1}{2}\right)^{10}\left(\frac{1}{2}\right)^{n-10}\\
-    &=\binom{n-1}{9}\frac{1}{2^n}
+    p_X(n)&=\binom{n+10-1}{n}\left(\frac{1}{2}\right)^{10}\left(1-\frac{1}{2}\right)^{n}\\
+    &=\binom{n+9}{9}\left(\frac{1}{2}\right)^{10}\left(\frac{1}{2}\right)^{n-10}\\
+    &=\binom{n+9}{9}\frac{1}{2^{n+10}}
 \end{align*}
 
 \textit{Note that for $r>n$, $\binom{n}{r}=0$.}

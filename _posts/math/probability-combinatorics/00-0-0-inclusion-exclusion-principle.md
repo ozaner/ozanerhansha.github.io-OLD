@@ -64,14 +64,16 @@ $$\begin{align*}
 &=\sum _{I\subseteq [1..n] \atop I\not=\emptyset}\left((-1)^{|I|-1}\mu\left(\bigcap_{i\in I}S_i\right)\right)+\mu(S_{n+1})-\sum _{I\subseteq [1..n] \atop I\not=\emptyset}\left((-1)^{|I|-1}\mu\left(\left(\bigcap_{i\in I}S_i\right)\cap S_{n+1}\right)\right)\tag{distributivity of $\cap$}\\
 &=\sum _{I\subseteq [1..n] \atop I\not=\emptyset}\left((-1)^{|I|-1}\mu\left(\bigcap_{i\in I}S_i\right)\right)+\mu(S_{n+1})-\sum _{I\subseteq [1..n] \atop I\not=\emptyset}\left((-1)^{|I|-1}\mu\left(\bigcap_{i\in I\cup\{n+1\}}S_i\right)\right)\tag{def. of indexed $\cap$}\\
 &=\sum _{I\subseteq [1..n] \atop I\not=\emptyset}\left((-1)^{|I|-1}\mu\left(\bigcap_{i\in I}S_i\right)\right)+\mu(S_{n+1})+\sum _{I\subseteq [1..n] \atop I\not=\emptyset}\left((-1)^{|I|}\mu\left(\bigcap_{i\in I\cup\{n+1\}}S_i\right)\right)\tag{distribute $-1$}\\
-&=\sum _{I\subseteq [1..n] \atop I\not=\emptyset}\left((-1)^{|I|-1}\mu\left(\bigcap_{i\in I}S_i\right)\right)+\sum _{I\subseteq [1..n]}\left((-1)^{|I|}\mu\left(\bigcap_{i\in I\cup\{n+1\}}S_i\right)\right)\tag{reindex to include $\mu(S_{n+1}$}\\
+&=\sum _{I\subseteq [1..n] \atop I\not=\emptyset}\left((-1)^{|I|-1}\mu\left(\bigcap_{i\in I}S_i\right)\right)+\sum _{I\subseteq [1..n]}\left((-1)^{|I|}\mu\left(\bigcap_{i\in I\cup\{n+1\}}S_i\right)\right)\tag{reindex to include $\mu(S_{n+1})$}\\
 &=\sum _{I\subseteq [1..n] \atop I\not=\emptyset}\left((-1)^{|I|-1}\mu\left(\bigcap_{i\in I}S_i\right)\right)+\sum _{I\subseteq [1..n+1]\atop {n+1\in I}}\left((-1)^{|I|-1}\mu\left(\bigcap_{i\in I}S_i\right)\right)\tag{redefine $I$ to always have $n+1$}\\
 &=\sum _{I\subseteq [1..n+1] \atop I\not=\emptyset}\left((-1)^{|I|-1}\mu\left(\bigcap_{i\in I}S_i\right)\right)\tag{$P(n+1)$}\\
 \end{align*}$$
 
-Note that in the second to last equality we adjust the exponent of the $-1$ to account with the cardinality of $S$ being $1$ higher than before.
+Note that in the third to last equality, letting $I=\varnothing$ in the right summand makes it equivalent to $\mu(S_{n+1})$.
 <p></p>
-Also note that the last equality was valid because the index over the first term was mutually exclusive to that of the second since the second always includes $n+1$. Also note that their union indeed produces the desired $\mathcal P([1..n+1])\setminus\{\emptyset\}$ giving us a single index. Trust me... it works.
+Also note that in the second to last equality, we adjust the exponent of the $-1$ to account with the cardinality of $S$ being $1$ higher than before.
+<p></p>
+Finally, note that the last equality was valid because the index over the first term was mutually exclusive to that of the second since the second always includes $n+1$. Also note that their union indeed produces the desired $\mathcal P([1..n+1])\setminus\{\emptyset\}$ giving us a single index. Trust me... it works.
 
 </details>
 

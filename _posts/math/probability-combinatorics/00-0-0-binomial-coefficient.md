@@ -33,7 +33,7 @@ $$\binom{n}{k}=\frac{n^{\underline {k}}}{k!}$$
 With the term $\binom{n}{k}$ being read as *"$n$ choose $k$"*. The binomial coefficient has combinatorial significance in that it gives the number of ways to choose $k$ elements from a group of $n$ where order doesn't matter.
 
 #### Alternative Notation
-Complementary to the notation for [partial permutations](/permutations#partial-permutations), the binomial coefficient is denoted $_nC_k$ and `nCr(n,k)`.
+Complementary to the notation for [partial permutations](/permutations#partial-permutations), the binomial coefficient is also denoted $_nC_k$ and `nCr(n,k)`.
 
 ### Binomial Theorem
 This eponymous theorem tells us that the expansion of a binomial raised a nonnegative integer power $n$ is given by:
@@ -97,7 +97,7 @@ $$\binom{\alpha}{\beta}=|\{B\subseteq A:|B|=\beta\}|$$
 
 Each row is represented by a natural number starting from $0$, and the same for each column. The number in row $n$ and column $k$ is given by $\binom{n}{k}$.
 
-*While the staggering of the rows may make this unclear, the $k$th element of row $n$ is said to be in column $k$.*
+*While the staggering of the rows may make this unclear, the $k$th element from the left of row $n$ is said to be in column $k$.*
 
 As we can see, by starting with just the first two rows, we can iteratively construct Pascal's triangle using Pascal's rule which we proved earlier.
 
@@ -179,7 +179,7 @@ A **$k$-multicombination** of a set $S$ is a multisubset of cardinality $k$:
 
 $$A\subseteq S,\,\,\,|A|=k$$
 
-*Note that $k$ can be any cardinality, since we can add an arbitrary number of copies of any single element (unless $S=\emptyset$).*
+*Note that $k$ can be any finite cardinality, since we can add an arbitrary number of copies of any single element.*
 
 This, like before, comes with its own notation for counting the number of possible $k$-multisubsets of a set with $n$ elements:
 

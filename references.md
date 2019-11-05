@@ -99,7 +99,7 @@ A compendium of websites, articles, books and other references I have read and h
     </ul>
     <h3>Books</h3>
     <ul>
-      <li><a href="https://www.macmillanlearning.com/Catalog/product/psychologyinmodules-twelfthedition-myers#tab">Psychology In Modules</a> by David G. Myers - An introductory psychology text. It uses different perspectives psychology to contextualize a variety of cognitive and behavioral phenomena.</li>
+      <li><a href="https://www.macmillanlearning.com/Catalog/product/psychologyinmodules-twelfthedition-myers#tab">Psychology In Modules</a> by David G. Myers - An introductory psychology text. Uses an integrated biopsychosocial perspective to contextualize a variety of cognitive and behavioral phenomena.</li>
       <li><a href="http://www.ynharari.com/book/sapiens/">Sapiens: A Brief History of Humankind</a> by Yuval Harari - A piece of nonfiction that aims to recount all of human history all while explaining how and why our species took the route it did.</li>
     </ul>
 </details>

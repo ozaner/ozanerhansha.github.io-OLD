@@ -32,21 +32,41 @@
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       positionToHash: true,
+      extensions: ["[a11y]/accessibility-menu.js"],
       jax: ["input/TeX", "output/HTML-CSS"],
+      TeX: {
+        extensions: ["AMSmath.js", "AMSsymbols.js", "autoload-all.js"]
+      },
       tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
         displayMath: [ ['$$', '$$']],
         processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
       },
       messageStyle: "none",
+      <!-- CommonHTML: { linebreaks: { automatic: true } }, -->
+      <!-- SVG: { linebreaks: { automatic: true } }, -->
       "HTML-CSS": {
         preferredFont: "TeX",
         availableFonts: ["STIX","TeX"],
-        styles: {".MathJax": {color: "#CCCCCC"}}
+        <!-- linebreaks: { automatic: true }, -->
+        styles: {
+          ".MathJax": {
+            color: "#CCCCCC"
+          }
+        },
       },
       displayAlign: "center!important",
-      displayIndent: "0em"
+      displayIndent: "0em",
+      showProcessingMessages: false,
+      menuSettings: {
+        collapsible: true,
+        autocollapse: true,
+        explorer: true
+      },
+      "auto-collapse": {
+        disabled: false
+      }
     });
     MathJax.Hub.Queue(function() {
       // Fix <code> tags after MathJax finishes running. This is a

@@ -1,10 +1,10 @@
 ---
 layout: post
-title: On Singer's 'All Animals are Equal'
+title: On Singer's "All Animals are Equal"
 date: 2019-01-28
 tags: philosophy
 ---
-The following are my notes on Peter Singer's ['All Animals are Equal'](https://rintintin.colorado.edu/~vancecd/phil3140/Singer1.pdf).
+The following are my notes on Peter Singer's ["All Animals are Equal"](https://rintintin.colorado.edu/~vancecd/phil3140/Singer1.pdf).
 
 ### Counterexample to Human Equality
 *In response paragraph 10:*
