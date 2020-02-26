@@ -230,7 +230,7 @@ With the last inequality coming from the fact that $x(t)^2+y(t)^2$ is nonnegativ
 
 \noindent\textbf{Solution a):} First we start be finding the eigenvalues of $\mathbf{A}$, by finding the roots of its characteristic polynomial:
 \begin{align*}
-    0&=|\mathbf{A}-\lambda \mathbf{I}|\\
+    0&=\det(\mathbf{A}-\lambda \mathbf{I})\\
     &=\begin{vmatrix} 1-\lambda & 1 \\ 0 & -\lambda \end{vmatrix}\\
     &=\lambda(\lambda-1)\\
     &\implies \lambda=0,1
@@ -241,7 +241,7 @@ We now proceed to find a basis for both eigenspaces. We start with the eigenspac
     E_0(\mathbf{A})&=\text{Null}(\mathbf{A}-0\mathbf{I})\tag{def. of eigenspace}\\
     &=\text{Null}(\mathbf{A})\\
     &=\text{Null}\begin{bmatrix} 0 & 1 \\ 0 & -1 \end{bmatrix}\\
-    &=\text{Null}\begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix}\tag{rref}\\
+    &=\text{Null}\begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix}\tag{ref}\\
     &=\text{Span}\left\{\begin{bmatrix} 1\\0\end{bmatrix}\right\}\tag{$x_2=0$, $x_1$ free}
 \end{align*}
 
@@ -275,7 +275,7 @@ And so we can express our original matrix $\mathbf{A}$ as the following eigendec
 
 \noindent\textbf{Solution b):} Again, we start be finding the roots of $\mathbf{A}$'s characteristic polynomial:
 \begin{align*}
-    0&=|\mathbf{A}-\lambda \mathbf{I}|\\
+    0&=\det(\mathbf{A}-\lambda \mathbf{I})\\
     &=\begin{vmatrix} 5-\lambda & 6 \\ -1 & -2-\lambda \end{vmatrix}\\
     &=(5-\lambda)(-2-\lambda)+6\\
     &=\lambda^2-3\lambda-4=(\lambda-4)(\lambda+1)\\
@@ -286,7 +286,7 @@ We now proceed to find a basis for both eigenspaces. We start with the eigenspac
 \begin{align*}
     E_4(\mathbf{A})&=\text{Null}(\mathbf{A}-4\mathbf{I})\tag{def. of eigenspace}\\
     &=\text{Null}\begin{bmatrix} 1 & 6 \\ -1 & -6 \end{bmatrix}\\
-    &=\text{Null}\begin{bmatrix} 1 & 6 \\ 0 & 0 \end{bmatrix}\tag{rref}\\
+    &=\text{Null}\begin{bmatrix} 1 & 6 \\ 0 & 0 \end{bmatrix}\tag{ref}\\
     &=\text{Span}\left\{\begin{bmatrix} -6\\1\end{bmatrix}\right\}\tag{$x_1=-6x_2$}
 \end{align*}
 
@@ -294,7 +294,7 @@ Now we do the same for the eigenspace associated with the eigenvalue -1:
 \begin{align*}
     E_{-1}(\mathbf{A})&=\text{Null}(\mathbf{A}+\mathbf{I})\tag{def. of eigenspace}\\
     &=\text{Null}\begin{bmatrix} 6 & 6 \\ -1 & -1 \end{bmatrix}\\
-    &=\text{Null}\begin{bmatrix} 1 & 1 \\ 0 & 0 \end{bmatrix}\tag{rref}\\
+    &=\text{Null}\begin{bmatrix} 1 & 1 \\ 0 & 0 \end{bmatrix}\tag{ref}\\
     &=\text{Span}\left\{\begin{bmatrix} -1\\1\end{bmatrix}\right\}\tag{$x_1=-x_2$}
 \end{align*}
 
@@ -392,7 +392,7 @@ And so we can express our original matrix $\mathbf{A}$ as the following eigendec
 \noindent\textbf{Solution:} First we perform eigendecomposition on $\mathbf{A}$, and to do this we first find $\mathbf{A}$'s eigenvalues:
 
 \begin{align*}
-    0&=|\mathbf{A}-\lambda \mathbf{I}|\\
+    0&=\det(\mathbf{A}-\lambda \mathbf{I})\\
     &=\begin{vmatrix} 4-\lambda & -2 \\ 1 & 1-\lambda \end{vmatrix}\\
     &=(1-\lambda)(4-\lambda)+2\\
     &=\lambda^2-5\lambda+6\\
@@ -406,14 +406,14 @@ Now we find bases of both corresponding eigenspaces:
 \begin{align*}
     E_2(\mathbf{A})&=\text{Null}(\mathbf{A}-2\mathbf{I})\tag{def. of eigenspace}\\
     &=\text{Null}\begin{bmatrix} 2 & -2 \\ 1 & -1 \end{bmatrix}\\
-    &=\text{Null}\begin{bmatrix} 1 & -1 \\ 0 & 0 \end{bmatrix}\tag{rref}\\
+    &=\text{Null}\begin{bmatrix} 1 & -1 \\ 0 & 0 \end{bmatrix}\tag{ref}\\
     &=\text{Span}\left\{\begin{bmatrix} 2\\1\end{bmatrix}\right\}\tag{$x_1=x_2$}
 \end{align*}
 
 \begin{align*}
     E_3(\mathbf{A})&=\text{Null}(\mathbf{A}-3\mathbf{I})\tag{def. of eigenspace}\\
     &=\text{Null}\begin{bmatrix} 1 & -2 \\ 1 & -2 \end{bmatrix}\\
-    &=\text{Null}\begin{bmatrix} 1 & -2 \\ 0 & 0 \end{bmatrix}\tag{rref}\\
+    &=\text{Null}\begin{bmatrix} 1 & -2 \\ 0 & 0 \end{bmatrix}\tag{ref}\\
     &=\text{Span}\left\{\begin{bmatrix} 2\\1\end{bmatrix}\right\}\tag{$x_1=2x_2$}
 \end{align*}
 

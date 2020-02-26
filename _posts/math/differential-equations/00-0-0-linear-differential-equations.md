@@ -223,7 +223,7 @@ $$\begin{cases}
 
 This system can be further represented via the following matrix equation:
 
-$$\mathbf{x}'=\mathbf{Ax}+\mathbf{b}$$
+$$\der{\mathbf{x}}=\mathbf{Ax}+\mathbf{b}$$
 
 $$\underbrace{\begin{bmatrix}
 \der{x_0}\\\der{x_1}\\\der{x_2}\\\vdots\\\der{x_{n-2}}\\\der{x_{n-1}}
